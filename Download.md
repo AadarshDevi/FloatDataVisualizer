@@ -40,7 +40,7 @@ Settings FilePath: `FloatDataRecorder_2_0\FloatDataRecorder_2_0\app\classes\com\
 
 ## Data Transfer
 
-The app will start recieving data when it recieves the start flag **_startDataTransfer_**.<br><br>
+The app will start recieving data when it recieves the start flag **_startDataTransfer_**.<br>
 
 The data transfered will be in a rigid structure below:<br>
 Structure: TeamNum-TeamName,Packet-PacketNum,Time,Depth<br>
