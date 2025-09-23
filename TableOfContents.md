@@ -3,5 +3,5 @@
 ### [Home](README.md)
 ### [Download](Download.md)
 ### [Future Updates](FutureUpdates.md)
-### [Home](README.md)
-### [Home](README.md)
+### [Project Settings](Settings.md)
+### [Transferring Data](DataTransfer.md)
