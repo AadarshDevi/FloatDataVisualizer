@@ -17,7 +17,7 @@ Settings FilePath: `FloatDataRecorder_2_0\FloatDataRecorder_2_0\app\classes\com\
     <br>Default value: COM3</dd>
 </dl>
 <dl><dt>baudRate</dt>
-  <dd>The speed of which information is transfered. Data Transfered Per Second. *I might be wrong.
+  <dd>The speed of which information is transfered. Data Transfered Per Second. I might be wrong.
     <br>Default value: 115200</dd>
 </dl>
 <dl><dt>packetData</dt>
