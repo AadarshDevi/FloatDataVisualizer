@@ -11,4 +11,4 @@ OpenJFK 23.0.1<br>
   2. FXML
   3. Swing
   4. Graphics<br>
-jSerialComm 2.11.2<br>
+<br>jSerialComm 2.11.2
