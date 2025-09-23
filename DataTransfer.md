@@ -7,3 +7,5 @@ Structure: TeamNum-TeamName,Packet-PacketNum,Time,Depth<br>
 Example: PN12-MiramarWaterJets,pkt-0,5.67,30<br>
 
 Once all data is transfered, the app will stop recieving data when it recieves the end flag **_endDataTransfer_**.<br>
+
+[Table of Contents](README.md)
