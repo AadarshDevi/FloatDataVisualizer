@@ -12,6 +12,9 @@
 Settings FilePath: `FloatDataRecorder_2_0\FloatDataRecorder_2_0\app\classes\com\alphagen\studio\float_data_recorder_2\settings.txt`
 
 ### Variables and Values
+
+These values of the variables can be changed to suit each float.
+
 <dl><dt>commPort</dt>
   <dd>The Serial Comm Port that has the Electronic Float Data Reciever connected to.
     <br>Default value: COM3</dd>
