@@ -10,7 +10,7 @@
 3. Version: 2.0.0
 
 ### Project Technology
-1. Java 23<br>
+1. Java 23.0.1
 1. Apache Maven 3.9.9
-2. OpenJFK 23.0.1<br>
+2. OpenJFK 23.0.1
 3. jSerialComm 2.11.2
