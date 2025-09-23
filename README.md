@@ -1,7 +1,7 @@
 # Table of Contents
 
-### [Project Information](ProjectInformation.md)
-### [Download](Download.md)
-### [Future Updates](FutureUpdates.md)
-### [Project Settings](Settings.md)
-### [Transferring Data](DataTransfer.md)
+### 1. [Project Information](ProjectInformation.md)
+### 2. [Download](Download.md)
+### 3. [Future Updates](FutureUpdates.md)
+### 4. [Project Settings](Settings.md)
+### 5. [Transferring Data](DataTransfer.md)
