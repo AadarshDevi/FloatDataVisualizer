@@ -15,6 +15,11 @@
 2. OpenJFK 23.0.1
 3. jSerialComm 2.11.2
 
+### IDE
+1. Java: JetBrains Intellij IDEA 2025.1.3
+2. CSS: Visual Studio Code 1.104.1
+3. FXML: SceneBuilder 23.0.1
+
 ### [Download and Run program](Download.md)
 
 ### Other Information
