@@ -18,5 +18,5 @@
 ### [Download and Run program](Download.md)
 
 ### Other Information
-1. .jar created with Maven
-2. .exe created with jPackage
+1. `.jar` created with Maven
+2. `.exe` created with jPackage
