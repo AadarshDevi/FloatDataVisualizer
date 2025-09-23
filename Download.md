@@ -14,5 +14,5 @@
 ### Variables and Values
 <dl>
   <dt>commPort</dt>
-  <dd>The Serial Comm Port that has the Electronic Float Data Reciever connected to.<br>Default value: COM3</dd>
+  <dd>The Serial Comm Port that has the Electronic Float Data Reciever connected to.<br>_Default value_: COM3</dd>
 </dl>
