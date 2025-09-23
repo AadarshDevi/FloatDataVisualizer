@@ -17,19 +17,20 @@ Settings FilePath: `FloatDataRecorder_2_0\FloatDataRecorder_2_0\app\classes\com\
     <br>Default value: COM3</dd>
 </dl>
 <dl><dt>baudRate</dt>
-  <dd>The speed of which information is transfered. Data Transfered Per Second. I might be wrong.
+  <dd>The speed of which information is transfered. Data Transfered Per Second (I might be wrong).
     <br>Default value: 115200</dd>
 </dl>
 <dl><dt>packetData</dt>
   <dd>Contains the team number, team name and the name of the packet.
+    <br>PacketData: TeamNum-TeamName,Packet-PacketName,time,depth
     <br>Default value: PN12-MiramarWaterJets,pkt-</dd>
 </dl>
 <dl><dt>startDataTransfer</dt>
-  <dd>The Serial Comm Port that has the Electronic Float Data Reciever connected to.
+  <dd>A Signal to tell the app to start collecting data.
     <br>Default value: --start-data-transfer</dd>
 </dl>
 <dl><dt>endDataTransfer</dt>
-  <dd>The Serial Comm Port that has the Electronic Float Data Reciever connected to.
+  <dd>A Signal to tell the app to stop collecting data.
     <br>Default value: --end-data-transfer</dd>
 </dl>
 <dl><dt>dataGroupName</dt>
