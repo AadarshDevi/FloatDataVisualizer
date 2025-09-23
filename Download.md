@@ -15,3 +15,4 @@
 1. commPort:
    i. The Serial Comm Port that has the Electronic Float Data Reciever connected to.
 3. 
+**commPort**: The Serial Comm Port that has the Electronic Float Data Reciever connected to. Default value: _COM3_
