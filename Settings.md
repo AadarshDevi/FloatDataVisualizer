@@ -31,3 +31,5 @@ These values of the variables can be changed to suit each float.
   <dd>This is the name of data groups that will be visible on the chart.
     <br>Default value: Group</dd>
 </dl>
+
+[Table of Contents](README.md)
