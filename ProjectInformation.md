@@ -8,6 +8,7 @@
 1. Name: Float Data Recorder
 2. Organization: Miramar Water Jets
 3. Version: 2.0.0
+> Float Data Recorder Full Rebuild 2.0.0
 
 ### Project Technology
 1. Java 23.0.1
