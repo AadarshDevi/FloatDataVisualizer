@@ -1,4 +1,4 @@
-# FloatDataRecorder
+# Float Data Recorder
 
 ### Basic Info
 1. Author: Aadarsh Devi
