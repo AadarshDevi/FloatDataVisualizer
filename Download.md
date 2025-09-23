@@ -12,12 +12,7 @@
 1. path: FloatDataRecorder_2_0\FloatDataRecorder_2_0\app\classes\com\alphagen\studio\float_data_recorder_2\settings.txt
 
 ### Variables and Values
-1. commPort:
-   i. The Serial Comm Port that has the Electronic Float Data Reciever connected to.
-3. 
-**commPort**: The Serial Comm Port that has the Electronic Float Data Reciever connected to. Default value: _COM3_
 <dl>
   <dt>commPort</dt>
-  <dd>The Serial Comm Port that has the Electronic Float Data Reciever connected to.</dd>
-  <dd>Default value: COM3</dd>
+  <dd>The Serial Comm Port that has the Electronic Float Data Reciever connected to.<br>Default value: COM3</dd>
 </dl>
