@@ -1,6 +1,6 @@
 # Future Updates
 
-[Update Progress] Paused
+### [Update Progress] Paused
 
 ### 2.0.1
 1. Add version number to settings file. This must match the app version
