@@ -17,11 +17,11 @@ Settings FilePath: `FloatDataRecorder_2_0\FloatDataRecorder_2_0\app\classes\com\
     <br>Default value: COM3</dd>
 </dl>
 <dl><dt>baudRate</dt>
-  <dd>The Serial Comm Port that has the Electronic Float Data Reciever connected to.
+  <dd>The speed of which information is transfered. Data Transfered Per Second. *I might be wrong.
     <br>Default value: 115200</dd>
 </dl>
 <dl><dt>packetData</dt>
-  <dd>The Serial Comm Port that has the Electronic Float Data Reciever connected to.
+  <dd>Contains the team number, team name and the name of the packet.
     <br>Default value: PN12-MiramarWaterJets,pkt-</dd>
 </dl>
 <dl><dt>startDataTransfer</dt>
