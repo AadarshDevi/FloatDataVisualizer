@@ -5,10 +5,10 @@ Author: Aadarsh Devi
 Organization: Miramar Water Jets
 
 ### Project Technology
-1. Java 23
-2. OpenJFK 23.0.1
-  i. Controls
-  ii. FXML
-  iii. Swing
-  iv. Graphics
-3. jSerialComm 2.11.2
+Java 23
+OpenJFK 23.0.1
+  1. Controls
+  2. FXML
+  3. Swing
+  4. Graphics
+jSerialComm 2.11.2
