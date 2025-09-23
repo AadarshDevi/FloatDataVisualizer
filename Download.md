@@ -34,6 +34,6 @@ Settings FilePath: `FloatDataRecorder_2_0\FloatDataRecorder_2_0\app\classes\com\
     <br>Default value: --end-data-transfer</dd>
 </dl>
 <dl><dt>dataGroupName</dt>
-  <dd>The Serial Comm Port that has the Electronic Float Data Reciever connected to.
+  <dd>This is the name of data groups that will be visible on the chart.
     <br>Default value: Group</dd>
 </dl>
