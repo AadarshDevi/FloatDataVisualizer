@@ -7,3 +7,5 @@
 5. If you get Windows protected your PC > click "More info" > click "Run anyway"
 6. If there is a Serial Comm Port connected to your PC, the terminal will show up and print data and values.
 7. If there are no Serial Comm Ports connected, the terminal will close.
+
+[Table of Contents](README.md)
