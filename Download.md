@@ -9,7 +9,7 @@
 7. If there are no Serial Comm Ports connected, the terminal will close.
 
 ## settings.txt
-1. path: FloatDataRecorder_2_0\FloatDataRecorder_2_0\app\classes\com\alphagen\studio\float_data_recorder_2\settings.txt
+Settings FilePath: `FloatDataRecorder_2_0\FloatDataRecorder_2_0\app\classes\com\alphagen\studio\float_data_recorder_2\settings.txt`
 
 ### Variables and Values
 <dl><dt>commPort</dt>
