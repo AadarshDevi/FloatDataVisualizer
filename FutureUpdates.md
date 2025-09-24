@@ -12,7 +12,7 @@ Internal Version / Release Version
 ### 2.0.2/1.0.2
 1. Make the data packet structure flexible.
    > PN12-MiramarWaterJets,pkt-0,time,depth<br>
-   > PN12-MiramarWaterJets,pkt-0,depth,time
+   > PN12-MiramarWaterJets,pkt-0,depth,time (depth and time switched places)
 
 ### 2.0.3/1.0.3
 1. add temperature to data packet
