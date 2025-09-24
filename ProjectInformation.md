@@ -27,4 +27,4 @@
 1. `.jar` created with Maven
 2. `.exe` created with jPackage
 
-[Table of Contents](README.md)
+[Table of Contents](https://github.com/AadarshDevi/FloatDataRecorder/tree/main)
