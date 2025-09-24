@@ -6,15 +6,15 @@
 
 ### Project Information
 1. Name: Float Data Recorder
-2. Organization: Miramar Water Jets
-3. Version: 2.0.0
-> Float Data Recorder Full Rebuild 2.0.0
+2. Full Name: Float Data Recorder Rebuild 1.0.0
+3. Organization: Miramar Water Jets
+4. Version: 2.0.0
 
 ### Project Technology
 1. Java 23.0.1
-1. Apache Maven 3.9.9
-2. OpenJFK 23.0.1
-3. jSerialComm 2.11.2
+2. Apache Maven 3.9.9
+3. OpenJFK 23.0.1
+4. jSerialComm 2.11.2
 
 ### IDE
 1. Java: JetBrains Intellij IDEA 2025.1.3
