@@ -1,6 +1,6 @@
 
 ## settings.txt
-The settings.txt file can be found in:<br>
+The settings.txt file can be found in: 
 `FloatDataRecorder_2_0\FloatDataRecorder_2_0\app\classes\com\alphagen\studio\float_data_recorder_2\settings.txt`
 
 Table of Contents:
