@@ -1,4 +1,4 @@
-# Project Float Data Recorder Rebuild
+# Float Data Recorder
 
 ### Basic Info
 1. Author: Aadarsh Devi
@@ -7,7 +7,7 @@
 ### Project Information
 1. Release Name: Float Data Recorder
 2. Release Version: 1.0.0
-3. Internal Name: Float Data Recorder Rebuild 2.0.0
+3. Internal Name: Float Data Recorder 2.0.0: Full Rebuild
 4. Internal Version: 2.0.0
 
 ### Project Technology
