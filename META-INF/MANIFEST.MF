@@ -1,0 +1,4 @@
+Manifest-Version: 1.0
+Main-Class: com.alphagen.studio.float_data_recorder_2.Launcher
+Created-By: 23.0.1 (Oracle Corporation)
+

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.ScatterChart?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.alphagen.studio.float_data_recorder_2.datarecorder.DataPlotter">
+   <center>
+      <HBox prefHeight="640.0" prefWidth="1196.0">
+         <children>
+            <ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="828.0">
+               <content>
+                  <ScatterChart fx:id="scatterChart" alternativeRowFillVisible="false" maxHeight="-Infinity" prefHeight="623.0" prefWidth="828.0" stylesheets="@../float_data_recorder_legend.css" title="Depth vs. Time">
+                    <xAxis>
+                      <NumberAxis forceZeroInRange="false" label="Time (s)" side="BOTTOM" fx:id="xAxis" />
+                    </xAxis>
+                    <yAxis>
+                      <NumberAxis fx:id="yAxis" forceZeroInRange="false" label="Depth (m)" side="LEFT" tickMarkVisible="false" />
+                    </yAxis>
+                  </ScatterChart>
+               </content>
+            </ScrollPane>
+            <VBox maxWidth="-Infinity" prefHeight="640.0" prefWidth="367.0">
+               <children>
+                  <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="40.0" prefWidth="311.0" text="Data">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets right="8.0" />
+                     </VBox.margin>
+                  </Label>
+                  <ScrollPane prefHeight="591.0" prefWidth="367.0">
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                     <content>
+                        <TableView fx:id="tableView" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="580.0" prefWidth="351.0">
+                          <columns>
+                              <TableColumn fx:id="tc_pkt" prefWidth="50.0" text="pkt" />
+                            <TableColumn fx:id="tc_time" prefWidth="149.0" text="Time (s)" />
+                            <TableColumn fx:id="tc_depth" minWidth="0.0" prefWidth="149.0" text="Depth (m)" />
+                          </columns>
+                        </TableView>
+                     </content>
+                  </ScrollPane>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </center>
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem fx:id="mi_close" mnemonicParsing="false" onAction="#closeApp" text="Close" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+                  <Menu mnemonicParsing="false" text="ScatterChart">
+                     <items>
+                    <MenuItem fx:id="mi_edit_scatterchart_fit_view" mnemonicParsing="false" text="Fit View" />
+                        <MenuItem fx:id="mi_edit_scatterchart_full_view" mnemonicParsing="false" text="Full View" />
+                        <MenuItem fx:id="mi_edit_scatterchart_screenshot" mnemonicParsing="false" text="Screenshot" />
+                     </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="Data Table">
+                     <items>
+                        <MenuItem fx:id="mi_edit_tableview_screenshot" mnemonicParsing="false" text="Screenshot" />
+                     </items>
+                  </Menu>
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+</BorderPane>

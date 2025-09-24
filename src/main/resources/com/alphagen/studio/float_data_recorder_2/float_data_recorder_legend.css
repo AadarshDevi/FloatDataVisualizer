@@ -1,0 +1,15 @@
+.chart-legend {
+  -fx-background-color: transparent; /* Transparent background */
+  -fx-padding: 10px 20px; /* Padding around the legend */
+  -fx-border-radius: 5px; /* Rounded corners */
+}
+
+.chart-legend-item {
+  -fx-font-size: 12px; /* Font size */
+  -fx-padding: 2px 5px; /* Padding around each item */
+}
+
+.chart-legend-item-symbol {
+  -fx-background-radius: 0; /* Shape of the legend symbol */
+  -fx-padding: 4px; /* Size of the legend symbol */
+}

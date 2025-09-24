@@ -1,0 +1,6 @@
+commPort=COM3
+baudRate=115200
+packetData=PN12-MiramarWaterJets,pkt-
+startDataTransfer=--start-data-transfer
+endDataTransfer=--end-data-transfer
+dataGroupName=Cycle
