@@ -7,14 +7,15 @@ Settings FilePath: `FloatDataRecorder_2_0\FloatDataRecorder_2_0\app\classes\com\
 These values of the variables can be changed to suit each float.
 
 #### **_commPort_**
-The Serial Comm Port that has the Electronic Float Data Reciever connected to.<br>
-> Default Value: COM3
-<dl><dt>commPort</dt>
-  <dd>The Serial Comm Port that has the Electronic Float Data Reciever connected to.
-    <br>Default value: COM3</dd>
-</dl>
-<dl><dt>baudRate</dt>
-  <dd>The speed of which information is transfered. Data Transfered Per Second (I might be wrong).
+The Serial Comm Port that has the Electronic Float Data Reciever connected to.
+> commPort=COM3
+
+#### **_baudRate_**
+The speed of which information is transfered. Data Transfered Per Second (I might be wrong).
+> baudRate=115200
+
+<dl><dt></dt>
+  <dd>
     <br>Default value: 115200</dd>
 </dl>
 <dl><dt>packetData</dt>
