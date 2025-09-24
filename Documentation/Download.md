@@ -10,4 +10,4 @@
    > Check the format of your data to in [Data Transfer](DataTransfer.md)
 7. If there are no Serial Comm Ports connected, the terminal will close.
 
-[Table of Contents](README.md)
+[Table of Contents](../README.md)
