@@ -1,8 +1,8 @@
 # Future Updates
 
- > _**Update Progress > Paused**_
+ > _**Update Progress > Paused**_<br>
+ > Internal Version / Release Version
 
-Internal Version / Release Version
 ## 2.0.2/1.0.2 Stable Release
 ### 2.0.1/1.0.1
 1. Add version number to settings file. This must match the app version
