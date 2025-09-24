@@ -25,6 +25,6 @@
 
 ### Other Information
 1. `.jar` created with Maven
-2. `.exe` created with jPackage
+2. `.exe` created with [jPackage](jPackage.md)
 
 [Table of Contents](README.md)
