@@ -1,6 +1,6 @@
 # Future Updates
 
-### _**Update Progress**_ > Paused
+### _**Update Progress > Paused**_
 
 Internal Version / Release Version
 ## 2.0.2/1.0.2 Stable Release
