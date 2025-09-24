@@ -3,7 +3,7 @@
 Settings FilePath: `FloatDataRecorder_2_0\FloatDataRecorder_2_0\app\classes\com\alphagen\studio\float_data_recorder_2\settings.txt`
 
 Table of Contents:
-1. [commPort](####commPort)
+1. [commPort](#commport)
 2. [baudRate]()
 3. [packetData]()
 4. [startDataTransfer]()
