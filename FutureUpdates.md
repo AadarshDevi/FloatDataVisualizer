@@ -14,6 +14,8 @@ Internal Version / Release Version
    > PN12-MiramarWaterJets,pkt-0,time,depth<br>
    > PN12-MiramarWaterJets,pkt-0,depth,time
 
+### 2.0.2 Stable Release
+
 ### 2.0.3/1.0.3
 1. add temperature to data packet
 2. add pressure to data packet.
