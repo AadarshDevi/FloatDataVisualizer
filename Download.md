@@ -1,4 +1,4 @@
-# Download Float Data Recorder
+# Download and Run Float Data Recorder
 
 1. Go to [Releases](https://github.com/AadarshDevi/FloatDataRecorder/releases) section of this Repository
 2. Download 2.0.0 Stable for your platform and Unzip it.
