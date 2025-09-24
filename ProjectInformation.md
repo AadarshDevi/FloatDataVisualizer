@@ -6,8 +6,9 @@
 
 ### Project Information
 1. Name: Float Data Recorder
-2. Full Name: Float Data Recorder Rebuild 1.0.0
-3. Version: 2.0.0
+2. Version: 1.0.0
+3. Internal Name: Float Data Recorder Rebuild 2.0.0
+4. Internal Version: 2.0.0
 
 ### Project Technology
 1. Java 23.0.1
