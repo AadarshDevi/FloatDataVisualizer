@@ -7,4 +7,4 @@ SETV: platform=PlatformName
 1. MacOS? > MacOS ?
 2. Linux? > Linux ?
 
-[Table of Contents](README.md)
+[Table of Contents](https://github.com/AadarshDevi/FloatDataRecorder/tree/main)
