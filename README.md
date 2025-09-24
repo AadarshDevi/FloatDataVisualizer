@@ -6,4 +6,4 @@
 ### 4. [Project Settings](Settings.md)
 ### 5. [Transferring Data](DataTransfer.md)
 ### 6. [Project Platforms](Platforms.md)
-### 7. [Program Flowchart](flowchart/system_flowchart_1_outdated.png)
+### 7. [Old Program Flowchart](flowchart/system_flowchart_1_outdated.png)
