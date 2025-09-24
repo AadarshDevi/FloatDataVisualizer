@@ -1,6 +1,7 @@
 
 ## settings.txt
-Settings FilePath: `FloatDataRecorder_2_0\FloatDataRecorder_2_0\app\classes\com\alphagen\studio\float_data_recorder_2\settings.txt`
+The settings.txt file can be found in:<br>
+`FloatDataRecorder_2_0\FloatDataRecorder_2_0\app\classes\com\alphagen\studio\float_data_recorder_2\settings.txt`
 
 Table of Contents:
 1. [commPort](#commport)
