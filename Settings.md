@@ -46,7 +46,8 @@ It is the version of the project. This is to ensure that the settings file does 
 
 #### **_[Future Update] platform_**
 This is to keep track of the platform of the project. this should not impact the program.
-> 
+> platform=win11<br>
+> platform=win10
 
 #### **__**
 
