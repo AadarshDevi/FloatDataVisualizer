@@ -5,7 +5,9 @@
 Internal Verion / Release Version
 ### 2.0.1/1.0.1
 1. Add version number to settings file. This must match the app version
+   > projectVersion=2.0.1
 1. Add platform to settings file. This must match the app platform
+   > platform=PlatformName
 
 ### 2.0.2/1.0.2
 1. Make the data packet structure flexible.
