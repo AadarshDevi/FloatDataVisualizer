@@ -1,6 +1,6 @@
 # Future Updates
 
-### [Update Progress] Paused
+### _**Update Progress**_ > Paused
 
 Internal Verion / Release Version
 ### 2.0.1/1.0.1
