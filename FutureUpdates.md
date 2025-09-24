@@ -21,4 +21,4 @@ Internal Verion / Release Version
 ### 2.0.4/1.0.4
 1. Some data [packetData](DataTransfer.md) will not be used so they do not have to appear in packetData.
 
-[Table of Contents](https://github.com/AadarshDevi/FloatDataRecorder/tree/main)
+[Table of Contents](README.md)
