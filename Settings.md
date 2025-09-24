@@ -52,4 +52,4 @@ This is to keep track of the platform of the project. this should not impact the
 
 > 
 
-[Table of Contents](README.md)
+[Table of Contents](https://github.com/AadarshDevi/FloatDataRecorder/tree/main)
