@@ -1,3 +1,7 @@
+# Home
+This repository is for the releases of the Float Data Recorder so, it will not have any of the project's code.<br>
+To know the technology used, check out _**Project Information**_ below.
+
 # Table of Contents
 
 ### 1. [Project Information](ProjectInformation.md)
