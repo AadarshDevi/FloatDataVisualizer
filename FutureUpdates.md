@@ -2,6 +2,7 @@
 
 ### [Update Progress] Paused
 
+Internal Verion / Release Version
 ### 2.0.1/1.0.1
 1. Add version number to settings file. This must match the app version
 1. Add platform to settings file. This must match the app platform
