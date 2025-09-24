@@ -1,4 +1,4 @@
-module com.alphagen.studio.float_data_recorder_2 {
+module com.alphagen.studio.FloatDataVisualizer {
     requires javafx.controls;
     requires javafx.fxml;
     requires com.fazecast.jSerialComm;
@@ -6,9 +6,9 @@ module com.alphagen.studio.float_data_recorder_2 {
     requires java.desktop;
     requires javafx.swing;
 
-    opens com.alphagen.studio.float_data_recorder_2.datarecorder to javafx.fxml;
-    opens com.alphagen.studio.float_data_recorder_2.datareciever to com.fazecast.jSerialComm;
-    exports com.alphagen.studio.float_data_recorder_2;
-    exports com.alphagen.studio.float_data_recorder_2.datarecorder;
-    exports com.alphagen.studio.float_data_recorder_2.data;
+    opens com.alphagen.studio.FloatDataVisualizer.datarecorder to javafx.fxml;
+    opens com.alphagen.studio.FloatDataVisualizer.datareciever to com.fazecast.jSerialComm;
+    exports com.alphagen.studio.FloatDataVisualizer;
+    exports com.alphagen.studio.FloatDataVisualizer.datarecorder;
+    exports com.alphagen.studio.FloatDataVisualizer.data;
 }

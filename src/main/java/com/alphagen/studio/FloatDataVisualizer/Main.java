@@ -1,8 +1,8 @@
-package com.alphagen.studio.float_data_recorder_2;
+package com.alphagen.studio.FloatDataVisualizer;
 
-import com.alphagen.studio.float_data_recorder_2.data.DataKeeper;
-import com.alphagen.studio.float_data_recorder_2.data.DataPoint;
-import com.alphagen.studio.float_data_recorder_2.datarecorder.DataPlotter;
+import com.alphagen.studio.FloatDataVisualizer.data.DataKeeper;
+import com.alphagen.studio.FloatDataVisualizer.data.DataPoint;
+import com.alphagen.studio.FloatDataVisualizer.datarecorder.DataPlotter;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;

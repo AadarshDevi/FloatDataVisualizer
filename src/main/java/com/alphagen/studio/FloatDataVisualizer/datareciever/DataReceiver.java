@@ -1,7 +1,7 @@
-package com.alphagen.studio.float_data_recorder_2.datareciever;
+package com.alphagen.studio.FloatDataVisualizer.datareciever;
 
-import com.alphagen.studio.float_data_recorder_2.data.Constants;
-import com.alphagen.studio.float_data_recorder_2.data.DataKeeper;
+import com.alphagen.studio.FloatDataVisualizer.data.Constants;
+import com.alphagen.studio.FloatDataVisualizer.data.DataKeeper;
 import com.fazecast.jSerialComm.SerialPort;
 
 import java.io.BufferedReader;

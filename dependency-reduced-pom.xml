@@ -46,7 +46,7 @@
             <configuration>
               <transformers>
                 <transformer>
-                  <mainClass>com.alphagen.studio.float_data_recorder_2.Launcher</mainClass>
+                  <mainClass>com.alphagen.studio.FloatDataVisualizer.Launcher</mainClass>
                 </transformer>
               </transformers>
             </configuration>

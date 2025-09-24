@@ -5,9 +5,9 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.alphagen.studio</groupId>
-    <artifactId>float_data_recorder_2</artifactId>
+    <artifactId>FloatDataVisualizer</artifactId>
     <version>2.0.0</version>
-    <name>float_data_recorder_2</name>
+    <name>FloatDataVisualizer</name>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -96,7 +96,7 @@
                         <configuration>
                             <transformers>
                                 <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                                    <mainClass>com.alphagen.studio.float_data_recorder_2.Launcher</mainClass>
+                                    <mainClass>com.alphagen.studio.FloatDataVisualizer.Launcher</mainClass>
                                 </transformer>
                             </transformers>
                         </configuration>

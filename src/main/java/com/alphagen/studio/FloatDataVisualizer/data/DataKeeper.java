@@ -1,6 +1,4 @@
-package com.alphagen.studio.float_data_recorder_2.data;
-
-import javafx.scene.chart.XYChart;
+package com.alphagen.studio.FloatDataVisualizer.data;
 
 import java.util.ArrayList;
 import java.util.concurrent.LinkedBlockingQueue;

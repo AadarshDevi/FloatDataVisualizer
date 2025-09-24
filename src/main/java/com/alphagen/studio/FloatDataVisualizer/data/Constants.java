@@ -1,4 +1,4 @@
-package com.alphagen.studio.float_data_recorder_2.data;
+package com.alphagen.studio.FloatDataVisualizer.data;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -27,7 +27,7 @@ public class Constants {
 
         try {
             Properties properties = new Properties();
-            InputStream inputStream = Constants.class.getResourceAsStream("/com/alphagen/studio/float_data_recorder_2/settings.txt");
+            InputStream inputStream = Constants.class.getResourceAsStream("/com/alphagen/studio/FloatDataVisualizer/settings.txt");
 
             if (inputStream == null) {
                 System.err.println("\tERROR: settings.txt resource not found");

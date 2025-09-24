@@ -1,8 +1,8 @@
-package com.alphagen.studio.float_data_recorder_2.datarecorder;
+package com.alphagen.studio.FloatDataVisualizer.datarecorder;
 
-import com.alphagen.studio.float_data_recorder_2.Launcher;
-import com.alphagen.studio.float_data_recorder_2.data.Constants;
-import com.alphagen.studio.float_data_recorder_2.data.DataPoint;
+import com.alphagen.studio.FloatDataVisualizer.Launcher;
+import com.alphagen.studio.FloatDataVisualizer.data.Constants;
+import com.alphagen.studio.FloatDataVisualizer.data.DataPoint;
 import javafx.collections.ObservableList;
 import javafx.embed.swing.SwingFXUtils;
 import javafx.fxml.FXML;

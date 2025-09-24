@@ -1,4 +1,4 @@
-package com.alphagen.studio.float_data_recorder_2.data;
+package com.alphagen.studio.FloatDataVisualizer.data;
 
 public class DataPoint {
 

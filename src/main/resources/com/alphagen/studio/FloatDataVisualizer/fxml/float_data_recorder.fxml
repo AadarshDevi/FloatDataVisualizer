@@ -15,7 +15,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.alphagen.studio.float_data_recorder_2.datarecorder.DataPlotter">
+<BorderPane xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.alphagen.studio.FloatDataVisualizer.datarecorder.DataPlotter">
    <center>
       <HBox prefHeight="640.0" prefWidth="1196.0">
          <children>

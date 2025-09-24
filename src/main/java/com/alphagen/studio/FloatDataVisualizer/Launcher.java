@@ -1,8 +1,8 @@
-package com.alphagen.studio.float_data_recorder_2;
+package com.alphagen.studio.FloatDataVisualizer;
 
-import com.alphagen.studio.float_data_recorder_2.data.Constants;
-import com.alphagen.studio.float_data_recorder_2.data.DataKeeper;
-import com.alphagen.studio.float_data_recorder_2.datareciever.DataReceiver;
+import com.alphagen.studio.FloatDataVisualizer.data.Constants;
+import com.alphagen.studio.FloatDataVisualizer.data.DataKeeper;
+import com.alphagen.studio.FloatDataVisualizer.datareciever.DataReceiver;
 import javafx.application.Application;
 
 
