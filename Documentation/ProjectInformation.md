@@ -21,7 +21,7 @@
 2. CSS: Visual Studio Code 1.104.1
 3. FXML: SceneBuilder 23.0.1
 
-### [Download and Run program](Documentation/Download.md)
+### [Download and Run program](Download.md)
 
 ### Other Information
 1. `.jar` created with Maven
