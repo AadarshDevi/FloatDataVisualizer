@@ -9,7 +9,7 @@ Table of Contents:
 4. [startDataTransfer](#startdatatransfer)
 5. [endDataTransfer](#enddatatransfer)
 6. [dataGroupName](#datagroupname)
-7. [Future Update] [projectVersion](#projectversion)
+7. <span style="color:orange">[Future Update]</span> [projectVersion](#projectversion)
 8. [Future Update] [platform](#platform)
 
 ### Variables and Values
