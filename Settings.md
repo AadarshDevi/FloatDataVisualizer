@@ -14,26 +14,24 @@ The Serial Comm Port that has the Electronic Float Data Reciever connected to.
 The speed of which information is transfered. Data Transfered Per Second (I might be wrong).
 > baudRate=115200
 
-<dl><dt></dt>
-  <dd>
-    <br>Default value: 115200</dd>
-</dl>
-<dl><dt>packetData</dt>
-  <dd>Contains the team number, team name and the name of the packet.
-    <br>PacketData: TeamNum-TeamName,Packet-PacketName,time,depth
-    <br>Default value: PN12-MiramarWaterJets,pkt-</dd>
-</dl>
-<dl><dt>startDataTransfer</dt>
-  <dd>A Signal to tell the app to start collecting data.
-    <br>Default value: --start-data-transfer</dd>
-</dl>
-<dl><dt>endDataTransfer</dt>
-  <dd>A Signal to tell the app to stop collecting data.
-    <br>Default value: --end-data-transfer</dd>
-</dl>
-<dl><dt>dataGroupName</dt>
-  <dd>This is the name of data groups that will be visible on the chart.
-    <br>Default value: Group</dd>
-</dl>
+#### **_packetData_**
+Contains the team number, team name and the name of the packet.
+> packetData=PN12-MiramarWaterJets,pkt-
+
+#### **_startDataTransfer_**
+A Signal to tell the app to start collecting data.
+> startDataTransfer=--start-data-transfer
+
+#### **_endDataTransfer_**
+A Signal to tell the app to stop collecting data.
+> endDataTransfer=--end-data-transfer
+
+#### **_dataGroupName_**
+This is the name of data groups that will be visible on the chart.
+> dataGroupName=Group
+
+#### **__**
+
+> 
 
 [Table of Contents](README.md)
