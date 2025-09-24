@@ -9,6 +9,7 @@
    > projectVersion=2.0.1
 1. Add [platform](Platforms.md) to settings file. This must match the app platform
    > platform=PlatformName
+3. Add Organization name to UI
 
 ### 2.0.2/1.0.2
 1. Make the data packet structure flexible. (depth and time switched places)
