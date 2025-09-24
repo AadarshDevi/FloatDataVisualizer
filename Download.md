@@ -1,7 +1,7 @@
 # Download Float Data Recorder
 
 1. Go to [Releases](https://github.com/AadarshDevi/FloatDataRecorder/releases) section of this Repository
-2. Download 2.0.0 Stable and Unzip it.
+2. Download 2.0.0 Stable for your platform and Unzip it.
 3. Go into the extracted folder till you find `FloatDataRecorder_2_0.exe`
 4. Double click `FloatDataRecorder_2_0.exe`
 5. If you get Windows protected your PC > click "More info" > click "Run anyway"
