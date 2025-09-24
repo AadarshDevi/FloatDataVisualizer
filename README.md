@@ -1,5 +1,5 @@
 # Home
-This repository is for the releases of the Float Data Recorder so, it will not have any of the project's code.<br>
+This repository is for the releases of the Float Data Recorder. So it will not have any of the project's code.<br>
 To know the technology used, check out _**Project Information**_ below.
 
 # Table of Contents
