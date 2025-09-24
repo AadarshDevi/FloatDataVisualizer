@@ -1,7 +1,7 @@
 
 ## settings.txt
-The settings.txt file can be found in: 
-`FloatDataRecorder_2_0\FloatDataRecorder_2_0\app\classes\com\alphagen\studio\float_data_recorder_2\settings.txt`
+The settings.txt file can be found in the folder below where FloatDataRecorder_2_0_win11 is the extracted folder.<br>
+`FloatDataRecorder_2_0_win11\FloatDataRecorder_2_0\app\classes\com\alphagen\studio\float_data_recorder_2\settings.txt`
 
 Table of Contents:
 1. [commPort](#commport)
