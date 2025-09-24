@@ -6,6 +6,9 @@ Settings FilePath: `FloatDataRecorder_2_0\FloatDataRecorder_2_0\app\classes\com\
 
 These values of the variables can be changed to suit each float.
 
+#### **_commPort_**
+The Serial Comm Port that has the Electronic Float Data Reciever connected to.<br>
+> Default Value: COM3
 <dl><dt>commPort</dt>
   <dd>The Serial Comm Port that has the Electronic Float Data Reciever connected to.
     <br>Default value: COM3</dd>
@@ -33,10 +36,3 @@ These values of the variables can be changed to suit each float.
 </dl>
 
 [Table of Contents](README.md)
-
-# H1
-## H2
-### H3
-#### H4
-##### H5
-###### H6
