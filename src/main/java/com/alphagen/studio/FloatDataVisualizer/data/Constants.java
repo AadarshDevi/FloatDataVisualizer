@@ -6,24 +6,38 @@ import java.util.Properties;
 
 public class Constants {
 
-    // DataReceiver
-    public static int BAUD_RATE;
-    public static String SERIAL_COMM_PORT;
-    public static String TEAM_DATA;
-    public static String START_DATA_TRANSFER;
-    public static String END_DATA_TRANSFER;
-
+    private static Constants constants;
+    // Application
+    private final String[] PLATFORMS = {"win10", "win11", "macOS", "linux"};
+    private final String INTERNAL_PROJECT_VERSION = "2.1.0";
+    private final String RELEASE_PROJECT_VERSION = "1.1.0";
     // DataPlotter
-    public static String DATA_GROUP_NAME;
+    public String DATA_GROUP_NAME;
+    // DataReceiver
+    public int BAUD_RATE;
+    public String SERIAL_COMM_PORT;
+    public String START_DATA_TRANSFER;
+    public String END_DATA_TRANSFER;
+    // DataKeeper
+    public String TEAM_DATA;
+    public String PACKET_NAME;
+    public int INDEX_TIME;
+    public int INDEX_DEPTH;
 
-    public static void readSettings() {
+    // SETV/SETX > Set Variable
+
+    public Constants() {
+        readSettings();
+    }
+
+    public static Constants getInstance() {
+        if (constants == null) constants = new Constants();
+        return constants;
+    }
+
+    private void readSettings() {
 
         System.out.println("DATA: Settings >");
-
-
-        // Windows Build
-//        String user = System.getProperty("user.name");
-//        String filepath = "C:/Users/" + user + "/OneDrive/Desktop/settings.txt";
 
         try {
             Properties properties = new Properties();
@@ -36,9 +50,49 @@ public class Constants {
 
             properties.load(inputStream);
 
+            // Project Version > For settings.txt
+            String projectVersion = properties.getProperty("projectVersion");
+            if (projectVersion == null) {
+                System.err.println("ERROR: Project Version does not exist.");
+                System.exit(0);
+            } else if (!projectVersion.equals(INTERNAL_PROJECT_VERSION)) {
+                System.err.println("ERROR: Project Version does not match Application Version.");
+                System.exit(0);
+            }
+            System.out.println("\tSETV: Internal Version > " + projectVersion);
+
+            // Release Version > For settings.txt
+            String releaseVersion = properties.getProperty("releaseVersion");
+            if (releaseVersion == null) {
+                System.err.println("ERROR: Project Version does not exist.");
+                System.exit(0);
+            } else if (!releaseVersion.equals(RELEASE_PROJECT_VERSION)) {
+                System.err.println("ERROR: Release Version does not match Application Version.");
+                System.exit(0);
+            }
+            System.out.println("\tSETV: Release Version > " + releaseVersion);
+
+            // Platform
+            String platform = properties.getProperty("platform");
+            if (platform == null) {
+                System.err.println("ERROR: Platform is null.");
+                System.exit(0);
+            }
+            boolean validPlatform = false;
+            for (String string : PLATFORMS) {
+                if (string.equals(platform)) {
+                    validPlatform = true;
+                    break;
+                }
+            }
+            if (!validPlatform) {
+                System.err.println("ERROR: settings.txt is in the wrong platform");
+                System.exit(0);
+            }
+            System.out.println("\tSETV: Platform > " + platform);
+
             // Baud Rate
             BAUD_RATE = Integer.parseInt(properties.getProperty("baudRate"));
-
             int[] baudRates = {
                     300, 600, 750, 1200,
                     2400, 4800, 9600, 19200,
@@ -46,7 +100,6 @@ public class Constants {
                     115200, 230400, 250000, 460800,
                     50000, 921600, 1000000, 2000000
             };
-
             boolean baudRateExists = false;
             for (int listedBaudRate : baudRates) {
                 if (listedBaudRate == BAUD_RATE) {
@@ -54,35 +107,60 @@ public class Constants {
                     break;
                 }
             }
-
             if (!baudRateExists) {
                 System.err.println("\tERROR: Baud Rate does not exist > " + BAUD_RATE);
                 System.exit(0);
             }
-
-            // SETV/SETX > Set Variable
             System.out.println("\tSETV: Baud Rate > " + BAUD_RATE);
 
             // Serial Comm Port
             SERIAL_COMM_PORT = properties.getProperty("commPort");
-            System.out.println("\tSETV: Comm Port > " + SERIAL_COMM_PORT);
+            if (SERIAL_COMM_PORT == null || SERIAL_COMM_PORT.isBlank()) {
+                System.err.println("ERROR: Serial Comm Port is null");
+                System.exit(0);
+            } else System.out.println("\tSETV: Comm Port > " + SERIAL_COMM_PORT);
 
             // Packet Data
-            TEAM_DATA = properties.getProperty("packetData");
-            System.out.println("\tSETV: Comm Port > " + TEAM_DATA);
+            String packetFormat = properties.getProperty("packetData");
+            if (packetFormat == null || packetFormat.isBlank()) {
+                System.err.println("\tERROR: Packet Data is null or Does not exist.");
+                System.exit(0);
+            }
+            if (!packetFormat.contains("time") || !packetFormat.contains("depth")) {
+                System.err.println("\tERROR: \"time\" or \"depth\" not found in \"packetData\".");
+                System.exit(0);
+            }
+            String[] rawPacketData = packetFormat.split(",");
+            TEAM_DATA = rawPacketData[0];
+            PACKET_NAME = rawPacketData[1].substring(0, rawPacketData[1].indexOf("-"));
+            if (rawPacketData[2].equals("time")) {
+                INDEX_TIME = 2;
+                INDEX_DEPTH = 3;
+            } else {
+                INDEX_DEPTH = 2;
+                INDEX_TIME = 3;
+            }
 
+            // Start Data Transfer Flag
             START_DATA_TRANSFER = properties.getProperty("startDataTransfer");
-            if (START_DATA_TRANSFER == null || START_DATA_TRANSFER.isEmpty()) {
+            if (START_DATA_TRANSFER == null || START_DATA_TRANSFER.isBlank()) {
                 System.err.println("\tERROR: Start Data Transfer Flag in null");
+                System.exit(0);
             } else System.out.println("\tSETV: Start Data Transfer Flag > " + START_DATA_TRANSFER);
 
+            // End Data Transfer Flag
             END_DATA_TRANSFER = properties.getProperty("endDataTransfer");
-            if (END_DATA_TRANSFER == null || END_DATA_TRANSFER.isEmpty()) {
+            if (END_DATA_TRANSFER == null || END_DATA_TRANSFER.isBlank()) {
                 System.err.println("\tERROR: Start Data Transfer Flag in null");
+                System.exit(0);
             } else System.out.println("\tSETV: END Data Transfer Flag > " + END_DATA_TRANSFER);
 
+            // Data Group Name
             DATA_GROUP_NAME = properties.getProperty("dataGroupName");
-            System.out.println("\tSETV: Data Group Name > " + DATA_GROUP_NAME);
+            if (DATA_GROUP_NAME == null || DATA_GROUP_NAME.isBlank()) {
+                System.err.println("\tERROR: Start Data Transfer Flag in null");
+                System.exit(0);
+            } else System.out.println("\tSETV: Data Group Name > " + DATA_GROUP_NAME);
 
             System.out.println();
         } catch (IOException e) {
@@ -90,4 +168,43 @@ public class Constants {
         }
     }
 
+    public String getSerialCommPort() {
+        return SERIAL_COMM_PORT;
+    }
+
+    public int getBaudRate() {
+        return BAUD_RATE;
+    }
+
+    public String getStartFlag() {
+        return START_DATA_TRANSFER;
+    }
+
+    public String getEndFlag() {
+        return END_DATA_TRANSFER;
+    }
+
+    public String getTeamData() {
+        return TEAM_DATA;
+    }
+
+    public String getDataGroupName() {
+        return DATA_GROUP_NAME;
+    }
+
+    public String getReleaseVersion() {
+        return RELEASE_PROJECT_VERSION;
+    }
+
+    public String getPacketName() {
+        return PACKET_NAME;
+    }
+
+    public int getTimeIndex() {
+        return INDEX_TIME;
+    }
+
+    public int getDepthIndex() {
+        return INDEX_DEPTH;
+    }
 }

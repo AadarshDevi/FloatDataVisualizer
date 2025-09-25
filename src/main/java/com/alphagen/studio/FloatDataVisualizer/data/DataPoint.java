@@ -2,10 +2,11 @@ package com.alphagen.studio.FloatDataVisualizer.data;
 
 public class DataPoint {
 
-    private double depth;
+    private final double depth;
+    private final int packetId;
+    private final double time;
+    private final Constants constants = Constants.getInstance();
     private double temperature;
-    private int packetId;
-    private double time;
 
     public DataPoint(int packetId, double time, double depth) {
         this.packetId = packetId;
@@ -15,7 +16,7 @@ public class DataPoint {
 
     @Override
     public String toString() {
-        return Constants.TEAM_DATA + packetId + "," + time + "," + depth;
+        return constants.TEAM_DATA + constants.getPacketName() + "-" + packetId + "," + time + "," + depth;
     }
 
     public double getDepth() {

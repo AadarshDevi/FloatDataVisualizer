@@ -13,8 +13,11 @@ public class DataReceiver implements Runnable {
     private static DataReceiver dr;
     private final DataKeeper dataKeeper;
     private final SerialPort serialPort;
+    private final Constants constants;
 
     public DataReceiver(DataKeeper dataKeeper) {
+
+        constants = Constants.getInstance();
 
         System.out.println("DATA: Serial Connection >");
 
@@ -26,12 +29,8 @@ public class DataReceiver implements Runnable {
             System.exit(0);
         }
 
-        if (Constants.SERIAL_COMM_PORT == null) {
-            System.err.println("ERROR: Serial Comm Port is null");
-            System.exit(0);
-        }
 
-        SerialPort serialPort = SerialPort.getCommPort(Constants.SERIAL_COMM_PORT);
+        SerialPort serialPort = SerialPort.getCommPort(constants.getSerialCommPort());
         boolean success = serialPort.openPort();
         serialPort.closePort();
         if (!success) {
@@ -47,7 +46,7 @@ public class DataReceiver implements Runnable {
 
         this.serialPort = serialPort;
 
-        this.serialPort.setBaudRate(Constants.BAUD_RATE);
+        this.serialPort.setBaudRate(constants.getBaudRate());
         this.serialPort.setComPortTimeouts(SerialPort.TIMEOUT_READ_SEMI_BLOCKING, 0, 0);
 
         boolean connectionEstablished = this.serialPort.openPort();
@@ -84,16 +83,11 @@ public class DataReceiver implements Runnable {
 
             while ((dataline = bufferedReader.readLine()) != null) {
 
-                if ((Constants.START_DATA_TRANSFER == null) || (Constants.END_DATA_TRANSFER == null)) {
-                    System.err.println("ERROR: Data Transfer Flag(s) are null");
-                    System.exit(0);
-                }
-
-                if (dataline.equals(Constants.START_DATA_TRANSFER)) {
+                if (dataline.equals(constants.getStartFlag())) {
                     System.out.println(dataline);
                     System.out.println();
                     startDataTransfer = true;
-                } else if (dataline.equals(Constants.END_DATA_TRANSFER)) {
+                } else if (dataline.equals(constants.getEndFlag())) {
                     System.out.println();
                     System.out.println(dataline);
                     endDataTransfer = true;
@@ -101,7 +95,7 @@ public class DataReceiver implements Runnable {
                     break;
                 }
 
-                if ((dataline != null) && startDataTransfer && !endDataTransfer && dataline.startsWith(Constants.TEAM_DATA)) {
+                if ((dataline != null) && startDataTransfer && !endDataTransfer && dataline.startsWith(constants.getTeamData())) {
                     System.out.println(dataline);
                     dataKeeper.writeData(dataline);
                 }

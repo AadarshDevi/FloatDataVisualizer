@@ -30,12 +30,14 @@ public class DataKeeper implements Runnable {
      */
     private final ArrayList<DataPoint> permanentDataPointArrayList;
     private boolean running = true;
+    private final Constants constants;
 
 
     /**
      * The constructor that creates the 2 import thread-safe lists
      */
     public DataKeeper() {
+        constants = Constants.getInstance();
         rawDataPointLinkedBlockingQueue = new LinkedBlockingQueue<>();
         dataPointLinkedBlockingQueue = new LinkedBlockingQueue<>();
         permanentDataPointArrayList = new ArrayList<>();
@@ -62,8 +64,8 @@ public class DataKeeper implements Runnable {
     private DataPoint getDataPoint(String stringData) {
         String[] dataArray = stringData.split(",");
         int packetId = Integer.parseInt(dataArray[1].substring(dataArray[1].indexOf("-") + 1));
-        double time = Double.parseDouble(dataArray[2]);
-        double depth = Double.parseDouble(dataArray[3]);
+        double time = Double.parseDouble(dataArray[constants.getTimeIndex()]);
+        double depth = Double.parseDouble(dataArray[constants.getDepthIndex()]);
         return new DataPoint(packetId, time, depth);
     }
 

@@ -55,11 +55,16 @@ public class DataPlotter {
     @FXML
     private TableColumn<DataPoint, Integer> tc_pkt;
 
+    private Constants constants;
+    private final int SCATTER_CHART_PREF_WIDTH = 824;
+
     @FXML
     public void initialize() {
 
+        constants = Constants.getInstance();
+
         mi_edit_scatterchart_fit_view.setOnAction(event -> {
-            scatterChart.setPrefWidth(824);
+            scatterChart.setPrefWidth(SCATTER_CHART_PREF_WIDTH);
         });
         mi_edit_scatterchart_full_view.setOnAction(event -> {
             scatterChart.setPrefWidth(initialWidth * groupCount);
@@ -121,7 +126,7 @@ public class DataPlotter {
         list = scatterChart.getData();
 
 //        scatterChart.getData().add(createDataGroup(0));
-        scatterChart.setPrefWidth(824);
+        scatterChart.setPrefWidth(SCATTER_CHART_PREF_WIDTH);
         scatterChart.requestLayout();
 
         initialWidth = scatterChart.getPrefWidth();
@@ -131,7 +136,7 @@ public class DataPlotter {
 
     public XYChart.Series<Double, Double> createDataGroup(int groupId) {
         XYChart.Series<Double, Double> xyChartSeries = new XYChart.Series<>();
-        xyChartSeries.setName(Constants.DATA_GROUP_NAME + groupId);
+        xyChartSeries.setName(constants.getDataGroupName() + groupId);
         return xyChartSeries;
     }
 
@@ -139,7 +144,7 @@ public class DataPlotter {
 
         if (oldPacketNum == dataPoint.getPacketId()) {
             for (XYChart.Series<Double, Double> series : list) {
-                if (series.getName().equals(Constants.DATA_GROUP_NAME + dataPoint.getPacketId())) {
+                if (series.getName().equals(constants.getDataGroupName() + dataPoint.getPacketId())) {
                     series.getData().add(new XYChart.Data<>(dataPoint.getTime(), dataPoint.getDepth()));
                     tableView.getItems().add(dataPoint);
                     System.out.println("LOG: Data Group Found > " + dataPoint.getPacketId());

@@ -1,5 +1,6 @@
 package com.alphagen.studio.FloatDataVisualizer;
 
+import com.alphagen.studio.FloatDataVisualizer.data.Constants;
 import com.alphagen.studio.FloatDataVisualizer.data.DataKeeper;
 import com.alphagen.studio.FloatDataVisualizer.data.DataPoint;
 import com.alphagen.studio.FloatDataVisualizer.datarecorder.DataPlotter;
@@ -27,7 +28,7 @@ public class Main extends Application {
         }
 
         Scene scene = new Scene(floatUI);
-        stage.setTitle("Float Data Plotter");
+        stage.setTitle("Miramar Water Jets Float Data Visualizer " + Constants.getInstance().getReleaseVersion());
         stage.setScene(scene);
         stage.setOnCloseRequest(event -> {
             if (!Launcher.isDataReceiverAlive()) {
