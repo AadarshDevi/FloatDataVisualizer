@@ -71,7 +71,7 @@
                         <id>default-cli</id>
                         <configuration>
                             <mainClass>
-                                com.alphagen.studio.float_data_recorder_2/com.alphagen.studio.float_data_recorder_2.HelloApplication
+                                com.alphagen.studio.FloatDataVisualizer/com.alphagen.studio.FloatDataVisualizer.HelloApplication
                             </mainClass>
                             <launcher>app</launcher>
                             <jlinkZipName>app</jlinkZipName>
