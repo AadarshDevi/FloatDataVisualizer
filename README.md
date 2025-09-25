@@ -1,4 +1,4 @@
-# 2025-2026 Mate Float
+# 2025-2026 Mate Float Data Visualizer
 This repository is for the releases of the Float Data Recorder. To know the technology used, check out _**Project Information**_ below.
 
 # Table of Contents / Documentation
