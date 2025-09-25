@@ -13,7 +13,7 @@ public class Launcher {
 
     public static void main(String[] args) {
 
-        Constants.getInstance();
+        Constants.getInstance().readSettings();
 
         DataKeeper dataKeeper = DataKeeper.getInstance();
         dkt = new Thread(dataKeeper);
