@@ -1,6 +1,5 @@
 # 2025-2026 Mate Float
-This repository is for the releases of the Float Data Recorder. So it will not have any of the project's code.<br>
-To know the technology used, check out _**Project Information**_ below.
+This repository is for the releases of the Float Data Recorder. To know the technology used, check out _**Project Information**_ below.
 
 # Table of Contents / Documentation
 
