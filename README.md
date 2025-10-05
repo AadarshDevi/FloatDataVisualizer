@@ -22,4 +22,4 @@ This repository is for the releases of the Float Data Recorder. To know the tech
     - C:\Users\{User}\AppData\Local\alphagnfs\float_data_visualizer\settings.txt
     - C:\Users\{User}\OneDrive\Desktop\settings.txt
 - MacOS 11.7:
-    - 
+    - /Users/veerabhadram/Desktop
