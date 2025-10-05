@@ -11,3 +11,9 @@ This repository is for the releases of the Float Data Recorder. To know the tech
 ### 6. [Project Platforms](Documentation/Platforms.md)
 ### 7. [Old Program Flowchart](Documentation/flowchart/system_flowchart_1_outdated.png)
 ### 8. [Change Logs](Documentation/ChangeLog)
+
+
+## TODO
+1. Merge Win11 and MacOS 11.7 code bases
+2. Create `public enum Platform`
+3. split some of the code into **platform specific code**.
