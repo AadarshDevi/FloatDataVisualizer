@@ -24,4 +24,4 @@ This repository is for the releases of the Float Data Recorder. To know the tech
 - MacOS 11.7:
     - /Users/{User}/Applications/alphagnfs/float_data_visualizer/settings.txt
     - /Users/{User}/Desktop/alphagnfs/float_data_visualizer/settings.txt
-- Use swing to get input if console input does not work.
+- Use **Java Swing** to get input if console input does not work.
