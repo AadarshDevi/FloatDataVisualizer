@@ -20,4 +20,6 @@ This repository is for the releases of the Float Data Recorder. To know the tech
 4. Try to get settings.txt in the folders below:
 - Win11:
     - C:\Users\{User}\AppData\Local\alphagnfs\float_data_visualizer\settings.txt
-- MacOS 11.7: 
+    - C:\Users\{User}\OneDrive\Desktop\settings.txt
+- MacOS 11.7:
+    - 
