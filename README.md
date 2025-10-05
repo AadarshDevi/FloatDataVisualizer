@@ -17,3 +17,7 @@ This repository is for the releases of the Float Data Recorder. To know the tech
 1. Merge Win11 and MacOS 11.7 code bases
 2. Create `public enum Platform`
 3. split some of the code into **platform specific code**.
+4. Try to get settings.txt in the folders below:
+- Win11:
+    - C:\Users\{User}\AppData\Local\alphagnfs\float_data_visualizer\settings.txt
+- MacOS 11.7: 
