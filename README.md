@@ -11,3 +11,17 @@ This repository is for the releases of the Float Data Recorder. To know the tech
 ### 6. [Project Platforms](Documentation/Platforms.md)
 ### 7. [Old Program Flowchart](Documentation/flowchart/system_flowchart_1_outdated.png)
 ### 8. [Change Logs](Documentation/ChangeLog)
+
+
+## TODO
+1. Merge Win11 and MacOS 11.7 code bases
+2. Create `public enum Platform`
+3. Split some of the code into **platform specific code**.
+4. Try to get settings.txt in the folders below:
+- Win11:
+    - C:\Users\{User}\AppData\Local\alphagnfs\float_data_visualizer\settings.txt
+    - C:\Users\{User}\OneDrive\Desktop\settings.txt
+- MacOS 11.7:
+    - /Users/{User}/Applications/alphagnfs/float_data_visualizer/settings.txt
+    - /Users/{User}/Desktop/alphagnfs/float_data_visualizer/settings.txt
+- Use **Java Swing** to get input if console input does not work on mac.
