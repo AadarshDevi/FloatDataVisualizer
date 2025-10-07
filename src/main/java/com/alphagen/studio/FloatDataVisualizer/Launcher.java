@@ -1,7 +1,7 @@
 package com.alphagen.studio.FloatDataVisualizer;
 
-import com.alphagen.studio.FloatDataVisualizer.data.Constants;
 import com.alphagen.studio.FloatDataVisualizer.data.DataKeeper;
+import com.alphagen.studio.FloatDataVisualizer.data.Settings;
 import com.alphagen.studio.FloatDataVisualizer.datareciever.DataReceiver;
 import javafx.application.Application;
 
@@ -13,7 +13,8 @@ public class Launcher {
 
     public static void main(String[] args) {
 
-        Constants.getInstance().readSettings();
+        Settings setting = Settings.getInstance();
+        setting.readSettings();
 
         DataKeeper dataKeeper = DataKeeper.getInstance();
         dkt = new Thread(dataKeeper);
@@ -39,5 +40,9 @@ public class Launcher {
         DataKeeper.getInstance().stop();
         if (dkt.isAlive()) System.err.println("ERROR: Data Keeper is still running");
         else System.out.println("LOG: Closed > Data Keeper");
+    }
+
+    public static enum Platform {
+        WIN11, MACOS11
     }
 }

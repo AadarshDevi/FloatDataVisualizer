@@ -74,12 +74,16 @@
                      <items>
                     <MenuItem fx:id="mi_edit_scatterchart_fit_view" mnemonicParsing="false" text="Fit View" />
                         <MenuItem fx:id="mi_edit_scatterchart_full_view" mnemonicParsing="false" text="Full View" />
+                        <MenuItem fx:id="mi_edit_scatterchart_increase_width" mnemonicParsing="false" onAction="#increaseChartWidth" text="Increase Width" />
+                        <MenuItem fx:id="mi_edit_scatterchart_decrease_width" mnemonicParsing="false" onAction="#decreaseChartWidth" text="Decrease Width" />
                         <MenuItem fx:id="mi_edit_scatterchart_screenshot" mnemonicParsing="false" text="Screenshot" />
                      </items>
                   </Menu>
                   <Menu mnemonicParsing="false" text="Data Table">
                      <items>
                         <MenuItem fx:id="mi_edit_tableview_screenshot" mnemonicParsing="false" text="Screenshot" />
+                        <MenuItem fx:id="mi_edit_tableview_increase_width" mnemonicParsing="false" onAction="#increaseTableHeight" text="↑ Increase Height" />
+                        <MenuItem fx:id="mi_edit_tableview_decrease_width" mnemonicParsing="false" onAction="#decreaseTableHeight" text="↓ Decrease Height" />
                      </items>
                   </Menu>
             </items>

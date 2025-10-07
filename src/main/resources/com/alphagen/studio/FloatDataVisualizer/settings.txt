@@ -1,12 +1,15 @@
 # Visualizer Data
 commPort=COM3
 baudRate=115200
-packetData=PN12-MiramarWaterJets,pkt-,time,depth
+packetData=PN12-MiramarWaterJets,pkt-,time,unit2
+time_unit=s
+unit2_name=depth
+unit2_unit=m/s
 startDataTransfer=--start-data-transfer
 endDataTransfer=--end-data-transfer
 dataGroupName=Profile
 
 # Project Data
-projectVersion=2.1.0
-releaseVersion=1.1.0
+projectVersion=2.1.2.0
+releaseVersion=1.2.0
 platform=win11

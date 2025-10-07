@@ -5,7 +5,7 @@ public class DataPoint {
     private final double depth;
     private final int packetId;
     private final double time;
-    private final Constants constants = Constants.getInstance();
+    private final Settings settings = Settings.getInstance();
     private double temperature;
 
     public DataPoint(int packetId, double time, double depth) {
@@ -16,7 +16,7 @@ public class DataPoint {
 
     @Override
     public String toString() {
-        return constants.TEAM_DATA + constants.getPacketName() + "-" + packetId + "," + time + "," + depth;
+        return settings.TEAM_DATA + settings.getPacketName() + "-" + packetId + "," + time + "," + depth;
     }
 
     public double getDepth() {

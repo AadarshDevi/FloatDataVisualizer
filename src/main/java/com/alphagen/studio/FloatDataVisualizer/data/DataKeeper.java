@@ -20,7 +20,7 @@ public class DataKeeper implements Runnable {
      *
      * @see LinkedBlockingQueue
      */
-    private final LinkedBlockingQueue<DataPoint> dataPointLinkedBlockingQueue;
+    private final LinkedBlockingQueue<DataPointRecord> dataPointLinkedBlockingQueue;
 
     /**
      * Data that is read is then moved to this list. This is the permanent
@@ -28,16 +28,16 @@ public class DataKeeper implements Runnable {
      *
      * @see LinkedBlockingQueue
      */
-    private final ArrayList<DataPoint> permanentDataPointArrayList;
+    private final ArrayList<DataPointRecord> permanentDataPointArrayList;
     private boolean running = true;
-    private final Constants constants;
+    private final Settings settings;
 
 
     /**
      * The constructor that creates the 2 import thread-safe lists
      */
     public DataKeeper() {
-        constants = Constants.getInstance();
+        settings = Settings.getInstance();
         rawDataPointLinkedBlockingQueue = new LinkedBlockingQueue<>();
         dataPointLinkedBlockingQueue = new LinkedBlockingQueue<>();
         permanentDataPointArrayList = new ArrayList<>();
@@ -55,18 +55,20 @@ public class DataKeeper implements Runnable {
     }
 
     /**
-     * Converts a raw data string into a DataPoint obj
+     * Converts a raw data string into a DataPointRecord obj
      *
      * @param stringData raw string information
-     * @return DataPoint obj
-     * @see DataPoint
+     * @return DataPointRecord obj
+     * @see DataPointRecord
      */
-    private DataPoint getDataPoint(String stringData) {
+    private DataPointRecord createDataPointRecord(String stringData) {
         String[] dataArray = stringData.split(",");
         int packetId = Integer.parseInt(dataArray[1].substring(dataArray[1].indexOf("-") + 1));
-        double time = Double.parseDouble(dataArray[constants.getTimeIndex()]);
-        double depth = Double.parseDouble(dataArray[constants.getDepthIndex()]);
-        return new DataPoint(packetId, time, depth);
+        double time = Double.parseDouble(dataArray[settings.getTimeIndex()]);
+        double unit2 = Double.parseDouble(dataArray[settings.getUNIT2Index()]);
+//        double depth = Double.parseDouble(dataArray[settings.getDepthIndex()]);
+        return new DataPointRecord(packetId, time, unit2);
+//        return new DataPointRecord(packetId, time, depth);
     }
 
     /**
@@ -84,7 +86,7 @@ public class DataKeeper implements Runnable {
 
     }
 
-    public DataPoint getDataPoint() {
+    public DataPointRecord getDataPointRecord() {
         return dataPointLinkedBlockingQueue.poll();
     }
 
@@ -92,9 +94,9 @@ public class DataKeeper implements Runnable {
      * Gets the arraylist that has all the data
      *
      * @return list of all DataPoints
-     * @see DataPoint
+     * @see DataPointRecord
      */
-    public ArrayList<DataPoint> getAllData() {
+    public ArrayList<DataPointRecord> getAllData() {
         return permanentDataPointArrayList;
     }
 
@@ -106,7 +108,7 @@ public class DataKeeper implements Runnable {
      * Whenever there is data in raw data list, it takes the data and converts it into DataPoints
      * and puts it in the data list
      *
-     * @see DataPoint
+     * @see DataPointRecord
      * @see LinkedBlockingQueue
      */
     @Override
@@ -115,9 +117,9 @@ public class DataKeeper implements Runnable {
             if (!rawDataPointLinkedBlockingQueue.isEmpty()) {
                 String dataline = rawDataPointLinkedBlockingQueue.poll();
                 if (dataline != null) {
-                    DataPoint dataPoint = getDataPoint(dataline);
+                    DataPointRecord dataPointRecord = createDataPointRecord(dataline);
                     try {
-                        dataPointLinkedBlockingQueue.put(dataPoint);
+                        dataPointLinkedBlockingQueue.put(dataPointRecord);
                     } catch (InterruptedException e) {
                         throw new RuntimeException(e);
                     }

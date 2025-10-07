@@ -1,8 +1,11 @@
 package com.alphagen.studio.FloatDataVisualizer.datarecorder;
 
 import com.alphagen.studio.FloatDataVisualizer.Launcher;
-import com.alphagen.studio.FloatDataVisualizer.data.Constants;
-import com.alphagen.studio.FloatDataVisualizer.data.DataPoint;
+import com.alphagen.studio.FloatDataVisualizer.data.DataPointRecord;
+import com.alphagen.studio.FloatDataVisualizer.data.Settings;
+import com.alphagen.studio.FloatDataVisualizer.filepaths.FilePath;
+import com.alphagen.studio.FloatDataVisualizer.filepaths.FilePathFactory;
+import javafx.beans.property.ReadOnlyObjectWrapper;
 import javafx.collections.ObservableList;
 import javafx.embed.swing.SwingFXUtils;
 import javafx.fxml.FXML;
@@ -13,7 +16,6 @@ import javafx.scene.chart.XYChart;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
-import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.WritableImage;
 
 import javax.imageio.ImageIO;
@@ -22,6 +24,7 @@ import java.io.IOException;
 
 public class DataPlotter {
 
+    private final int SCATTER_CHART_PREF_WIDTH = 824;
     @FXML
     private MenuItem mi_close;
     @FXML
@@ -32,13 +35,10 @@ public class DataPlotter {
     private MenuItem mi_edit_scatterchart_screenshot;
     @FXML
     private MenuItem mi_edit_tableview_screenshot;
-
     private int groupCount = 1;
     private double initialWidth;
     private ObservableList<XYChart.Series<Double, Double>> list;
     private int oldPacketNum = -1;
-    private String user = System.getProperty("user.name");
-
     // <Double, Double> : DataTypes of X-Axis and Y-Axis
     @FXML
     private ScatterChart<Double, Double> scatterChart;
@@ -47,21 +47,30 @@ public class DataPlotter {
     @FXML
     private NumberAxis yAxis;
     @FXML
-    private TableView<DataPoint> tableView;
+    private TableView<DataPointRecord> tableView;
     @FXML
-    private TableColumn<DataPoint, Double> tc_time;
+    private TableColumn<DataPointRecord, Double> tc_time;
     @FXML
-    private TableColumn<DataPoint, Double> tc_depth;
+    private TableColumn<DataPointRecord, Double> tc_depth;
     @FXML
-    private TableColumn<DataPoint, Integer> tc_pkt;
+    private TableColumn<DataPointRecord, Integer> tc_pkt;
+    private Settings settings;
 
-    private Constants constants;
-    private final int SCATTER_CHART_PREF_WIDTH = 824;
+    @FXML
+    private MenuItem mi_edit_scatterchart_increase_width;
+    @FXML
+    private MenuItem mi_edit_scatterchart_decrease_width;
+    @FXML
+    private MenuItem mi_edit_tableview_increase_width;
+    @FXML
+    private MenuItem mi_edit_tableview_decrease_width;
 
     @FXML
     public void initialize() {
 
-        constants = Constants.getInstance();
+        FilePath filePath = FilePathFactory.getFilePathFactory().getFilePath();
+
+        settings = Settings.getInstance();
 
         mi_edit_scatterchart_fit_view.setOnAction(event -> {
             scatterChart.setPrefWidth(SCATTER_CHART_PREF_WIDTH);
@@ -72,12 +81,11 @@ public class DataPlotter {
         mi_edit_scatterchart_screenshot.setOnAction(event -> {
             int screenshotcount = 1;
             WritableImage writableImage = scatterChart.snapshot(new SnapshotParameters(), null);
-            System.out.println(user);
-            File file = new File("C:/Users/" + user + "/OneDrive/Desktop/float_data_graph_screenshot_" + screenshotcount + ".png");
-            while (file.exists()) {
+            File file = null;
+            do {
+                file = new File(filePath.getScatterPath() + "float_data_graph_screenshot_" + screenshotcount + ".png");
                 screenshotcount++;
-                file = new File("C:/Users/" + user + "/OneDrive/Desktop/float_data_graph_screenshot_" + screenshotcount + ".png");
-            }
+            } while (file.exists());
             try {
                 ImageIO.write(SwingFXUtils.fromFXImage(writableImage, null), "png", file);
                 System.out.println("DATA: Screenshot saved to " + file.getAbsolutePath());
@@ -89,11 +97,12 @@ public class DataPlotter {
         mi_edit_tableview_screenshot.setOnAction(event -> {
             int screenshotcount = 1;
             WritableImage writableImage = tableView.snapshot(new SnapshotParameters(), null);
-            File file = new File("C:/Users/" + user + "/OneDrive/Desktop/float_data_table_screenshot_" + screenshotcount + ".png");
-            while (file.exists()) {
+            File file = null;
+            do {
+                file = new File(filePath.getTablePath() + "float_data_table_screenshot_" + screenshotcount + ".png");
                 screenshotcount++;
-                file = new File("C:/Users/" + user + "/OneDrive/Desktop/float_data_table_screenshot_" + screenshotcount + ".png");
-            }
+            } while (file.exists());
+
             try {
                 ImageIO.write(SwingFXUtils.fromFXImage(writableImage, null), "png", file);
                 System.out.println("DATA: Screenshot saved to " + file.getAbsolutePath());
@@ -119,9 +128,10 @@ public class DataPlotter {
         yAxis = new NumberAxis();
         yAxis.setAutoRanging(false);
 
-        tc_time.setCellValueFactory(new PropertyValueFactory<>("time"));
-        tc_depth.setCellValueFactory(new PropertyValueFactory<>("depth"));
-        tc_pkt.setCellValueFactory(new PropertyValueFactory<>("packetId"));
+        // New Data Accessor
+        tc_time.setCellValueFactory(cellData -> new ReadOnlyObjectWrapper<>(cellData.getValue().time()));
+        tc_depth.setCellValueFactory(cellData -> new ReadOnlyObjectWrapper<>(cellData.getValue().depth()));
+        tc_pkt.setCellValueFactory(cellData -> new ReadOnlyObjectWrapper<>(cellData.getValue().packetId()));
 
         list = scatterChart.getData();
 
@@ -132,31 +142,40 @@ public class DataPlotter {
         initialWidth = scatterChart.getPrefWidth();
         tableView.setFixedCellSize(24);
         tableView.setPrefHeight(tableView.getFixedCellSize() * 23);
+
+        mi_edit_tableview_increase_width.setDisable(true);
+        mi_edit_tableview_decrease_width.setDisable(true);
+
+        mi_edit_tableview_increase_width.setVisible(false);
+        mi_edit_tableview_decrease_width.setVisible(false);
+
+        tc_time.setText("Time (" + settings.TIME_UNIT + ")");
+        tc_depth.setText(settings.UNIT2_NAME + " (" + settings.UNIT2_UNIT + ")");
     }
 
     public XYChart.Series<Double, Double> createDataGroup(int groupId) {
         XYChart.Series<Double, Double> xyChartSeries = new XYChart.Series<>();
-        xyChartSeries.setName(constants.getDataGroupName() + groupId);
+        xyChartSeries.setName(settings.getDataGroupName() + groupId);
         return xyChartSeries;
     }
 
-    public void writeDataPoint(DataPoint dataPoint) {
+    public void writeDataPoint(DataPointRecord dataPointRecord) {
 
-        if (oldPacketNum == dataPoint.getPacketId()) {
+        if (oldPacketNum == dataPointRecord.packetId()) {
             for (XYChart.Series<Double, Double> series : list) {
-                if (series.getName().equals(constants.getDataGroupName() + dataPoint.getPacketId())) {
-                    series.getData().add(new XYChart.Data<>(dataPoint.getTime(), dataPoint.getDepth()));
-                    tableView.getItems().add(dataPoint);
-                    System.out.println("LOG: Data Group Found > " + dataPoint.getPacketId());
+                if (series.getName().equals(settings.getDataGroupName() + dataPointRecord.packetId())) {
+                    series.getData().add(new XYChart.Data<>(dataPointRecord.time(), dataPointRecord.depth()));
+                    tableView.getItems().add(dataPointRecord);
+                    System.out.println("LOG: Data Group Found > " + dataPointRecord.packetId());
                 }
             }
         } else {
-            System.out.println("LOG: Data Group Created > " + dataPoint.getPacketId());
-            XYChart.Series<Double, Double> xyChartSeries = createDataGroup(dataPoint.getPacketId());
-            xyChartSeries.getData().add(new XYChart.Data<>(dataPoint.getTime(), dataPoint.getDepth()));
-            tableView.getItems().add(dataPoint);
+            System.out.println("LOG: Data Group Created > " + dataPointRecord.packetId());
+            XYChart.Series<Double, Double> xyChartSeries = createDataGroup(dataPointRecord.packetId());
+            xyChartSeries.getData().add(new XYChart.Data<>(dataPointRecord.time(), dataPointRecord.depth()));
+            tableView.getItems().add(dataPointRecord);
             scatterChart.getData().add(xyChartSeries);
-            oldPacketNum = dataPoint.getPacketId();
+            oldPacketNum = dataPointRecord.packetId();
             groupCount++;
         }
 
@@ -170,6 +189,25 @@ public class DataPlotter {
     }
 
     @FXML
+    public void increaseChartWidth() {
+        scatterChart.setPrefWidth(scatterChart.getPrefWidth() * 1.2);
+        System.out.println("LOG: Chart Width: " + scatterChart.getPrefWidth());
+    }
+
+    @FXML
+    public void decreaseChartWidth() {
+        scatterChart.setPrefWidth(scatterChart.getPrefWidth() * 0.8);
+        System.out.println("LOG: Chart Width: " + scatterChart.getPrefWidth());
+    }
+
+    @FXML
+    public void increaseTableHeight() {
+    }
+
+    @FXML
+    public void decreaseTableHeight() {
+    }
+
     public void closeApp() {
         if (!Launcher.isDataReceiverAlive()) {
             Launcher.killDataReceiver();

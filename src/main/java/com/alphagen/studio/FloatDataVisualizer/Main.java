@@ -1,13 +1,14 @@
 package com.alphagen.studio.FloatDataVisualizer;
 
-import com.alphagen.studio.FloatDataVisualizer.data.Constants;
+import com.alphagen.studio.FloatDataVisualizer.data.Settings;
 import com.alphagen.studio.FloatDataVisualizer.data.DataKeeper;
-import com.alphagen.studio.FloatDataVisualizer.data.DataPoint;
+import com.alphagen.studio.FloatDataVisualizer.data.DataPointRecord;
 import com.alphagen.studio.FloatDataVisualizer.datarecorder.DataPlotter;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
@@ -28,8 +29,10 @@ public class Main extends Application {
         }
 
         Scene scene = new Scene(floatUI);
-        stage.setTitle("Miramar Water Jets Float Data Visualizer " + Constants.getInstance().getReleaseVersion());
+        stage.setTitle("Miramar Water Jets Float Data Visualizer " + Settings.getInstance().getReleaseVersion());
         stage.setScene(scene);
+        Image icon = new Image(Main.class.getResourceAsStream("float_data_recorder_2_png_icon_2.png"));
+        stage.getIcons().add(icon);
         stage.setOnCloseRequest(event -> {
             if (!Launcher.isDataReceiverAlive()) {
                 Launcher.killDataReceiver();
@@ -44,9 +47,9 @@ public class Main extends Application {
         Thread dataReader = new Thread(() -> {
             boolean running = true;
             while (running) {
-                DataPoint dataPoint = DataKeeper.getInstance().getDataPoint();
-                if (dataPoint != null) {
-                    Platform.runLater(() -> dataPlotter.writeDataPoint(dataPoint));
+                DataPointRecord dataPointRecord = DataKeeper.getInstance().getDataPointRecord();
+                if (dataPointRecord != null) {
+                    Platform.runLater(() -> dataPlotter.writeDataPoint(dataPointRecord));
                 }
             }
         });

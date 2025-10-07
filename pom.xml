@@ -6,7 +6,7 @@
 
     <groupId>com.alphagen.studio</groupId>
     <artifactId>FloatDataVisualizer</artifactId>
-    <version>2.1.0</version>
+    <version>2.1.1.2</version>
     <name>FloatDataVisualizer</name>
 
     <properties>
@@ -95,7 +95,8 @@
                         </goals>
                         <configuration>
                             <transformers>
-                                <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+                                <transformer
+                                        implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
                                     <mainClass>com.alphagen.studio.FloatDataVisualizer.Launcher</mainClass>
                                 </transformer>
                             </transformers>
