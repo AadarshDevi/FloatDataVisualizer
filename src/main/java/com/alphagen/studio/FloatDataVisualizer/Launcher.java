@@ -43,6 +43,6 @@ public class Launcher {
     }
 
     public static enum Platform {
-        WIN11, MACOS11
+        WIN11, MACOS
     }
 }

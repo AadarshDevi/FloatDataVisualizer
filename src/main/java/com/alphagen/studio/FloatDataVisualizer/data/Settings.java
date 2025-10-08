@@ -16,11 +16,11 @@ public class Settings implements Exitter {
     public static final boolean DEBUG = true;
 
     // Other Vars
-    public static final Launcher.Platform PLATFORM = Launcher.Platform.WIN11;
+    public static final Launcher.Platform PLATFORM = Launcher.Platform.MACOS;
     private static Settings settings;
     public final FilePath filePath;
     // Application
-    private final String[] PLATFORMS = {"win10", "win11", "macOS", "linux"};
+    private final String[] PLATFORMS = {"win10", "win11", "macos", "linux"};
     private final String INTERNAL_PROJECT_VERSION = "2.1.2.0";
     private final String RELEASE_PROJECT_VERSION = "1.2.0";
     private final SerialPort[] serialPorts;
@@ -52,7 +52,7 @@ public class Settings implements Exitter {
         String basepath = switch (PLATFORM) {
             case WIN11 ->
                     "C:/Users/" + user + "/AppData/Local/alphagnfss/FloatDataVisualizer/" + RELEASE_PROJECT_VERSION;
-            case MACOS11 ->
+            case MACOS ->
                     "/Users/" + user + "/Applications/alphagnfss/FloatDataVisualizer/" + RELEASE_PROJECT_VERSION;
             default -> null;
         };
@@ -80,7 +80,11 @@ public class Settings implements Exitter {
 
         try (PrintWriter printWriter = new PrintWriter(filePath.getSettingsPath())) {
             printWriter.println("# Visualizer Data");
-            printWriter.println("commPort=COM3");
+            String portName = switch (PLATFORM) {
+                case WIN11 -> "COM3";
+                case MACOS -> "/dev/cu.usbmodem14101";
+            };
+            printWriter.println("commPort="+portName);
             printWriter.println("baudRate=115200");
             printWriter.println("packetData=PN12-MiramarWaterJets,pkt-,time,unit2");
             printWriter.println("time_unit=s");
@@ -134,8 +138,8 @@ public class Settings implements Exitter {
             // Platform
             String platform = properties.getProperty("platform");
             if (platform == null) exit("Platform is null.");
-            if (!PLATFORM.toString().equalsIgnoreCase(platform))
-                exit("Wrong App. Please use " + platform + "version of the app.");
+            if (!PLATFORM.toString().toLowerCase().equalsIgnoreCase(platform))
+                exit("Wrong App. Please use " + platform + " version of the app.");
             else System.out.println("\tSETV: App Platform > " + platform);
 
             boolean validPlatform = false;
