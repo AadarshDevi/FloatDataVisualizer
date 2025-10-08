@@ -5,6 +5,7 @@ import com.alphagen.studio.FloatDataVisualizer.data.DataPointRecord;
 import com.alphagen.studio.FloatDataVisualizer.data.Settings;
 import com.alphagen.studio.FloatDataVisualizer.filepaths.FilePath;
 import com.alphagen.studio.FloatDataVisualizer.filepaths.FilePathFactory;
+import com.alphagen.studio.FloatDataVisualizer.log.Exitter;
 import javafx.beans.property.ReadOnlyObjectWrapper;
 import javafx.collections.ObservableList;
 import javafx.embed.swing.SwingFXUtils;
@@ -22,7 +23,7 @@ import javax.imageio.ImageIO;
 import java.io.File;
 import java.io.IOException;
 
-public class DataPlotter {
+public class DataPlotter implements Exitter {
 
     private final int SCATTER_CHART_PREF_WIDTH = 824;
     @FXML
@@ -118,6 +119,7 @@ public class DataPlotter {
             }
             System.out.println("LOG: Closing DataRecorder");
             System.exit(0);
+            exit(Exitter.NO_ERROR);
         });
 
         xAxis = new NumberAxis();

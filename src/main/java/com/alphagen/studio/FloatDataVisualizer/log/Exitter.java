@@ -4,14 +4,15 @@ import javax.swing.*;
 
 public interface Exitter {
 
+    String NO_ERROR = "NO_ERROR";
+
     default void exit(String errorMessage) {
         try {
-            System.err.println("ERROR: " + errorMessage);
-            Thread.sleep(10);
-            JOptionPane.showMessageDialog(null, errorMessage, "Error", JOptionPane.ERROR_MESSAGE);
-
-            // TODO: Create Custom Popup
-
+            if (!errorMessage.equals(NO_ERROR)) {
+                System.err.println("ERROR: " + errorMessage);
+                Thread.sleep(10);
+                JOptionPane.showMessageDialog(null, errorMessage, "Error", JOptionPane.ERROR_MESSAGE);
+            }
             Thread.sleep(10);
             System.exit(0);
         } catch (InterruptedException e) {
