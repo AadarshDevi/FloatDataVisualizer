@@ -105,7 +105,22 @@ public class DataKeeper implements Runnable, Exitter {
     }
 
     public DataPointRecord getDataPointRecord() {
-        return dataPointLinkedBlockingQueue.poll();
+        // TODO: take DPR, write to file, add to permanentDataPointArrayList, then return.
+        DataPointRecord dpr = dataPointLinkedBlockingQueue.poll();
+        permanentDataPointArrayList.add(dpr);
+        try {
+            if(settings.WRITE_CSV) {
+                if(settings.WRITE_RAW) {
+                    dw.writeRaw(dpr);
+                } else {
+                    dw.write(dpr);
+                }
+            }
+        } catch (IOException e) {
+            JOptionPane.showMessageDialog(null, "Unable to DataPointRecord:\n" + dpr, "DataKeeper Exception", JOptionPane.ERROR_MESSAGE);
+            throw new RuntimeException(e);
+        }
+        return dpr;
     }
 
     /**
