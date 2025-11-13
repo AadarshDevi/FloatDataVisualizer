@@ -84,6 +84,7 @@ public class Settings implements Exitter {
             String portName = switch (PLATFORM) {
                 case WIN11 -> "COM3";
                 case MACOS -> "/dev/cu.usbmodem14101";
+                case LINUX -> null;
             };
             printWriter.println("commPort="+portName);
             printWriter.println("baudRate=115200");
