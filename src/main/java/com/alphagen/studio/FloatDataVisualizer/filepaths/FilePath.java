@@ -15,6 +15,7 @@ public class FilePath implements Exitter {
     public final String screenshot_tableview;
     public final String settingspath;
     public final String logpath;
+    public final String csvpath;
 
     public FilePath(String basepath) {
         this.basepath = basepath;
@@ -67,32 +68,39 @@ public class FilePath implements Exitter {
             JOptionPane.showMessageDialog(null, "Unable to generate Log folder.", "FilePath Exception", JOptionPane.ERROR_MESSAGE);
         }
 
+        csvpath = this.basepath + "/data/";
+        try {
+            generateFolder("CSV", logpath);
+        } catch (IOException e) {
+            System.err.println("ERROR: Unable to generate Data(CSV) folder");
+            JOptionPane.showMessageDialog(null, "Unable to generate Data(CSV) folder.", "FilePath Exception", JOptionPane.ERROR_MESSAGE);
+        }
     }
 
     public boolean writeSave(File settingsfile) {
         if (settingsfile.length() == 0) return true;
 
-        var let = """
-        # Visualizer Data
-        commPort=COM3
-        baudRate=115200
-        packetData=PN12-MiramarWaterJets,pkt-,time,unit2
-        time_unit=s
-        unit2_name=depth
-        unit2_unit=m/s
-        startDataTransfer=--start-data-transfer
-        endDataTransfer=--end-data-transfer
-        dataGroupName=Profile
-
-        # Project Data
-        projectVersion=2.1.2.0
-        releaseVersion=1.2.0
-        platform=win11
-        """;
-
-        try(PrintWriter printWriter = new PrintWriter(new FileWriter(settingsfile))) {
-
-        }
+//        var let = """
+//        # Visualizer Data
+//        commPort=COM3
+//        baudRate=115200
+//        packetData=PN12-MiramarWaterJets,pkt-,time,unit2
+//        time_unit=s
+//        unit2_name=depth
+//        unit2_unit=m/s
+//        startDataTransfer=--start-data-transfer
+//        endDataTransfer=--end-data-transfer
+//        dataGroupName=Profile
+//
+//        # Project Data
+//        projectVersion=2.1.2.0
+//        releaseVersion=1.2.0
+//        platform=win11
+//        """;
+//
+//        try(PrintWriter printWriter = new PrintWriter(new FileWriter(settingsfile))) {
+//
+//        }
 
         return true;
     }
@@ -134,5 +142,7 @@ public class FilePath implements Exitter {
         return screenshot_tableview;
     }
 
-
+    public String getCSVPath() {
+        return csvpath;
+    }
 }
