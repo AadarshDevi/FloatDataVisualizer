@@ -22,8 +22,8 @@ public class Settings implements Exitter {
     public final FilePath filePath;
     // Application
     private final String[] PLATFORMS = {"win10", "win11", "macos", "linux"};
-    private final String INTERNAL_PROJECT_VERSION = "2.1.2.1";
-    private final String RELEASE_PROJECT_VERSION = "1.2.1";
+    private final String INTERNAL_PROJECT_VERSION = "2.1.1.9";
+    private final String RELEASE_PROJECT_VERSION = "1.1.9";
     private final SerialPort[] serialPorts;
     // DataPlotter
     public String DATA_GROUP_NAME;
@@ -84,6 +84,7 @@ public class Settings implements Exitter {
             String portName = switch (PLATFORM) {
                 case WIN11 -> "COM3";
                 case MACOS -> "/dev/cu.usbmodem14101";
+                case LINUX -> null;
             };
             printWriter.println("commPort="+portName);
             printWriter.println("baudRate=115200");
