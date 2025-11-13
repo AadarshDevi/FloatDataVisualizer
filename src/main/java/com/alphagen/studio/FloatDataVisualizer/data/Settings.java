@@ -20,18 +20,22 @@ public class Settings implements Exitter {
     public static final Launcher.Platform PLATFORM = Launcher.Platform.MACOS;
     private static Settings settings;
     public final FilePath filePath;
+
     // Application
     private final String[] PLATFORMS = {"win10", "win11", "macos", "linux"};
     private final String INTERNAL_PROJECT_VERSION = "2.1.1.9";
     private final String RELEASE_PROJECT_VERSION = "1.1.9";
     private final SerialPort[] serialPorts;
+
     // DataPlotter
     public String DATA_GROUP_NAME;
+
     // DataReceiver
     public int BAUD_RATE;
     public String SERIAL_COMM_PORT;
     public String START_DATA_TRANSFER;
     public String END_DATA_TRANSFER;
+
     // DataKeeper
     public String TEAM_DATA;
     public String PACKET_NAME;
@@ -41,8 +45,10 @@ public class Settings implements Exitter {
     public String UNIT2_NAME;
     public String UNIT2_UNIT;
     public String TIME_UNIT;
+
     // DataWriter
     public boolean WRITE_CSV;
+    public boolean WRITE_RAW;
 
 
     // SETV/SETX > Set Variable
@@ -69,7 +75,7 @@ public class Settings implements Exitter {
         File settingsFile = new File(filePath.getSettingsPath());
 
         if ((settingsFile.exists() && settingsFile.isFile() && (settingsFile.length() == 0)) || !settingsFile.exists())
-            generateSettingsfile();
+            generateSettingsFile();
 
         serialPorts = SerialPort.getCommPorts();
     }
@@ -79,7 +85,7 @@ public class Settings implements Exitter {
         return settings;
     }
 
-    private void generateSettingsfile() {
+    private void generateSettingsFile() {
 
         try (PrintWriter printWriter = new PrintWriter(filePath.getSettingsPath())) {
             printWriter.println("# Visualizer Data");
@@ -102,6 +108,8 @@ public class Settings implements Exitter {
             printWriter.println("projectVersion=" + INTERNAL_PROJECT_VERSION);
             printWriter.println("releaseVersion=" + RELEASE_PROJECT_VERSION);
             printWriter.println("platform=" + PLATFORM.toString().toLowerCase());
+            printWriter.println("csv=" + false);
+            printWriter.println("raw=" + false);
         } catch (FileNotFoundException e) {
             exit("Unable to find settings.txt");
         }
@@ -177,7 +185,8 @@ public class Settings implements Exitter {
                 // TODO: add joptionpane to show all comm ports
                 showSerialCommPorts();
                 exit("Serial Comm Port is null");
-            } else System.out.println("\tSETV: Comm Port > " + SERIAL_COMM_PORT);
+            }
+            System.out.println("\tSETV: Comm Port > " + SERIAL_COMM_PORT);
             Thread.sleep(50);
 
             // Packet Data
@@ -205,40 +214,64 @@ public class Settings implements Exitter {
             TIME_UNIT = properties.getProperty("time_unit");
             if (TIME_UNIT == null || TIME_UNIT.isBlank()) {
                 exit("Time Unit is EMPTY");
-            } else System.out.println("\tSETV: Time Unit > " + TIME_UNIT);
+            }
+            System.out.println("\tSETV: Time Unit > " + TIME_UNIT);
             Thread.sleep(50);
 
             UNIT2_NAME = properties.getProperty("unit2_name");
             if (UNIT2_NAME == null || UNIT2_NAME.isBlank()) {
                 exit("Unit 2 Name in null");
-            } else System.out.println("\tSETV: Unit 2 Name > " + UNIT2_NAME);
+            }
+            System.out.println("\tSETV: Unit 2 Name > " + UNIT2_NAME);
             Thread.sleep(50);
 
             UNIT2_UNIT = properties.getProperty("unit2_unit");
             if (UNIT2_UNIT == null || UNIT2_UNIT.isBlank()) {
                 exit("Unit 2 Unit in null");
-            } else System.out.println("\tSETV: Unit 2 Unit > " + UNIT2_UNIT);
+            }
+            System.out.println("\tSETV: Unit 2 Unit > " + UNIT2_UNIT);
             Thread.sleep(50);
 
             // Start Data Transfer Flag
             START_DATA_TRANSFER = properties.getProperty("startDataTransfer");
             if (START_DATA_TRANSFER == null || START_DATA_TRANSFER.isBlank()) {
                 exit("Start Data Transfer Flag in null");
-            } else System.out.println("\tSETV: Start Data Transfer Flag > " + START_DATA_TRANSFER);
+            }
+            System.out.println("\tSETV: Start Data Transfer Flag > " + START_DATA_TRANSFER);
             Thread.sleep(50);
 
             // End Data Transfer Flag
             END_DATA_TRANSFER = properties.getProperty("endDataTransfer");
             if (END_DATA_TRANSFER == null || END_DATA_TRANSFER.isBlank()) {
                 exit("End Data Transfer Flag in null");
-            } else System.out.println("\tSETV: END Data Transfer Flag > " + END_DATA_TRANSFER);
+            }
+            System.out.println("\tSETV: END Data Transfer Flag > " + END_DATA_TRANSFER);
             Thread.sleep(50);
 
             // Data Group Name
             DATA_GROUP_NAME = properties.getProperty("dataGroupName");
             if (DATA_GROUP_NAME == null || DATA_GROUP_NAME.isBlank()) {
                 exit("Data Group Name in null");
-            } else System.out.println("\tSETV: Data Group Name > " + DATA_GROUP_NAME);
+            }
+            System.out.println("\tSETV: Data Group Name > " + DATA_GROUP_NAME);
+            Thread.sleep(50);
+
+            // Write CSV File
+            String stringCSVWrite = properties.getProperty("csv");
+            if (stringCSVWrite == null || stringCSVWrite.isBlank()) {
+                WRITE_CSV = false;
+            }
+            WRITE_CSV = Boolean.parseBoolean(stringCSVWrite);
+            System.out.println("\tSETV: Write CSV File > " + WRITE_CSV);
+            Thread.sleep(50);
+
+            // Write CSV File
+            String stringRAWWrite = properties.getProperty("raw");
+            if (stringRAWWrite == null || stringRAWWrite.isBlank()) {
+                WRITE_RAW = false;
+            }
+            WRITE_CSV = Boolean.parseBoolean(stringRAWWrite);
+            System.out.println("\tSETV: Write Raw Data in CSV > " + WRITE_CSV);
             Thread.sleep(50);
 
             // Serial Comm Port
