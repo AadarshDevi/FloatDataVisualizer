@@ -1,6 +1,10 @@
 # 2025-2026 Mate Float's Data Visualizer
 This repository is for the releases of the Float Data Recorder. To know the technology used, check out _**Project Information**_ below.
 
+# Announcements
+Code is currently started being worked on. Development will be slow.
+- DataWriter: User will be able to write data in a csv file.
+
 # Table of Contents / Documentation
 
 ### 1. [Project Information](Documentation/ProjectInformation.md)
