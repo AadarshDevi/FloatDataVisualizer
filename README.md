@@ -12,8 +12,8 @@ This repository is for the releases of the Float Data Recorder. To know the tech
 ### 7. [Old Program Flowchart](Documentation/flowchart/system_flowchart_1_outdated.png)
 
 # ChangeLogs
-1. Current Add ChangeLog [ChangeLog](Documentation/ChangeLog/2_1_1.md)
-2. Current Version Dev [ChangeLog](Documentation/ChangeLog/2_2_0.md)
+1. Current App [ChangeLog 2.1.1](Documentation/ChangeLog/2_1_1.md)
+2. Current Dev [ChangeLog 2.2.0](Documentation/ChangeLog/2_2_0.md)
 3. Archived [ChangeLogs](Documentation/ChangeLog)
 
 ## TODO
