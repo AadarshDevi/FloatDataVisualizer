@@ -55,6 +55,7 @@ public class Main extends Application {
                 }
             }
         });
+        dataReader.setName("DataReader");
         dataReader.setDaemon(true);
         dataReader.start();
 

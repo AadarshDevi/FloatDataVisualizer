@@ -20,10 +20,12 @@ public class Launcher {
 
         DataKeeper dataKeeper = DataKeeper.getInstance();
         dkt = new Thread(dataKeeper);
+        dkt.setName("DataKeeper");
         dkt.start();
 
         DataReceiver dataReceiver = DataReceiver.getInstance();
         drt = new Thread(dataReceiver);
+        drt.setName("DataReceiver");
         drt.start();
 
         Application.launch(Main.class, args);
