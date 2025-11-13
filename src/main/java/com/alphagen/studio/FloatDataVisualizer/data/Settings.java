@@ -41,6 +41,8 @@ public class Settings implements Exitter {
     public String UNIT2_NAME;
     public String UNIT2_UNIT;
     public String TIME_UNIT;
+    // DataWriter
+    public boolean WRITE_CSV;
 
 
     // SETV/SETX > Set Variable

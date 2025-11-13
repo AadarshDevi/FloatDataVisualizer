@@ -4,7 +4,9 @@ import com.alphagen.studio.FloatDataVisualizer.log.Exitter;
 
 import javax.swing.*;
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintWriter;
 
 public class FilePath implements Exitter {
 
@@ -70,6 +72,27 @@ public class FilePath implements Exitter {
     public boolean writeSave(File settingsfile) {
         if (settingsfile.length() == 0) return true;
 
+        var let = """
+        # Visualizer Data
+        commPort=COM3
+        baudRate=115200
+        packetData=PN12-MiramarWaterJets,pkt-,time,unit2
+        time_unit=s
+        unit2_name=depth
+        unit2_unit=m/s
+        startDataTransfer=--start-data-transfer
+        endDataTransfer=--end-data-transfer
+        dataGroupName=Profile
+
+        # Project Data
+        projectVersion=2.1.2.0
+        releaseVersion=1.2.0
+        platform=win11
+        """;
+
+        try(PrintWriter printWriter = new PrintWriter(new FileWriter(settingsfile))) {
+
+        }
 
         return true;
     }
