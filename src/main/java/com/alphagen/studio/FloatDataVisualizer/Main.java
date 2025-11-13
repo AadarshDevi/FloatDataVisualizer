@@ -12,6 +12,7 @@ import javafx.scene.image.Image;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
+import javax.swing.*;
 import java.io.IOException;
 
 public class Main extends Application {
@@ -24,6 +25,7 @@ public class Main extends Application {
         DataPlotter dataPlotter = fxmlLoader.getController();
 
         if (dataPlotter == null) {
+            JOptionPane.showMessageDialog(null, "DataPlotter is null.", "Main Exception", JOptionPane.ERROR_MESSAGE);
             System.err.println("ERROR: DataPlotter is Null");
             System.exit(0);
         }

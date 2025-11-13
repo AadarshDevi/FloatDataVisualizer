@@ -1,5 +1,6 @@
 package com.alphagen.studio.FloatDataVisualizer.data;
 
+import javax.swing.*;
 import java.util.ArrayList;
 import java.util.concurrent.LinkedBlockingQueue;
 
@@ -81,6 +82,7 @@ public class DataKeeper implements Runnable {
         try {
             rawDataPointLinkedBlockingQueue.put(dataline);
         } catch (InterruptedException e) {
+            JOptionPane.showMessageDialog(null, "Unable to \"put\" Float DataPoint.", "DataKeeper Exception", JOptionPane.ERROR_MESSAGE);
             throw new RuntimeException(e);
         }
 
@@ -121,6 +123,7 @@ public class DataKeeper implements Runnable {
                     try {
                         dataPointLinkedBlockingQueue.put(dataPointRecord);
                     } catch (InterruptedException e) {
+                        JOptionPane.showMessageDialog(null, "Unable to \"put\" Float DataPoint.", "DataKeeper Exception", JOptionPane.ERROR_MESSAGE);
                         throw new RuntimeException(e);
                     }
                     System.out.println("LOG: Data added");

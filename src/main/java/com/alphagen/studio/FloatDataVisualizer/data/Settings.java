@@ -7,6 +7,7 @@ import com.alphagen.studio.FloatDataVisualizer.log.Exitter;
 import com.fazecast.jSerialComm.SerialPort;
 import com.fazecast.jSerialComm.SerialPortInvalidPortException;
 
+import javax.swing.*;
 import java.io.*;
 import java.util.Properties;
 
@@ -21,8 +22,8 @@ public class Settings implements Exitter {
     public final FilePath filePath;
     // Application
     private final String[] PLATFORMS = {"win10", "win11", "macos", "linux"};
-    private final String INTERNAL_PROJECT_VERSION = "2.1.2.0";
-    private final String RELEASE_PROJECT_VERSION = "1.2.0";
+    private final String INTERNAL_PROJECT_VERSION = "2.1.2.1";
+    private final String RELEASE_PROJECT_VERSION = "1.2.1";
     private final SerialPort[] serialPorts;
     // DataPlotter
     public String DATA_GROUP_NAME;
@@ -299,7 +300,9 @@ public class Settings implements Exitter {
     public void showSerialCommPorts() {
         System.out.println();
         System.err.println("ERROR: Serial Port does not exist.");
+        JOptionPane.showMessageDialog(null, "Serial Port does not exist.", "Settings Exception", JOptionPane.ERROR_MESSAGE);
         System.err.println("FIX: \"commPort\" in settings.txt");
+        JOptionPane.showMessageDialog(null, "Fix \"commPort\" in settings.txt.", "Settings Info", JOptionPane.INFORMATION_MESSAGE);
         System.out.println("List of Comm Ports:");
         for (int i = 0; i < serialPorts.length; i++) {
             System.out.printf("\t%2d : %s", i, serialPorts[i].getSystemPortName());

@@ -2,6 +2,7 @@ package com.alphagen.studio.FloatDataVisualizer.filepaths;
 
 import com.alphagen.studio.FloatDataVisualizer.log.Exitter;
 
+import javax.swing.*;
 import java.io.File;
 import java.io.IOException;
 
@@ -44,12 +45,14 @@ public class FilePath implements Exitter {
             generateFolder("ScatterChart Screenshots", screenshot_scatterplot);
         } catch (IOException e) {
             System.err.println("ERROR: Unable to generate ScatterChart Screenshots folder");
+            JOptionPane.showMessageDialog(null, "Unable to generate ScatterChart Screenshots folder.", "FilePath Exception", JOptionPane.ERROR_MESSAGE);
         }
 
         try {
             generateFolder("Data Table Screenshots", screenshot_tableview);
         } catch (IOException e) {
             System.err.println("ERROR: Unable to generate Data Table Screenshots folder");
+            JOptionPane.showMessageDialog(null, "Unable to generate Data Table Screenshots folder.", "FilePath Exception", JOptionPane.ERROR_MESSAGE);
         }
 
         // logpath
@@ -59,6 +62,7 @@ public class FilePath implements Exitter {
             generateFolder("Logs", logpath);
         } catch (IOException e) {
             System.err.println("ERROR: Unable to generate Log folder");
+            JOptionPane.showMessageDialog(null, "Unable to generate Log folder.", "FilePath Exception", JOptionPane.ERROR_MESSAGE);
         }
 
     }
@@ -76,7 +80,10 @@ public class FilePath implements Exitter {
         if (file.exists() && file.isFile()) return file;
         boolean success = file.createNewFile();
         System.out.println("Generated: " + file.getName() + " File > " + success);
-        if (!success) throw new IOException();
+        if (!success) {
+            JOptionPane.showMessageDialog(null, "Unable to generate file:\n" + filepath, "FilePath Exception", JOptionPane.ERROR_MESSAGE);
+            throw new IOException();
+        }
         return file;
     }
 
@@ -85,7 +92,10 @@ public class FilePath implements Exitter {
         if (directory.exists() && directory.isDirectory()) return true;
         boolean directoryCreated = directory.mkdirs();
         System.out.println("Generated: " + folder + " Folders > " + directoryCreated);
-        if (!directoryCreated) throw new IOException();
+        if (!directoryCreated) {
+            JOptionPane.showMessageDialog(null, "Unable to generate folder:\n" + folderpath, "FilePath Exception", JOptionPane.ERROR_MESSAGE);
+            throw new IOException();
+        }
         return directoryCreated;
     }
 

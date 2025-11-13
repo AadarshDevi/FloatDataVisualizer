@@ -5,6 +5,8 @@ import com.alphagen.studio.FloatDataVisualizer.data.Settings;
 import com.alphagen.studio.FloatDataVisualizer.datareciever.DataReceiver;
 import javafx.application.Application;
 
+import javax.swing.*;
+
 
 public class Launcher {
 
@@ -28,7 +30,10 @@ public class Launcher {
     }
 
     public static void killDataReceiver() {
-        if (drt.isAlive()) System.err.println("ERROR: Data Receiver is still running");
+        if (drt.isAlive()) {
+            JOptionPane.showMessageDialog(null, "Unable to kill DataReceiver", "Launcher Exception", JOptionPane.ERROR_MESSAGE);
+            System.err.println("ERROR: Data Receiver is still running");
+        }
         else System.out.println("LOG: Closed > Data Receiver");
     }
 
@@ -38,7 +43,10 @@ public class Launcher {
 
     public static void killDataKeeper() {
         DataKeeper.getInstance().stop();
-        if (dkt.isAlive()) System.err.println("ERROR: Data Keeper is still running");
+        if (dkt.isAlive()) {
+            JOptionPane.showMessageDialog(null, "Unable to kill DataKeeper", "Launcher Exception", JOptionPane.ERROR_MESSAGE);
+            System.err.println("ERROR: Data Keeper is still running");
+        }
         else System.out.println("LOG: Closed > Data Keeper");
     }
 

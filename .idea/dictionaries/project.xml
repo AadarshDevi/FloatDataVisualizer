@@ -2,6 +2,7 @@
   <dictionary name="project">
     <words>
       <w>addonpath</w>
+      <w>exitter</w>
       <w>folderpath</w>
       <w>folderpaths</w>
       <w>jpackage</w>

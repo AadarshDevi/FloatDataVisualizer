@@ -4,7 +4,9 @@ import com.alphagen.studio.FloatDataVisualizer.data.DataKeeper;
 import com.alphagen.studio.FloatDataVisualizer.data.Settings;
 import com.alphagen.studio.FloatDataVisualizer.log.Exitter;
 import com.fazecast.jSerialComm.SerialPort;
+import com.fazecast.jSerialComm.SerialPortInvalidPortException;
 
+import javax.swing.*;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -25,7 +27,16 @@ public class DataReceiver implements Runnable, Exitter {
         this.dataKeeper = dataKeeper;
         SerialPort[] serialPorts = SerialPort.getCommPorts();
 
-        SerialPort serialPort = SerialPort.getCommPort(settings.getSerialCommPort());
+
+        SerialPort serialPort;
+        try {
+            serialPort = SerialPort.getCommPort(settings.getSerialCommPort());
+        } catch (SerialPortInvalidPortException e) {
+//            JOptionPane.showMessageDialog(null, "Unable to create SerialComm with port: " + settings.getSerialCommPort(), "DataReceiver Exception", JOptionPane.ERROR_MESSAGE);
+            exit("Unable to create SerialComm with port: " + settings.getSerialCommPort());
+            throw new RuntimeException(e);
+        }
+
         boolean success = serialPort.openPort();
         serialPort.closePort();
         if (!success) {
@@ -86,6 +97,7 @@ public class DataReceiver implements Runnable, Exitter {
             }
 
         } catch (IOException e) {
+            JOptionPane.showMessageDialog(null, "Unable to \"readLine()\"", "DataReceiver Exception", JOptionPane.ERROR_MESSAGE);
             throw new RuntimeException(e);
         }
 

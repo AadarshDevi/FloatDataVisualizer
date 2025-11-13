@@ -11,7 +11,7 @@ public interface Exitter {
             if (!errorMessage.equals(NO_ERROR)) {
                 System.err.println("ERROR: " + errorMessage);
                 Thread.sleep(10);
-                JOptionPane.showMessageDialog(null, errorMessage, "Error", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(null, errorMessage, "Exitter Exception", JOptionPane.ERROR_MESSAGE);
             }
             Thread.sleep(10);
             System.exit(0);
@@ -20,3 +20,4 @@ public interface Exitter {
         }
     }
 }
+

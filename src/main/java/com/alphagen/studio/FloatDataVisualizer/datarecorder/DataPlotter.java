@@ -20,6 +20,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.image.WritableImage;
 
 import javax.imageio.ImageIO;
+import javax.swing.*;
 import java.io.File;
 import java.io.IOException;
 
@@ -92,6 +93,7 @@ public class DataPlotter implements Exitter {
                 System.out.println("DATA: Screenshot saved to " + file.getAbsolutePath());
             } catch (IOException e) {
                 System.err.println("ERROR: Input error in Snapshot ScatterChart MenuItem.");
+                JOptionPane.showMessageDialog(null, "Input error in Snapshot ScatterChart MenuItem.", "DataPlotter Exception", JOptionPane.ERROR_MESSAGE);
             }
 
         });
@@ -109,6 +111,7 @@ public class DataPlotter implements Exitter {
                 System.out.println("DATA: Screenshot saved to " + file.getAbsolutePath());
             } catch (IOException e) {
                 System.err.println("ERROR: Input error in Snapshot TableView MenuItem.");
+                JOptionPane.showMessageDialog(null, "Input error in Snapshot TableView MenuItem.", "DataPlotter Exception", JOptionPane.ERROR_MESSAGE);
             }
 
         });
