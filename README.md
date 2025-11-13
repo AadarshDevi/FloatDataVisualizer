@@ -11,9 +11,10 @@ This repository is for the releases of the Float Data Recorder. To know the tech
 ### 6. [Project Platforms](Documentation/Platforms.md)
 ### 7. [Old Program Flowchart](Documentation/flowchart/system_flowchart_1_outdated.png)
 
-# [All Change Logs](Documentation/ChangeLog)
+# 
 1. Current Add ChangeLog [ChangeLog](Documentation/ChangeLog/2_1_1.md)
 2. Current Version Dev [ChangeLog](Documentation/ChangeLog/2_2_0.md)
+3. Archived [ChangeLogs](Documentation/ChangeLog)
 
 ## TODO
 1. Merge Win11 and MacOS 11.7 code bases
