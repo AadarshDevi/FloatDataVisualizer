@@ -1,10 +1,15 @@
 package com.alphagen.studio.FloatDataVisualizer.data;
 
+import com.alphagen.studio.FloatDataVisualizer.datawriter.DataWriter;
+import com.alphagen.studio.FloatDataVisualizer.filepaths.FilePathFactory;
+import com.alphagen.studio.FloatDataVisualizer.log.Exitter;
+
 import javax.swing.*;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.concurrent.LinkedBlockingQueue;
 
-public class DataKeeper implements Runnable {
+public class DataKeeper implements Runnable, Exitter {
 
     /**
      * The only instance of the DataKeeper
@@ -33,12 +38,23 @@ public class DataKeeper implements Runnable {
     private boolean running = true;
     private final Settings settings;
 
+    private final DataWriter dw;
 
     /**
      * The constructor that creates the 2 import thread-safe lists
      */
     public DataKeeper() {
         settings = Settings.getInstance();
+        if(settings.WRITE_CSV == true) {
+            try {
+                dw = new DataWriter(FilePathFactory.getFilePathFactory().getFilePath().getCSVPath());
+            } catch (IOException e) {
+                exit("Unable to create DataWriter.");
+                throw new RuntimeException(e);
+            }
+        } else {
+            dw = null;
+        }
         rawDataPointLinkedBlockingQueue = new LinkedBlockingQueue<>();
         dataPointLinkedBlockingQueue = new LinkedBlockingQueue<>();
         permanentDataPointArrayList = new ArrayList<>();
