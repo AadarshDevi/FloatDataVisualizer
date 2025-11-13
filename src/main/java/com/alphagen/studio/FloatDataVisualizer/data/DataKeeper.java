@@ -135,6 +135,7 @@ public class DataKeeper implements Runnable, Exitter {
 
     public void stop() {
         running = false;
+        dw.close();
     }
 
     /**
