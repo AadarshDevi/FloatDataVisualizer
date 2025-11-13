@@ -50,6 +50,7 @@ public class Launcher {
         else System.out.println("LOG: Closed > Data Keeper");
     }
 
+    // Platform Obj in Settings
     public enum Platform {
         WIN11,
         MACOS,
