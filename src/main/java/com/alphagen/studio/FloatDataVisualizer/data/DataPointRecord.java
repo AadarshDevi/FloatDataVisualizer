@@ -9,4 +9,8 @@ public record DataPointRecord(int packetId, double time, double depth) {
     public String toString() {
         return SETTINGS.TEAM_DATA + SETTINGS.getPacketName() + "-" + packetId + "," + time + "," + depth;
     }
+
+    public String toCSV() {
+        return time +","+ depth;
+    }
 }
