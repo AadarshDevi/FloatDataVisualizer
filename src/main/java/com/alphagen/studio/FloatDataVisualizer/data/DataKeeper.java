@@ -113,6 +113,7 @@ public class DataKeeper implements Runnable, Exitter {
         // TODO: take DPR, write to file, add to permanentDataPointArrayList, then return.
         DataPointRecord dpr = null;
         try {
+            System.out.println(dataPointLinkedBlockingQueue.size());
             dpr = dataPointLinkedBlockingQueue.poll();
             if(dpr == null) throw new Exception();
             dataMap.put(dpr.packetId(), new double[] {dpr.time(),dpr.depth()});
@@ -149,7 +150,7 @@ public class DataKeeper implements Runnable, Exitter {
      */
     @Override
     public void run() {
-        while (running && Launcher.RUN_DATA_KEEPER) {
+        while (running) {
             if (!rawDataPointLinkedBlockingQueue.isEmpty()) {
                 String dataline = rawDataPointLinkedBlockingQueue.poll();
                 if (dataline != null) {

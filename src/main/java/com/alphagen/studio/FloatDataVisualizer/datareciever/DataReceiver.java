@@ -77,7 +77,7 @@ public class DataReceiver implements Runnable, Exitter {
             boolean startDataTransfer = false;
             boolean endDataTransfer = false;
 
-            while ((dataline = bufferedReader.readLine()) != null && Launcher.RUN_DATA_RECEIVER) {
+            while ((dataline = bufferedReader.readLine()) != null) {
 
                 if (dataline.equals(settings.getStartFlag())) {
                     System.out.println(dataline);

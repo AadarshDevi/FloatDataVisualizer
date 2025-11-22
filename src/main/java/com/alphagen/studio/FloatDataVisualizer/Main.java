@@ -19,7 +19,7 @@ public class Main extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        if(Launcher.RUN_DATA_PLOTTER) {
+
             FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/float_data_recorder.fxml"));
 
             BorderPane floatUI = fxmlLoader.load();
@@ -46,7 +46,6 @@ public class Main extends Application {
             });
             stage.show();
 
-            if(Launcher.RUN_DATA_READER){
                 Thread dataReader = new Thread(() -> {
                     boolean running = true;
                     while (running) {
@@ -59,11 +58,5 @@ public class Main extends Application {
                 dataReader.setName("DataReader");
                 dataReader.setDaemon(true);
                 dataReader.start();
-            } else {
-                JOptionPane.showMessageDialog(null, "DataReader is disabled.", "FloatData Thread Disabled", JOptionPane.ERROR_MESSAGE);
-            }
-        } else {
-            JOptionPane.showMessageDialog(null, "DataPlotter is disabled.", "FloatData Thread Disabled", JOptionPane.ERROR_MESSAGE);
-        }
     }
 }

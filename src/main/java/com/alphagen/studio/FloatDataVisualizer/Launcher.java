@@ -10,13 +10,6 @@ import javax.swing.*;
 
 public class Launcher {
 
-    public static final boolean RUN_DATA_RECEIVER = false;
-    public static final boolean RUN_DATA_KEEPER = false;
-    public static final boolean RUN_DATA_PLOTTER = false;
-
-    public static final boolean RUN_DATA_READER = false;
-    public static final boolean RUN_DATA_WRITER = false;
-
     static Thread dkt;
     static Thread drt;
 
@@ -25,23 +18,15 @@ public class Launcher {
         Settings setting = Settings.getInstance();
         setting.readSettings();
 
-        if(Launcher.RUN_DATA_KEEPER) {
             DataKeeper dataKeeper = DataKeeper.getInstance();
             dkt = new Thread(dataKeeper);
             dkt.setName("DataKeeper");
             dkt.start();
-        } else {
-            JOptionPane.showMessageDialog(null, "DataKeeper is disabled.", "FloatData Thread Disabled", JOptionPane.ERROR_MESSAGE);
-        }
 
-        if(Launcher.RUN_DATA_RECEIVER){
             DataReceiver dataReceiver = DataReceiver.getInstance();
             drt = new Thread(dataReceiver);
             drt.setName("DataReceiver");
             drt.start();
-        } else {
-            JOptionPane.showMessageDialog(null, "DataReceiver is disabled.", "FloatData Thread Disabled", JOptionPane.ERROR_MESSAGE);
-        }
 
         Application.launch(Main.class, args);
     }

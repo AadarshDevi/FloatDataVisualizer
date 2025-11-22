@@ -220,7 +220,7 @@ public class DataPlotter implements Exitter {
 
     public void writeRawData() {
 
-        if (Launcher.RUN_DATA_WRITER) {
+
 
             Thread dataWriter_raw = new Thread(() -> {
 
@@ -257,9 +257,6 @@ public class DataPlotter implements Exitter {
             dataWriter_raw.setDaemon(true);
             dataWriter_raw.setName("DataWriter_RAW");
             dataWriter_raw.start();
-        } else {
-            JOptionPane.showMessageDialog(null, "DataWriter is disabled.", "FloatData Thread Disabled", JOptionPane.ERROR_MESSAGE);
-        }
     }
 
     public void writeCSVData() {
