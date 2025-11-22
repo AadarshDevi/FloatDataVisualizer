@@ -1,8 +1,11 @@
 package com.alphagen.studio.FloatDataVisualizer.datarecorder;
 
 import com.alphagen.studio.FloatDataVisualizer.Launcher;
+import com.alphagen.studio.FloatDataVisualizer.data.DataKeeper;
 import com.alphagen.studio.FloatDataVisualizer.data.DataPointRecord;
 import com.alphagen.studio.FloatDataVisualizer.data.Settings;
+import com.alphagen.studio.FloatDataVisualizer.datawriter.DataWriter;
+import com.alphagen.studio.FloatDataVisualizer.datawriter.DataWriterFactory;
 import com.alphagen.studio.FloatDataVisualizer.filepaths.FilePath;
 import com.alphagen.studio.FloatDataVisualizer.filepaths.FilePathFactory;
 import com.alphagen.studio.FloatDataVisualizer.log.Exitter;
@@ -23,8 +26,11 @@ import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class DataPlotter implements Exitter {
+
+    // mi_edit = mi_export
 
     private final int SCATTER_CHART_PREF_WIDTH = 824;
     @FXML
@@ -219,5 +225,42 @@ public class DataPlotter implements Exitter {
             Launcher.killDataKeeper();
         }
         System.out.println("LOG: Closing DataRecorder");
+    }
+
+    public void writeRawData() {
+
+        Thread dataWriter = new Thread(() -> {
+
+            File file = null;
+            int i = 1;
+
+            do {
+                file = new File(FilePathFactory.getFilePathFactory().getFilePath().getCSVPath() + "rawData_"+i+".csv");
+                i++;
+            } while(file.exists() && file.isFile());
+
+            DataWriter dw = null;
+            try {
+                dw = new DataWriter(file.getAbsolutePath());
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+
+            ArrayList<DataPointRecord> data = new ArrayList<>(DataKeeper.getInstance().getAllData());
+            for (DataPointRecord dpr : data) {
+                try {
+                    dw.writeRaw(dpr);
+                } catch (IOException e) {
+                    JOptionPane.showMessageDialog(null, "Unable to write DataPointRecord: " + dpr.toString(), "DataWriter Exception", JOptionPane.ERROR_MESSAGE);
+                }
+            }
+
+        });
+        dataWriter.setDaemon(true);
+        dataWriter.setName("DataWriter");
+        dataWriter.start();
+
+
+
     }
 }
