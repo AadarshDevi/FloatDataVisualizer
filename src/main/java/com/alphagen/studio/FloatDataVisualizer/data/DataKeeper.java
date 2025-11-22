@@ -1,5 +1,6 @@
 package com.alphagen.studio.FloatDataVisualizer.data;
 
+import com.alphagen.studio.FloatDataVisualizer.Launcher;
 import com.alphagen.studio.FloatDataVisualizer.datawriter.DataWriter;
 import com.alphagen.studio.FloatDataVisualizer.filepaths.FilePathFactory;
 import com.alphagen.studio.FloatDataVisualizer.log.Exitter;
@@ -7,6 +8,7 @@ import com.alphagen.studio.FloatDataVisualizer.log.Exitter;
 import javax.swing.*;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.concurrent.LinkedBlockingQueue;
 
 public class DataKeeper implements Runnable, Exitter {
@@ -34,9 +36,11 @@ public class DataKeeper implements Runnable, Exitter {
      *
      * @see LinkedBlockingQueue
      */
-    private final ArrayList<DataPointRecord> permanentDataPointArrayList;
+//    private final ArrayList<DataPointRecord> permanentDataPointArrayList;
     private boolean running = true;
     private final Settings settings;
+
+    private final HashMap<Integer, double[]> dataMap;
 
 //    private final DataWriter dw;
 
@@ -57,7 +61,9 @@ public class DataKeeper implements Runnable, Exitter {
 //        }
         rawDataPointLinkedBlockingQueue = new LinkedBlockingQueue<>();
         dataPointLinkedBlockingQueue = new LinkedBlockingQueue<>();
-        permanentDataPointArrayList = new ArrayList<>();
+//        permanentDataPointArrayList = new ArrayList<>();
+
+        dataMap = new HashMap<>();
     }
 
     /**
@@ -83,9 +89,7 @@ public class DataKeeper implements Runnable, Exitter {
         int packetId = Integer.parseInt(dataArray[1].substring(dataArray[1].indexOf("-") + 1));
         double time = Double.parseDouble(dataArray[settings.getTimeIndex()]);
         double unit2 = Double.parseDouble(dataArray[settings.getUNIT2Index()]);
-//        double depth = Double.parseDouble(dataArray[settings.getDepthIndex()]);
         return new DataPointRecord(packetId, time, unit2);
-//        return new DataPointRecord(packetId, time, depth);
     }
 
     /**
@@ -96,6 +100,7 @@ public class DataKeeper implements Runnable, Exitter {
     public void writeData(String dataline) {
 
         try {
+            System.out.println(dataline);
             rawDataPointLinkedBlockingQueue.put(dataline);
         } catch (InterruptedException e) {
             JOptionPane.showMessageDialog(null, "Unable to \"put\" Float DataPoint.", "DataKeeper Exception", JOptionPane.ERROR_MESSAGE);
@@ -106,20 +111,15 @@ public class DataKeeper implements Runnable, Exitter {
 
     public DataPointRecord getDataPointRecord() {
         // TODO: take DPR, write to file, add to permanentDataPointArrayList, then return.
-        DataPointRecord dpr = dataPointLinkedBlockingQueue.poll();
-        permanentDataPointArrayList.add(dpr);
-//        try {
-//            if(settings.WRITE_CSV) {
-//                if(settings.WRITE_RAW) {
-//                    dw.writeRaw(dpr);
-//                } else {
-//                    dw.write(dpr);
-//                }
-//            }
-//        } catch (IOException e) {
-//            JOptionPane.showMessageDialog(null, "Unable to DataPointRecord:\n" + dpr, "DataKeeper Exception", JOptionPane.ERROR_MESSAGE);
-//            throw new RuntimeException(e);
-//        }
+        DataPointRecord dpr = null;
+        try {
+            dpr = dataPointLinkedBlockingQueue.poll();
+            if(dpr == null) throw new Exception();
+            dataMap.put(dpr.packetId(), new double[] {dpr.time(),dpr.depth()});
+        } catch (Exception e) {
+//            JOptionPane.showMessageDialog(null, "Unable to kill DataReceiver", "Launcher Exception", JOptionPane.ERROR_MESSAGE);
+            System.err.println("ERROR: Unable to get DataPointRecord");
+        }
         return dpr;
     }
 
@@ -129,13 +129,15 @@ public class DataKeeper implements Runnable, Exitter {
      * @return list of all DataPoints
      * @see DataPointRecord
      */
-    public ArrayList<DataPointRecord> getAllData() {
-        return permanentDataPointArrayList;
+    public HashMap<Integer, double[]> getAllData() {
+        return dataMap;
     }
+//    public ArrayList<DataPointRecord> getAllData() {
+//        return permanentDataPointArrayList;
+//    }
 
     public void stop() {
-        running = false;
-//        dw.close();
+            running = false;
     }
 
     /**
@@ -147,7 +149,7 @@ public class DataKeeper implements Runnable, Exitter {
      */
     @Override
     public void run() {
-        while (running) {
+        while (running && Launcher.RUN_DATA_KEEPER) {
             if (!rawDataPointLinkedBlockingQueue.isEmpty()) {
                 String dataline = rawDataPointLinkedBlockingQueue.poll();
                 if (dataline != null) {

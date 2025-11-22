@@ -27,51 +27,42 @@ import javax.swing.*;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class DataPlotter implements Exitter {
 
     // mi_edit = mi_export
 
     private final int SCATTER_CHART_PREF_WIDTH = 824;
-    @FXML
-    private MenuItem mi_close;
-    @FXML
-    private MenuItem mi_edit_scatterchart_fit_view;
-    @FXML
-    private MenuItem mi_edit_scatterchart_full_view;
-    @FXML
-    private MenuItem mi_edit_scatterchart_screenshot;
-    @FXML
-    private MenuItem mi_edit_tableview_screenshot;
+    @FXML private MenuItem mi_close;
+    @FXML private MenuItem mi_edit_scatterchart_fit_view;
+    @FXML private MenuItem mi_edit_scatterchart_full_view;
+    @FXML private MenuItem mi_edit_scatterchart_screenshot;
+    @FXML private MenuItem mi_edit_tableview_screenshot;
+
     private int groupCount = 1;
     private double initialWidth;
     private ObservableList<XYChart.Series<Double, Double>> list;
     private int oldPacketNum = -1;
     // <Double, Double> : DataTypes of X-Axis and Y-Axis
-    @FXML
-    private ScatterChart<Double, Double> scatterChart;
-    @FXML
-    private NumberAxis xAxis;
-    @FXML
-    private NumberAxis yAxis;
-    @FXML
-    private TableView<DataPointRecord> tableView;
-    @FXML
-    private TableColumn<DataPointRecord, Double> tc_time;
-    @FXML
-    private TableColumn<DataPointRecord, Double> tc_depth;
-    @FXML
-    private TableColumn<DataPointRecord, Integer> tc_pkt;
+
+    @FXML private ScatterChart<Double, Double> scatterChart;
+    @FXML private NumberAxis xAxis;
+    @FXML private NumberAxis yAxis;
+
+    @FXML private TableView<DataPointRecord> tableView;
+    @FXML private TableColumn<DataPointRecord, Double> tc_time;
+    @FXML private TableColumn<DataPointRecord, Double> tc_depth;
+    @FXML private TableColumn<DataPointRecord, Integer> tc_pkt;
     private Settings settings;
 
-    @FXML
-    private MenuItem mi_edit_scatterchart_increase_width;
-    @FXML
-    private MenuItem mi_edit_scatterchart_decrease_width;
-    @FXML
-    private MenuItem mi_edit_tableview_increase_width;
-    @FXML
-    private MenuItem mi_edit_tableview_decrease_width;
+    @FXML private MenuItem mi_edit_scatterchart_increase_width;
+    @FXML private MenuItem mi_edit_scatterchart_decrease_width;
+    @FXML private MenuItem mi_edit_tableview_increase_width;
+    @FXML private MenuItem mi_edit_tableview_decrease_width;
+
+    @FXML private MenuItem mi_export_data_raw_data;
+    @FXML private MenuItem mi_export_data_csv_data;
 
     @FXML
     public void initialize() {
@@ -229,38 +220,52 @@ public class DataPlotter implements Exitter {
 
     public void writeRawData() {
 
-        Thread dataWriter = new Thread(() -> {
+        if (Launcher.RUN_DATA_WRITER) {
 
-            File file = null;
-            int i = 1;
+            Thread dataWriter_raw = new Thread(() -> {
 
-            do {
-                file = new File(FilePathFactory.getFilePathFactory().getFilePath().getCSVPath() + "rawData_"+i+".csv");
-                i++;
-            } while(file.exists() && file.isFile());
+                File file = null;
+                int i = 1;
 
-            DataWriter dw = null;
-            try {
-                dw = new DataWriter(file.getAbsolutePath());
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
+                do {
+                    file = new File(FilePathFactory.getFilePathFactory().getFilePath().getCSVPath() + "rawData_"+i+".csv");
+                    i++;
+                } while(file.exists() && file.isFile());
 
-            ArrayList<DataPointRecord> data = new ArrayList<>(DataKeeper.getInstance().getAllData());
-            for (DataPointRecord dpr : data) {
+                DataWriter dw = null;
                 try {
-                    dw.writeRaw(dpr);
+                    dw = new DataWriter(file.getAbsolutePath());
                 } catch (IOException e) {
-                    JOptionPane.showMessageDialog(null, "Unable to write DataPointRecord: " + dpr.toString(), "DataWriter Exception", JOptionPane.ERROR_MESSAGE);
+                    throw new RuntimeException(e);
                 }
-            }
 
+                HashMap<Integer, double[]> data = DataKeeper.getInstance().getAllData();
+                for(int pid : data.keySet()) { // pid -> packetID
+                    System.out.println(data.get(pid));
+                }
+
+    //            ArrayList<DataPointRecord> data = new ArrayList<>(DataKeeper.getInstance().getAllData());
+    //            for (DataPointRecord dpr : data) {
+    //                try {
+    //                    dw.writeRaw(dpr);
+    //                } catch (IOException e) {
+    //                    JOptionPane.showMessageDialog(null, "Unable to write DataPointRecord: " + dpr.toString(), "DataWriter Exception", JOptionPane.ERROR_MESSAGE);
+    //                }
+    //            }
+
+            });
+            dataWriter_raw.setDaemon(true);
+            dataWriter_raw.setName("DataWriter_RAW");
+            dataWriter_raw.start();
+        } else {
+            JOptionPane.showMessageDialog(null, "DataWriter is disabled.", "FloatData Thread Disabled", JOptionPane.ERROR_MESSAGE);
+        }
+    }
+
+    public void writeCSVData() {
+        Thread dataWriter_csv = new Thread(()-> {
+            // code
         });
-        dataWriter.setDaemon(true);
-        dataWriter.setName("DataWriter");
-        dataWriter.start();
-
-
-
+        dataWriter_csv.setName("DataWriter_CSV");
     }
 }

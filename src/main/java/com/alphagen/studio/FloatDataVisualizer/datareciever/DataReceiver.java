@@ -1,5 +1,6 @@
 package com.alphagen.studio.FloatDataVisualizer.datareciever;
 
+import com.alphagen.studio.FloatDataVisualizer.Launcher;
 import com.alphagen.studio.FloatDataVisualizer.data.DataKeeper;
 import com.alphagen.studio.FloatDataVisualizer.data.Settings;
 import com.alphagen.studio.FloatDataVisualizer.log.Exitter;
@@ -76,7 +77,7 @@ public class DataReceiver implements Runnable, Exitter {
             boolean startDataTransfer = false;
             boolean endDataTransfer = false;
 
-            while ((dataline = bufferedReader.readLine()) != null) {
+            while ((dataline = bufferedReader.readLine()) != null && Launcher.RUN_DATA_RECEIVER) {
 
                 if (dataline.equals(settings.getStartFlag())) {
                     System.out.println(dataline);
@@ -101,7 +102,8 @@ public class DataReceiver implements Runnable, Exitter {
             throw new RuntimeException(e);
         }
 
-        serialPort.closePort();
+        if(serialPort != null)
+            serialPort.closePort();
         System.out.println("LOG: Float Data Recorder has stopped receiving data.");
     }
 
