@@ -38,23 +38,23 @@ public class DataKeeper implements Runnable, Exitter {
     private boolean running = true;
     private final Settings settings;
 
-    private final DataWriter dw;
+//    private final DataWriter dw;
 
     /**
      * The constructor that creates the 2 import thread-safe lists
      */
     public DataKeeper() {
         settings = Settings.getInstance();
-        if(settings.WRITE_CSV == true) {
-            try {
-                dw = new DataWriter(FilePathFactory.getFilePathFactory().getFilePath().getCSVPath());
-            } catch (IOException e) {
-                exit("Unable to create DataWriter.");
-                throw new RuntimeException(e);
-            }
-        } else {
-            dw = null;
-        }
+//        if(settings.WRITE_CSV == true) {
+//            try {
+//                dw = new DataWriter(FilePathFactory.getFilePathFactory().getFilePath().getCSVPath());
+//            } catch (IOException e) {
+//                exit("Unable to create DataWriter.");
+//                throw new RuntimeException(e);
+//            }
+//        } else {
+//            dw = null;
+//        }
         rawDataPointLinkedBlockingQueue = new LinkedBlockingQueue<>();
         dataPointLinkedBlockingQueue = new LinkedBlockingQueue<>();
         permanentDataPointArrayList = new ArrayList<>();
@@ -108,18 +108,18 @@ public class DataKeeper implements Runnable, Exitter {
         // TODO: take DPR, write to file, add to permanentDataPointArrayList, then return.
         DataPointRecord dpr = dataPointLinkedBlockingQueue.poll();
         permanentDataPointArrayList.add(dpr);
-        try {
-            if(settings.WRITE_CSV) {
-                if(settings.WRITE_RAW) {
-                    dw.writeRaw(dpr);
-                } else {
-                    dw.write(dpr);
-                }
-            }
-        } catch (IOException e) {
-            JOptionPane.showMessageDialog(null, "Unable to DataPointRecord:\n" + dpr, "DataKeeper Exception", JOptionPane.ERROR_MESSAGE);
-            throw new RuntimeException(e);
-        }
+//        try {
+//            if(settings.WRITE_CSV) {
+//                if(settings.WRITE_RAW) {
+//                    dw.writeRaw(dpr);
+//                } else {
+//                    dw.write(dpr);
+//                }
+//            }
+//        } catch (IOException e) {
+//            JOptionPane.showMessageDialog(null, "Unable to DataPointRecord:\n" + dpr, "DataKeeper Exception", JOptionPane.ERROR_MESSAGE);
+//            throw new RuntimeException(e);
+//        }
         return dpr;
     }
 
@@ -135,7 +135,7 @@ public class DataKeeper implements Runnable, Exitter {
 
     public void stop() {
         running = false;
-        dw.close();
+//        dw.close();
     }
 
     /**
