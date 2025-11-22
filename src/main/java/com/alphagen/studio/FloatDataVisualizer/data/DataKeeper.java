@@ -113,13 +113,12 @@ public class DataKeeper implements Runnable, Exitter {
         // TODO: take DPR, write to file, add to permanentDataPointArrayList, then return.
         DataPointRecord dpr = null;
         try {
-            System.out.println(dataPointLinkedBlockingQueue.size());
+//            System.out.println(dataPointLinkedBlockingQueue.size());
             dpr = dataPointLinkedBlockingQueue.poll();
             if(dpr == null) throw new Exception();
             dataMap.put(dpr.packetId(), new double[] {dpr.time(),dpr.depth()});
         } catch (Exception e) {
-//            JOptionPane.showMessageDialog(null, "Unable to kill DataReceiver", "Launcher Exception", JOptionPane.ERROR_MESSAGE);
-            System.err.println("ERROR: Unable to get DataPointRecord");
+//            System.err.println("ERROR: Unable to get DataPointRecord");
         }
         return dpr;
     }

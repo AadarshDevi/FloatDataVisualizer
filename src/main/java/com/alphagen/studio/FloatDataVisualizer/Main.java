@@ -48,6 +48,7 @@ public class Main extends Application {
 
                 Thread dataReader = new Thread(() -> {
                     boolean running = true;
+                    int nullValues = 0;
                     while (running) {
                         DataPointRecord dataPointRecord = DataKeeper.getInstance().getDataPointRecord();
                         if (dataPointRecord != null) {

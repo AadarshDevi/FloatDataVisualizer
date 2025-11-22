@@ -220,8 +220,6 @@ public class DataPlotter implements Exitter {
 
     public void writeRawData() {
 
-
-
             Thread dataWriter_raw = new Thread(() -> {
 
                 File file = null;
