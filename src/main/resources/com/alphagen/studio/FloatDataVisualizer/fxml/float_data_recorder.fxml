@@ -89,7 +89,7 @@
                   <Menu mnemonicParsing="false" text="Data">
                     <items>
                       <MenuItem fx:id="mi_export_data_raw_data" mnemonicParsing="false" onAction="#writeRawData" text="Raw Data" />
-                        <MenuItem fx:id="mi_export_data_csv_data" mnemonicParsing="false" text="Data (CSV)" />
+                        <MenuItem fx:id="mi_export_data_csv_data" mnemonicParsing="false" onAction="#writeCSVData" text="CSV Data" />
                     </items>
                   </Menu>
             </items>
