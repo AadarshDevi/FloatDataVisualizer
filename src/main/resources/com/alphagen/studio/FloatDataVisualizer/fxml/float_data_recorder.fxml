@@ -15,7 +15,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.alphagen.studio.FloatDataVisualizer.datarecorder.DataPlotter">
+<BorderPane xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.alphagen.studio.FloatDataVisualizer.datarecorder.DataPlotter">
    <center>
       <HBox prefHeight="640.0" prefWidth="1196.0">
          <children>
@@ -68,7 +68,7 @@
               <MenuItem fx:id="mi_close" mnemonicParsing="false" onAction="#closeApp" text="Close" />
             </items>
           </Menu>
-          <Menu mnemonicParsing="false" text="Edit">
+          <Menu mnemonicParsing="false" text="Export">
             <items>
                   <Menu mnemonicParsing="false" text="ScatterChart">
                      <items>
@@ -85,6 +85,12 @@
                         <MenuItem fx:id="mi_edit_tableview_increase_width" mnemonicParsing="false" onAction="#increaseTableHeight" text="↑ Increase Height" />
                         <MenuItem fx:id="mi_edit_tableview_decrease_width" mnemonicParsing="false" onAction="#decreaseTableHeight" text="↓ Decrease Height" />
                      </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="Data">
+                    <items>
+                      <MenuItem fx:id="mi_export_data_raw_data" mnemonicParsing="false" onAction="#writeRawData" text="Raw Data" />
+                        <MenuItem fx:id="mi_export_data_csv_data" mnemonicParsing="false" text="Data (CSV)" />
+                    </items>
                   </Menu>
             </items>
           </Menu>
