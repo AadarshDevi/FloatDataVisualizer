@@ -1,6 +1,6 @@
 package com.alphagen.studio.FloatDataVisualizer;
 
-import com.alphagen.studio.FloatDataVisualizer.data.Settings;
+import com.alphagen.studio.FloatDataVisualizer.data.DataConfigurator;
 import com.alphagen.studio.FloatDataVisualizer.data.DataKeeper;
 import com.alphagen.studio.FloatDataVisualizer.data.DataPointRecord;
 import com.alphagen.studio.FloatDataVisualizer.datarecorder.DataPlotter;
@@ -19,6 +19,7 @@ public class Main extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
+
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/float_data_recorder.fxml"));
 
         BorderPane floatUI = fxmlLoader.load();
@@ -31,7 +32,7 @@ public class Main extends Application {
         }
 
         Scene scene = new Scene(floatUI);
-        stage.setTitle("Miramar Water Jets Float Data Visualizer " + Settings.getInstance().getReleaseVersion());
+        stage.setTitle("Miramar Water Jets Float Data Visualizer " + DataConfigurator.getInstance().getReleaseVersion());
         stage.setScene(scene);
         Image icon = new Image(Main.class.getResourceAsStream("float_data_recorder_2_png_icon_2.png"));
         stage.getIcons().add(icon);
@@ -45,19 +46,18 @@ public class Main extends Application {
         });
         stage.show();
 
-
         Thread dataReader = new Thread(() -> {
-            boolean running = true;
-            while (running) {
+//                    boolean running = true;
+//            int nullValues = 0;
+            while (!Thread.currentThread().isInterrupted()) {
                 DataPointRecord dataPointRecord = DataKeeper.getInstance().getDataPointRecord();
                 if (dataPointRecord != null) {
                     Platform.runLater(() -> dataPlotter.writeDataPoint(dataPointRecord));
                 }
             }
         });
+        dataReader.setName("DataReader");
         dataReader.setDaemon(true);
         dataReader.start();
-
-
     }
 }

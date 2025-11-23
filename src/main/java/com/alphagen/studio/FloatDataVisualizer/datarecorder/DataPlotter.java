@@ -1,10 +1,12 @@
 package com.alphagen.studio.FloatDataVisualizer.datarecorder;
 
 import com.alphagen.studio.FloatDataVisualizer.Launcher;
+import com.alphagen.studio.FloatDataVisualizer.data.DataConfigurator;
+import com.alphagen.studio.FloatDataVisualizer.data.DataKeeper;
 import com.alphagen.studio.FloatDataVisualizer.data.DataPointRecord;
-import com.alphagen.studio.FloatDataVisualizer.data.Settings;
-import com.alphagen.studio.FloatDataVisualizer.filepaths.FilePath;
-import com.alphagen.studio.FloatDataVisualizer.filepaths.FilePathFactory;
+import com.alphagen.studio.FloatDataVisualizer.datawriter.DataWriter;
+import com.alphagen.studio.FloatDataVisualizer.filepaths.DataPath;
+import com.alphagen.studio.FloatDataVisualizer.filepaths.DataPathFactory;
 import com.alphagen.studio.FloatDataVisualizer.log.Exitter;
 import javafx.beans.property.ReadOnlyObjectWrapper;
 import javafx.collections.ObservableList;
@@ -23,8 +25,11 @@ import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class DataPlotter implements Exitter {
+
+    // mi_edit = mi_export
 
     private final int SCATTER_CHART_PREF_WIDTH = 824;
     @FXML
@@ -37,17 +42,20 @@ public class DataPlotter implements Exitter {
     private MenuItem mi_edit_scatterchart_screenshot;
     @FXML
     private MenuItem mi_edit_tableview_screenshot;
+
     private int groupCount = 1;
     private double initialWidth;
     private ObservableList<XYChart.Series<Double, Double>> list;
     private int oldPacketNum = -1;
     // <Double, Double> : DataTypes of X-Axis and Y-Axis
+
     @FXML
     private ScatterChart<Double, Double> scatterChart;
     @FXML
     private NumberAxis xAxis;
     @FXML
     private NumberAxis yAxis;
+
     @FXML
     private TableView<DataPointRecord> tableView;
     @FXML
@@ -56,7 +64,7 @@ public class DataPlotter implements Exitter {
     private TableColumn<DataPointRecord, Double> tc_depth;
     @FXML
     private TableColumn<DataPointRecord, Integer> tc_pkt;
-    private Settings settings;
+    private DataConfigurator dataConfigurator;
 
     @FXML
     private MenuItem mi_edit_scatterchart_increase_width;
@@ -68,11 +76,16 @@ public class DataPlotter implements Exitter {
     private MenuItem mi_edit_tableview_decrease_width;
 
     @FXML
+    private MenuItem mi_export_data_raw_data;
+    @FXML
+    private MenuItem mi_export_data_csv_data;
+
+    @FXML
     public void initialize() {
 
-        FilePath filePath = FilePathFactory.getFilePathFactory().getFilePath();
+        DataPath dataPath = DataPathFactory.getFilePathFactory().getFilePath();
 
-        settings = Settings.getInstance();
+        dataConfigurator = DataConfigurator.getInstance();
 
         mi_edit_scatterchart_fit_view.setOnAction(event -> {
             scatterChart.setPrefWidth(SCATTER_CHART_PREF_WIDTH);
@@ -85,36 +98,44 @@ public class DataPlotter implements Exitter {
             WritableImage writableImage = scatterChart.snapshot(new SnapshotParameters(), null);
             File file = null;
             do {
-                file = new File(filePath.getScatterPath() + "float_data_graph_screenshot_" + screenshotcount + ".png");
+                file = new File(dataPath.getScatterPath() + "float_data_graph_screenshot_" + screenshotcount + ".png");
                 screenshotcount++;
-            } while (file.exists());
+            } while (file.exists() && file.isFile());
             try {
                 ImageIO.write(SwingFXUtils.fromFXImage(writableImage, null), "png", file);
-                System.out.println("DATA: Screenshot saved to " + file.getAbsolutePath());
+                System.out.println("DATA: Screenshot saved at " + file.getAbsolutePath());
+//                JOptionPane.showMessageDialog(null, "DATA: Screenshot saved to " + file.getAbsolutePath(), "DataImager", JOptionPane.INFORMATION_MESSAGE);
             } catch (IOException e) {
                 System.err.println("ERROR: Input error in Snapshot ScatterChart MenuItem.");
                 JOptionPane.showMessageDialog(null, "Input error in Snapshot ScatterChart MenuItem.", "DataPlotter Exception", JOptionPane.ERROR_MESSAGE);
             }
 
         });
+
         mi_edit_tableview_screenshot.setOnAction(event -> {
             int screenshotcount = 1;
             WritableImage writableImage = tableView.snapshot(new SnapshotParameters(), null);
             File file = null;
             do {
-                file = new File(filePath.getTablePath() + "float_data_table_screenshot_" + screenshotcount + ".png");
+                file = new File(dataPath.getTablePath() + "float_data_table_screenshot_" + screenshotcount + ".png");
                 screenshotcount++;
-            } while (file.exists());
+            } while (file.exists() && file.isFile());
 
             try {
                 ImageIO.write(SwingFXUtils.fromFXImage(writableImage, null), "png", file);
-                System.out.println("DATA: Screenshot saved to " + file.getAbsolutePath());
+                System.out.println("DATA: Screenshot saved at " + file.getAbsolutePath());
+//                JOptionPane.showMessageDialog(null, "DATA: Screenshot saved to " + file.getAbsolutePath(), "DataImager", JOptionPane.INFORMATION_MESSAGE);
             } catch (IOException e) {
                 System.err.println("ERROR: Input error in Snapshot TableView MenuItem.");
                 JOptionPane.showMessageDialog(null, "Input error in Snapshot TableView MenuItem.", "DataPlotter Exception", JOptionPane.ERROR_MESSAGE);
             }
 
         });
+
+        mi_export_data_raw_data.setOnAction(event -> {
+            writeRawData();
+        });
+
         mi_close.setOnAction(event -> {
             if (!Launcher.isDataReceiverAlive()) {
                 Launcher.killDataReceiver();
@@ -146,7 +167,7 @@ public class DataPlotter implements Exitter {
 
         initialWidth = scatterChart.getPrefWidth();
         tableView.setFixedCellSize(24);
-        tableView.setPrefHeight(tableView.getFixedCellSize() * 23);
+        tableView.setPrefHeight((tableView.getFixedCellSize() + 5) * 24);
 
         mi_edit_tableview_increase_width.setDisable(true);
         mi_edit_tableview_decrease_width.setDisable(true);
@@ -154,13 +175,13 @@ public class DataPlotter implements Exitter {
         mi_edit_tableview_increase_width.setVisible(false);
         mi_edit_tableview_decrease_width.setVisible(false);
 
-        tc_time.setText("Time (" + settings.TIME_UNIT + ")");
-        tc_depth.setText(settings.UNIT2_NAME + " (" + settings.UNIT2_UNIT + ")");
+        tc_time.setText("Time (" + dataConfigurator.TIME_UNIT + ")");
+        tc_depth.setText(dataConfigurator.UNIT2_NAME + " (" + dataConfigurator.UNIT2_UNIT + ")");
     }
 
     public XYChart.Series<Double, Double> createDataGroup(int groupId) {
         XYChart.Series<Double, Double> xyChartSeries = new XYChart.Series<>();
-        xyChartSeries.setName(settings.getDataGroupName() + groupId);
+        xyChartSeries.setName(dataConfigurator.getDataGroupName() + groupId);
         return xyChartSeries;
     }
 
@@ -168,7 +189,7 @@ public class DataPlotter implements Exitter {
 
         if (oldPacketNum == dataPointRecord.packetId()) {
             for (XYChart.Series<Double, Double> series : list) {
-                if (series.getName().equals(settings.getDataGroupName() + dataPointRecord.packetId())) {
+                if (series.getName().equals(dataConfigurator.getDataGroupName() + dataPointRecord.packetId())) {
                     series.getData().add(new XYChart.Data<>(dataPointRecord.time(), dataPointRecord.depth()));
                     tableView.getItems().add(dataPointRecord);
                     System.out.println("LOG: Data Group Found > " + dataPointRecord.packetId());
@@ -219,5 +240,89 @@ public class DataPlotter implements Exitter {
             Launcher.killDataKeeper();
         }
         System.out.println("LOG: Closing DataRecorder");
+    }
+
+    @FXML
+    public void writeRawData() {
+
+        File file = null;
+        int i = 1;
+
+        do {
+            file = new File(DataPathFactory.getFilePathFactory().getFilePath().getCSVPath() + "rawData_" + i + ".csv");
+            i++;
+        } while (file.exists() && file.isFile());
+
+        DataWriter dw = null;
+        try {
+            dw = new DataWriter(file.getAbsolutePath());
+        } catch (IOException e) {
+            DataPathFactory.getFilePathFactory().getFilePath().generateCSVFolder();
+        }
+
+//                HashMap<Integer, double[]> data = DataKeeper.getInstance().getAllData();
+//                for(int pid : data.keySet()) { // pid -> packetID
+//                    System.out.println(data.get(pid));
+//                }
+
+        try {
+            dw.write("TeamData,Pkt#,Time,Depth");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        ArrayList<DataPointRecord> data = new ArrayList<>(DataKeeper.getInstance().getAllData());
+        for (DataPointRecord dpr : data) {
+            try {
+                dw.writeRaw(dpr);
+            } catch (IOException e) {
+                JOptionPane.showMessageDialog(null, "Unable to write DataPointRecord: " + dpr, "DataWriter Exception", JOptionPane.ERROR_MESSAGE);
+            }
+        }
+
+        System.out.println("DATA: RAW/CSV Data saved at " + file.getAbsolutePath());
+        dw.close();
+
+    }
+
+    @FXML
+    public void writeCSVData() {
+
+        File file = null;
+        int i = 1;
+
+        do {
+            file = new File(DataPathFactory.getFilePathFactory().getFilePath().getCSVPath() + "csvData_" + i + ".csv");
+            i++;
+        } while (file.exists() && file.isFile());
+
+        DataWriter dw = null;
+        try {
+            dw = new DataWriter(file.getAbsolutePath());
+        } catch (IOException e) {
+            DataPathFactory.getFilePathFactory().getFilePath().generateCSVFolder();
+        }
+
+//                HashMap<Integer, double[]> data = DataKeeper.getInstance().getAllData();
+//                for(int pid : data.keySet()) { // pid -> packetID
+//                    System.out.println(data.get(pid));
+//                }
+
+        try {
+            dw.write("Time,Depth");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        ArrayList<DataPointRecord> data = new ArrayList<>(DataKeeper.getInstance().getAllData());
+        for (DataPointRecord dpr : data) {
+            try {
+                dw.write(dpr);
+            } catch (IOException e) {
+                JOptionPane.showMessageDialog(null, "Unable to write DataPointRecord: " + dpr, "DataWriter Exception", JOptionPane.ERROR_MESSAGE);
+            }
+        }
+
+        System.out.println("DATA: RAW/CSV Data saved at " + file.getAbsolutePath());
+        dw.close();
+
     }
 }

@@ -1,10 +1,13 @@
 package com.alphagen.studio.FloatDataVisualizer.data;
 
+import com.alphagen.studio.FloatDataVisualizer.log.Exitter;
+
 import javax.swing.*;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.concurrent.LinkedBlockingQueue;
 
-public class DataKeeper implements Runnable {
+public class DataKeeper implements Runnable, Exitter {
 
     /**
      * The only instance of the DataKeeper
@@ -30,18 +33,32 @@ public class DataKeeper implements Runnable {
      * @see LinkedBlockingQueue
      */
     private final ArrayList<DataPointRecord> permanentDataPointArrayList;
-    private boolean running = true;
-    private final Settings settings;
+    private final DataConfigurator dataConfigurator;
+    private final HashMap<Integer, double[]> dataMap;
+//    private boolean running = true;
 
+//    private final DataWriter dw;
 
     /**
      * The constructor that creates the 2 import thread-safe lists
      */
     public DataKeeper() {
-        settings = Settings.getInstance();
+        dataConfigurator = DataConfigurator.getInstance();
+//        if(settings.WRITE_CSV == true) {
+//            try {
+//                dw = new DataWriter(FilePathFactory.getFilePathFactory().getFilePath().getCSVPath());
+//            } catch (IOException e) {
+//                exit("Unable to create DataWriter.");
+//                throw new RuntimeException(e);
+//            }
+//        } else {
+//            dw = null;
+//        }
         rawDataPointLinkedBlockingQueue = new LinkedBlockingQueue<>();
         dataPointLinkedBlockingQueue = new LinkedBlockingQueue<>();
         permanentDataPointArrayList = new ArrayList<>();
+
+        dataMap = new HashMap<>();
     }
 
     /**
@@ -65,11 +82,9 @@ public class DataKeeper implements Runnable {
     private DataPointRecord createDataPointRecord(String stringData) {
         String[] dataArray = stringData.split(",");
         int packetId = Integer.parseInt(dataArray[1].substring(dataArray[1].indexOf("-") + 1));
-        double time = Double.parseDouble(dataArray[settings.getTimeIndex()]);
-        double unit2 = Double.parseDouble(dataArray[settings.getUNIT2Index()]);
-//        double depth = Double.parseDouble(dataArray[settings.getDepthIndex()]);
+        double time = Double.parseDouble(dataArray[dataConfigurator.getTimeIndex()]);
+        double unit2 = Double.parseDouble(dataArray[dataConfigurator.getUNIT2Index()]);
         return new DataPointRecord(packetId, time, unit2);
-//        return new DataPointRecord(packetId, time, depth);
     }
 
     /**
@@ -80,6 +95,7 @@ public class DataKeeper implements Runnable {
     public void writeData(String dataline) {
 
         try {
+            System.out.println(dataline);
             rawDataPointLinkedBlockingQueue.put(dataline);
         } catch (InterruptedException e) {
             JOptionPane.showMessageDialog(null, "Unable to \"put\" Float DataPoint.", "DataKeeper Exception", JOptionPane.ERROR_MESSAGE);
@@ -89,7 +105,18 @@ public class DataKeeper implements Runnable {
     }
 
     public DataPointRecord getDataPointRecord() {
-        return dataPointLinkedBlockingQueue.poll();
+        // TODO: take DPR, write to file, add to permanentDataPointArrayList, then return.
+        DataPointRecord dpr = null;
+        try {
+//            System.out.println(dataPointLinkedBlockingQueue.size());
+            dpr = dataPointLinkedBlockingQueue.poll();
+            if (dpr == null) throw new Exception();
+            else permanentDataPointArrayList.add(dpr);
+            dataMap.put(dpr.packetId(), new double[]{dpr.time(), dpr.depth()});
+        } catch (Exception e) {
+//            System.err.println("ERROR: Unable to get DataPointRecord");
+        }
+        return dpr;
     }
 
     /**
@@ -98,13 +125,16 @@ public class DataKeeper implements Runnable {
      * @return list of all DataPoints
      * @see DataPointRecord
      */
+//    public HashMap<Integer, double[]> getAllData() {
+//        return dataMap;
+//    }
     public ArrayList<DataPointRecord> getAllData() {
         return permanentDataPointArrayList;
     }
 
-    public void stop() {
-        running = false;
-    }
+//    public void stop() {
+//        running = false;
+//    }
 
     /**
      * Whenever there is data in raw data list, it takes the data and converts it into DataPoints
@@ -115,7 +145,7 @@ public class DataKeeper implements Runnable {
      */
     @Override
     public void run() {
-        while (running) {
+        while (!Thread.currentThread().isInterrupted()) {
             if (!rawDataPointLinkedBlockingQueue.isEmpty()) {
                 String dataline = rawDataPointLinkedBlockingQueue.poll();
                 if (dataline != null) {
@@ -127,6 +157,7 @@ public class DataKeeper implements Runnable {
                         throw new RuntimeException(e);
                     }
                     System.out.println("LOG: Data added");
+                    dataline = null;
                 }
             }
         }
