@@ -2,16 +2,19 @@ package com.alphagen.studio.FloatDataVisualizer.datawriter;
 
 import com.alphagen.studio.FloatDataVisualizer.data.DataPointRecord;
 
-import java.io.*;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 
 public class DataWriter {
 
-    private final File datafile;
+    //    private final File datafile;
     private final BufferedWriter bw;
 
     public DataWriter(String filepath) throws IOException {
-         datafile = new File(filepath);
-         bw = new BufferedWriter(new PrintWriter(new FileWriter(datafile)));
+//         datafile = new File(filepath);
+        bw = new BufferedWriter(new PrintWriter(new FileWriter(filepath)));
     }
 
     public void writeRaw(DataPointRecord dpr) throws IOException {
@@ -25,6 +28,11 @@ public class DataWriter {
         bw.newLine();
     }
 
+    public void write(String string) throws IOException {
+        bw.write(string);
+        bw.newLine();
+    }
+
 
     public boolean close() {
         try {
@@ -35,7 +43,7 @@ public class DataWriter {
         }
     }
 
-    public String getAbsFilePath() {
-        return datafile.getAbsolutePath();
-    }
+//    public String getAbsFilePath() {
+//        return datafile.getAbsolutePath();
+//    }
 }
