@@ -60,9 +60,9 @@ public class DataConfigurator implements Exitter {
 
         String basepath = switch (PLATFORM) {
             case WIN11 ->
-                    "C:/Users/" + user + "/AppData/Local/alphagnfss/FloatDataVisualizer/" + RELEASE_PROJECT_VERSION;
+                    "C:/Users/" + user + "/AppData/Local/miramarwaterjets/FloatDataVisualizer/" + RELEASE_PROJECT_VERSION;
             case MACOS ->
-                    "/Users/" + user + "/Applications/alphagnfss/FloatDataVisualizer/" + RELEASE_PROJECT_VERSION;
+                    "/Users/" + user + "/Applications/miramarwaterjets/FloatDataVisualizer/" + RELEASE_PROJECT_VERSION;
             default -> null;
         };
 
@@ -94,7 +94,7 @@ public class DataConfigurator implements Exitter {
                 case MACOS -> "/dev/cu.usbmodem14101";
                 case LINUX -> null;
             };
-            printWriter.println("commPort="+portName);
+            printWriter.println("commPort=" + portName);
             printWriter.println("baudRate=115200");
             printWriter.println("packetData=PN12-MiramarWaterJets,pkt-,time,unit2");
             printWriter.println("time_unit=s");
