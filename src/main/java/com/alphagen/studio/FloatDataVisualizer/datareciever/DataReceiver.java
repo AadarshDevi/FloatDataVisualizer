@@ -1,8 +1,7 @@
 package com.alphagen.studio.FloatDataVisualizer.datareciever;
 
-import com.alphagen.studio.FloatDataVisualizer.Launcher;
+import com.alphagen.studio.FloatDataVisualizer.data.DataConfigurator;
 import com.alphagen.studio.FloatDataVisualizer.data.DataKeeper;
-import com.alphagen.studio.FloatDataVisualizer.data.Settings;
 import com.alphagen.studio.FloatDataVisualizer.log.Exitter;
 import com.fazecast.jSerialComm.SerialPort;
 import com.fazecast.jSerialComm.SerialPortInvalidPortException;
@@ -17,11 +16,11 @@ public class DataReceiver implements Runnable, Exitter {
     private static DataReceiver dr;
     private final DataKeeper dataKeeper;
     private final SerialPort serialPort;
-    private final Settings settings;
+    private final DataConfigurator dataConfigurator;
 
     public DataReceiver(DataKeeper dataKeeper) {
 
-        settings = Settings.getInstance();
+        dataConfigurator = DataConfigurator.getInstance();
 
         System.out.println("DATA: Serial Connection >");
 
@@ -31,22 +30,22 @@ public class DataReceiver implements Runnable, Exitter {
 
         SerialPort serialPort;
         try {
-            serialPort = SerialPort.getCommPort(settings.getSerialCommPort());
+            serialPort = SerialPort.getCommPort(dataConfigurator.getSerialCommPort());
         } catch (SerialPortInvalidPortException e) {
 //            JOptionPane.showMessageDialog(null, "Unable to create SerialComm with port: " + settings.getSerialCommPort(), "DataReceiver Exception", JOptionPane.ERROR_MESSAGE);
-            exit("Unable to create SerialComm with port: " + settings.getSerialCommPort());
+            exit("Unable to create SerialComm with port: " + dataConfigurator.getSerialCommPort());
             throw new RuntimeException(e);
         }
 
         boolean success = serialPort.openPort();
         serialPort.closePort();
         if (!success) {
-            settings.showSerialCommPorts();
+            dataConfigurator.showSerialCommPorts();
         }
 
         this.serialPort = serialPort;
 
-        this.serialPort.setBaudRate(settings.getBaudRate());
+        this.serialPort.setBaudRate(dataConfigurator.getBaudRate());
         this.serialPort.setComPortTimeouts(SerialPort.TIMEOUT_READ_SEMI_BLOCKING, 0, 0);
 
         boolean connectionEstablished = this.serialPort.openPort();
@@ -65,44 +64,47 @@ public class DataReceiver implements Runnable, Exitter {
     @Override
     public void run() {
 
-        try (
-                BufferedReader bufferedReader = new BufferedReader(
-                        new InputStreamReader(
-                                serialPort.getInputStreamWithSuppressedTimeoutExceptions()
-                        )
-                )
-        ) {
+        while (!Thread.currentThread().isInterrupted()) {
+            try (
+                    BufferedReader bufferedReader = new BufferedReader(
+                            new InputStreamReader(
+                                    serialPort.getInputStreamWithSuppressedTimeoutExceptions()
+                            )
+                    )
+            ) {
 
-            String dataline;
-            boolean startDataTransfer = false;
-            boolean endDataTransfer = false;
+                String dataline;
+                boolean startDataTransfer = false;
+                boolean endDataTransfer = false;
 
-            while ((dataline = bufferedReader.readLine()) != null) {
+                while ((dataline = bufferedReader.readLine()) != null) {
 
-                if (dataline.equals(settings.getStartFlag())) {
-                    System.out.println(dataline);
-                    System.out.println();
-                    startDataTransfer = true;
-                } else if (dataline.equals(settings.getEndFlag())) {
-                    System.out.println();
-                    System.out.println(dataline);
-                    endDataTransfer = true;
-                    bufferedReader.close();
-                    break;
+                    if (dataline.equals(dataConfigurator.getStartFlag())) {
+                        System.out.println(dataline);
+                        System.out.println();
+                        startDataTransfer = true;
+                    } else if (dataline.equals(dataConfigurator.getEndFlag())) {
+                        System.out.println();
+                        System.out.println(dataline);
+                        endDataTransfer = true;
+                        bufferedReader.close();
+                        Thread.currentThread().interrupt();
+//                        break;
+                    }
+
+                    if ((dataline != null) && startDataTransfer && !endDataTransfer && dataline.startsWith(dataConfigurator.getTeamData())) {
+                        System.out.println(dataline);
+                        dataKeeper.writeData(dataline);
+                    }
                 }
 
-                if ((dataline != null) && startDataTransfer && !endDataTransfer && dataline.startsWith(settings.getTeamData())) {
-                    System.out.println(dataline);
-                    dataKeeper.writeData(dataline);
-                }
+            } catch (IOException e) {
+                JOptionPane.showMessageDialog(null, "Unable to \"readLine()\"", "DataReceiver Exception (Ignore)", JOptionPane.ERROR_MESSAGE);
+                throw new RuntimeException(e);
             }
-
-        } catch (IOException e) {
-            JOptionPane.showMessageDialog(null, "Unable to \"readLine()\"", "DataReceiver Exception", JOptionPane.ERROR_MESSAGE);
-            throw new RuntimeException(e);
         }
 
-        if(serialPort != null)
+        if (serialPort != null)
             serialPort.closePort();
         System.out.println("LOG: Float Data Recorder has stopped receiving data.");
     }
