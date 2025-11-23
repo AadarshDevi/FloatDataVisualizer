@@ -88,7 +88,7 @@ public class DataReceiver implements Runnable, Exitter {
                         System.out.println(dataline);
                         endDataTransfer = true;
                         bufferedReader.close();
-                        Thread.currentThread().interrupt();
+//                        Thread.currentThread().interrupt();
 //                        break;
                     }
 
@@ -99,7 +99,7 @@ public class DataReceiver implements Runnable, Exitter {
                 }
 
             } catch (IOException e) {
-                JOptionPane.showMessageDialog(null, "Unable to \"readLine()\"", "DataReceiver Exception (Ignore)", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(null, " (Ignore) Unable to \"readLine()\"", "DataReceiver Exception", JOptionPane.ERROR_MESSAGE);
                 throw new RuntimeException(e);
             }
         }
