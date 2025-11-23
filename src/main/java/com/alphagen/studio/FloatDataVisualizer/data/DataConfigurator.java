@@ -1,8 +1,8 @@
 package com.alphagen.studio.FloatDataVisualizer.data;
 
 import com.alphagen.studio.FloatDataVisualizer.Launcher;
-import com.alphagen.studio.FloatDataVisualizer.filepaths.FilePath;
-import com.alphagen.studio.FloatDataVisualizer.filepaths.FilePathFactory;
+import com.alphagen.studio.FloatDataVisualizer.filepaths.DataPath;
+import com.alphagen.studio.FloatDataVisualizer.filepaths.DataPathFactory;
 import com.alphagen.studio.FloatDataVisualizer.log.Exitter;
 import com.fazecast.jSerialComm.SerialPort;
 import com.fazecast.jSerialComm.SerialPortInvalidPortException;
@@ -11,15 +11,15 @@ import javax.swing.*;
 import java.io.*;
 import java.util.Properties;
 
-public class Settings implements Exitter {
+public class DataConfigurator implements Exitter {
 
     // Debugging
     public static final boolean DEBUG = true;
 
     // Other Vars
     public static final Launcher.Platform PLATFORM = Launcher.Platform.MACOS;
-    private static Settings settings;
-    public final FilePath filePath;
+    private static DataConfigurator dataConfigurator;
+    public final DataPath dataPath;
 
     // Application
     private final String[] PLATFORMS = {"win10", "win11", "macos", "linux"};
@@ -47,16 +47,16 @@ public class Settings implements Exitter {
     public String TIME_UNIT;
 
     // DataWriter
-    public boolean WRITE_CSV;
-    public boolean WRITE_RAW;
+//    public boolean WRITE_CSV;
+//    public boolean WRITE_RAW;
 
 
     // SETV/SETX > Set Variable
 
-    public Settings() {
+    public DataConfigurator() {
 
         String user = System.getProperty("user.name");
-        System.out.println("LOG: user > " + user);
+        System.out.println("LOG: User > " + user);
 
         String basepath = switch (PLATFORM) {
             case WIN11 ->
@@ -69,10 +69,10 @@ public class Settings implements Exitter {
         if (user == null) exit("Unable to get User's Platform/OS and Username.");
         if (basepath.isBlank()) exit("Datapath of settings.txt is null.");
 
-        FilePathFactory.generate(basepath);
-        filePath = FilePathFactory.getFilePathFactory().getFilePath();
+        DataPathFactory.generate(basepath);
+        dataPath = DataPathFactory.getFilePathFactory().getFilePath();
 
-        File settingsFile = new File(filePath.getSettingsPath());
+        File settingsFile = new File(dataPath.getSettingsPath());
 
         if ((settingsFile.exists() && settingsFile.isFile() && (settingsFile.length() == 0)) || !settingsFile.exists())
             generateSettingsFile();
@@ -80,14 +80,14 @@ public class Settings implements Exitter {
         serialPorts = SerialPort.getCommPorts();
     }
 
-    public static Settings getInstance() {
-        if (settings == null) settings = new Settings();
-        return settings;
+    public static DataConfigurator getInstance() {
+        if (dataConfigurator == null) dataConfigurator = new DataConfigurator();
+        return dataConfigurator;
     }
 
     private void generateSettingsFile() {
 
-        try (PrintWriter printWriter = new PrintWriter(filePath.getSettingsPath())) {
+        try (PrintWriter printWriter = new PrintWriter(dataPath.getSettingsPath())) {
             printWriter.println("# Visualizer Data");
             String portName = switch (PLATFORM) {
                 case WIN11 -> "COM3";
@@ -108,8 +108,8 @@ public class Settings implements Exitter {
             printWriter.println("projectVersion=" + INTERNAL_PROJECT_VERSION);
             printWriter.println("releaseVersion=" + RELEASE_PROJECT_VERSION);
             printWriter.println("platform=" + PLATFORM.toString().toLowerCase());
-            printWriter.println("csv=" + false);
-            printWriter.println("raw=" + false);
+//            printWriter.println("csv=" + false);
+//            printWriter.println("raw=" + false);
         } catch (FileNotFoundException e) {
             exit("Unable to find settings.txt");
         }
@@ -119,11 +119,11 @@ public class Settings implements Exitter {
 
     public void readSettings() {
 
-        System.out.println("DATA: Settings >");
+        System.out.println("DATA: DataConfigurator >");
 
         try {
             Properties properties = new Properties();
-            InputStream inputStream = new FileInputStream(filePath.getSettingsPath());  // Settings.class.getResourceAsStream(datapath);
+            InputStream inputStream = new FileInputStream(dataPath.getSettingsPath());  // Settings.class.getResourceAsStream(datapath);
 //            InputStream inputStream = new FileInputStream(datapath);  // Settings.class.getResourceAsStream(datapath);
 
             if (inputStream == null) exit("settings.txt resource not found");
@@ -132,7 +132,7 @@ public class Settings implements Exitter {
 
             // Project Version > For settings.txt
             String projectVersion = properties.getProperty("projectVersion");
-            System.out.println("SetX: " + projectVersion + ", ProjectVal: " + INTERNAL_PROJECT_VERSION);
+//            System.out.println("SetX: " + projectVersion + ", ProjectVal: " + INTERNAL_PROJECT_VERSION);
             if (projectVersion == null) exit("Project Version does not exist");
             else if (!projectVersion.equals(INTERNAL_PROJECT_VERSION))
                 exit("Project Version does not match Application Version.");
@@ -256,23 +256,23 @@ public class Settings implements Exitter {
             System.out.println("\tSETV: Data Group Name > " + DATA_GROUP_NAME);
             Thread.sleep(50);
 
-            // Write CSV File
-            String stringCSVWrite = properties.getProperty("csv");
-            if (stringCSVWrite == null || stringCSVWrite.isBlank()) {
-                WRITE_CSV = false;
-            }
-            WRITE_CSV = Boolean.parseBoolean(stringCSVWrite);
-            System.out.println("\tSETV: Write CSV File > " + WRITE_CSV);
-            Thread.sleep(50);
-
-            // Write CSV File
-            String stringRAWWrite = properties.getProperty("raw");
-            if (stringRAWWrite == null || stringRAWWrite.isBlank()) {
-                WRITE_RAW = false;
-            }
-            WRITE_CSV = Boolean.parseBoolean(stringRAWWrite);
-            System.out.println("\tSETV: Write Raw Data in CSV > " + WRITE_CSV);
-            Thread.sleep(50);
+//            // Write CSV File
+//            String stringCSVWrite = properties.getProperty("csv");
+//            if (stringCSVWrite == null || stringCSVWrite.isBlank()) {
+//                WRITE_CSV = false;
+//            }
+//            WRITE_CSV = Boolean.parseBoolean(stringCSVWrite);
+//            System.out.println("\tSETV: Write CSV File > " + WRITE_CSV);
+//            Thread.sleep(50);
+//
+//            // Write CSV File
+//            String stringRAWWrite = properties.getProperty("raw");
+//            if (stringRAWWrite == null || stringRAWWrite.isBlank()) {
+//                WRITE_RAW = false;
+//            }
+//            WRITE_CSV = Boolean.parseBoolean(stringRAWWrite);
+//            System.out.println("\tSETV: Write Raw Data in CSV > " + WRITE_CSV);
+//            Thread.sleep(50);
 
             // Serial Comm Port
             if (serialPorts.length == 0) {

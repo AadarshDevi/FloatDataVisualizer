@@ -4,11 +4,9 @@ import com.alphagen.studio.FloatDataVisualizer.log.Exitter;
 
 import javax.swing.*;
 import java.io.File;
-import java.io.FileWriter;
 import java.io.IOException;
-import java.io.PrintWriter;
 
-public class FilePath implements Exitter {
+public class DataPath implements Exitter {
 
     public final String basepath;
     public final String screenshot_scatterplot;
@@ -17,8 +15,10 @@ public class FilePath implements Exitter {
     public final String logpath;
     public final String csvpath;
 
-    public FilePath(String basepath) {
+    public DataPath(String basepath) {
         this.basepath = basepath;
+
+        System.out.println("DATA: DataPath >");
 
         try {
             generateFolder("Base Folder", basepath);
@@ -28,10 +28,8 @@ public class FilePath implements Exitter {
 
         // settings filepath
         settingspath = this.basepath + "/settings.txt";
-        // TODO: generateSaveFile(settingspath)
         try {
-            generateFile(settingspath);
-//            writeSave(settingsfile);
+            generateFile("Settings", settingspath);
         } catch (IOException e) {
             exit("Unable to generate settings.txt and cannot find filepath:\n" + settingspath);
         }
@@ -68,12 +66,12 @@ public class FilePath implements Exitter {
             JOptionPane.showMessageDialog(null, "Unable to generate Log folder.", "FilePath Exception", JOptionPane.ERROR_MESSAGE);
         }
 
+        // data/csv folder
         csvpath = this.basepath + "/data/";
         try {
-            generateFolder("CSV", logpath);
+            generateFolder("CSV/Data", csvpath);
         } catch (IOException e) {
-            System.err.println("ERROR: Unable to generate Data(CSV) folder");
-            JOptionPane.showMessageDialog(null, "Unable to generate Data(CSV) folder.", "FilePath Exception", JOptionPane.ERROR_MESSAGE);
+            exit("Unable to generate Data(CSV) folder.");
         }
     }
 
@@ -105,28 +103,36 @@ public class FilePath implements Exitter {
         return true;
     }
 
-    private File generateFile(String filepath) throws IOException {
+    private File generateFile(String filename, String filepath) throws IOException {
         File file = new File(filepath);
-        System.out.println("LOG: " + file.getName() + " File exists");
-        if (file.exists() && file.isFile()) return file;
+        if (file.exists() && file.isFile()) {
+            System.out.println("\tSETF: Retrieved File > " + filename);
+            return file;
+        }
         boolean success = file.createNewFile();
-        System.out.println("Generated: " + file.getName() + " File > " + success);
+//        System.out.println("Generated: " + file.getName() + " File > " + success);
         if (!success) {
             JOptionPane.showMessageDialog(null, "Unable to generate file:\n" + filepath, "FilePath Exception", JOptionPane.ERROR_MESSAGE);
+            System.err.println("\tEXCF: Unable tp Generated File > " + filename);
             throw new IOException();
         }
+        System.out.println("\tSETF: Generated File > " + filename);
         return file;
     }
 
-    private boolean generateFolder(String folder, String folderpath) throws IOException {
+    private boolean generateFolder(String foldername, String folderpath) throws IOException {
         File directory = new File(folderpath);
-        if (directory.exists() && directory.isDirectory()) return true;
+        if (directory.exists() && directory.isDirectory()) {
+            System.out.println("\tSETF: Folder > " + foldername);
+            return true;
+        }
         boolean directoryCreated = directory.mkdirs();
-        System.out.println("Generated: " + folder + " Folders > " + directoryCreated);
         if (!directoryCreated) {
             JOptionPane.showMessageDialog(null, "Unable to generate folder:\n" + folderpath, "FilePath Exception", JOptionPane.ERROR_MESSAGE);
+            System.out.println("\tEXCF: Unable to Generate Folder > " + foldername);
             throw new IOException();
         }
+        System.out.println("\tSETF: Folder > " + foldername);
         return directoryCreated;
     }
 
@@ -144,5 +150,8 @@ public class FilePath implements Exitter {
 
     public String getCSVPath() {
         return csvpath;
+    }
+
+    public void generateCSVFolder() {
     }
 }
