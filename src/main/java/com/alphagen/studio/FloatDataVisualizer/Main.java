@@ -46,18 +46,15 @@ public class Main extends Application {
         });
         stage.show();
 
-        Thread dataReader = new Thread(() -> {
-//                    boolean running = true;
-//            int nullValues = 0;
-            while (!Thread.currentThread().isInterrupted()) {
-                DataPointRecord dataPointRecord = DataKeeper.getInstance().getDataPointRecord();
-                if (dataPointRecord != null) {
-                    Platform.runLater(() -> dataPlotter.writeDataPoint(dataPointRecord));
-                }
-            }
-        });
-        dataReader.setName("DataReader");
-        dataReader.setDaemon(true);
-        dataReader.start();
+        Thread.ofVirtual()
+                .name("DataReader")
+                .start(() -> {
+                    while (!Thread.currentThread().isInterrupted()) {
+                        DataPointRecord dataPointRecord = DataKeeper.getInstance().getDataPointRecord();
+                        if (dataPointRecord != null) {
+                            Platform.runLater(() -> dataPlotter.writeDataPoint(dataPointRecord));
+                        }
+                    }
+                });
     }
 }

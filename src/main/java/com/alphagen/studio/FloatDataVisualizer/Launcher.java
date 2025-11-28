@@ -24,9 +24,9 @@ public class Launcher {
         dkt.start();
 
         DataReceiver dataReceiver = DataReceiver.getInstance();
-        drt = new Thread(dataReceiver);
-        drt.setName("DataReceiver");
-        drt.start();
+        drt = Thread.ofVirtual()
+                .name("DataReceiver")
+                .start(dataReceiver);
 
         Application.launch(Main.class, args);
     }
