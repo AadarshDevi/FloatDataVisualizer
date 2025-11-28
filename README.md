@@ -37,4 +37,11 @@ _**Project Information**_ below.
         3. Increase Width (disable and hide)
         4. Decrease Width (disable and hide)
     3. new MenuItem("Edit")
-    4. new MenuItem("Export")
+        1. 
+    5. new MenuItem("Export")
+        1. Data
+            1. Export Raw CSV
+            2. Export CSV
+        2. Screenshot
+            1. Table
+            2. Scatterplot
