@@ -13,12 +13,16 @@ public interface Exitter {
 
     default void exit(String errorMessage) {
 
-//        Launcher.killDataKeeper();
-//        Launcher.killDataReceiver();
-
         try {
+            if (!Launcher.getDataKeeperThread().isInterrupted()) {
+                Launcher.getDataKeeperThread().interrupt();
+            }
+
             Launcher.getDataKeeperThread().join();
-            Launcher.getDataReceiverThread().join();
+
+            if (Launcher.getDataReceiverThread() != null) {
+                Launcher.getDataReceiverThread().join();
+            }
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
