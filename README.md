@@ -36,9 +36,9 @@ _**Project Information**_ below.
         2. Full View
         3. Increase Width (disable and hide)
         4. Decrease Width (disable and hide)
-    3. new MenuItem("Edit")
-        1. 
-    5. new MenuItem("Export")
+    2. new MenuItem("Edit")
+        1.
+    3. new MenuItem("Export")
         1. Data
             1. Export Raw CSV
             2. Export CSV
