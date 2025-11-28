@@ -129,6 +129,7 @@ public class DataConfigurator implements Exitter {
 
     public void readSettings() {
 
+        System.out.println();
         System.out.println("DATA: DataConfigurator >");
 
         try {
