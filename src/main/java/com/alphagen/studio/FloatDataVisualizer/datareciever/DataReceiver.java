@@ -25,20 +25,16 @@ public class DataReceiver implements Runnable, Exitter {
         System.out.println("DATA: Serial Connection >");
 
         this.dataKeeper = dataKeeper;
-        SerialPort[] serialPorts = SerialPort.getCommPorts();
-
 
         SerialPort serialPort = null;
         try {
-            boolean portExists = false;
             for (SerialPort sp : SerialPort.getCommPorts()) {
                 if (sp.getSystemPortPath().equals(dataConfigurator.getSerialCommPort())) {
                     serialPort = SerialPort.getCommPort(dataConfigurator.getSerialCommPort());
-                    portExists = true;
                 }
             }
 
-            if ((serialPort == null) || !portExists) {
+            if (serialPort == null) {
                 exit("SerialComm Port does not exist: " + dataConfigurator.getSerialCommPort());
             }
 
@@ -98,8 +94,7 @@ public class DataReceiver implements Runnable, Exitter {
                         System.out.println(dataline);
                         endDataTransfer = true;
                         bufferedReader.close();
-//                        Thread.currentThread().interrupt();
-//                        break;
+                        break;
                     }
 
                     if ((dataline != null) && startDataTransfer && !endDataTransfer && dataline.startsWith(dataConfigurator.getTeamData())) {
@@ -109,8 +104,7 @@ public class DataReceiver implements Runnable, Exitter {
                 }
 
             } catch (IOException e) {
-                JOptionPane.showMessageDialog(null, " (Ignore) Unable to \"readLine()\"", "DataReceiver Exception", JOptionPane.ERROR_MESSAGE);
-                throw new RuntimeException(e);
+                JOptionPane.showMessageDialog(null, " (Ignore)\nUnable to \"readLine()\"", "DataReceiver Exception", JOptionPane.ERROR_MESSAGE);
             }
         }
 
