@@ -29,9 +29,12 @@ _**Project Information**_ below.
 
 ## TODO
 
-1. Implement DataWriter
-    1. Generate /data/ folder
-2. Make DataPoints on ScatterPlot to show value whn hovering over them.
-3. Reduce Technical Debt
-4. Build Win11, MacOS, and Linux
-5. 
+1. Make DataPoints on ScatterPlot to show value whn hovering over them.
+2. Update UI:
+    1. new MenuItem("View")
+        1. Fit View
+        2. Full View
+        3. Increase Width (disable and hide)
+        4. Decrease Width (disable and hide)
+    3. new MenuItem("Edit")
+    4. new MenuItem("Export")
