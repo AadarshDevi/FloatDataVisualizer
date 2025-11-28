@@ -28,11 +28,21 @@ public class DataReceiver implements Runnable, Exitter {
         SerialPort[] serialPorts = SerialPort.getCommPorts();
 
 
-        SerialPort serialPort;
+        SerialPort serialPort = null;
         try {
-            serialPort = SerialPort.getCommPort(dataConfigurator.getSerialCommPort());
+            boolean portExists = false;
+            for (SerialPort sp : SerialPort.getCommPorts()) {
+                if (sp.getSystemPortPath().equals(dataConfigurator.getSerialCommPort())) {
+                    serialPort = SerialPort.getCommPort(dataConfigurator.getSerialCommPort());
+                    portExists = true;
+                }
+            }
+
+            if ((serialPort == null) || !portExists) {
+                exit("SerialComm Port does not exist: " + dataConfigurator.getSerialCommPort());
+            }
+
         } catch (SerialPortInvalidPortException e) {
-//            JOptionPane.showMessageDialog(null, "Unable to create SerialComm with port: " + settings.getSerialCommPort(), "DataReceiver Exception", JOptionPane.ERROR_MESSAGE);
             exit("Unable to create SerialComm with port: " + dataConfigurator.getSerialCommPort());
             throw new RuntimeException(e);
         }
@@ -49,10 +59,10 @@ public class DataReceiver implements Runnable, Exitter {
         this.serialPort.setComPortTimeouts(SerialPort.TIMEOUT_READ_SEMI_BLOCKING, 0, 0);
 
         boolean connectionEstablished = this.serialPort.openPort();
-        System.out.println("\tLOG: Connection > " + connectionEstablished);
+        System.out.println("\tCOMB: Connection > " + connectionEstablished);
         if (!connectionEstablished) exit("COM Port Connection ERROR");
 
-        System.out.println("\tLOG: COM Port Connection Established");
+        System.out.println("\tCOMM: Port Connection Established");
         System.out.println();
     }
 
