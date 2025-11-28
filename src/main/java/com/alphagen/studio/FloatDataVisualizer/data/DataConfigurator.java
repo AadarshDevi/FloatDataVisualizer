@@ -55,7 +55,10 @@ public class DataConfigurator implements Exitter {
 
     public DataConfigurator() {
 
+        // FIXME: Overwriting > String user, basepath
+
         String user = System.getProperty("user.name");
+        user = System.getProperty("user.home");
         System.out.println("LOG: User > " + user);
 
         String basepath = switch (PLATFORM) {
@@ -64,6 +67,13 @@ public class DataConfigurator implements Exitter {
             case MACOS ->
                     "/Users/" + user + "/Applications/miramarwaterjets/FloatDataVisualizer/" + RELEASE_PROJECT_VERSION;
             default -> null;
+        };
+
+        basepath = switch (PLATFORM) {
+            case WIN11 -> user + "/AppData/Local/miramarwaterjets/FloatDataVisualizer/" + RELEASE_PROJECT_VERSION;
+            case MACOS ->
+                    user + "/Library/Application Support/miramarwaterjets/FloatDataVisualizer/" + RELEASE_PROJECT_VERSION;
+            case LINUX -> user + "/.local/share/miramarwaterjets/FloatDataVisualizer/" + RELEASE_PROJECT_VERSION;
         };
 
         if (user == null) exit("Unable to get User's Platform/OS and Username.");
@@ -92,7 +102,7 @@ public class DataConfigurator implements Exitter {
             String portName = switch (PLATFORM) {
                 case WIN11 -> "COM3";
                 case MACOS -> "/dev/cu.usbmodem14101";
-                case LINUX -> null;
+                case LINUX -> "/dev/ttyUSB0";
             };
             printWriter.println("commPort=" + portName);
             printWriter.println("baudRate=115200");
