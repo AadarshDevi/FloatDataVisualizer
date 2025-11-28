@@ -7,6 +7,7 @@
 ## Files Changed
 
 1. DataConfigurator
+2. DataReceiver
 
 ## Changes
 
@@ -21,4 +22,7 @@
 
 1. App Storage (Screenshots, CSVs, etc.) will now use "user.home" instead of "user.name".
 2. Added linux basepath: userHome + "/.local/share/miramarwaterjets/FloatDataVisualizer/" + RELEASE_PROJECT_VERSION
-3. 
+
+3. DataReceiver:
+    1. Updated to throw exception JOptionPane when serial port does not exist.
+    2. Exitter when exitting checks if datakeeper is not interupted and datareceiver is not null. 
