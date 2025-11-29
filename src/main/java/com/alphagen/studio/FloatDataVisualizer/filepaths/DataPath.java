@@ -75,6 +75,16 @@ public class DataPath implements Exitter {
         }
     }
 
+    public static boolean folderExists(String folderpath) {
+        File folder = new File(folderpath);
+        return folder.exists() && folder.isDirectory();
+    }
+
+    public static boolean fileExists(String filepath) {
+        File file = new File(filepath);
+        return file.exists() && file.isFile();
+    }
+
     public boolean writeSave(File settingsfile) {
         if (settingsfile.length() == 0) return true;
 
@@ -116,7 +126,7 @@ public class DataPath implements Exitter {
             System.err.println("\tEXCF: Unable tp Generated File > " + filename);
             throw new IOException();
         }
-        System.out.println("\tSETF: Generated File > " + filename);
+        System.out.println("\tGENF: Generated File > " + filename);
         return file;
     }
 
@@ -132,7 +142,7 @@ public class DataPath implements Exitter {
             System.out.println("\tEXCF: Unable to Generate Folder > " + foldername);
             throw new IOException();
         }
-        System.out.println("\tSETF: Folder > " + foldername);
+        System.out.println("\tGENF: Folder > " + foldername);
         return directoryCreated;
     }
 
