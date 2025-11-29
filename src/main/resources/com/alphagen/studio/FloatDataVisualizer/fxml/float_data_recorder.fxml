@@ -81,7 +81,7 @@
                         <MenuItem fx:id="mi_edit_scatterchart_decrease_width" mnemonicParsing="false" onAction="#decreaseChartWidth" text="↓ Decrease Width" />
                      </items>
                   </Menu>
-                  <Menu mnemonicParsing="false" text="Table">
+                  <Menu disable="true" mnemonicParsing="false" text="Table" visible="false">
                      <items>
                         <MenuItem fx:id="mi_edit_tableview_increase_width" mnemonicParsing="false" onAction="#increaseTableHeight" text="↑ Increase Height" />
                         <MenuItem fx:id="mi_edit_tableview_decrease_width" mnemonicParsing="false" onAction="#decreaseTableHeight" text="↓ Decrease Height" />
