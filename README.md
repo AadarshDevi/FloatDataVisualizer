@@ -29,19 +29,12 @@ _**Project Information**_ below.
 
 ## TODO
 
-1. Make DataPoints on ScatterPlot to show value whn hovering over them.
-2. Update UI:
-    1. new MenuItem("View")
-        1. Fit View
-        2. Full View
-        3. Increase Width (disable and hide)
-        4. Decrease Width (disable and hide)
-    2. new MenuItem("Edit")
-        1.
-    3. new MenuItem("Export")
-        1. Data
-            1. Export Raw CSV
-            2. Export CSV
-        2. Screenshot
-            1. Table
-            2. Scatterplot
+1. [UI and DataPlotter] Make DataPoints on ScatterPlot to show value whn hovering over them.
+2. [UI] When creating file, add find in help for
+    1. basepath
+    2. screenshots
+    3. exported csv
+
+    - This is under UI, get paths.
+3. [DataReceiver] When found Serial port, break from loop
+4. 
