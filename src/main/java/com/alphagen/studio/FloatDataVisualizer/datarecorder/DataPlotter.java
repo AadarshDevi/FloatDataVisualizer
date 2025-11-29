@@ -8,11 +8,13 @@ import com.alphagen.studio.FloatDataVisualizer.datawriter.DataWriter;
 import com.alphagen.studio.FloatDataVisualizer.filepaths.DataPath;
 import com.alphagen.studio.FloatDataVisualizer.filepaths.DataPathFactory;
 import com.alphagen.studio.FloatDataVisualizer.log.Exitter;
+import javafx.application.Platform;
 import javafx.beans.property.ReadOnlyObjectWrapper;
 import javafx.collections.ObservableList;
 import javafx.embed.swing.SwingFXUtils;
 import javafx.fxml.FXML;
 import javafx.geometry.Pos;
+import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.SnapshotParameters;
 import javafx.scene.chart.NumberAxis;
@@ -217,10 +219,23 @@ public class DataPlotter implements Exitter {
 
     public void writeDataPoint(DataPointRecord dataPointRecord) {
 
+        // Addition: Hovering a datapoint shows vales
+        XYChart.Data<Double, Double> data = new XYChart.Data<>(dataPointRecord.time(), dataPointRecord.depth());
+        Platform.runLater(() -> {
+            Node node = data.getNode();
+            if (node != null) {
+                Tooltip.install(node, new Tooltip("Time: " + data.getXValue() + dataConfigurator.TIME_UNIT + ", " + dataConfigurator.UNIT2_NAME + ": " + data.getYValue() + dataConfigurator.UNIT2_UNIT));
+            } else {
+                System.out.println("ERROR: DataPointUI is null!!");
+            }
+        });
+        // end
+
+
         if (oldPacketNum == dataPointRecord.packetId()) {
             for (XYChart.Series<Double, Double> series : list) {
                 if (series.getName().equals(dataConfigurator.getDataGroupName() + dataPointRecord.packetId())) {
-                    series.getData().add(new XYChart.Data<>(dataPointRecord.time(), dataPointRecord.depth()));
+                    series.getData().add(data);
                     tableView.getItems().add(dataPointRecord);
                     System.out.println("LOG: Data Group Found > " + dataPointRecord.packetId());
                 }
@@ -228,7 +243,7 @@ public class DataPlotter implements Exitter {
         } else {
             System.out.println("LOG: Data Group Created > " + dataPointRecord.packetId());
             XYChart.Series<Double, Double> xyChartSeries = createDataGroup(dataPointRecord.packetId());
-            xyChartSeries.getData().add(new XYChart.Data<>(dataPointRecord.time(), dataPointRecord.depth()));
+            xyChartSeries.getData().add(data);
             tableView.getItems().add(dataPointRecord);
             scatterChart.getData().add(xyChartSeries);
             oldPacketNum = dataPointRecord.packetId();
