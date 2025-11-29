@@ -46,6 +46,7 @@ _**Project Information**_ below.
 6. UI for app.config
     1. Used to change filepaths for custom filepaths.
 7. exporting files will use FileChooser for custom naming and placement.
+8. Add file logging for exceptions
 
 
 
