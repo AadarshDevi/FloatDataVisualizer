@@ -29,8 +29,23 @@ _**Project Information**_ below.
 
 ## TODO
 
-Show basepath folder when created.
-
-### Not Important
-
 1. Add libs to /lib
+2. Change/Convert/Create Files
+    1. app.config > config file > user uses this file
+        - current settings.txt
+    2. app.settings > settings file > app uses this file
+        1. versions (internal and release)
+
+        - does not exist
+3. auto detect platform
+    1. removes the need for platform on config
+4. rename "rawCSV_#.txt" to "raw.txt"
+5. Add MenuItems
+    1. Preferences > App Settings
+    2. Settings > Config
+6. UI for app.config
+    1. Used to change filepaths for custom filepaths.
+7. exporting files will use FileChooser for custom naming and placement.
+
+
+
