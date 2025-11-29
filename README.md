@@ -141,4 +141,4 @@ _**Project Information**_ below.
         1. FileLogger
         2. FileLoggerFactory
 9. Launcher
-10. Main
+10. Main (Merged with Launcher)
