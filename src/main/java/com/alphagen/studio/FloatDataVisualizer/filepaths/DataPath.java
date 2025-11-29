@@ -154,4 +154,8 @@ public class DataPath implements Exitter {
 
     public void generateCSVFolder() {
     }
+
+    public String getBasepath() {
+        return basepath;
+    }
 }

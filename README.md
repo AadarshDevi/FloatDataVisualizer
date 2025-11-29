@@ -30,9 +30,3 @@ _**Project Information**_ below.
 ## TODO
 
 1. [UI and DataPlotter] Make DataPoints on ScatterPlot to show value whn hovering over them.
-2. [UI] When creating file, add find in help for
-    1. basepath
-    2. screenshots
-    3. exported csv
-
-    - This is under UI, get paths.

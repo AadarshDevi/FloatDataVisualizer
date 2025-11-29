@@ -8,18 +8,25 @@ import com.alphagen.studio.FloatDataVisualizer.datawriter.DataWriter;
 import com.alphagen.studio.FloatDataVisualizer.filepaths.DataPath;
 import com.alphagen.studio.FloatDataVisualizer.filepaths.DataPathFactory;
 import com.alphagen.studio.FloatDataVisualizer.log.Exitter;
+import javafx.application.Platform;
 import javafx.beans.property.ReadOnlyObjectWrapper;
 import javafx.collections.ObservableList;
 import javafx.embed.swing.SwingFXUtils;
 import javafx.fxml.FXML;
+import javafx.geometry.Pos;
+import javafx.scene.Node;
+import javafx.scene.Scene;
 import javafx.scene.SnapshotParameters;
 import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.ScatterChart;
 import javafx.scene.chart.XYChart;
-import javafx.scene.control.MenuItem;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import javafx.scene.image.WritableImage;
+import javafx.scene.input.Clipboard;
+import javafx.scene.input.ClipboardContent;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.HBox;
+import javafx.stage.Stage;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
@@ -79,6 +86,15 @@ public class DataPlotter implements Exitter {
     private MenuItem mi_export_data_raw_data;
     @FXML
     private MenuItem mi_export_data_csv_data;
+
+    @FXML
+    private MenuItem mi_help_filepath_app;
+    @FXML
+    private MenuItem mi_help_filepath_screenshots;
+    @FXML
+    private MenuItem mi_help_filepath_csvs;
+    @FXML
+    private MenuItem mi_help_filepath_settings_file_app_config;
 
     @FXML
     public void initialize() {
@@ -146,6 +162,22 @@ public class DataPlotter implements Exitter {
             exit(Exitter.NO_ERROR);
         });
 
+        mi_help_filepath_app.setOnAction(event -> {
+            showCustomCopyJOptionPane("App Filepath", DataPathFactory.getFilePathFactory().getFilePath().getBasepath());
+        });
+
+        mi_help_filepath_screenshots.setOnAction(event -> {
+            showCustomCopyJOptionPane("Screenshot Filepath", DataPathFactory.getFilePathFactory().getFilePath().getScatterPath().replace("scatterchart/", ""));
+        });
+
+        mi_help_filepath_csvs.setOnAction(event -> {
+            showCustomCopyJOptionPane("CSV Filepath", DataPathFactory.getFilePathFactory().getFilePath().getCSVPath().replace("/data/", "/data"));
+        });
+
+        mi_help_filepath_settings_file_app_config.setOnAction(event -> {
+            showCustomCopyJOptionPane("App Config Filepath", DataPathFactory.getFilePathFactory().getFilePath().getSettingsPath());
+        });
+
         xAxis = new NumberAxis();
         xAxis.setAutoRanging(false);
         xAxis.setLowerBound(0);
@@ -187,10 +219,23 @@ public class DataPlotter implements Exitter {
 
     public void writeDataPoint(DataPointRecord dataPointRecord) {
 
+        // Addition: Hovering a datapoint shows vales
+        XYChart.Data<Double, Double> data = new XYChart.Data<>(dataPointRecord.time(), dataPointRecord.depth());
+        Platform.runLater(() -> {
+            Node node = data.getNode();
+            if (node != null) {
+                Tooltip.install(node, new Tooltip("Time: " + data.getXValue() + dataConfigurator.TIME_UNIT + ", " + dataConfigurator.UNIT2_NAME + ": " + data.getYValue() + dataConfigurator.UNIT2_UNIT));
+            } else {
+                System.out.println("ERROR: DataPointUI is null!!");
+            }
+        });
+        // end
+
+
         if (oldPacketNum == dataPointRecord.packetId()) {
             for (XYChart.Series<Double, Double> series : list) {
                 if (series.getName().equals(dataConfigurator.getDataGroupName() + dataPointRecord.packetId())) {
-                    series.getData().add(new XYChart.Data<>(dataPointRecord.time(), dataPointRecord.depth()));
+                    series.getData().add(data);
                     tableView.getItems().add(dataPointRecord);
                     System.out.println("LOG: Data Group Found > " + dataPointRecord.packetId());
                 }
@@ -198,7 +243,7 @@ public class DataPlotter implements Exitter {
         } else {
             System.out.println("LOG: Data Group Created > " + dataPointRecord.packetId());
             XYChart.Series<Double, Double> xyChartSeries = createDataGroup(dataPointRecord.packetId());
-            xyChartSeries.getData().add(new XYChart.Data<>(dataPointRecord.time(), dataPointRecord.depth()));
+            xyChartSeries.getData().add(data);
             tableView.getItems().add(dataPointRecord);
             scatterChart.getData().add(xyChartSeries);
             oldPacketNum = dataPointRecord.packetId();
@@ -324,5 +369,48 @@ public class DataPlotter implements Exitter {
         System.out.println("DATA: RAW/CSV Data saved at " + file.getAbsolutePath());
         dw.close();
 
+    }
+
+    public void showCustomCopyJOptionPane(String title, String message) {
+        System.out.println(message);
+
+        final Clipboard clipboard = Clipboard.getSystemClipboard();
+
+        Stage stage = new Stage();
+
+        Label label = new Label(message);
+        label.setAlignment(Pos.CENTER);
+        label.setWrapText(true);
+
+        BorderPane borderPane = new BorderPane();
+        borderPane.setPrefSize(750.0, 150.0);
+        borderPane.setCenter(label);
+
+        HBox hBox = new HBox();
+        hBox.setPrefSize(500.0, 50.0);
+        borderPane.setBottom(hBox);
+        hBox.setAlignment(Pos.CENTER);
+        hBox.setSpacing(10.0);
+
+        Button copyButton = new Button("Copy");
+        copyButton.setPrefSize(100.0, 20.0);
+        copyButton.setOnAction(event -> {
+            final ClipboardContent clipboardContent = new ClipboardContent();
+            clipboardContent.putString(message);
+            clipboard.setContent(clipboardContent);
+        });
+
+        Button closeButton = new Button("Ok");
+        closeButton.setPrefSize(100.0, 20.0);
+        closeButton.setOnAction(event -> {
+            stage.close();
+        });
+
+        hBox.getChildren().add(copyButton);
+        hBox.getChildren().add(closeButton);
+
+        stage.setScene(new Scene(borderPane));
+        stage.setTitle(title);
+        stage.show();
     }
 }
