@@ -93,52 +93,60 @@ _**Project Information**_ below.
 
 ### Packages and Classes
 
-1. Data
-    1. Settings
+1. Backend
+    1. Data
         1. Settings
-        2. SettingsReader // read settings
-        3. SettingsWriter // write settings
-    2. Connections
-        1. Connection
-            1. Port
-            2. BaudRate
-            3.
-        2. ConnectionReader
-        3. ConnectionWriter
-        4. Exceptions
+            1. Settings
+            2. SettingsReader // read settings
+            3. SettingsWriter // write settings
+        2. Connections
+            1. Connection
+                1. Port
+                2. BaudRate
+            2. ConnectionReader
+            3. ConnectionWriter
+            4. Exceptions
+                1. ____NotFoundException
+                2. ____NotFoundException
+                3. ____NotFoundException
+        3. DataPoint
+    2. FXMLReader
+        1. FXMLReader (getInstance)
+        2. FXMLPackage
+        3. Exceptions
             1. ____NotFoundException
             2. ____NotFoundException
-            3. ____NotFoundException
-    3. DataPoint
-2. FXMLReader
-    1. FXMLReader (getInstance)
-    2. FXMLPackage
-    3. Exceptions
-        1. ____NotFoundException
-        2. ____NotFoundException
-3. Util
+    3. Util
+        1. csv
+            1. CSVWriter
+            2. CSVWriterFactory
+    4. DataKeeper
+        1. DataKeeper
+        2. DataKeeperManager
+    5. DataReceiver
+        1. DataReceiver
+
+    6. FilePath
+        1. FilePath
+        2. FilePathFactory
+    7. Logging
+        1. Logger
+            1. Logger
+            2. LoggerFactory
+        2. FileLogger
+            1. FileLogger
+            2. FileLoggerFactory
+2. API
+    1. Exitter
+    2. Api
+    3. ApiManager
+3. Frontend
     1. UI
         1. CopyStage
-    2. csv
-        1. CSVWriter
-        2. CSVWriterFactory
-4. DataKeeper
-    1. DataKeeper
-    2. DataKeeperManager
-5. DataReceiver
-    1. DataReceiver
-6. DataPlotter (old: datarecorder)
-    1. DataPlotter
-7. FilePath
-    1. FilePath
-    2. FilePathFactory
-8. Logging
-    1. Exitter
-    2. Logger
-        1. Logger
-        2. LoggerFactory
-    3. FileLogger
-        1. FileLogger
-        2. FileLoggerFactory
-9. Launcher
-10. Main (Merged with Launcher)
+    2. Controller
+        1. DataPlotter
+            1. DataPlotter
+4. Launcher
+    1. enum Platform: WIN10, WIN11, MacOSX_INTEL, MacOSX_ARM, LINUX
+5. Main (Merged with Launcher)
+    - run backend (main thread), api (api thread), frontend (javafx thread)
