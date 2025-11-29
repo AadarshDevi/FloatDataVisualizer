@@ -77,8 +77,8 @@
                     <MenuItem fx:id="mi_edit_scatterchart_fit_view" mnemonicParsing="false" text="Fit View" />
                         <MenuItem fx:id="mi_edit_scatterchart_full_view" mnemonicParsing="false" text="Full View" />
                         <SeparatorMenuItem mnemonicParsing="false" />
-                        <MenuItem fx:id="mi_edit_scatterchart_increase_width" disable="true" mnemonicParsing="false" onAction="#increaseChartWidth" text="↑ Increase Width" visible="false" />
-                        <MenuItem fx:id="mi_edit_scatterchart_decrease_width" disable="true" mnemonicParsing="false" onAction="#decreaseChartWidth" text="↓ Decrease Width" visible="false" />
+                        <MenuItem fx:id="mi_edit_scatterchart_increase_width" mnemonicParsing="false" onAction="#increaseChartWidth" text="↑ Increase Width" />
+                        <MenuItem fx:id="mi_edit_scatterchart_decrease_width" mnemonicParsing="false" onAction="#decreaseChartWidth" text="↓ Decrease Width" />
                      </items>
                   </Menu>
                   <Menu mnemonicParsing="false" text="Table">
@@ -107,6 +107,15 @@
             </Menu>
           <Menu mnemonicParsing="false" text="Help">
             <items>
+                  <Menu mnemonicParsing="false" text="Filepaths">
+                    <items>
+                      <MenuItem fx:id="mi_help_filepath_app" mnemonicParsing="false" text="App" />
+                        <MenuItem fx:id="mi_help_filepath_screenshots" mnemonicParsing="false" text="Screenshots" />
+                        <MenuItem fx:id="mi_help_filepath_csvs" mnemonicParsing="false" text="CSVs" />
+                        <MenuItem fx:id="mi_help_filepath_settings_file_app_config" mnemonicParsing="false" text="App Config" />
+                    </items>
+                  </Menu>
+                  <SeparatorMenuItem mnemonicParsing="false" />
               <MenuItem mnemonicParsing="false" text="About" />
             </items>
           </Menu>
