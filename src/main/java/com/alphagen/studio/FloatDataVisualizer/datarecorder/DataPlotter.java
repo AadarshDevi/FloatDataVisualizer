@@ -4,6 +4,7 @@ import com.alphagen.studio.FloatDataVisualizer.Launcher;
 import com.alphagen.studio.FloatDataVisualizer.data.DataConfigurator;
 import com.alphagen.studio.FloatDataVisualizer.data.DataKeeper;
 import com.alphagen.studio.FloatDataVisualizer.data.DataPointRecord;
+import com.alphagen.studio.FloatDataVisualizer.data.util.CopyStage;
 import com.alphagen.studio.FloatDataVisualizer.datawriter.DataWriter;
 import com.alphagen.studio.FloatDataVisualizer.filepaths.DataPath;
 import com.alphagen.studio.FloatDataVisualizer.filepaths.DataPathFactory;
@@ -13,20 +14,16 @@ import javafx.beans.property.ReadOnlyObjectWrapper;
 import javafx.collections.ObservableList;
 import javafx.embed.swing.SwingFXUtils;
 import javafx.fxml.FXML;
-import javafx.geometry.Pos;
 import javafx.scene.Node;
-import javafx.scene.Scene;
 import javafx.scene.SnapshotParameters;
 import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.ScatterChart;
 import javafx.scene.chart.XYChart;
-import javafx.scene.control.*;
+import javafx.scene.control.MenuItem;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.Tooltip;
 import javafx.scene.image.WritableImage;
-import javafx.scene.input.Clipboard;
-import javafx.scene.input.ClipboardContent;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.HBox;
-import javafx.stage.Stage;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
@@ -372,45 +369,6 @@ public class DataPlotter implements Exitter {
     }
 
     public void showCustomCopyJOptionPane(String title, String message) {
-        System.out.println(message);
-
-        final Clipboard clipboard = Clipboard.getSystemClipboard();
-
-        Stage stage = new Stage();
-
-        Label label = new Label(message);
-        label.setAlignment(Pos.CENTER);
-        label.setWrapText(true);
-
-        BorderPane borderPane = new BorderPane();
-        borderPane.setPrefSize(750.0, 150.0);
-        borderPane.setCenter(label);
-
-        HBox hBox = new HBox();
-        hBox.setPrefSize(500.0, 50.0);
-        borderPane.setBottom(hBox);
-        hBox.setAlignment(Pos.CENTER);
-        hBox.setSpacing(10.0);
-
-        Button copyButton = new Button("Copy");
-        copyButton.setPrefSize(100.0, 20.0);
-        copyButton.setOnAction(event -> {
-            final ClipboardContent clipboardContent = new ClipboardContent();
-            clipboardContent.putString(message);
-            clipboard.setContent(clipboardContent);
-        });
-
-        Button closeButton = new Button("Ok");
-        closeButton.setPrefSize(100.0, 20.0);
-        closeButton.setOnAction(event -> {
-            stage.close();
-        });
-
-        hBox.getChildren().add(copyButton);
-        hBox.getChildren().add(closeButton);
-
-        stage.setScene(new Scene(borderPane));
-        stage.setTitle(title);
-        stage.show();
+        new CopyStage(title, message).show();
     }
 }
