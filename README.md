@@ -27,7 +27,7 @@ _**Project Information**_ below.
 2. Current Dev [ChangeLog 2.2.0](Documentation/ChangeLog/2_1_2_0.md)
 3. Archived [ChangeLogs](Documentation/ChangeLog)
 
-## TODO > v1.4.0: Settings and Connections
+## TODO: v1.4.0 > Settings and Connections
 
 1. Add libs to /lib
 2. Change file names:
