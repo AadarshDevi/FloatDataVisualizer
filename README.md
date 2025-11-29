@@ -41,6 +41,7 @@ _**Project Information**_ below.
 5. rename "rawCSV_#.txt" to "raw_#.txt"
 6. exporting files will use FileChooser for custom naming and placement.
 7. Add file logging for exceptions
+8. Merge Launcher.java and Main.java
 
 ### Settings and MenuItems (Not Implemented)
 
