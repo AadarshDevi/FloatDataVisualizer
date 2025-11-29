@@ -31,6 +31,7 @@ public class DataReceiver implements Runnable, Exitter {
             for (SerialPort sp : SerialPort.getCommPorts()) {
                 if (sp.getSystemPortPath().equals(dataConfigurator.getSerialCommPort())) {
                     serialPort = SerialPort.getCommPort(dataConfigurator.getSerialCommPort());
+                    break;
                 }
             }
 
