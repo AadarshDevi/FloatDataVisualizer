@@ -8,6 +8,7 @@
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.SeparatorMenuItem?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.BorderPane?>
@@ -75,6 +76,7 @@
                      <items>
                     <MenuItem fx:id="mi_edit_scatterchart_fit_view" mnemonicParsing="false" text="Fit View" />
                         <MenuItem fx:id="mi_edit_scatterchart_full_view" mnemonicParsing="false" text="Full View" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
                         <MenuItem fx:id="mi_edit_scatterchart_increase_width" disable="true" mnemonicParsing="false" onAction="#increaseChartWidth" text="↑ Increase Width" visible="false" />
                         <MenuItem fx:id="mi_edit_scatterchart_decrease_width" disable="true" mnemonicParsing="false" onAction="#decreaseChartWidth" text="↓ Decrease Width" visible="false" />
                      </items>
