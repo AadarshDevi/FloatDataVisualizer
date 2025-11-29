@@ -4,10 +4,12 @@
       <w>addonpath</w>
       <w>csvpath</w>
       <w>datawriter</w>
+      <w>excf</w>
       <w>exitter</w>
       <w>filepaths</w>
       <w>folderpath</w>
       <w>folderpaths</w>
+      <w>genf</w>
       <w>jpackage</w>
       <w>logpath</w>
       <w>logv</w>
@@ -15,6 +17,7 @@
       <w>nums</w>
       <w>scatterchart</w>
       <w>scatterplot</w>
+      <w>setf</w>
       <w>settingspath</w>
       <w>setv</w>
     </words>
