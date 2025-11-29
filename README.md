@@ -36,5 +36,3 @@ _**Project Information**_ below.
     3. exported csv
 
     - This is under UI, get paths.
-3. [DataReceiver] When found Serial port, break from loop
-4. 
