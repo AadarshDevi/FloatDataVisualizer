@@ -29,7 +29,7 @@ _**Project Information**_ below.
 
 ## v1.3.0 > Completed
 
-## v1.4.0 > Settings and Connections
+## v1.4.0 > Settings and Connections Docs (Not Started)
 
 1. Add libs to /lib
 2. Change file names:
@@ -43,7 +43,7 @@ _**Project Information**_ below.
 7. Add file logging for exceptions
 8. Merge Launcher.java and Main.java
 
-### Settings and MenuItems (Not Implemented)
+### Settings and MenuItems
 
 1. Settings (app.settings) (MenuItem under File)
     1. Filepath (MenuItem) aka Help
@@ -91,7 +91,7 @@ _**Project Information**_ below.
     6. Platform: AutoDetect/ final PLATFORM
 4. Data Receiver after App opens
 
-### Packages and Classes (Not Implemented)
+### Packages and Classes
 
 1. Data
     1. Settings
