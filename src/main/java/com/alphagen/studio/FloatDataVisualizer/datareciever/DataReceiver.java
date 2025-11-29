@@ -36,7 +36,7 @@ public class DataReceiver implements Runnable, Exitter {
             }
 
             if (serialPort == null) {
-                exit("SerialComm Port does not exist: " + dataConfigurator.getSerialCommPort());
+                exit("WARNING: Do NOT close the app if you are using it for the first time.\nSerialComm Port does not exist: " + dataConfigurator.getSerialCommPort());
             }
 
         } catch (SerialPortInvalidPortException e) {
