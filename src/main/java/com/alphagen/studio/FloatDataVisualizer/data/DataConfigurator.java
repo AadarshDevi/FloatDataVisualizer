@@ -20,22 +20,20 @@ public class DataConfigurator implements Exitter {
     public static final Launcher.Platform PLATFORM = Launcher.Platform.MACOS;
     private static DataConfigurator dataConfigurator;
     public final DataPath dataPath;
-
+    // Booleans
+    public final boolean isNewUser;
     // Application
     private final String[] PLATFORMS = {"win10", "win11", "macos", "linux"};
     private final String INTERNAL_PROJECT_VERSION = "2.1.3.0";
     private final String RELEASE_PROJECT_VERSION = "1.3.0";
     private final SerialPort[] serialPorts;
-
     // DataPlotter
     public String DATA_GROUP_NAME;
-
     // DataReceiver
     public int BAUD_RATE;
     public String SERIAL_COMM_PORT;
     public String START_DATA_TRANSFER;
     public String END_DATA_TRANSFER;
-
     // DataKeeper
     public String TEAM_DATA;
     public String PACKET_NAME;
@@ -55,21 +53,10 @@ public class DataConfigurator implements Exitter {
 
     public DataConfigurator() {
 
-        // FIXME: Overwriting > String user, basepath
-
-        String user = System.getProperty("user.name");
-        user = System.getProperty("user.home");
+        String user = System.getProperty("user.home");
         System.out.println("LOG: User > " + user);
 
         String basepath = switch (PLATFORM) {
-            case WIN11 ->
-                    "C:/Users/" + user + "/AppData/Local/miramarwaterjets/FloatDataVisualizer/" + RELEASE_PROJECT_VERSION;
-            case MACOS ->
-                    "/Users/" + user + "/Applications/miramarwaterjets/FloatDataVisualizer/" + RELEASE_PROJECT_VERSION;
-            default -> null;
-        };
-
-        basepath = switch (PLATFORM) {
             case WIN11 -> user + "/AppData/Local/miramarwaterjets/FloatDataVisualizer/" + RELEASE_PROJECT_VERSION;
             case MACOS ->
                     user + "/Library/Application Support/miramarwaterjets/FloatDataVisualizer/" + RELEASE_PROJECT_VERSION;
@@ -78,6 +65,11 @@ public class DataConfigurator implements Exitter {
 
         if (user == null) exit("Unable to get User's Platform/OS and Username.");
         if (basepath.isBlank()) exit("Datapath of settings.txt is null.");
+
+        isNewUser = !DataPath.folderExists(basepath);
+        System.out.println("LOG: BasePath > " + basepath);
+        System.out.println("LOG: Folder Exists > " + DataPath.folderExists(basepath));
+        System.out.println("LOG: New User > " + isNewUser);
 
         DataPathFactory.generate(basepath);
         dataPath = DataPathFactory.getFilePathFactory().getFilePath();
