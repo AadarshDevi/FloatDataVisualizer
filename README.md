@@ -30,4 +30,3 @@ _**Project Information**_ below.
 ## TODO
 
 1. [UI and DataPlotter] Make DataPoints on ScatterPlot to show value whn hovering over them.
-2.
