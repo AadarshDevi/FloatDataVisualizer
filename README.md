@@ -47,6 +47,8 @@ _**Project Information**_ below.
     1. Used to change filepaths for custom filepaths.
 7. exporting files will use FileChooser for custom naming and placement.
 8. Add file logging for exceptions
+9. MenuItem for viewing
+    1. Show/Hide Table
 
 
 
