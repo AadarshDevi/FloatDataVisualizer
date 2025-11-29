@@ -2,8 +2,11 @@ package com.alphagen.studio.FloatDataVisualizer;
 
 import com.alphagen.studio.FloatDataVisualizer.data.DataConfigurator;
 import com.alphagen.studio.FloatDataVisualizer.data.DataKeeper;
+import com.alphagen.studio.FloatDataVisualizer.data.util.CopyStage;
 import com.alphagen.studio.FloatDataVisualizer.datareciever.DataReceiver;
+import com.alphagen.studio.FloatDataVisualizer.filepaths.DataPathFactory;
 import javafx.application.Application;
+import javafx.embed.swing.JFXPanel;
 
 import javax.swing.*;
 
@@ -17,6 +20,15 @@ public class Launcher {
 
         DataConfigurator setting = DataConfigurator.getInstance();
         setting.readSettings();
+
+        if (setting.isNewUser) {
+            new JFXPanel();
+            javafx.application.Platform.runLater(() -> {
+                new CopyStage("Config File Filepath",
+                        DataPathFactory.getFilePathFactory().getFilePath().getSettingsPath()
+                ).show();
+            });
+        }
 
         DataKeeper dataKeeper = DataKeeper.getInstance();
         dkt = new Thread(dataKeeper);
