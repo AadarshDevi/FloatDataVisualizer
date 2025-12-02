@@ -23,7 +23,7 @@
           <execution>
             <id>default-cli</id>
             <configuration>
-              <mainClass>com.alphagen.studio.FloatDataVisualizer/com.alphagen.studio.FloatDataVisualizer.HelloApplication</mainClass>
+              <mainClass>com.alphagen.studio.FloatDataVisualizer.Launcher</mainClass>
               <launcher>app</launcher>
               <jlinkZipName>app</jlinkZipName>
               <jlinkImageName>app</jlinkImageName>
