@@ -31,6 +31,8 @@ _**Project Information**_ below.
 
 ## v1.4.0 > Settings and Connections Docs (Not Started)
 
+##### This will be Windows only from now on.
+
 1. Add libs to /lib
 2. Change file names:
     1. settings.txt > app.settings
