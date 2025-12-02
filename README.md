@@ -31,6 +31,8 @@ _**Project Information**_ below.
 
 ## v1.4.0 > Settings and Connections Docs (Not Started)
 
+##### Redo README.md to show new updates and improve content
+
 ##### This will be Windows only from now on.
 
 1. Add libs to /lib
