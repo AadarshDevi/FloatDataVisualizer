@@ -14,11 +14,14 @@ public interface Exitter {
     default void exit(String errorMessage) {
 
         try {
+            if(Launcher.getDataKeeperThread() != null) {
+
             if (!Launcher.getDataKeeperThread().isInterrupted()) {
                 Launcher.getDataKeeperThread().interrupt();
             }
 
             Launcher.getDataKeeperThread().join();
+            }
 
             if (Launcher.getDataReceiverThread() != null) {
                 Launcher.getDataReceiverThread().join();
