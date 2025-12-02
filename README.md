@@ -24,8 +24,8 @@ serialfix
 
 # ChangeLogs
 
-1. Current App [ChangeLog 2.1.1](Documentation/ChangeLog/2_1_1.md)
-2. Current Dev [ChangeLog 2.2.0](Documentation/ChangeLog/2_1_2_0.md)
+1. Current App [ChangeLog 1.2.1](Documentation/ChangeLog/2_1_1.md)
+2. Current Dev [ChangeLog 1.2.0](Documentation/ChangeLog/2_1_2_0.md)
 3. Archived [ChangeLogs](Documentation/ChangeLog)
 
 ## v1.3.0 > Completed
