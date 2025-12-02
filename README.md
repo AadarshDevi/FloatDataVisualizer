@@ -4,7 +4,6 @@ This repository is for the releases of the Float Data Recorder. To know the tech
 _**Project Information**_ below.
 
 # Dev Branch
-serialfix
 
 # Table of Contents / Documentation
 
