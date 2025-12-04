@@ -100,11 +100,34 @@ The app can export data as Screenshots, CSV, and Raw.
 
 ### Exception Messages
 
-There are many exceptions to pin point the problems when running the app.
+There are many exceptions to pin point the problems when running the app. They are mostly ordered in chronological order.
 
-1. Serial Ports are empty.
-> This means that there are no serial ports connected to the device.
-2. 
+1. Unable to get User's Platform/OS and Username.
+2. Datapath of settings.txt is null.
+3. settings.txt resource not found
+4. Project Version does not exist
+5. Project Version does not match Application Version.
+6. Release Version does not exist
+7. Project Version does not match Application Version.
+8. Platform is null.
+9. Wrong App. Please use {{platform}} version of the app.
+10. settings.txt is in the wrong platform
+11. Baud Rate is EMPTY.
+12. baudRate is not a number
+13. Serial Comm Port is null
+14. Packet Data is null or Does not exist.
+15. "time" or "unit2" not found in "packetData".
+16. Time Unit is EMPTY
+17. Unit 2 Name in null
+18. Unit 2 Unit in null
+19. Start Data Transfer Flag in null
+20. End Data Transfer Flag in null
+21. Data Group Name in null
+22. Unable to parse Settings, Properties and InputStream
+23. Thread Interrupted in Settings
+24. Serial Comm Ports connected to something else.
+25. Serial Ports are empty > This means that there are no serial ports connected to the device. Check using **Device Manager > Ports (Com & LPT)**.
+26. 
 
 
 ## Future Updates (Not 100% Confirmed)
