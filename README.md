@@ -149,11 +149,11 @@ There are many exceptions to pin point the problems when running the app. They a
 38. Input error in Snapshot TableView MenuItem
 39. Unable to write DataPointRecord
 
-## Future Updates (Not 100% Confirmed)
+## Future Updates
 
 1. Update README.md to explain exception messages and settings.txt
 
-### v2.1.4.0
+### v2.1.4.0 (Not 100% Confirmed)
 
 ##### This will be Windows only from now on.
 
