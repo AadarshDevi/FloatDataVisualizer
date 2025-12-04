@@ -1,6 +1,7 @@
 # Miramar Water Jets's Mate Float Competition's Float Data Visualizer
 
-Welcome, I am Aadarsh Devi from Miramar Water Jets.
+Welcome, I am Aadarsh Devi from Miramar Water Jets.<br>
+_**NOTE:**_ It is suggested to read the entire README.
 
 ## Project Info
 1. Name: Float Data Visualizer
