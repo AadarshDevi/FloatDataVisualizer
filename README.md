@@ -1,4 +1,4 @@
-# Miramar Water Jets's Mate Float Competition's Float Data Visualizer
+# Miramar Water Jets's Mate Float Data Visualizer
 
 Welcome, I am Aadarsh Devi from Miramar Water Jets.
 <br><br>
