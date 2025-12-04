@@ -1,15 +1,23 @@
-# Miramar Water Jets's MateROV Float Data Visualizer
+# Miramar Water Jets's Mate Float Competitions's Float Data Visualizer
 
 Welcome, I am Aadarsh Devi and I am the programming that built this app for Mate Float. This app would be used to get data from the float through serial communication.
 
 ## Project Info
 1. Name: Float Data Visualizer
-2. Version: 2.1.3.1
-3. Language: Java/JavaFX
-4. Build Tool: Maven
-5. VCS: Git/GitHub
+2. Abbrevation: FDV
+3. Version: 2.1.3.1
+4. Language: Java/JavaFX
+5. Build Tool: Maven
+6. VCS: Git/GitHub
 
 ## Instructions
+
+### Network and Connection
+
+```
+     (Team's Wireless Communication)                  (Serial Communication)
+Float ----------------------------> Microcontroller --------------------------> FDV
+```
 
 ### Download
 
@@ -30,7 +38,15 @@ Welcome, I am Aadarsh Devi and I am the programming that built this app for Mate
 3. DO NOT PRESS ANYTHING.
 4. Copy the filepath for the project data folder.
 5. Go to **File Explorer** and paste in the filepath.
-6. Once there
+6. Once there open settings.txt replace the correct values below.
+    1. commPort > dont chage the text before COM#
+    2. baudRate
+    3. packetData > (Change only the bolded text) **TeamID**-**TeamName**,pkt-,time,unit2
+    4. unit2_name and unit2_unit
+    5. startDataTransfer and endDataTransfer
+7. Now you have configureed you fdv app
+
+### Use FDV
 
 
 
