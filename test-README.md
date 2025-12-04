@@ -100,35 +100,47 @@ The app can export data as Screenshots, CSV, and Raw.
 
 ### Exception Messages
 
-There are many exceptions to pin point the problems when running the app. They are mostly ordered in chronological order.
+There are many exceptions to pin point the problems when running the app. They are mostly ordered in chronological order. These are almost all the exception messages. If I have missed any, please raise an [issue](https://github.com/AadarshDevi/FloatDataVisualizer/issues).
 
-1. Unable to get User's Platform/OS and Username.
-2. Datapath of settings.txt is null.
-3. settings.txt resource not found
-4. Project Version does not exist
-5. Project Version does not match Application Version.
-6. Release Version does not exist
-7. Project Version does not match Application Version.
-8. Platform is null.
-9. Wrong App. Please use {{platform}} version of the app.
-10. settings.txt is in the wrong platform
-11. Baud Rate is EMPTY.
-12. baudRate is not a number
-13. Serial Comm Port is null
-14. Packet Data is null or Does not exist.
-15. "time" or "unit2" not found in "packetData".
-16. Time Unit is EMPTY
-17. Unit 2 Name in null
-18. Unit 2 Unit in null
-19. Start Data Transfer Flag in null
-20. End Data Transfer Flag in null
-21. Data Group Name in null
-22. Unable to parse Settings, Properties and InputStream
-23. Thread Interrupted in Settings
-24. Serial Comm Ports connected to something else.
-25. Serial Ports are empty > This means that there are no serial ports connected to the device. Check using **Device Manager > Ports (Com & LPT)**.
-26. 
-
+1. Unable to get User's Platform/OS and Username
+2. Unable to generate base folder
+3. Unable to generate settings.txt and cannot find filepath
+4. Unable to generate ScatterChart Screenshots folder
+5. Unable to generate Data Table Screenshots folder
+6. Unable to generate Log folder
+7. Unable to generate Data(CSV) folder
+8. Datapath of settings.txt is null
+9. settings.txt resource not found
+10. Project Version does not exist
+11. Project Version does not match Application Version
+12. Release Version does not exist
+13. Project Version does not match Application Version
+14. Platform is null
+15. Wrong App. Please use {{platform}} version of the app
+16. settings.txt is in the wrong platform
+17. Baud Rate is EMPTY
+18. baudRate is not a number
+19. Serial Comm Port is null
+20. Packet Data is null or Does not exist
+21. "time" or "unit2" not found in "packetData"
+22. Time Unit is EMPTY
+23. Unit 2 Name in null
+24. Unit 2 Unit in null
+25. Start Data Transfer Flag in null
+26. End Data Transfer Flag in null
+27. Data Group Name in null
+28. Unable to parse Settings, Properties and InputStream
+29. Thread Interrupted in Settings
+30. Serial Comm Ports connected to something else
+31. Serial Ports are empty > This means that there are no serial ports connected to the device. Check using **Device Manager > Ports (Com & LPT)**
+32. DataPlotter is null
+33. Unable to "put" Float DataPoint
+34. SerialComm Port does not exist
+35. Unable to create SerialComm with port
+36. COM Port Connection ERROR
+37. Input error in Snapshot ScatterChart MenuItem
+38. Input error in Snapshot TableView MenuItem
+39. Unable to write DataPointRecord
 
 ## Future Updates (Not 100% Confirmed)
 
