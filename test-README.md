@@ -76,7 +76,6 @@ There are a few features to view the data.
    2. Full View: ScatterChart will have the width it had when it was reading all the data.
    3. Increase/Decrease Width: Increases or decreases the width of the chart.
 
-
 ### Exporting Data
 
 
