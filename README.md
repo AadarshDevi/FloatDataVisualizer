@@ -58,6 +58,13 @@ Float -----------------------------------> Microcontroller ---------------------
     7. endDataTransfer > it can be any text with will not appear in the data that will be transfered.
 7. Now you have configureed you fdv app, you can run it again.
 
+#### App Config
+The app's configuration file is **_settings.txt_**.
+1. commPort > the port in which the microcontroller is connected to.
+2. baudRate
+3. packetData > it is the format of the data the float will send. This is a fixed format > TeamID-TeamName,pkt-,time,unit2
+4. 
+
 ### Using App
 1. Open App **after** a microcontroller is connected to the Device (Desktop/Laptop).
 2. The app should start receiving data after the startDataTransfer flag is sent.
@@ -143,6 +150,8 @@ There are many exceptions to pin point the problems when running the app. They a
 39. Unable to write DataPointRecord
 
 ## Future Updates (Not 100% Confirmed)
+
+1. Update README.md to explain exception messages and settings.txt
 
 ### 2.1.4.0
 
