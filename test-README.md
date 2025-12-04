@@ -8,12 +8,15 @@ Welcome, I am Aadarsh Devi from Miramar Water Jets.
 1. Team: Miramar Water Jets
 2. Author: Aadarsh Devi
 3. App: Float Data Visualizer
-4. Abbrevation: FDV
-5. Release Version: 1.3.1
-6. Dev Version: 1.3.1
-7. Language: Java/JavaFX
-8. Build Tool: Maven
-9. VCS: Git/GitHub
+4. Release Version: 1.3.1
+5. Dev Version: 1.3.1
+6. Language: Java/JavaFX
+7. Build Tool: Maven
+8. VCS: Git/GitHub
+
+## Pre-Information
+1. FloatDataVisualizer might sometimes be abbrevated to FDV
+2. ScatterChart and ScatterPlot refer to the same chart.
 
 ## Instructions
 
@@ -63,9 +66,16 @@ Float -----------------------------------> Microcontroller ---------------------
 6. [NOTE] If the format of the data of the float and app are not the same, there will be no output.
 7. Data will be continued to be read and put on the chart and table till the endDataTransfer flag is recieved.
 
-
-
 ### Viewing Data
+
+There are a few features to view the data.
+1. ScatterPlot: The datapoints on the plot when hovered will show time and unit2.
+2. Menubar has a few helpful tools: View > ScatterChart
+3. There are 4 options.
+   1. Fit View: All points on the chart are visible.
+   2. Full View: ScatterChart will have the width it had when it was reading all the data.
+   3. Increase/Decrease Width: Increases or decreases the width of the chart.
+
 
 ### Exporting Data
 
@@ -73,6 +83,13 @@ Float -----------------------------------> Microcontroller ---------------------
 ### Exception Messages
 
 
+## Build Project (Prerequisites)
+1. IntelliJ Idea
+2. Java 23.0.2
+3. JavaFX 23.02
+4. jSerialComm 2.11.2
+5. Apache Maven
+6. Git
 
 ## Future Updates (Not 100% Confirmed)
 
