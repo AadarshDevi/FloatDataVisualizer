@@ -77,7 +77,14 @@ There are a few features to view the data.
    3. Increase/Decrease Width: Increases or decreases the width of the chart.
 
 ### Exporting Data
+The app can export data as Screenshots, CSV, and Raw.
 
+#### Screenshots
+1. Go to **_Export > Screenshot_** and select which screenshot you want.
+2. The app will create a screenshot of the scatterchart or table based on the option chosen.
+3. To access the screenshots, go to **_Help > Filepaths > Screenshots_**.
+4. Copy the file path.
+5. Go to file explorer and paste the filepath.
 
 ### Exception Messages
 
