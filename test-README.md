@@ -15,9 +15,9 @@ Welcome, I am Aadarsh Devi and I am the programming that built this app for Mate
 ### Network and Connection
 
 ```
-     (Team's Wireless Communication)                  (Serial Communication)
-Float ----------------------------> Microcontroller --------------------------> FloatDataVisualizer App
-     (Wi-Fi, LoRa, Bluetooth, etc)                      (Done through App)
+        (Team's Wireless Communication)                       (Serial Communication)
+Float -----------------------------------> Microcontroller --------------------------> FloatDataVisualizer App
+         (Wi-Fi, LoRa, Bluetooth, etc)                         (Done through App)
 ```
 
 ### Download
