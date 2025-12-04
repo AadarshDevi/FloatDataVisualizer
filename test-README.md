@@ -103,7 +103,7 @@ The app can export data as Screenshots, CSV, and Raw.
 There are many exceptions to pin point the problems when running the app.
 
 1. Serial Ports are empty.
-   > This means that there are no serial ports connected to the device.
+> This means that there are no serial ports connected to the device.
 2. 
 
 
