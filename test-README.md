@@ -22,7 +22,11 @@ Welcome, I am Aadarsh Devi and I am the programming that built this app for Mate
     2. Shortcut in Desktop
     3. Maybe app pinned or placed in Start Menu
 
-
+### How to Use
+1. Click FloatDataVisualizer with the correct version.
+2. There are 2 outcomes based on if the microcontroller is connected.
+    1. Exception if there is no serial ports available or serial port is not correct.
+    2. 
 
 
 
