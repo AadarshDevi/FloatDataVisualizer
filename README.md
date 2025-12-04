@@ -299,4 +299,5 @@ an [issue](https://github.com/AadarshDevi/FloatDataVisualizer/issues).
 4. jSerialComm 2.11.2
 5. Apache Maven
 6. Git
+7. WiX 3.14
 
