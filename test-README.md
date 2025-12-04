@@ -2,7 +2,7 @@
 
 Welcome, I am Aadarsh Devi from Miramar Water Jets.
 <br><br>
-_**NOTE:**_ It is suggested to read the entire README.
+##### _**NOTE:**_ It is suggested to read the entire README.
 
 ## Project Info
 1. Name: Float Data Visualizer
