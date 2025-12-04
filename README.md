@@ -1,37 +1,159 @@
-# 2025-2026 Mate Float's Data Visualizer
+# Miramar Water Jets's Mate Float Data Visualizer
 
-This repository is for the releases of the Float Data Recorder. To know the technology used, check out
-_**Project Information**_ below.
+Welcome, I am Aadarsh Devi from Miramar Water Jets.
+<br><br>
+<ins>_**NOTE:**_</ins> It is suggested to read the entire **README**.
+<br>
+<ins>_**NOTE:**_</ins> Use Outline for quick navigation on the top right.
 
-# Dev Branch
+## Project Info
+1. Team: Miramar Water Jets
+2. Author: Aadarsh Devi
+3. App: Float Data Visualizer
+4. Release Version: 1.3.1
+5. Dev Version: 1.3.1
+6. Language: Java/JavaFX
+7. Build Tool: Maven
+8. VCS: Git/GitHub
 
-# Table of Contents / Documentation
+## Pre-Information
+1. FloatDataVisualizer might sometimes be abbrevated to FDV
+2. ScatterChart and ScatterPlot refer to the same chart.
 
-### 1. [Project Information](Documentation/ProjectInformation.md)
+## Instructions
 
-### 2. [Download](Documentation/Download.md)
+### Network and Connection
 
-### 3. [Future Updates](Documentation/FutureUpdates.md)
+```
+        (Team's Wireless Communication)                       (Serial Communication)
+Float -----------------------------------> Microcontroller --------------------------> FloatDataVisualizer App
+         (Wi-Fi, LoRa, Bluetooth, etc)                         (Done through App)
+```
 
-### 4. [Project Settings](Documentation/Settings.md)
+### Download
 
-### 5. [Transferring Data](Documentation/DataTransfer.md)
+1. Go to [Releases](https://github.com/AadarshDevi/FloatDataVisualizer/releases)
+2. Download the Latest Release
+3. Click FloatDataVisualizer version-version.msi
+4. If you get the **Windows Defender Blue Box**, click run anyway.
+5. You will get:
+    1. App in the location the user wants
+    2. Shortcut in Desktop
+    3. Maybe app pinned or placed in Start Menu
 
-### 6. [Project Platforms](Documentation/Platforms.md)
+### How to Configure APP
+1. Click FloatDataVisualizer with the correct version.
+2. There will be an filepath message after either of the below messages
+    1. Exception if there is no serial ports available or serial port is not correct.
+3. **DO NOT PRESS ANYTHING.**
+4. Copy the filepath for the project data folder.
+5. Go to **File Explorer** and paste in the filepath.
+6. Once there open settings.txt replace the correct values below.
+    1. commPort > dont chage the text before **COM**
+    2. baudRate
+    3. packetData > (Change only the bolded text) **TeamID**-**TeamName**,pkt-,time,unit2
+    4. unit2_name > The name of the measurement. Ex: Depth, Pressure
+    5. unit2_unit > the unit of the measurement. Ex: m, Pa
+    6. startDataTransfer > it can be any text with will not appear in the data that will be transfered.
+    7. endDataTransfer > it can be any text with will not appear in the data that will be transfered.
+7. Now you have configureed you fdv app, you can run it again.
 
-### 7. [Old Program Flowchart](Documentation/flowchart/system_flowchart_1_outdated.png)
+#### App Config
+The app's configuration file is **_settings.txt_**.
+1. commPort > the port in which the microcontroller is connected to.
+2. baudRate
+3. packetData > it is the format of the data the float will send. This is a fixed format > TeamID-TeamName,pkt-,time,unit2
+4. 
 
-# ChangeLogs
+### Using App
+1. Open App **after** a microcontroller is connected to the Device (Desktop/Laptop).
+2. The app should start receiving data after the startDataTransfer flag is sent.
+    1. Check Console
+3. Once startDataTransfer flag is sent, data will be printed on the console and on the ScatterPlot.
+4. The data received will be on Console, ScatterPlot, Table.
+5. [NOTE] If there are any **ERROR**s, check [Exception Messages](#exception-messages) below.
+6. [NOTE] If the format of the data of the float and app are not the same, there will be no output.
+7. Data will be continued to be read and put on the chart and table till the endDataTransfer flag is recieved.
 
-1. Current App [ChangeLog 1.3.0](Documentation/ChangeLog/2_1_3_0.md)
-2. Current Dev [ChangeLog 1.3.0](Documentation/ChangeLog/2_1_3_0.md)
-3. Archived [ChangeLogs](Documentation/ChangeLog)
+### Viewing Data
 
-## v1.3.0 > Completed
+There are a few features to view the data.
+1. ScatterPlot: The datapoints on the plot when hovered will show time and unit2.
+2. Menubar has a few helpful tools: View > ScatterChart
+3. There are 4 options.
+   1. Fit View: All points on the chart are visible.
+   2. Full View: ScatterChart will have the width it had when it was reading all the data.
+   3. Increase/Decrease Width: Increases or decreases the width of the chart.
 
-## v1.4.0 > Settings and Connections Docs (Not Started)
+### Exporting Data
+The app can export data as Screenshots, CSV, and Raw.
 
-##### Redo README.md to show new updates and improve content
+#### Screenshots
+1. Go to **_Export > Screenshot_** and select which screenshot you want.
+2. The app will create a screenshot of the scatterchart or table based on the option chosen.
+3. To access the screenshots, go to **_Help > Filepaths > Screenshots_**.
+4. Copy the path and paste it into File Explorer
+5. In this folder there will be 2 folders: **_ScatterChart_** and **Table**
+6. Open the folder which you chose for the screenshot.
+7. Your screenshots will be there.
+
+#### Data CSVs
+1. Go to **_Export > Data_** and select which type of data you want to export.
+   1. Raw > Data that was sent by the float.
+   2. CSV > Only the decimal values, time and unit2
+2. Once the data is exported as a csv, go to **_Help > Filepaths > CSVs_**.
+3. Copy the path and paste it into File Explorer.
+4. The CSVs are there to be used. Both Raw and CSV will be in this folder.
+
+### Exception Messages
+
+There are many exceptions to pin point the problems when running the app. They are mostly ordered in chronological order. These are almost all the exception messages. If I have missed any, please raise an [issue](https://github.com/AadarshDevi/FloatDataVisualizer/issues).
+
+1. Unable to get User's Platform/OS and Username
+2. Unable to generate base folder
+3. Unable to generate settings.txt and cannot find filepath
+4. Unable to generate ScatterChart Screenshots folder
+5. Unable to generate Data Table Screenshots folder
+6. Unable to generate Log folder
+7. Unable to generate Data(CSV) folder
+8. Datapath of settings.txt is null
+9. settings.txt resource not found
+10. Project Version does not exist
+11. Project Version does not match Application Version
+12. Release Version does not exist
+13. Project Version does not match Application Version
+14. Platform is null
+15. Wrong App. Please use {{platform}} version of the app
+16. settings.txt is in the wrong platform
+17. Baud Rate is EMPTY
+18. baudRate is not a number
+19. Serial Comm Port is null
+20. Packet Data is null or Does not exist
+21. "time" or "unit2" not found in "packetData"
+22. Time Unit is EMPTY
+23. Unit 2 Name in null
+24. Unit 2 Unit in null
+25. Start Data Transfer Flag in null
+26. End Data Transfer Flag in null
+27. Data Group Name in null
+28. Unable to parse Settings, Properties and InputStream
+29. Thread Interrupted in Settings
+30. Serial Comm Ports connected to something else
+31. Serial Ports are empty > This means that there are no serial ports connected to the device. Check using **Device Manager > Ports (Com & LPT)**
+32. DataPlotter is null
+33. Unable to "put" Float DataPoint
+34. SerialComm Port does not exist
+35. Unable to create SerialComm with port
+36. COM Port Connection ERROR
+37. Input error in Snapshot ScatterChart MenuItem
+38. Input error in Snapshot TableView MenuItem
+39. Unable to write DataPointRecord
+
+## Future Updates
+
+1. Update README.md to explain exception messages and settings.txt
+
+### v2.1.4.0 (Not 100% Confirmed)
 
 ##### This will be Windows only from now on.
 
@@ -47,7 +169,7 @@ _**Project Information**_ below.
 7. Add file logging for exceptions
 8. Merge Launcher.java and Main.java
 
-### Settings and MenuItems
+#### Settings and MenuItems
 
 1. Settings (app.settings) (MenuItem under File)
     1. Filepath (MenuItem) aka Help
@@ -95,7 +217,7 @@ _**Project Information**_ below.
     6. Platform: AutoDetect/ final PLATFORM
 4. Data Receiver after App opens
 
-### Packages and Classes
+#### Packages and Classes
 
 1. Backend
     1. Data
@@ -154,3 +276,12 @@ _**Project Information**_ below.
     1. enum Platform: WIN10, WIN11, MacOSX_INTEL, MacOSX_ARM, LINUX
 5. Main (Merged with Launcher)
     - run backend (main thread), api (api thread), frontend (javafx thread)
+
+## Build Project (Prerequisites)
+1. IntelliJ Idea
+2. Java 23.0.2
+3. JavaFX 23.02
+4. jSerialComm 2.11.2
+5. Apache Maven
+6. Git
+
