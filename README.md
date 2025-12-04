@@ -3,7 +3,7 @@
 This repository is for the releases of the Float Data Recorder. To know the technology used, check out
 _**Project Information**_ below.
 
-# Dev Branch:
+# Dev Branch
 
 # Table of Contents / Documentation
 
@@ -23,13 +23,17 @@ _**Project Information**_ below.
 
 # ChangeLogs
 
-1. Current App [ChangeLog 2.1.1](Documentation/ChangeLog/2_1_1.md)
-2. Current Dev [ChangeLog 2.2.0](Documentation/ChangeLog/2_1_2_0.md)
+1. Current App [ChangeLog 1.3.0](Documentation/ChangeLog/2_1_3_0.md)
+2. Current Dev [ChangeLog 1.3.0](Documentation/ChangeLog/2_1_3_0.md)
 3. Archived [ChangeLogs](Documentation/ChangeLog)
 
 ## v1.3.0 > Completed
 
 ## v1.4.0 > Settings and Connections Docs (Not Started)
+
+##### Redo README.md to show new updates and improve content
+
+##### This will be Windows only from now on.
 
 1. Add libs to /lib
 2. Change file names:

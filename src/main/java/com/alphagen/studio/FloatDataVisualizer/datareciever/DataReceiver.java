@@ -31,6 +31,12 @@ public class DataReceiver implements Runnable, Exitter {
 			for (SerialPort sp : SerialPort.getCommPorts()) {
 				System.out.println(sp.getSystemPortName() + " :: " + dataConfigurator.getSerialCommPort() + " > " + sp.getSystemPortPath().equals(dataConfigurator.getSerialCommPort()));
 				System.out.println();
+
+				System.out.println("Path: '" + sp.getSystemPortPath() + "'");  // Full path
+				System.out.println("Config: '" + dataConfigurator.getSerialCommPort() + "'");  // "COM3"
+				System.out.println("Lengths: " + sp.getSystemPortPath().length() + " vs " + dataConfigurator.getSerialCommPort().length());
+				System.out.println();
+
 				if (sp.getSystemPortPath().equals(dataConfigurator.getSerialCommPort())) {
 					serialPort = SerialPort.getCommPort(dataConfigurator.getSerialCommPort());
 					break;

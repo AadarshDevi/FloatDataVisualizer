@@ -93,7 +93,7 @@ public class DataConfigurator implements Exitter {
 			printWriter.println("# Visualizer Data");
 			printWriter.println("commPort=" +
 					switch (PLATFORM) {
-						case WIN11 -> "COM3";
+						case WIN11 -> "\\\\.\\COM3";
 						case MACOS -> "/dev/cu.usbmodem14101";
 						case LINUX -> "/dev/ttyUSB0";
 					});
