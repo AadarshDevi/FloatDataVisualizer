@@ -7,6 +7,7 @@ Welcome, I am Aadarsh Devi from Miramar Water Jets.
 <ins>_**NOTE:**_</ins> Use Outline for quick navigation on the top right.
 
 ## Project Info
+
 1. Team: Miramar Water Jets
 2. Author: Aadarsh Devi
 3. App: Float Data Visualizer
@@ -17,6 +18,7 @@ Welcome, I am Aadarsh Devi from Miramar Water Jets.
 8. VCS: Git/GitHub
 
 ## Pre-Information
+
 1. FloatDataVisualizer might sometimes be abbrevated to FDV
 2. ScatterChart and ScatterPlot refer to the same chart.
 
@@ -42,6 +44,7 @@ Float -----------------------------------> Microcontroller ---------------------
     3. Maybe app pinned or placed in Start Menu
 
 ### How to Configure APP
+
 1. Click FloatDataVisualizer with the correct version.
 2. There will be an filepath message after either of the below messages
     1. Exception if there is no serial ports available or serial port is not correct.
@@ -59,13 +62,17 @@ Float -----------------------------------> Microcontroller ---------------------
 7. Now you have configureed you fdv app, you can run it again.
 
 #### App Config
+
 The app's configuration file is **_settings.txt_**.
+
 1. commPort > the port in which the microcontroller is connected to.
 2. baudRate
-3. packetData > it is the format of the data the float will send. This is a fixed format > TeamID-TeamName,pkt-,time,unit2
-4. 
+3. packetData > it is the format of the data the float will send. This is a fixed format >
+   TeamID-TeamName,pkt-,time,unit2
+4.
 
 ### Using App
+
 1. Open App **after** a microcontroller is connected to the Device (Desktop/Laptop).
 2. The app should start receiving data after the startDataTransfer flag is sent.
     1. Check Console
@@ -78,17 +85,20 @@ The app's configuration file is **_settings.txt_**.
 ### Viewing Data
 
 There are a few features to view the data.
+
 1. ScatterPlot: The datapoints on the plot when hovered will show time and unit2.
 2. Menubar has a few helpful tools: View > ScatterChart
 3. There are 4 options.
-   1. Fit View: All points on the chart are visible.
-   2. Full View: ScatterChart will have the width it had when it was reading all the data.
-   3. Increase/Decrease Width: Increases or decreases the width of the chart.
+    1. Fit View: All points on the chart are visible.
+    2. Full View: ScatterChart will have the width it had when it was reading all the data.
+    3. Increase/Decrease Width: Increases or decreases the width of the chart.
 
 ### Exporting Data
+
 The app can export data as Screenshots, CSV, and Raw.
 
 #### Screenshots
+
 1. Go to **_Export > Screenshot_** and select which screenshot you want.
 2. The app will create a screenshot of the scatterchart or table based on the option chosen.
 3. To access the screenshots, go to **_Help > Filepaths > Screenshots_**.
@@ -98,16 +108,19 @@ The app can export data as Screenshots, CSV, and Raw.
 7. Your screenshots will be there.
 
 #### Data CSVs
+
 1. Go to **_Export > Data_** and select which type of data you want to export.
-   1. Raw > Data that was sent by the float.
-   2. CSV > Only the decimal values, time and unit2
+    1. Raw > Data that was sent by the float.
+    2. CSV > Only the decimal values, time and unit2
 2. Once the data is exported as a csv, go to **_Help > Filepaths > CSVs_**.
 3. Copy the path and paste it into File Explorer.
 4. The CSVs are there to be used. Both Raw and CSV will be in this folder.
 
 ### Exception Messages
 
-There are many exceptions to pin point the problems when running the app. They are mostly ordered in chronological order. These are almost all the exception messages. If I have missed any, please raise an [issue](https://github.com/AadarshDevi/FloatDataVisualizer/issues).
+There are many exceptions to pin point the problems when running the app. They are mostly ordered in chronological
+order. These are almost all the exception messages. If I have missed any, please raise
+an [issue](https://github.com/AadarshDevi/FloatDataVisualizer/issues).
 
 1. Unable to get User's Platform/OS and Username
 2. Unable to generate base folder
@@ -139,7 +152,8 @@ There are many exceptions to pin point the problems when running the app. They a
 28. Unable to parse Settings, Properties and InputStream
 29. Thread Interrupted in Settings
 30. Serial Comm Ports connected to something else
-31. Serial Ports are empty > This means that there are no serial ports connected to the device. Check using **Device Manager > Ports (Com & LPT)**
+31. Serial Ports are empty > This means that there are no serial ports connected to the device. Check using **Device
+    Manager > Ports (Com & LPT)**
 32. DataPlotter is null
 33. Unable to "put" Float DataPoint
 34. SerialComm Port does not exist
@@ -278,9 +292,10 @@ There are many exceptions to pin point the problems when running the app. They a
     - run backend (main thread), api (api thread), frontend (javafx thread)
 
 ## Build Project (Prerequisites)
+
 1. IntelliJ Idea
 2. Java 23.0.2
-3. JavaFX 23.02
+3. JavaFX 23.0.2
 4. jSerialComm 2.11.2
 5. Apache Maven
 6. Git
