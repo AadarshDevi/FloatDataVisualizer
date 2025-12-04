@@ -96,9 +96,21 @@ The app can export data as Screenshots, CSV, and Raw.
    2. CSV > Only the decimal values, time and unit2
 2. Once the data is exported as a csv, go to **_Help > Filepaths > CSVs_**.
 3. Copy the path and paste it into File Explorer.
-4. 
+4. The CSVs are there to be used. Both Raw and CSV will be in this folder.
 
 ### Exception Messages
+
+There are many exceptions to pin point the problems when running the app.
+
+1. Serial Ports are empty.
+   > This means that there are no serial ports connected to the device.
+2. 
+
+
+## Future Updates (Not 100% Confirmed)
+
+### 2.1.4.0
+
 
 
 ## Build Project (Prerequisites)
@@ -108,10 +120,4 @@ The app can export data as Screenshots, CSV, and Raw.
 4. jSerialComm 2.11.2
 5. Apache Maven
 6. Git
-
-## Future Updates (Not 100% Confirmed)
-
-### 2.1.4.0
-
-
 
