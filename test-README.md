@@ -3,6 +3,8 @@
 Welcome, I am Aadarsh Devi from Miramar Water Jets.
 <br><br>
 <ins>_**NOTE:**_</ins> It is suggested to read the entire **README**.
+<br>
+<ins>_**NOTE:**_</ins> Use Outline for quick navigation.
 
 ## Project Info
 1. Team: Miramar Water Jets
@@ -83,8 +85,18 @@ The app can export data as Screenshots, CSV, and Raw.
 1. Go to **_Export > Screenshot_** and select which screenshot you want.
 2. The app will create a screenshot of the scatterchart or table based on the option chosen.
 3. To access the screenshots, go to **_Help > Filepaths > Screenshots_**.
-4. Copy the file path.
-5. Go to file explorer and paste the filepath.
+4. Copy the path and paste it into File Explorer
+5. In this folder there will be 2 folders: **_ScatterChart_** and **Table**
+6. Open the folder which you chose for the screenshot.
+7. Your screenshots will be there.
+
+#### Data CSVs
+1. Go to **_Export > Data_** and select which type of data you want to export.
+   1. Raw > Data that was sent by the float.
+   2. CSV > Only the decimal values, time and unit2
+2. Once the data is exported as a csv, go to **_Help > Filepaths > CSVs_**.
+3. Copy the path and paste it into File Explorer.
+4. 
 
 ### Exception Messages
 
