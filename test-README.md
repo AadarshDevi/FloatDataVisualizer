@@ -22,11 +22,15 @@ Welcome, I am Aadarsh Devi and I am the programming that built this app for Mate
     2. Shortcut in Desktop
     3. Maybe app pinned or placed in Start Menu
 
-### How to Use
+### How to Configure APP
 1. Click FloatDataVisualizer with the correct version.
-2. There are 2 outcomes based on if the microcontroller is connected.
+2. There will be an filepath message after either of the below messages
     1. Exception if there is no serial ports available or serial port is not correct.
-    2. 
+    2. None if the microcotnroller is connected.
+3. DO NOT PRESS ANYTHING.
+4. Copy the filepath for the project data folder.
+5. Go to **File Explorer** and paste in the filepath.
+6. Once there
 
 
 
