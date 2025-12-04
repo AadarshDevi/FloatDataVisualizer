@@ -5,12 +5,15 @@ Welcome, I am Aadarsh Devi from Miramar Water Jets.
 <ins>_**NOTE:**_</ins> It is suggested to read the entire **README**.
 
 ## Project Info
-1. Name: Float Data Visualizer
-2. Abbrevation: FDV
-3. Version: 2.1.3.1
-4. Language: Java/JavaFX
-5. Build Tool: Maven
-6. VCS: Git/GitHub
+1. Team: Miramar Water Jets
+2. Author: Aadarsh Devi
+3. App: Float Data Visualizer
+4. Abbrevation: FDV
+5. Release Version: 1.3.1
+6. Dev Version: 1.3.1
+7. Language: Java/JavaFX
+8. Build Tool: Maven
+9. VCS: Git/GitHub
 
 ## Instructions
 
