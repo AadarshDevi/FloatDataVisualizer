@@ -153,7 +153,7 @@ There are many exceptions to pin point the problems when running the app. They a
 
 1. Update README.md to explain exception messages and settings.txt
 
-### 2.1.4.0
+### v2.1.4.0
 
 ##### This will be Windows only from now on.
 
