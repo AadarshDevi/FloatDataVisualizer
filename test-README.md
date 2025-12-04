@@ -1,6 +1,6 @@
 # Miramar Water Jets's Mate Float Competitions's Float Data Visualizer
 
-Welcome, I am Aadarsh Devi and I am the programming that built this app for Mate Float. This app would be used to get data from the float through serial communication.
+Welcome, I am Aadarsh Devi from Miramar Water Jets.
 
 ## Project Info
 1. Name: Float Data Visualizer
