@@ -43,8 +43,10 @@ public class DataReceiver implements Runnable, Exitter {
 				}
 			}
 
+			//
+			JOptionPane.showMessageDialog(null, "WARNING: Do NOT close the app if you are using it for the first time.", "DataReceiver Warning", JOptionPane.WARNING_MESSAGE);
 			if (serialPort == null) {
-				exit("WARNING: Do NOT close the app if you are using it for the first time.\nSerialComm Port does not exist: " + dataConfigurator.getSerialCommPort());
+				exit("SerialComm Port does not exist: " + dataConfigurator.getSerialCommPort());
 			}
 
 		} catch (SerialPortInvalidPortException e) {
