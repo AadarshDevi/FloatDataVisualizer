@@ -4,7 +4,7 @@ Welcome, I am Aadarsh Devi from Miramar Water Jets.
 <br><br>
 <ins>_**NOTE:**_</ins> It is suggested to read the entire **README**.
 <br>
-<ins>_**NOTE:**_</ins> Use Outline for quick navigation.
+<ins>_**NOTE:**_</ins> Use Outline for quick navigation on the top right.
 
 ## Project Info
 1. Team: Miramar Water Jets
