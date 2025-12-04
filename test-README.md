@@ -55,7 +55,7 @@ Float -----------------------------------> Microcontroller ---------------------
     1. Check Console
 3. Once startDataTransfer flag is sent, data will be printed on the console and on the ScatterPlot.
 4. The data received will be on Console, ScatterPlot, Table.
-5. If there are any **ERROR**s, check [Exception Messages](#exceptionmessages) open an [issue](https://github.com/AadarshDevi/FloatDataVisualizer/issues)
+5. If there are any **ERROR**s, check [Exception Messages](#exception-messages) open an [issue](https://github.com/AadarshDevi/FloatDataVisualizer/issues)
 6. I will try to look at it and give responses.
 
 
