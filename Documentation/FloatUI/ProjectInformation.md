@@ -1,22 +1,26 @@
 # Float Data Recorder
 
 ### Basic Info
+
 1. Author: Aadarsh Devi
 2. Organization: Miramar Water Jets
 
 ### Project Information
+
 1. Release Name: Float Data Recorder
 2. Release Version: 1.0.0
 3. Internal Name: _**Float Data Recorder: Full Rebuild**_
 4. Internal Version: 2.0.0
 
 ### Project Technology
+
 1. Java 23.0.1
 2. Apache Maven 3.9.9
 3. OpenJFK 23.0.1
 4. jSerialComm 2.11.2
 
 ### IDE
+
 1. Java: JetBrains Intellij IDEA 2025.1.3
 2. CSS: Visual Studio Code 1.104.1
 3. FXML: SceneBuilder 23.0.1
@@ -24,7 +28,8 @@
 ### [Download and Run program](Download.md)
 
 ### Other Information
+
 1. `.jar` created with Maven
 2. `.exe` created with [jPackage](https://github.com/AadarshDevi/Java/blob/main/jPackage.md)
 
-[Table of Contents](../README.md)
+[Table of Contents](../../README.md)

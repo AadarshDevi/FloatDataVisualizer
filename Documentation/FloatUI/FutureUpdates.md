@@ -4,6 +4,7 @@
 > Internal Version / Release Version
 
 ## 2.2.0/1.2.0 Stable Release
+
 More info about the visualizer will be added to updates.
 
 ### 2.1.1/1.1.1
@@ -16,9 +17,9 @@ More info about the visualizer will be added to updates.
 2. add pressure to data packet.
 3. Some data in [packetData](DataTransfer.md) will not be used so they do not have to appear in packetData.
 4. Improve FloatUI
-   1. Add raw data viewer > prints the raw data to a TextArea
-   2. Improve viewing ScatterChart
-   3. Improve viewing TableView
+    1. Add raw data viewer > prints the raw data to a TextArea
+    2. Improve viewing ScatterChart
+    3. Improve viewing TableView
 5. Add a DataWriter
 
-[Table of Contents](../README.md)
+[Table of Contents](../../README.md)
