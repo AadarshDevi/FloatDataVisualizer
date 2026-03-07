@@ -11,15 +11,15 @@ Welcome, I am Aadarsh Devi from Miramar Water Jets.
 1. Team: Miramar Water Jets
 2. Author: Aadarsh Devi
 3. App: Float Data Visualizer
-4. Release Version: 1.3.1
-5. Dev Version: 1.3.1
+4. Release Version: 2.0.0
+5. Dev Version: 2.2.0.0
 6. Language: Java/JavaFX
 7. Build Tool: Maven
 8. VCS: Git/GitHub
 
 ## Pre-Information
 
-1. FloatDataVisualizer might sometimes be abbrevated to FDV
+1. FloatDataVisualizer might sometimes be abbreviated to FDV
 2. ScatterChart and ScatterPlot refer to the same chart.
 
 ## Instructions
@@ -300,4 +300,3 @@ an [issue](https://github.com/AadarshDevi/FloatDataVisualizer/issues).
 5. Apache Maven
 6. Git
 7. WiX 3.14
-
