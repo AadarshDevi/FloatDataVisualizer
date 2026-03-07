@@ -1,0 +1,88 @@
+
+@font-face {
+    font-family: "Bahnschrift";
+    src: url(../../fonts/bahnschrift.ttf);
+}
+
+
+.root {
+    -fx-background-radius: 20px;
+    -fx-background-color: #ffffff;
+}
+
+.card-1-shadow {
+    -fx-effect: dropshadow(three-pass-box, #028fffff, 8, 0, 0, 0);
+    -fx-background-color: #ffffff;
+    -fx-scale-x: 1.0;
+    -fx-scale-y: 1.0;
+    transition-property: -fx-scale-x, -fx-scale-y;
+    transition-duration: .25s;
+}
+
+.card-1-shadow-reveal:hover {
+    -fx-scale-x: 0.99;
+    -fx-scale-y: 0.99;
+    -fx-effect: dropshadow(three-pass-box, #028fffff, 16, 0, 0, 0);
+}
+
+.data-card {
+    -fx-effect: dropshadow(three-pass-box, #dededeff, 8, 0, 0, 0);
+    -fx-background-color: #ffffff;
+    -fx-scale-x: 1.0;
+    -fx-scale-y: 1.0;
+    transition-property: -fx-scale-x, -fx-scale-y;
+    transition-duration: .25s;
+}
+
+.data-card:hover {
+    -fx-scale-x: 0.99;
+    -fx-scale-y: 0.99;
+    -fx-effect: dropshadow(three-pass-box, #ababab, 16, 0, 0, 0);
+}
+
+.data-card-text {
+    -fx-font-family: "Bahnschrift SemiBold Condensed";
+    -fx-text-fill: #000000;
+    -fx-font-size: 9.66px;
+    -fx-font-weight: bold;
+}
+
+.data-card-text-bigger {
+    -fx-font-size: 12px;
+}
+
+.quit-app {
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 8px;
+    /* -fx-effect: dropshadow(three-pass-box, #028fffff, 8, 0, 0, 0); */
+    transition-property: -fx-background-color .25s;
+}
+
+.quit-app:hover {
+    -fx-background-color: #ebebeb;
+    /* -fx-effect: dropshadow(three-pass-box, #028fffff, 16, 0, 0, 0); */
+}
+
+.connection-scrolling {
+    /* Code */
+}
+
+.scroll-bar .increment-button,
+.scroll-bar .increment-arrow,
+.scroll-bar .decrement-button,
+.scroll-bar .decrement-arrow,
+
+.scroll-bar .track,
+.scroll-bar .corner
+
+{
+    -fx-background-color:  transparent;
+}
+.scroll-bar .track-background {
+    -fx-background-color:  #ffffff;
+}
+
+.scroll-bar .thumb {
+    -fx-background-color:  #1c9dff;
+    -fx-background-radius: 20px;
+}
