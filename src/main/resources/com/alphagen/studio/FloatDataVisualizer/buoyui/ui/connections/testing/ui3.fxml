@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+            prefHeight="490.378" prefWidth="916.561" styleClass="root"
+            stylesheets="@BuoyUI_ConnectionsFrame.css" xmlns="http://javafx.com/javafx/25"
+            fx:controller="com.alphagen.studio.FloatDataVisualizer.buoyui.controllers.ConnectionsController">
+    <top>
+        <HBox alignment="BOTTOM_LEFT" prefHeight="35.333333333333336" prefWidth="917.0" BorderPane.alignment="CENTER">
+            <BorderPane.margin>
+                <Insets bottom="30.0" left="31.0" right="30.0" top="23.0"/>
+            </BorderPane.margin>
+            <children>
+                <Label styleClass="connections-app-name" stylesheets="@BuoyUI_ConnectionsFrame.css"
+                       text="FLOAT DATA VISUALIZER"/>
+            </children>
+        </HBox>
+    </top>
+</BorderPane>
