@@ -1,5 +1,6 @@
 package com.alphagen.studio.FloatDataVisualizer;
 
+import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.Backend;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.connections.ConnectionControllerManager;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.connections.ConnectionUIConstants;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.connections.ConnectionsController;
@@ -8,6 +9,7 @@ import com.alphagen.studio.FloatDataVisualizer.buoyui.util.DeltaDrag;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
@@ -49,6 +51,27 @@ public class Launcher extends Application {
 
 	@Override
 	public void start(Stage stage) throws Exception {
+
+		Backend backend = Backend.getBackend();
+
+		// check root folder
+		if (!backend.verifyRootFolder()) {
+			Alert alert = new Alert(Alert.AlertType.ERROR);
+			alert.setTitle("Exception 1");
+			alert.setHeaderText("Error");
+			alert.setContentText("Root folder is unable to be found or created.");
+			alert.showAndWait();
+			System.exit(-1);
+		}
+		System.out.println("Root Folder ready");
+
+		// check base folder
+		backend.verifyFolders("connections", "logs");
+
+		// check settings folder
+		backend.verifySettings();
+
+
 		System.out.println("Starting FloatDataVisualizer");
 
 		System.out.println("Loading ConnectionsUI");
