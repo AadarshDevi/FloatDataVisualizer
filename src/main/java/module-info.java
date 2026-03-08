@@ -14,6 +14,12 @@ module com.alphagen.studio.FloatDataVisualizer {
 
 	exports com.alphagen.studio.FloatDataVisualizer;
 	exports com.alphagen.studio.FloatDataVisualizer.buoyui.connections;
+	exports com.alphagen.studio.FloatDataVisualizer.buoyui.backend.lib.jfilesystem;
+	exports com.alphagen.studio.FloatDataVisualizer.buoyui.backend.lib.jfilesystem.file;
+	exports com.alphagen.studio.FloatDataVisualizer.buoyui.backend.lib.jfilesystem.folder;
+	exports com.alphagen.studio.FloatDataVisualizer.buoyui.backend.lib.jfilesystem.file.exception;
+	exports com.alphagen.studio.FloatDataVisualizer.buoyui.backend;
+	exports com.alphagen.studio.FloatDataVisualizer.buoyui.backend.app;
 	//    exports com.alphagen.studio.FloatDataVisualizer.data;
 //    exports com.alphagen.studio.FloatDataVisualizer.data.util;
 //    exports com.alphagen.studio.FloatDataVisualizer.datareciever;
