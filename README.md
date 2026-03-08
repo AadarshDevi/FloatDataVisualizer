@@ -304,11 +304,8 @@ an [issue](https://github.com/AadarshDevi/FloatDataVisualizer/issues).
 ## Data Files
 
 1. Local
-    1. settings.float.txt
+    1. float.settings
         1. theme
         2. dataFormat
 2. Documents
     1. connections/{Connection Name}.float.connection
-
-
--
