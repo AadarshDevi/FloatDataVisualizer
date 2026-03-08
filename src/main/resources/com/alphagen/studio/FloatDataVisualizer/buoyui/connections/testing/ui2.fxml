@@ -10,10 +10,11 @@
 <?import javafx.scene.layout.TilePane?>
 <?import javafx.scene.shape.SVGPath?>
 
-<BorderPane xmlns:fx="http://javafx.com/fxml/1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+            minWidth="-Infinity"
             prefHeight="490.378" prefWidth="916.561" styleClass="root"
             stylesheets="@BuoyUI_ConnectionsFrame.css" xmlns="http://javafx.com/javafx/25"
-            fx:controller="com.alphagen.studio.FloatDataVisualizer.buoyui.controllers.ConnectionsController">
+            fx:controller="com.alphagen.studio.FloatDataVisualizer.buoyui.connections.ConnectionsController">
     <top>
         <HBox alignment="BOTTOM_LEFT" prefHeight="35.333333333333336" prefWidth="859.0" BorderPane.alignment="CENTER">
             <BorderPane.margin>

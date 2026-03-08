@@ -9,10 +9,11 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.SVGPath?>
 
-<BorderPane xmlns:fx="http://javafx.com/fxml/1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+            minWidth="-Infinity"
             prefHeight="89.775" prefWidth="167.243" style="-fx-background-radius: 15px;"
             stylesheets="@BuoyUI_ConnectionsFrame.css" xmlns="http://javafx.com/javafx/25"
-            fx:controller="com.alphagen.studio.FloatDataVisualizer.buoyui.controllers.ConnectionsController">
+            fx:controller="com.alphagen.studio.FloatDataVisualizer.buoyui.connections.ConnectionsController">
     <styleClass>
         <String fx:value="data-card"/>
         <String fx:value="card-1-shadow-reveal"/>
