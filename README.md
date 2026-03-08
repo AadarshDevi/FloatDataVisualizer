@@ -312,14 +312,7 @@ an [issue](https://github.com/AadarshDevi/FloatDataVisualizer/issues).
 
 ## Releases
 
-### App Versions
-
-There are 2 versions of the app; App and ConsoleBundled.
-
-- App: This is the app without the terminal running in the background
-- ConsoleBundled: This has the terminal visible to the user. (used for debugging)
-
-Below are images of App and ConsoleBundled.
+For users who want the terminal with the app, the can [Download Console Bundled](#consoleapp)
 
 ### App Build Status
 
@@ -333,32 +326,22 @@ Below are images of App and ConsoleBundled.
 
 ### Download Links
 
-| Status |            Platform            | Architecture | Executable Type |    App Type    | Download Link |
-|:------:|:------------------------------:|:------------:|:---------------:|:--------------:|:-------------:|
-|  ⏭️️   |            Windows             |    x86_64    |      .msi       |      App       |               |
-|  ⏭️️   |            Windows             |    x86_64    |      .msi       | ConsoleBundled |               |
-|  ⏭️️   |            Windows             |    x86_64    |      .exe       |      App       |               |
-|  ⏭️️   |            Windows             |    x86_64    |      .exe       | ConsoleBundled |               |
-| **⭯**  |            Windows             |     ARM      |      .msi       |      App       |               |
-| **⭯**  |            Windows             |     ARM      |      .msi       | ConsoleBundled |               |
-| **⭯**  |            Windows             |     ARM      |      .exe       |      App       |               |
-| **⭯**  |            Windows             |     ARM      |      .exe       | ConsoleBundled |               |
-| **⭯**  |             MacOS              |    x86_64    |      .dmg       |      App       |               |
-| **⭯**  |             MacOS              |    x86_64    |      .pkg       |      App       |               |
-| **⭯**  |             MacOS              |     ARM      |      .dmg       |      App       |               |
-| **⭯**  |             MacOS              |     ARM      |      .pkg       |      App       |               |
-| **⭯**  |             Linux              |    x86_64    |    .AppImage    |      App       |               |
-| **⭯**  |             Linux              |    x86_64    |    .AppImage    | ConsoleBundled |               |
-| **⭯**  |             Linux              |     ARM      |    .AppImage    |      App       |               |
-| **⭯**  |             Linux              |     ARM      |    .AppImage    | ConsoleBundled |               |
-| **⭯**  |   Debian, Ubuntu, Linux Mint   |    x86_64    |      .deb       |      App       |               |
-| **⭯**  |   Debian, Ubuntu, Linux Mint   |    x86_64    |      .deb       | ConsoleBundled |               |
-| **⭯**  |   Debian, Ubuntu, Linux Mint   |     ARM      |      .deb       |      App       |               |
-| **⭯**  |   Debian, Ubuntu, Linux Mint   |     ARM      |      .deb       | ConsoleBundled |               |
-| **⭯**  | Fedora, RHEL, CentOS, openSUSE |    x86_64    |      .rpm       |      App       |               |
-| **⭯**  | Fedora, RHEL, CentOS, openSUSE |    x86_64    |      .rpm       | ConsoleBundled |               |
-| **⭯**  | Fedora, RHEL, CentOS, openSUSE |     ARM      |      .rpm       |      App       |               |
-| **⭯**  | Fedora, RHEL, CentOS, openSUSE |     ARM      |      .rpm       | ConsoleBundled |               |
+| Status |            Platform            | Architecture | Executable Type | App Type | Download Link |
+|:------:|:------------------------------:|:------------:|:---------------:|:--------:|:-------------:|
+|  ⏭️️   |            Windows             |    x86_64    |      .msi       |   App    |               |
+|  ⏭️️   |            Windows             |    x86_64    |      .exe       |   App    |               |
+| **⭯**  |            Windows             |     ARM      |      .msi       |   App    |               |
+| **⭯**  |            Windows             |     ARM      |      .exe       |   App    |               |
+| **⭯**  |             MacOS              |    x86_64    |      .dmg       |   App    |               |
+| **⭯**  |             MacOS              |    x86_64    |      .pkg       |   App    |               |
+| **⭯**  |             MacOS              |     ARM      |      .dmg       |   App    |               |
+| **⭯**  |             MacOS              |     ARM      |      .pkg       |   App    |               |
+| **⭯**  |             Linux              |    x86_64    |    .AppImage    |   App    |               |
+| **⭯**  |             Linux              |     ARM      |    .AppImage    |   App    |               |
+| **⭯**  |   Debian, Ubuntu, Linux Mint   |    x86_64    |      .deb       |   App    |               |
+| **⭯**  |   Debian, Ubuntu, Linux Mint   |     ARM      |      .deb       |   App    |               |
+| **⭯**  | Fedora, RHEL, CentOS, openSUSE |    x86_64    |      .rpm       |   App    |               |
+| **⭯**  | Fedora, RHEL, CentOS, openSUSE |     ARM      |      .rpm       |   App    |               |
 
 ### Executable Creation Platform
 
@@ -366,3 +349,18 @@ Below are images of App and ConsoleBundled.
 2. MacOS x86_64 (Intel): Late 2013 Macbook Pro
 3. MacOS ARM (M-Series): Macbook M2
 4. Debian x86_64: MSI Vector A16 HX A8W w/ VirtualBox Debian Linux
+
+### Console App
+
+| Status |            Platform            | Architecture | Executable Type |    App Type    | Download Link |
+|:------:|:------------------------------:|:------------:|:---------------:|:--------------:|:-------------:|
+|  ⏭️️   |            Windows             |    x86_64    |      .msi       | ConsoleBundled |               |
+|  ⏭️️   |            Windows             |    x86_64    |      .exe       | ConsoleBundled |               |
+| **⭯**  |            Windows             |     ARM      |      .msi       | ConsoleBundled |               |
+| **⭯**  |            Windows             |     ARM      |      .exe       | ConsoleBundled |               |
+| **⭯**  |             Linux              |    x86_64    |    .AppImage    | ConsoleBundled |               |
+| **⭯**  |             Linux              |     ARM      |    .AppImage    | ConsoleBundled |               |
+| **⭯**  |   Debian, Ubuntu, Linux Mint   |    x86_64    |      .deb       | ConsoleBundled |               |
+| **⭯**  |   Debian, Ubuntu, Linux Mint   |     ARM      |      .deb       | ConsoleBundled |               |
+| **⭯**  | Fedora, RHEL, CentOS, openSUSE |    x86_64    |      .rpm       | ConsoleBundled |               |
+| **⭯**  | Fedora, RHEL, CentOS, openSUSE |     ARM      |      .rpm       | ConsoleBundled |               |
