@@ -23,8 +23,8 @@
                     <children>
                         <VBox prefHeight="84.0" prefWidth="147.0" HBox.hgrow="ALWAYS">
                             <children>
-                                <Label alignment="BOTTOM_LEFT" maxWidth="1.7976931348623157E308" prefHeight="16.0" styleClass="data-card-text" stylesheets="@Connections.css" text="Connection:" VBox.vgrow="NEVER" />
-                                <Label fx:id="name" alignment="BOTTOM_LEFT" maxWidth="1.7976931348623157E308" prefHeight="16.0" stylesheets="@Connections.css" text="Arduino Uno">
+                                <Label alignment="BOTTOM_LEFT" maxWidth="1.7976931348623157E308" prefHeight="16.0" styleClass="data-card-text" text="Connection:" VBox.vgrow="NEVER" />
+                                <Label fx:id="name" alignment="BOTTOM_LEFT" maxWidth="1.7976931348623157E308" prefHeight="16.0" text="Arduino Uno">
                                     <styleClass>
                                         <String fx:value="data-card-text" />
                                         <String fx:value="data-card-text-bigger" />
@@ -39,8 +39,8 @@
                                             <children>
                                                 <HBox>
                                                     <children>
-                                                        <Label alignment="BOTTOM_LEFT" prefHeight="16.0" prefWidth="64.0" styleClass="data-card-text" stylesheets="@Connections.css" text="Baud Rate:" />
-                                                        <Label fx:id="baudRate" alignment="BOTTOM_LEFT" contentDisplay="RIGHT" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="16.0" stylesheets="@Connections.css" text="115200" textAlignment="RIGHT" HBox.hgrow="ALWAYS">
+                                                        <Label alignment="BOTTOM_LEFT" prefHeight="16.0" prefWidth="64.0" styleClass="data-card-text" text="Baud Rate:" />
+                                                        <Label fx:id="baudRate" alignment="BOTTOM_LEFT" contentDisplay="RIGHT" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="16.0" text="115200" textAlignment="RIGHT" HBox.hgrow="ALWAYS">
                                                             <styleClass>
                                                                 <String fx:value="data-card-text" />
                                                                 <String fx:value="data-card-text-bigger" />
@@ -50,8 +50,8 @@
                                                 </HBox>
                                                 <HBox>
                                                     <children>
-                                                        <Label alignment="BOTTOM_LEFT" prefHeight="16.0" prefWidth="64.0" styleClass="data-card-text" stylesheets="@Connections.css" text="Port:" HBox.hgrow="NEVER" />
-                                                        <Label fx:id="port" alignment="BOTTOM_LEFT" contentDisplay="RIGHT" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="16.0" stylesheets="@Connections.css" text="COM3" textAlignment="RIGHT" HBox.hgrow="ALWAYS">
+                                                        <Label alignment="BOTTOM_LEFT" prefHeight="16.0" prefWidth="64.0" styleClass="data-card-text" text="Port:" HBox.hgrow="NEVER" />
+                                                        <Label fx:id="port" alignment="BOTTOM_LEFT" contentDisplay="RIGHT" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="16.0" text="COM3" textAlignment="RIGHT" HBox.hgrow="ALWAYS">
                                                             <styleClass>
                                                                 <String fx:value="data-card-text" />
                                                                 <String fx:value="data-card-text-bigger" />

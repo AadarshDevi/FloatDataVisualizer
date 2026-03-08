@@ -25,7 +25,7 @@
       </HBox>
    </bottom>
    <top>
-      <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="16.0" styleClass="connection-editor-heading" stylesheets="@Connections.css" text="CONNECTION" BorderPane.alignment="CENTER">
+      <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="16.0" styleClass="connection-editor-heading" text="CONNECTION" BorderPane.alignment="CENTER">
          <BorderPane.margin>
             <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
          </BorderPane.margin>
