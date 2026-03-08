@@ -300,3 +300,19 @@ an [issue](https://github.com/AadarshDevi/FloatDataVisualizer/issues).
 5. Apache Maven
 6. Git
 7. WiX 3.14
+
+## Data Files
+
+1. Local
+    1. settings.float.txt
+        1. theme
+        2. dataFormat
+2. Documents:
+    1. connections.float.json
+    2. Screenshots (Custom Export)
+        1. Table
+        2. ScatterPlot
+        3. CSV Export
+
+
+-
