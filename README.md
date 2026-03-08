@@ -309,3 +309,52 @@ an [issue](https://github.com/AadarshDevi/FloatDataVisualizer/issues).
         2. dataFormat
 2. Documents
     1. connections/{Connection Name}.float.connection
+
+## Releases
+
+### Windows
+
+| Platform | Architecture | Executable Type | App Type       | Download Link |
+|:---------|:-------------|:----------------|:---------------|:--------------|
+| Windows  | x86          | .msi            | App            |               |
+| Windows  | x86          | .msi            | ConsoleBundled |               |
+| Windows  | x86          | .exe            | App            |               |
+| Windows  | x86          | .exe            | ConsoleBundled |               |
+| Windows  | ARM          | .msi            | App            |               |
+| Windows  | ARM          | .msi            | ConsoleBundled |               |
+| Windows  | ARM          | .exe            | App            |               |
+| Windows  | ARM          | .exe            | ConsoleBundled |               |
+
+### MacOS
+
+| Platform | Architecture | Executable Type | App Type | Download Link |
+|:---------|:-------------|:----------------|:---------|:--------------|
+| MacOS    | Intel        | .dmg            | App      |               |
+| MacOS    | Intel        | .pkg            | App      |               |
+| MacOS    | ARM          | .dmg            | App      |               |
+| MacOS    | ARM          | .pkg            | App      |               |
+
+### Linux
+
+| Platform | Architecture | Executable Type | App Type       | Download Link |
+|:---------|:-------------|:----------------|:---------------|:--------------|
+| Linux    | x86          | .flatpak        | App            |               |
+| Linux    | x86          | .flatpak        | ConsoleBundled |               |
+| Linux    | ARM          | .flatpak        | App            |               |
+| Linux    | ARM          | .flatpak        | ConsoleBundled |               |
+
+### Linux (Distro Specific)
+
+| Platform                   | Architecture | Executable Type | App Type       | Download Link |
+|:---------------------------|:-------------|:----------------|:---------------|:--------------|
+| Debian, Ubuntu, Linux Mint | x86          | .deb            | App            |               |
+| Debian, Ubuntu, Linux Mint | x86          | .deb            | ConsoleBundled |               |
+| Debian, Ubuntu, Linux Mint | ARM          | .deb            | App            |               |
+| Debian, Ubuntu, Linux Mint | ARM          | .deb            | ConsoleBundled |               |
+
+| Platform                       | Architecture | Executable Type | App Type       | Download Link |
+|:-------------------------------|:-------------|:----------------|:---------------|:--------------|
+| Fedora, RHEL, CentOS, openSUSE | x86          | .rpm            | App            |               |
+| Fedora, RHEL, CentOS, openSUSE | x86          | .rpm            | ConsoleBundled |               |
+| Fedora, RHEL, CentOS, openSUSE | ARM          | .rpm            | App            |               |
+| Fedora, RHEL, CentOS, openSUSE | ARM          | .rpm            | ConsoleBundled |               |
