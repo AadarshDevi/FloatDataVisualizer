@@ -312,13 +312,6 @@ an [issue](https://github.com/AadarshDevi/FloatDataVisualizer/issues).
 
 ## Releases
 
-### Executable Creation Platform
-
-1. Windows 11 x86_64: MSI Vector A16 HX A8W
-2. MacOS x86_64 (Intel): Late 2013 Macbook Pro
-3. MacOS ARM (M-Series): Macbook M2
-4. Debian x86_64: MSI Vector A16 HX A8W w/ VirtualBox Debian Linux
-
 ### App Versions
 
 There are 2 versions of the app; App and ConsoleBundled.
@@ -366,3 +359,10 @@ Below are images of App and ConsoleBundled.
 | **⭯**  | Fedora, RHEL, CentOS, openSUSE |    x86_64    |      .rpm       | ConsoleBundled |               |
 | **⭯**  | Fedora, RHEL, CentOS, openSUSE |     ARM      |      .rpm       |      App       |               |
 | **⭯**  | Fedora, RHEL, CentOS, openSUSE |     ARM      |      .rpm       | ConsoleBundled |               |
+
+### Executable Creation Platform
+
+1. Windows 11 x86_64: MSI Vector A16 HX A8W
+2. MacOS x86_64 (Intel): Late 2013 Macbook Pro
+3. MacOS ARM (M-Series): Macbook M2
+4. Debian x86_64: MSI Vector A16 HX A8W w/ VirtualBox Debian Linux
