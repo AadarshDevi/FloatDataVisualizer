@@ -1,6 +1,9 @@
 package com.alphagen.studio.FloatDataVisualizer;
 
-import com.alphagen.studio.FloatDataVisualizer.buoyui.controllers.ConnectionsController;
+import com.alphagen.studio.FloatDataVisualizer.buoyui.connections.ConnectionControllerManager;
+import com.alphagen.studio.FloatDataVisualizer.buoyui.connections.ConnectionUIConstants;
+import com.alphagen.studio.FloatDataVisualizer.buoyui.connections.ConnectionsController;
+import com.alphagen.studio.FloatDataVisualizer.buoyui.managers.StageManager;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.util.DeltaDrag;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -48,17 +51,22 @@ public class Launcher extends Application {
 	public void start(Stage stage) throws Exception {
 		System.out.println("Starting FloatDataVisualizer");
 
-		FXMLLoader fxmlLoader = new FXMLLoader(Launcher.class.getResource("buoyui/ui/connections/Connections.fxml"));
+		System.out.println("Loading ConnectionsUI");
+		FXMLLoader fxmlLoader = new FXMLLoader(Launcher.class.getResource(ConnectionUIConstants.CONNECTIONS_PAGE));
 		BorderPane buoyUI = fxmlLoader.load();
 		ConnectionsController bmc = fxmlLoader.getController();
+		ConnectionControllerManager.setConnectionsController(bmc);
 
 		Scene scene = new Scene(buoyUI);
 		scene.setFill(Color.TRANSPARENT);
 
 		stage.setScene(scene);
 		stage.initStyle(StageStyle.TRANSPARENT);
+		stage.setTitle("Float Data Visualizer");
 
-		DeltaDrag launcherDrag = new DeltaDrag();
+		StageManager.setMainStage(stage);
+		final DeltaDrag launcherDrag = new DeltaDrag();
+
 		buoyUI.setOnMousePressed(event -> {
 			launcherDrag.setDeltaX(event.getSceneX());
 			launcherDrag.setDeltaY(event.getSceneY());
@@ -70,6 +78,7 @@ public class Launcher extends Application {
 			stage.setY(event.getScreenY() - launcherDrag.getDeltaY());
 		});
 
+		System.out.println("Opening App");
 		stage.show();
 	}
 
