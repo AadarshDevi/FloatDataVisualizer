@@ -312,17 +312,13 @@ an [issue](https://github.com/AadarshDevi/FloatDataVisualizer/issues).
 
 ## Releases
 
-For users who want the terminal with the app, the can [Download Console Bundled](#consoleapp)
+For users who want the **_terminal with the app_**, the can download [Console Bundled App](#console-app)
 
 ### App Build Status
 
-|      Status       | Icon  |
-|:-----------------:|:-----:|
-| Build In Progress |   ⏳   |
-|  Will Not Build   |   ❌   |
-|   Future Builds   |  ⏭️   |
-|  Build Available  |   ✅   |
-| Maybe Have Build  | **⭯** |
+| Status | Build In Progress | Will Not Build | Future Builds | Build Available | Maybe Have Build |
+|--------|-------------------|----------------|---------------|-----------------|------------------|
+| Icon   | ⏳                 | ❌              | ⏭️            | ✅               | ⭯                |
 
 ### Download Links
 
