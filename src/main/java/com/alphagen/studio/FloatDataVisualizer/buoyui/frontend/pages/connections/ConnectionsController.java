@@ -63,7 +63,6 @@ public class ConnectionsController {
 		Stage editor = getConnectionEditor(connectionCreatorPane);
 		editor.showAndWait();
 
-
 		if (ConnectionManager.getCurrentConnection() == null) {
 			return;
 		}
@@ -73,7 +72,6 @@ public class ConnectionsController {
 
 		connections.getChildren().add(dcnp.node());
 		System.out.println("Data 1-2: " + dcnp.node().hashCode());
-
 	}
 
 	public Stage getConnectionEditor(BorderPane pane) {
