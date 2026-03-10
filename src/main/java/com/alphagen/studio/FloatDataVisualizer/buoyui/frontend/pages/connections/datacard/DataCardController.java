@@ -1,5 +1,10 @@
-package com.alphagen.studio.FloatDataVisualizer.buoyui.connections;
+package com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.pages.connections.datacard;
 
+import com.alphagen.studio.FloatDataVisualizer.buoyui.Controller;
+import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.data.ConnectionConfig;
+import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.data.ConnectionType;
+import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.managers.ControllerManager;
+import com.fazecast.jSerialComm.SerialPort;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ContextMenu;
@@ -10,7 +15,7 @@ import javafx.scene.input.MouseEvent;
 import lombok.Getter;
 import lombok.Setter;
 
-public class DataCardController {
+public class DataCardController extends Controller {
 	@FXML public Button dataCard;
 	@FXML public Label baudRate;
 	@FXML public Label port;
@@ -19,7 +24,7 @@ public class DataCardController {
 	@FXML public Button wireless;
 	@FXML public ContextMenu connectionOptions;
 	@FXML public MenuItem deleteDataCard;
-	@Getter private ConnectionType connectionType;
+	@Getter private ConnectionConfig connectionConfig;
 
 	@Setter
 	@Getter
@@ -45,44 +50,47 @@ public class DataCardController {
 		else if (isDisabled) event.consume();
 	}
 
-	public void setDataCard(String connectionName, int baudRateNum, String portName, ConnectionType connectionType) {
+	public void setConnection(String connectionName, int baudRateNum, SerialPort portName, ConnectionType connectionType) {
 		setConnectionName(connectionName);
 		setBaudRate(baudRateNum);
 		setPort(portName);
 		setConnectionType(connectionType);
 	}
 
-	public void setConnectionName(String connectionName) {
+	private void setConnectionName(String connectionName) {
+		System.out.println("Connection Start?");
+		System.out.println("--> " + connectionName);
 		invalidConnectionData();
 		name.setText(connectionName);
 	}
 
-	public void setBaudRate(int baudRateNum) {
+	private void setBaudRate(int baudRateNum) {
 		baudRate.setText(Integer.toString(baudRateNum));
 	}
 
-	public void setPort(String portName) {
+	private void setPort(SerialPort portName) {
+		System.out.println("New Connection Set?");
+		System.out.println("--> " + portName);
 		invalidConnectionData();
-		port.setText(portName);
+		port.setText(portName.getDescriptivePortName());
 	}
 
-	public void setConnectionType(ConnectionType connectionType) {
-		this.connectionType = connectionType;
+	private void setConnectionType(ConnectionType connectionType) {
 		System.out.println("Finding Connection");
 		switch (connectionType) {
 			case SERIAL:
-				System.out.println("Finding Serial");
 				serial.setVisible(true);
 				wireless.setVisible(false);
 				break;
 			case WIRELESS:
-				System.out.println("Finding Wireless");
 				serial.setVisible(false);
 				wireless.setVisible(true);
 				break;
 			default:
 				System.out.println("Invalid Connection");
+				return;
 		}
+		System.out.println("Connection Type: " + connectionType);
 	}
 
 	public void invalidConnectionData() {
@@ -97,6 +105,16 @@ public class DataCardController {
 
 	public void deleteConnection() {
 		System.out.println("Deleting Connection");
-		ConnectionControllerManager.getConnectionsController().deleteConnection(dataCard);
+		ControllerManager.getConnectionsController().deleteConnection(dataCard);
+	}
+
+	public void setConnection(ConnectionConfig connectionConfig) {
+		this.connectionConfig = connectionConfig;
+		System.out.println("Connection --> full config");
+		ControllerManager.getConnectionsController().setCurrentConnectionConfig(this.connectionConfig);
+		setBaudRate(connectionConfig.baudRate());
+		setConnectionName(connectionConfig.connectionName());
+		setPort(connectionConfig.port());
+		setConnectionType(connectionConfig.portType());
 	}
 }
