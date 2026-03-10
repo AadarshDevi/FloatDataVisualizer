@@ -1,4 +1,4 @@
-package com.alphagen.studio.FloatDataVisualizer.buoyui.managers;
+package com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.managers;
 
 import javafx.stage.Stage;
 import lombok.Getter;
