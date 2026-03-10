@@ -1,6 +1,8 @@
 package com.alphagen.studio.FloatDataVisualizer.buoyui.backend;
 
 import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.app.AppData;
+import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.app.PlatformDetector;
+import lombok.Getter;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -10,11 +12,12 @@ import java.nio.file.Paths;
 
 public class Backend {
 
-    private static final Path PROJECTROOT = Paths.get(System.getenv("APPDATA")).resolve("FloatDataVisualizer").resolve(AppData.RELEASE_VERSION);
+    @Getter private static Path PROJECTROOT;
 
     public static Backend backend;
 
     private Backend() throws IOException {
+        PROJECTROOT = PlatformDetector.getPROJECTROOT();
         Files.createDirectories(PROJECTROOT);
     }
 
