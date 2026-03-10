@@ -1,6 +1,6 @@
-package com.alphagen.studio.FloatDataVisualizer.buoyui.backend.app;
+package com.alphagen.studio.FloatDataVisualizer.buoyui.app;
 
-public enum AppPlatform {
+public enum Platform {
 	Win11_X86, // 100%
 	Win11_ARM, // No Device
 
