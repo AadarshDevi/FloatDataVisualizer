@@ -17,8 +17,6 @@ public class PlatformDetector {
 		detectPlatform();
 	}
 
-	private void setRootFolder() {}
-
 	public void detectPlatform() throws IOException {
 		String osName = System.getProperty("os.name");
 		if (osName.toLowerCase().contains("win")) {
