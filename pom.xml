@@ -54,6 +54,14 @@
             <version>1.18.38</version>
             <scope>provided</scope>
         </dependency>
+        <!-- Source: https://mvnrepository.com/artifact/org.openani.jsystemthemedetector/jSystemThemeDetector -->
+        <dependency>
+            <groupId>org.openani.jsystemthemedetector</groupId>
+            <artifactId>jSystemThemeDetector</artifactId>
+            <version>3.9</version>
+            <scope>compile</scope>
+        </dependency>
+
     </dependencies>
 
     <build>
