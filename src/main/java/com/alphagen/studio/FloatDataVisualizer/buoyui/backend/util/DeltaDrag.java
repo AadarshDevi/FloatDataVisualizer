@@ -1,4 +1,4 @@
-package com.alphagen.studio.FloatDataVisualizer.buoyui.util;
+package com.alphagen.studio.FloatDataVisualizer.buoyui.backend.util;
 
 import lombok.Getter;
 import lombok.Setter;
