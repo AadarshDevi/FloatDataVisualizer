@@ -93,7 +93,6 @@ public class Launcher extends Application {
 
         PlatformDetector pd = new PlatformDetector();
         pd.detectPlatform();
-        System.exit(0);
 
         System.out.println("Initializing Backend");
         Backend backend = Backend.getBackend();
