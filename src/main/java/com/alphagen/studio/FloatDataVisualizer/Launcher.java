@@ -1,19 +1,17 @@
 package com.alphagen.studio.FloatDataVisualizer;
 
 import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.Backend;
-import com.alphagen.studio.FloatDataVisualizer.buoyui.connections.ConnectionControllerManager;
-import com.alphagen.studio.FloatDataVisualizer.buoyui.connections.ConnectionUIConstants;
-import com.alphagen.studio.FloatDataVisualizer.buoyui.connections.ConnectionsController;
-import com.alphagen.studio.FloatDataVisualizer.buoyui.managers.StageManager;
-import com.alphagen.studio.FloatDataVisualizer.buoyui.util.DeltaDrag;
+import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.managers.ControllerManager;
+import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.managers.StageManager;
+import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.pages.PageConstants;
+import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.pages.connections.ConnectionsController;
+import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.util.StageUtil;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.layout.BorderPane;
-import javafx.scene.paint.Color;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 
 
 public class Launcher extends Application {
@@ -45,6 +43,7 @@ public class Launcher extends Application {
 //                .name("DataReceiver")
 //                .start(dataReceiver);
 
+		System.out.println("Starting FloatDataVisualizer");
 		launch(args);
 //		Application.launch(Main.class, args);
 	}
@@ -52,54 +51,58 @@ public class Launcher extends Application {
 	@Override
 	public void start(Stage stage) throws Exception {
 
+		System.out.println("Initializing Backend");
 		Backend backend = Backend.getBackend();
 
-		// check root folder
-		if (!backend.verifyRootFolder()) {
-			Alert alert = new Alert(Alert.AlertType.ERROR);
+		System.out.println("Finding Folders");
+
+		Alert alert = new Alert(Alert.AlertType.ERROR);
+		alert.setHeaderText("Error");
+
+		if (!backend.verifyRoot()) {
 			alert.setTitle("Exception 1");
-			alert.setHeaderText("Error");
 			alert.setContentText("Root folder is unable to be found or created.");
 			alert.showAndWait();
 			System.exit(-1);
 		}
-		System.out.println("Root Folder ready");
 
-		// check base folder
-		backend.verifyFolders("connections", "logs");
+		if (!backend.verifyFolder("connections")) {
+			alert.setTitle("Exception 2");
+			alert.setContentText("Base folder is unable to be found or created.\nBase Folder: connections");
+			alert.showAndWait();
+			System.exit(-1);
+		}
 
-		// check settings folder
-		backend.verifySettings();
+		if (!backend.verifyFolder("logs")) {
+			alert.setTitle("Exception 3");
+			alert.setContentText("Base folder is unable to be found or created.\nBase Folder: logs");
+			alert.showAndWait();
+			System.exit(-1);
+		}
 
-
-		System.out.println("Starting FloatDataVisualizer");
+		if (!backend.verifyFile("float.settings")) {
+			alert.setTitle("Exception 4");
+			alert.setContentText("File is unable to be found or created.\nFile: float.settings");
+			alert.showAndWait();
+			System.exit(-1);
+		}
+		System.out.println("All startup folders and settings file ready.");
 
 		System.out.println("Loading ConnectionsUI");
-		FXMLLoader fxmlLoader = new FXMLLoader(Launcher.class.getResource(ConnectionUIConstants.CONNECTIONS_PAGE));
+
+		FXMLLoader fxmlLoader = new FXMLLoader(PageConstants.CONNECTIONS_PAGE);
 		BorderPane buoyUI = fxmlLoader.load();
 		ConnectionsController bmc = fxmlLoader.getController();
-		ConnectionControllerManager.setConnectionsController(bmc);
+		ControllerManager.setConnectionsController(bmc);
 
 		Scene scene = new Scene(buoyUI);
-		scene.setFill(Color.TRANSPARENT);
 
 		stage.setScene(scene);
-		stage.initStyle(StageStyle.TRANSPARENT);
 		stage.setTitle("Float Data Visualizer");
 
 		StageManager.setMainStage(stage);
-		final DeltaDrag launcherDrag = new DeltaDrag();
 
-		buoyUI.setOnMousePressed(event -> {
-			launcherDrag.setDeltaX(event.getSceneX());
-			launcherDrag.setDeltaY(event.getSceneY());
-		});
-
-		// mouse dragged: move the stage
-		buoyUI.setOnMouseDragged(event -> {
-			stage.setX(event.getScreenX() - launcherDrag.getDeltaX());
-			stage.setY(event.getScreenY() - launcherDrag.getDeltaY());
-		});
+		StageUtil.createInvisPane(stage, scene, buoyUI);
 
 		System.out.println("Opening App");
 		stage.show();
