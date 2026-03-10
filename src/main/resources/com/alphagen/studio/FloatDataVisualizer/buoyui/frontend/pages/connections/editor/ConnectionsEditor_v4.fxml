@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.SVGPath?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="766.0" prefWidth="683.0" style="-fx-background-color: #ffffff;" styleClass="root" stylesheets="@../../../../theme_light.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.pages.connections.editor.ConnectionEditorController">
+    <bottom>
+        <HBox alignment="CENTER_RIGHT" spacing="10.0" BorderPane.alignment="CENTER">
+            <children>
+            <Button fx:id="autoFillButton1" mnemonicParsing="false" onAction="#autoFill" prefHeight="32.0" prefWidth="95.0" styleClass="buttons" text="Reset" />
+                <Button fx:id="autoFillButton" mnemonicParsing="false" onAction="#autoFill" prefHeight="32.0" prefWidth="95.0" styleClass="buttons" text="Auto Fill" />
+            <Button fx:id="closeButton" mnemonicParsing="false" onAction="#closeConnectionEditor" prefHeight="26.0" prefWidth="95.0" styleClass="buttons" text="Close" />
+                <Button fx:id="confirmButton" mnemonicParsing="false" onAction="#confirmConnectionEditor" prefHeight="26.0" prefWidth="95.0" styleClass="buttons" text="Confirm" />
+            </children>
+            <BorderPane.margin>
+                <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+            </BorderPane.margin>
+        </HBox>
+    </bottom>
+    <center>
+        <ScrollPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="394.0" prefWidth="649.0" styleClass="scroll-bar" BorderPane.alignment="CENTER">
+            <BorderPane.margin>
+                <Insets left="15.0" right="15.0" top="15.0" />
+            </BorderPane.margin>
+            <content>
+                <VBox maxWidth="-Infinity" minHeight="-Infinity" prefHeight="777.0" prefWidth="631.0" spacing="10.0" style="-fx-background-color: #ffffff;">
+                    <children>
+                    <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="16.0" styleClass="connection-editor-heading" VBox.vgrow="NEVER">
+                     <graphic>
+                        <SVGPath content="m 181.6529,39.772452v -4.214779h 0.76l 1.27052,3.013871 -0.0754,0.09572v -3.109596h 0.70778v 4.214779h -0.76869l -1.25892,-2.906544 0.0725,-0.09572v 3.002268zm 3.37647,0.0029v -4.217679h 0.75709v 4.217679zm 0.30458,0v -0.733887h 2.02761v 0.733887zm 0,-1.728842v -0.730987h 1.79846v 0.730987zm 0,-1.754949v -0.733888h 2.02761v 0.733888zm 3.36486,2.137847 0.62366,-2.871735h 0.59755l 0.62366,2.871735 0.37129,-2.871735h 0.7716l -0.74549,4.217679h -0.71938l -0.58305,-2.831124 -0.61496,2.831124h -0.71938l -0.7484,-4.217679h 0.7745zm 5.96102,1.389456q -0.3974,0 -0.68167,-0.15374 -0.28138,-0.153739 -0.42931,-0.446714 -0.14794,-0.295876 -0.14794,-0.710682v -1.67953q 0,-0.417707 0.14794,-0.710681 0.14793,-0.292975 0.42931,-0.446715 0.28427,-0.15664 0.68167,-0.15664 0.3945,0 0.66137,0.15664 0.26977,0.15664 0.41481,0.475722 0.14793,0.316181 0.17404,0.803506v 0h -0.7745v 0q -0.0174,-0.23206 -0.0754,-0.379998 -0.058,-0.147938 -0.15954,-0.220456 -0.0986,-0.07542 -0.24076,-0.07542 -0.22916,0 -0.35679,0.145037 -0.12763,0.145037 -0.12763,0.409004v 1.67953q 0,0.261067 0.12763,0.406104 0.12763,0.145037 0.35679,0.145037 0.21466,0 0.33359,-0.165342 0.11893,-0.165342 0.14213,-0.510531v 0h 0.7745v 0q -0.029,0.487325 -0.17404,0.806407 -0.14504,0.31618 -0.41481,0.472821 -0.26687,0.15664 -0.66137,0.15664zm 2.97906,0q -0.4003,0 -0.69327,-0.15374 -0.29008,-0.153739 -0.44962,-0.438012 -0.15664,-0.284273 -0.15664,-0.670071v -1.781056q 0,-0.388699 0.15664,-0.672972 0.15954,-0.284273 0.44962,-0.435112 0.29297,-0.153739 0.69327,-0.153739 0.40031,0 0.69038,0.153739 0.29298,0.150839 0.44962,0.435112 0.15954,0.284273 0.15954,0.672972v 1.781056q 0,0.385798 -0.15954,0.670071 -0.15664,0.284273 -0.44962,0.438012 -0.29007,0.15374 -0.69038,0.15374zm 0,-0.754193q 0.24367,0 0.3829,-0.147938 0.14214,-0.147938 0.14214,-0.397402v -1.708537q 0,-0.249464 -0.14214,-0.394501 -0.13923,-0.147938 -0.3829,-0.147938 -0.24076,0 -0.38289,0.147938 -0.14214,0.145037 -0.14214,0.394501v 1.708537q 0,0.249464 0.14214,0.397402 0.14213,0.147938 0.38289,0.147938zm 1.91449,0.707781v -4.214779h 0.76l 1.27052,3.013871 -0.0754,0.09572v -3.109596h 0.70778v 4.214779h -0.76869l -1.25892,-2.906544 0.0725,-0.09572v 3.002268zm 3.37647,0v -4.214779h 0.75999l 1.27053,3.013871 -0.0754,0.09572v -3.109596h 0.70778v 4.214779h -0.7687l -1.25892,-2.906544 0.0725,-0.09572v 3.002268zm 3.37646,0.0029v -4.217679h 0.7571v 4.217679zm 0.30458,0v -0.733887h 2.02762v 0.733887zm 0,-1.728842v -0.730987h 1.79846v 0.730987zm 0,-1.754949v -0.733888h 2.02762v 0.733888zm 3.78547,3.527303q -0.3974,0 -0.68168,-0.15374 -0.28137,-0.153739 -0.42931,-0.446714 -0.14793,-0.295876 -0.14793,-0.710682v -1.67953q 0,-0.417707 0.14793,-0.710681 0.14794,-0.292975 0.42931,-0.446715 0.28428,-0.15664 0.68168,-0.15664 0.3945,0 0.66137,0.15664 0.26977,0.15664 0.4148,0.475722 0.14794,0.316181 0.17405,0.803506v 0h -0.7745v 0q -0.0174,-0.23206 -0.0754,-0.379998 -0.058,-0.147938 -0.15954,-0.220456 -0.0986,-0.07542 -0.24076,-0.07542 -0.22916,0 -0.35679,0.145037 -0.12764,0.145037 -0.12764,0.409004v 1.67953q 0,0.261067 0.12764,0.406104 0.12763,0.145037 0.35679,0.145037 0.21465,0 0.33358,-0.165342 0.11893,-0.165342 0.14214,-0.510531v 0h 0.7745v 0q -0.029,0.487325 -0.17405,0.806407 -0.14503,0.31618 -0.4148,0.472821 -0.26687,0.15664 -0.66137,0.15664zm 2.32059,-0.04351v -3.866689h 0.75419v 3.866689zm -0.91373,-3.492493v -0.725186h 2.58166v 0.725186zm 3.69264,-0.725186v 4.217679h -0.76869v -4.217679zm 1.91449,4.261191q -0.4003,0 -0.69327,-0.15374 -0.29008,-0.153739 -0.44962,-0.438012 -0.15664,-0.284273 -0.15664,-0.670071v -1.781056q 0,-0.388699 0.15664,-0.672972 0.15954,-0.284273 0.44962,-0.435112 0.29297,-0.153739 0.69327,-0.153739 0.40031,0 0.69038,0.153739 0.29297,0.150839 0.44961,0.435112 0.15955,0.284273 0.15955,0.672972v 1.781056q 0,0.385798 -0.15955,0.670071 -0.15664,0.284273 -0.44961,0.438012 -0.29007,0.15374 -0.69038,0.15374zm 0,-0.754193q 0.24367,0 0.3829,-0.147938 0.14214,-0.147938 0.14214,-0.397402v -1.708537q 0,-0.249464 -0.14214,-0.394501 -0.13923,-0.147938 -0.3829,-0.147938 -0.24076,0 -0.38289,0.147938 -0.14214,0.145037 -0.14214,0.394501v 1.708537q 0,0.249464 0.14214,0.397402 0.14213,0.147938 0.38289,0.147938zm 1.91449,0.707781v -4.214779h 0.76l 1.27052,3.013871 -0.0754,0.09572v -3.109596h 0.70778v 4.214779h -0.76869l -1.25892,-2.906544 0.0725,-0.09572v 3.002268z" scaleX="5.0" scaleY="5.0" />
+                     </graphic>
+                    </Label>
+                          <Label maxWidth="1.7976931348623157E308" prefHeight="30.0" prefWidth="130.0" styleClass="connection-editor-fields" text="Connection Name" VBox.vgrow="NEVER">
+                              <padding>
+                                  <Insets left="15.0" right="10.0" />
+                              </padding>
+                          </Label>
+                          <TextField fx:id="connectionName" minHeight="-Infinity" prefHeight="26.0" prefWidth="306.0" promptText="Serial Connection" styleClass="text-box">
+                     <VBox.margin>
+                        <Insets left="10.0" />
+                     </VBox.margin>
+                  </TextField>
+                        <Label fx:id="error_label_connection_name_blank" maxWidth="1.7976931348623157E308" prefHeight="20.0" prefWidth="400.0" styleClass="error-text" text="Name cannot be blank">
+                            <padding>
+                                <Insets left="130.0" />
+                            </padding>
+                        </Label>
+                  <Label fx:id="error_label_name_invalid_characters" maxWidth="1.7976931348623157E308" prefHeight="20.0" prefWidth="400.0" styleClass="error-text" text="Cannot have Special Characters other than _ -">
+                     <padding>
+                        <Insets left="130.0" />
+                     </padding>
+                  </Label>
+                        <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="10.0" prefHeight="30.0" prefWidth="629.0">
+                            <children>
+                                <Label alignment="CENTER_RIGHT" prefHeight="30.0" prefWidth="130.0" styleClass="connection-editor-fields" text="Baud Rate:">
+                                    <padding>
+                                        <Insets left="15.0" right="10.0" />
+                                    </padding>
+                                </Label>
+                                <TextField fx:id="baudRate" minHeight="-Infinity" prefHeight="26.0" prefWidth="306.0" promptText="115200" styleClass="text-box" HBox.hgrow="ALWAYS" />
+                            </children>
+                        </HBox>
+                        <Label fx:id="error_label_baud_rate_invalid_characters" maxWidth="1.7976931348623157E308" prefHeight="20.0" prefWidth="400.0" styleClass="error-text" text="Cannot have Letters and Special Characters">
+                            <padding>
+                                <Insets left="130.0" />
+                            </padding>
+                        </Label>
+                        <Label fx:id="error_label_baud_rate_blank" maxWidth="1.7976931348623157E308" prefHeight="20.0" prefWidth="400.0" styleClass="error-text" text="Baud Rate cannot be blank">
+                            <padding>
+                                <Insets left="130.0" />
+                            </padding>
+                        </Label>
+                        <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="50.0" prefHeight="30.0" prefWidth="629.0">
+                            <children>
+                                <Label alignment="CENTER_RIGHT" prefHeight="30.0" prefWidth="130.0" styleClass="connection-editor-fields" text="Port:">
+                                    <padding>
+                                        <Insets left="15.0" right="10.0" />
+                                    </padding>
+                                </Label>
+                                <ChoiceBox fx:id="connectionOptions" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="26.0" prefWidth="306.0" HBox.hgrow="ALWAYS">
+                                    <styleClass>
+                                        <String fx:value="seletion-combo-box" />
+                                        <String fx:value="port-seletion-combo-box" />
+                                    </styleClass>
+                                </ChoiceBox>
+                            </children>
+                        </HBox>
+                        <Label fx:id="error_label_port_blank" maxWidth="1.7976931348623157E308" prefHeight="20.0" prefWidth="400.0" styleClass="error-text" text="Port cannot be blank">
+                            <padding>
+                                <Insets left="130.0" />
+                            </padding>
+                        </Label>
+                  <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="16.0" styleClass="connection-editor-heading" VBox.vgrow="NEVER">
+                     <graphic>
+                        <SVGPath content="m 161.78382,-2.1833627v -4.2176792h 0.7571v 4.2176792zm 0.30748,-1.6940335v -0.7251855h 1.76946v 0.7251855zm 0,-1.7984602v -0.7251855h 1.99861v 0.7251855zm 2.48304,3.4924937v -4.2176792h 0.75709v 4.2176792zm 0.32488,0v -0.7251856h 1.97541v 0.7251856zm 3.59112,0.043511q -0.4003,0 -0.69328,-0.1537393 -0.29007,-0.1537394 -0.44961,-0.4380121 -0.15664,-0.2842727 -0.15664,-0.6700715v -1.7810557q 0,-0.3886994 0.15664,-0.6729722 0.15954,-0.2842727 0.44961,-0.4351113 0.29298,-0.1537394 0.69328,-0.1537394 0.4003,0 0.69038,0.1537394 0.29297,0.1508386 0.44961,0.4351113 0.15954,0.2842728 0.15954,0.6729722v 1.7810557q 0,0.3857988 -0.15954,0.6700715 -0.15664,0.2842727 -0.44961,0.4380121 -0.29008,0.1537393 -0.69038,0.1537393zm 0,-0.754193q 0.24366,0 0.3829,-0.1479378 0.14213,-0.1479379 0.14213,-0.3974017v -1.7085372q 0,-0.2494638 -0.14213,-0.3945009 -0.13924,-0.1479379 -0.3829,-0.1479379 -0.24076,0 -0.3829,0.1479379 -0.14213,0.1450371 -0.14213,0.3945009v 1.7085372q 0,0.2494638 0.14213,0.3974017 0.14214,0.1479378 0.3829,0.1479378zm 1.49678,0.7106819 1.29954,-4.2176792h 0.50472l 1.29664,4.2176792h -0.7803l -0.7687,-2.8195215 -0.7687,2.8195215zm 0.72809,-0.66427v -0.7193841h 1.66212v 0.7193841zm 3.15601,0.66427v -3.8666894h 0.75419v 3.8666894zm -0.91374,-3.4924937v -0.7251855h 2.58166v 0.7251855zm 4.6934,3.4924937v -0.7251856h 0.7658q 0.26397,0 0.4061,-0.1363349 0.14504,-0.1392356 0.14504,-0.3857987v -1.7230409q 0,-0.2494638 -0.14504,-0.3857987 -0.14213,-0.1363349 -0.4061,-0.1363349h -0.7658v -0.7251855h 0.79481q 0.62076,0 0.95724,0.3190816 0.33939,0.3190817 0.33939,0.8992301v 1.7810557q 0,0.371295 -0.14794,0.6468656 -0.14794,0.2726697 -0.43801,0.4235083 -0.28717,0.1479379 -0.71358,0.1479379zm -0.44091,0v -4.2176792h 0.75709v 4.2176792zm 2.7296,0 1.29953,-4.2176792h 0.50473l 1.29663,4.2176792h -0.7803l -0.76869,-2.8195215 -0.7687,2.8195215zm 0.72809,-0.66427v -0.7193841h 1.66212v 0.7193841zm 3.156,0.66427v -3.8666894h 0.7542v 3.8666894zm -0.91373,-3.4924937v -0.7251855h 2.58166v 0.7251855zm 2.41922,3.4924937 1.29953,-4.2176792h 0.50473l 1.29663,4.2176792h -0.7803l -0.76869,-2.8195215 -0.7687,2.8195215zm 0.72808,-0.66427v -0.7193841h 1.66213v 0.7193841z" scaleX="5.0" scaleY="5.0" />
+                     </graphic>
+                  </Label>
+                          <Label alignment="BOTTOM_LEFT" maxWidth="1.7976931348623157E308" prefHeight="63.0" prefWidth="130.0" styleClass="connection-editor-fields" text="Team Number &amp; Name " wrapText="true" VBox.vgrow="NEVER">
+                              <padding>
+                                  <Insets left="15.0" right="10.0" />
+                              </padding>
+                          </Label>
+                        <TextField fx:id="dataFormat" prefHeight="20.0" prefWidth="306.0" promptText="PN12-MiramarWaterJets" styleClass="text-box">
+                     <VBox.margin>
+                        <Insets left="10.0" />
+                     </VBox.margin>
+                        </TextField>
+                        <Label fx:id="error_label_data_format_blank" maxWidth="1.7976931348623157E308" prefHeight="20.0" prefWidth="400.0" styleClass="error-text" text="Data Format cannot be blank">
+                            <VBox.margin>
+                                <Insets />
+                            </VBox.margin>
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                        </Label>
+                  <HBox alignment="CENTER_LEFT" prefHeight="30.0" prefWidth="629.0">
+                     <children>
+                        <Label alignment="CENTER_RIGHT" prefHeight="30.0" prefWidth="130.0" styleClass="connection-editor-fields" text="Start Flag:">
+                           <padding>
+                              <Insets left="15.0" right="10.0" />
+                           </padding>
+                        </Label>
+                        <TextField fx:id="startFlagTextField" prefHeight="20.0" prefWidth="306.0" promptText="--start-data-transfer" styleClass="text-box" HBox.hgrow="ALWAYS" />
+                     </children>
+                  </HBox>
+                  <Label fx:id="error_label_start_flag_blank" maxWidth="1.7976931348623157E308" prefHeight="20.0" prefWidth="400.0" styleClass="error-text" text="Start Flag cannot be blank">
+                     <padding>
+                        <Insets left="130.0" />
+                     </padding>
+                  </Label>
+                  <HBox alignment="CENTER_LEFT" prefHeight="30.0" prefWidth="629.0">
+                     <children>
+                        <Label alignment="CENTER_RIGHT" prefHeight="30.0" prefWidth="130.0" styleClass="connection-editor-fields" text="End Flag:">
+                           <padding>
+                              <Insets left="15.0" right="10.0" />
+                           </padding>
+                        </Label>
+                        <TextField fx:id="endFlagTextField" prefHeight="20.0" prefWidth="306.0" promptText="--end-data-transfer" styleClass="text-box" HBox.hgrow="ALWAYS" />
+                     </children>
+                  </HBox>
+                  <Label fx:id="error_label_end_flag_blank" maxWidth="1.7976931348623157E308" prefHeight="20.0" prefWidth="400.0" styleClass="error-text" text="End Flag cannot be blank">
+                     <padding>
+                        <Insets left="130.0" />
+                     </padding>
+                  </Label>
+                  <HBox alignment="CENTER_LEFT" prefHeight="30.0" prefWidth="629.0">
+                     <children>
+                        <HBox alignment="CENTER_LEFT" prefHeight="30.0" prefWidth="629.0">
+                           <children>
+                              <Label alignment="CENTER_RIGHT" prefHeight="30.0" prefWidth="130.0" styleClass="connection-editor-fields" text="Measure:">
+                                 <padding>
+                                    <Insets left="15.0" right="10.0" />
+                                 </padding>
+                              </Label>
+                              <TextField fx:id="measurementName" prefHeight="20.0" prefWidth="86.0" promptText="Depth, Pressure" styleClass="text-box" HBox.hgrow="ALWAYS" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" maxWidth="-Infinity" prefHeight="30.0" prefWidth="280.0">
+                           <children>
+                              <Label alignment="CENTER_RIGHT" prefHeight="30.0" prefWidth="78.0" styleClass="connection-editor-fields" text="Unit:">
+                                 <padding>
+                                    <Insets left="15.0" right="10.0" />
+                                 </padding>
+                              </Label>
+                              <TextField fx:id="measurementUnit" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="20.0" prefWidth="70.0" promptText="m, Pa" styleClass="text-box" HBox.hgrow="ALWAYS" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </HBox>
+                  <Label fx:id="error_label_measure_name_blank" maxWidth="1.7976931348623157E308" prefHeight="20.0" prefWidth="400.0" styleClass="error-text" text="Measure cannot be blank">
+                     <padding>
+                        <Insets left="130.0" />
+                     </padding>
+                  </Label>
+                  <Label fx:id="error_label_measure_unit_blank" maxWidth="1.7976931348623157E308" prefHeight="20.0" prefWidth="400.0" styleClass="error-text" text="Unit cannot be blank">
+                     <padding>
+                        <Insets left="130.0" />
+                     </padding>
+                  </Label>
+                  <Label fx:id="error_label_measure_unit_invalid_characters" layoutX="10.0" layoutY="577.0" maxWidth="1.7976931348623157E308" prefHeight="20.0" prefWidth="400.0" styleClass="error-text" text="Unit cannot have Numbers and Special Characters">
+                     <padding>
+                        <Insets left="130.0" />
+                     </padding>
+                  </Label>
+                    </children>
+                    <padding>
+                        <Insets bottom="10.0" right="10.0" top="10.0" />
+                    </padding>
+                </VBox>
+            </content>
+        </ScrollPane>
+    </center>
+</BorderPane>
