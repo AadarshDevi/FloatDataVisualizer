@@ -311,7 +311,39 @@
                     <!--                        </configuration>-->
                     <!--                    </execution>-->
 
+                    <!-- AppImage execution (Linux only - uncomment on Linux VM) -->
+                    <!--
+                        do cmds below on folder:
 
+                        # After mvn package on Linux VM:
+
+                        cd target/jpackage/
+                        appimagetool FloatDataVisualizer/ FloatDataVisualizer.AppImage
+                        chmod +x FloatDataVisualizer.AppImage
+
+                    -->
+                    
+                    <!--                    <execution>-->
+                    <!--                        <id>jpackage-appimage</id>-->
+                    <!--                        <phase>package</phase>-->
+                    <!--                        <osFamily>unix</osFamily>-->
+                    <!--                        <goals><goal>exec</goal></goals>-->
+                    <!--                        <configuration>-->
+                    <!--                            <executable>jpackage</executable>-->
+                    <!--                            <arguments>-->
+                    <!--                                <argument>&#45;&#45;type</argument><argument>app-image</argument>-->
+                    <!--                                <argument>&#45;&#45;dest</argument><argument>${project.build.directory}/jpackage</argument>-->
+                    <!--                                <argument>&#45;&#45;input</argument><argument>${project.build.directory}</argument>-->
+                    <!--                                <argument>&#45;&#45;name</argument><argument>FloatDataVisualizer</argument>-->
+                    <!--                                <argument>&#45;&#45;app-version</argument><argument>${project.version}</argument>-->
+                    <!--                                <argument>&#45;&#45;vendor</argument><argument>Aadarsh Devi</argument>-->
+                    <!--                                <argument>&#45;&#45;main-jar</argument><argument>FloatDataVisualizer-${project.version}.jar</argument>-->
+                    <!--                                <argument>&#45;&#45;main-class</argument><argument>com.alphagen.studio.FloatDataVisualizer.Launcher</argument>-->
+                    <!--                                <argument>&#45;&#45;linux-shortcut</argument>-->
+                    <!--                                <argument>&#45;&#45;linux-menu-group</argument><argument>Utility</argument>-->
+                    <!--                            </arguments>-->
+                    <!--                        </configuration>-->
+                    <!--                    </execution>-->
                 </executions>
             </plugin>
 
