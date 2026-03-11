@@ -23,21 +23,23 @@ For users who want the **_terminal with the app_**, the can download [Console Bu
 
 ### Download Links
 
+The actual (base) app is actively being worked on. Then Win11, Linux will be released and later on MacOS.
+
 | Status |            Platform            | Architecture | Executable Type | App Type | Download Link |
 |:------:|:------------------------------:|:------------:|:---------------:|:--------:|:-------------:|
 |  ⏭️️   |            Windows             |    x86_64    |      .msi       |   App    |               |
 |  ⏭️️   |            Windows             |    x86_64    |      .exe       |   App    |               |
 | **⭯**  |            Windows             |     ARM      |      .msi       |   App    |               |
 | **⭯**  |            Windows             |     ARM      |      .exe       |   App    |               |
-| **⭯**  |             MacOS              |    x86_64    |      .dmg       |   App    |               |
-| **⭯**  |             MacOS              |    x86_64    |      .pkg       |   App    |               |
+|  ⏭️️   |             MacOS              |    x86_64    |      .dmg       |   App    |               |
+|  ⏭️️   |             MacOS              |    x86_64    |      .pkg       |   App    |               |
 | **⭯**  |             MacOS              |     ARM      |      .dmg       |   App    |               |
 | **⭯**  |             MacOS              |     ARM      |      .pkg       |   App    |               |
 | **⭯**  |             Linux              |    x86_64    |    .AppImage    |   App    |               |
 | **⭯**  |             Linux              |     ARM      |    .AppImage    |   App    |               |
-| **⭯**  |   Debian, Ubuntu, Linux Mint   |    x86_64    |      .deb       |   App    |               |
+|  ⏭️️   |   Debian, Ubuntu, Linux Mint   |    x86_64    |      .deb       |   App    |               |
 | **⭯**  |   Debian, Ubuntu, Linux Mint   |     ARM      |      .deb       |   App    |               |
-| **⭯**  | Fedora, RHEL, CentOS, openSUSE |    x86_64    |      .rpm       |   App    |               |
+|  ⏭️️   | Fedora, RHEL, CentOS, openSUSE |    x86_64    |      .rpm       |   App    |               |
 | **⭯**  | Fedora, RHEL, CentOS, openSUSE |     ARM      |      .rpm       |   App    |               |
 
 ### Executable Creation Platform
