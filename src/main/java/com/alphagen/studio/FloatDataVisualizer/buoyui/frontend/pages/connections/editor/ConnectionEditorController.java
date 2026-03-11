@@ -331,38 +331,4 @@ public class ConnectionEditorController {
 
 
 	}
-
-	public boolean validBaudRate() {
-		if (baudRate.getText().trim().isEmpty()) {
-			error_label_baud_rate_blank.setVisible(true);
-//			error_label_baud_rate_blank.setManaged(true);
-			baudRate.getStyleClass().add(DynamicCSS.ERROR);
-			return false;
-		}
-
-		error_label_baud_rate_blank.setVisible(false);
-//		error_label_baud_rate_blank.setManaged(false);
-		baudRate.getStyleClass().remove(DynamicCSS.ERROR);
-
-		int baudRateValue = -1;
-		try {
-			baudRateValue = Integer.parseInt(baudRate.getText());
-			error_label_baud_rate_invalid_characters.setVisible(false);
-//			error_label_baud_rate_invalid_characters.setManaged(false);
-			baudRate.getStyleClass().remove(DynamicCSS.ERROR);
-		} catch (NumberFormatException e) {
-			error_label_baud_rate_invalid_characters.setVisible(true);
-//			error_label_baud_rate_invalid_characters.setManaged(true);
-			baudRate.getStyleClass().add(DynamicCSS.ERROR);
-			return false;
-		}
-
-		if (baudRateValue < 0) {
-			baudRate.getStyleClass().add(DynamicCSS.ERROR);
-			return false;
-		}
-
-		baudRate.getStyleClass().remove(DynamicCSS.ERROR);
-		return true;
-	}
 }
