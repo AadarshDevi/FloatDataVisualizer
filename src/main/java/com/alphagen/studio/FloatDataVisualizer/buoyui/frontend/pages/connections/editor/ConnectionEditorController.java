@@ -52,27 +52,27 @@ public class ConnectionEditorController {
 	public void initialize() {
 		resetErrorLabels();
 
-        switch (PlatformDetector.getOSPLATFORM()) {
-            case WIN11:
-                connectionOptions.getItems().addAll(
-                        Stream.of(SerialPort.getCommPorts())
-                                .map(SerialPort::getSystemPortName)
-                                .toList()
-                );
-                break;
-            case MACOS:
-                ArrayList<SerialPort> portsList = new ArrayList<>();
-                SerialPort[] ports = SerialPort.getCommPorts();
-                for (SerialPort port : ports)
-                    if (port.getSystemPortName().contains("cu.usb"))
-                        portsList.add(port);
+		switch (PlatformDetector.getOSPLATFORM()) {
+			case WIN11:
+				connectionOptions.getItems().addAll(
+						Stream.of(SerialPort.getCommPorts())
+								.map(SerialPort::getSystemPortName)
+								.toList()
+				);
+				break;
+			case MACOS:
+				ArrayList<SerialPort> portsList = new ArrayList<>();
+				SerialPort[] ports = SerialPort.getCommPorts();
+				for (SerialPort port : ports)
+					if (port.getSystemPortName().contains("cu.usb"))
+						portsList.add(port);
 
-                connectionOptions.getItems().addAll(String.valueOf(portsList));
-                break;
-            case LINUX:
-                break;
-        }
-    }
+				connectionOptions.getItems().addAll(String.valueOf(portsList));
+				break;
+			case LINUX:
+				break;
+		}
+	}
 
 	public void resetErrorLabels() {
 		error_label_connection_name_blank.setVisible(false);
@@ -153,17 +153,36 @@ public class ConnectionEditorController {
 		}
 	}
 
-    private boolean validMeasurementUnit() {
-        if (measurementUnit.getText().trim().isEmpty()) {
-            error_label_measure_unit_blank.setVisible(true);
-            measurementUnit.getStyleClass().add(DynamicCSS.ERROR);
-            return false;
-        } else {
-            error_label_measure_unit_blank.setVisible(false);
-            measurementUnit.getStyleClass().remove(DynamicCSS.ERROR);
-            return true;
-        }
-    }
+	private boolean isValidConnectionName() {
+		String value = connectionName.getText().trim();
+		if (value.isEmpty()) {
+			error_label_connection_name_blank.setVisible(true);
+//        error_label_connection_name_blank.setManaged(true);
+			connectionName.getStyleClass().add(DynamicCSS.ERROR);
+			return false;
+		} else {
+			error_label_connection_name_blank.setVisible(false);
+//        error_label_connection_name_blank.setManaged(true);
+			connectionName.getStyleClass().remove(DynamicCSS.ERROR);
+		}
+
+
+		for (char c : value.toCharArray()) {
+			if (!Character.isLetterOrDigit(c) && c != '-' && c != '_' && c != ' ') {
+				error_label_name_invalid_characters.setVisible(true);
+//           error_label_name_invalid_characters.setManaged(true);
+				connectionName.getStyleClass().add(DynamicCSS.ERROR);
+				return false;
+			}
+		}
+
+
+		error_label_name_invalid_characters.setVisible(false);
+//     error_label_name_invalid_characters.setManaged(false);
+		connectionName.getStyleClass().remove(DynamicCSS.ERROR);
+		return true;
+	}
+
 
 	public boolean validBaudRate() {
 		if (baudRate.getText().trim().isEmpty()) {
