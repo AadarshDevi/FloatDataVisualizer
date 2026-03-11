@@ -10,7 +10,6 @@ import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.managers.StageMan
 import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.pages.connections.ConnectionsController;
 import com.fazecast.jSerialComm.SerialPort;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -20,44 +19,29 @@ import java.util.stream.Stream;
 
 public class ConnectionEditorController {
 
-	// error groups
 
-	// name
 	@FXML TextField connectionName;
+	@FXML TextField baudRate;
+	@FXML ChoiceBox<String> connectionOptions;
+
+	@FXML TextField dataFormat;
+	@FXML TextField startFlagTextField;
+	@FXML TextField endFlagTextField;
+	@FXML TextField measurementName;
+	@FXML TextField measurementUnit;
+
 	@FXML public Label error_label_connection_name_blank;
 	@FXML public Label error_label_name_invalid_characters;
-	private boolean validConnectionName = true;
-
-	// baud rate
-	@FXML TextField baudRate;
 	@FXML public Label error_label_baud_rate_invalid_characters;
 	@FXML public Label error_label_baud_rate_blank;
-
-	// port
-	@FXML ChoiceBox<String> connectionOptions;
 	@FXML public Label error_label_port_blank;
 
-	// data format
-	@FXML TextField dataFormat;
 	@FXML public Label error_label_data_format_blank;
-	private boolean validTeamName = true;
-
-	// flags
-	@FXML TextField startFlagTextField;
 	@FXML public Label error_label_start_flag_blank;
-	@FXML TextField endFlagTextField;
 	@FXML public Label error_label_end_flag_blank;
-
-	// measure
-	@FXML TextField measurementName;
 	@FXML public Label error_label_measure_name_blank;
-	@FXML TextField measurementUnit;
 	@FXML public Label error_label_measure_unit_blank;
 	@FXML public Label error_label_measure_unit_invalid_characters;
-
-	// operation buttons
-	@FXML public Button confirmButton;
-	@FXML private Button closeButton;
 
 	public void populateFloatConfig(FloatConfig floatConfig) {
 		if (floatConfig != null) {
@@ -89,72 +73,55 @@ public class ConnectionEditorController {
 		error_label_measure_name_blank.setVisible(false);
 		error_label_measure_unit_blank.setVisible(false);
 		error_label_measure_unit_invalid_characters.setVisible(false);
+
+
+//		error_label_connection_name_blank.setManaged(false);
+//		error_label_baud_rate_invalid_characters.setManaged(false);
+//		error_label_baud_rate_blank.setManaged(false);
+//		error_label_port_blank.setManaged(false);
+//		error_label_data_format_blank.setManaged(false);
+//
+//		error_label_name_invalid_characters.setManaged(false);
+//		error_label_start_flag_blank.setManaged(false);
+//		error_label_end_flag_blank.setManaged(false);
+//		error_label_measure_name_blank.setManaged(false);
+//		error_label_measure_unit_blank.setManaged(false);
+//		error_label_measure_unit_invalid_characters.setManaged(false);
 	}
 
 	@FXML
 	public void confirmConnectionEditor() {
 
-		if (!isValidConnectionName())
-			validConnectionName = false;
+		boolean isValidConnectionName = isValidConnectionName();
+		boolean isValidBaudRate = validBaudRate();
+		boolean isValidPort = validPort();
+//		System.out.println("Connection Config: " + isValidConnectionName + " " + isValidBaudRate + " " + isValidPort);
 
-		if (baudRate.getText().trim().isEmpty()) {
-			error_label_baud_rate_blank.setVisible(true);
-			baudRate.getStyleClass().add(DynamicCSS.ERROR);
-		} else {
-			error_label_baud_rate_blank.setVisible(false);
-			baudRate.getStyleClass().remove(DynamicCSS.ERROR);
-		}
+		boolean isValidTeamName = isValidTeamName();
+		boolean isValidStartFlag = validStartFlag();
+		boolean isValidEndFlag = validEndFlag();
+//		System.out.println("Float Config: " + isValidTeamName + " " + isValidStartFlag + " " + isValidEndFlag);
 
-		String value = null;
+		boolean isValidMeasurementName = validMeasurementName();
+		boolean isValidMeasurementUnit = validMeasurementUnit();
+//		System.out.println("Unit Config: " + isValidMeasurementName + " " + isValidMeasurementUnit);
 
-		try {
-			value = connectionOptions.getValue();
-		} catch (NullPointerException _) {
-			System.out.println("Connection Option Value has give Null Pointer Exception");
-		}
-
-		if (value == null || value.isEmpty()) {
-			error_label_port_blank.setVisible(true);
-			connectionOptions.getStyleClass().add(DynamicCSS.ERROR);
-		} else {
-			error_label_port_blank.setVisible(false);
-			connectionOptions.getStyleClass().remove(DynamicCSS.ERROR);
-		}
-
-		if (!isValidTeamName())
-			validTeamName = false;
-
-		int baudRateValue = -1;
-
-		try {
-			baudRateValue = Integer.parseInt(baudRate.getText());
-			error_label_baud_rate_invalid_characters.setVisible(false);
-			baudRate.getStyleClass().remove(DynamicCSS.ERROR);
-
-		} catch (NumberFormatException e) {
-			error_label_baud_rate_invalid_characters.setVisible(true);
-			baudRate.getStyleClass().add(DynamicCSS.ERROR);
-			return;
-		}
-
-		if (baudRateValue < 0 || baudRateValue > Integer.MAX_VALUE) {
-			baudRate.getStyleClass().add(DynamicCSS.ERROR);
-		} else {
-			baudRate.getStyleClass().remove(DynamicCSS.ERROR);
-		}
-
+		System.out.println();
 		if (
-				validConnectionName
-						&& !baudRate.getText().isEmpty()
-						&& value != null
-						&& validTeamName
-						&& baudRateValue > 0
+				isValidConnectionName
+						&& isValidBaudRate
+						&& isValidPort
+						&& isValidTeamName
+						&& isValidStartFlag
+						&& isValidEndFlag
+						&& isValidMeasurementName
+						&& isValidMeasurementUnit
 		) {
 			// get serial port from name
 			// connectionOptions.getValue()
 			ConnectionConfig connection = new ConnectionConfig(
 					connectionName.getText(),
-					baudRateValue,
+					Integer.parseInt(baudRate.getText()),
 					SerialPort.getCommPorts()[0], // fixme: dynamic
 					ConnectionType.SERIAL,
 					new FloatConfig(null, null, null, null, null)
@@ -166,27 +133,108 @@ public class ConnectionEditorController {
 		}
 	}
 
+	private boolean validMeasurementUnit() {
+		if (measurementUnit.getText().trim().isEmpty()) {
+			error_label_measure_unit_blank.setVisible(true);
+			measurementUnit.getStyleClass().add(DynamicCSS.ERROR);
+			return false;
+		} else {
+			error_label_measure_unit_blank.setVisible(false);
+			measurementUnit.getStyleClass().remove(DynamicCSS.ERROR);
+			return true;
+		}
+	}
+
+	private boolean validMeasurementName() {
+		if (measurementName.getText().trim().isEmpty()) {
+			error_label_measure_name_blank.setVisible(true);
+			measurementName.getStyleClass().add(DynamicCSS.ERROR);
+			return false;
+		} else {
+			error_label_measure_name_blank.setVisible(false);
+			measurementName.getStyleClass().remove(DynamicCSS.ERROR);
+			return true;
+		}
+	}
+
+	private boolean validEndFlag() {
+		if (endFlagTextField.getText().trim().isEmpty()) {
+			error_label_end_flag_blank.setVisible(true);
+//			error_label_end_flag_blank.setManaged(true);
+			endFlagTextField.getStyleClass().add(DynamicCSS.ERROR);
+			return false;
+		} else {
+			error_label_end_flag_blank.setVisible(false);
+//			error_label_end_flag_blank.setManaged(false);
+			endFlagTextField.getStyleClass().remove(DynamicCSS.ERROR);
+			return true;
+		}
+
+	}
+
+	private boolean validStartFlag() {
+		if (startFlagTextField.getText().trim().isEmpty()) {
+			error_label_start_flag_blank.setVisible(true);
+//			error_label_start_flag_blank.setManaged(true);
+			startFlagTextField.getStyleClass().add(DynamicCSS.ERROR);
+			return false;
+		} else {
+			error_label_start_flag_blank.setVisible(false);
+//			error_label_start_flag_blank.setManaged(false);
+			startFlagTextField.getStyleClass().remove(DynamicCSS.ERROR);
+			return true;
+		}
+	}
+
+	private boolean validPort() {
+
+		String value;
+
+		try {
+			value = connectionOptions.getValue();
+		} catch (NullPointerException _) {
+			System.out.println("Connection Option Value has give Null Pointer Exception");
+			return false;
+		}
+
+		if (value == null || value.isEmpty()) {
+			error_label_port_blank.setVisible(true);
+//			error_label_port_blank.setManaged(true);
+			connectionOptions.getStyleClass().add(DynamicCSS.ERROR);
+			return false;
+		} else {
+			error_label_port_blank.setVisible(false);
+//			error_label_port_blank.setManaged(false);
+			connectionOptions.getStyleClass().remove(DynamicCSS.ERROR);
+			return true;
+		}
+
+	}
+
 	private boolean isValidConnectionName() {
 		String value = connectionName.getText().trim();
 		if (value.isEmpty()) {
 			error_label_connection_name_blank.setVisible(true);
+//			error_label_connection_name_blank.setManaged(true);
 			connectionName.getStyleClass().add(DynamicCSS.ERROR);
 			return false;
 		} else {
 			error_label_connection_name_blank.setVisible(false);
+//			error_label_connection_name_blank.setManaged(true);
 			connectionName.getStyleClass().remove(DynamicCSS.ERROR);
 		}
 
-		// fixme: use correct
 		for (char c : value.toCharArray()) {
 			if (!Character.isLetterOrDigit(c) && c != '-' && c != '_' && c != ' ') {
 				error_label_name_invalid_characters.setVisible(true);
+//				error_label_name_invalid_characters.setManaged(true);
 				connectionName.getStyleClass().add(DynamicCSS.ERROR);
 				return false;
 			}
 		}
 
 		error_label_name_invalid_characters.setVisible(false);
+//		error_label_name_invalid_characters.setManaged(false);
 		connectionName.getStyleClass().remove(DynamicCSS.ERROR);
 		return true;
 	}
@@ -194,13 +242,15 @@ public class ConnectionEditorController {
 	private boolean isValidTeamName() {
 		if (dataFormat.getText().trim().isEmpty()) {
 			error_label_data_format_blank.setVisible(true);
+//			error_label_data_format_blank.setManaged(true);
 			dataFormat.getStyleClass().add(DynamicCSS.ERROR);
 			return false;
-		} else {
-			error_label_data_format_blank.setVisible(false);
-			dataFormat.getStyleClass().remove(DynamicCSS.ERROR);
-			return true;
 		}
+
+		error_label_data_format_blank.setVisible(false);
+//			error_label_data_format_blank.setManaged(false);
+		dataFormat.getStyleClass().remove(DynamicCSS.ERROR);
+		return true;
 	}
 
 	@FXML
@@ -224,6 +274,7 @@ public class ConnectionEditorController {
 		measurementUnit.setText("m");
 
 		ConnectionsController cc = ControllerManager.getConnectionsController();
+
 		if (cc.getCurrentConnectionConfig() != null) {
 			ConnectionConfig ccg = cc.getCurrentConnectionConfig();
 			connectionName.setText(ccg.connectionName());
@@ -241,5 +292,39 @@ public class ConnectionEditorController {
 		}
 
 
+	}
+
+	public boolean validBaudRate() {
+		if (baudRate.getText().trim().isEmpty()) {
+			error_label_baud_rate_blank.setVisible(true);
+//			error_label_baud_rate_blank.setManaged(true);
+			baudRate.getStyleClass().add(DynamicCSS.ERROR);
+			return false;
+		}
+
+		error_label_baud_rate_blank.setVisible(false);
+//		error_label_baud_rate_blank.setManaged(false);
+		baudRate.getStyleClass().remove(DynamicCSS.ERROR);
+
+		int baudRateValue = -1;
+		try {
+			baudRateValue = Integer.parseInt(baudRate.getText());
+			error_label_baud_rate_invalid_characters.setVisible(false);
+//			error_label_baud_rate_invalid_characters.setManaged(false);
+			baudRate.getStyleClass().remove(DynamicCSS.ERROR);
+		} catch (NumberFormatException e) {
+			error_label_baud_rate_invalid_characters.setVisible(true);
+//			error_label_baud_rate_invalid_characters.setManaged(true);
+			baudRate.getStyleClass().add(DynamicCSS.ERROR);
+			return false;
+		}
+
+		if (baudRateValue < 0) {
+			baudRate.getStyleClass().add(DynamicCSS.ERROR);
+			return false;
+		}
+
+		baudRate.getStyleClass().remove(DynamicCSS.ERROR);
+		return true;
 	}
 }
