@@ -16,7 +16,7 @@ public class PlatformDetector {
         detectPlatform();
     }
 
-    public void detectPlatform() throws IOException {
+    private void detectPlatform() throws IOException {
         String osName = System.getProperty("os.name");
         if (osName.toLowerCase().contains("win")) {
             OSPLATFORM = Platform.WIN11;
