@@ -153,3 +153,8 @@ Root: C:\Users\{user}\AppData\Roaming\FloatDataVisualizer\2.0.0
 - [x] lib
     - jFileSystem
     - markdownfx
+
+## Pages
+
+1. Connections: ~~Create~~, Edit, ~~Delete~~, Duplicate, Delete All, Export, Import, Export All
+    - create: if the connection name already exists, throw error label
