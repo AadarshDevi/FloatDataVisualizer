@@ -39,7 +39,7 @@
                                             <children>
                                                 <HBox>
                                                     <children>
-                                                        <Label alignment="BOTTOM_LEFT" prefHeight="16.0" prefWidth="64.0" styleClass="data-card-text" text="Baud Rate:" />
+                                                        <Label alignment="BOTTOM_LEFT" prefHeight="16.0" prefWidth="50.0" styleClass="data-card-text" text="Baud Rate:" />
                                                         <Label fx:id="baudRate" alignment="BOTTOM_LEFT" contentDisplay="RIGHT" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="16.0" text="115200" textAlignment="RIGHT" HBox.hgrow="ALWAYS">
                                                             <styleClass>
                                                                 <String fx:value="data-card-text" />
@@ -50,7 +50,7 @@
                                                 </HBox>
                                                 <HBox>
                                                     <children>
-                                                        <Label alignment="BOTTOM_LEFT" prefHeight="16.0" prefWidth="64.0" styleClass="data-card-text" text="Port:" HBox.hgrow="NEVER" />
+                                                        <Label alignment="BOTTOM_LEFT" prefHeight="16.0" prefWidth="50.0" styleClass="data-card-text" text="Port:" HBox.hgrow="NEVER" />
                                                         <Label fx:id="port" alignment="BOTTOM_LEFT" contentDisplay="RIGHT" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="16.0" text="COM3" textAlignment="RIGHT" HBox.hgrow="ALWAYS">
                                                             <styleClass>
                                                                 <String fx:value="data-card-text" />
@@ -60,6 +60,9 @@
                                                     </children>
                                                 </HBox>
                                             </children>
+                                 <HBox.margin>
+                                    <Insets right="2.0" />
+                                 </HBox.margin>
                                         </VBox>
                                         <VBox alignment="BOTTOM_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="36.0" prefWidth="18.0" HBox.hgrow="NEVER">
                                             <children>
