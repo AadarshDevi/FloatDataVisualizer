@@ -63,9 +63,11 @@ public class ConnectionEditorController {
 			case MACOS:
 				ArrayList<SerialPort> portsList = new ArrayList<>();
 				SerialPort[] ports = SerialPort.getCommPorts();
-				for (SerialPort port : ports)
+				for (SerialPort port : ports) {
+					System.out.println("System Name: " + port.getSystemPortName());
 					if (port.getSystemPortName().contains("cu.usb"))
 						portsList.add(port);
+				}
 
 				connectionOptions.getItems().addAll(String.valueOf(portsList));
 				break;
