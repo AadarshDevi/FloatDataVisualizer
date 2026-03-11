@@ -136,7 +136,7 @@ public class ConnectionEditorController {
 			ConnectionConfig connection = new ConnectionConfig(
 					connectionName.getText(),
 					Integer.parseInt(baudRate.getText()),
-					SerialPort.getCommPorts()[0], // fixme: dynamic
+					SerialPort.getCommPort(connectionOptions.getValue()),
 					ConnectionType.SERIAL,
 					new FloatConfig(
 							dataFormat.getText().trim(),
