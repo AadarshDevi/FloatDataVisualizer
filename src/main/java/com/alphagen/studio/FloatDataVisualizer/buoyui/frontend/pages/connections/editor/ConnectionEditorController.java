@@ -171,40 +171,32 @@ public class ConnectionEditorController {
 //			error_label_baud_rate_blank.setManaged(true);
 			baudRate.getStyleClass().add(DynamicCSS.ERROR);
 			return false;
-		} else {
-			error_label_measure_name_blank.setVisible(false);
-			measurementName.getStyleClass().remove(DynamicCSS.ERROR);
-			return true;
 		}
-	}
 
-	private boolean validEndFlag() {
-		if (endFlagTextField.getText().trim().isEmpty()) {
-			error_label_end_flag_blank.setVisible(true);
-//			error_label_end_flag_blank.setManaged(true);
-			endFlagTextField.getStyleClass().add(DynamicCSS.ERROR);
+		error_label_baud_rate_blank.setVisible(false);
+//		error_label_baud_rate_blank.setManaged(false);
+		baudRate.getStyleClass().remove(DynamicCSS.ERROR);
+
+		int baudRateValue = -1;
+		try {
+			baudRateValue = Integer.parseInt(baudRate.getText());
+			error_label_baud_rate_invalid_characters.setVisible(false);
+//			error_label_baud_rate_invalid_characters.setManaged(false);
+			baudRate.getStyleClass().remove(DynamicCSS.ERROR);
+		} catch (NumberFormatException e) {
+			error_label_baud_rate_invalid_characters.setVisible(true);
+//			error_label_baud_rate_invalid_characters.setManaged(true);
+			baudRate.getStyleClass().add(DynamicCSS.ERROR);
 			return false;
-		} else {
-			error_label_end_flag_blank.setVisible(false);
-//			error_label_end_flag_blank.setManaged(false);
-			endFlagTextField.getStyleClass().remove(DynamicCSS.ERROR);
-			return true;
 		}
 
-	}
-
-	private boolean validStartFlag() {
-		if (startFlagTextField.getText().trim().isEmpty()) {
-			error_label_start_flag_blank.setVisible(true);
-//			error_label_start_flag_blank.setManaged(true);
-			startFlagTextField.getStyleClass().add(DynamicCSS.ERROR);
+		if (baudRateValue < 0) {
+			baudRate.getStyleClass().add(DynamicCSS.ERROR);
 			return false;
-		} else {
-			error_label_start_flag_blank.setVisible(false);
-//			error_label_start_flag_blank.setManaged(false);
-			startFlagTextField.getStyleClass().remove(DynamicCSS.ERROR);
-			return true;
 		}
+
+		baudRate.getStyleClass().remove(DynamicCSS.ERROR);
+		return true;
 	}
 
 	private boolean validPort() {
