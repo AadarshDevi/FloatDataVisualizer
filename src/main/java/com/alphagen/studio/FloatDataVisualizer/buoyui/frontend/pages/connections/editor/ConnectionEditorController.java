@@ -22,28 +22,25 @@ import java.util.stream.Stream;
 public class ConnectionEditorController {
 
 
-	@FXML TextField connectionName;
-	@FXML TextField baudRate;
-	@FXML ChoiceBox<String> connectionOptions;
-
-	@FXML TextField dataFormat;
-	@FXML TextField startFlagTextField;
-	@FXML TextField endFlagTextField;
-	@FXML TextField measurementName;
-	@FXML TextField measurementUnit;
-
 	@FXML public Label error_label_connection_name_blank;
 	@FXML public Label error_label_name_invalid_characters;
 	@FXML public Label error_label_baud_rate_invalid_characters;
 	@FXML public Label error_label_baud_rate_blank;
 	@FXML public Label error_label_port_blank;
-
 	@FXML public Label error_label_data_format_blank;
 	@FXML public Label error_label_start_flag_blank;
 	@FXML public Label error_label_end_flag_blank;
 	@FXML public Label error_label_measure_name_blank;
 	@FXML public Label error_label_measure_unit_blank;
 	@FXML public Label error_label_measure_unit_invalid_characters;
+	@FXML TextField connectionName;
+	@FXML TextField baudRate;
+	@FXML ChoiceBox<String> connectionOptions;
+	@FXML TextField dataFormat;
+	@FXML TextField startFlagTextField;
+	@FXML TextField endFlagTextField;
+	@FXML TextField measurementName;
+	@FXML TextField measurementUnit;
 
     public void populateFloatConfig(FloatConfig floatConfig) {
         if (floatConfig != null) {
