@@ -125,7 +125,7 @@ Root: C:\Users\{user}\AppData\Roaming\FloatDataVisualizer\2.0.0
     - Backend
     - data
         - ConnectionConfig
-        - FloatConfig [params]
+        - FloatConfig
         - ConnectionType
     - processor
         - ConnectionProcessor
