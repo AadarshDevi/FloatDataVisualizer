@@ -26,21 +26,17 @@ import java.io.IOException;
 
 public class ConnectionsController {
 
-	@FXML public Button connection_add;
-	@FXML public Button app_quit;
 	@FXML public TilePane connections;
 
 	@Setter
 	@Getter
 	private ConnectionConfig currentConnectionConfig;
-
 	@Setter
 	@Getter
 	private FloatConfig currentFloatConfig;
 
 	@FXML
-	public void initialize() {
-	}
+	public void initialize() {}
 
 	@FXML
 	public void test() {
@@ -94,5 +90,12 @@ public class ConnectionsController {
 	public void quitApp() {
 		System.out.println("App Quit");
 		Platform.exit();
+	}
+
+	@FXML
+	public void deleteAll() {
+		// todo add conformation alert before delete all
+		System.out.println("Deleting All Connections");
+		connections.getChildren().remove(1, connections.getChildren().size());
 	}
 }
