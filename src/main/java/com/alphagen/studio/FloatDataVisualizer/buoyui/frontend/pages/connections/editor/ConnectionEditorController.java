@@ -22,25 +22,28 @@ import java.util.stream.Stream;
 public class ConnectionEditorController {
 
 
-    @FXML public Label error_label_connection_name_blank;
-    @FXML public Label error_label_name_invalid_characters;
-    @FXML public Label error_label_baud_rate_invalid_characters;
-    @FXML public Label error_label_baud_rate_blank;
-    @FXML public Label error_label_port_blank;
-    @FXML public Label error_label_data_format_blank;
-    @FXML public Label error_label_start_flag_blank;
-    @FXML public Label error_label_end_flag_blank;
-    @FXML public Label error_label_measure_name_blank;
-    @FXML public Label error_label_measure_unit_blank;
-    @FXML public Label error_label_measure_unit_invalid_characters;
-    @FXML TextField connectionName;
-    @FXML TextField baudRate;
-    @FXML ChoiceBox<String> connectionOptions;
-    @FXML TextField dataFormat;
-    @FXML TextField startFlagTextField;
-    @FXML TextField endFlagTextField;
-    @FXML TextField measurementName;
-    @FXML TextField measurementUnit;
+	@FXML TextField connectionName;
+	@FXML TextField baudRate;
+	@FXML ChoiceBox<String> connectionOptions;
+
+	@FXML TextField dataFormat;
+	@FXML TextField startFlagTextField;
+	@FXML TextField endFlagTextField;
+	@FXML TextField measurementName;
+	@FXML TextField measurementUnit;
+
+	@FXML public Label error_label_connection_name_blank;
+	@FXML public Label error_label_name_invalid_characters;
+	@FXML public Label error_label_baud_rate_invalid_characters;
+	@FXML public Label error_label_baud_rate_blank;
+	@FXML public Label error_label_port_blank;
+
+	@FXML public Label error_label_data_format_blank;
+	@FXML public Label error_label_start_flag_blank;
+	@FXML public Label error_label_end_flag_blank;
+	@FXML public Label error_label_measure_name_blank;
+	@FXML public Label error_label_measure_unit_blank;
+	@FXML public Label error_label_measure_unit_invalid_characters;
 
     public void populateFloatConfig(FloatConfig floatConfig) {
         if (floatConfig != null) {
@@ -120,32 +123,38 @@ public class ConnectionEditorController {
         boolean isValidMeasurementUnit = validMeasurementUnit();
 //		System.out.println("Unit Config: " + isValidMeasurementName + " " + isValidMeasurementUnit);
 
-        System.out.println();
-        if (
-                isValidConnectionName
-                        && isValidBaudRate
-                        && isValidPort
-                        && isValidTeamName
-                        && isValidStartFlag
-                        && isValidEndFlag
-                        && isValidMeasurementName
-                        && isValidMeasurementUnit
-        ) {
-            // get serial port from name
-            // connectionOptions.getValue()
-            ConnectionConfig connection = new ConnectionConfig(
-                    connectionName.getText(),
-                    Integer.parseInt(baudRate.getText()),
-                    SerialPort.getCommPorts()[0], // fixme: dynamic
-                    ConnectionType.SERIAL,
-                    new FloatConfig(null, null, null, null, null)
-            );
-            ConnectionManager.setCurrentConnection(connection);
-            System.out.println("Connection created: " + connection);
-            Stage stage = StageManager.getConnectionCreatorStage();
-            stage.close();
-        }
-    }
+		System.out.println();
+		if (
+				isValidConnectionName
+						&& isValidBaudRate
+						&& isValidPort
+						&& isValidTeamName
+						&& isValidStartFlag
+						&& isValidEndFlag
+						&& isValidMeasurementName
+						&& isValidMeasurementUnit
+		) {
+			// get serial port from name
+			// connectionOptions.getValue()
+			ConnectionConfig connection = new ConnectionConfig(
+					connectionName.getText(),
+					Integer.parseInt(baudRate.getText()),
+					SerialPort.getCommPorts()[0], // fixme: dynamic
+					ConnectionType.SERIAL,
+					new FloatConfig(
+							dataFormat.getText().trim(),
+							startFlagTextField.getText().trim(),
+							endFlagTextField.getText().trim(),
+							measurementName.getText().trim(),
+							measurementUnit.getText().trim()
+					)
+			);
+			ConnectionManager.setCurrentConnection(connection);
+			System.out.println("Connection created: " + connection);
+			Stage stage = StageManager.getConnectionCreatorStage();
+			stage.close();
+		}
+	}
 
     private boolean validMeasurementUnit() {
         if (measurementUnit.getText().trim().isEmpty()) {
