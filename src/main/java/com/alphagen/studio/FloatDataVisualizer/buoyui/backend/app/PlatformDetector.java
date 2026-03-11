@@ -14,6 +14,8 @@ public class PlatformDetector {
 
     public PlatformDetector() throws IOException {
         detectPlatform();
+        System.out.println("OS: " + OSPLATFORM);
+        System.out.println("Project Root: " + PROJECTROOT);
     }
 
     private void detectPlatform() throws IOException {
