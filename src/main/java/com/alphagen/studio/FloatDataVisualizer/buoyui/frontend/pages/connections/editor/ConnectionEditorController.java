@@ -165,10 +165,11 @@ public class ConnectionEditorController {
         }
     }
 
-	private boolean validMeasurementName() {
-		if (measurementName.getText().trim().isEmpty()) {
-			error_label_measure_name_blank.setVisible(true);
-			measurementName.getStyleClass().add(DynamicCSS.ERROR);
+	public boolean validBaudRate() {
+		if (baudRate.getText().trim().isEmpty()) {
+			error_label_baud_rate_blank.setVisible(true);
+//			error_label_baud_rate_blank.setManaged(true);
+			baudRate.getStyleClass().add(DynamicCSS.ERROR);
 			return false;
 		} else {
 			error_label_measure_name_blank.setVisible(false);
