@@ -273,6 +273,59 @@ public class ConnectionEditorController {
 		return true;
 	}
 
+	private boolean validStartFlag() {
+		if (startFlagTextField.getText().trim().isEmpty()) {
+			error_label_start_flag_blank.setVisible(true);
+//			error_label_start_flag_blank.setManaged(true);
+			startFlagTextField.getStyleClass().add(DynamicCSS.ERROR);
+			return false;
+		} else {
+			error_label_start_flag_blank.setVisible(false);
+//			error_label_start_flag_blank.setManaged(false);
+			startFlagTextField.getStyleClass().remove(DynamicCSS.ERROR);
+			return true;
+		}
+	}
+
+	private boolean validEndFlag() {
+		if (endFlagTextField.getText().trim().isEmpty()) {
+			error_label_end_flag_blank.setVisible(true);
+//			error_label_end_flag_blank.setManaged(true);
+			endFlagTextField.getStyleClass().add(DynamicCSS.ERROR);
+			return false;
+		} else {
+			error_label_end_flag_blank.setVisible(false);
+//			error_label_end_flag_blank.setManaged(false);
+			endFlagTextField.getStyleClass().remove(DynamicCSS.ERROR);
+			return true;
+		}
+
+	}
+
+	private boolean validMeasurementName() {
+		if (measurementName.getText().trim().isEmpty()) {
+			error_label_measure_name_blank.setVisible(true);
+			measurementName.getStyleClass().add(DynamicCSS.ERROR);
+			return false;
+		} else {
+			error_label_measure_name_blank.setVisible(false);
+			measurementName.getStyleClass().remove(DynamicCSS.ERROR);
+			return true;
+		}
+	}
+
+	private boolean validMeasurementUnit() {
+		if (measurementUnit.getText().trim().isEmpty()) {
+			error_label_measure_unit_blank.setVisible(true);
+			measurementUnit.getStyleClass().add(DynamicCSS.ERROR);
+			return false;
+		} else {
+			error_label_measure_unit_blank.setVisible(false);
+			measurementUnit.getStyleClass().remove(DynamicCSS.ERROR);
+			return true;
+		}
+	}
+
 	@FXML
 	public void closeConnectionEditor() {
 		System.out.println("Connection not created");
