@@ -231,34 +231,6 @@ public class ConnectionEditorController {
 
 	}
 
-	private boolean isValidConnectionName() {
-		String value = connectionName.getText().trim();
-		if (value.isEmpty()) {
-			error_label_connection_name_blank.setVisible(true);
-//			error_label_connection_name_blank.setManaged(true);
-			connectionName.getStyleClass().add(DynamicCSS.ERROR);
-			return false;
-		} else {
-			error_label_connection_name_blank.setVisible(false);
-//			error_label_connection_name_blank.setManaged(true);
-			connectionName.getStyleClass().remove(DynamicCSS.ERROR);
-		}
-
-		for (char c : value.toCharArray()) {
-			if (!Character.isLetterOrDigit(c) && c != '-' && c != '_' && c != ' ') {
-				error_label_name_invalid_characters.setVisible(true);
-//				error_label_name_invalid_characters.setManaged(true);
-				connectionName.getStyleClass().add(DynamicCSS.ERROR);
-				return false;
-			}
-		}
-
-		error_label_name_invalid_characters.setVisible(false);
-//		error_label_name_invalid_characters.setManaged(false);
-		connectionName.getStyleClass().remove(DynamicCSS.ERROR);
-		return true;
-	}
-
 	private boolean isValidTeamName() {
 		if (dataFormat.getText().trim().isEmpty()) {
 			error_label_data_format_blank.setVisible(true);
