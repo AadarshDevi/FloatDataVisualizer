@@ -155,23 +155,18 @@
     -fx-border-color: #ff0000 !important;
 }
 
-.delete {
+.delete:hover {
     -fx-background-color: #ff0000 !important;
     -fx-text-fill: #ffffff;
 }
 
-.delete:hover {
-    -fx-background-color: #d10000 !important;
-    -fx-text-fill: #ffffff;
-}
-
 .delete:selected {
-    -fx-background-color: #7d0000;
+    -fx-background-color: #ff0000 !important;
     -fx-text-fill: #ffffff;
 }
 
 .delete:focused {
-    -fx-background-color: #7d0000;
+    -fx-background-color: #ff0000 !important;
     -fx-text-fill: #ffffff;
 }
 
