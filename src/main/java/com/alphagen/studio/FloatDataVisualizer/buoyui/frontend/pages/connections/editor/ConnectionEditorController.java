@@ -325,7 +325,25 @@ public class ConnectionEditorController {
 
         connectionName.setText("test1");
         baudRate.setText("1000");
-        connectionOptions.setValue(SerialPort.getCommPorts()[0].getDescriptivePortName());
+
+        switch (PlatformDetector.getOSPLATFORM()) {
+            case WIN11:
+                connectionOptions.setValue(SerialPort.getCommPorts()[0].getDescriptivePortName());
+                break;
+            case MACOS:
+                SerialPort[] ports = SerialPort.getCommPorts();
+                for (SerialPort port : ports) {
+                    if (port.getSystemPortName().contains("cu.usb")) {
+                        connectionOptions.setValue(port.getSystemPortName());
+                        break;
+                    }
+                }
+                break;
+            case LINUX:
+                // todo: use ubuntu to figure out the things
+                break;
+        }
+
         dataFormat.setText("PN12-MiramarWaterJets");
         startFlagTextField.setText("--start-data-transfer");
         endFlagTextField.setText("--start-data-transfer");
