@@ -2,6 +2,7 @@ package com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.pages.connection
 
 import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.data.ConnectionConfig;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.data.FloatConfig;
+import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.processor.ConnectionProcessor;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.managers.ConnectionManager;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.managers.DataCardManager;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.managers.StageManager;
@@ -23,6 +24,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class ConnectionsController {
 
@@ -107,5 +109,18 @@ public class ConnectionsController {
 		// todo add conformation alert before delete all
 		System.out.println("Deleting All Connections");
 		connections.getChildren().removeAll(connections.getChildren());
+	}
+
+	public void setConnectionConfigs(ArrayList<ConnectionConfig> connectionsList) {
+//		System.out.println("Adding ConnectionConfigs");
+		int count = connectionsList.size();
+		for (ConnectionConfig connectionConfig : connectionsList) {
+			boolean success = connections.getChildren().add(DataCardManager.create(connectionConfig).node());
+			if (!success) {
+				System.out.println("Connection adding Failed: " + connectionConfig.connectionName());
+				count--;
+			}
+		}
+		System.out.println("Added Connections: " + count);
 	}
 }
