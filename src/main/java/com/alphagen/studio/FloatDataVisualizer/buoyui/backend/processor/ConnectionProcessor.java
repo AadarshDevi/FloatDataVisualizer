@@ -51,6 +51,7 @@ public class ConnectionProcessor {
 
 			pw.println("# Save Config");
 			pw.println("connection_version=" + AppData.CONNECTION_VERSION);
+			pw.println("connection_os=" + PlatformDetector.getOSPLATFORM());
 
 		} catch (FileNotFoundException e) {
 			System.out.println("Unable to write file: " + connectionPath);
