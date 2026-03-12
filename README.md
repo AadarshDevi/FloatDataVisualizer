@@ -1,3 +1,7 @@
+# Working on
+
+Read All Configs and put it in Connections
+
 # Float Data Visualizer 2.0.0
 
 This is the Float Data Visualizer. It is used to communicate with the floats' data receiver
