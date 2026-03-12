@@ -41,31 +41,31 @@ public class ConnectionEditorController {
 	@FXML TextField measurementName;
 	@FXML TextField measurementUnit;
 
-    public void populateFloatConfig(FloatConfig floatConfig) {
-        if (floatConfig != null) {
-            // todo: populate
-        }
-    }
+	public void populateFloatConfig(FloatConfig floatConfig) {
+		if (floatConfig != null) {
+			// todo: populate
+		}
+	}
 
-    @FXML
-    public void initialize() {
-        resetErrorLabels();
+	@FXML
+	public void initialize() {
+		resetErrorLabels();
 
-        switch (PlatformDetector.getOSPLATFORM()) {
-            case WIN11:
-                connectionOptions.getItems().addAll(
-                        Stream.of(SerialPort.getCommPorts())
-                                .map(SerialPort::getSystemPortName)
-                                .toList()
-                );
-                break;
-            case MACOS:
+		switch (PlatformDetector.getOSPLATFORM()) {
+			case WIN11:
+				connectionOptions.getItems().addAll(
+						Stream.of(SerialPort.getCommPorts())
+								.map(SerialPort::getSystemPortName)
+								.toList()
+				);
+				break;
+			case MACOS:
 //				ArrayList<SerialPort> portsList = new ArrayList<>();
-                SerialPort[] ports = SerialPort.getCommPorts();
-                for (SerialPort port : ports)
+				SerialPort[] ports = SerialPort.getCommPorts();
+				for (SerialPort port : ports)
 //                    System.out.println("System Name: " + port.getSystemPortName());
-                    if (port.getSystemPortName().contains("cu.usb"))
-                        connectionOptions.getItems().add(port.getSystemPortName());
+					if (port.getSystemPortName().contains("cu.usb"))
+						connectionOptions.getItems().add(port.getSystemPortName());
 //                        portsList.add(port);
 
 
