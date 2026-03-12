@@ -70,7 +70,6 @@ public class ConnectionsController {
 		NodePackage<DataCardController> dcnp = DataCardManager.create(ConnectionManager.getCurrentConnection());
 
 		connections.getChildren().add(dcnp.node());
-		System.out.println("Data 1-2: " + dcnp.node().hashCode());
 
 		boolean success = ConnectionProcessor.writeConnection(currentConnectionConfig);
 		if (!success) {
