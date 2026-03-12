@@ -74,6 +74,7 @@ public class ConnectionEditorController {
 		error_label_data_format_blank.setVisible(false);
 
 		error_label_name_invalid_characters.setVisible(false);
+		error_label_name_exists.setVisible(false);
 		error_label_start_flag_blank.setVisible(false);
 		error_label_end_flag_blank.setVisible(false);
 		error_label_measure_name_blank.setVisible(false);
@@ -141,6 +142,16 @@ public class ConnectionEditorController {
 		}
 
 		error_label_name_invalid_characters.setVisible(false);
+		connectionName.getStyleClass().remove(DynamicCSS.ERROR);
+
+		File file = new File(FolderConstants.CONNECTIONS.resolve(value + ".float.connection").toString());
+		if (file.exists()) {
+			error_label_name_exists.setVisible(true);
+			connectionName.getStyleClass().remove(DynamicCSS.ERROR);
+			return false;
+		}
+
+		error_label_name_exists.setVisible(false);
 		connectionName.getStyleClass().remove(DynamicCSS.ERROR);
 		return true;
 	}
