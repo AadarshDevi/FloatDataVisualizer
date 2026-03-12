@@ -117,7 +117,7 @@ public class ConnectionEditorController {
 					)
 			);
 			ConnectionManager.setCurrentConnection(connection);
-			System.out.println("Connection created: " + connection);
+			System.out.println("Connection created: " + connection.connectionName());
 			Stage stage = StageManager.getConnectionCreatorStage();
 			stage.close();
 		}
@@ -145,7 +145,7 @@ public class ConnectionEditorController {
 		error_label_name_invalid_characters.setVisible(false);
 		connectionName.getStyleClass().remove(DynamicCSS.ERROR);
 
-		File file = new File(FolderConstants.CONNECTIONS.resolve(value + ".float.connection").toString());
+		File file = new File(FolderConstants.CONNECTIONS.resolve(value + FolderConstants.FLOAT_CONNECTION_FILE_EXTENSION).toString());
 		if (file.exists()) {
 			error_label_name_exists.setVisible(true);
 			connectionName.getStyleClass().remove(DynamicCSS.ERROR);
