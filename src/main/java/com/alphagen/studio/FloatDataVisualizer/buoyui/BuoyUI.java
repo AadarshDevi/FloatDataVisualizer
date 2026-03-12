@@ -23,8 +23,7 @@ public class BuoyUI extends Application {
     @Override
     public void start(Stage stage) throws Exception {
 
-        // fixme platform detection
-        PlatformDetector pd = new PlatformDetector();
+        PlatformDetector.detectPlatform();
 
         System.out.println("Initializing Backend");
         Backend backend = Backend.getBackend();
@@ -64,19 +63,16 @@ public class BuoyUI extends Application {
         System.out.println("All startup folders and settings file ready.");
 
         System.out.println("Loading ConnectionsUI");
-
         FXMLLoader fxmlLoader = new FXMLLoader(PageConstants.CONNECTIONS_PAGE);
         BorderPane buoyUI = fxmlLoader.load();
         ConnectionsController bmc = fxmlLoader.getController();
         ControllerManager.setConnectionsController(bmc);
 
         Scene scene = new Scene(buoyUI);
-
         stage.setScene(scene);
         stage.setTitle("Float Data Visualizer");
         stage.getIcons().add(new Image(Objects.requireNonNull(Launcher.class.getResourceAsStream("buoyui/logos/ImageLogo.png"))));
         StageManager.setMainStage(stage);
-
         StageUtil.createInvisPane(stage, scene, buoyUI);
 
         System.out.println("Opening App");
