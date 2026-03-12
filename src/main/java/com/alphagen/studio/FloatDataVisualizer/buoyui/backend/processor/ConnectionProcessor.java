@@ -25,7 +25,7 @@ public class ConnectionProcessor {
 		try {
 			Files.createFile(connectionPath);
 		} catch (IOException e) {
-			System.out.println("Unable to create file: " + connectionPath);
+			System.err.println("Unable to create file: " + connectionPath);
 			return false;
 		}
 		File file = new File(connectionPath.toString());
@@ -54,7 +54,7 @@ public class ConnectionProcessor {
 			pw.println("connection_os=" + PlatformDetector.getOSPLATFORM());
 
 		} catch (FileNotFoundException e) {
-			System.out.println("Unable to write file: " + connectionPath);
+			System.err.println("Unable to write file: " + connectionPath);
 			return false;
 		}
 		return true;
