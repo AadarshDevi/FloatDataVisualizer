@@ -107,49 +107,41 @@ public class ConnectionEditorController {
 		boolean isValidMeasurementName = validMeasurementName();
 		boolean isValidMeasurementUnit = validMeasurementUnit();
 
-        System.out.println();
-        if (
-                isValidConnectionName
-                        && isValidBaudRate
-                        && isValidPort
-                        && isValidTeamName
-                        && isValidStartFlag
-                        && isValidEndFlag
-                        && isValidMeasurementName
-                        && isValidMeasurementUnit
-        ) {
-            // get serial port from name
-            // connectionOptions.getValue()
-            ConnectionConfig connection = new ConnectionConfig(
-                    connectionName.getText(),
-                    Integer.parseInt(baudRate.getText()),
-                    SerialPort.getCommPort(connectionOptions.getValue()),
-                    ConnectionType.SERIAL,
-                    new FloatConfig(
-                            dataFormat.getText().trim(),
-                            startFlagTextField.getText().trim(),
-                            endFlagTextField.getText().trim(),
-                            measurementName.getText().trim(),
-                            measurementUnit.getText().trim()
-                    )
-            );
-            ConnectionManager.setCurrentConnection(connection);
-            System.out.println("Connection created: " + connection);
-            Stage stage = StageManager.getConnectionCreatorStage();
-            stage.close();
-        }
-    }
+		System.out.println();
+		if (
+				isValidConnectionName && isValidBaudRate && isValidPort
+						&& isValidTeamName && isValidStartFlag && isValidEndFlag
+						&& isValidMeasurementName && isValidMeasurementUnit
+		) {
+
+			ConnectionConfig connection = new ConnectionConfig(
+					connectionName.getText(),
+					Integer.parseInt(baudRate.getText()),
+					SerialPort.getCommPort(connectionOptions.getValue()),
+					ConnectionType.SERIAL,
+					new FloatConfig(
+							dataFormat.getText().trim(),
+							startFlagTextField.getText().trim(),
+							endFlagTextField.getText().trim(),
+							measurementName.getText().trim(),
+							measurementUnit.getText().trim()
+					)
+			);
+			ConnectionManager.setCurrentConnection(connection);
+			System.out.println("Connection created: " + connection);
+			Stage stage = StageManager.getConnectionCreatorStage();
+			stage.close();
+		}
+	}
 
 	private boolean isValidConnectionName() {
 		String value = connectionName.getText().trim();
 		if (value.isEmpty()) {
 			error_label_connection_name_blank.setVisible(true);
-//        error_label_connection_name_blank.setManaged(true);
 			connectionName.getStyleClass().add(DynamicCSS.ERROR);
 			return false;
 		} else {
 			error_label_connection_name_blank.setVisible(false);
-//        error_label_connection_name_blank.setManaged(true);
 			connectionName.getStyleClass().remove(DynamicCSS.ERROR);
 		}
 
@@ -157,7 +149,6 @@ public class ConnectionEditorController {
 		for (char c : value.toCharArray()) {
 			if (!Character.isLetterOrDigit(c) && c != '-' && c != '_' && c != ' ') {
 				error_label_name_invalid_characters.setVisible(true);
-//           error_label_name_invalid_characters.setManaged(true);
 				connectionName.getStyleClass().add(DynamicCSS.ERROR);
 				return false;
 			}
@@ -165,7 +156,6 @@ public class ConnectionEditorController {
 
 
 		error_label_name_invalid_characters.setVisible(false);
-//     error_label_name_invalid_characters.setManaged(false);
 		connectionName.getStyleClass().remove(DynamicCSS.ERROR);
 		return true;
 	}
@@ -174,24 +164,20 @@ public class ConnectionEditorController {
 	public boolean validBaudRate() {
 		if (baudRate.getText().trim().isEmpty()) {
 			error_label_baud_rate_blank.setVisible(true);
-//			error_label_baud_rate_blank.setManaged(true);
 			baudRate.getStyleClass().add(DynamicCSS.ERROR);
 			return false;
 		}
 
 		error_label_baud_rate_blank.setVisible(false);
-//		error_label_baud_rate_blank.setManaged(false);
 		baudRate.getStyleClass().remove(DynamicCSS.ERROR);
 
 		int baudRateValue = -1;
 		try {
 			baudRateValue = Integer.parseInt(baudRate.getText());
 			error_label_baud_rate_invalid_characters.setVisible(false);
-//			error_label_baud_rate_invalid_characters.setManaged(false);
 			baudRate.getStyleClass().remove(DynamicCSS.ERROR);
 		} catch (NumberFormatException e) {
 			error_label_baud_rate_invalid_characters.setVisible(true);
-//			error_label_baud_rate_invalid_characters.setManaged(true);
 			baudRate.getStyleClass().add(DynamicCSS.ERROR);
 			return false;
 		}
@@ -218,12 +204,10 @@ public class ConnectionEditorController {
 
 		if (value == null || value.isEmpty()) {
 			error_label_port_blank.setVisible(true);
-//			error_label_port_blank.setManaged(true);
 			connectionOptions.getStyleClass().add(DynamicCSS.ERROR);
 			return false;
 		} else {
 			error_label_port_blank.setVisible(false);
-//			error_label_port_blank.setManaged(false);
 			connectionOptions.getStyleClass().remove(DynamicCSS.ERROR);
 			return true;
 		}
@@ -233,13 +217,11 @@ public class ConnectionEditorController {
 	private boolean isValidTeamName() {
 		if (dataFormat.getText().trim().isEmpty()) {
 			error_label_data_format_blank.setVisible(true);
-//			error_label_data_format_blank.setManaged(true);
 			dataFormat.getStyleClass().add(DynamicCSS.ERROR);
 			return false;
 		}
 
 		error_label_data_format_blank.setVisible(false);
-//			error_label_data_format_blank.setManaged(false);
 		dataFormat.getStyleClass().remove(DynamicCSS.ERROR);
 		return true;
 	}
@@ -247,12 +229,10 @@ public class ConnectionEditorController {
 	private boolean validStartFlag() {
 		if (startFlagTextField.getText().trim().isEmpty()) {
 			error_label_start_flag_blank.setVisible(true);
-//			error_label_start_flag_blank.setManaged(true);
 			startFlagTextField.getStyleClass().add(DynamicCSS.ERROR);
 			return false;
 		} else {
 			error_label_start_flag_blank.setVisible(false);
-//			error_label_start_flag_blank.setManaged(false);
 			startFlagTextField.getStyleClass().remove(DynamicCSS.ERROR);
 			return true;
 		}
@@ -261,12 +241,10 @@ public class ConnectionEditorController {
 	private boolean validEndFlag() {
 		if (endFlagTextField.getText().trim().isEmpty()) {
 			error_label_end_flag_blank.setVisible(true);
-//			error_label_end_flag_blank.setManaged(true);
 			endFlagTextField.getStyleClass().add(DynamicCSS.ERROR);
 			return false;
 		} else {
 			error_label_end_flag_blank.setVisible(false);
-//			error_label_end_flag_blank.setManaged(false);
 			endFlagTextField.getStyleClass().remove(DynamicCSS.ERROR);
 			return true;
 		}
@@ -308,51 +286,33 @@ public class ConnectionEditorController {
 	@FXML
 	public void autoFill() {
 
-        connectionName.setText("test1");
-        baudRate.setText("1000");
-
-        switch (PlatformDetector.getOSPLATFORM()) {
-            case WIN11:
-                connectionOptions.setValue(SerialPort.getCommPorts()[0].getDescriptivePortName());
-                break;
-            case MACOS:
-                SerialPort[] ports = SerialPort.getCommPorts();
-                for (SerialPort port : ports) {
-                    if (port.getSystemPortName().contains("cu.usb")) {
-                        connectionOptions.setValue(port.getSystemPortName());
-                        break;
-                    }
-                }
-                break;
-            case LINUX:
-                // todo: use ubuntu to figure out the things
-                break;
-        }
-
-        dataFormat.setText("PN12-MiramarWaterJets");
-        startFlagTextField.setText("--start-data-transfer");
-        endFlagTextField.setText("--start-data-transfer");
-        measurementName.setText("depth");
-        measurementUnit.setText("m");
+		connectionName.setText("test1");
+		baudRate.setText("1000");
+		connectionOptions.setValue(SerialPort.getCommPorts()[0].getDescriptivePortName());
+		dataFormat.setText("PN12-MiramarWaterJets");
+		startFlagTextField.setText("--start-data-transfer");
+		endFlagTextField.setText("--start-data-transfer");
+		measurementName.setText("depth");
+		measurementUnit.setText("m");
 
 		ConnectionsController cc = ControllerManager.getConnectionsController();
 
-        if (cc.getCurrentConnectionConfig() != null) {
-            ConnectionConfig ccg = cc.getCurrentConnectionConfig();
-            connectionName.setText(ccg.connectionName());
-            baudRate.setText(Integer.toString(ccg.baudRate()));
-            connectionOptions.setValue(ccg.port().getSystemPortName());
-        }
+		if (cc.getCurrentConnectionConfig() != null) {
+			ConnectionConfig ccg = cc.getCurrentConnectionConfig();
+			connectionName.setText(ccg.connectionName());
+			baudRate.setText(Integer.toString(ccg.baudRate()));
+			connectionOptions.setValue(ccg.port().getDescriptivePortName());
+		}
 
-        if (cc.getCurrentFloatConfig() != null) {
-            FloatConfig fcg = cc.getCurrentFloatConfig();
-            dataFormat.setText(fcg.teamData());
-            startFlagTextField.setText(fcg.startFlag());
-            endFlagTextField.setText(fcg.endFlag());
-            measurementName.setText(fcg.measurement());
-            measurementUnit.setText(fcg.measurementUnit());
-        }
+		if (cc.getCurrentFloatConfig() != null) {
+			FloatConfig fcg = cc.getCurrentFloatConfig();
+			dataFormat.setText(fcg.teamData());
+			startFlagTextField.setText(fcg.startFlag());
+			endFlagTextField.setText(fcg.endFlag());
+			measurementName.setText(fcg.measurement());
+			measurementUnit.setText(fcg.measurementUnit());
+		}
 
 
-    }
+	}
 }
