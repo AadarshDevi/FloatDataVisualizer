@@ -64,6 +64,7 @@ public class ConnectionsController {
 		}
 		System.out.println("Creating Connection");
 
+		// better datacard manager/processor
 		NodePackage<DataCardController> dcnp = DataCardManager.create(ConnectionManager.getCurrentConnection());
 
 		connections.getChildren().add(dcnp.node());
