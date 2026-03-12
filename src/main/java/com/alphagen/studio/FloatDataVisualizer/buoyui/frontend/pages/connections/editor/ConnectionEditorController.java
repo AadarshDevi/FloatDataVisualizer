@@ -1,6 +1,7 @@
 package com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.pages.connections.editor;
 
 import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.app.PlatformDetector;
+import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.constants.FolderConstants;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.data.ConnectionConfig;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.data.ConnectionType;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.data.FloatConfig;
@@ -16,10 +17,10 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
+import java.io.File;
 import java.util.stream.Stream;
 
 public class ConnectionEditorController {
-
 
 	@FXML public Label error_label_connection_name_blank;
 	@FXML public Label error_label_name_invalid_characters;
@@ -155,7 +156,6 @@ public class ConnectionEditorController {
 		connectionName.getStyleClass().remove(DynamicCSS.ERROR);
 		return true;
 	}
-
 
 	public boolean validBaudRate() {
 		if (baudRate.getText().trim().isEmpty()) {
