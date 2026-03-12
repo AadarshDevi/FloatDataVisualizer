@@ -356,7 +356,7 @@ public class ConnectionEditorController {
             ConnectionConfig ccg = cc.getCurrentConnectionConfig();
             connectionName.setText(ccg.connectionName());
             baudRate.setText(Integer.toString(ccg.baudRate()));
-            connectionOptions.setValue(ccg.port().getDescriptivePortName());
+            connectionOptions.setValue(ccg.port().getSystemPortName());
         }
 
         if (cc.getCurrentFloatConfig() != null) {
