@@ -16,37 +16,36 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
-import java.util.ArrayList;
 import java.util.stream.Stream;
 
 public class ConnectionEditorController {
 
 
-	@FXML public Label error_label_connection_name_blank;
-	@FXML public Label error_label_name_invalid_characters;
-	@FXML public Label error_label_baud_rate_invalid_characters;
-	@FXML public Label error_label_baud_rate_blank;
-	@FXML public Label error_label_port_blank;
-	@FXML public Label error_label_data_format_blank;
-	@FXML public Label error_label_start_flag_blank;
-	@FXML public Label error_label_end_flag_blank;
-	@FXML public Label error_label_measure_name_blank;
-	@FXML public Label error_label_measure_unit_blank;
-	@FXML public Label error_label_measure_unit_invalid_characters;
-	@FXML TextField connectionName;
-	@FXML TextField baudRate;
-	@FXML ChoiceBox<String> connectionOptions;
-	@FXML TextField dataFormat;
-	@FXML TextField startFlagTextField;
-	@FXML TextField endFlagTextField;
-	@FXML TextField measurementName;
-	@FXML TextField measurementUnit;
+    @FXML public Label error_label_connection_name_blank;
+    @FXML public Label error_label_name_invalid_characters;
+    @FXML public Label error_label_baud_rate_invalid_characters;
+    @FXML public Label error_label_baud_rate_blank;
+    @FXML public Label error_label_port_blank;
+    @FXML public Label error_label_data_format_blank;
+    @FXML public Label error_label_start_flag_blank;
+    @FXML public Label error_label_end_flag_blank;
+    @FXML public Label error_label_measure_name_blank;
+    @FXML public Label error_label_measure_unit_blank;
+    @FXML public Label error_label_measure_unit_invalid_characters;
+    @FXML TextField connectionName;
+    @FXML TextField baudRate;
+    @FXML ChoiceBox<String> connectionOptions;
+    @FXML TextField dataFormat;
+    @FXML TextField startFlagTextField;
+    @FXML TextField endFlagTextField;
+    @FXML TextField measurementName;
+    @FXML TextField measurementUnit;
 
-	public void populateFloatConfig(FloatConfig floatConfig) {
-		if (floatConfig != null) {
-			// todo: populate
-		}
-	}
+    public void populateFloatConfig(FloatConfig floatConfig) {
+        if (floatConfig != null) {
+            // todo: populate
+        }
+    }
 
     @FXML
     public void initialize() {
@@ -69,13 +68,13 @@ public class ConnectionEditorController {
                         connectionOptions.getItems().add(port.getSystemPortName());
 //                        portsList.add(port);
 
-				connectionOptions.getItems().addAll(String.valueOf(portsList));
-				break;
-			case LINUX:
-				// todo add serial ports based on linux stuff
-				break;
-		}
-	}
+
+//                connectionOptions.getItems().addAll(String.valueOf(portsList));
+                break;
+            case LINUX:
+                break;
+        }
+    }
 
     public void resetErrorLabels() {
         error_label_connection_name_blank.setVisible(false);
@@ -156,173 +155,173 @@ public class ConnectionEditorController {
         }
     }
 
-	private boolean isValidConnectionName() {
-		String value = connectionName.getText().trim();
-		if (value.isEmpty()) {
-			error_label_connection_name_blank.setVisible(true);
+    private boolean isValidConnectionName() {
+        String value = connectionName.getText().trim();
+        if (value.isEmpty()) {
+            error_label_connection_name_blank.setVisible(true);
 //        error_label_connection_name_blank.setManaged(true);
-			connectionName.getStyleClass().add(DynamicCSS.ERROR);
-			return false;
-		} else {
-			error_label_connection_name_blank.setVisible(false);
+            connectionName.getStyleClass().add(DynamicCSS.ERROR);
+            return false;
+        } else {
+            error_label_connection_name_blank.setVisible(false);
 //        error_label_connection_name_blank.setManaged(true);
-			connectionName.getStyleClass().remove(DynamicCSS.ERROR);
-		}
+            connectionName.getStyleClass().remove(DynamicCSS.ERROR);
+        }
 
 
-		for (char c : value.toCharArray()) {
-			if (!Character.isLetterOrDigit(c) && c != '-' && c != '_' && c != ' ') {
-				error_label_name_invalid_characters.setVisible(true);
+        for (char c : value.toCharArray()) {
+            if (!Character.isLetterOrDigit(c) && c != '-' && c != '_' && c != ' ') {
+                error_label_name_invalid_characters.setVisible(true);
 //           error_label_name_invalid_characters.setManaged(true);
-				connectionName.getStyleClass().add(DynamicCSS.ERROR);
-				return false;
-			}
-		}
+                connectionName.getStyleClass().add(DynamicCSS.ERROR);
+                return false;
+            }
+        }
 
 
-		error_label_name_invalid_characters.setVisible(false);
+        error_label_name_invalid_characters.setVisible(false);
 //     error_label_name_invalid_characters.setManaged(false);
-		connectionName.getStyleClass().remove(DynamicCSS.ERROR);
-		return true;
-	}
+        connectionName.getStyleClass().remove(DynamicCSS.ERROR);
+        return true;
+    }
 
 
-	public boolean validBaudRate() {
-		if (baudRate.getText().trim().isEmpty()) {
-			error_label_baud_rate_blank.setVisible(true);
+    public boolean validBaudRate() {
+        if (baudRate.getText().trim().isEmpty()) {
+            error_label_baud_rate_blank.setVisible(true);
 //			error_label_baud_rate_blank.setManaged(true);
-			baudRate.getStyleClass().add(DynamicCSS.ERROR);
-			return false;
-		}
+            baudRate.getStyleClass().add(DynamicCSS.ERROR);
+            return false;
+        }
 
-		error_label_baud_rate_blank.setVisible(false);
+        error_label_baud_rate_blank.setVisible(false);
 //		error_label_baud_rate_blank.setManaged(false);
-		baudRate.getStyleClass().remove(DynamicCSS.ERROR);
+        baudRate.getStyleClass().remove(DynamicCSS.ERROR);
 
-		int baudRateValue = -1;
-		try {
-			baudRateValue = Integer.parseInt(baudRate.getText());
-			error_label_baud_rate_invalid_characters.setVisible(false);
+        int baudRateValue = -1;
+        try {
+            baudRateValue = Integer.parseInt(baudRate.getText());
+            error_label_baud_rate_invalid_characters.setVisible(false);
 //			error_label_baud_rate_invalid_characters.setManaged(false);
-			baudRate.getStyleClass().remove(DynamicCSS.ERROR);
-		} catch (NumberFormatException e) {
-			error_label_baud_rate_invalid_characters.setVisible(true);
+            baudRate.getStyleClass().remove(DynamicCSS.ERROR);
+        } catch (NumberFormatException e) {
+            error_label_baud_rate_invalid_characters.setVisible(true);
 //			error_label_baud_rate_invalid_characters.setManaged(true);
-			baudRate.getStyleClass().add(DynamicCSS.ERROR);
-			return false;
-		}
+            baudRate.getStyleClass().add(DynamicCSS.ERROR);
+            return false;
+        }
 
-		if (baudRateValue < 0) {
-			baudRate.getStyleClass().add(DynamicCSS.ERROR);
-			return false;
-		}
+        if (baudRateValue < 0) {
+            baudRate.getStyleClass().add(DynamicCSS.ERROR);
+            return false;
+        }
 
-		baudRate.getStyleClass().remove(DynamicCSS.ERROR);
-		return true;
-	}
+        baudRate.getStyleClass().remove(DynamicCSS.ERROR);
+        return true;
+    }
 
-	private boolean validPort() {
+    private boolean validPort() {
 
-		String value;
+        String value;
 
-		try {
-			value = connectionOptions.getValue();
-		} catch (NullPointerException _) {
-			System.out.println("Connection Option Value has give Null Pointer Exception");
-			return false;
-		}
+        try {
+            value = connectionOptions.getValue();
+        } catch (NullPointerException _) {
+            System.out.println("Connection Option Value has give Null Pointer Exception");
+            return false;
+        }
 
-		if (value == null || value.isEmpty()) {
-			error_label_port_blank.setVisible(true);
+        if (value == null || value.isEmpty()) {
+            error_label_port_blank.setVisible(true);
 //			error_label_port_blank.setManaged(true);
-			connectionOptions.getStyleClass().add(DynamicCSS.ERROR);
-			return false;
-		} else {
-			error_label_port_blank.setVisible(false);
+            connectionOptions.getStyleClass().add(DynamicCSS.ERROR);
+            return false;
+        } else {
+            error_label_port_blank.setVisible(false);
 //			error_label_port_blank.setManaged(false);
-			connectionOptions.getStyleClass().remove(DynamicCSS.ERROR);
-			return true;
-		}
+            connectionOptions.getStyleClass().remove(DynamicCSS.ERROR);
+            return true;
+        }
 
-	}
+    }
 
-	private boolean isValidTeamName() {
-		if (dataFormat.getText().trim().isEmpty()) {
-			error_label_data_format_blank.setVisible(true);
+    private boolean isValidTeamName() {
+        if (dataFormat.getText().trim().isEmpty()) {
+            error_label_data_format_blank.setVisible(true);
 //			error_label_data_format_blank.setManaged(true);
-			dataFormat.getStyleClass().add(DynamicCSS.ERROR);
-			return false;
-		}
+            dataFormat.getStyleClass().add(DynamicCSS.ERROR);
+            return false;
+        }
 
-		error_label_data_format_blank.setVisible(false);
+        error_label_data_format_blank.setVisible(false);
 //			error_label_data_format_blank.setManaged(false);
-		dataFormat.getStyleClass().remove(DynamicCSS.ERROR);
-		return true;
-	}
+        dataFormat.getStyleClass().remove(DynamicCSS.ERROR);
+        return true;
+    }
 
-	private boolean validStartFlag() {
-		if (startFlagTextField.getText().trim().isEmpty()) {
-			error_label_start_flag_blank.setVisible(true);
+    private boolean validStartFlag() {
+        if (startFlagTextField.getText().trim().isEmpty()) {
+            error_label_start_flag_blank.setVisible(true);
 //			error_label_start_flag_blank.setManaged(true);
-			startFlagTextField.getStyleClass().add(DynamicCSS.ERROR);
-			return false;
-		} else {
-			error_label_start_flag_blank.setVisible(false);
+            startFlagTextField.getStyleClass().add(DynamicCSS.ERROR);
+            return false;
+        } else {
+            error_label_start_flag_blank.setVisible(false);
 //			error_label_start_flag_blank.setManaged(false);
-			startFlagTextField.getStyleClass().remove(DynamicCSS.ERROR);
-			return true;
-		}
-	}
+            startFlagTextField.getStyleClass().remove(DynamicCSS.ERROR);
+            return true;
+        }
+    }
 
-	private boolean validEndFlag() {
-		if (endFlagTextField.getText().trim().isEmpty()) {
-			error_label_end_flag_blank.setVisible(true);
+    private boolean validEndFlag() {
+        if (endFlagTextField.getText().trim().isEmpty()) {
+            error_label_end_flag_blank.setVisible(true);
 //			error_label_end_flag_blank.setManaged(true);
-			endFlagTextField.getStyleClass().add(DynamicCSS.ERROR);
-			return false;
-		} else {
-			error_label_end_flag_blank.setVisible(false);
+            endFlagTextField.getStyleClass().add(DynamicCSS.ERROR);
+            return false;
+        } else {
+            error_label_end_flag_blank.setVisible(false);
 //			error_label_end_flag_blank.setManaged(false);
-			endFlagTextField.getStyleClass().remove(DynamicCSS.ERROR);
-			return true;
-		}
+            endFlagTextField.getStyleClass().remove(DynamicCSS.ERROR);
+            return true;
+        }
 
-	}
+    }
 
-	private boolean validMeasurementName() {
-		if (measurementName.getText().trim().isEmpty()) {
-			error_label_measure_name_blank.setVisible(true);
-			measurementName.getStyleClass().add(DynamicCSS.ERROR);
-			return false;
-		} else {
-			error_label_measure_name_blank.setVisible(false);
-			measurementName.getStyleClass().remove(DynamicCSS.ERROR);
-			return true;
-		}
-	}
+    private boolean validMeasurementName() {
+        if (measurementName.getText().trim().isEmpty()) {
+            error_label_measure_name_blank.setVisible(true);
+            measurementName.getStyleClass().add(DynamicCSS.ERROR);
+            return false;
+        } else {
+            error_label_measure_name_blank.setVisible(false);
+            measurementName.getStyleClass().remove(DynamicCSS.ERROR);
+            return true;
+        }
+    }
 
-	private boolean validMeasurementUnit() {
-		if (measurementUnit.getText().trim().isEmpty()) {
-			error_label_measure_unit_blank.setVisible(true);
-			measurementUnit.getStyleClass().add(DynamicCSS.ERROR);
-			return false;
-		} else {
-			error_label_measure_unit_blank.setVisible(false);
-			measurementUnit.getStyleClass().remove(DynamicCSS.ERROR);
-			return true;
-		}
-	}
+    private boolean validMeasurementUnit() {
+        if (measurementUnit.getText().trim().isEmpty()) {
+            error_label_measure_unit_blank.setVisible(true);
+            measurementUnit.getStyleClass().add(DynamicCSS.ERROR);
+            return false;
+        } else {
+            error_label_measure_unit_blank.setVisible(false);
+            measurementUnit.getStyleClass().remove(DynamicCSS.ERROR);
+            return true;
+        }
+    }
 
-	@FXML
-	public void closeConnectionEditor() {
-		System.out.println("Connection not created");
-		ConnectionManager.setCurrentConnection(null);
-		Stage stage = StageManager.getConnectionCreatorStage();
-		stage.close();
-	}
+    @FXML
+    public void closeConnectionEditor() {
+        System.out.println("Connection not created");
+        ConnectionManager.setCurrentConnection(null);
+        Stage stage = StageManager.getConnectionCreatorStage();
+        stage.close();
+    }
 
-	@FXML
-	public void autoFill() {
+    @FXML
+    public void autoFill() {
 
         connectionName.setText("test1");
         baudRate.setText("1000");
@@ -351,7 +350,7 @@ public class ConnectionEditorController {
         measurementName.setText("depth");
         measurementUnit.setText("m");
 
-		ConnectionsController cc = ControllerManager.getConnectionsController();
+        ConnectionsController cc = ControllerManager.getConnectionsController();
 
         if (cc.getCurrentConnectionConfig() != null) {
             ConnectionConfig ccg = cc.getCurrentConnectionConfig();
