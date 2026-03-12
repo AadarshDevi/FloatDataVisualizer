@@ -48,26 +48,26 @@ public class ConnectionEditorController {
 		}
 	}
 
-    @FXML
-    public void initialize() {
-        resetErrorLabels();
+	@FXML
+	public void initialize() {
+		resetErrorLabels();
 
-        switch (PlatformDetector.getOSPLATFORM()) {
-            case WIN11:
-                connectionOptions.getItems().addAll(
-                        Stream.of(SerialPort.getCommPorts())
-                                .map(SerialPort::getSystemPortName)
-                                .toList()
-                );
-                break;
-            case MACOS:
-//				ArrayList<SerialPort> portsList = new ArrayList<>();
-                SerialPort[] ports = SerialPort.getCommPorts();
-                for (SerialPort port : ports)
-//                    System.out.println("System Name: " + port.getSystemPortName());
-                    if (port.getSystemPortName().contains("cu.usb"))
-                        connectionOptions.getItems().add(port.getSystemPortName());
-//                        portsList.add(port);
+		switch (PlatformDetector.getOSPLATFORM()) {
+			case WIN11:
+				connectionOptions.getItems().addAll(
+						Stream.of(SerialPort.getCommPorts())
+								.map(SerialPort::getSystemPortName)
+								.toList()
+				);
+				break;
+			case MACOS:
+				ArrayList<SerialPort> portsList = new ArrayList<>();
+				SerialPort[] ports = SerialPort.getCommPorts();
+				for (SerialPort port : ports) {
+					System.out.println("System Name: " + port.getSystemPortName());
+					if (port.getSystemPortName().contains("cu.usb"))
+						portsList.add(port);
+				}
 
 				connectionOptions.getItems().addAll(String.valueOf(portsList));
 				break;
@@ -77,51 +77,35 @@ public class ConnectionEditorController {
 		}
 	}
 
-    public void resetErrorLabels() {
-        error_label_connection_name_blank.setVisible(false);
-        error_label_baud_rate_invalid_characters.setVisible(false);
-        error_label_baud_rate_blank.setVisible(false);
-        error_label_port_blank.setVisible(false);
-        error_label_data_format_blank.setVisible(false);
+	public void resetErrorLabels() {
+		error_label_connection_name_blank.setVisible(false);
+		error_label_baud_rate_invalid_characters.setVisible(false);
+		error_label_baud_rate_blank.setVisible(false);
+		error_label_port_blank.setVisible(false);
+		error_label_data_format_blank.setVisible(false);
 
-        error_label_name_invalid_characters.setVisible(false);
-        error_label_start_flag_blank.setVisible(false);
-        error_label_end_flag_blank.setVisible(false);
-        error_label_measure_name_blank.setVisible(false);
-        error_label_measure_unit_blank.setVisible(false);
-        error_label_measure_unit_invalid_characters.setVisible(false);
+		error_label_name_invalid_characters.setVisible(false);
+		error_label_start_flag_blank.setVisible(false);
+		error_label_end_flag_blank.setVisible(false);
+		error_label_measure_name_blank.setVisible(false);
+		error_label_measure_unit_blank.setVisible(false);
+		error_label_measure_unit_invalid_characters.setVisible(false);
 
+	}
 
-//		error_label_connection_name_blank.setManaged(false);
-//		error_label_baud_rate_invalid_characters.setManaged(false);
-//		error_label_baud_rate_blank.setManaged(false);
-//		error_label_port_blank.setManaged(false);
-//		error_label_data_format_blank.setManaged(false);
-//
-//		error_label_name_invalid_characters.setManaged(false);
-//		error_label_start_flag_blank.setManaged(false);
-//		error_label_end_flag_blank.setManaged(false);
-//		error_label_measure_name_blank.setManaged(false);
-//		error_label_measure_unit_blank.setManaged(false);
-//		error_label_measure_unit_invalid_characters.setManaged(false);
-    }
+	@FXML
+	public void confirmConnectionEditor() {
 
-    @FXML
-    public void confirmConnectionEditor() {
+		boolean isValidConnectionName = isValidConnectionName();
+		boolean isValidBaudRate = validBaudRate();
+		boolean isValidPort = validPort();
 
-        boolean isValidConnectionName = isValidConnectionName();
-        boolean isValidBaudRate = validBaudRate();
-        boolean isValidPort = validPort();
-//		System.out.println("Connection Config: " + isValidConnectionName + " " + isValidBaudRate + " " + isValidPort);
+		boolean isValidTeamName = isValidTeamName();
+		boolean isValidStartFlag = validStartFlag();
+		boolean isValidEndFlag = validEndFlag();
 
-        boolean isValidTeamName = isValidTeamName();
-        boolean isValidStartFlag = validStartFlag();
-        boolean isValidEndFlag = validEndFlag();
-//		System.out.println("Float Config: " + isValidTeamName + " " + isValidStartFlag + " " + isValidEndFlag);
-
-        boolean isValidMeasurementName = validMeasurementName();
-        boolean isValidMeasurementUnit = validMeasurementUnit();
-//		System.out.println("Unit Config: " + isValidMeasurementName + " " + isValidMeasurementUnit);
+		boolean isValidMeasurementName = validMeasurementName();
+		boolean isValidMeasurementUnit = validMeasurementUnit();
 
         System.out.println();
         if (
