@@ -2,7 +2,6 @@ package com.alphagen.studio.FloatDataVisualizer.buoyui.backend.app;
 
 import lombok.Getter;
 
-import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
@@ -12,13 +11,7 @@ public class PlatformDetector {
     @Getter
     private static Path PROJECTROOT;
 
-    public PlatformDetector() throws IOException {
-        detectPlatform();
-        System.out.println("OS: " + OSPLATFORM);
-        System.out.println("Project Root: " + PROJECTROOT);
-    }
-
-    private void detectPlatform() throws IOException {
+    public static void detectPlatform() {
         String osName = System.getProperty("os.name");
         if (osName.toLowerCase().contains("win")) {
             OSPLATFORM = Platform.WIN11;
@@ -30,5 +23,7 @@ public class PlatformDetector {
             OSPLATFORM = Platform.LINUX;
             PROJECTROOT = Paths.get(System.getProperty("user.home")).resolve("FloatDataVisualizer").resolve(AppData.RELEASE_VERSION);
         }
+        System.out.println("OS: " + OSPLATFORM);
+        System.out.println("Project Root: " + PROJECTROOT);
     }
 }
