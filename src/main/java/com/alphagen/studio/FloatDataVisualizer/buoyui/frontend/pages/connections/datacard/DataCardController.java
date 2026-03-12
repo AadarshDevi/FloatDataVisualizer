@@ -109,7 +109,7 @@ public class DataCardController extends Controller {
 		}
 
 		ControllerManager.getConnectionsController().deleteConnection(dataCard);
-		System.out.println("Deleted Connection");
+		System.out.println("Deleted Connection: " + connectionConfig.connectionName());
 	}
 
 	public void setConnection(ConnectionConfig connectionConfig) {
