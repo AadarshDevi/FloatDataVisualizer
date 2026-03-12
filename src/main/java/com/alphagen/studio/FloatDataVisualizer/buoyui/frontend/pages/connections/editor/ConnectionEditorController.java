@@ -23,6 +23,7 @@ public class ConnectionEditorController {
 
 	@FXML public Label error_label_connection_name_blank;
 	@FXML public Label error_label_name_invalid_characters;
+	@FXML public Label error_label_name_exists;
 	@FXML public Label error_label_baud_rate_invalid_characters;
 	@FXML public Label error_label_baud_rate_blank;
 	@FXML public Label error_label_port_blank;
