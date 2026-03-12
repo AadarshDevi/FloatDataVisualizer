@@ -9,9 +9,8 @@ import java.nio.file.Path;
 
 public class Backend {
 
-	@Getter private static Path PROJECTROOT;
-
 	public static Backend backend;
+	@Getter private static Path PROJECTROOT;
 
 	private Backend() throws IOException {
 		PROJECTROOT = PlatformDetector.getPROJECTROOT();
@@ -39,21 +38,4 @@ public class Backend {
 		return Files.isDirectory(PROJECTROOT);
 	}
 
-//	public ArrayList<ConnectionConfig> getConnections() {
-//		try {
-//			Folder connectionsfolder = rootSystem.getFolder(FolderConstants.CONNECTIONS);
-//			System.out.println("Getting Connections Folder: " + connectionsfolder.getPath());
-//
-//			String[] files = connectionsfolder.list();
-//			if (files == null || files.length == 0) return null;
-//			System.out.println("Folder Content Count: " + files.length);
-//
-//			ArrayList<ConnectionConfig> connections = ConnectionProcessor.readAll(files);
-//
-//		} catch (FolderNotFoundException e) {
-//			System.out.println("Connections Folder not found");
-//		}
-//
-//		return null;
-//	}
 }
