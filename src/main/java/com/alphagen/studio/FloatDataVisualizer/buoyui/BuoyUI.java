@@ -73,8 +73,10 @@ public class BuoyUI extends Application {
 		ControllerManager.setConnectionsController(bmc);
 
 		ArrayList<ConnectionConfig> connectionsList = ConnectionProcessor.readAllConnections();
-		System.out.println("Connection Found: " + connectionsList.size());
-		bmc.setConnectionConfigs(connectionsList);
+		if (connectionsList != null) {
+			System.out.println("Connection Found: " + connectionsList.size());
+			bmc.setConnectionConfigs(connectionsList);
+		}
 
 		Scene scene = new Scene(buoyUI);
 		stage.setScene(scene);
