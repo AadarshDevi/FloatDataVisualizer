@@ -112,7 +112,7 @@ public class ConnectionsController {
 	}
 
 	public void setConnectionConfigs(ArrayList<ConnectionConfig> connectionsList) {
-//		System.out.println("Adding ConnectionConfigs");
+		System.out.println("Adding ConnectionConfigs");
 		int count = connectionsList.size();
 		for (ConnectionConfig connectionConfig : connectionsList) {
 			boolean success = connections.getChildren().add(DataCardManager.create(connectionConfig).node());
