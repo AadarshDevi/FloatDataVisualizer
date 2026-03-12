@@ -1,6 +1,11 @@
 package com.alphagen.studio.FloatDataVisualizer.buoyui.backend.constants;
 
+import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.Backend;
+
+import java.nio.file.Path;
+
 public class FolderConstants {
-	public static final String CONNECTIONS = "connections";
-	public static final String LOGS = "logs";
+	private static final Path PROJECTROOT = Backend.getPROJECTROOT();
+	public static final Path LOGS = PROJECTROOT.resolve("logs");
+	public static final Path CONNECTIONS = PROJECTROOT.resolve("connections");
 }
