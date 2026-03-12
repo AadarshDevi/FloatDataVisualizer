@@ -137,7 +137,6 @@ public class ConnectionEditorController {
 			connectionName.getStyleClass().remove(DynamicCSS.ERROR);
 		}
 
-
 		for (char c : value.toCharArray()) {
 			if (!Character.isLetterOrDigit(c) && c != '-' && c != '_' && c != ' ') {
 				error_label_name_invalid_characters.setVisible(true);
@@ -145,7 +144,6 @@ public class ConnectionEditorController {
 				return false;
 			}
 		}
-
 
 		error_label_name_invalid_characters.setVisible(false);
 		connectionName.getStyleClass().remove(DynamicCSS.ERROR);
@@ -240,7 +238,6 @@ public class ConnectionEditorController {
 			endFlagTextField.getStyleClass().remove(DynamicCSS.ERROR);
 			return true;
 		}
-
 	}
 
 	private boolean validMeasurementName() {
@@ -322,7 +319,5 @@ public class ConnectionEditorController {
 			measurementName.setText(fcg.measurement());
 			measurementUnit.setText(fcg.measurementUnit());
 		}
-
-
 	}
 }
