@@ -68,6 +68,15 @@ public class ConnectionsController {
 
 		connections.getChildren().add(dcnp.node());
 		System.out.println("Data 1-2: " + dcnp.node().hashCode());
+
+		boolean success = ConnectionProcessor.writeConnection(currentConnectionConfig);
+		if (!success) {
+			// fixme replace with error alert
+			System.out.println("Connection Writing Failed");
+			System.exit(-1);
+		}
+
+		ConnectionProcessor.readAllConnections();
 	}
 
 	public Stage getConnectionEditor(BorderPane pane) {
