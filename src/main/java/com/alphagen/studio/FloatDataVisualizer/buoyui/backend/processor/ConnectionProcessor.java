@@ -21,7 +21,7 @@ public class ConnectionProcessor {
 	// 		 	update related stuff
 
 	public static boolean writeConnection(ConnectionConfig connectionConfig) {
-		Path connectionPath = FolderConstants.CONNECTIONS.resolve(connectionConfig.connectionName() + ".float.connection");
+		Path connectionPath = FolderConstants.CONNECTIONS.resolve(connectionConfig.connectionName() + FolderConstants.FLOAT_CONNECTION_FILE_EXTENSION);
 		try {
 			Files.createFile(connectionPath);
 		} catch (IOException e) {
