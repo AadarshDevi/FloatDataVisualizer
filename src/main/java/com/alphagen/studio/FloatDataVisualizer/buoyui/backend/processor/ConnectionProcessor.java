@@ -26,6 +26,7 @@ public class ConnectionProcessor {
 
 	// todo: 	update connections: data format, start/end flags, unit measured
 	// 		 	update related stuff
+
 	public static boolean writeConnection(ConnectionConfig connectionConfig) {
 		Path connectionPath = FolderConstants.CONNECTIONS.resolve(connectionConfig.connectionName() + ".float.connection");
 		try {
