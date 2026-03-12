@@ -41,12 +41,6 @@ public class ConnectionEditorController {
 	@FXML TextField measurementName;
 	@FXML TextField measurementUnit;
 
-	public void populateFloatConfig(FloatConfig floatConfig) {
-		if (floatConfig != null) {
-			// todo: populate
-		}
-	}
-
 	@FXML
 	public void initialize() {
 		resetErrorLabels();
