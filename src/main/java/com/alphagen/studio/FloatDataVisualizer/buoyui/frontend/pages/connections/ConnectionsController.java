@@ -105,6 +105,6 @@ public class ConnectionsController {
 	public void deleteAll() {
 		// todo add conformation alert before delete all
 		System.out.println("Deleting All Connections");
-		connections.getChildren().remove(1, connections.getChildren().size());
+		connections.getChildren().removeAll(connections.getChildren());
 	}
 }
