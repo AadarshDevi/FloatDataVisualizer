@@ -102,14 +102,9 @@ public class ConnectionEditorController {
 
 		System.out.println();
 		if (
-				isValidConnectionName
-						&& isValidBaudRate
-						&& isValidPort
-						&& isValidTeamName
-						&& isValidStartFlag
-						&& isValidEndFlag
-						&& isValidMeasurementName
-						&& isValidMeasurementUnit
+				isValidConnectionName && isValidBaudRate && isValidPort
+						&& isValidTeamName && isValidStartFlag && isValidEndFlag
+						&& isValidMeasurementName && isValidMeasurementUnit
 		) {
 			ConnectionConfig connection = new ConnectionConfig(
 					connectionName.getText(),
