@@ -67,25 +67,27 @@
     transition-duration: .25s;
 }
 
-.card-1-shadow-reveal:hover {
+/* .card-1-shadow-reveal:hover {
     -fx-scale-x: 0.99;
     -fx-scale-y: 0.99;
     -fx-effect: dropshadow(three-pass-box, #028fffff, 16, 0, 0, 0);
-}
+} */
 
 .data-card {
     -fx-effect: dropshadow(three-pass-box, #dededeff, 8, 0, 0, 0);
     -fx-background-color: #ffffff;
     -fx-scale-x: 1.0;
     -fx-scale-y: 1.0;
-    transition-property: -fx-scale-x, -fx-scale-y;
+    transition-property: -fx-background-color;
+    /* transition-property: -fx-scale-x, -fx-scale-y; */
     transition-duration: .25s;
 }
 
 .data-card:hover {
-    -fx-scale-x: 0.99;
-    -fx-scale-y: 0.99;
-    -fx-effect: dropshadow(three-pass-box, #ababab, 16, 0, 0, 0);
+    /* -fx-scale-x: 0.99;
+    -fx-scale-y: 0.99; */
+    /* -fx-effect: dropshadow(three-pass-box, #ababab, 16, 0, 0, 0); */
+    -fx-background-color: #eeeeee;
 }
 
 .data-card-text {
@@ -150,24 +152,39 @@
 
 /* Base JavaFX Component CSS */
 
-/* Error and Delete */
+/* Error */
 .error {
     -fx-border-color: #ff0000 !important;
 }
 
-.delete:hover {
+/* Deletion */
+.delete:hover,
+.delete:selected,
+.delete:focused
+{
     -fx-background-color: #ff0000 !important;
     -fx-text-fill: #ffffff;
 }
 
-.delete:selected {
-    -fx-background-color: #ff0000 !important;
+.delete:hover .svg-path, 
+.delete:selected .svg-path,
+.delete:focused .svg-path {
+    -fx-fill:  #ffffff;
+}
+
+.confirm:hover,
+.confirm:selected, 
+.confirm:focused
+{
+    -fx-background-color: #028fffff !important;
     -fx-text-fill: #ffffff;
 }
 
-.delete:focused {
-    -fx-background-color: #ff0000 !important;
-    -fx-text-fill: #ffffff;
+.confirm:hover .svg-path,
+.confirm:selected .svg-path,
+.confirm:focused .svg-path
+{
+    -fx-fill:  #ffffff;
 }
 
 /* ComboBox */
@@ -271,8 +288,12 @@
 
 /* Button */
 .buttons {
-    -fx-background-color: #ffffff;
+    -fx-background-color: #ffffff !important;
     -fx-background-radius: 7px;
+
+    -fx-border-width: 1px;
+    -fx-border-radius: 7px;
+    -fx-border-color: transparent;
 
     -fx-font-family: "Bahnschrift SemiBold Condensed";
     -fx-text-fill: #000000;
@@ -285,6 +306,7 @@
 .buttons:hover {
     -fx-background-color: #eeeeee;
 }
+
 
 /* Root BorderPane */
 .root {
@@ -300,6 +322,9 @@
     -fx-border-radius: 0px;
     -fx-border-width: 0 0 2 0;
     -fx-border-color: #028fff;
+
+    -fx-highlight-fill: #028fff;
+    -fx-highlight-text-fill: #FFFFFF;
 
     -fx-background-color: #ffffff;
 }
@@ -331,6 +356,8 @@
 
     -fx-background-radius: 5px;
     -fx-background-color: #ffffff;
+    
+    -fx-border-radius: 5px;
 
     -fx-text-fill: #000000;
 
