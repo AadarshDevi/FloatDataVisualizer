@@ -120,10 +120,16 @@ public class ConnectionsController {
 		System.out.println("Adding ConnectionConfigs");
 		int count = connectionsList.size();
 		for (ConnectionConfig connectionConfig : connectionsList) {
-			boolean success = connections.getChildren().add(DataCardManager.create(connectionConfig).node());
-			if (!success) {
-				System.out.println("Connection adding Failed: " + connectionConfig.connectionName());
-				count--;
+
+			NodePackage<DataCardController> np = DataCardManager.create(connectionConfig);
+			Button dataCard = (Button) np.node();
+			DataCardController dcc = np.controller();
+			connections.getChildren().add(dataCard);
+
+			SerialPort sp = SerialPort.getCommPort(dcc.getConnectionConfig().port().getSystemPortName());
+			if (!sp.openPort()) {
+				System.out.println("Unable to open Port ");
+				dcc.disable();
 			}
 		}
 		System.out.println("Added Connections: " + count);
