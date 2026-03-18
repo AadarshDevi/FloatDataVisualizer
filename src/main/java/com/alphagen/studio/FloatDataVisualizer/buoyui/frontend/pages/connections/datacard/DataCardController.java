@@ -126,5 +126,23 @@ public class DataCardController extends Controller {
 		setConnectionName(connectionConfig.connectionName());
 		setPort(connectionConfig.port());
 		setConnectionType(connectionConfig.portType());
+	public void viewMeasurements() {
+		MeasurementConfig[] measurementConfigs = connectionConfig.measurementConfigs();
+
+		FXMLLoader measurementViewerLoader = new FXMLLoader(DataCardController.class.getResource("MeasurementsViewer_v1.fxml"));
+
+		BorderPane measurementViewer = null;
+		try {
+			measurementViewer = measurementViewerLoader.load();
+		} catch (IOException e) {
+			throw new RuntimeException(e);
+		}
+		MeasurementViewerController mvc = measurementViewerLoader.getController();
+		mvc.setData(connectionConfig);
+
+		Stage stage = StageUtil.getConnectionEditor(measurementViewer);
+		StageManager.setConnectionCreatorStage(stage);
+		stage.showAndWait();
+	}
 	}
 }
