@@ -4,7 +4,7 @@
   <groupId>com.alphagen.studio</groupId>
   <artifactId>FloatDataVisualizer</artifactId>
   <name>FloatDataVisualizer</name>
-  <version>2.1.9.1</version>
+  <version>1.4.4</version>
   <build>
     <plugins>
       <plugin>
