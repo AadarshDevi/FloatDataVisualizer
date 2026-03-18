@@ -65,7 +65,7 @@ public class ConnectionsController {
 			throw new RuntimeException(e);
 		}
 
-		Stage editor = getConnectionEditor(connectionCreatorPane);
+		Stage editor = StageUtil.getConnectionEditor(connectionCreatorPane);
 		editor.showAndWait();
 
 		if (ConnectionManager.getCurrentConnection() == null) {
@@ -77,11 +77,12 @@ public class ConnectionsController {
 		NodePackage<DataCardController> dcnp = DataCardManager.create(ConnectionManager.getCurrentConnection());
 
 		connections.getChildren().add(dcnp.node());
+//		connections.getChildren().add(0, dcnp.node());
 
 		boolean success = ConnectionProcessor.writeConnection(currentConnectionConfig);
 		if (!success) {
 			// fixme replace with error alert
-			System.out.println("Connection Writing Failed");
+			System.err.println("Connection Writing Failed");
 			System.exit(-1);
 		}
 
