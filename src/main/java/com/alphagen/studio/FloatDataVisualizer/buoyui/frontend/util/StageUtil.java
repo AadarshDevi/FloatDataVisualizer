@@ -1,10 +1,13 @@
 package com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.util;
 
 import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.util.DeltaDrag;
+import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.managers.StageManager;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
