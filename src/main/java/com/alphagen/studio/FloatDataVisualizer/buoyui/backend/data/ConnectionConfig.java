@@ -5,4 +5,4 @@ import lombok.Builder;
 
 @Builder
 public record ConnectionConfig(String connectionName, int baudRate, SerialPort port, ConnectionType portType,
-							   FloatConfig floatConfig) {}
+							   FloatConfig floatConfig, MeasurementConfig[] measurementConfigs) {}
