@@ -89,7 +89,7 @@
                   <Insets />
                </opaqueInsets>
                <tooltip>
-                  <Tooltip text="Import Connection" />
+                  <Tooltip text="(Future Add) Import Connection" />
                </tooltip>
             </Button>
             <Button fx:id="export_all_connections" mnemonicParsing="false" onAction="#exportAllConnections" prefHeight="33.0" prefWidth="125.0" styleClass="buttons" text=" Export All">
@@ -100,7 +100,7 @@
                   <Insets />
                </opaqueInsets>
                <tooltip>
-                  <Tooltip text="Export All Connections" />
+                  <Tooltip text="(Future Add) Export All Connections" />
                </tooltip>
             </Button>
             <Button fx:id="refresh_connections" mnemonicParsing="false" onAction="#refreshConnections" prefHeight="32.0" prefWidth="115.0" styleClass="buttons" text="  Refresh">
