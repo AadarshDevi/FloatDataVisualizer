@@ -93,13 +93,13 @@ public class ConnectionProcessor {
 		System.out.println("Connections Folder ready for reading");
 
 		File[] files = folder.listFiles();
-		assert files != null;
+		System.out.println("Files found: " + files.length);
 		for (File file : files) {
 			try (FileInputStream br = new FileInputStream(file)) {
 
 				Properties properties = new Properties();
 				properties.load(br);
-				
+
 				ConnectionConfig connectionConfig = readConnectionConfig(properties);
 
 				if (connectionConfig != null)
@@ -107,7 +107,6 @@ public class ConnectionProcessor {
 			} catch (IOException e) {
 				System.err.println("Error reading properties file: " + file.getAbsolutePath());
 			}
-
 		}
 		return connectionConfigs;
 	}
