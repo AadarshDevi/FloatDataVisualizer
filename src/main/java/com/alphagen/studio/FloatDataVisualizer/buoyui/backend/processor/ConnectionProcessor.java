@@ -139,6 +139,7 @@ public class ConnectionProcessor {
 				.port(SerialPort.getCommPort(properties.getProperty("connection_port")))
 				.portType(ConnectionType.valueOf(properties.getProperty("connection_port_type")))
 				.floatConfig(parseFloatConfig(properties))
+				.measurementConfigs(parseMeasurementConfigs(properties))
 				.build();
 	}
 
@@ -147,8 +148,6 @@ public class ConnectionProcessor {
 				.teamData(properties.getProperty("team_info"))
 				.startFlag(properties.getProperty("start_data_transfer"))
 				.endFlag(properties.getProperty("end_data_transfer"))
-				.measurement(properties.getProperty("measurement"))
-				.measurementUnit(properties.getProperty("measurement_unit"))
 				.build();
 	}
 }
