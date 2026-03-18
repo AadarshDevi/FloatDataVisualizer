@@ -7,6 +7,7 @@ import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.constants.FolderCo
 import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.data.ConnectionConfig;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.data.ConnectionType;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.data.FloatConfig;
+import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.data.MeasurementConfig;
 import com.fazecast.jSerialComm.SerialPort;
 
 import java.io.*;
@@ -149,5 +150,23 @@ public class ConnectionProcessor {
 				.startFlag(properties.getProperty("start_data_transfer"))
 				.endFlag(properties.getProperty("end_data_transfer"))
 				.build();
+	}
+
+	private static MeasurementConfig[] parseMeasurementConfigs(Properties properties) {
+		ArrayList<MeasurementConfig> measurementConfigs = new ArrayList<>();
+		boolean parsing = true;
+		int i = 0;
+
+		while (parsing) {
+			String name = properties.getProperty("measurement_name_" + i);
+			String unit = properties.getProperty("measurement_unit_" + i);
+			if (name != null && unit != null) {
+				measurementConfigs.add(new MeasurementConfig(name, unit));
+			} else
+				parsing = false;
+			i++;
+		}
+
+		return measurementConfigs.toArray(new MeasurementConfig[0]);
 	}
 }
