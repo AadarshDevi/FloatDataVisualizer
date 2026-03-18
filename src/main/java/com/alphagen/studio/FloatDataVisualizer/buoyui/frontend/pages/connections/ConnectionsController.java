@@ -104,6 +104,16 @@ public class ConnectionsController {
 		// todo add conformation alert before delete all
 		System.out.println("Deleting All Connections");
 		connections.getChildren().removeAll(connections.getChildren());
+
+		File connFolder = new File(FolderConstants.CONNECTIONS.toString());
+		File[] files = connFolder.listFiles();
+		System.out.println("Deleted All Connections: " + files.length);
+
+		for (File file : files) {
+			file.delete();
+		}
+
+
 	}
 
 	public void setConnectionConfigs(ArrayList<ConnectionConfig> connectionsList) {
