@@ -26,6 +26,19 @@ public class StageUtil {
 		System.out.println(positiveLog);
 		System.out.println();
 	}
+
+	public static Stage getConnectionEditor(BorderPane pane) {
+		Scene scene = new Scene(pane);
+		Stage stage = new Stage();
+		stage.setScene(scene);
+		stage.initModality(Modality.APPLICATION_MODAL);
+		stage.initOwner(StageManager.getMainStage());
+		stage.setTitle("Float Data Visualizer");
+		createInvisPane(stage, scene, pane);
+		StageManager.setConnectionCreatorStage(stage);
+		return stage;
+	}
+
 	public static void createInvisPane(Stage stage, Scene scene, Pane pane) {
 
 		scene.setFill(Color.TRANSPARENT);
