@@ -31,17 +31,12 @@ public class ConnectionEditorController {
 	@FXML public Label error_label_data_format_blank;
 	@FXML public Label error_label_start_flag_blank;
 	@FXML public Label error_label_end_flag_blank;
-	@FXML public Label error_label_measure_name_blank;
-	@FXML public Label error_label_measure_unit_blank;
-	@FXML public Label error_label_measure_unit_invalid_characters;
 	@FXML TextField connectionName;
 	@FXML TextField baudRate;
 	@FXML ChoiceBox<String> connectionOptions;
 	@FXML TextField dataFormat;
 	@FXML TextField startFlagTextField;
 	@FXML TextField endFlagTextField;
-	@FXML TextField measurementName;
-	@FXML TextField measurementUnit;
 
 	@FXML
 	public void initialize() {
@@ -78,9 +73,6 @@ public class ConnectionEditorController {
 		error_label_name_exists.setVisible(false);
 		error_label_start_flag_blank.setVisible(false);
 		error_label_end_flag_blank.setVisible(false);
-		error_label_measure_name_blank.setVisible(false);
-		error_label_measure_unit_blank.setVisible(false);
-		error_label_measure_unit_invalid_characters.setVisible(false);
 	}
 
 	@FXML
@@ -94,14 +86,10 @@ public class ConnectionEditorController {
 		boolean isValidStartFlag = validStartFlag();
 		boolean isValidEndFlag = validEndFlag();
 
-		boolean isValidMeasurementName = validMeasurementName();
-		boolean isValidMeasurementUnit = validMeasurementUnit();
-
 		System.out.println();
 		if (
 				isValidConnectionName && isValidBaudRate && isValidPort
 						&& isValidTeamName && isValidStartFlag && isValidEndFlag
-						&& isValidMeasurementName && isValidMeasurementUnit
 		) {
 			ConnectionConfig connection = new ConnectionConfig(
 					connectionName.getText(),
@@ -302,12 +290,6 @@ public class ConnectionEditorController {
 				break;
 		}
 
-		dataFormat.setText("PN12-MiramarWaterJets");
-		startFlagTextField.setText("--start-data-transfer");
-		endFlagTextField.setText("--start-data-transfer");
-		measurementName.setText("depth");
-		measurementUnit.setText("m");
-
 		ConnectionsController cc = ControllerManager.getConnectionsController();
 
 		if (cc.getCurrentConnectionConfig() != null) {
@@ -322,8 +304,6 @@ public class ConnectionEditorController {
 			dataFormat.setText(fcg.teamData());
 			startFlagTextField.setText(fcg.startFlag());
 			endFlagTextField.setText(fcg.endFlag());
-			measurementName.setText(fcg.measurement());
-			measurementUnit.setText(fcg.measurementUnit());
 		}
 	}
 }
