@@ -22,6 +22,8 @@ public class DataCardManager {
 		DataCardController dcc = fxmlLoader.getController();
 		dcc.setConnection(connectionConfig);
 
+		dataCard.getProperties().put("dcc", dcc);
+
 		// Cast only if DataCardController isn't K-compatible
 		return NodePackage.<K>builder()
 				.node(dataCard)
