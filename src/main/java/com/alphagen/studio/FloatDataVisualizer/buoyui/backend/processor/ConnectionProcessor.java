@@ -48,10 +48,16 @@ public class ConnectionProcessor {
 			pw.println("end_data_transfer=" + floatConfig.endFlag());
 			pw.println("");
 
-			pw.println("# Measurement Config");
-			pw.println("measurement_name=" + floatConfig.measurement());
-			pw.println("measurement_unit=" + floatConfig.measurementUnit());
-			pw.println("");
+			pw.println("# Measurement Configs");
+
+			// testme
+			MeasurementConfig[] measurementConfigs = connectionConfig.measurementConfigs();
+			for (int i = 0; i < measurementConfigs.length; i++) {
+				MeasurementConfig measurementConfig = measurementConfigs[i];
+				pw.println(String.format("measurement_name_%d=%s", i, measurementConfig.name()));
+				pw.println(String.format("measurement_unit_%d=%s", i, measurementConfig.unit()));
+				pw.println("");
+			}
 
 			pw.println("# Save Config");
 			pw.println("connection_version=" + AppData.CONNECTION_VERSION);
