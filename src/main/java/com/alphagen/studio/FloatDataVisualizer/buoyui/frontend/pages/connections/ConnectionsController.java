@@ -89,18 +89,6 @@ public class ConnectionsController {
 		ConnectionProcessor.readAllConnections();
 	}
 
-	public Stage getConnectionEditor(BorderPane pane) {
-		Scene scene = new Scene(pane);
-		Stage stage = new Stage();
-		stage.setScene(scene);
-		stage.initModality(Modality.APPLICATION_MODAL);
-		stage.initOwner(StageManager.getMainStage());
-		stage.setTitle("Float Data Visualizer");
-		StageUtil.createInvisPane(stage, scene, pane);
-		StageManager.setConnectionCreatorStage(stage);
-		return stage;
-	}
-
 	public void deleteConnection(Button deleteButton) {
 		connections.getChildren().remove(deleteButton);
 	}
