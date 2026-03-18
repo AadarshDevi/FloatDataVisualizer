@@ -5,6 +5,7 @@ import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.constants.FolderCo
 import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.data.ConnectionConfig;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.data.ConnectionType;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.data.FloatConfig;
+import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.data.MeasurementConfig;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.util.DynamicCSS;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.managers.ConnectionManager;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.managers.ControllerManager;
@@ -99,10 +100,9 @@ public class ConnectionEditorController {
 					new FloatConfig(
 							dataFormat.getText().trim(),
 							startFlagTextField.getText().trim(),
-							endFlagTextField.getText().trim(),
-							measurementName.getText().trim(),
-							measurementUnit.getText().trim()
-					)
+							endFlagTextField.getText().trim()
+					),
+					getMeasurementConfigs()
 			);
 			ConnectionManager.setCurrentConnection(connection);
 			System.out.println("Connection created: " + connection.connectionName());
@@ -136,7 +136,7 @@ public class ConnectionEditorController {
 		File file = new File(FolderConstants.CONNECTIONS.resolve(value + FolderConstants.FLOAT_CONNECTION_FILE_EXTENSION).toString());
 		if (file.exists()) {
 			error_label_name_exists.setVisible(true);
-			connectionName.getStyleClass().remove(DynamicCSS.ERROR);
+			connectionName.getStyleClass().add(DynamicCSS.ERROR);
 			return false;
 		}
 
@@ -234,28 +234,46 @@ public class ConnectionEditorController {
 		}
 	}
 
-	private boolean validMeasurementName() {
-		if (measurementName.getText().trim().isEmpty()) {
-			error_label_measure_name_blank.setVisible(true);
-			measurementName.getStyleClass().add(DynamicCSS.ERROR);
-			return false;
-		} else {
-			error_label_measure_name_blank.setVisible(false);
-			measurementName.getStyleClass().remove(DynamicCSS.ERROR);
-			return true;
-		}
-	}
+//	private boolean validMeasurementName() {
+//		if (measurementName.getText().trim().isEmpty()) {
+//			error_label_measure_name_blank.setVisible(true);
+//			measurementName.getStyleClass().add(DynamicCSS.ERROR);
+//			return false;
+//		} else {
+//			error_label_measure_name_blank.setVisible(false);
+//			measurementName.getStyleClass().remove(DynamicCSS.ERROR);
+//			return true;
+//		}
+//	}
+//
+//	private boolean validMeasurementUnit() {
+//		if (measurementUnit.getText().trim().isEmpty()) {
+//			error_label_measure_unit_blank.setVisible(true);
+//			measurementUnit.getStyleClass().add(DynamicCSS.ERROR);
+//			return false;
+//		} else {
+//			error_label_measure_unit_blank.setVisible(false);
+//			measurementUnit.getStyleClass().remove(DynamicCSS.ERROR);
+//			return true;
+//		}
+//	}
 
-	private boolean validMeasurementUnit() {
-		if (measurementUnit.getText().trim().isEmpty()) {
-			error_label_measure_unit_blank.setVisible(true);
-			measurementUnit.getStyleClass().add(DynamicCSS.ERROR);
-			return false;
-		} else {
-			error_label_measure_unit_blank.setVisible(false);
-			measurementUnit.getStyleClass().remove(DynamicCSS.ERROR);
-			return true;
+	// testme
+	private MeasurementConfig[] getMeasurementConfigs() {
+		String[] floatData = dataFormat.getText().trim().split(",");
+//		System.out.print("Connection: " + connectionName.getText().trim());
+		System.out.println("Connection Measurement Count: " + (floatData.length - 2));
+		MeasurementConfig[] measurementConfigs = new MeasurementConfig[floatData.length - 2];
+		for (int i = 2; i < floatData.length; i++) {
+			String measurement = floatData[i].trim();
+//			System.out.print("Complete Measurement: " + measurement);
+			String measurementName = measurement.substring(0, measurement.indexOf("("));
+			String measurementUnit = measurement.substring(measurement.indexOf("(")).replace("(", "").replace(")", "");
+			measurementConfigs[i - 2] = new MeasurementConfig(measurementName, measurementUnit);
+//			System.out.printf(" > Measurement Breakdown: %-20s %s\n", measurementName, measurementUnit);
 		}
+		System.out.println();
+		return measurementConfigs;
 	}
 
 	@FXML
@@ -268,9 +286,6 @@ public class ConnectionEditorController {
 
 	@FXML
 	public void autoFill() {
-
-		connectionName.setText("test1");
-		baudRate.setText("1000");
 
 		switch (PlatformDetector.getOSPLATFORM()) {
 			case WIN11:
