@@ -231,3 +231,9 @@ A basic Markdown file reader. Takes in a **.md file** and **a vbox**. It must ha
 7. [ ] Simple Table // does not use h1-6
 8. [ ] Bold
 9. [ ] Italics
+
+# Before Creating Executable
+
+1. Make sure either Win11, MacOS or Linux is ready and the rest commented
+2. change the project version in pom to correct version
+3. change project version in AppData.java
