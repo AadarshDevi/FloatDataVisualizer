@@ -1,295 +1,101 @@
-# Miramar Water Jets's Mate Float Data Visualizer
+# Float Data Visualizer 2.0.0
 
-Welcome, I am Aadarsh Devi from Miramar Water Jets.
-<br><br>
-<ins>_**NOTE:**_</ins> It is suggested to read the entire **README**.
-<br>
-<ins>_**NOTE:**_</ins> Use Outline for quick navigation on the top right.
+This is the Float Data Visualizer. It is used to communicate with the floats' data receiver
+via Serial Communication.
 
-## Project Info
+## Table of Contents
 
-1. Team: Miramar Water Jets
-2. Author: Aadarsh Devi
-3. App: Float Data Visualizer
-4. Release Version: 1.3.1
-5. Dev Version: 1.3.1
-6. Language: Java/JavaFX
-7. Build Tool: Maven
-8. VCS: Git/GitHub
+1. Getting Started
+2. User Manual
+3. Downloads
+4. Technical Documentation
+5. Author
+6. [Feature List](#features-list)
 
-## Pre-Information
+## Releases
 
-1. FloatDataVisualizer might sometimes be abbrevated to FDV
-2. ScatterChart and ScatterPlot refer to the same chart.
+For users who want the **_terminal with the app_**, the can download [Console Bundled App](#console-app)
 
-## Instructions
+### App Build Status
 
-### Network and Connection
+| Status | Build In Progress | Will Not Build | Future Builds | Build Available | Maybe Have Build |
+|--------|-------------------|----------------|---------------|-----------------|------------------|
+| Icon   | ⏳                 | ❌              | ⏭️            | ✅               | ⭯                |
 
-```
-        (Team's Wireless Communication)                       (Serial Communication)
-Float -----------------------------------> Microcontroller --------------------------> FloatDataVisualizer App
-         (Wi-Fi, LoRa, Bluetooth, etc)                         (Done through App)
-```
+### Download Links
 
-### Download
+The actual (base) app is actively being worked on. Then Win11, Linux will be released and later on MacOS.
 
-1. Go to [Releases](https://github.com/AadarshDevi/FloatDataVisualizer/releases)
-2. Download the Latest Release
-3. Click FloatDataVisualizer version-version.msi
-4. If you get the **Windows Defender Blue Box**, click run anyway.
-5. You will get:
-    1. App in the location the user wants
-    2. Shortcut in Desktop
-    3. Maybe app pinned or placed in Start Menu
+| Status |            Platform            | Architecture | Executable Type | App Type | Download Link |
+|:------:|:------------------------------:|:------------:|:---------------:|:--------:|:-------------:|
+|  ⏭️️   |            Windows             |    x86_64    |      .msi       |   App    |               |
+|  ⏭️️   |            Windows             |    x86_64    |      .exe       |   App    |               |
+| **⭯**  |            Windows             |     ARM      |      .msi       |   App    |               |
+| **⭯**  |            Windows             |     ARM      |      .exe       |   App    |               |
+|  ⏭️️   |             MacOS              |    x86_64    |      .dmg       |   App    |               |
+|  ⏭️️   |             MacOS              |    x86_64    |      .pkg       |   App    |               |
+| **⭯**  |             MacOS              |     ARM      |      .dmg       |   App    |               |
+| **⭯**  |             MacOS              |     ARM      |      .pkg       |   App    |               |
+| **⭯**  |             Linux              |    x86_64    |    .AppImage    |   App    |               |
+| **⭯**  |             Linux              |     ARM      |    .AppImage    |   App    |               |
+|  ⏭️️   |   Debian, Ubuntu, Linux Mint   |    x86_64    |      .deb       |   App    |               |
+| **⭯**  |   Debian, Ubuntu, Linux Mint   |     ARM      |      .deb       |   App    |               |
+|  ⏭️️   | Fedora, RHEL, CentOS, openSUSE |    x86_64    |      .rpm       |   App    |               |
+| **⭯**  | Fedora, RHEL, CentOS, openSUSE |     ARM      |      .rpm       |   App    |               |
 
-### How to Configure APP
+### Executable Creation Platform
 
-1. Click FloatDataVisualizer with the correct version.
-2. There will be an filepath message after either of the below messages
-    1. Exception if there is no serial ports available or serial port is not correct.
-3. **DO NOT PRESS ANYTHING.**
-4. Copy the filepath for the project data folder.
-5. Go to **File Explorer** and paste in the filepath.
-6. Once there open settings.txt replace the correct values below.
-    1. commPort > dont chage the text before **COM**
-    2. baudRate
-    3. packetData > (Change only the bolded text) **TeamID**-**TeamName**,pkt-,time,unit2
-    4. unit2_name > The name of the measurement. Ex: Depth, Pressure
-    5. unit2_unit > the unit of the measurement. Ex: m, Pa
-    6. startDataTransfer > it can be any text with will not appear in the data that will be transfered.
-    7. endDataTransfer > it can be any text with will not appear in the data that will be transfered.
-7. Now you have configureed you fdv app, you can run it again.
+1. Windows 11 x86_64: MSI Vector A16 HX A8W
+2. MacOS x86_64 (Intel): Late 2013 Macbook Pro
+3. MacOS ARM (M-Series): Macbook M2
+4. Debian x86_64: MSI Vector A16 HX A8W w/ VirtualBox Debian Linux
 
-#### App Config
+### Console App
 
-The app's configuration file is **_settings.txt_**.
+| Status |            Platform            | Architecture | Executable Type |    App Type    | Download Link |
+|:------:|:------------------------------:|:------------:|:---------------:|:--------------:|:-------------:|
+|  ⏭️️   |            Windows             |    x86_64    |      .msi       | ConsoleBundled |               |
+|  ⏭️️   |            Windows             |    x86_64    |      .exe       | ConsoleBundled |               |
+| **⭯**  |            Windows             |     ARM      |      .msi       | ConsoleBundled |               |
+| **⭯**  |            Windows             |     ARM      |      .exe       | ConsoleBundled |               |
+| **⭯**  |             Linux              |    x86_64    |    .AppImage    | ConsoleBundled |               |
+| **⭯**  |             Linux              |     ARM      |    .AppImage    | ConsoleBundled |               |
+| **⭯**  |   Debian, Ubuntu, Linux Mint   |    x86_64    |      .deb       | ConsoleBundled |               |
+| **⭯**  |   Debian, Ubuntu, Linux Mint   |     ARM      |      .deb       | ConsoleBundled |               |
+| **⭯**  | Fedora, RHEL, CentOS, openSUSE |    x86_64    |      .rpm       | ConsoleBundled |               |
+| **⭯**  | Fedora, RHEL, CentOS, openSUSE |     ARM      |      .rpm       | ConsoleBundled |               |
 
-1. commPort > the port in which the microcontroller is connected to.
-2. baudRate
-3. packetData > it is the format of the data the float will send. This is a fixed format >
-   TeamID-TeamName,pkt-,time,unit2
-4.
+## Technical Documentation
 
-### Using App
+Technical Docs will be updated when there is a big change of the codebase or new features being added.
 
-1. Open App **after** a microcontroller is connected to the Device (Desktop/Laptop).
-2. The app should start receiving data after the startDataTransfer flag is sent.
-    1. Check Console
-3. Once startDataTransfer flag is sent, data will be printed on the console and on the ScatterPlot.
-4. The data received will be on Console, ScatterPlot, Table.
-5. [NOTE] If there are any **ERROR**s, check [Exception Messages](#exception-messages) below.
-6. [NOTE] If the format of the data of the float and app are not the same, there will be no output.
-7. Data will be continued to be read and put on the chart and table till the endDataTransfer flag is recieved.
+## User Manual
 
-### Viewing Data
+## Technical Docs - 2.0.0 Update Changelog
 
-There are a few features to view the data.
+**This is the second rewrite of the app to make the ui more user-friendly.**
 
-1. ScatterPlot: The datapoints on the plot when hovered will show time and unit2.
-2. Menubar has a few helpful tools: View > ScatterChart
-3. There are 4 options.
-    1. Fit View: All points on the chart are visible.
-    2. Full View: ScatterChart will have the width it had when it was reading all the data.
-    3. Increase/Decrease Width: Increases or decreases the width of the chart.
+When v1.3.1 was built, it used the technical knowledge of the user to be able to navigate through
+the app. After some serious self-reflection, I am working on updating the app to be more user-friendly.
+Finding app files and changing the settings.txt file to have the correct settings can now be done in
+the app.
 
-### Exporting Data
+### Features
 
-The app can export data as Screenshots, CSV, and Raw.
+#### Updated
 
-#### Screenshots
+1. Screenshots (ScatterPlot, Table), Exporting Data (Raw CSV, CSV): App will ask the user where to store the file.
+2. ScatterPlot and the Table will have separate tabs instead of being on the same place.
 
-1. Go to **_Export > Screenshot_** and select which screenshot you want.
-2. The app will create a screenshot of the scatterchart or table based on the option chosen.
-3. To access the screenshots, go to **_Help > Filepaths > Screenshots_**.
-4. Copy the path and paste it into File Explorer
-5. In this folder there will be 2 folders: **_ScatterChart_** and **Table**
-6. Open the folder which you chose for the screenshot.
-7. Your screenshots will be there.
+#### New Additions
 
-#### Data CSVs
-
-1. Go to **_Export > Data_** and select which type of data you want to export.
-    1. Raw > Data that was sent by the float.
-    2. CSV > Only the decimal values, time and unit2
-2. Once the data is exported as a csv, go to **_Help > Filepaths > CSVs_**.
-3. Copy the path and paste it into File Explorer.
-4. The CSVs are there to be used. Both Raw and CSV will be in this folder.
-
-### Exception Messages
-
-There are many exceptions to pin point the problems when running the app. They are mostly ordered in chronological
-order. These are almost all the exception messages. If I have missed any, please raise
-an [issue](https://github.com/AadarshDevi/FloatDataVisualizer/issues).
-
-1. Unable to get User's Platform/OS and Username
-2. Unable to generate base folder
-3. Unable to generate settings.txt and cannot find filepath
-4. Unable to generate ScatterChart Screenshots folder
-5. Unable to generate Data Table Screenshots folder
-6. Unable to generate Log folder
-7. Unable to generate Data(CSV) folder
-8. Datapath of settings.txt is null
-9. settings.txt resource not found
-10. Project Version does not exist
-11. Project Version does not match Application Version
-12. Release Version does not exist
-13. Project Version does not match Application Version
-14. Platform is null
-15. Wrong App. Please use {{platform}} version of the app
-16. settings.txt is in the wrong platform
-17. Baud Rate is EMPTY
-18. baudRate is not a number
-19. Serial Comm Port is null
-20. Packet Data is null or Does not exist
-21. "time" or "unit2" not found in "packetData"
-22. Time Unit is EMPTY
-23. Unit 2 Name in null
-24. Unit 2 Unit in null
-25. Start Data Transfer Flag in null
-26. End Data Transfer Flag in null
-27. Data Group Name in null
-28. Unable to parse Settings, Properties and InputStream
-29. Thread Interrupted in Settings
-30. Serial Comm Ports connected to something else
-31. Serial Ports are empty > This means that there are no serial ports connected to the device. Check using **Device
-    Manager > Ports (Com & LPT)**
-32. DataPlotter is null
-33. Unable to "put" Float DataPoint
-34. SerialComm Port does not exist
-35. Unable to create SerialComm with port
-36. COM Port Connection ERROR
-37. Input error in Snapshot ScatterChart MenuItem
-38. Input error in Snapshot TableView MenuItem
-39. Unable to write DataPointRecord
-
-## Future Updates
-
-1. Update README.md to explain exception messages and settings.txt
-
-### v2.1.4.0 (Not 100% Confirmed)
-
-##### This will be Windows only from now on.
-
-1. Add libs to /lib
-2. Change file names:
-    1. settings.txt > app.settings
-3. create file:
-    1. connection1.app.config
-4. auto detect platform
-    1. removes the need for platform on config
-5. rename "rawCSV_#.txt" to "raw_#.txt"
-6. exporting files will use FileChooser for custom naming and placement.
-7. Add file logging for exceptions
-8. Merge Launcher.java and Main.java
-
-#### Settings and MenuItems
-
-1. Settings (app.settings) (MenuItem under File)
-    1. Filepath (MenuItem) aka Help
-        1. Base Folder
-        2. Screenshots
-        3. CSV
-        4. Raw CSV // different default path
-        5. Logs
-    2. Filenames
-        1. Scatterplot > screenshot_scatterplot_#.png
-        2. Table > screenshot_table_#.png
-        3. Raw CSV > raw_#.csv
-        4. CSV > csv_#.csv
-    3. View
-        1. Theme
-        2. Width
-        3. Height
-        4. Table Visible (MenuItem)
-        5. Scatterchart: Fit/Expand
-    4. Images
-        1. DPI (Slider)
-        2. Scatterplot DPI (Slider)
-        3. Table DPI (Slider)
-2. Connection (app.config) (MenuItem under File)
-    1. Port: (From OS)
-    2. Baud Rate: 115200
-    3. Packet Data: PN12-MiramarWaterJets,pkt-#,time,unit2
-    4. Time
-        1. Unit: s
-        2. Conversion: 1 // unit conversion up to 2 decimal points
-    5. Unit 2
-        1. Name: Depth
-        2. Unit: m
-        3. Conversion: 1
-    6. Flags
-        1. Start Data Transfer
-        2. End Data Transfer
-    7. Group Name: Profile
-3. Help > About
-    1. Team: Miramar Water Jets
-    2. Author: Aadarsh Devi
-    3. Name: Float Data Visualizer
-    4. Release Version:  v{internal version}
-    5. Dev Version: v{release version}
-    6. Platform: AutoDetect/ final PLATFORM
-4. Data Receiver after App opens
-
-#### Packages and Classes
-
-1. Backend
-    1. Data
-        1. Settings
-            1. Settings
-            2. SettingsReader // read settings
-            3. SettingsWriter // write settings
-        2. Connections
-            1. Connection
-                1. Port
-                2. BaudRate
-            2. ConnectionReader
-            3. ConnectionWriter
-            4. Exceptions
-                1. ____NotFoundException
-                2. ____NotFoundException
-                3. ____NotFoundException
-        3. DataPoint
-    2. FXMLReader
-        1. FXMLReader (getInstance)
-        2. FXMLPackage
-        3. Exceptions
-            1. ____NotFoundException
-            2. ____NotFoundException
-    3. Util
-        1. csv
-            1. CSVWriter
-            2. CSVWriterFactory
-    4. DataKeeper
-        1. DataKeeper
-        2. DataKeeperManager
-    5. DataReceiver
-        1. DataReceiver
-
-    6. FilePath
-        1. FilePath
-        2. FilePathFactory
-    7. Logging
-        1. Logger
-            1. Logger
-            2. LoggerFactory
-        2. FileLogger
-            1. FileLogger
-            2. FileLoggerFactory
-2. API
-    1. Exitter
-    2. Api
-    3. ApiManager
-3. Frontend
-    1. UI
-        1. CopyStage
-    2. Controller
-        1. DataPlotter
-            1. DataPlotter
-4. Launcher
-    1. enum Platform: WIN10, WIN11, MacOSX_INTEL, MacOSX_ARM, LINUX
-5. Main (Merged with Launcher)
-    - run backend (main thread), api (api thread), frontend (javafx thread)
+1. Users can now have multiple connections
+2. Users can now export/import serial connections with the import/export feature.
+3. User Manual: The app will have a dedicated **_offline_** user manual. It will show from the start of the app to the
+   features of it.
+4. Serial Connection can start/stop with a click of a button. Originally, the app had to be closed and reopened again.
+5. Flags to start/end data communication will also be added when creating the connection. They can also be saved.
+6. Team name and id will be added when creating connections. They can also be saved.
 
 ## Build Project (Prerequisites)
 
@@ -299,4 +105,129 @@ an [issue](https://github.com/AadarshDevi/FloatDataVisualizer/issues).
 4. jSerialComm 2.11.2
 5. Apache Maven
 6. Git
-7. WiX 3.14
+7. OS Specific
+    - Windows: WiX 3.14
+    - MacOS: Apple Developer Account
+    - Linux: ?
+
+## Data Files
+
+Root: C:\Users\{user}\AppData\Roaming\FloatDataVisualizer\2.0.0
+
+1. float.settings
+    1. theme
+    2. dataFormat
+2. connections
+    1. {Connection Name}.float.connection
+3. logs
+    1. {datetime}.float.log
+
+## Package: BuoyUI
+
+- backend
+    - Backend
+    - data
+        - ConnectionConfig
+        - FloatConfig
+        - ConnectionType
+    - processor
+        - ConnectionProcessor
+        - FloatProcessor
+    - util
+        - DeltaDrag
+        - DynamicCSS
+    - constants
+        - FolderConstants
+- frontend
+    - pages
+        - connections
+            - editor
+            - constants
+    - util
+        - StageUtil
+        - loading
+            - LoadingScreen
+    - managers
+        - StageManager
+        - ControllerManager
+- [x] app
+    - AppData
+    - Platform
+- [x] lib
+    - jFileSystem
+    - markdownfx
+
+## Pages
+
+1. Connections: ~~Create~~, Edit, ~~Delete~~, Duplicate, Delete All, Export, Import, Export All
+    - create: if the connection name already exists, throw error label
+
+# Features List
+
+## Connections Page
+
+1. [x] Create Connection
+2. [x] Real Delete
+3. [x] Real Delete All
+4. [ ] Edit
+5. [ ] Export
+6. [ ] Export All
+7. [ ] Import All
+8. [ ] Duplicate
+9. [x] Read Connection
+10. [x] Able to store different types of data in MeasurementConfigs
+11. [x] View different types of data float data visualizer will record
+12. [ ] Add CSS for MeasurementViewer
+
+## Connection Editor
+
+1. [x] Write Connection
+2. [ ] Reset Connection Data in Editor
+3. [x] Autofill data based on last connection
+
+## Preferences
+
+1. [ ] Theme Changing: Light/Dark
+2. [ ] Default Team Start Data Transfer Flag
+3. [ ] Default Team End Data Transfer Flag
+4. [ ] Default Team Info
+5. [ ] Default Team Info Data
+
+## DataViewer
+
+1. [ ] Change Data View: Graph/Table
+    1. [ ] Via Buttons: GraphView Button & TableView Button
+2. [ ] Zoom In/Out Graph --> Bigger and Smaller Graphs
+    1. [ ] Ctrl + Mouse Scroll Up --> Zoom In
+    2. [ ] Ctrl + Mouse Scroll Down --> Zoom Out
+    3. [ ] Mouse Scroll Up --> Scroll Up
+    4. [ ] Mouse Scroll Down --> Scroll Down
+    5. [ ] Shift + Mouse Scroll Up --> Scroll Left
+    6. [ ] Shift + Mouse Scroll Down --> Scroll Right
+3. [ ] Import CSV (.float.data)
+4. [ ] Export CSV (.float.data)
+5. [ ] Import Raw Data CSV (.raw.float.data)
+6. [ ] Export Raw Data CSV (.raw.float.data)
+7. [ ] Start Data Receiving
+8. [ ] Stop Data Receiving
+9. [ ] Tabs for multiple Data Recorded
+
+## DataStorage
+
+1. [ ] data stored in double[]
+    1. [ ] double[].length = number of data recording + 1 (for time)
+2. [ ] --item-template
+
+## Documentation Viewer aka JavaFX Lib: MarkdownFX
+
+A basic Markdown file reader. Takes in a **.md file** and **a vbox**. It must have basic parsing.
+
+1. [ ] Hyperlink (Hyperlink)
+2. [ ] Image (ImageView)
+3. [ ] Heading 1 - 6 (Label)
+4. [ ] Paragraph (Text) set width of vbox before
+5. [ ] Unordered List
+6. [ ] Ordered List
+7. [ ] Simple Table // does not use h1-6
+8. [ ] Bold
+9. [ ] Italics

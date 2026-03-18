@@ -1,0 +1,324 @@
+package com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.pages.connections.editor;
+
+import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.app.PlatformDetector;
+import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.constants.FolderConstants;
+import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.data.ConnectionConfig;
+import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.data.ConnectionType;
+import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.data.FloatConfig;
+import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.data.MeasurementConfig;
+import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.util.DynamicCSS;
+import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.managers.ConnectionManager;
+import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.managers.ControllerManager;
+import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.managers.StageManager;
+import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.pages.connections.ConnectionsController;
+import com.fazecast.jSerialComm.SerialPort;
+import javafx.fxml.FXML;
+import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
+import javafx.stage.Stage;
+
+import java.io.File;
+import java.util.stream.Stream;
+
+public class ConnectionEditorController {
+
+	@FXML public Label error_label_connection_name_blank;
+	@FXML public Label error_label_name_invalid_characters;
+	@FXML public Label error_label_name_exists;
+	@FXML public Label error_label_baud_rate_invalid_characters;
+	@FXML public Label error_label_baud_rate_blank;
+	@FXML public Label error_label_port_blank;
+	@FXML public Label error_label_data_format_blank;
+	@FXML public Label error_label_start_flag_blank;
+	@FXML public Label error_label_end_flag_blank;
+	@FXML TextField connectionName;
+	@FXML TextField baudRate;
+	@FXML ChoiceBox<String> connectionOptions;
+	@FXML TextField dataFormat;
+	@FXML TextField startFlagTextField;
+	@FXML TextField endFlagTextField;
+
+	@FXML
+	public void initialize() {
+		resetErrorLabels();
+
+		switch (PlatformDetector.getOSPLATFORM()) {
+			case WIN11:
+				connectionOptions.getItems().addAll(
+						Stream.of(SerialPort.getCommPorts())
+								.map(SerialPort::getSystemPortName)
+								.toList()
+				);
+				break;
+			case MACOS:
+				SerialPort[] ports = SerialPort.getCommPorts();
+				for (SerialPort port : ports)
+					if (port.getSystemPortName().contains("cu.usb"))
+						connectionOptions.getItems().add(port.getSystemPortName());
+				break;
+			case LINUX:
+				// todo linux port stuff
+				break;
+		}
+	}
+
+	public void resetErrorLabels() {
+		error_label_connection_name_blank.setVisible(false);
+		error_label_baud_rate_invalid_characters.setVisible(false);
+		error_label_baud_rate_blank.setVisible(false);
+		error_label_port_blank.setVisible(false);
+		error_label_data_format_blank.setVisible(false);
+
+		error_label_name_invalid_characters.setVisible(false);
+		error_label_name_exists.setVisible(false);
+		error_label_start_flag_blank.setVisible(false);
+		error_label_end_flag_blank.setVisible(false);
+	}
+
+	@FXML
+	public void confirmConnectionEditor() {
+
+		boolean isValidConnectionName = isValidConnectionName();
+		boolean isValidBaudRate = validBaudRate();
+		boolean isValidPort = validPort();
+
+		boolean isValidTeamName = isValidTeamName();
+		boolean isValidStartFlag = validStartFlag();
+		boolean isValidEndFlag = validEndFlag();
+
+		System.out.println();
+		if (
+				isValidConnectionName && isValidBaudRate && isValidPort
+						&& isValidTeamName && isValidStartFlag && isValidEndFlag
+		) {
+			ConnectionConfig connection = new ConnectionConfig(
+					connectionName.getText(),
+					Integer.parseInt(baudRate.getText()),
+					SerialPort.getCommPort(connectionOptions.getValue()),
+					ConnectionType.SERIAL,
+					new FloatConfig(
+							dataFormat.getText().trim(),
+							startFlagTextField.getText().trim(),
+							endFlagTextField.getText().trim()
+					),
+					getMeasurementConfigs()
+			);
+			ConnectionManager.setCurrentConnection(connection);
+			System.out.println("Connection created: " + connection.connectionName());
+			Stage stage = StageManager.getConnectionCreatorStage();
+			stage.close();
+		}
+	}
+
+	private boolean isValidConnectionName() {
+		String value = connectionName.getText().trim();
+		if (value.isEmpty()) {
+			error_label_connection_name_blank.setVisible(true);
+			connectionName.getStyleClass().add(DynamicCSS.ERROR);
+			return false;
+		} else {
+			error_label_connection_name_blank.setVisible(false);
+			connectionName.getStyleClass().remove(DynamicCSS.ERROR);
+		}
+
+		for (char c : value.toCharArray()) {
+			if (!Character.isLetterOrDigit(c) && c != '-' && c != '_' && c != ' ') {
+				error_label_name_invalid_characters.setVisible(true);
+				connectionName.getStyleClass().add(DynamicCSS.ERROR);
+				return false;
+			}
+		}
+
+		error_label_name_invalid_characters.setVisible(false);
+		connectionName.getStyleClass().remove(DynamicCSS.ERROR);
+
+		File file = new File(FolderConstants.CONNECTIONS.resolve(value + FolderConstants.FLOAT_CONNECTION_FILE_EXTENSION).toString());
+		if (file.exists()) {
+			error_label_name_exists.setVisible(true);
+			connectionName.getStyleClass().add(DynamicCSS.ERROR);
+			return false;
+		}
+
+		error_label_name_exists.setVisible(false);
+		connectionName.getStyleClass().remove(DynamicCSS.ERROR);
+		return true;
+	}
+
+	public boolean validBaudRate() {
+		if (baudRate.getText().trim().isEmpty()) {
+			error_label_baud_rate_blank.setVisible(true);
+			baudRate.getStyleClass().add(DynamicCSS.ERROR);
+			return false;
+		}
+
+		error_label_baud_rate_blank.setVisible(false);
+		baudRate.getStyleClass().remove(DynamicCSS.ERROR);
+
+		int baudRateValue = -1;
+		try {
+			baudRateValue = Integer.parseInt(baudRate.getText());
+			error_label_baud_rate_invalid_characters.setVisible(false);
+			baudRate.getStyleClass().remove(DynamicCSS.ERROR);
+		} catch (NumberFormatException e) {
+			error_label_baud_rate_invalid_characters.setVisible(true);
+			baudRate.getStyleClass().add(DynamicCSS.ERROR);
+			return false;
+		}
+
+		if (baudRateValue < 0) {
+			baudRate.getStyleClass().add(DynamicCSS.ERROR);
+			return false;
+		}
+
+		baudRate.getStyleClass().remove(DynamicCSS.ERROR);
+		return true;
+	}
+
+	private boolean validPort() {
+
+		String value;
+
+		try {
+			value = connectionOptions.getValue();
+		} catch (NullPointerException _) {
+			System.out.println("Connection Option Value has give Null Pointer Exception");
+			return false;
+		}
+
+		if (value == null || value.isEmpty()) {
+			error_label_port_blank.setVisible(true);
+			connectionOptions.getStyleClass().add(DynamicCSS.ERROR);
+			return false;
+		} else {
+			error_label_port_blank.setVisible(false);
+			connectionOptions.getStyleClass().remove(DynamicCSS.ERROR);
+			return true;
+		}
+
+	}
+
+	private boolean isValidTeamName() {
+		if (dataFormat.getText().trim().isEmpty()) {
+			error_label_data_format_blank.setVisible(true);
+			dataFormat.getStyleClass().add(DynamicCSS.ERROR);
+			return false;
+		}
+
+		error_label_data_format_blank.setVisible(false);
+		dataFormat.getStyleClass().remove(DynamicCSS.ERROR);
+		return true;
+	}
+
+	private boolean validStartFlag() {
+		if (startFlagTextField.getText().trim().isEmpty()) {
+			error_label_start_flag_blank.setVisible(true);
+			startFlagTextField.getStyleClass().add(DynamicCSS.ERROR);
+			return false;
+		} else {
+			error_label_start_flag_blank.setVisible(false);
+			startFlagTextField.getStyleClass().remove(DynamicCSS.ERROR);
+			return true;
+		}
+	}
+
+	private boolean validEndFlag() {
+		if (endFlagTextField.getText().trim().isEmpty()) {
+			error_label_end_flag_blank.setVisible(true);
+			endFlagTextField.getStyleClass().add(DynamicCSS.ERROR);
+			return false;
+		} else {
+			error_label_end_flag_blank.setVisible(false);
+			endFlagTextField.getStyleClass().remove(DynamicCSS.ERROR);
+			return true;
+		}
+	}
+
+//	private boolean validMeasurementName() {
+//		if (measurementName.getText().trim().isEmpty()) {
+//			error_label_measure_name_blank.setVisible(true);
+//			measurementName.getStyleClass().add(DynamicCSS.ERROR);
+//			return false;
+//		} else {
+//			error_label_measure_name_blank.setVisible(false);
+//			measurementName.getStyleClass().remove(DynamicCSS.ERROR);
+//			return true;
+//		}
+//	}
+//
+//	private boolean validMeasurementUnit() {
+//		if (measurementUnit.getText().trim().isEmpty()) {
+//			error_label_measure_unit_blank.setVisible(true);
+//			measurementUnit.getStyleClass().add(DynamicCSS.ERROR);
+//			return false;
+//		} else {
+//			error_label_measure_unit_blank.setVisible(false);
+//			measurementUnit.getStyleClass().remove(DynamicCSS.ERROR);
+//			return true;
+//		}
+//	}
+
+	// testme
+	private MeasurementConfig[] getMeasurementConfigs() {
+		String[] floatData = dataFormat.getText().trim().split(",");
+//		System.out.print("Connection: " + connectionName.getText().trim());
+		System.out.println("Connection Measurement Count: " + (floatData.length - 2));
+		MeasurementConfig[] measurementConfigs = new MeasurementConfig[floatData.length - 2];
+		for (int i = 2; i < floatData.length; i++) {
+			String measurement = floatData[i].trim();
+//			System.out.print("Complete Measurement: " + measurement);
+			String measurementName = measurement.substring(0, measurement.indexOf("("));
+			String measurementUnit = measurement.substring(measurement.indexOf("(")).replace("(", "").replace(")", "");
+			measurementConfigs[i - 2] = new MeasurementConfig(measurementName, measurementUnit);
+//			System.out.printf(" > Measurement Breakdown: %-20s %s\n", measurementName, measurementUnit);
+		}
+		System.out.println();
+		return measurementConfigs;
+	}
+
+	@FXML
+	public void closeConnectionEditor() {
+		System.out.println("Connection not created");
+		ConnectionManager.setCurrentConnection(null);
+		Stage stage = StageManager.getConnectionCreatorStage();
+		stage.close();
+	}
+
+	@FXML
+	public void autoFill() {
+
+		switch (PlatformDetector.getOSPLATFORM()) {
+			case WIN11:
+				connectionOptions.setValue(SerialPort.getCommPorts()[0].getSystemPortName());
+				break;
+			case MACOS:
+				SerialPort[] ports = SerialPort.getCommPorts();
+				for (SerialPort port : ports) {
+					if (port.getSystemPortName().contains("cu.usb")) {
+						connectionOptions.setValue(port.getSystemPortName());
+						break;
+					}
+				}
+				break;
+			case LINUX:
+				// todo: use ubuntu to figure out the things
+				break;
+		}
+
+		ConnectionsController cc = ControllerManager.getConnectionsController();
+
+		if (cc.getCurrentConnectionConfig() != null) {
+			ConnectionConfig ccg = cc.getCurrentConnectionConfig();
+			connectionName.setText(ccg.connectionName());
+			baudRate.setText(Integer.toString(ccg.baudRate()));
+			connectionOptions.setValue(ccg.port().getSystemPortName());
+		}
+
+		if (cc.getCurrentFloatConfig() != null) {
+			FloatConfig fcg = cc.getCurrentFloatConfig();
+			dataFormat.setText(fcg.teamData());
+			startFlagTextField.setText(fcg.startFlag());
+			endFlagTextField.setText(fcg.endFlag());
+		}
+	}
+}
