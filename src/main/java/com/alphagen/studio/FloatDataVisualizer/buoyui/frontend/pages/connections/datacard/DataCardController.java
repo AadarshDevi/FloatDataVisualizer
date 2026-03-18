@@ -144,5 +144,14 @@ public class DataCardController extends Controller {
 		StageManager.setConnectionCreatorStage(stage);
 		stage.showAndWait();
 	}
+
+	public void disable() {
+		isDisabled = true;
+		dataCard.setOpacity(0.4);
+	}
+
+	public void enable() {
+		isDisabled = false;
+		dataCard.setOpacity(1);
 	}
 }
