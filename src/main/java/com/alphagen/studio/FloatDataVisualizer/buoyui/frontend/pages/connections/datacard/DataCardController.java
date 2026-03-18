@@ -126,6 +126,11 @@ public class DataCardController extends Controller {
 		setConnectionName(connectionConfig.connectionName());
 		setPort(connectionConfig.port());
 		setConnectionType(connectionConfig.portType());
+
+		tool_tip_connection_name.setText(connectionConfig.connectionName());
+	}
+
+	@FXML
 	public void viewMeasurements() {
 		MeasurementConfig[] measurementConfigs = connectionConfig.measurementConfigs();
 
