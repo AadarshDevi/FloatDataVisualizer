@@ -35,8 +35,8 @@ public class DataCardController extends Controller {
 	@FXML public Button wireless;
 	@FXML public ContextMenu connectionOptions;
 	@Getter private ConnectionConfig connectionConfig;
+	@FXML private Tooltip tool_tip_connection_name;
 
-	@Setter
 	@Getter
 	private boolean isDisabled;
 
