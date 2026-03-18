@@ -13,6 +13,7 @@
       <w>folderpath</w>
       <w>folderpaths</w>
       <w>genf</w>
+      <w>invis</w>
       <w>jpackage</w>
       <w>logpath</w>
       <w>logv</w>
@@ -25,6 +26,7 @@
       <w>setf</w>
       <w>settingspath</w>
       <w>setv</w>
+      <w>testme</w>
       <w>textfield</w>
     </words>
   </dictionary>
