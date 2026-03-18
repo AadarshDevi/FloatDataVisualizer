@@ -158,7 +158,7 @@
                                 <argument>--input</argument>
                                 <argument>${project.build.directory}</argument>
                                 <argument>--name</argument>
-                                <argument>FloatDataVisualizer</argument>
+                                <argument>FloatDataVisualizer ${project.version}</argument>
                                 <argument>--app-version</argument>
                                 <argument>${project.version}</argument>  <!-- #5 Uses YOUR 2.1.3.0 -->
                                 <argument>--vendor</argument>
