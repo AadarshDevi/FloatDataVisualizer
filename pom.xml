@@ -6,7 +6,7 @@
 
     <groupId>com.alphagen.studio</groupId>
     <artifactId>FloatDataVisualizer</artifactId>
-    <version>2.1.9.1</version>
+    <version>1.4.4</version> <!-- group 2 -->
     <name>FloatDataVisualizer</name>
 
     <properties>
@@ -322,7 +322,7 @@
                         chmod +x FloatDataVisualizer.AppImage
 
                     -->
-                    
+
                     <!--                    <execution>-->
                     <!--                        <id>jpackage-appimage</id>-->
                     <!--                        <phase>package</phase>-->
