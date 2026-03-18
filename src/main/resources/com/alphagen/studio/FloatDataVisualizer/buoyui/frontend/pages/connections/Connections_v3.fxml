@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.String?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ContextMenu?>
@@ -60,7 +59,7 @@
                 <Insets bottom="15.0" left="30.0" right="30.0" top="12.0" />
             </BorderPane.margin>
             <children>
-                <Button fx:id="app_quit" mnemonicParsing="false" onAction="#quitApp" prefHeight="32.0" prefWidth="101.0" text="   Quit">
+                <Button fx:id="app_quit" mnemonicParsing="false" onAction="#quitApp" prefHeight="32.0" prefWidth="115.0" styleClass="buttons" text="   Quit">
                     <graphic>
                         <SVGPath content="m 93.671988,207.90133v 3.65065h 0.905445v -3.65065zm -1.779284,0.92432c -0.571184,0.57118 -0.924319,1.36041 -0.924319,2.232 0,1.74319 1.413134,3.15633 3.156326,3.15633 1.743191,0 3.156325,-1.41314 3.156325,-3.15633 0,-0.87159 -0.35314,-1.66082 -0.924319,-2.232l -0.635737,0.63573c 0.408534,0.40853 0.661166,0.97295 0.661166,1.59627 0,1.24665 -1.010792,2.25744 -2.257435,2.25744 -1.24665,0 -2.257436,-1.01079 -2.257436,-2.25744 0,-0.62332 0.252638,-1.18774 0.661166,-1.59627z" fill="#ff1414" scaleX="2.5" scaleY="2.5" styleClass="svg-path" />
                     </graphic>
@@ -70,12 +69,8 @@
                     <tooltip>
                         <Tooltip text="Quit App" />
                     </tooltip>
-               <styleClass>
-                  <String fx:value="buttons" />
-                  <String fx:value="delete" />
-               </styleClass>
                 </Button>
-            <Button fx:id="connection_add" layoutX="386.0" layoutY="10.0" mnemonicParsing="false" onAction="#createConnection" prefHeight="32.0" prefWidth="101.0" text="   Create">
+            <Button fx:id="connection_add" layoutX="386.0" layoutY="10.0" mnemonicParsing="false" onAction="#createConnection" prefHeight="32.0" prefWidth="115.0" styleClass="buttons" text="   Create">
                <graphic>
                   <SVGPath content="M 485.40637 472.24822A 0.611476 0.611476 0 0 0 484.79489 472.85909L 484.79489 476.03292L 481.62286 476.03292A 0.611476 0.611476 0 0 0 481.01198 476.64439A 0.611476 0.611476 0 0 0 481.62286 477.25587L 484.79489 477.25587L 484.79489 480.4279A 0.611476 0.611476 0 0 0 485.40637 481.03878A 0.611476 0.611476 0 0 0 486.01963 480.4279L 486.01963 477.25587L 489.19166 477.25587A 0.611476 0.611476 0 0 0 489.80254 476.64439A 0.611476 0.611476 0 0 0 489.19166 476.03292L 486.01963 476.03292L 486.01963 472.85909A 0.611476 0.611476 0 0 0 485.40637 472.24822z" fill="#1c9dff" scaleX="2.0" scaleY="2.0" stroke="#1ca0ff" strokeWidth="0.1" styleClass="svg-path" />
                </graphic>
@@ -83,12 +78,19 @@
                   <Insets />
                </opaqueInsets>
                <tooltip>
-                  <Tooltip text="Quit App" />
+                  <Tooltip text="Create Connection" />
                </tooltip>
-               <styleClass>
-                  <String fx:value="buttons" />
-                  <String fx:value="confirm" />
-               </styleClass>
+            </Button>
+            <Button fx:id="connection_add1" mnemonicParsing="false" onAction="#createConnection" prefHeight="34.0" prefWidth="115.0" styleClass="buttons" text="   Import">
+               <graphic>
+                  <SVGPath content="M 12 2.25C 11.5858 2.25 11.25 2.58579 11.25 3L 11.25 14.068184L 8.5535156 11.118926C 8.2740156 10.813226 7.7996162 10.792023 7.4939062 11.071523C 7.1882063 11.351023 7.1670039 11.825374 7.4465039 12.131074L 11.446523 16.506094C 11.588623 16.661494 11.7894 16.75002 12 16.75002C 12.2106 16.75002 12.411377 16.661494 12.553477 16.506094L 16.553496 12.131074C 16.832996 11.825374 16.811794 11.351023 16.506094 11.071523C 16.200394 10.792023 15.725984 10.813226 15.446484 11.118926L 12.75 14.068184L 12.75 3C 12.75 2.58579 12.4142 2.25 12 2.25zM 3 14.25C 2.58579 14.25 2.25 14.5858 2.25 15L 2.25 15.054902C 2.24998 16.422502 2.249983 17.524816 2.366543 18.391816C 2.487563 19.291916 2.7464198 20.049702 3.3483398 20.651602C 3.9502598 21.253602 4.7081322 21.512516 5.6082422 21.633516C 6.4752122 21.750016 7.5775662 21.75 8.9451563 21.75L 15.054902 21.75C 16.422502 21.75 17.524816 21.750016 18.391816 21.633516C 19.291916 21.512516 20.049719 21.253602 20.651719 20.651602C 21.253619 20.049702 21.512516 19.291916 21.633516 18.391816C 21.750016 17.524816 21.75 16.422502 21.75 15.054902L 21.75 15C 21.75 14.5858 21.4142 14.25 21 14.25C 20.5858 14.25 20.25 14.5858 20.25 15C 20.25 16.4354 20.248375 17.436495 20.146875 18.191895C 20.048175 18.925695 19.867796 19.314196 19.590996 19.590996C 19.314196 19.867796 18.925695 20.048175 18.191895 20.146875C 17.436495 20.248375 16.4354 20.25 15 20.25L 9 20.25C 7.56459 20.25 6.5634555 20.248375 5.8081055 20.146875C 5.0743355 20.048175 4.6857639 19.867796 4.4090039 19.590996C 4.1322439 19.314196 3.951775 18.925695 3.853125 18.191895C 3.751565 17.436495 3.75 16.4354 3.75 15C 3.75 14.5858 3.41422 14.25 3 14.25z" stroke="BLACK" strokeWidth="0.9" styleClass="svg-path" />
+               </graphic>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <tooltip>
+                  <Tooltip text="Import Connection" />
+               </tooltip>
             </Button>
             </children>
         </HBox>
