@@ -13,6 +13,19 @@ import javafx.stage.StageStyle;
 
 public class StageUtil {
 
+	public static void exceptionAlert(boolean success, int exceptionNum, String errorMessage, String positiveLog) {
+		// code
+		if (!success) {
+			Alert alert = new Alert(Alert.AlertType.ERROR);
+			alert.setTitle("Exception " + exceptionNum);
+			alert.setHeaderText("Error");
+			alert.setContentText(errorMessage);
+			alert.showAndWait();
+			System.exit(-1);
+		}
+		System.out.println(positiveLog);
+		System.out.println();
+	}
 	public static void createInvisPane(Stage stage, Scene scene, Pane pane) {
 
 		scene.setFill(Color.TRANSPARENT);
@@ -30,19 +43,5 @@ public class StageUtil {
 			stage.setX(event.getScreenX() - drag.getDeltaX());
 			stage.setY(event.getScreenY() - drag.getDeltaY());
 		});
-	}
-
-	public static void exceptionAlert(boolean success, int exceptionNum, String errorMessage, String positiveLog) {
-		// code
-		if (!success) {
-			Alert alert = new Alert(Alert.AlertType.ERROR);
-			alert.setTitle("Exception " + exceptionNum);
-			alert.setHeaderText("Error");
-			alert.setContentText(errorMessage);
-			alert.showAndWait();
-			System.exit(-1);
-		}
-		System.out.println(positiveLog);
-		System.out.println();
 	}
 }
