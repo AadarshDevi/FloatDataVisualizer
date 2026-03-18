@@ -1,5 +1,7 @@
 package com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.pages.connections;
 
+import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.app.AppData;
+import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.constants.FolderConstants;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.data.ConnectionConfig;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.data.FloatConfig;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.processor.ConnectionProcessor;
@@ -11,19 +13,24 @@ import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.pages.connections
 import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.pages.connections.editor.ConnectionEditorController;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.util.StageUtil;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.lib.fxml.NodePackage;
+import com.fazecast.jSerialComm.SerialPort;
 import javafx.application.Platform;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Scene;
+import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.TilePane;
-import javafx.stage.Modality;
+import javafx.stage.DirectoryChooser;
 import javafx.stage.Stage;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.io.IOException;
+import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 
 public class ConnectionsController {
