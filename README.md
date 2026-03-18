@@ -1,7 +1,3 @@
-# Working on
-
-Read All Configs and put it in Connections
-
 # Float Data Visualizer 2.0.0
 
 This is the Float Data Visualizer. It is used to communicate with the floats' data receiver
@@ -14,6 +10,7 @@ via Serial Communication.
 3. Downloads
 4. Technical Documentation
 5. Author
+6. [Feature List](#features-list)
 
 ## Releases
 
@@ -164,3 +161,73 @@ Root: C:\Users\{user}\AppData\Roaming\FloatDataVisualizer\2.0.0
 
 1. Connections: ~~Create~~, Edit, ~~Delete~~, Duplicate, Delete All, Export, Import, Export All
     - create: if the connection name already exists, throw error label
+
+# Features List
+
+## Connections Page
+
+1. [x] Create Connection
+2. [x] Real Delete
+3. [x] Real Delete All
+4. [ ] Edit
+5. [ ] Export
+6. [ ] Export All
+7. [ ] Import All
+8. [ ] Duplicate
+9. [x] Read Connection
+10. [x] Able to store different types of data in MeasurementConfigs
+11. [x] View different types of data float data visualizer will record
+12. [ ] Add CSS for MeasurementViewer
+
+## Connection Editor
+
+1. [x] Write Connection
+2. [ ] Reset Connection Data in Editor
+3. [x] Autofill data based on last connection
+
+## Preferences
+
+1. [ ] Theme Changing: Light/Dark
+2. [ ] Default Team Start Data Transfer Flag
+3. [ ] Default Team End Data Transfer Flag
+4. [ ] Default Team Info
+5. [ ] Default Team Info Data
+
+## DataViewer
+
+1. [ ] Change Data View: Graph/Table
+    1. [ ] Via Buttons: GraphView Button & TableView Button
+2. [ ] Zoom In/Out Graph --> Bigger and Smaller Graphs
+    1. [ ] Ctrl + Mouse Scroll Up --> Zoom In
+    2. [ ] Ctrl + Mouse Scroll Down --> Zoom Out
+    3. [ ] Mouse Scroll Up --> Scroll Up
+    4. [ ] Mouse Scroll Down --> Scroll Down
+    5. [ ] Shift + Mouse Scroll Up --> Scroll Left
+    6. [ ] Shift + Mouse Scroll Down --> Scroll Right
+3. [ ] Import CSV (.float.data)
+4. [ ] Export CSV (.float.data)
+5. [ ] Import Raw Data CSV (.raw.float.data)
+6. [ ] Export Raw Data CSV (.raw.float.data)
+7. [ ] Start Data Receiving
+8. [ ] Stop Data Receiving
+9. [ ] Tabs for multiple Data Recorded
+
+## DataStorage
+
+1. [ ] data stored in double[]
+    1. [ ] double[].length = number of data recording + 1 (for time)
+2. [ ] --item-template
+
+## Documentation Viewer aka JavaFX Lib: MarkdownFX
+
+A basic Markdown file reader. Takes in a **.md file** and **a vbox**. It must have basic parsing.
+
+1. [ ] Hyperlink (Hyperlink)
+2. [ ] Image (ImageView)
+3. [ ] Heading 1 - 6 (Label)
+4. [ ] Paragraph (Text) set width of vbox before
+5. [ ] Unordered List
+6. [ ] Ordered List
+7. [ ] Simple Table // does not use h1-6
+8. [ ] Bold
+9. [ ] Italics
