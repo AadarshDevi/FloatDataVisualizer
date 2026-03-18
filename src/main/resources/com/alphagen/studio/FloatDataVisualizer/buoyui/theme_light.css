@@ -288,7 +288,7 @@
 
 /* Button */
 .buttons {
-    -fx-background-color: #ffffff !important;
+    -fx-background-color: #ffffff;
     -fx-background-radius: 7px;
 
     -fx-border-width: 1px;
