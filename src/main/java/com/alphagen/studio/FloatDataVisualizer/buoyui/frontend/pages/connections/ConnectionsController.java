@@ -128,7 +128,7 @@ public class ConnectionsController {
 
 			SerialPort sp = SerialPort.getCommPort(dcc.getConnectionConfig().port().getSystemPortName());
 			if (!sp.openPort()) {
-				System.out.println("Unable to open Port ");
+//				System.out.println("Unable to open Port ");
 				dcc.disable();
 			}
 		}
