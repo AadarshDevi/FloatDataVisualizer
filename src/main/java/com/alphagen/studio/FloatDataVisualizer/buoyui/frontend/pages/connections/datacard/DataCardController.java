@@ -6,10 +6,13 @@ import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.data.ConnectionCon
 import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.data.ConnectionType;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.managers.ControllerManager;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.managers.StageManager;
+import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.pages.PageConstants;
+import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.pages.grapher.GrapherController;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.util.StageUtil;
 import com.fazecast.jSerialComm.SerialPort;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ContextMenu;
 import javafx.scene.control.Label;
@@ -36,8 +39,7 @@ public class DataCardController extends Controller {
 	@Getter private ConnectionConfig connectionConfig;
 	@FXML private Tooltip tool_tip_connection_name;
 
-	@Getter
-	private boolean isDisabled;
+	@Getter private boolean isDisabled;
 
 	@Setter
 	@Getter
@@ -154,5 +156,27 @@ public class DataCardController extends Controller {
 	public void enable() {
 		isDisabled = false;
 		dataCard.setOpacity(1);
+	}
+
+	public void serialGraph() {
+
+		System.out.println("Serial Graph");
+
+		Stage main = StageManager.getMainStage();
+
+		FXMLLoader grapherLoader = new FXMLLoader(PageConstants.GRAPHING_PAGE);
+		BorderPane grapherUI = null;
+		try {
+			grapherUI = grapherLoader.load();
+		} catch (IOException e) {
+			throw new RuntimeException(e);
+		}
+		GrapherController gc = grapherLoader.getController();
+
+		Scene scene = new Scene(grapherUI);
+		scene.setRoot(grapherUI);
+		StageManager.createInvisPane(scene, grapherUI);
+		main.setScene(scene);
+		main.show();
 	}
 }
