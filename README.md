@@ -184,7 +184,7 @@ Root: C:\Users\{user}\AppData\Roaming\FloatDataVisualizer\2.0.0
 1. [x] Write Connection
 2. [ ] Reset Connection Data in Editor
 3. [x] Autofill data based on last connection
-4. Autofill data: float-info, start/end transfer flags
+4. [ ] Autofill data: float-info, start/end transfer flags
 
 ## Preferences
 
