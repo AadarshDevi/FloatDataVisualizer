@@ -95,25 +95,18 @@ public class DataCardController extends Controller {
 		}
 	}
 
-	public void invalidConnectionData() {
-		if (name == null || port == null || port.getText().isEmpty() || name.getText().isEmpty()) {
+	public void invalidConnection() {
+		if (connectionConfig == null || !connectionConfig.port().openPort()) {
 			isWorking = false;
 			isDisabled = true;
 			dataCard.setOpacity(0.4);
+		} else {
+			isWorking = true;
+			isDisabled = false;
+			connectionConfig.port().closePort();
+			dataCard.setOpacity(1);
 		}
 	}
-
-	public void deleteConnection() {
-		System.out.println("Deleting Connection");
-
-		Path connectionFile = FolderConstants.CONNECTIONS.resolve(connectionConfig.connectionName() + FolderConstants.FLOAT_CONNECTION_FILE_EXTENSION);
-		try {
-			Files.delete(connectionFile);
-		} catch (IOException e) {
-			System.err.println("Unable to delete connection: " + connectionConfig.connectionName());
-			e.printStackTrace();
-			return;
-		}
 
 		ControllerManager.getConnectionsController().deleteConnection(dataCard);
 		System.out.println("Deleted Connection: " + connectionConfig.connectionName());
