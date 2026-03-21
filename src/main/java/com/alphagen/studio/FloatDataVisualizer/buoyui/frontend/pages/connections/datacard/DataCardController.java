@@ -50,6 +50,8 @@ public class DataCardController extends Controller {
 			System.out.println("No ContextMenu Present");
 			dataCard.setContextMenu(connectionOptions);
 		}
+		isWorking = true;
+		isDisabled = false;
 	}
 
 	@FXML
