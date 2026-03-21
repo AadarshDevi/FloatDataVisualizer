@@ -74,9 +74,9 @@ public class ConnectionsController {
 		System.out.println("Creating Connection");
 
 		// better datacard manager/processor
-		NodePackage<DataCardController> dcnp = DataCardManager.create(ConnectionManager.getCurrentConnection());
+		Button dataCard = DataCardManager.createDataCard(ConnectionManager.getCurrentConnection());
 
-		connections.getChildren().add(dcnp.node());
+		connections.getChildren().add(dataCard);
 //		connections.getChildren().add(0, dcnp.node());
 
 		boolean success = ConnectionProcessor.writeConnection(currentConnectionConfig);
@@ -124,6 +124,8 @@ public class ConnectionsController {
 			NodePackage<DataCardController> np = DataCardManager.create(connectionConfig);
 			Button dataCard = (Button) np.node();
 			DataCardController dcc = np.controller();
+			Button dataCard = DataCardManager.createDataCard(connectionConfig);
+			DataCardController dcc = (DataCardController) dataCard.getProperties().get("dcc");
 			connections.getChildren().add(dataCard);
 
 			SerialPort sp = SerialPort.getCommPort(dcc.getConnectionConfig().port().getSystemPortName());
