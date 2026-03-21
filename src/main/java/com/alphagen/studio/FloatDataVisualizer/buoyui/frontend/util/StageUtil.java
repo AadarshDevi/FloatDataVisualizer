@@ -39,22 +39,5 @@ public class StageUtil {
 		return stage;
 	}
 
-	public static void createInvisPane(Stage stage, Scene scene, Pane pane) {
 
-		scene.setFill(Color.TRANSPARENT);
-
-		stage.initStyle(StageStyle.TRANSPARENT);
-
-		DeltaDrag drag = new DeltaDrag();
-		pane.setOnMousePressed(event -> {
-			drag.setDeltaX(event.getSceneX());
-			drag.setDeltaY(event.getSceneY());
-		});
-
-		// mouse dragged: move the stage
-		pane.setOnMouseDragged(event -> {
-			stage.setX(event.getScreenX() - drag.getDeltaX());
-			stage.setY(event.getScreenY() - drag.getDeltaY());
-		});
-	}
 }
