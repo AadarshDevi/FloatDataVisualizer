@@ -67,9 +67,14 @@ public class BuoyUI extends Application {
 
 
 		System.out.println("Loading ConnectionsUI");
+//		FXMLLoader fxmlLoader = new FXMLLoader(PageConstants.GRAPHING_PAGE);
 		FXMLLoader fxmlLoader = new FXMLLoader(PageConstants.CONNECTIONS_PAGE);
 		BorderPane buoyUI = fxmlLoader.load();
 		ConnectionsController bmc = fxmlLoader.getController();
+//
+//		BorderPane graphUI = fxmlLoader.load();
+//		GrapherController gc = fxmlLoader.getController();
+
 		ControllerManager.setConnectionsController(bmc);
 
 		ArrayList<ConnectionConfig> connectionsList = ConnectionProcessor.readAllConnections();
@@ -77,15 +82,26 @@ public class BuoyUI extends Application {
 		if (connectionsList != null) {
 			bmc.setConnectionConfigs(connectionsList);
 		}
-
+//
+//		Scene scene = new Scene(graphUI);
 		Scene scene = new Scene(buoyUI);
 		stage.setScene(scene);
 		stage.setTitle("Float Data Visualizer");
 		stage.getIcons().add(new Image(Objects.requireNonNull(Launcher.class.getResourceAsStream("buoyui/logos/ImageLogo.png"))));
 		StageManager.setMainStage(stage);
+//		StageUtil.createInvisPane(stage, scene, graphUI);
 		StageUtil.createInvisPane(stage, scene, buoyUI);
 
 		System.out.println("Opening App");
 		stage.show();
+
+//		StageManager.getMainStage();
+//		FXMLLoader grapherLoader = new FXMLLoader(Launcher.class.getResource("/com/alphagen/studio/FloatDataVisualizer/buoyui/frontend/pages/grapher/Graping_v1.fxml"));
+//		BorderPane grapherUI = grapherLoader.load();
+//		GrapherController gc = grapherLoader.getController();
+//
+//		scene.setRoot(grapherUI);
+//		stage.setScene(scene);
+//		stage.show();
 	}
 }
