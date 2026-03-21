@@ -12,8 +12,6 @@ import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.pages.PageConstan
 import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.pages.connections.datacard.DataCardController;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.pages.connections.editor.ConnectionEditorController;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.util.StageUtil;
-import com.alphagen.studio.FloatDataVisualizer.buoyui.lib.fxml.NodePackage;
-import com.fazecast.jSerialComm.SerialPort;
 import javafx.application.Platform;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -117,40 +115,32 @@ public class ConnectionsController {
 	}
 
 	public void setConnectionConfigs(ArrayList<ConnectionConfig> connectionsList) {
-		System.out.println("Adding ConnectionConfigs");
+		System.out.println("\nAdding ConnectionConfigs");
+		System.out.println("Enabled\t  Working");
 		int count = connectionsList.size();
 		for (ConnectionConfig connectionConfig : connectionsList) {
 
-			NodePackage<DataCardController> np = DataCardManager.create(connectionConfig);
-			Button dataCard = (Button) np.node();
-			DataCardController dcc = np.controller();
 			Button dataCard = DataCardManager.createDataCard(connectionConfig);
 			DataCardController dcc = (DataCardController) dataCard.getProperties().get("dcc");
-			connections.getChildren().add(dataCard);
 
-			SerialPort sp = SerialPort.getCommPort(dcc.getConnectionConfig().port().getSystemPortName());
-			if (!sp.openPort()) {
-//				System.out.println("Unable to open Port ");
-				dcc.disable();
-			}
+			dcc.invalidConnection();
+			System.out.println(!dcc.isDisabled() + "\t  " + dcc.isWorking());
+
+			connections.getChildren().add(dataCard);
 		}
 		System.out.println("Added Connections: " + count);
 	}
 
 	@FXML
 	public void refreshConnections() {
+		System.out.println("\nRefreshing Connections");
+		System.out.println("Enabled\t  Working");
 		ObservableList<Node> dataCards = connections.getChildren();
 		for (Node node : dataCards) {
 			Button dataCard = (Button) node;
 			DataCardController dcc = (DataCardController) dataCard.getProperties().get("dcc");
-
-			SerialPort sp = SerialPort.getCommPort(dcc.getConnectionConfig().port().getSystemPortName());
-			if (!sp.openPort()) {
-				dcc.disable();
-			} else {
-				dcc.enable();
-				sp.closePort();
-			}
+			dcc.invalidConnection();
+			System.out.println(!dcc.isDisabled() + "\t  " + dcc.isWorking());
 		}
 	}
 
