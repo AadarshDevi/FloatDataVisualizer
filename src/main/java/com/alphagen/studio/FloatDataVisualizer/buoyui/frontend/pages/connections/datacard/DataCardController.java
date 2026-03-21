@@ -4,7 +4,6 @@ import com.alphagen.studio.FloatDataVisualizer.buoyui.Controller;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.constants.FolderConstants;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.data.ConnectionConfig;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.data.ConnectionType;
-import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.data.MeasurementConfig;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.managers.ControllerManager;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.managers.StageManager;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.util.StageUtil;
@@ -61,14 +60,6 @@ public class DataCardController extends Controller {
 		else if (isDisabled) event.consume();
 	}
 
-//	public void setConnection(String connectionName, int baudRateNum, SerialPort portName, ConnectionType connectionType) {
-//		setConnectionName(connectionName);
-//		setBaudRate(baudRateNum);
-//		setPort(portName);
-//		setConnectionType(connectionType);
-//		invalidConnection();
-//	}
-
 	public void deleteConnection() {
 		System.out.println("Deleting Connection");
 
@@ -102,12 +93,10 @@ public class DataCardController extends Controller {
 	}
 
 	private void setConnectionName(String connectionName) {
-//		invalidConnectionData();
 		name.setText(connectionName);
 	}
 
 	private void setPort(SerialPort portName) {
-//		invalidConnectionData();
 		port.setText(portName.getSystemPortName());
 	}
 
@@ -139,26 +128,8 @@ public class DataCardController extends Controller {
 		}
 	}
 
-//	public void invalidConnectionData() {
-//		if (name == null || port == null || port.getText().trim().isEmpty() || name.getText().trim().isEmpty()
-////				|| !SerialPort.getCommPort(port.getText().trim()).openPort()
-//		) {
-//			isWorking = false;
-//			isDisabled = true;
-//			dataCard.setOpacity(0.4);
-//		}
-
-	/// /		else {
-	/// /			isWorking = true;
-	/// /			isDisabled = false;
-	/// /			SerialPort.getCommPort(port.getText().trim()).closePort();
-	/// /			dataCard.setOpacity(1);
-	/// /		}
-//	}
 	@FXML
 	public void viewMeasurements() {
-		MeasurementConfig[] measurementConfigs = connectionConfig.measurementConfigs();
-
 		FXMLLoader measurementViewerLoader = new FXMLLoader(DataCardController.class.getResource("MeasurementsViewer_v1.fxml"));
 
 		BorderPane measurementViewer = null;
