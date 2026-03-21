@@ -1,32 +1,28 @@
-
 @font-face {
     font-family: "Bahnschrift";
     src: url(fonts/bahnschrift.ttf);
 }
 
-
-
-
-
-
-
-
-
 /* COMPLETE CORRECTED CSS for ProgressIndicator */
 
 /* Indeterminate mode - Spinning ring + smooth cyan dots */
 .progress-indicator:indeterminate .spinner .arc {
-    -fx-stroke: #028fffff;     /* Cyan background ring */
+    -fx-stroke: #028fffff; /* Cyan background ring */
     -fx-stroke-width: 3;
 }
 
 .progress-indicator:indeterminate .spinner .segment {
-    -fx-background-color: radial-gradient(center 50% 50%, radius 50%, #028fffff 40%, #028fffff 70%);  /* Glowing cyan dots */
+    -fx-background-color: radial-gradient(
+        center 50% 50%,
+        radius 50%,
+        #028fffff 40%,
+        #028fffff 70%
+    ); /* Glowing cyan dots */
 }
 
 /* Determinate mode - Static progress arc */
 .progress-indicator:determinate .spinner .arc {
-    -fx-stroke: #028fffff;       /* Dark blue fill */
+    -fx-stroke: #028fffff; /* Dark blue fill */
     -fx-stroke-width: 6;
     -fx-stroke-linecap: round;
 }
@@ -42,29 +38,29 @@
     -fx-pref-height: 80px;
 }
 
+/* Button Group */
+.button-group-container {
+    -fx-background-color: #ebebeb;
+    -fx-background-radius: 10px;
+}
 
+.button-group-active {
+    -fx-background-color: #ffffff !important;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+.button-group-inactive {
+    -fx-background-color: #ebebeb !important;
+}
 
 .card-1-shadow {
     -fx-effect: dropshadow(three-pass-box, #028fffff, 8, 0, 0, 0);
     -fx-background-color: #ffffff;
-    -fx-scale-x: 1.0;
-    -fx-scale-y: 1.0;
-    transition-property: -fx-scale-x, -fx-scale-y;
-    transition-duration: .25s;
+    -fx-scale-x: 1;
+    -fx-scale-y: 1;
+    transition-property:
+        -fx-scale-x,
+        -fx-scale-y;
+    transition-duration: 0.25s;
 }
 
 /* .card-1-shadow-reveal:hover {
@@ -76,11 +72,11 @@
 .data-card {
     -fx-effect: dropshadow(three-pass-box, #dededeff, 8, 0, 0, 0);
     -fx-background-color: #ffffff;
-    -fx-scale-x: 1.0;
-    -fx-scale-y: 1.0;
+    -fx-scale-x: 1;
+    -fx-scale-y: 1;
     transition-property: -fx-background-color;
     /* transition-property: -fx-scale-x, -fx-scale-y; */
-    transition-duration: .25s;
+    transition-duration: 0.25s;
 }
 
 .data-card:hover {
@@ -94,17 +90,15 @@
     -fx-font-family: "Bahnschrift SemiBold Condensed";
     -fx-text-fill: #000000;
     -fx-font-weight: bold;
-    -fx-font-size: 9.66px;
-    
-}
-
-.data-card-text-bigger {
     -fx-font-size: 12px;
 }
 
+.data-card-text-bigger {
+    -fx-font-size: 18px;
+}
 
 .data-card-button {
-    -fx-background-color:  transparent;
+    -fx-background-color: transparent;
 }
 
 .connection-editor-heading {
@@ -149,7 +143,6 @@
     -fx-padding: 1 332 1 1;
 }
 
-
 /* Base JavaFX Component CSS */
 
 /* Error */
@@ -160,31 +153,28 @@
 /* Deletion */
 .delete:hover,
 .delete:selected,
-.delete:focused
-{
+.delete:focused {
     -fx-background-color: #ff0000 !important;
     -fx-text-fill: #ffffff;
 }
 
-.delete:hover .svg-path, 
+.delete:hover .svg-path,
 .delete:selected .svg-path,
 .delete:focused .svg-path {
-    -fx-fill:  #ffffff;
+    -fx-fill: #ffffff;
 }
 
 .confirm:hover,
-.confirm:selected, 
-.confirm:focused
-{
+.confirm:selected,
+.confirm:focused {
     -fx-background-color: #028fffff !important;
     -fx-text-fill: #ffffff;
 }
 
 .confirm:hover .svg-path,
 .confirm:selected .svg-path,
-.confirm:focused .svg-path
-{
-    -fx-fill:  #ffffff;
+.confirm:focused .svg-path {
+    -fx-fill: #ffffff;
 }
 
 /* ComboBox */
@@ -204,7 +194,6 @@
 }
 
 .seletion-combo-box .menu-item {
-    
     -fx-background-radius: 5px;
     -fx-background-color: #ffffff;
 
@@ -263,17 +252,17 @@
 .scroll-bar .decrement-arrow,
 .scroll-bar .track,
 .scroll-bar .corner {
-    -fx-background-color:  transparent;
+    -fx-background-color: transparent;
     -fx-border-width: 0px;
 }
 
 .scroll-bar .track-background {
-    -fx-background-color:  #ffffff;
+    -fx-background-color: #ffffff;
     -fx-border-width: 0px;
 }
 
 .scroll-bar .thumb {
-    -fx-background-color:  #028fffff;
+    -fx-background-color: #028fffff;
     -fx-background-radius: 20px;
 }
 
@@ -300,13 +289,12 @@
     -fx-font-weight: bold;
     -fx-font-size: 15px;
 
-    transition: -fx-background-color .25s;
+    transition: -fx-background-color 0.25s;
 }
 
 .buttons:hover {
     -fx-background-color: #eeeeee;
 }
-
 
 /* Root BorderPane */
 .root {
@@ -324,7 +312,7 @@
     -fx-border-color: #028fff;
 
     -fx-highlight-fill: #028fff;
-    -fx-highlight-text-fill: #FFFFFF;
+    -fx-highlight-text-fill: #ffffff;
 
     -fx-background-color: #ffffff;
 }
@@ -356,7 +344,7 @@
 
     -fx-background-radius: 5px;
     -fx-background-color: #ffffff;
-    
+
     -fx-border-radius: 5px;
 
     -fx-text-fill: #000000;
