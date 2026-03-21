@@ -4,7 +4,6 @@ import com.alphagen.studio.FloatDataVisualizer.buoyui.Controller;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.constants.FolderConstants;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.data.ConnectionConfig;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.data.ConnectionType;
-import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.data.MeasurementConfig;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.managers.ControllerManager;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.managers.StageManager;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.util.StageUtil;
@@ -50,6 +49,8 @@ public class DataCardController extends Controller {
 			System.out.println("No ContextMenu Present");
 			dataCard.setContextMenu(connectionOptions);
 		}
+		isWorking = true;
+		isDisabled = false;
 	}
 
 	@FXML
@@ -59,24 +60,43 @@ public class DataCardController extends Controller {
 		else if (isDisabled) event.consume();
 	}
 
-	public void setConnection(String connectionName, int baudRateNum, SerialPort portName, ConnectionType connectionType) {
-		setConnectionName(connectionName);
-		setBaudRate(baudRateNum);
-		setPort(portName);
-		setConnectionType(connectionType);
+	public void deleteConnection() {
+		System.out.println("Deleting Connection");
+
+		Path connectionFile = FolderConstants.CONNECTIONS.resolve(connectionConfig.connectionName() + FolderConstants.FLOAT_CONNECTION_FILE_EXTENSION);
+		try {
+			Files.delete(connectionFile);
+		} catch (IOException e) {
+			System.err.println("Unable to delete connection: " + connectionConfig.connectionName());
+			System.err.println(e.getMessage());
+			return;
+		}
+
+		ControllerManager.getConnectionsController().deleteConnection(dataCard);
+		System.out.println("Deleted Connection: " + connectionConfig.connectionName());
 	}
 
-	private void setConnectionName(String connectionName) {
-		invalidConnectionData();
-		name.setText(connectionName);
+	public void setConnection(ConnectionConfig connectionConfig) {
+		this.connectionConfig = connectionConfig;
+		ControllerManager.getConnectionsController().setCurrentConnectionConfig(this.connectionConfig);
+		setBaudRate(connectionConfig.baudRate());
+		setConnectionName(connectionConfig.connectionName());
+		setPort(connectionConfig.port());
+		setConnectionType(connectionConfig.portType());
+		invalidConnection();
+
+		tool_tip_connection_name.setText(connectionConfig.connectionName());
 	}
 
 	private void setBaudRate(int baudRateNum) {
 		baudRate.setText(Integer.toString(baudRateNum));
 	}
 
+	private void setConnectionName(String connectionName) {
+		name.setText(connectionName);
+	}
+
 	private void setPort(SerialPort portName) {
-		invalidConnectionData();
 		port.setText(portName.getSystemPortName());
 	}
 
@@ -95,45 +115,21 @@ public class DataCardController extends Controller {
 		}
 	}
 
-	public void invalidConnectionData() {
-		if (name == null || port == null || port.getText().isEmpty() || name.getText().isEmpty()) {
+	public void invalidConnection() {
+		if (connectionConfig == null || !connectionConfig.port().openPort()) {
 			isWorking = false;
 			isDisabled = true;
 			dataCard.setOpacity(0.4);
+		} else {
+			isWorking = true;
+			isDisabled = false;
+			connectionConfig.port().closePort();
+			dataCard.setOpacity(1);
 		}
-	}
-
-	public void deleteConnection() {
-		System.out.println("Deleting Connection");
-
-		Path connectionFile = FolderConstants.CONNECTIONS.resolve(connectionConfig.connectionName() + FolderConstants.FLOAT_CONNECTION_FILE_EXTENSION);
-		try {
-			Files.delete(connectionFile);
-		} catch (IOException e) {
-			System.err.println("Unable to delete connection: " + connectionConfig.connectionName());
-			e.printStackTrace();
-			return;
-		}
-
-		ControllerManager.getConnectionsController().deleteConnection(dataCard);
-		System.out.println("Deleted Connection: " + connectionConfig.connectionName());
-	}
-
-	public void setConnection(ConnectionConfig connectionConfig) {
-		this.connectionConfig = connectionConfig;
-		ControllerManager.getConnectionsController().setCurrentConnectionConfig(this.connectionConfig);
-		setBaudRate(connectionConfig.baudRate());
-		setConnectionName(connectionConfig.connectionName());
-		setPort(connectionConfig.port());
-		setConnectionType(connectionConfig.portType());
-
-		tool_tip_connection_name.setText(connectionConfig.connectionName());
 	}
 
 	@FXML
 	public void viewMeasurements() {
-		MeasurementConfig[] measurementConfigs = connectionConfig.measurementConfigs();
-
 		FXMLLoader measurementViewerLoader = new FXMLLoader(DataCardController.class.getResource("MeasurementsViewer_v1.fxml"));
 
 		BorderPane measurementViewer = null;

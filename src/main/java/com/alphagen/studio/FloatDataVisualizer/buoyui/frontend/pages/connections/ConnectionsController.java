@@ -1,19 +1,15 @@
 package com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.pages.connections;
 
-import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.app.AppData;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.constants.FolderConstants;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.data.ConnectionConfig;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.data.FloatConfig;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.processor.ConnectionProcessor;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.managers.ConnectionManager;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.managers.DataCardManager;
-import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.managers.StageManager;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.pages.PageConstants;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.pages.connections.datacard.DataCardController;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.pages.connections.editor.ConnectionEditorController;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.util.StageUtil;
-import com.alphagen.studio.FloatDataVisualizer.buoyui.lib.fxml.NodePackage;
-import com.fazecast.jSerialComm.SerialPort;
 import javafx.application.Platform;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -22,15 +18,12 @@ import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.TilePane;
-import javafx.stage.DirectoryChooser;
 import javafx.stage.Stage;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.io.*;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class ConnectionsController {
@@ -73,11 +66,8 @@ public class ConnectionsController {
 		}
 		System.out.println("Creating Connection");
 
-		// better datacard manager/processor
-		NodePackage<DataCardController> dcnp = DataCardManager.create(ConnectionManager.getCurrentConnection());
-
-		connections.getChildren().add(dcnp.node());
-//		connections.getChildren().add(0, dcnp.node());
+		Button dataCard = DataCardManager.createDataCard(ConnectionManager.getCurrentConnection());
+		connections.getChildren().add(dataCard);
 
 		boolean success = ConnectionProcessor.writeConnection(currentConnectionConfig);
 		if (!success) {
@@ -117,82 +107,78 @@ public class ConnectionsController {
 	}
 
 	public void setConnectionConfigs(ArrayList<ConnectionConfig> connectionsList) {
-		System.out.println("Adding ConnectionConfigs");
+		System.out.println("\nAdding ConnectionConfigs");
+//		System.out.println("Enabled\t  Working");
 		int count = connectionsList.size();
 		for (ConnectionConfig connectionConfig : connectionsList) {
 
-			NodePackage<DataCardController> np = DataCardManager.create(connectionConfig);
-			Button dataCard = (Button) np.node();
-			DataCardController dcc = np.controller();
-			connections.getChildren().add(dataCard);
+			Button dataCard = DataCardManager.createDataCard(connectionConfig);
+			DataCardController dcc = (DataCardController) dataCard.getProperties().get("dcc");
 
-			SerialPort sp = SerialPort.getCommPort(dcc.getConnectionConfig().port().getSystemPortName());
-			if (!sp.openPort()) {
-				System.out.println("Unable to open Port ");
-				dcc.disable();
-			}
+			dcc.invalidConnection();
+//			System.out.println(!dcc.isDisabled() + "\t  " + dcc.isWorking());
+
+			connections.getChildren().add(dataCard);
 		}
 		System.out.println("Added Connections: " + count);
 	}
 
 	@FXML
 	public void refreshConnections() {
+		System.out.println("\nRefreshing Connections");
+//		System.out.println("Enabled\t  Working");
 		ObservableList<Node> dataCards = connections.getChildren();
 		for (Node node : dataCards) {
 			Button dataCard = (Button) node;
 			DataCardController dcc = (DataCardController) dataCard.getProperties().get("dcc");
-
-			SerialPort sp = SerialPort.getCommPort(dcc.getConnectionConfig().port().getSystemPortName());
-			if (!sp.openPort()) {
-				dcc.disable();
-			} else {
-				dcc.enable();
-				sp.closePort();
-			}
+			dcc.invalidConnection();
+//			System.out.println(!dcc.isDisabled() + "\t  " + dcc.isWorking());
 		}
 	}
 
+	// fixme make sure this works later on :(
 	@FXML
 	public void exportAllConnections() {
-		DirectoryChooser dc = new DirectoryChooser();
-		dc.setTitle("Export All Connections");
-		File folder = dc.showDialog(StageManager.getMainStage());
-		System.out.println(folder.getAbsolutePath());
-		Path exportRoot = Paths.get(folder.getAbsolutePath()).resolve("FloatDataVisualizer " + AppData.RELEASE_VERSION + " Connections");
-		System.out.println("Export Path: " + exportRoot);
-		try {
-			Files.createDirectories(exportRoot);
-		} catch (IOException e) {
-			throw new RuntimeException(e);
-		}
-
-		File[] files = FolderConstants.CONNECTIONS.toFile().listFiles();
-		for (File file : files) {
-			try (
-					PrintWriter newFile = new PrintWriter(file);
-					BufferedReader oldFile = new BufferedReader(new FileReader(file))
-			) {
-//				if (file.exists()) {
-//					Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-//					alert.setTitle("Export Connection");
-//					alert.setHeaderText(null);
-//					alert.setContentText("File Exists. Do you want to overwrite it?");
-//					Optional<ButtonType> buttonType = alert.showAndWait();
-//					if (buttonType.isPresent() && buttonType.get().equals(ButtonType.OK)) {
-//						Files.delete(exportRoot.resolve(file.getName()));
-//						Files.copy(file.toPath(), exportRoot.resolve(file.getName()));
-//					}
-//				} else {
-//					Files.copy(file.toPath(), exportRoot.resolve(file.getName()));
-//				}
+//		DirectoryChooser dc = new DirectoryChooser();
+//		dc.setTitle("Export All Connections");
+//		File folder = dc.showDialog(StageManager.getMainStage());
+//		System.out.println(folder.getAbsolutePath());
+//		Path exportRoot = Paths.get(folder.getAbsolutePath()).resolve("FloatDataVisualizer " + AppData.RELEASE_VERSION + " Connections");
+//		System.out.println("Export Path: " + exportRoot);
+//		try {
+//			Files.createDirectories(exportRoot);
+//		} catch (IOException e) {
+//			throw new RuntimeException(e);
+//		}
 //
-			} catch (IOException e) {
-//				System.err.println("Unable to copy file " + file.getAbsolutePath());
-//				e.printStackTrace();
-			}
-		}
+//		File[] files = FolderConstants.CONNECTIONS.toFile().listFiles();
+//		for (File file : files) {
+//			try (
+//					PrintWriter newFile = new PrintWriter(file);
+//					BufferedReader oldFile = new BufferedReader(new FileReader(file))
+//			) {
+////				if (file.exists()) {
+////					Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+////					alert.setTitle("Export Connection");
+////					alert.setHeaderText(null);
+////					alert.setContentText("File Exists. Do you want to overwrite it?");
+////					Optional<ButtonType> buttonType = alert.showAndWait();
+////					if (buttonType.isPresent() && buttonType.get().equals(ButtonType.OK)) {
+////						Files.delete(exportRoot.resolve(file.getName()));
+////						Files.copy(file.toPath(), exportRoot.resolve(file.getName()));
+////                    }
+////                } else {
+////					Files.copy(file.toPath(), exportRoot.resolve(file.getName()));
+////                }
+////
+//			} catch (IOException e) {
+////				System.err.println("Unable to copy file " + file.getAbsolutePath());
+////				e.printStackTrace();
+//			}
+//		}
 	}
 
+	// fixme make sure this works later on :(
 	@FXML
 	public void importConnection() {
 

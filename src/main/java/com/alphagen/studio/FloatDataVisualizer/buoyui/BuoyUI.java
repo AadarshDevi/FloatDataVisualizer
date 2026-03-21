@@ -70,6 +70,7 @@ public class BuoyUI extends Application {
 		FXMLLoader fxmlLoader = new FXMLLoader(PageConstants.CONNECTIONS_PAGE);
 		BorderPane buoyUI = fxmlLoader.load();
 		ConnectionsController bmc = fxmlLoader.getController();
+
 		ControllerManager.setConnectionsController(bmc);
 
 		ArrayList<ConnectionConfig> connectionsList = ConnectionProcessor.readAllConnections();
@@ -87,5 +88,15 @@ public class BuoyUI extends Application {
 
 		System.out.println("Opening App");
 		stage.show();
+
+		// todo: place this when data card is pressed
+//		StageManager.getMainStage();
+//		FXMLLoader grapherLoader = new FXMLLoader(Launcher.class.getResource("/com/alphagen/studio/FloatDataVisualizer/buoyui/frontend/pages/grapher/Graping_v1.fxml"));
+//		BorderPane grapherUI = grapherLoader.load();
+//		GrapherController gc = grapherLoader.getController();
+//
+//		scene.setRoot(grapherUI);
+//		stage.setScene(scene);
+//		stage.show();
 	}
 }

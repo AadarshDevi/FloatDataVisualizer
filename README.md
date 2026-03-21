@@ -184,6 +184,8 @@ Root: C:\Users\{user}\AppData\Roaming\FloatDataVisualizer\2.0.0
 1. [x] Write Connection
 2. [ ] Reset Connection Data in Editor
 3. [x] Autofill data based on last connection
+4. [ ] Autofill data: float-info, start/end transfer flags
+5. [ ] error labels become label for each and the text is replaced (visible become text="")
 
 ## Preferences
 
@@ -218,7 +220,7 @@ Root: C:\Users\{user}\AppData\Roaming\FloatDataVisualizer\2.0.0
     1. [ ] double[].length = number of data recording + 1 (for time)
 2. [ ] --item-template
 
-## Documentation Viewer aka JavaFX Lib: MarkdownFX
+## Markdown Viewer aka JavaFX Lib: MarkdownFX
 
 A basic Markdown file reader. Takes in a **.md file** and **a vbox**. It must have basic parsing.
 
@@ -231,3 +233,9 @@ A basic Markdown file reader. Takes in a **.md file** and **a vbox**. It must ha
 7. [ ] Simple Table // does not use h1-6
 8. [ ] Bold
 9. [ ] Italics
+
+# Before Creating Executable
+
+1. Make sure either Win11, MacOS or Linux is ready and the rest commented
+2. change the project version in pom to correct version
+3. change project version in AppData.java
