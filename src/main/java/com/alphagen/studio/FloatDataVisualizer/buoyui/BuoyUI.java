@@ -9,7 +9,6 @@ import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.managers.Controll
 import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.managers.StageManager;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.pages.PageConstants;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.pages.connections.ConnectionsController;
-import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.util.StageUtil;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -75,28 +74,19 @@ public class BuoyUI extends Application {
 
 		ArrayList<ConnectionConfig> connectionsList = ConnectionProcessor.readAllConnections();
 		System.out.println("Connections Found: " + connectionsList.size());
-		if (connectionsList != null) {
+		if (connectionsList != null)
 			bmc.setConnectionConfigs(connectionsList);
-		}
+
 
 		Scene scene = new Scene(buoyUI);
 		stage.setScene(scene);
 		stage.setTitle("Float Data Visualizer");
 		stage.getIcons().add(new Image(Objects.requireNonNull(Launcher.class.getResourceAsStream("buoyui/logos/ImageLogo.png"))));
 		StageManager.setMainStage(stage);
-		StageUtil.createInvisPane(stage, scene, buoyUI);
+		StageManager.createInvisPane(scene, buoyUI);
 
 		System.out.println("Opening App");
 		stage.show();
 
-		// todo: place this when data card is pressed
-//		StageManager.getMainStage();
-//		FXMLLoader grapherLoader = new FXMLLoader(Launcher.class.getResource("/com/alphagen/studio/FloatDataVisualizer/buoyui/frontend/pages/grapher/Graping_v1.fxml"));
-//		BorderPane grapherUI = grapherLoader.load();
-//		GrapherController gc = grapherLoader.getController();
-//
-//		scene.setRoot(grapherUI);
-//		stage.setScene(scene);
-//		stage.show();
 	}
 }
