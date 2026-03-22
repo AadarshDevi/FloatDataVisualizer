@@ -20,11 +20,9 @@ import java.util.ArrayList;
 
 public class StageUtil {
 
-	@Getter
-	private static Scene connectionsScene;
+	@Getter private static Scene connectionsScene;
 
-	@Getter
-	private static Scene graphingScene;
+	@Getter private static Scene graphingScene;
 
 	public static void setConnectionsScene() {
 		System.out.println("Loading ConnectionsUI");
