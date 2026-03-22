@@ -10,7 +10,6 @@ import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.util.StageUtil;
 import com.fazecast.jSerialComm.SerialPort;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ContextMenu;
 import javafx.scene.control.Label;
@@ -158,13 +157,9 @@ public class DataCardController extends Controller {
 
 	public void serialGraph() {
 
-		System.out.println("Serial Graph");
+		System.out.println("\nSerial Graph");
 		Stage stage = StageManager.getMainStage();
-		System.out.println("Graphing Scene");
 		StageUtil.setGraphingScene();
-		Scene scene = StageUtil.getGraphingScene();
-		System.out.println("Replace Scene");
-		stage.setScene(scene);
-		System.out.println("Replaced Scene");
+		stage.setScene(StageUtil.getGraphingScene());
 	}
 }
