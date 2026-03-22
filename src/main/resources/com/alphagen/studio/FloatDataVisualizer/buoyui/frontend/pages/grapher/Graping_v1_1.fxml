@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.String?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Tab?>
@@ -17,7 +16,7 @@
                 <Insets bottom="15.0" left="30.0" right="30.0" top="12.0" />
             </BorderPane.margin>
             <children>
-            <Button fx:id="stopDataTransfer1" mnemonicParsing="false" onAction="#backHome" prefHeight="25.0" prefWidth="102.0" text="Home">
+            <Button fx:id="stopDataTransfer1" mnemonicParsing="false" onAction="#backHome" prefHeight="25.0" prefWidth="102.0" styleClass="buttons" text="Home">
                <graphic>
                   <SVGPath content="M 27,29H 5c -1.103,0-2-0.897-2-2V 5c 0-1.103,0.897-2,2-2h 22c 1.103,0,2,0.897,2,2v 22C 29,28.103,28.103,29,27,29zM 27,27v 1V 27L 27,27L 27,27zM 5,5v 22h 21.997L 27,5H 5z" scaleX="0.6" scaleY="0.6" stroke="BLACK" strokeWidth="4.0" styleClass="svg-path" />
                </graphic>
@@ -27,12 +26,8 @@
                <tooltip>
                   <Tooltip text="Create Connection" />
                </tooltip>
-               <styleClass>
-                  <String fx:value="buttons" />
-                  <String fx:value="delete" />
-               </styleClass>
             </Button>
-                <Button fx:id="startDataTransfer" mnemonicParsing="false" prefHeight="25.0" prefWidth="102.0" text="Start">
+                <Button fx:id="startDataTransfer" mnemonicParsing="false" prefHeight="25.0" prefWidth="102.0" styleClass="buttons" text="Start">
                     <graphic>
                         <SVGPath content="M 4.585,30.62L 4.585,30.62C 3.681,30.62,3,29.923,3,29V 3c 0-0.923,0.681-1.62,1.585-1.62c 0.309,0,0.621,0.085,0.904,0.248l 22.794,13.007c 0.559,0.319,0.878,0.823,0.878,1.382c 0,0.548-0.309,1.039-0.847,1.347L 5.488,30.373C 5.206,30.534,4.894,30.62,4.585,30.62zM 5,3.651v 24.698l 21.655-12.34L 5,3.651z" scaleX="0.6" scaleY="0.6" stroke="BLACK" strokeWidth="4.0" styleClass="svg-path" />
                     </graphic>
@@ -42,12 +37,8 @@
                     <tooltip>
                         <Tooltip text="Create Connection" />
                     </tooltip>
-                    <styleClass>
-                        <String fx:value="buttons" />
-                        <String fx:value="confirm" />
-                    </styleClass>
                 </Button>
-                <Button fx:id="stopDataTransfer" mnemonicParsing="false" prefHeight="25.0" prefWidth="102.0" text="Stop">
+                <Button fx:id="stopDataTransfer" mnemonicParsing="false" prefHeight="25.0" prefWidth="102.0" styleClass="buttons" text="Stop">
                     <graphic>
                         <SVGPath content="M 27,29H 5c -1.103,0-2-0.897-2-2V 5c 0-1.103,0.897-2,2-2h 22c 1.103,0,2,0.897,2,2v 22C 29,28.103,28.103,29,27,29zM 27,27v 1V 27L 27,27L 27,27zM 5,5v 22h 21.997L 27,5H 5z" scaleX="0.6" scaleY="0.6" stroke="BLACK" strokeWidth="4.0" styleClass="svg-path" />
                     </graphic>
@@ -57,10 +48,6 @@
                     <tooltip>
                         <Tooltip text="Create Connection" />
                     </tooltip>
-                    <styleClass>
-                        <String fx:value="buttons" />
-                        <String fx:value="delete" />
-                    </styleClass>
                 </Button>
             </children>
         </HBox>
