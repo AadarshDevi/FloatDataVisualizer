@@ -92,6 +92,4 @@ public class StageUtil {
 		StageManager.setConnectionCreatorStage(stage);
 		return stage;
 	}
-
-
 }
