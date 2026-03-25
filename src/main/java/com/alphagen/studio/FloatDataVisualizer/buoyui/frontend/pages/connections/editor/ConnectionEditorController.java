@@ -258,7 +258,6 @@ public class ConnectionEditorController {
 //		}
 //	}
 
-	// testme
 	private MeasurementConfig[] getMeasurementConfigs() {
 		String[] floatData = dataFormat.getText().trim().split(",");
 //		System.out.print("Connection: " + connectionName.getText().trim());
