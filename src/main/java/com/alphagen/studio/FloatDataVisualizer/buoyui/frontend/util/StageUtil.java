@@ -38,9 +38,12 @@ public class StageUtil {
 		ControllerManager.setConnectionsController(cc);
 
 		ArrayList<ConnectionConfig> connectionsList = ConnectionProcessor.readAllConnections();
-		System.out.println("Connections Found: " + connectionsList.size());
-		if (connectionsList != null)
+		if (connectionsList != null) {
+			System.out.println("Connections Found: " + connectionsList.size());
 			cc.setConnectionConfigs(connectionsList);
+		} else {
+			System.out.println("Connections Found: 0");
+		}
 
 		Scene scene = new Scene(buoyUI);
 		buoyUI.getProperties().put("grapher", cc);
