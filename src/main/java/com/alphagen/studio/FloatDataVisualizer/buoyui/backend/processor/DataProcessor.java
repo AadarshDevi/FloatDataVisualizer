@@ -9,6 +9,8 @@ public class DataProcessor implements Runnable {
 	LinkedBlockingQueue<DataPoint> parsedArray = new LinkedBlockingQueue<>();
 	LinkedBlockingQueue<DataPoint> rawArray = new LinkedBlockingQueue<>();
 
+	// todo: add threading
+
 	@Override
 	public void run() {
 
