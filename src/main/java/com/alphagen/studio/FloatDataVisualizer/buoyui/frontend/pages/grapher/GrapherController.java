@@ -31,17 +31,23 @@ public class GrapherController {
 
 	@FXML
 	public void initialize() {
-		System.out.println("Initializing Grapher");
+		System.out.println(" >>> Serial Communication > Initializing");
 	}
 
 	@FXML
-	public void startingDataTransfer() {}
+	public void startingDataTransfer() {
+		System.out.println();
+		System.out.println(" >>> Serial Communication > Start");
+	}
 
 	@FXML
-	public void stopingDataTransfer() {}
+	public void stopingDataTransfer() {
+		System.out.println(" >>> Serial Communication > Stop");
+	}
 
 	@FXML
 	public void backHome() {
+		System.out.println(" >>> Serial Communication > Back Home");
 		Stage stage = StageManager.getMainStage();
 		Scene scene = StageUtil.getConnectionsScene();
 		stage.setScene(scene);
@@ -49,11 +55,17 @@ public class GrapherController {
 
 	public void setup() {
 		if (connectionConfig == null) {
-			System.err.println("Grapher: Connection Config is Null");
+			System.out.println(" >>> Serial Communication > Null ConnectionConfig");
 			return;
 		}
 
 		connection_name_label.setText(connectionConfig.connectionName());
 		// todo: setup tabs > depth, pressure etc
+	}
+
+	// todo used to reset table, tabs
+	public void reset() {
+		// use an alert
+		System.out.println(" >>> Serial Communication > Reset Grapher");
 	}
 }
