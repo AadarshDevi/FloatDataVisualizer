@@ -6,6 +6,7 @@ import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.data.ConnectionCon
 import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.data.ConnectionType;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.managers.ControllerManager;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.managers.StageManager;
+import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.pages.grapher.GrapherController;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.util.StageUtil;
 import com.fazecast.jSerialComm.SerialPort;
 import javafx.fxml.FXML;
@@ -159,7 +160,8 @@ public class DataCardController extends Controller {
 
 		System.out.println("\nSerial Graph");
 		Stage stage = StageManager.getMainStage();
-		StageUtil.setGraphingScene();
+		GrapherController gc = StageUtil.setGraphingScene();
+		gc.setConnectionConfig(this.connectionConfig);
 		stage.setScene(StageUtil.getGraphingScene());
 	}
 }
