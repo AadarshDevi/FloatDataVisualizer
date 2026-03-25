@@ -87,8 +87,8 @@ public class StageUtil {
 		stage.initModality(Modality.APPLICATION_MODAL);
 		stage.initOwner(StageManager.getMainStage());
 		stage.setTitle("Float Data Visualizer");
-		StageManager.createInvisPane(scene, pane);
 		StageManager.setConnectionCreatorStage(stage);
+		StageManager.createInvisPane(scene, pane);
 		return stage;
 	}
 }
