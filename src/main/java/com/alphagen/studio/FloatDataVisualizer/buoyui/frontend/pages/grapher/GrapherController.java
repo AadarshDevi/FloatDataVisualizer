@@ -16,7 +16,8 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 public class GrapherController {
-	private final ExecutorService es = Executors.newSingleThreadExecutor();
+	private final ExecutorService receiver = Executors.newSingleThreadExecutor();
+	private final ExecutorService database = Executors.newSingleThreadExecutor();
 	@FXML public TabPane graphPane;
 	@FXML public Tab controlsTab;
 	@FXML public Tab tableTab;
