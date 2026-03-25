@@ -191,6 +191,11 @@ public class DataCardController extends Controller {
 
 	public void serialGraph() {
 
+		if (isDisabled && !isWorking) {
+			System.err.println("Connection Disabled: " + connectionConfig.connectionName());
+			return;
+		}
+
 		System.out.println("\nSerial Graph");
 		Stage stage = StageManager.getMainStage();
 		GrapherController gc = StageUtil.setGraphingScene();
