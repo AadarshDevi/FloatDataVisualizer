@@ -48,7 +48,7 @@ public class StageUtil {
 		connectionsScene = scene;
 	}
 
-	public static void setGraphingScene() {
+	public static GrapherController setGraphingScene() {
 
 		System.out.println("Loading GraphingUI");
 
@@ -64,6 +64,7 @@ public class StageUtil {
 		grapherUI.getProperties().put("grapher", gc);
 		StageManager.createInvisPane(scene, grapherUI);
 		graphingScene = scene;
+		return gc;
 	}
 
 	public static void exceptionAlert(boolean success, int exceptionNum, String errorMessage, String positiveLog) {
