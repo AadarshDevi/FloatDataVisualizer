@@ -9,4 +9,5 @@ public class FolderConstants {
 	private static final Path PROJECTROOT = Backend.getPROJECTROOT();
 	public static final Path LOGS = PROJECTROOT.resolve("logs");
 	public static final Path CONNECTIONS = PROJECTROOT.resolve("connections");
+	public static final Path SETTINGS = PROJECTROOT.resolve("float.settings");
 }
