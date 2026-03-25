@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.SVGPath?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="753.0" prefWidth="683.0" style="-fx-background-color: #ffffff;" styleClass="root" stylesheets="@../../../../theme_light.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.pages.connections.editor.ConnectionEditorController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="683.0" style="-fx-background-color: #ffffff;" styleClass="root" stylesheets="@../../../../theme_light.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.pages.connections.editor.ConnectionEditorController">
     <bottom>
         <HBox alignment="CENTER" spacing="10.0" BorderPane.alignment="CENTER">
             <children>
@@ -29,10 +29,10 @@
     <center>
         <ScrollPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="788.0" prefWidth="649.0" styleClass="scroll-bar" BorderPane.alignment="CENTER">
             <BorderPane.margin>
-                <Insets left="15.0" right="15.0" top="15.0" />
+                <Insets left="15.0" right="15.0" top="30.0" />
             </BorderPane.margin>
             <content>
-                <VBox maxWidth="-Infinity" minHeight="-Infinity" prefHeight="664.0" prefWidth="631.0" spacing="10.0" style="-fx-background-color: #ffffff;">
+                <VBox maxWidth="-Infinity" minHeight="-Infinity" prefHeight="581.0" prefWidth="631.0" spacing="10.0" style="-fx-background-color: #ffffff;">
                     <children>
                     <Label alignment="CENTER" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="40.0" styleClass="connection-editor-heading" VBox.vgrow="NEVER">
                      <graphic>
@@ -49,21 +49,11 @@
                         <Insets left="10.0" />
                      </VBox.margin>
                   </TextField>
-                        <Label fx:id="error_label_connection_name_blank" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="16.0" prefWidth="400.0" styleClass="error-text" text="Name cannot be blank">
+                        <Label fx:id="error_label_connection_name" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="16.0" prefWidth="400.0" styleClass="error-text" text="Name cannot be blank">
                             <padding>
                                 <Insets left="10.0" />
                             </padding>
                         </Label>
-                  <Label fx:id="error_label_name_invalid_characters" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="16.0" prefWidth="400.0" styleClass="error-text" text="Cannot have Special Characters other than _ -">
-                     <padding>
-                        <Insets left="10.0" />
-                     </padding>
-                  </Label>
-                  <Label fx:id="error_label_name_exists" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="16.0" prefWidth="400.0" styleClass="error-text" text="Change connection name.">
-                     <padding>
-                        <Insets left="10.0" />
-                     </padding>
-                  </Label>
                         <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" prefWidth="629.0">
                             <children>
                                 <Label alignment="CENTER_RIGHT" prefHeight="30.0" prefWidth="130.0" styleClass="connection-editor-fields" text="Baud Rate:">
@@ -74,12 +64,7 @@
                                 <TextField fx:id="baudRate" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="26.0" prefWidth="306.0" promptText="115200" styleClass="text-box" HBox.hgrow="ALWAYS" />
                             </children>
                         </HBox>
-                        <Label fx:id="error_label_baud_rate_blank" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="16.0" prefWidth="400.0" styleClass="error-text" text="Baud Rate cannot be blank">
-                            <padding>
-                                <Insets left="130.0" />
-                            </padding>
-                        </Label>
-                        <Label fx:id="error_label_baud_rate_invalid_characters" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="16.0" prefWidth="400.0" styleClass="error-text" text="Cannot have Letters and Special Characters">
+                        <Label fx:id="error_label_baud_rate" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="16.0" prefWidth="400.0" styleClass="error-text" text="Baud Rate cannot be blank">
                             <padding>
                                 <Insets left="130.0" />
                             </padding>
@@ -99,7 +84,7 @@
                                 </ChoiceBox>
                             </children>
                         </HBox>
-                        <Label fx:id="error_label_port_blank" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="16.0" prefWidth="400.0" styleClass="error-text" text="Port cannot be blank">
+                        <Label fx:id="error_label_port" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="16.0" prefWidth="400.0" styleClass="error-text" text="Port cannot be blank">
                             <padding>
                                 <Insets left="130.0" />
                             </padding>
@@ -119,7 +104,7 @@
                         <Insets left="10.0" />
                      </VBox.margin>
                         </TextField>
-                        <Label fx:id="error_label_data_format_blank" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="16.0" prefWidth="400.0" styleClass="error-text" text="Data Format cannot be blank">
+                        <Label fx:id="error_label_data_format" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="16.0" prefWidth="400.0" styleClass="error-text" text="Data Format cannot be blank">
                             <VBox.margin>
                                 <Insets />
                             </VBox.margin>
@@ -137,7 +122,7 @@
                         <TextField fx:id="startFlagTextField" maxHeight="-Infinity" prefHeight="20.0" prefWidth="306.0" promptText="--start-data-transfer" styleClass="text-box" HBox.hgrow="ALWAYS" />
                      </children>
                   </HBox>
-                  <Label fx:id="error_label_start_flag_blank" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="16.0" prefWidth="400.0" styleClass="error-text" text="Start Flag cannot be blank">
+                  <Label fx:id="error_label_start_flag" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="16.0" prefWidth="400.0" styleClass="error-text" text="Start Flag cannot be blank">
                      <padding>
                         <Insets left="130.0" />
                      </padding>
@@ -152,7 +137,7 @@
                         <TextField fx:id="endFlagTextField" maxHeight="-Infinity" prefHeight="20.0" prefWidth="306.0" promptText="--end-data-transfer" styleClass="text-box" HBox.hgrow="ALWAYS" />
                      </children>
                   </HBox>
-                  <Label fx:id="error_label_end_flag_blank" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="16.0" prefWidth="400.0" styleClass="error-text" text="End Flag cannot be blank">
+                  <Label fx:id="error_label_end_flag" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="16.0" prefWidth="400.0" styleClass="error-text" text="End Flag cannot be blank">
                      <padding>
                         <Insets left="130.0" />
                      </padding>
