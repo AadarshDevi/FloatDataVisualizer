@@ -4,7 +4,7 @@ import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.data.ConnectionCon
 import lombok.Setter;
 
 public class SerialProcessor implements Runnable {
-	@Setter private final ConnectionConfig connectionConfig;
+	@Setter private ConnectionConfig connectionConfig;
 
 	public SerialProcessor(ConnectionConfig connectionConfig) {
 		this.connectionConfig = connectionConfig;
