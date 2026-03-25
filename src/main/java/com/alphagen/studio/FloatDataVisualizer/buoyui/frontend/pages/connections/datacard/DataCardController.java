@@ -4,12 +4,15 @@ import com.alphagen.studio.FloatDataVisualizer.buoyui.Controller;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.constants.FolderConstants;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.data.ConnectionConfig;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.data.ConnectionType;
+import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.util.DeltaDrag;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.managers.ControllerManager;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.managers.StageManager;
+import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.pages.grapher.GrapherController;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.util.StageUtil;
 import com.fazecast.jSerialComm.SerialPort;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ContextMenu;
 import javafx.scene.control.Label;
@@ -17,7 +20,10 @@ import javafx.scene.control.Tooltip;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.paint.Color;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -36,8 +42,7 @@ public class DataCardController extends Controller {
 	@Getter private ConnectionConfig connectionConfig;
 	@FXML private Tooltip tool_tip_connection_name;
 
-	@Getter
-	private boolean isDisabled;
+	@Getter private boolean isDisabled;
 
 	@Setter
 	@Getter
@@ -141,9 +146,37 @@ public class DataCardController extends Controller {
 		MeasurementViewerController mvc = measurementViewerLoader.getController();
 		mvc.setData(connectionConfig);
 
-		Stage stage = StageUtil.getConnectionEditor(measurementViewer);
-		StageManager.setConnectionCreatorStage(stage);
-		stage.showAndWait();
+		// fixme: fix this mess
+		// 		stage: 	if - has parent: do alert type box thingy
+		// 				else - do regular stage design
+		// 		scene + pane: do it as a single input
+		// 				needs stage as input
+		{
+			Scene scene = new Scene(measurementViewer);
+			Stage stage = new Stage();
+			stage.setScene(scene);
+			scene.setFill(Color.TRANSPARENT);
+
+			DeltaDrag drag = new DeltaDrag();
+			measurementViewer.setOnMousePressed(event -> {
+				drag.setDeltaX(event.getSceneX());
+				drag.setDeltaY(event.getSceneY());
+			});
+
+			// mouse dragged: move the stage
+			measurementViewer.setOnMouseDragged(event -> {
+				stage.setX(event.getScreenX() - drag.getDeltaX());
+				stage.setY(event.getScreenY() - drag.getDeltaY());
+			});
+//		StageManager.createInvisPane(scene, measurementViewer);
+			stage.initOwner(StageManager.getMainStage());
+			StageManager.setConnectionCreatorStage(stage);
+			stage.initModality(Modality.APPLICATION_MODAL);
+			stage.initStyle(StageStyle.TRANSPARENT);
+
+//		StageManager.setConnectionCreatorStage(stage);
+			stage.showAndWait();
+		}
 	}
 
 	public void disable() {
@@ -154,5 +187,15 @@ public class DataCardController extends Controller {
 	public void enable() {
 		isDisabled = false;
 		dataCard.setOpacity(1);
+	}
+
+	public void serialGraph() {
+
+		System.out.println("\nSerial Graph");
+		Stage stage = StageManager.getMainStage();
+		GrapherController gc = StageUtil.setGraphingScene();
+		gc.setConnectionConfig(this.connectionConfig);
+		gc.setup();
+		stage.setScene(StageUtil.getGraphingScene());
 	}
 }

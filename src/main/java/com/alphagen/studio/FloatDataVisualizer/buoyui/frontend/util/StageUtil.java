@@ -1,20 +1,73 @@
 package com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.util;
 
-import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.util.DeltaDrag;
+import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.data.ConnectionConfig;
+import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.processor.ConnectionProcessor;
+import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.managers.ControllerManager;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.managers.StageManager;
+import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.pages.PageConstants;
+import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.pages.connections.ConnectionsController;
+import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.pages.grapher.GrapherController;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.Pane;
-import javafx.scene.paint.Color;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
+import lombok.Getter;
+
+import java.io.IOException;
+import java.util.ArrayList;
 
 public class StageUtil {
 
+	@Getter private static Scene connectionsScene;
+
+	@Getter private static Scene graphingScene;
+
+	public static void setConnectionsScene() {
+		System.out.println("Loading ConnectionsUI");
+		FXMLLoader fxmlLoader = new FXMLLoader(PageConstants.CONNECTIONS_PAGE);
+		BorderPane buoyUI = null;
+		try {
+			buoyUI = fxmlLoader.load();
+		} catch (IOException e) {
+			throw new RuntimeException(e);
+		}
+		ConnectionsController cc = fxmlLoader.getController();
+
+		ControllerManager.setConnectionsController(cc);
+
+		ArrayList<ConnectionConfig> connectionsList = ConnectionProcessor.readAllConnections();
+		System.out.println("Connections Found: " + connectionsList.size());
+		if (connectionsList != null)
+			cc.setConnectionConfigs(connectionsList);
+
+		Scene scene = new Scene(buoyUI);
+		buoyUI.getProperties().put("grapher", cc);
+		StageManager.createInvisPane(scene, buoyUI);
+		connectionsScene = scene;
+	}
+
+	public static GrapherController setGraphingScene() {
+
+		System.out.println("Loading GraphingUI");
+
+		FXMLLoader grapherLoader = new FXMLLoader(PageConstants.GRAPHING_PAGE);
+		BorderPane grapherUI = null;
+		try {
+			grapherUI = grapherLoader.load();
+		} catch (IOException e) {
+			throw new RuntimeException(e);
+		}
+		GrapherController gc = grapherLoader.getController();
+		Scene scene = new Scene(grapherUI);
+		grapherUI.getProperties().put("grapher", gc);
+		StageManager.createInvisPane(scene, grapherUI);
+		graphingScene = scene;
+		return gc;
+	}
+
 	public static void exceptionAlert(boolean success, int exceptionNum, String errorMessage, String positiveLog) {
-		// code
 		if (!success) {
 			Alert alert = new Alert(Alert.AlertType.ERROR);
 			alert.setTitle("Exception " + exceptionNum);
@@ -34,27 +87,8 @@ public class StageUtil {
 		stage.initModality(Modality.APPLICATION_MODAL);
 		stage.initOwner(StageManager.getMainStage());
 		stage.setTitle("Float Data Visualizer");
-		createInvisPane(stage, scene, pane);
 		StageManager.setConnectionCreatorStage(stage);
+		StageManager.createInvisPane(scene, pane);
 		return stage;
-	}
-
-	public static void createInvisPane(Stage stage, Scene scene, Pane pane) {
-
-		scene.setFill(Color.TRANSPARENT);
-
-		stage.initStyle(StageStyle.TRANSPARENT);
-
-		DeltaDrag drag = new DeltaDrag();
-		pane.setOnMousePressed(event -> {
-			drag.setDeltaX(event.getSceneX());
-			drag.setDeltaY(event.getSceneY());
-		});
-
-		// mouse dragged: move the stage
-		pane.setOnMouseDragged(event -> {
-			stage.setX(event.getScreenX() - drag.getDeltaX());
-			stage.setY(event.getScreenY() - drag.getDeltaY());
-		});
 	}
 }

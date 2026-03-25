@@ -87,6 +87,12 @@ public class ConnectionEditorController {
 		boolean isValidStartFlag = validStartFlag();
 		boolean isValidEndFlag = validEndFlag();
 
+		// todo: advanced booleans for checking if:
+		//  	1. team name and num exists (checking for "-" symbol)
+		//  	2. packet num exists (string "pkt-" exists)
+		//  	3. first thing after pkt- is time
+		//  	4. there is at least 1 measurement after time
+
 		System.out.println();
 		if (
 				isValidConnectionName && isValidBaudRate && isValidPort
@@ -258,7 +264,6 @@ public class ConnectionEditorController {
 //		}
 //	}
 
-	// testme
 	private MeasurementConfig[] getMeasurementConfigs() {
 		String[] floatData = dataFormat.getText().trim().split(",");
 //		System.out.print("Connection: " + connectionName.getText().trim());
@@ -287,6 +292,7 @@ public class ConnectionEditorController {
 	@FXML
 	public void autoFill() {
 
+		// todo: for the float data format
 		switch (PlatformDetector.getOSPLATFORM()) {
 			case WIN11:
 				connectionOptions.setValue(SerialPort.getCommPorts()[0].getSystemPortName());

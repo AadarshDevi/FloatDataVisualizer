@@ -397,3 +397,141 @@
     -fx-background-color: transparent;
     -fx-opacity: 0;
 }
+
+/* Tabbed Pane */
+.tabbed-pane:bottom .tab-header-background {
+    -fx-background-color: #ffffff;
+}
+
+.tabbed-pane:bottom .headers-region {
+    -fx-background-color: transparent;
+    -fx-background-insets: 0px;
+    -fx-faint-focus-color: transparent;
+    -fx-focus-color: transparent;
+}
+
+.tabbed-pane:bottom .tab {
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 0px;
+    -fx-border-radius: 0px;
+    -fx-padding: 0px 10px;
+    -fx-border-width: 2px 0px 0px 0px;
+    -fx-border-color: #dedede;
+    -fx-text-fill: #000000;
+    -fx-font-family: "Bahnschrift SemiBold Condensed";
+    -fx-font-weight: bold;
+    -fx-font-size: 12px;
+}
+
+.tabbed-pane:bottom .tab:hover {
+    -fx-background-color: #eeeeee;
+    -fx-border-color: #028fff;
+}
+
+.tabbed-pane:bottom .tab:selected {
+    -fx-border-color: #028fff;
+}
+
+.tabbed-pane:bottom .tab:selected:hover {
+    -fx-background-color: #eeeeee;
+    -fx-border-color: #028fff;
+}
+
+.tabbed-pane:bottom .tab:focused {
+    -fx-border-color: #028fff;
+}
+
+.tabbed-pane:bottom .tab:focused:hover {
+    -fx-background-color: #eeeeee;
+    -fx-border-color: #028fff;  
+}
+
+.tabbed-pane:bottom .tab:focused:selected {
+    -fx-border-color: #028fff;
+}
+
+.tabbed-pane:bottom .tab-content-area {
+    -fx-background-color: transparent;
+    -fx-background-insets: 0px;
+    -fx-faint-focus-color: transparent;
+    -fx-focus-color: transparent;
+    -fx-border-width: 2px 0px 0px 0px;
+    -fx-border-color: transparent;
+}
+
+.tabbed-pane:bottom .tab-content-area:focused {
+    -fx-background-color: transparent;
+    -fx-background-insets: 0px;
+    -fx-faint-focus-color: transparent;
+    -fx-focus-color: transparent;
+}
+
+.tabbed-pane:bottom .tab-content-area:selected {
+    -fx-background-color: transparent;
+    -fx-background-insets: 0px;
+    -fx-faint-focus-color: transparent;
+    -fx-focus-color: transparent;
+}
+
+/* Table View */
+.table .column-header-background .column-header .label {
+    -fx-text-fill: #000000;
+    -fx-font-family: "Bahnschrift SemiBold Condensed";
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-alignment: CENTER_LEFT;
+}
+
+.table .column-header-background .column-header .arrow {
+    -fx-background-color: #028fff;
+}
+
+.table .column-header-background .column-header {
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 0px;
+    -fx-border-radius: 0px;
+    -fx-padding: 0px 10px;
+    -fx-border-width: 0px 2px 2px 0px;
+    -fx-border-color: #eeeeee;
+}
+
+.table .column-header-background .column-header:hover {
+    -fx-border-color: #028fff;
+}
+
+.table .column-header-background .column-header:selected {
+    -fx-border-color: #028fff;
+}
+
+.table .column-header-background .column-header:selected:hover {
+    -fx-border-color: #028fff;
+    -fx-background-color: #eeeeee;
+}
+
+.table .column-header-background .column-header:focused {
+    -fx-border-color: #028fff;
+}
+
+.table .column-header-background .column-header:focused:hover {
+    -fx-border-color: #028fff;
+    -fx-background-color: #eeeeee;
+}
+
+.table .column-header-background {
+    -fx-background-color: transparent;
+    -fx-border-radius: 10px;
+}
+
+.table .column-header-background .filler{
+    -fx-background-color: transparent;
+    -fx-background-radius: 0px;
+    -fx-border-radius: 0px;
+    -fx-padding: 0px 10px;
+    -fx-border-width: 0px 0px 2px 0px;
+    -fx-border-color: #eeeeee;
+}
+
+.table {
+    -fx-background-color: transparent;
+    -fx-border-radius: 10px;
+}
