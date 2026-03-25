@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.shape.SVGPath?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="661.0" prefWidth="1153.0" styleClass="root" stylesheets="@../../../theme_light.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.pages.grapher.GrapherController">
+    <bottom>
+        <HBox alignment="CENTER" prefHeight="32.0" prefWidth="857.0" spacing="10.0" style="-fx-background-color: transparent;" BorderPane.alignment="CENTER">
+            <BorderPane.margin>
+                <Insets bottom="15.0" left="30.0" right="30.0" top="12.0" />
+            </BorderPane.margin>
+            <children>
+                <Button fx:id="stopDataTransfer1" maxHeight="-Infinity" minHeight="-Infinity" mnemonicParsing="false" onAction="#backHome" prefHeight="32.0" prefWidth="100.0" styleClass="buttons" text="Home">
+                    <graphic>
+                        <SVGPath content="M 19 10V 19C 19 20.1046 18.1046 21 17 21H 7C 5.89543 21 5 20.1046 5 19V 10M 21 12L 12 3L 3 12" fill="#00d61d00" scaleX="0.9" scaleY="0.9" stroke="#00d71d" strokeWidth="4.0" styleClass="svg-path" />
+                    </graphic>
+                    <opaqueInsets>
+                        <Insets />
+                    </opaqueInsets>
+                    <tooltip>
+                        <Tooltip text="Back Home" />
+                    </tooltip>
+                </Button>
+                <Button fx:id="startDataTransfer" maxHeight="-Infinity" minHeight="-Infinity" mnemonicParsing="false" prefHeight="32.0" prefWidth="100.0" styleClass="buttons" text="Start">
+                    <graphic>
+                        <SVGPath content="M 4.585,30.62L 4.585,30.62C 3.681,30.62,3,29.923,3,29V 3c 0-0.923,0.681-1.62,1.585-1.62c 0.309,0,0.621,0.085,0.904,0.248l 22.794,13.007c 0.559,0.319,0.878,0.823,0.878,1.382c 0,0.548-0.309,1.039-0.847,1.347L 5.488,30.373C 5.206,30.534,4.894,30.62,4.585,30.62zM 5,3.651v 24.698l 21.655-12.34L 5,3.651z" fill="#1ca0ff" scaleX="0.5" scaleY="0.5" stroke="#1ca0ff" strokeWidth="4.0" styleClass="svg-path" />
+                    </graphic>
+                    <opaqueInsets>
+                        <Insets />
+                    </opaqueInsets>
+                    <tooltip>
+                        <Tooltip text="Start App Receiver" />
+                    </tooltip>
+                </Button>
+                <Button fx:id="stopDataTransfer" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="32.0" prefWidth="100.0" styleClass="buttons" text="Stop">
+                    <graphic>
+                        <SVGPath content="M 27,29H 5c -1.103,0-2-0.897-2-2V 5c 0-1.103,0.897-2,2-2h 22c 1.103,0,2,0.897,2,2v 22C 29,28.103,28.103,29,27,29zM 27,27v 1V 27L 27,27L 27,27zM 5,5v 22h 21.997L 27,5H 5z" fill="#ff1414" scaleX="0.5" scaleY="0.5" stroke="#ff1414" strokeWidth="4.0" styleClass="svg-path" />
+                    </graphic>
+                    <opaqueInsets>
+                        <Insets />
+                    </opaqueInsets>
+                    <tooltip>
+                        <Tooltip text="Stop App Receiver" />
+                    </tooltip>
+                </Button>
+            </children>
+        </HBox>
+    </bottom>
+    <center>
+        <TabPane fx:id="graphPane" prefHeight="200.0" prefWidth="200.0" side="BOTTOM" styleClass="tabbed-pane" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+            <tabs>
+                <Tab fx:id="controlsTab" text="Controls" />
+                <Tab fx:id="tableTab" text="Table">
+               <content>
+                  <ScrollPane styleClass="scroll-bar">
+                     <content>
+                        <TableView maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="546.0" prefWidth="1129.0" styleClass="table">
+                          <columns>
+                            <TableColumn maxWidth="300.0" minWidth="300.0" prefWidth="300.0" text="Team" />
+                            <TableColumn maxWidth="100.0" minWidth="100.0" prefWidth="100.0" text="Packet" />
+                              <TableColumn maxWidth="100.0" minWidth="100.0" prefWidth="100.0" text="Time" />
+                          </columns>
+                        </TableView>
+                     </content>
+                  </ScrollPane>
+               </content></Tab>
+            </tabs>
+            <BorderPane.margin>
+                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+            </BorderPane.margin>
+        </TabPane>
+    </center>
+</BorderPane>
