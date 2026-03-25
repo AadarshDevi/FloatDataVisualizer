@@ -12,6 +12,9 @@ public class SerialProcessor implements Runnable {
 
 	@Override
 	public void run() {
-
+		int line = 1;
+		while (!Thread.currentThread().isInterrupted()) {
+			System.out.println("Line " + (line++));
+		}
 	}
 }
