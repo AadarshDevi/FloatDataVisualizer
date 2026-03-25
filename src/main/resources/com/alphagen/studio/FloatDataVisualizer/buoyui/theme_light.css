@@ -479,10 +479,11 @@
     -fx-font-family: "Bahnschrift SemiBold Condensed";
     -fx-font-weight: bold;
     -fx-font-size: 14px;
+    -fx-alignment: CENTER_LEFT;
 }
 
 .table .column-header-background .column-header .arrow {
-    -fx-background-color: #000000;
+    -fx-background-color: #028fff;
 }
 
 .table .column-header-background .column-header {
@@ -490,7 +491,7 @@
     -fx-background-radius: 0px;
     -fx-border-radius: 0px;
     -fx-padding: 0px 10px;
-    -fx-border-width: 0px 0px 2px 0px;
+    -fx-border-width: 0px 2px 2px 0px;
     -fx-border-color: #eeeeee;
 }
 
