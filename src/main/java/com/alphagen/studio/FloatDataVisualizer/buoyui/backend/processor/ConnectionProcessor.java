@@ -51,7 +51,6 @@ public class ConnectionProcessor {
 
 			pw.println("# Measurement Configs");
 
-			// testme
 			MeasurementConfig[] measurementConfigs = connectionConfig.measurementConfigs();
 			for (int i = 0; i < measurementConfigs.length; i++) {
 				MeasurementConfig measurementConfig = measurementConfigs[i];
@@ -71,7 +70,6 @@ public class ConnectionProcessor {
 		return true;
 	}
 
-	// fixme read all
 	public static ArrayList<ConnectionConfig> readAllConnections() {
 		Path connectionFolderPath = FolderConstants.CONNECTIONS;
 		ArrayList<ConnectionConfig> connectionConfigs = new ArrayList<>();
