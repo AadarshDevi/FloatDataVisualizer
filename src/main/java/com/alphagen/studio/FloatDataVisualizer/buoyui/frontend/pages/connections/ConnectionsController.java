@@ -6,11 +6,13 @@ import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.data.FloatConfig;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.processor.ConnectionProcessor;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.util.DeltaDrag;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.managers.ConnectionManager;
+import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.managers.ControllerManager;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.managers.DataCardManager;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.managers.StageManager;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.pages.PageConstants;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.pages.connections.datacard.DataCardController;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.pages.connections.editor.ConnectionEditorController;
+import com.fazecast.jSerialComm.SerialPort;
 import javafx.application.Platform;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -30,11 +32,14 @@ import lombok.Setter;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 public class ConnectionsController {
 
+	@Getter private final ExecutorService serialPortWatcher = Executors.newSingleThreadExecutor();
 	@FXML public TilePane connections;
-
+	@FXML public Button refresh_connections;
 	@Setter
 	@Getter
 	private ConnectionConfig currentConnectionConfig;
@@ -43,7 +48,56 @@ public class ConnectionsController {
 	private FloatConfig currentFloatConfig;
 
 	@FXML
-	public void initialize() {}
+	public void initialize() {
+		refresh_connections.setVisible(false);
+		refresh_connections.setManaged(false);
+		startHardwareWatcher();
+	}
+
+	public void startHardwareWatcher() {
+		serialPortWatcher.submit(() -> {
+			int lastCount = -1;
+			while (!Thread.currentThread().isInterrupted()) {
+				int currentCount = SerialPort.getCommPorts().length;
+
+				if (currentCount != lastCount) {
+					lastCount = currentCount;
+
+					// Update the UI safely
+					Platform.runLater(() -> {
+						// You could also refresh a ComboBox here
+						System.out.println(" >>> Connection Refresher: Refreshed Connections");
+						refreshConnections();
+
+						if (ControllerManager.getConnectionEditorController() != null) {
+							ControllerManager.getConnectionEditorController().updatePorts(SerialPort.getCommPorts());
+						}
+
+					});
+				}
+
+				try {
+					// Don't spam the OS; check every 1-2 seconds
+					Thread.sleep(1500);
+				} catch (InterruptedException e) {
+					break;
+				}
+			}
+		});
+	}
+
+	@FXML
+	public void refreshConnections() {
+		System.out.println("\nRefreshing Connections");
+//		System.out.println("Enabled\t  Working");
+		ObservableList<Node> dataCards = connections.getChildren();
+		for (Node node : dataCards) {
+			Button dataCard = (Button) node;
+			DataCardController dcc = (DataCardController) dataCard.getProperties().get("dcc");
+			dcc.invalidConnection();
+//			System.out.println(!dcc.isDisabled() + "\t  " + dcc.isWorking());
+		}
+	}
 
 	@FXML
 	public void test() {
@@ -59,6 +113,7 @@ public class ConnectionsController {
 			FXMLLoader fxmlLoader = new FXMLLoader(PageConstants.CONNECTIONS_EDITOR_PAGE);
 			connectionCreatorPane = fxmlLoader.load();
 			ConnectionEditorController cec = fxmlLoader.getController();
+			ControllerManager.setConnectionEditorController(cec);
 		} catch (IOException e) {
 			throw new RuntimeException(e);
 		}
@@ -108,6 +163,7 @@ public class ConnectionsController {
 		}
 
 		ConnectionProcessor.readAllConnections();
+		ControllerManager.setConnectionEditorController(null);
 	}
 
 	public void deleteConnection(Button deleteButton) {
@@ -116,6 +172,7 @@ public class ConnectionsController {
 
 	@FXML
 	public void quitApp() {
+		serialPortWatcher.shutdownNow();
 		System.out.println("App Quit");
 		Platform.exit();
 		System.exit(0);
@@ -153,19 +210,6 @@ public class ConnectionsController {
 			connections.getChildren().add(dataCard);
 		}
 		System.out.println("Added Connections: " + count);
-	}
-
-	@FXML
-	public void refreshConnections() {
-		System.out.println("\nRefreshing Connections");
-//		System.out.println("Enabled\t  Working");
-		ObservableList<Node> dataCards = connections.getChildren();
-		for (Node node : dataCards) {
-			Button dataCard = (Button) node;
-			DataCardController dcc = (DataCardController) dataCard.getProperties().get("dcc");
-			dcc.invalidConnection();
-//			System.out.println(!dcc.isDisabled() + "\t  " + dcc.isWorking());
-		}
 	}
 
 	// fixme make sure this works later on :(
