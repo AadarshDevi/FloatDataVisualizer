@@ -40,34 +40,28 @@ public class ConnectionEditorController {
 	public void initialize() {
 		resetErrorLabels();
 
+	public void updatePorts(SerialPort[] ports) {
+
+		connectionOptions.setValue(null);
+		connectionOptions.getItems().removeAll(connectionOptions.getItems());
+
 		switch (PlatformDetector.getOSPLATFORM()) {
 			case WIN11:
 				connectionOptions.getItems().addAll(
-						Stream.of(SerialPort.getCommPorts())
+						Stream.of(ports)
 								.map(SerialPort::getSystemPortName)
 								.toList()
 				);
 				break;
 			case MACOS:
-				SerialPort[] ports = SerialPort.getCommPorts();
 				for (SerialPort port : ports)
 					if (port.getSystemPortName().contains("cu.usb"))
 						connectionOptions.getItems().add(port.getSystemPortName());
 				break;
 			case LINUX:
-				// todo linux port stuff
+				// todo Linux port stuff
 				break;
 		}
-	}
-
-	public void resetErrorLabels() {
-		error_label_connection_name.setText("");
-		error_label_baud_rate.setText("");
-		error_label_port.setText("");
-		error_label_data_format.setText("");
-
-		error_label_start_flag.setText("");
-		error_label_end_flag.setText("");
 	}
 
 	// todo: update error labels to have 1 label for each field
