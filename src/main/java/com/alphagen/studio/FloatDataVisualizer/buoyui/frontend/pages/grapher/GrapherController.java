@@ -1,6 +1,7 @@
 package com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.pages.grapher;
 
 import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.data.ConnectionConfig;
+import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.processor.SerialProcessor;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.managers.StageManager;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.util.StageUtil;
 import javafx.fxml.FXML;
@@ -14,6 +15,7 @@ import lombok.Setter;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
 
 public class GrapherController {
 	private final ExecutorService receiver = Executors.newSingleThreadExecutor();
@@ -24,33 +26,48 @@ public class GrapherController {
 	@FXML public Button startDataTransfer;
 	@FXML public Button stopDataTransfer;
 	@FXML public Label connection_name_label;
+	private Future<?> activeTask;
 	@Setter private ConnectionConfig connectionConfig;
+	private SerialProcessor sp;
 
 	// fixme: min/max col width > computed from pref
 	// todo: add css in the fxml for the table rows, focused, selected, hover, normal, font
 
 	@FXML
 	public void initialize() {
+		System.out.println();
 		System.out.println(" >>> Serial Communication > Initializing");
 	}
 
 	@FXML
 	public void startingDataTransfer() {
-		System.out.println();
+		// disable start button and enable stop button
+		startDataTransfer.setDisable(true);
+		stopDataTransfer.setDisable(false);
 		System.out.println(" >>> Serial Communication > Start");
-	}
-
-	@FXML
-	public void stopingDataTransfer() {
-		System.out.println(" >>> Serial Communication > Stop");
+		activeTask = receiver.submit(sp);
 	}
 
 	@FXML
 	public void backHome() {
+		stopingDataTransfer();
 		System.out.println(" >>> Serial Communication > Back Home");
 		Stage stage = StageManager.getMainStage();
 		Scene scene = StageUtil.getConnectionsScene();
 		stage.setScene(scene);
+	}
+
+	@FXML
+	public void stopingDataTransfer() {
+		// disable stop button and enable start button
+		if (activeTask != null && !activeTask.isCancelled()) {
+			sp.getStopDataTransfer().set(true);
+			activeTask.cancel(true);
+			System.out.println(" >>> Serial Communication > Stop");
+		}
+
+		stopDataTransfer.setDisable(true);
+		startDataTransfer.setDisable(false);
 	}
 
 	public void setup() {
@@ -61,6 +78,9 @@ public class GrapherController {
 
 		connection_name_label.setText(connectionConfig.connectionName());
 		// todo: setup tabs > depth, pressure etc
+
+		stopingDataTransfer();
+		sp = new SerialProcessor(connectionConfig);
 	}
 
 	// todo used to reset table, tabs

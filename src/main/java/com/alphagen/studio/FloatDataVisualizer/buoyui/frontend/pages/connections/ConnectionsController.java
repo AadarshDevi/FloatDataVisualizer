@@ -118,6 +118,7 @@ public class ConnectionsController {
 	public void quitApp() {
 		System.out.println("App Quit");
 		Platform.exit();
+		System.exit(0);
 	}
 
 	@FXML
