@@ -40,6 +40,19 @@ public class ConnectionEditorController {
 	public void initialize() {
 		resetErrorLabels();
 
+		updatePorts(SerialPort.getCommPorts());
+	}
+
+	public void resetErrorLabels() {
+		error_label_connection_name.setText("");
+		error_label_baud_rate.setText("");
+		error_label_port.setText("");
+		error_label_data_format.setText("");
+
+		error_label_start_flag.setText("");
+		error_label_end_flag.setText("");
+	}
+
 	public void updatePorts(SerialPort[] ports) {
 
 		connectionOptions.setValue(null);
