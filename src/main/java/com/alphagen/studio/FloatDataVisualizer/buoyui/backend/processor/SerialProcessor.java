@@ -2,6 +2,7 @@ package com.alphagen.studio.FloatDataVisualizer.buoyui.backend.processor;
 
 import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.data.ConnectionConfig;
 import com.fazecast.jSerialComm.SerialPort;
+import com.fazecast.jSerialComm.SerialPortTimeoutException;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -12,7 +13,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 
 public class SerialProcessor implements Runnable {
 	private final SerialPort sp;
-	private final AtomicBoolean startDataTransfer = new AtomicBoolean(false);
+	@Getter private final AtomicBoolean startDataTransfer = new AtomicBoolean(false);
 	@Getter private final AtomicBoolean stopDataTransfer = new AtomicBoolean(false);
 	@Setter private ConnectionConfig connectionConfig;
 
@@ -20,78 +21,79 @@ public class SerialProcessor implements Runnable {
 		this.connectionConfig = connectionConfig;
 		sp = connectionConfig.port();
 		sp.setBaudRate(connectionConfig.baudRate());
-		sp.setComPortTimeouts(SerialPort.TIMEOUT_READ_SEMI_BLOCKING, 0, 0);
+		sp.setComPortTimeouts(SerialPort.TIMEOUT_READ_BLOCKING, 1000, 0);
 	}
 
 	@Override
 	public void run() {
 
 		sp.openPort();
-		while (!Thread.currentThread().isInterrupted()) {
-			try (BufferedReader br = new BufferedReader(new InputStreamReader(
-					sp.getInputStreamWithSuppressedTimeoutExceptions()
-			))) {
+		System.out.println(" >>> ConnectionConfig Start Flag: " + connectionConfig.floatConfig().startFlag());
+		System.out.println(" >>> ConnectionConfig Start Flag: " + connectionConfig.floatConfig().endFlag());
 
-				String dataline;
+		startDataTransfer.set(false);
+		stopDataTransfer.set(false);
 
-				while ((dataline = br.readLine()) != null) {
+		if (!sp.openPort()) {
+			System.err.println("Unable to open port");
+			return;
+		}
 
-					if (!sp.isOpen()) {
-						end();
-						System.err.println("Disconnected from Serial Port");
-//						throw new IOException("Disconnected from Serial Port");
-					} else if (sp.getInputStreamWithSuppressedTimeoutExceptions().available() == 0
-							|| sp.getInputStreamWithSuppressedTimeoutExceptions().available() == -1) {
-						end();
-						System.err.println("Disconnected (-1) from Serial Port");
+		// EXTREME DEBUG: Print the Thread ID
+
+
+		try (BufferedReader br = new BufferedReader(new InputStreamReader(
+				sp.getInputStream()
+		))) {
+			while (!Thread.currentThread().isInterrupted()) {
+
+				try {
+					String rawline = br.readLine();
+
+					if (rawline == null) {
+						if (!sp.isOpen() || sp.bytesAvailable() == -1) {
+							System.err.println("Disconnected from Serial Port");
+							stopDataTransfer.set(true);
+							break;
+						}
+						continue;
 					}
+
+					String dataline = rawline.trim();
+					System.out.println(" >>> Unfiltered Dataline: " + dataline);
 
 					if (dataline.equals(connectionConfig.floatConfig().startFlag())) {
 						startDataTransfer.set(true);
+						stopDataTransfer.set(false);
+						continue;
 					} else if (dataline.equals(connectionConfig.floatConfig().endFlag())) {
-						end();
-						System.err.println("End of Transfer (Up)");
-					} else if (dataline.isBlank()) {
-						end();
-						System.err.println("Disconnected (Blank) from Serial Port");
+						stopDataTransfer.set(true);
+						startDataTransfer.set(false);
+						System.err.println("End of Transfer");
+						break;
 					}
 
 					if (startDataTransfer.get() && !stopDataTransfer.get()) {
-						System.out.print("sf: " + startDataTransfer + ", ef: " + stopDataTransfer + "\t\t");
 						System.out.println(dataline);
-					} else if (stopDataTransfer.get()) {
-						end();
-						System.err.println("End of Transfer");
+					}
+				} catch (SerialPortTimeoutException _) {
+					if (Thread.currentThread().isInterrupted()) {
+						break;
+					} else if (!sp.isOpen()) {
+						break;
 					}
 				}
-
-				if (!sp.isOpen()) {
-					end();
-					System.err.println("Disconnected (In) from Serial Port");
-				}
-
-			} catch (IOException _) {
-				if (!sp.isOpen()) {
-					end();
-					System.err.println("Disconnected (In) from Serial Port");
-				}
 			}
+		} catch (IOException e) {
+			System.err.println("Hardware Disconnected: " + e.getMessage());
+		} finally {
+			sp.closePort();
+			Thread.currentThread().interrupt();
+			System.err.println(" >>> SerialPort Close Reached");
+			System.out.println();
 
-			if (!sp.isOpen()) {
-				end();
-				System.err.println("Disconnected (out) from Serial Port");
-			}
-
+			startDataTransfer.set(false);
+			stopDataTransfer.set(false);
 		}
-
-		end();
-		System.err.println(" >>> Reached SerialPort Close");
-		System.out.println();
-	}
-
-	public void end() {
-		stopDataTransfer.set(true);
-		sp.closePort();
-		Thread.currentThread().interrupt();
 	}
 }
