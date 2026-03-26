@@ -26,6 +26,8 @@ public class GrapherController {
 	@FXML public Button startDataTransfer;
 	@FXML public Button stopDataTransfer;
 	@FXML public Label connection_name_label;
+	@FXML public Label startFlagLabel;
+	@FXML public Label endFlagLabel;
 	private Future<?> activeTask;
 	@Setter private ConnectionConfig connectionConfig;
 	private SerialProcessor sp;
@@ -61,7 +63,7 @@ public class GrapherController {
 	public void stopingDataTransfer() {
 		// disable stop button and enable start button
 		if (activeTask != null && !activeTask.isCancelled()) {
-			sp.getStopDataTransfer().set(true);
+//			sp.getStopDataTransfer().set(true);
 			activeTask.cancel(true);
 			System.out.println(" >>> Serial Communication > Stop");
 		}
@@ -78,6 +80,9 @@ public class GrapherController {
 
 		connection_name_label.setText(connectionConfig.connectionName());
 		// todo: setup tabs > depth, pressure etc
+
+		endFlagLabel.setText(connectionConfig.floatConfig().endFlag());
+		startFlagLabel.setText(connectionConfig.floatConfig().startFlag());
 
 		stopingDataTransfer();
 		sp = new SerialProcessor(connectionConfig);
