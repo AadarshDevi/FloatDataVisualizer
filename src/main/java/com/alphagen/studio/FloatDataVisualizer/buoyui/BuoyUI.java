@@ -4,7 +4,6 @@ import com.alphagen.studio.FloatDataVisualizer.Launcher;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.Backend;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.app.PlatformDetector;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.managers.StageManager;
-import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.util.StageUtil;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
@@ -91,8 +90,8 @@ public class BuoyUI extends Application {
 
 		// todo: read settings file
 
-		StageUtil.setConnectionsScene();
-		Scene scene = StageUtil.getConnectionsScene();
+		StageManager.setConnectionsScene();
+		Scene scene = StageManager.getConnectionsScene();
 		stage.setScene(scene);
 		stage.setTitle("Float Data Visualizer");
 		stage.getIcons().add(new Image(Objects.requireNonNull(Launcher.class.getResourceAsStream("buoyui/logos/ImageLogo.png"))));

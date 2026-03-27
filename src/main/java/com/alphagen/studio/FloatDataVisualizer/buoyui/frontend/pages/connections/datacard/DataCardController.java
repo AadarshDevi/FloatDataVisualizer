@@ -4,7 +4,7 @@ import com.alphagen.studio.FloatDataVisualizer.buoyui.Controller;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.constants.FolderConstants;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.data.ConnectionConfig;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.data.ConnectionType;
-import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.util.DeltaDrag;
+import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.managers.ConnectionManager;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.managers.ControllerManager;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.managers.StageManager;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.pages.grapher.GrapherController;
@@ -21,9 +21,7 @@ import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.paint.Color;
-import javafx.stage.Modality;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -157,24 +155,12 @@ public class DataCardController extends Controller {
 			stage.setScene(scene);
 			scene.setFill(Color.TRANSPARENT);
 
-			DeltaDrag drag = new DeltaDrag();
-			measurementViewer.setOnMousePressed(event -> {
-				drag.setDeltaX(event.getSceneX());
-				drag.setDeltaY(event.getSceneY());
-			});
+			StageUtil.customTitleBarDrag(stage, scene, measurementViewer);
+			StageUtil.setStageInit(stage);
 
-			// mouse dragged: move the stage
-			measurementViewer.setOnMouseDragged(event -> {
-				stage.setX(event.getScreenX() - drag.getDeltaX());
-				stage.setY(event.getScreenY() - drag.getDeltaY());
-			});
-//		StageManager.createInvisPane(scene, measurementViewer);
 			stage.initOwner(StageManager.getMainStage());
 			StageManager.setConnectionCreatorStage(stage);
-			stage.initModality(Modality.APPLICATION_MODAL);
-			stage.initStyle(StageStyle.TRANSPARENT);
 
-//		StageManager.setConnectionCreatorStage(stage);
 			stage.showAndWait();
 		}
 	}
@@ -195,12 +181,14 @@ public class DataCardController extends Controller {
 			System.err.println("Connection Disabled: " + connectionConfig.connectionName());
 			return;
 		}
-
+		System.out.println(" >>> Connection Data Card > " + connectionConfig);
+		ConnectionManager.setCurrentConnection(this.connectionConfig);
 		System.out.println("\nSerial Graph");
 		Stage stage = StageManager.getMainStage();
-		GrapherController gc = StageUtil.setGraphingScene();
+		GrapherController gc = StageManager.setGraphingScene();
+		ControllerManager.setGrapherController(gc);
 		gc.setConnectionConfig(this.connectionConfig);
 		gc.setup();
-		stage.setScene(StageUtil.getGraphingScene());
+		stage.setScene(StageManager.getGraphingScene());
 	}
 }

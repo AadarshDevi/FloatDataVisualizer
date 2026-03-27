@@ -4,7 +4,6 @@ import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.constants.FolderCo
 import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.data.ConnectionConfig;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.data.FloatConfig;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.processor.ConnectionProcessor;
-import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.util.DeltaDrag;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.managers.ConnectionManager;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.managers.ControllerManager;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.managers.DataCardManager;
@@ -12,6 +11,7 @@ import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.managers.StageMan
 import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.pages.PageConstants;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.pages.connections.datacard.DataCardController;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.pages.connections.editor.ConnectionEditorController;
+import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.util.StageUtil;
 import com.fazecast.jSerialComm.SerialPort;
 import javafx.application.Platform;
 import javafx.collections.ObservableList;
@@ -22,10 +22,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.TilePane;
-import javafx.scene.paint.Color;
-import javafx.stage.Modality;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -127,23 +124,11 @@ public class ConnectionsController {
 			Scene scene = new Scene(connectionCreatorPane);
 			Stage stage = new Stage();
 			stage.setScene(scene);
-			scene.setFill(Color.TRANSPARENT);
-			DeltaDrag drag = new DeltaDrag();
-			connectionCreatorPane.setOnMousePressed(event -> {
-				drag.setDeltaX(event.getSceneX());
-				drag.setDeltaY(event.getSceneY());
-			});
 
-			// mouse dragged: move the stage
-			connectionCreatorPane.setOnMouseDragged(event -> {
-				stage.setX(event.getScreenX() - drag.getDeltaX());
-				stage.setY(event.getScreenY() - drag.getDeltaY());
-			});
-//		StageManager.createInvisPane(scene, measurementViewer);
+			StageUtil.customTitleBarDrag(stage, scene, connectionCreatorPane);
+
 			stage.initOwner(StageManager.getMainStage());
 			StageManager.setConnectionCreatorStage(stage);
-			stage.initModality(Modality.APPLICATION_MODAL);
-			stage.initStyle(StageStyle.TRANSPARENT);
 			stage.showAndWait();
 		}
 

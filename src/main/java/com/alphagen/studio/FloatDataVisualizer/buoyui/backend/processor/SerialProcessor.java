@@ -1,6 +1,7 @@
 package com.alphagen.studio.FloatDataVisualizer.buoyui.backend.processor;
 
 import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.data.ConnectionConfig;
+import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.managers.ControllerManager;
 import com.fazecast.jSerialComm.SerialPort;
 import com.fazecast.jSerialComm.SerialPortTimeoutException;
 import lombok.Getter;
@@ -16,6 +17,7 @@ public class SerialProcessor implements Runnable {
 	@Getter private final AtomicBoolean startDataTransfer = new AtomicBoolean(false);
 	@Getter private final AtomicBoolean stopDataTransfer = new AtomicBoolean(false);
 	@Setter private ConnectionConfig connectionConfig;
+	@Setter private DataPointProcessor dpp;
 
 	public SerialProcessor(ConnectionConfig connectionConfig) {
 		this.connectionConfig = connectionConfig;
@@ -28,8 +30,7 @@ public class SerialProcessor implements Runnable {
 	public void run() {
 
 		sp.openPort();
-		System.out.println(" >>> ConnectionConfig Start Flag: " + connectionConfig.floatConfig().startFlag());
-		System.out.println(" >>> ConnectionConfig Start Flag: " + connectionConfig.floatConfig().endFlag());
+		System.out.println();
 
 		startDataTransfer.set(false);
 		stopDataTransfer.set(false);
@@ -39,11 +40,8 @@ public class SerialProcessor implements Runnable {
 			return;
 		}
 
-		// EXTREME DEBUG: Print the Thread ID
-
-
 		try (BufferedReader br = new BufferedReader(new InputStreamReader(
-				sp.getInputStream()
+			sp.getInputStream()
 		))) {
 			while (!Thread.currentThread().isInterrupted()) {
 
@@ -58,9 +56,7 @@ public class SerialProcessor implements Runnable {
 						}
 						continue;
 					}
-
 					String dataline = rawline.trim();
-					System.out.println(" >>> Unfiltered Dataline: " + dataline);
 
 					if (dataline.equals(connectionConfig.floatConfig().startFlag())) {
 						startDataTransfer.set(true);
@@ -73,15 +69,19 @@ public class SerialProcessor implements Runnable {
 						break;
 					}
 
-					if (startDataTransfer.get() && !stopDataTransfer.get()) {
+					if (startDataTransfer.get() && !stopDataTransfer.get() && dataline.startsWith(connectionConfig.floatConfig().teamData())) {
 						System.out.println(dataline);
+						dpp.getRawArray().put(dataline);
+//						System.out.println(" >>> Raw Size > " + dpp.getRawArray().size());
 					}
 				} catch (SerialPortTimeoutException _) {
-					if (Thread.currentThread().isInterrupted()) {
-						break;
-					} else if (!sp.isOpen()) {
+					if (Thread.currentThread().isInterrupted() || !sp.isOpen()) {
 						break;
 					}
+				} catch (InterruptedException _) {
+					System.err.println(" >>> Serial Processor > DataPointProcessor Interrupted");
+					Thread.currentThread().interrupt();
+					break;
 				}
 			}
 		} catch (IOException e) {
@@ -94,6 +94,8 @@ public class SerialProcessor implements Runnable {
 
 			startDataTransfer.set(false);
 			stopDataTransfer.set(false);
+
+			ControllerManager.getGrapherController().stopingDataTransfer();
 		}
 	}
 }

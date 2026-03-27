@@ -45,6 +45,7 @@ public class ConnectionProcessor {
 			FloatConfig floatConfig = connectionConfig.floatConfig();
 			pw.println("# Float Config");
 			pw.println("team_info=" + floatConfig.teamData());
+			pw.println("packet=" + floatConfig.pkt());
 			pw.println("start_data_transfer=" + floatConfig.startFlag());
 			pw.println("end_data_transfer=" + floatConfig.endFlag());
 			pw.println("");
@@ -133,21 +134,22 @@ public class ConnectionProcessor {
 
 	private static ConnectionConfig parseConnectionConfig(Properties properties) {
 		return ConnectionConfig.builder()
-				.connectionName(properties.getProperty("connection_name"))
-				.baudRate(Integer.parseInt(properties.getProperty("connection_baud_rate")))
-				.port(SerialPort.getCommPort(properties.getProperty("connection_port")))
-				.portType(ConnectionType.valueOf(properties.getProperty("connection_port_type")))
-				.floatConfig(parseFloatConfig(properties))
-				.measurementConfigs(parseMeasurementConfigs(properties))
-				.build();
+			.connectionName(properties.getProperty("connection_name"))
+			.baudRate(Integer.parseInt(properties.getProperty("connection_baud_rate")))
+			.port(SerialPort.getCommPort(properties.getProperty("connection_port")))
+			.portType(ConnectionType.valueOf(properties.getProperty("connection_port_type")))
+			.floatConfig(parseFloatConfig(properties))
+			.measurementConfigs(parseMeasurementConfigs(properties))
+			.build();
 	}
 
 	private static FloatConfig parseFloatConfig(Properties properties) {
 		return FloatConfig.builder()
-				.teamData(properties.getProperty("team_info"))
-				.startFlag(properties.getProperty("start_data_transfer"))
-				.endFlag(properties.getProperty("end_data_transfer"))
-				.build();
+			.teamData(properties.getProperty("team_info"))
+			.pkt(properties.getProperty("packet"))
+			.startFlag(properties.getProperty("start_data_transfer"))
+			.endFlag(properties.getProperty("end_data_transfer"))
+			.build();
 	}
 
 	private static MeasurementConfig[] parseMeasurementConfigs(Properties properties) {

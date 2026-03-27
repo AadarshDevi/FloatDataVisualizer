@@ -169,6 +169,7 @@
                                 <argument>--main-class</argument>
                                 <argument>com.alphagen.studio.FloatDataVisualizer.Launcher</argument>
                                 <argument>--win-menu</argument>
+                                <argument>--verbose</argument> <!--todo remove when releasing full-->
                                 <argument>--win-shortcut</argument>
                                 <argument>--win-dir-chooser</argument>
                                 <argument>--icon</argument>
@@ -203,6 +204,7 @@
                                 <argument>--main-class</argument>
                                 <argument>com.alphagen.studio.FloatDataVisualizer.Launcher</argument>
                                 <argument>--win-menu</argument>
+                                <argument>--verbose</argument> <!--todo remove when releasing full-->
                                 <argument>--win-shortcut</argument>
                                 <argument>--icon</argument>
                                 <argument>${project.basedir}/src/main/resources/icon.ico</argument>

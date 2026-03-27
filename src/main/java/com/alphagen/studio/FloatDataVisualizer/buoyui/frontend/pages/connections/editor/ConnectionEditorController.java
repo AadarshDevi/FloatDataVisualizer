@@ -39,7 +39,6 @@ public class ConnectionEditorController {
 	@FXML
 	public void initialize() {
 		resetErrorLabels();
-
 		updatePorts(SerialPort.getCommPorts());
 	}
 
@@ -61,9 +60,9 @@ public class ConnectionEditorController {
 		switch (PlatformDetector.getOSPLATFORM()) {
 			case WIN11:
 				connectionOptions.getItems().addAll(
-						Stream.of(ports)
-								.map(SerialPort::getSystemPortName)
-								.toList()
+					Stream.of(ports)
+						.map(SerialPort::getSystemPortName)
+						.toList()
 				);
 				break;
 			case MACOS:
@@ -81,10 +80,6 @@ public class ConnectionEditorController {
 	@FXML
 	public void confirmConnectionEditor() {
 
-		// todo: remove before release
-		startFlagTextField.setText("--start-data");
-		endFlagTextField.setText("--end-data");
-
 		boolean isValidConnectionName = isValidConnectionName();
 		boolean isValidBaudRate = validBaudRate();
 		boolean isValidPort = validPort();
@@ -101,21 +96,22 @@ public class ConnectionEditorController {
 
 		System.out.println();
 		if (
-				isValidConnectionName && isValidBaudRate && isValidPort
-						&& isValidTeamName && isValidMeasurementData
-						&& isValidStartFlag && isValidEndFlag
+			isValidConnectionName && isValidBaudRate && isValidPort
+				&& isValidTeamName && isValidMeasurementData
+				&& isValidStartFlag && isValidEndFlag
 		) {
 			ConnectionConfig connection = new ConnectionConfig(
-					connectionName.getText(),
-					Integer.parseInt(baudRate.getText()),
-					SerialPort.getCommPort(connectionOptions.getValue()),
-					ConnectionType.SERIAL,
-					new FloatConfig(
-							dataFormat.getText().trim(),
-							startFlagTextField.getText().trim(),
-							endFlagTextField.getText().trim()
-					),
-					getMeasurementConfigs()
+				connectionName.getText(),
+				Integer.parseInt(baudRate.getText()),
+				SerialPort.getCommPort(connectionOptions.getValue()),
+				ConnectionType.SERIAL,
+				new FloatConfig(
+					dataFormat.getText().trim().split(",")[0],
+					dataFormat.getText().trim().split(",")[1],
+					startFlagTextField.getText().trim(),
+					endFlagTextField.getText().trim()
+				),
+				getMeasurementConfigs()
 			);
 			ConnectionManager.setCurrentConnection(connection);
 			System.out.println("Connection created: " + connection.connectionName());
