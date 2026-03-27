@@ -19,7 +19,9 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.TilePane;
 import javafx.stage.Stage;
@@ -29,6 +31,7 @@ import lombok.Setter;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Optional;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -121,11 +124,6 @@ public class ConnectionsController {
 			throw new RuntimeException(e);
 		}
 
-		// fixme: fix this mess
-		// 		stage: 	if - has parent: do alert type box thingy
-		// 				else - do regular stage design
-		// 		scene + pane: do it as a single input
-		// 				needs stage as input
 		{
 			Scene scene = new Scene(connectionCreatorPane);
 			Stage stage = new Stage();
@@ -148,8 +146,11 @@ public class ConnectionsController {
 
 		boolean success = ConnectionProcessor.writeConnection(currentConnectionConfig);
 		if (!success) {
-			// fixme replace with error alert
 			System.err.println("Connection Writing Failed");
+			Alert alert = new Alert(Alert.AlertType.ERROR);
+			alert.setContentText("Unable to create Connection");
+			alert.setTitle("Connection Exception");
+			alert.showAndWait();
 			System.exit(-1);
 		}
 
@@ -171,7 +172,16 @@ public class ConnectionsController {
 
 	@FXML
 	public void deleteAll() {
-		// todo add conformation alert before delete all
+		Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+		alert.setTitle("Delete All Connections");
+		alert.setContentText("Do you want to delete all connections?");
+		alert.getButtonTypes().setAll(ButtonType.OK, ButtonType.CANCEL);
+		Optional<ButtonType> result = alert.showAndWait();
+
+		if (result.isPresent() && result.get() == ButtonType.CANCEL) {
+			return;
+		}
+
 		System.out.println("Deleting All Connections");
 		connections.getChildren().removeAll(connections.getChildren());
 
@@ -183,6 +193,9 @@ public class ConnectionsController {
 			file.delete();
 		}
 
+		alert = new Alert(Alert.AlertType.INFORMATION);
+		alert.setTitle("Delete All Connections");
+		alert.setContentText("All connections have been deleted");
 
 	}
 

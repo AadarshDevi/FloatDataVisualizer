@@ -76,7 +76,6 @@ public class ConnectionEditorController {
 		}
 	}
 
-	// todo: update error labels to have 1 label for each field
 	@FXML
 	public void confirmConnectionEditor() {
 
@@ -412,7 +411,6 @@ public class ConnectionEditorController {
 	@FXML
 	public void autoFill() {
 
-		// todo: for the float data format
 		switch (PlatformDetector.getOSPLATFORM()) {
 			case WIN11:
 				connectionOptions.setValue(SerialPort.getCommPorts()[0].getSystemPortName());
@@ -433,18 +431,19 @@ public class ConnectionEditorController {
 
 		ConnectionsController cc = ControllerManager.getConnectionsController();
 
-		if (cc.getCurrentConnectionConfig() != null) {
-			ConnectionConfig ccg = cc.getCurrentConnectionConfig();
-			connectionName.setText(ccg.connectionName());
-			baudRate.setText(Integer.toString(ccg.baudRate()));
-			connectionOptions.setValue(ccg.port().getSystemPortName());
+		if (cc.getCurrentConnectionConfig() == null) {
+			return;
 		}
 
-		if (cc.getCurrentFloatConfig() != null) {
-			FloatConfig fcg = cc.getCurrentFloatConfig();
-			dataFormat.setText(fcg.teamData());
-			startFlagTextField.setText(fcg.startFlag());
-			endFlagTextField.setText(fcg.endFlag());
-		}
+		ConnectionConfig ccg = cc.getCurrentConnectionConfig();
+		connectionName.setText(ccg.connectionName());
+		baudRate.setText(Integer.toString(ccg.baudRate()));
+		connectionOptions.setValue(ccg.port().getSystemPortName());
+
+		FloatConfig fcg = ccg.floatConfig();
+		dataFormat.setText(fcg.teamData());
+		startFlagTextField.setText(fcg.startFlag());
+		endFlagTextField.setText(fcg.endFlag());
+
 	}
 }

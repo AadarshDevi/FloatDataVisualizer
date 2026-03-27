@@ -22,9 +22,6 @@ import java.util.Properties;
  */
 public class ConnectionProcessor {
 
-	// todo: 	update connections: data format, start/end flags, unit measured
-	// 		 	update related stuff
-
 	public static boolean writeConnection(ConnectionConfig connectionConfig) {
 		Path connectionPath = FolderConstants.CONNECTIONS.resolve(connectionConfig.connectionName() + FolderConstants.FLOAT_CONNECTION_FILE_EXTENSION);
 		try {
@@ -93,7 +90,9 @@ public class ConnectionProcessor {
 		System.out.println("Connections Folder ready for reading");
 
 		File[] files = folder.listFiles();
+		if (files == null) return null;
 		System.out.println("Files found: " + files.length);
+
 		for (File file : files) {
 			try (FileInputStream br = new FileInputStream(file)) {
 

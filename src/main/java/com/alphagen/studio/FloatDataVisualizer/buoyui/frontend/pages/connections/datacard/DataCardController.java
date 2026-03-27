@@ -144,11 +144,6 @@ public class DataCardController extends Controller {
 		MeasurementViewerController mvc = measurementViewerLoader.getController();
 		mvc.setData(connectionConfig);
 
-		// fixme: fix this mess
-		// 		stage: 	if - has parent: do alert type box thingy
-		// 				else - do regular stage design
-		// 		scene + pane: do it as a single input
-		// 				needs stage as input
 		{
 			Scene scene = new Scene(measurementViewer);
 			Stage stage = new Stage();
@@ -192,3 +187,5 @@ public class DataCardController extends Controller {
 		stage.setScene(StageManager.getGraphingScene());
 	}
 }
+
+// todo: menus for rename and edit

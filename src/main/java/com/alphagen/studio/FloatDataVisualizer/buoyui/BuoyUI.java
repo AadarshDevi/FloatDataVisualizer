@@ -18,37 +18,6 @@ public class BuoyUI extends Application {
 	public void start(Stage stage) throws Exception {
 
 		StageManager.setMainStage(stage);
-
-		// fixme make this work
-//		Runnable runnable = () -> {
-//			FXMLLoader fxmlLoader = new FXMLLoader(CardConstants.LOADING_SCREEN);
-//			BorderPane loadingCard = null;
-//			try {
-//				loadingCard = fxmlLoader.load();
-//			} catch (IOException e) {
-//				throw new RuntimeException(e);
-//			}
-//			Scene scene = new Scene(loadingCard);
-//			Stage loading = new Stage();
-//			loading.setScene(scene);
-//			loading.setScene(scene);
-//			scene.setFill(Color.TRANSPARENT);
-//			loading.initOwner(StageManager.getMainStage());
-//			loading.initModality(Modality.APPLICATION_MODAL);
-//			loading.initStyle(StageStyle.TRANSPARENT);
-//			stage.show();
-//
-//			while (!Thread.currentThread().isInterrupted()) {
-//				if (Thread.currentThread().isInterrupted()) {
-//					stage.hide();
-//				}
-//			}
-//			System.out.println("Finished Loading");
-//		};
-//		Thread thread = new Thread(runnable);
-//		thread.start();
-
-
 		PlatformDetector.detectPlatform();
 
 		System.out.println("Initializing Backend");

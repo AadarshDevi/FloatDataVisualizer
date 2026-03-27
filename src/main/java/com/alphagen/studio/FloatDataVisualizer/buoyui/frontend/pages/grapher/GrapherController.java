@@ -51,7 +51,6 @@ public class GrapherController {
 	private DataPointProcessor dpp;
 	private Future<?> activeUIUpdater;
 
-	// fixme: min/max col width > computed from pref
 	// todo: add css in the fxml for the table rows, focused, selected, hover, normal, font
 
 	@FXML
@@ -63,6 +62,7 @@ public class GrapherController {
 		screenshotButton.setManaged(false);
 		exporting.setVisible(false);
 		exporting.setManaged(false);
+		terminalTab.setDisable(true);
 	}
 
 	@FXML
@@ -83,9 +83,6 @@ public class GrapherController {
 				} catch (InterruptedException e) {
 					throw new RuntimeException(e);
 				}
-
-				// todo remove
-				System.out.println(dp);
 
 				Platform.runLater(() -> {
 					System.out.println(" >>> Measurement Configs > " + Arrays.toString(dp.measurements()));
@@ -154,6 +151,7 @@ public class GrapherController {
 		// 			2. get style
 		// 			3. add to table
 		// 		4. put data
+		// 		5. lock table col length and checkbox length
 
 		endFlagLabel.setText(connectionConfig.floatConfig().endFlag());
 		startFlagLabel.setText(connectionConfig.floatConfig().startFlag());
@@ -199,18 +197,11 @@ public class GrapherController {
 			checkBoxesContainer.getChildren().add(cb);
 		}
 
-
 		stopingDataTransfer();
 		sp = new SerialProcessor(connectionConfig);
 		dpp = new DataPointProcessor();
 		sp.setDpp(dpp);
 		System.out.println(" >>> Grapher: SP & DPP > Ready");
-	}
-
-	// todo used to reset table, tabs
-	public void reset() {
-		// use an alert
-		System.out.println(" >>> Serial Communication > Reset Grapher");
 	}
 
 	@FXML

@@ -8,9 +8,8 @@ import lombok.Data;
 class SettingsData {
 	// file data
 	private final String settingsVersion = "2.0.0";
-	// todo (change to user when building app)
 	// app data
-	private AppMode appMode = AppMode.DEV;
+	private AppMode appMode = AppMode.USER;
 	private Theme theme = Theme.LIGHT;
 	// default autofill data
 	private String default_teamInfo = "";
