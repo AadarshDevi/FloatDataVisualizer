@@ -33,8 +33,10 @@ public class GrapherController {
 	@FXML public TabPane graphPane;
 	@FXML public Tab controlsTab;
 	@FXML public Tab tableTab;
+	@FXML public Tab terminalTab;
 	@FXML public Button startDataTransfer;
 	@FXML public Button stopDataTransfer;
+	@FXML public Button exporting;
 	@FXML public Button screenshotButton;
 	@FXML public HBox checkBoxesContainer;
 	@FXML public Label connection_name_label;
@@ -57,6 +59,10 @@ public class GrapherController {
 		System.out.println();
 		System.out.println(" >>> Serial Communication > Initializing");
 		graphPane.getSelectionModel().select(2);
+		screenshotButton.setVisible(false);
+		screenshotButton.setManaged(false);
+		exporting.setVisible(false);
+		exporting.setManaged(false);
 	}
 
 	@FXML
