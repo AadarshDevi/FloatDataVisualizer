@@ -167,4 +167,48 @@ public class ConnectionProcessor {
 
 		return measurementConfigs.toArray(new MeasurementConfig[0]);
 	}
+
+	public static boolean renameConnection(ConnectionConfig oldConfig, ConnectionConfig newConfig) {
+
+		// get old connection filepath
+		Path source = getConnectionPath(oldConfig);
+
+		if (source == null) return false;
+
+
+		// create new connection filepath
+		Path target = FolderConstants.CONNECTIONS
+			.resolve(newConfig.connectionName() + FolderConstants.FLOAT_CONNECTION_FILE_EXTENSION);
+
+		if (Files.exists(target)) {
+			return true;
+		}
+
+		// copy file
+		try {
+			Files.move(source, target);
+		} catch (IOException e) {
+			return false;
+		}
+
+		// delete old connection file
+		try {
+			Files.delete(source);
+		} catch (IOException e) {
+			return false;
+		}
+
+		return true;
+	}
+
+	public static Path getConnectionPath(ConnectionConfig connectionConfig) {
+		Path filePath = FolderConstants.CONNECTIONS.resolve(connectionConfig.connectionName() + FolderConstants.FLOAT_CONNECTION_FILE_EXTENSION);
+
+		if (!Files.exists(filePath)) {
+			return null;
+		}
+
+		return filePath;
+
+	}
 }

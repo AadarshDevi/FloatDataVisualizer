@@ -265,4 +265,9 @@ public class ConnectionsController {
 	public void importConnection() {
 
 	}
+
+	public void repopulateConnections() {
+		connections.getChildren().removeAll(connections.getChildren());
+		ConnectionProcessor.readAllConnections();
+	}
 }

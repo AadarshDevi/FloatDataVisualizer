@@ -13,6 +13,7 @@ import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.pages.grapher.sca
 import javafx.application.Platform;
 import javafx.beans.property.SimpleDoubleProperty;
 import javafx.beans.property.SimpleIntegerProperty;
+import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -142,8 +143,18 @@ public class GrapherController {
 			col.setPrefWidth(150);
 			tableView.getColumns().add(col);
 
+
 			int finalI = i;
-			col.setCellValueFactory(dp -> new SimpleDoubleProperty(dp.getValue().measurements()[finalI - 1]).asObject());
+			col.setCellValueFactory(dp -> {
+				try {
+					double num = dp.getValue().measurements()[finalI - 1];
+					return new SimpleDoubleProperty(num).asObject();
+				} catch (ArrayIndexOutOfBoundsException _) {
+					System.out.println(" >>> Column will not get data because it receives less data");
+				}
+				return new SimpleObjectProperty<>(null);
+			});
+
 
 			// todo for selective export
 //			CheckBox cb = new CheckBox();

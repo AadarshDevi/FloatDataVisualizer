@@ -113,8 +113,10 @@
             <items>
                 <MenuItem fx:id="data_card_measurements_view" mnemonicParsing="false" onAction="#viewMeasurements"
                           text="Measurements"/>
-                <MenuItem fx:id="renameDataCard" mnemonicParsing="false" onAction="#renameConnection" text="Rename"/>
-                <MenuItem fx:id="editDataCard" mnemonicParsing="false" onAction="#editConnection" text="Edit"/>
+                <MenuItem fx:id="renameDataCard" mnemonicParsing="false" onAction="#renameConnection" text="Rename"
+                          visible="false"/>
+                <MenuItem fx:id="editDataCard" mnemonicParsing="false" onAction="#editConnection" text="Edit"
+                          visible="false"/>
                 <MenuItem fx:id="deleteDataCard" mnemonicParsing="false" onAction="#deleteConnection"
                           styleClass="delete" text="Delete"/>
             </items>

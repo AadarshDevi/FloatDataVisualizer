@@ -4,19 +4,20 @@ import com.alphagen.studio.FloatDataVisualizer.buoyui.Controller;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.constants.FolderConstants;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.data.ConnectionConfig;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.data.ConnectionType;
+import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.processor.ConnectionProcessor;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.managers.ConnectionManager;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.managers.ControllerManager;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.managers.StageManager;
+import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.pages.PageConstants;
+import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.pages.connections.ConnectionsController;
+import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.pages.connections.editor.ConnectionEditorController;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.pages.grapher.GrapherController;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.util.StageUtil;
 import com.fazecast.jSerialComm.SerialPort;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.ContextMenu;
-import javafx.scene.control.Label;
-import javafx.scene.control.Tooltip;
+import javafx.scene.control.*;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
@@ -26,6 +27,7 @@ import lombok.Setter;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.Optional;
 
 public class DataCardController extends Controller {
 	@FXML public Button dataCard;
@@ -180,6 +182,71 @@ public class DataCardController extends Controller {
 	@FXML
 	public void renameConnection() {
 
+		// get validConnectionName method to use and verify
+		ConnectionEditorController cec = null;
+		try {
+			FXMLLoader fxmlLoader = new FXMLLoader(PageConstants.CONNECTIONS_EDITOR_PAGE);
+			BorderPane connectionCreatorPane = fxmlLoader.load();
+			cec = fxmlLoader.getController();
+			ControllerManager.setConnectionEditorController(cec);
+		} catch (IOException e) {
+			throw new RuntimeException(e);
+		}
+
+		String name = null;
+		// get new connection name
+		boolean success = false;
+		do {
+
+			// load custom
+			TextInputDialog textInputDialog = new TextInputDialog(connectionConfig.connectionName());
+			textInputDialog.setTitle("Rename Connection");
+			textInputDialog.setHeaderText(null);
+			textInputDialog.setContentText("Enter new connection name");
+			textInputDialog.setWidth(500.0);
+			textInputDialog.setHeight(175.0);
+			Optional<String> objName = textInputDialog.showAndWait();
+
+			if (objName.isEmpty()) {
+				System.err.println("Obj is empty");
+				break;
+			}
+
+			name = objName.get();
+			System.out.println(" >>> New Connection Name > " + name);
+
+			if (!cec.isValidConnectionName(name)) {
+				Alert alert = new Alert(Alert.AlertType.ERROR);
+				alert.setTitle("Connection Exception");
+				alert.setHeaderText(null);
+				alert.setContentText("Connection with the name given already exists. Please change the name or cancel renaming.");
+				alert.showAndWait();
+			} else {
+				success = true;
+			}
+		} while (!success);
+
+		if (name == null || name.isBlank()) return;
+
+		success = ConnectionProcessor.renameConnection(connectionConfig, new ConnectionConfig(
+			name,
+			connectionConfig.baudRate(),
+			connectionConfig.port(),
+			connectionConfig.portType(),
+			connectionConfig.floatConfig(),
+			connectionConfig.measurementConfigs()
+		));
+
+		if (!success) {
+			Alert alert = new Alert(Alert.AlertType.ERROR);
+			alert.setTitle("Connection Exception");
+			alert.setHeaderText(null);
+			alert.setContentText("Unable to rename connection");
+			alert.showAndWait();
+		}
+
+		ConnectionsController cc = ControllerManager.getConnectionsController();
+		cc.repopulateConnections();
 	}
 
 	@FXML

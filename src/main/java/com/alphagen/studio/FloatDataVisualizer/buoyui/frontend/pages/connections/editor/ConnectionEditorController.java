@@ -79,7 +79,7 @@ public class ConnectionEditorController {
 	@FXML
 	public void confirmConnectionEditor() {
 
-		boolean isValidConnectionName = isValidConnectionName();
+		boolean isValidConnectionName = isValidConnectionName(connectionName.getText().trim());
 		boolean isValidBaudRate = validBaudRate();
 		boolean isValidPort = validPort();
 
@@ -119,9 +119,8 @@ public class ConnectionEditorController {
 		}
 	}
 
-	private boolean isValidConnectionName() {
-		String value = connectionName.getText().trim();
-		System.out.println("Connection Name: \"" + value + "\", \"" + connectionName.getText() + "\"");
+	public boolean isValidConnectionName(String value) {
+		System.out.println("Connection Name: \"" + value + "\"");
 
 		if (value.isBlank()) {
 			error_label_connection_name.setText(ExceptionMessage.CONNECTION_NAME_EMPTY);
