@@ -22,8 +22,7 @@ import java.util.Properties;
  */
 public class ConnectionProcessor {
 
-	public static boolean writeConnection(ConnectionConfig connectionConfig) {
-		Path connectionPath = FolderConstants.CONNECTIONS.resolve(connectionConfig.connectionName() + FolderConstants.FLOAT_CONNECTION_FILE_EXTENSION);
+	public static boolean writeConnection(Path connectionPath, ConnectionConfig connectionConfig) {
 		try {
 			Files.createFile(connectionPath);
 		} catch (IOException e) {

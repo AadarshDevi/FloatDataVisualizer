@@ -182,8 +182,7 @@ public class DataCardController extends Controller {
 		Stage stage = StageManager.getMainStage();
 		GrapherController gc = StageManager.setGraphingScene();
 		ControllerManager.setGrapherController(gc);
-		gc.setConnectionConfig(this.connectionConfig);
-		gc.setup();
+//		gc.setup();
 		stage.setScene(StageManager.getGraphingScene());
 	}
 }

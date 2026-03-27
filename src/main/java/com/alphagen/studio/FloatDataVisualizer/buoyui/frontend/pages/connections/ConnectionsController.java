@@ -30,6 +30,7 @@ import lombok.Setter;
 
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.Optional;
 import java.util.concurrent.ExecutorService;
@@ -144,7 +145,8 @@ public class ConnectionsController {
 		Button dataCard = DataCardManager.createDataCard(ConnectionManager.getCurrentConnection());
 		connections.getChildren().add(dataCard);
 
-		boolean success = ConnectionProcessor.writeConnection(currentConnectionConfig);
+		Path filePath = FolderConstants.CONNECTIONS.resolve(currentConnectionConfig.connectionName() + FolderConstants.FLOAT_CONNECTION_FILE_EXTENSION);
+		boolean success = ConnectionProcessor.writeConnection(filePath, currentConnectionConfig);
 		if (!success) {
 			System.err.println("Connection Writing Failed");
 			Alert alert = new Alert(Alert.AlertType.ERROR);

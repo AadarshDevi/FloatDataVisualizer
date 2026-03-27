@@ -20,7 +20,7 @@ void loop() {
   if(i%20 == 0) {
     packet_id++;
   }
-  Serial.println("PN12-MiramarWaterJets,pkt-"+String(packet_id)+","+String(time_in_s)+","+String(depth));
+  Serial.println("PN12-MiramarWaterJets,pkt-"+String(packet_id)+","+String(time_in_s)+","+String(depth)+","+String(pressure));
   i++;
   delay(500);
 }

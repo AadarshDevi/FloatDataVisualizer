@@ -4,7 +4,9 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ContextMenu?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
@@ -57,28 +59,6 @@
                         <Tooltip text="Create Connection" />
                     </tooltip>
                 </Button>
-            <Button fx:id="exporting" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#exportData" prefHeight="32.0" prefWidth="100.0" styleClass="buttons" text="Export">
-               <graphic>
-                  <SVGPath content="M 12 2.25C 11.7894 2.25 11.588623 2.3385258 11.446523 2.4939258L 7.4465039 6.8689453C 7.1670039 7.1746453 7.1882063 7.6489961 7.4939062 7.9284961C 7.7996162 8.2079961 8.2740156 8.1867937 8.5535156 7.8810937L 11.25 4.9317773L 11.25 16.00002C 11.25 16.41422 11.5858 16.75002 12 16.75002C 12.4142 16.75002 12.75 16.41422 12.75 16.00002L 12.75 4.9317773L 15.446484 7.8810937C 15.725984 8.1867937 16.200394 8.2079961 16.506094 7.9284961C 16.811794 7.6489961 16.832996 7.1746453 16.553496 6.8689453L 12.553477 2.4939258C 12.411377 2.3385258 12.2106 2.25 12 2.25zM 3 14.25C 2.58579 14.25 2.25 14.5858 2.25 15L 2.25 15.054902C 2.24998 16.422502 2.249983 17.524816 2.366543 18.391816C 2.487563 19.291916 2.7464198 20.049702 3.3483398 20.651602C 3.9502598 21.253602 4.7081322 21.512516 5.6082422 21.633516C 6.4752122 21.750016 7.5775662 21.75 8.9451563 21.75L 15.054902 21.75C 16.422502 21.75 17.524816 21.750016 18.391816 21.633516C 19.291916 21.512516 20.049719 21.253602 20.651719 20.651602C 21.253619 20.049702 21.512516 19.291916 21.633516 18.391816C 21.750016 17.524816 21.75 16.422502 21.75 15.054902L 21.75 15C 21.75 14.5858 21.4142 14.25 21 14.25C 20.5858 14.25 20.25 14.5858 20.25 15C 20.25 16.4354 20.248375 17.436495 20.146875 18.191895C 20.048175 18.925695 19.867796 19.314196 19.590996 19.590996C 19.314196 19.867796 18.925695 20.048175 18.191895 20.146875C 17.436495 20.248375 16.4354 20.25 15 20.25L 9 20.25C 7.56459 20.25 6.5634555 20.248375 5.8081055 20.146875C 5.0743355 20.048175 4.6857639 19.867796 4.4090039 19.590996C 4.1322439 19.314196 3.951775 18.925695 3.853125 18.191895C 3.751565 17.436495 3.75 16.4354 3.75 15C 3.75 14.5858 3.41422 14.25 3 14.25z" scaleX="0.8" scaleY="0.8" stroke="BLACK" styleClass="svg-path" />
-               </graphic>
-               <opaqueInsets>
-                  <Insets />
-               </opaqueInsets>
-               <tooltip>
-                  <Tooltip text="Create Connection" />
-               </tooltip>
-            </Button>
-            <Button fx:id="screenshotButton" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#screenshot" prefHeight="32.0" prefWidth="148.0" styleClass="buttons" text="Screenshot">
-               <graphic>
-                  <SVGPath content="M 19.843998,7.9379961H 7.9379961V 19.843006m 34.9240079,9.92e-4V 7.9379961H 30.956002M 25.4,16.668998C 20.578,16.668997 16.668997,20.578 16.668998,25.4 16.668997,30.222 20.578,34.131003 25.4,34.131002 30.222,34.131003 34.131003,30.222 34.131002,25.4 34.131003,20.578 30.222,16.668997 25.4,16.668998ZM 7.9379961,30.956002V 42.862004H 19.843006m 11.112996,0H 42.862004V 30.956002" fill="TRANSPARENT" scaleX="0.5" scaleY="0.5" stroke="BLACK" strokeWidth="5.0" styleClass="svg-path" />
-               </graphic>
-               <opaqueInsets>
-                  <Insets />
-               </opaqueInsets>
-               <tooltip>
-                  <Tooltip text="Create Connection" />
-               </tooltip>
-            </Button>
             </children>
         </HBox>
     </bottom>
@@ -187,12 +167,19 @@
                               </HBox>
                               <ScrollPane styleClass="scroll-bar">
                                  <content>
-                                    <TableView fx:id="table" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="462.0" prefWidth="1113.0" styleClass="table">
+                                    <TableView fx:id="tableView" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="462.0" prefWidth="1113.0" styleClass="table">
                                       <columns>
                                         <TableColumn maxWidth="-1.0" minWidth="300.0" prefWidth="300.0" text="Team" />
                                         <TableColumn maxWidth="142.0" minWidth="68.0" prefWidth="68.0" text="Packet" />
                                           <TableColumn fx:id="timeTableCol" maxWidth="-1.0" minWidth="120.0" prefWidth="120.0" text="Time" />
                                       </columns>
+                                       <contextMenu>
+                                          <ContextMenu styleClass="popup-menu">
+                                            <items>
+                                              <MenuItem mnemonicParsing="false" onAction="#exportData" text="Export Data" />
+                                            </items>
+                                          </ContextMenu>
+                                       </contextMenu>
                                     </TableView>
                                  </content>
                               </ScrollPane>
