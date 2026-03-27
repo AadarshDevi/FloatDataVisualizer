@@ -66,6 +66,9 @@ public class GrapherController {
 		System.out.println(" >>> Serial Communication > Initializing");
 		graphPane.getSelectionModel().select(2);
 		terminalTab.setDisable(true);
+		checkBoxesContainer.setDisable(true);
+		checkBoxesContainer.setVisible(false);
+		checkBoxesContainer.setManaged(false);
 
 		this.connectionConfig = ConnectionManager.getCurrentConnection();
 
@@ -142,13 +145,14 @@ public class GrapherController {
 			int finalI = i;
 			col.setCellValueFactory(dp -> new SimpleDoubleProperty(dp.getValue().measurements()[finalI - 1]).asObject());
 
-			CheckBox cb = new CheckBox();
-			cb.setMinWidth(150);
-			cb.setPrefWidth(150);
-			cb.setSelected(true);
-
-			// link the size of checkbox to table col
-			checkBoxesContainer.getChildren().add(cb);
+			// todo for selective export
+//			CheckBox cb = new CheckBox();
+//			cb.setMinWidth(150);
+//			cb.setPrefWidth(150);
+//			cb.setSelected(true);
+//
+//			// link the size of checkbox to table col
+//			checkBoxesContainer.getChildren().add(cb);
 		}
 
 		stopingDataTransfer();
@@ -235,14 +239,6 @@ public class GrapherController {
 
 	@FXML
 	public void exportData() {
-		// todo: based on the tab, export data.
-		//  if tab == terminal then export raw data
-		//  if tab == table then export csv
-
-		// todo same for the screen shot button
-		//  	update the svg to a screen shot svg
-
-		// todo add a shortcut to do the entire window screenshot
 
 		ObservableList<DataPoint> list = tableView.getItems();
 
@@ -297,6 +293,35 @@ public class GrapherController {
 
 		// todo add a shortcut to do the entire window screenshot
 
+		ObservableList<DataPoint> list = tableView.getItems();
+
+		FileChooser fileChooser = new FileChooser();
+		fileChooser.setTitle("Export Screenshot");
+		File rawPath = fileChooser.showSaveDialog(StageManager.getMainStage());
+
+		if (rawPath == null) return;
+		File file = new File(rawPath.getAbsolutePath() + ".csv");
+
+		try (BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(file))) {
+
+			for (int i = 0; i < connectionConfig.measurementConfigs().length; i++) {
+				bufferedWriter.write(connectionConfig.measurementConfigs()[i].name());
+				bufferedWriter.write("(");
+				bufferedWriter.write(connectionConfig.measurementConfigs()[i].unit());
+				bufferedWriter.write(")");
+				if (i != connectionConfig.measurementConfigs().length - 1) {
+					bufferedWriter.write(",");
+				}
+			}
+			bufferedWriter.newLine();
+
+			for (DataPoint dp : list) {
+				bufferedWriter.write(dp.toRaw());
+				bufferedWriter.newLine();
+			}
+		} catch (IOException e) {
+			throw new RuntimeException(e);
+		}
 
 	}
 }

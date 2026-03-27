@@ -177,6 +177,7 @@
                                           <ContextMenu styleClass="popup-menu">
                                             <items>
                                               <MenuItem mnemonicParsing="false" onAction="#exportData" text="Export Data" />
+                                                <MenuItem mnemonicParsing="false" onAction="#exportRaw" text="Export Raw Data" />
                                             </items>
                                           </ContextMenu>
                                        </contextMenu>

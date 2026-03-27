@@ -17,8 +17,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ContextMenu;
 import javafx.scene.control.Label;
 import javafx.scene.control.Tooltip;
-import javafx.scene.input.MouseButton;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
@@ -54,13 +52,6 @@ public class DataCardController extends Controller {
 		}
 		isWorking = true;
 		isDisabled = false;
-	}
-
-	@FXML
-	public void handleContextMenu(MouseEvent event) {
-		if (!isDisabled && event.getButton() == MouseButton.SECONDARY)
-			connectionOptions.show(dataCard, event.getSceneX(), event.getSceneY());
-		else if (isDisabled) event.consume();
 	}
 
 	public void deleteConnection() {
@@ -184,6 +175,16 @@ public class DataCardController extends Controller {
 		ControllerManager.setGrapherController(gc);
 //		gc.setup();
 		stage.setScene(StageManager.getGraphingScene());
+	}
+
+	@FXML
+	public void renameConnection() {
+
+	}
+
+	@FXML
+	public void editConnection() {
+
 	}
 }
 
