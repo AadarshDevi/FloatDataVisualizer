@@ -106,16 +106,16 @@ public class ConnectionsController {
 		}
 	}
 
-	@FXML
-	public void test() {
-		System.out.println("Created Connection");
-	}
+//	@FXML
+//	public void test() {
+//		System.out.println("Created Connection");
+//	}
 
 	@FXML
 	public void createConnection() {
 
 		System.out.println("Opening ConnectionEditorUI");
-		BorderPane connectionCreatorPane = null;
+		BorderPane connectionCreatorPane;
 		try {
 			FXMLLoader fxmlLoader = new FXMLLoader(PageConstants.CONNECTIONS_EDITOR_PAGE);
 			connectionCreatorPane = fxmlLoader.load();

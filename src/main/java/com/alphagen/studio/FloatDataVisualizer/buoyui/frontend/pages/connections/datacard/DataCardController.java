@@ -128,7 +128,7 @@ public class DataCardController extends Controller {
 	public void viewMeasurements() {
 		FXMLLoader measurementViewerLoader = new FXMLLoader(DataCardController.class.getResource("MeasurementsViewer_v1.fxml"));
 
-		BorderPane measurementViewer = null;
+		BorderPane measurementViewer;
 		try {
 			measurementViewer = measurementViewerLoader.load();
 		} catch (IOException e) {
@@ -183,10 +183,10 @@ public class DataCardController extends Controller {
 	public void renameConnection() {
 
 		// get validConnectionName method to use and verify
-		ConnectionEditorController cec = null;
+		ConnectionEditorController cec;
 		try {
 			FXMLLoader fxmlLoader = new FXMLLoader(PageConstants.CONNECTIONS_EDITOR_PAGE);
-			BorderPane connectionCreatorPane = fxmlLoader.load();
+			fxmlLoader.load();
 			cec = fxmlLoader.getController();
 			ControllerManager.setConnectionEditorController(cec);
 		} catch (IOException e) {

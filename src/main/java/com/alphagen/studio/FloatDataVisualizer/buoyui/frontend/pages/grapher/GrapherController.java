@@ -121,7 +121,7 @@ public class GrapherController {
 			Tab tab = new Tab(measurementConfig.name());
 
 			FXMLLoader fxmlLoader = new FXMLLoader(CardConstants.SCATTER_PLOT);
-			BorderPane scatterPlot = null;
+			BorderPane scatterPlot;
 			try {
 				scatterPlot = fxmlLoader.load();
 			} catch (IOException e) {
