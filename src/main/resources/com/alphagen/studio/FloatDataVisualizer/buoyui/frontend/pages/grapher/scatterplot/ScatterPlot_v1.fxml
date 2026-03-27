@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.ScatterChart?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="499.0" prefWidth="1129.0" stylesheets="@../../../../theme_light.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.pages.grapher.scatterplot.ScatterPlotController">
+    <center>
+        <ScrollPane prefHeight="499.0" prefWidth="1129.0" styleClass="scroll-bar" BorderPane.alignment="CENTER">
+            <content>
+                <ScatterChart fx:id="scatterPlot" prefHeight="475.0" prefWidth="1105.0">
+                    <xAxis>
+                        <NumberAxis />
+                    </xAxis>
+                    <yAxis>
+                        <NumberAxis side="LEFT" />
+                    </yAxis>
+                </ScatterChart>
+            </content>
+            <padding>
+                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+            </padding>
+        </ScrollPane>
+    </center>
+</BorderPane>
