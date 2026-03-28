@@ -209,6 +209,17 @@ public class GrapherController {
 			System.out.println(" >>> Parsed Array > " + dpp.getParsedArray().size());
 			System.err.println(" >>> Serial Communication > Stop");
 		}
+
+		if ((sp != null) && sp.getDisconnected().get()) {
+			Platform.runLater(() -> {
+				System.err.println(" >>> Disconnected from Device");
+				Alert alert = new Alert(Alert.AlertType.ERROR);
+				alert.setTitle("Connection Exception");
+				alert.setHeaderText(null);
+				alert.setContentText("Disconnected from Hardware.");
+				alert.showAndWait();
+			});
+		}
 	}
 
 	@FXML
