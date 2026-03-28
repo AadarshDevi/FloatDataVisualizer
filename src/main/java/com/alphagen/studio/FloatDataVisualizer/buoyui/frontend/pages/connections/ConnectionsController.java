@@ -152,8 +152,9 @@ public class ConnectionsController {
 		if (!success) {
 			System.err.println("Connection Writing Failed");
 			Alert alert = new Alert(Alert.AlertType.ERROR);
-			alert.setContentText("Unable to create Connection");
 			alert.setTitle("Connection Exception");
+			alert.setHeaderText(null);
+			alert.setContentText("Unable to create Connection");
 			alert.showAndWait();
 			System.exit(-1);
 		}
