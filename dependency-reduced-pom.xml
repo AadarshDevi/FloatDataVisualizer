@@ -4,7 +4,7 @@
   <groupId>com.alphagen.studio</groupId>
   <artifactId>FloatDataVisualizer</artifactId>
   <name>FloatDataVisualizer</name>
-  <version>1.5.4</version>
+  <version>1.4.4</version>
   <build>
     <plugins>
       <plugin>
@@ -91,7 +91,7 @@
                 <argument>--input</argument>
                 <argument>${project.build.directory}</argument>
                 <argument>--name</argument>
-                <argument>FloatDataVisualizer ${project.version}-beta</argument>
+                <argument>FloatDataVisualizer ${project.version}-Beta</argument>
                 <argument>--app-version</argument>
                 <argument>${project.version}</argument>
                 <argument>--vendor</argument>
@@ -125,7 +125,7 @@
                 <argument>--input</argument>
                 <argument>${project.build.directory}</argument>
                 <argument>--name</argument>
-                <argument>FloatDataVisualizer ${project.version}-beta</argument>
+                <argument>FloatDataVisualizer</argument>
                 <argument>--app-version</argument>
                 <argument>${project.version}</argument>
                 <argument>--vendor</argument>

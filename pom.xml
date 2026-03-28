@@ -6,7 +6,7 @@
 
     <groupId>com.alphagen.studio</groupId>
     <artifactId>FloatDataVisualizer</artifactId>
-    <version>1.4.4</version> <!-- group 2 -->
+    <version>2.0.0</version> <!-- group 2 -->
     <name>FloatDataVisualizer</name>
 
     <properties>
@@ -158,7 +158,9 @@
                                 <argument>--input</argument>
                                 <argument>${project.build.directory}</argument>
                                 <argument>--name</argument>
-                                <argument>FloatDataVisualizer ${project.version}-Beta</argument>
+                                <argument>
+                                    FloatDataVisualizer_v${project.version}_beta_1_1_win_11_x86_64_msi_consolebundled
+                                </argument>
                                 <argument>--app-version</argument>
                                 <argument>${project.version}</argument>  <!-- #5 Uses YOUR 2.1.3.0 -->
                                 <argument>--vendor</argument>
@@ -194,7 +196,9 @@
                                 <argument>--input</argument>
                                 <argument>${project.build.directory}</argument>
                                 <argument>--name</argument>
-                                <argument>FloatDataVisualizer</argument>
+                                <argument>
+                                    FloatDataVisualizer_v${project.version}_beta_1_1_win_11_x86_64_msi_consolebundled
+                                </argument>
                                 <argument>--app-version</argument>
                                 <argument>${project.version}</argument>
                                 <argument>--vendor</argument>
