@@ -26,7 +26,7 @@ public class BuoyUI extends Application {
 		System.out.println("Finding Folders");
 
 		Alert alert = new Alert(Alert.AlertType.ERROR);
-		alert.setHeaderText("Error");
+		alert.setHeaderText(null);
 
 		if (!backend.verifyRoot()) {
 			alert.setTitle("Exception 1");
