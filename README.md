@@ -195,7 +195,7 @@ Root: C:\Users\{user}\AppData\Roaming\FloatDataVisualizer\2.0.0
 4. [ ] Default Team Info
 5. [ ] Default Team Info Data
 
-## DataViewer
+## Grapher Page
 
 1. ~~[ ]Change Data View: Graph/Table~~
     1. ~~[ ] Via Buttons: GraphView Button & TableView Button~~
@@ -213,7 +213,7 @@ Root: C:\Users\{user}\AppData\Roaming\FloatDataVisualizer\2.0.0
 8. [x] Stop Data Receiving
 9. [x] Tabs for multiple Data Recorded
 
-## DataStorage
+## Data Point Processor
 
 1. [x] data stored in double[]
     1. [x] double[].length = number of data recording + 1 (for time)
