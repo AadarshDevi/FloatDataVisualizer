@@ -224,6 +224,18 @@ public class GrapherController {
 
 	@FXML
 	public void startingDataTransfer() {
+
+		if (!connectionConfig.port().openPort()) {
+			System.err.println(" >>> Port not found");
+			Alert alert = new Alert(Alert.AlertType.ERROR);
+			alert.setTitle("Connection Exception");
+			alert.setHeaderText(null);
+			alert.setContentText("Hardware not connected to device. Serial Port disconnected and not found.");
+			alert.showAndWait();
+			return;
+		}
+		connectionConfig.port().closePort();
+
 		// disable start button and enable stop button
 		startDataTransfer.setDisable(true);
 		stopDataTransfer.setDisable(false);
