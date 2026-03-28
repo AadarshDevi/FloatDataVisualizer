@@ -131,8 +131,10 @@ public class ConnectionsController {
 			stage.setScene(scene);
 
 			StageUtil.customTitleBarDrag(stage, scene, connectionCreatorPane);
-
 			stage.initOwner(StageManager.getMainStage());
+			stage.initModality(Modality.APPLICATION_MODAL);
+			stage.initStyle(StageStyle.TRANSPARENT);
+
 			StageManager.setConnectionCreatorStage(stage);
 			stage.showAndWait();
 		}
