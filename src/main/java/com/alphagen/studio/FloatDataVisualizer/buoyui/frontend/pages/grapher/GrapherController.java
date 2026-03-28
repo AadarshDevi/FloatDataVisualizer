@@ -246,7 +246,7 @@ public class GrapherController {
 						int measureIndex = i - 3;
 						ScatterPlotController spc = (ScatterPlotController) graphPane.getTabs().get(i).getProperties().get("plot_controller");
 						try {
-							spc.addData(dp.packetNum(), dp.time(), measures[measureIndex], measureIndex + 1);
+							spc.addData(dp.packetNum(), dp.time(), measures[measureIndex], measureIndex);
 						} catch (ArrayIndexOutOfBoundsException | NullPointerException _) {
 						}
 					}
