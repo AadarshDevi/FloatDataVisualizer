@@ -22,11 +22,7 @@ import java.util.Properties;
  */
 public class ConnectionProcessor {
 
-	// todo: 	update connections: data format, start/end flags, unit measured
-	// 		 	update related stuff
-
-	public static boolean writeConnection(ConnectionConfig connectionConfig) {
-		Path connectionPath = FolderConstants.CONNECTIONS.resolve(connectionConfig.connectionName() + FolderConstants.FLOAT_CONNECTION_FILE_EXTENSION);
+	public static boolean writeConnection(Path connectionPath, ConnectionConfig connectionConfig) {
 		try {
 			Files.createFile(connectionPath);
 		} catch (IOException e) {
@@ -45,6 +41,7 @@ public class ConnectionProcessor {
 			FloatConfig floatConfig = connectionConfig.floatConfig();
 			pw.println("# Float Config");
 			pw.println("team_info=" + floatConfig.teamData());
+			pw.println("packet=" + floatConfig.pkt());
 			pw.println("start_data_transfer=" + floatConfig.startFlag());
 			pw.println("end_data_transfer=" + floatConfig.endFlag());
 			pw.println("");
@@ -92,7 +89,9 @@ public class ConnectionProcessor {
 		System.out.println("Connections Folder ready for reading");
 
 		File[] files = folder.listFiles();
+		if (files == null) return null;
 		System.out.println("Files found: " + files.length);
+
 		for (File file : files) {
 			try (FileInputStream br = new FileInputStream(file)) {
 
@@ -133,21 +132,22 @@ public class ConnectionProcessor {
 
 	private static ConnectionConfig parseConnectionConfig(Properties properties) {
 		return ConnectionConfig.builder()
-				.connectionName(properties.getProperty("connection_name"))
-				.baudRate(Integer.parseInt(properties.getProperty("connection_baud_rate")))
-				.port(SerialPort.getCommPort(properties.getProperty("connection_port")))
-				.portType(ConnectionType.valueOf(properties.getProperty("connection_port_type")))
-				.floatConfig(parseFloatConfig(properties))
-				.measurementConfigs(parseMeasurementConfigs(properties))
-				.build();
+			.connectionName(properties.getProperty("connection_name"))
+			.baudRate(Integer.parseInt(properties.getProperty("connection_baud_rate")))
+			.port(SerialPort.getCommPort(properties.getProperty("connection_port")))
+			.portType(ConnectionType.valueOf(properties.getProperty("connection_port_type")))
+			.floatConfig(parseFloatConfig(properties))
+			.measurementConfigs(parseMeasurementConfigs(properties))
+			.build();
 	}
 
 	private static FloatConfig parseFloatConfig(Properties properties) {
 		return FloatConfig.builder()
-				.teamData(properties.getProperty("team_info"))
-				.startFlag(properties.getProperty("start_data_transfer"))
-				.endFlag(properties.getProperty("end_data_transfer"))
-				.build();
+			.teamData(properties.getProperty("team_info"))
+			.pkt(properties.getProperty("packet"))
+			.startFlag(properties.getProperty("start_data_transfer"))
+			.endFlag(properties.getProperty("end_data_transfer"))
+			.build();
 	}
 
 	private static MeasurementConfig[] parseMeasurementConfigs(Properties properties) {
@@ -166,5 +166,49 @@ public class ConnectionProcessor {
 		}
 
 		return measurementConfigs.toArray(new MeasurementConfig[0]);
+	}
+
+	public static boolean renameConnection(ConnectionConfig oldConfig, ConnectionConfig newConfig) {
+
+		// get old connection filepath
+		Path source = getConnectionPath(oldConfig);
+
+		if (source == null) return false;
+
+
+		// create new connection filepath
+		Path target = FolderConstants.CONNECTIONS
+			.resolve(newConfig.connectionName() + FolderConstants.FLOAT_CONNECTION_FILE_EXTENSION);
+
+		if (Files.exists(target)) {
+			return true;
+		}
+
+		// copy file
+		try {
+			Files.move(source, target);
+		} catch (IOException e) {
+			return false;
+		}
+
+		// delete old connection file
+		try {
+			Files.delete(source);
+		} catch (IOException e) {
+			return false;
+		}
+
+		return true;
+	}
+
+	public static Path getConnectionPath(ConnectionConfig connectionConfig) {
+		Path filePath = FolderConstants.CONNECTIONS.resolve(connectionConfig.connectionName() + FolderConstants.FLOAT_CONNECTION_FILE_EXTENSION);
+
+		if (!Files.exists(filePath)) {
+			return null;
+		}
+
+		return filePath;
+
 	}
 }

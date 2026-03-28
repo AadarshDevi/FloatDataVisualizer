@@ -1,70 +1,30 @@
 package com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.util;
 
-import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.data.ConnectionConfig;
-import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.processor.ConnectionProcessor;
-import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.managers.ControllerManager;
-import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.managers.StageManager;
-import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.pages.PageConstants;
-import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.pages.connections.ConnectionsController;
-import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.pages.grapher.GrapherController;
-import javafx.fxml.FXMLLoader;
+import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.util.DeltaDrag;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.paint.Color;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
-import lombok.Getter;
-
-import java.io.IOException;
-import java.util.ArrayList;
+import javafx.stage.StageStyle;
 
 public class StageUtil {
 
-	@Getter private static Scene connectionsScene;
 
-	@Getter private static Scene graphingScene;
+	public static void customTitleBarDrag(Stage stage, Scene scene, BorderPane borderPane) {
+		scene.setFill(Color.TRANSPARENT);
 
-	public static void setConnectionsScene() {
-		System.out.println("Loading ConnectionsUI");
-		FXMLLoader fxmlLoader = new FXMLLoader(PageConstants.CONNECTIONS_PAGE);
-		BorderPane buoyUI = null;
-		try {
-			buoyUI = fxmlLoader.load();
-		} catch (IOException e) {
-			throw new RuntimeException(e);
-		}
-		ConnectionsController cc = fxmlLoader.getController();
+		DeltaDrag drag = new DeltaDrag();
+		borderPane.setOnMousePressed(event -> {
+			drag.setDeltaX(event.getSceneX());
+			drag.setDeltaY(event.getSceneY());
+		});
 
-		ControllerManager.setConnectionsController(cc);
-
-		ArrayList<ConnectionConfig> connectionsList = ConnectionProcessor.readAllConnections();
-		System.out.println("Connections Found: " + connectionsList.size());
-		if (connectionsList != null)
-			cc.setConnectionConfigs(connectionsList);
-
-		Scene scene = new Scene(buoyUI);
-		buoyUI.getProperties().put("grapher", cc);
-		StageManager.createInvisPane(scene, buoyUI);
-		connectionsScene = scene;
-	}
-
-	public static GrapherController setGraphingScene() {
-
-		System.out.println("Loading GraphingUI");
-
-		FXMLLoader grapherLoader = new FXMLLoader(PageConstants.GRAPHING_PAGE);
-		BorderPane grapherUI = null;
-		try {
-			grapherUI = grapherLoader.load();
-		} catch (IOException e) {
-			throw new RuntimeException(e);
-		}
-		GrapherController gc = grapherLoader.getController();
-		Scene scene = new Scene(grapherUI);
-		grapherUI.getProperties().put("grapher", gc);
-		StageManager.createInvisPane(scene, grapherUI);
-		graphingScene = scene;
-		return gc;
+		borderPane.setOnMouseDragged(event -> {
+			stage.setX(event.getScreenX() - drag.getDeltaX());
+			stage.setY(event.getScreenY() - drag.getDeltaY());
+		});
 	}
 
 	public static void exceptionAlert(boolean success, int exceptionNum, String errorMessage, String positiveLog) {
@@ -80,15 +40,20 @@ public class StageUtil {
 		System.out.println();
 	}
 
-	public static Stage getConnectionEditor(BorderPane pane) {
-		Scene scene = new Scene(pane);
-		Stage stage = new Stage();
-		stage.setScene(scene);
+	public static void setStageInit(Stage stage) {
 		stage.initModality(Modality.APPLICATION_MODAL);
-		stage.initOwner(StageManager.getMainStage());
-		stage.setTitle("Float Data Visualizer");
-		StageManager.setConnectionCreatorStage(stage);
-		StageManager.createInvisPane(scene, pane);
-		return stage;
+		stage.initStyle(StageStyle.TRANSPARENT);
 	}
+
+//	public static Stage getConnectionEditor(BorderPane pane) {
+//		Scene scene = new Scene(pane);
+//		Stage stage = new Stage();
+//		stage.setScene(scene);
+//		stage.initModality(Modality.APPLICATION_MODAL);
+//		stage.initOwner(StageManager.getMainStage());
+//		stage.setTitle("Float Data Visualizer");
+//		StageManager.setConnectionCreatorStage(stage);
+//		StageManager.createInvisPane(scene, pane);
+//		return stage;
+//	}
 }

@@ -4,7 +4,6 @@ import com.alphagen.studio.FloatDataVisualizer.Launcher;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.Backend;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.app.PlatformDetector;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.managers.StageManager;
-import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.util.StageUtil;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
@@ -18,6 +17,7 @@ public class BuoyUI extends Application {
 	@Override
 	public void start(Stage stage) throws Exception {
 
+		StageManager.setMainStage(stage);
 		PlatformDetector.detectPlatform();
 
 		System.out.println("Initializing Backend");
@@ -26,7 +26,7 @@ public class BuoyUI extends Application {
 		System.out.println("Finding Folders");
 
 		Alert alert = new Alert(Alert.AlertType.ERROR);
-		alert.setHeaderText("Error");
+		alert.setHeaderText(null);
 
 		if (!backend.verifyRoot()) {
 			alert.setTitle("Exception 1");
@@ -57,14 +57,19 @@ public class BuoyUI extends Application {
 		}
 		System.out.println("All startup folders and settings file ready.");
 
-		StageUtil.setConnectionsScene();
-		Scene scene = StageUtil.getConnectionsScene();
+		// todo: read settings file
+
+		StageManager.setConnectionsScene();
+		Scene scene = StageManager.getConnectionsScene();
 		stage.setScene(scene);
 		stage.setTitle("Float Data Visualizer");
 		stage.getIcons().add(new Image(Objects.requireNonNull(Launcher.class.getResourceAsStream("buoyui/logos/ImageLogo.png"))));
-		StageManager.setMainStage(stage);
 
 		System.out.println("Opening App");
+
+		// needed for loading card
+		// thread.interrupt();
+
 		stage.show();
 
 	}

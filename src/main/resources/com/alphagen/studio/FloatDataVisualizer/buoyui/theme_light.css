@@ -5,6 +5,28 @@
 
 /* COMPLETE CORRECTED CSS for ProgressIndicator */
 
+.labels {
+    -fx-font-family: "Bahnschrift SemiBold Condensed";
+    -fx-text-fill: #000000;
+    -fx-font-size: 14px;
+    -fx-background-color: #ffffff;
+}
+
+.measurement-labels {
+    -fx-background-radius: 6px;
+    -fx-background-color: #ffffff;
+    
+    transition-property: -fx-background-color;
+    transition-duration: 0.25s;
+}
+
+.measurement-labels:hover {
+    -fx-background-color: #ebebeb;
+}
+
+.labels-bold {
+    -fx-font-weight: bold;
+}
 /* Indeterminate mode - Spinning ring + smooth cyan dots */
 .progress-indicator:indeterminate .spinner .arc {
     -fx-stroke: #028fffff; /* Cyan background ring */
@@ -210,7 +232,7 @@
 }
 
 .seletion-combo-box .menu-item:selected {
-    -fx-background-color: #004a87;
+    -fx-background-color: #028fffff;
     -fx-text-fill: #000000;
 }
 
@@ -225,7 +247,7 @@
 }
 
 .seletion-combo-box .list-cell:selected {
-    -fx-background-color: #004a87;
+    -fx-background-color: #028fffff;
     -fx-text-fill: #000000;
 }
 
@@ -326,6 +348,8 @@
 }
 
 /* Context Menu */
+.text-area .context-menu,
+.text-box .context-menu,
 .popup-menu {
     -fx-background-radius: 8px;
     -fx-background-color: #ffffff;
@@ -339,6 +363,8 @@
     -fx-padding: 5px;
 }
 
+.text-area .context-menu  .menu-item,
+.text-box .context-menu .menu-item,
 .popup-menu .menu-item {
     -fx-padding: 1 100 1 5;
 
@@ -354,16 +380,22 @@
     -fx-font-size: 13px;
 }
 
+.text-area .context-menu .menu-item:focus,
+.text-box .context-menu .menu-item:focus,
 .popup-menu .menu-item:focused {
     -fx-background-color: #028fffff;
     -fx-text-fill: #000000;
 }
 
+.text-area .context-menu .menu-item:selected,
+.text-box .context-menu .menu-item:selected,
 .popup-menu .menu-item:selected {
-    -fx-background-color: #004a87;
+    -fx-background-color: #028fffff;
     -fx-text-fill: #000000;
 }
 
+.text-area .context-menu .menu-item:hover,
+.text-box .context-menu .menu-item:hover,
 .popup-menu .menu-item:hover {
     -fx-background-color: #028fffff;
     -fx-text-fill: #000000;

@@ -6,24 +6,25 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 
 public class PlatformDetector {
-    @Getter
-    private static Platform OSPLATFORM;
-    @Getter
-    private static Path PROJECTROOT;
+	@Getter
+	private static Platform OSPLATFORM;
+	@Getter
+	private static Path PROJECTROOT;
 
-    public static void detectPlatform() {
-        String osName = System.getProperty("os.name");
-        if (osName.toLowerCase().contains("win")) {
-            OSPLATFORM = Platform.WIN11;
-            PROJECTROOT = Paths.get(System.getenv("APPDATA")).resolve("FloatDataVisualizer").resolve(AppData.RELEASE_VERSION);
-        } else if (osName.toLowerCase().contains("mac") || osName.toLowerCase().contains("darwin")) {
-            OSPLATFORM = Platform.MACOS;
-            PROJECTROOT = Paths.get(System.getProperty("user.home")).resolve("FloatDataVisualizer").resolve(AppData.RELEASE_VERSION);
-        } else if (osName.toLowerCase().contains("linux")) {
-            OSPLATFORM = Platform.LINUX;
-            PROJECTROOT = Paths.get(System.getProperty("user.home")).resolve("FloatDataVisualizer").resolve(AppData.RELEASE_VERSION);
-        }
-        System.out.println("OS: " + OSPLATFORM);
-        System.out.println("Project Root: " + PROJECTROOT);
-    }
+	public static void detectPlatform() {
+		String osName = System.getProperty("os.name");
+		if (osName.toLowerCase().contains("win")) {
+			OSPLATFORM = Platform.WIN11;
+			PROJECTROOT = Paths.get(System.getenv("APPDATA")).resolve("FloatDataVisualizer").resolve(AppData.RELEASE_VERSION);
+		} else if (osName.toLowerCase().contains("mac") || osName.toLowerCase().contains("darwin")) {
+			OSPLATFORM = Platform.MACOS;
+			PROJECTROOT = Paths.get(System.getProperty("user.home")).resolve(".local").resolve("share").resolve("FloatDataVisualizer").resolve(AppData.RELEASE_VERSION);
+		} else if (osName.toLowerCase().contains("linux")) {
+			OSPLATFORM = Platform.LINUX;
+			PROJECTROOT = Paths.get(System.getProperty("user.home")).resolve(".local").resolve("share").resolve("FloatDataVisualizer").resolve(AppData.RELEASE_VERSION);
+		}
+
+		System.out.println("OS: " + OSPLATFORM);
+		System.out.println("Project Root: " + PROJECTROOT);
+	}
 }
