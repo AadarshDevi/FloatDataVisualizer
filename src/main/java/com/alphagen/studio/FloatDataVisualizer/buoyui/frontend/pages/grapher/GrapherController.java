@@ -2,6 +2,7 @@ package com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.pages.grapher;
 
 import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.data.ConnectionConfig;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.data.DataPoint;
+import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.data.FloatConfig;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.data.MeasurementConfig;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.processor.DataPointProcessor;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.processor.SerialProcessor;
@@ -10,6 +11,7 @@ import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.managers.Controll
 import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.managers.StageManager;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.pages.CardConstants;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.pages.grapher.scatterplot.ScatterPlotController;
+import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.util.MeasurementLabel;
 import javafx.application.Platform;
 import javafx.beans.property.SimpleDoubleProperty;
 import javafx.beans.property.SimpleIntegerProperty;
@@ -22,6 +24,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.TilePane;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import lombok.Setter;
@@ -52,6 +55,12 @@ public class GrapherController {
 	@FXML public Label startFlagLabel;
 	@FXML public Label endFlagLabel;
 	@FXML public TableColumn<DataPoint, String> timeTableCol;
+	@FXML public Label teamInfoLabel;
+	@FXML public Label packetLabel;
+	@FXML public Label baudRateLabel;
+	@FXML public Label serialPortLabel;
+	@FXML public Label rawDataFormatLabel;
+	@FXML public TilePane measurementsTilePane;
 	private Future<?> activeTask;
 	private Future<?> activeDataBase;
 	@Setter private ConnectionConfig connectionConfig;
@@ -94,8 +103,20 @@ public class GrapherController {
 		// 		4. put data
 		// 		5. lock table col length and checkbox length
 
-		endFlagLabel.setText(connectionConfig.floatConfig().endFlag());
-		startFlagLabel.setText(connectionConfig.floatConfig().startFlag());
+		FloatConfig fc = connectionConfig.floatConfig();
+		MeasurementConfig[] measurementConfigs = connectionConfig.measurementConfigs();
+		teamInfoLabel.setText(fc.teamData());
+		packetLabel.setText(fc.pkt());
+		baudRateLabel.setText(Integer.toString(connectionConfig.baudRate()));
+		serialPortLabel.setText(connectionConfig.port().getDescriptivePortName());
+		StringBuilder measurementsString = new StringBuilder();
+		for (MeasurementConfig measurementConfig : measurementConfigs) {
+			measurementsString.append(",").append(measurementConfig.name()).append("(").append(measurementConfig.unit()).append(")");
+			measurementsTilePane.getChildren().add(new MeasurementLabel(measurementConfig.name() + " (" + measurementConfig.unit() + ")"));
+		}
+		rawDataFormatLabel.setText(fc.teamData() + "," + fc.pkt() + measurementsString);
+		endFlagLabel.setText(fc.endFlag());
+		startFlagLabel.setText(fc.startFlag());
 
 		@SuppressWarnings("unchecked")
 		TableColumn<DataPoint, String> teamCol = (TableColumn<DataPoint, String>) tableView.getColumns().getFirst();
@@ -109,7 +130,6 @@ public class GrapherController {
 		TableColumn<DataPoint, Double> timeCol = (TableColumn<DataPoint, Double>) tableView.getColumns().get(2);
 		timeCol.setCellValueFactory(dp -> new SimpleDoubleProperty(dp.getValue().time()).asObject());
 
-		MeasurementConfig[] measurementConfigs = connectionConfig.measurementConfigs();
 		MeasurementConfig timeConfig = measurementConfigs[0];
 
 		timeTableCol.setText(timeConfig.name() + " (" + timeConfig.unit() + ")");
@@ -202,6 +222,7 @@ public class GrapherController {
 		}
 
 		tableView.getItems().removeAll(tableView.getItems());
+		measurementsTilePane.getChildren().removeAll(measurementsTilePane.getChildren());
 
 		System.out.println(" >>> Serial Communication > Start");
 

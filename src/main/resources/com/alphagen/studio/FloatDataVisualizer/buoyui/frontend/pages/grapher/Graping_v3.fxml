@@ -16,6 +16,7 @@
 <?import javafx.scene.control.Tooltip?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.TilePane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.SVGPath?>
 
@@ -71,50 +72,137 @@
                      <content>
                         <VBox prefHeight="499.0" prefWidth="1129.0">
                            <children>
-                              <HBox prefHeight="40.0" prefWidth="1129.0">
-                                 <children>
-                                    <Label alignment="CENTER_RIGHT" prefHeight="38.0" prefWidth="250.0" text="Start Data Transfer Flag:">
-                                       <styleClass>
-                                          <String fx:value="data-card-text" />
-                                          <String fx:value="data-card-text-bigger" />
-                                       </styleClass>
-                                       <padding>
-                                          <Insets right="10.0" />
-                                       </padding>
-                                    </Label>
-                                    <Label fx:id="startFlagLabel" layoutX="10.0" layoutY="10.0" maxWidth="1.7976931348623157E308" prefHeight="38.0" prefWidth="300.0" text="Start Data Transfer Flag" HBox.hgrow="ALWAYS">
-                                       <styleClass>
-                                          <String fx:value="data-card-text" />
-                                          <String fx:value="data-card-text-bigger" />
-                                       </styleClass>
-                                       <padding>
-                                          <Insets left="10.0" />
-                                       </padding>
-                                    </Label>
-                                 </children>
-                              </HBox>
                               <HBox layoutX="20.0" layoutY="20.0" prefHeight="40.0" prefWidth="1129.0">
                                  <children>
-                                    <Label alignment="CENTER_RIGHT" prefHeight="38.0" prefWidth="250.0" text="End Data Transfer Flag:">
-                                       <styleClass>
-                                          <String fx:value="data-card-text" />
-                                          <String fx:value="data-card-text-bigger" />
-                                       </styleClass>
+                                    <Label prefHeight="38.0" prefWidth="180.0" text="Team Info:">
                                        <padding>
                                           <Insets right="10.0" />
                                        </padding>
-                                    </Label>
-                                    <Label fx:id="endFlagLabel" layoutX="10.0" layoutY="10.0" maxWidth="1.7976931348623157E308" prefHeight="38.0" prefWidth="300.0" text="End Data Transfer Flag" HBox.hgrow="ALWAYS">
                                        <styleClass>
-                                          <String fx:value="data-card-text" />
-                                          <String fx:value="data-card-text-bigger" />
+                                          <String fx:value="labels" />
+                                          <String fx:value="labels-bold" />
                                        </styleClass>
+                                    </Label>
+                                    <Label fx:id="teamInfoLabel" layoutX="10.0" layoutY="10.0" maxWidth="1.7976931348623157E308" prefHeight="38.0" prefWidth="300.0" styleClass="labels" HBox.hgrow="ALWAYS">
+                                       <padding>
+                                          <Insets left="10.0" />
+                                       </padding>
+                                    </Label>
+                                    <Label prefHeight="38.0" prefWidth="180.0" text="Packet:">
+                                       <padding>
+                                          <Insets right="10.0" />
+                                       </padding>
+                                       <styleClass>
+                                          <String fx:value="labels" />
+                                          <String fx:value="labels-bold" />
+                                       </styleClass>
+                                    </Label>
+                                    <Label fx:id="packetLabel" maxWidth="1.7976931348623157E308" prefHeight="38.0" prefWidth="300.0" styleClass="labels" HBox.hgrow="ALWAYS">
                                        <padding>
                                           <Insets left="10.0" />
                                        </padding>
                                     </Label>
                                  </children>
                               </HBox>
+                              <HBox layoutX="20.0" layoutY="60.0" prefHeight="40.0" prefWidth="1129.0">
+                                 <children>
+                                    <Label prefHeight="38.0" prefWidth="180.0" text="Baud Rate:">
+                                       <padding>
+                                          <Insets right="10.0" />
+                                       </padding>
+                                       <styleClass>
+                                          <String fx:value="labels" />
+                                          <String fx:value="labels-bold" />
+                                       </styleClass>
+                                    </Label>
+                                    <Label fx:id="baudRateLabel" layoutX="10.0" layoutY="10.0" maxWidth="1.7976931348623157E308" prefHeight="38.0" prefWidth="300.0" styleClass="labels" HBox.hgrow="ALWAYS">
+                                       <padding>
+                                          <Insets left="10.0" />
+                                       </padding>
+                                    </Label>
+                                    <Label prefHeight="38.0" prefWidth="180.0" text="Serial Port:">
+                                       <padding>
+                                          <Insets right="10.0" />
+                                       </padding>
+                                       <styleClass>
+                                          <String fx:value="labels" />
+                                          <String fx:value="labels-bold" />
+                                       </styleClass>
+                                    </Label>
+                                    <Label fx:id="serialPortLabel" maxWidth="1.7976931348623157E308" prefHeight="38.0" prefWidth="300.0" styleClass="labels" HBox.hgrow="ALWAYS">
+                                       <padding>
+                                          <Insets left="10.0" />
+                                       </padding>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                              <HBox layoutX="20.0" layoutY="100.0" prefHeight="40.0" prefWidth="1129.0">
+                                 <children>
+                                    <Label prefHeight="38.0" prefWidth="180.0" text="Raw Data Format:">
+                                       <padding>
+                                          <Insets right="10.0" />
+                                       </padding>
+                                       <styleClass>
+                                          <String fx:value="labels" />
+                                          <String fx:value="labels-bold" />
+                                       </styleClass>
+                                    </Label>
+                                    <Label fx:id="rawDataFormatLabel" layoutX="10.0" layoutY="10.0" maxWidth="1.7976931348623157E308" prefHeight="38.0" prefWidth="300.0" styleClass="labels" HBox.hgrow="ALWAYS">
+                                       <padding>
+                                          <Insets left="10.0" />
+                                       </padding>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="40.0" prefWidth="1129.0">
+                                 <children>
+                                    <Label prefHeight="38.0" prefWidth="180.0" text="Start Data Transfer Flag:">
+                                       <padding>
+                                          <Insets right="10.0" />
+                                       </padding>
+                                       <styleClass>
+                                          <String fx:value="labels" />
+                                          <String fx:value="labels-bold" />
+                                       </styleClass>
+                                    </Label>
+                                    <Label fx:id="startFlagLabel" layoutX="10.0" layoutY="10.0" maxWidth="1.7976931348623157E308" prefHeight="38.0" prefWidth="300.0" styleClass="labels" HBox.hgrow="ALWAYS">
+                                       <padding>
+                                          <Insets left="10.0" />
+                                       </padding>
+                                    </Label>
+                                    <Label prefHeight="38.0" prefWidth="180.0" text="End Data Transfer Flag::">
+                                       <padding>
+                                          <Insets right="10.0" />
+                                       </padding>
+                                       <styleClass>
+                                          <String fx:value="labels" />
+                                          <String fx:value="labels-bold" />
+                                       </styleClass>
+                                    </Label>
+                                    <Label fx:id="endFlagLabel" maxWidth="1.7976931348623157E308" prefHeight="38.0" prefWidth="300.0" styleClass="labels" HBox.hgrow="ALWAYS">
+                                       <padding>
+                                          <Insets left="10.0" />
+                                       </padding>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                              <Label prefHeight="38.0" prefWidth="180.0" text="Measurements">
+                                 <padding>
+                                    <Insets right="10.0" />
+                                 </padding>
+                                 <styleClass>
+                                    <String fx:value="labels" />
+                                    <String fx:value="labels-bold" />
+                                 </styleClass>
+                              </Label>
+                              <TilePane fx:id="measurementsTilePane" hgap="5.0" prefHeight="100.0" prefWidth="200.0" vgap="5.0">
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                                 <padding>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </padding>
+                              </TilePane>
                            </children>
                            <padding>
                               <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
