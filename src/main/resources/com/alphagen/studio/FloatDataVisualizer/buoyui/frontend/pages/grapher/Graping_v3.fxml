@@ -216,7 +216,7 @@
                <content>
                   <BorderPane>
                      <center>
-                        <TextArea prefHeight="200.0" prefWidth="200.0" text="text&#10;">
+                        <TextArea fx:id="terminalTextArea" editable="false" prefHeight="200.0" prefWidth="200.0" text="&#10;">
                            <BorderPane.margin>
                               <Insets bottom="3.0" />
                            </BorderPane.margin>
