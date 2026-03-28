@@ -57,6 +57,17 @@ public class DataCardController extends Controller {
 	}
 
 	public void deleteConnection() {
+		Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+		alert.setTitle("Delete Connections");
+		alert.setHeaderText(null);
+		alert.setContentText("Do you want to delete the connection?");
+		alert.getButtonTypes().setAll(ButtonType.OK, ButtonType.CANCEL);
+		Optional<ButtonType> result = alert.showAndWait();
+
+		if (result.isPresent() && result.get() == ButtonType.CANCEL) {
+			return;
+		}
+
 		System.out.println("Deleting Connection");
 
 		Path connectionFile = FolderConstants.CONNECTIONS.resolve(connectionConfig.connectionName() + FolderConstants.FLOAT_CONNECTION_FILE_EXTENSION);
@@ -70,6 +81,11 @@ public class DataCardController extends Controller {
 
 		ControllerManager.getConnectionsController().deleteConnection(dataCard);
 		System.out.println("Deleted Connection: " + connectionConfig.connectionName());
+
+		alert = new Alert(Alert.AlertType.INFORMATION);
+		alert.setTitle("Connection Deleted");
+		alert.setHeaderText(null);
+		alert.setContentText("Connection was successfully deleted");
 	}
 
 	public void setConnection(ConnectionConfig connectionConfig) {
