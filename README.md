@@ -182,10 +182,10 @@ Root: C:\Users\{user}\AppData\Roaming\FloatDataVisualizer\2.0.0
 ## Connection Editor
 
 1. [x] Write Connection
-2. [ ] Reset Connection Data in Editor
+2. [x] Reset Connection Data in Editor
 3. [x] Autofill data based on last connection
-4. [ ] Autofill data: float-info, start/end transfer flags
-5. [ ] error labels become label for each and the text is replaced (visible become text="")
+4. [x] Autofill data: float-info, start/end transfer flags
+5. [x] error labels become label for each and the text is replaced (visible become text="")
 
 ## Preferences
 
@@ -197,28 +197,27 @@ Root: C:\Users\{user}\AppData\Roaming\FloatDataVisualizer\2.0.0
 
 ## DataViewer
 
-1. [ ] Change Data View: Graph/Table
-    1. [ ] Via Buttons: GraphView Button & TableView Button
-2. [ ] Zoom In/Out Graph --> Bigger and Smaller Graphs
-    1. [ ] Ctrl + Mouse Scroll Up --> Zoom In
-    2. [ ] Ctrl + Mouse Scroll Down --> Zoom Out
-    3. [ ] Mouse Scroll Up --> Scroll Up
-    4. [ ] Mouse Scroll Down --> Scroll Down
-    5. [ ] Shift + Mouse Scroll Up --> Scroll Left
-    6. [ ] Shift + Mouse Scroll Down --> Scroll Right
+1. ~~[ ]Change Data View: Graph/Table~~
+    1. ~~[ ] Via Buttons: GraphView Button & TableView Button~~
+2. [x] Zoom In/Out Graph --> Bigger and Smaller Graphs
+    1. [x] Mouse Scroll Up/Down --> Scroll Up/Down
+    2. [x] Shift + Mouse Scroll Up/Down --> Scroll Left/Right
+    3. [x] Ctrl + Alt + Mouse Scroll Up/Down --> Zoom In/Out
+    4. [x] Ctrl + Mouse Scroll Up/Down --> Vertical Zoom In/Out
+    5. [x] Shift + Alt + Mouse Scroll Up/Down --> Horizontal Zoom In/Out
 3. [ ] Import CSV (.float.data)
-4. [ ] Export CSV (.float.data)
+4. [x] Export CSV (.float.data)
 5. [ ] Import Raw Data CSV (.raw.float.data)
-6. [ ] Export Raw Data CSV (.raw.float.data)
-7. [ ] Start Data Receiving
-8. [ ] Stop Data Receiving
-9. [ ] Tabs for multiple Data Recorded
+6. [x] Export Raw Data CSV (.raw.float.data)
+7. [x] Start Data Receiving
+8. [x] Stop Data Receiving
+9. [x] Tabs for multiple Data Recorded
 
 ## DataStorage
 
-1. [ ] data stored in double[]
-    1. [ ] double[].length = number of data recording + 1 (for time)
-2. [ ] --item-template
+1. [x] data stored in double[]
+    1. [x] double[].length = number of data recording + 1 (for time)
+2. ~~[x] --item-template~~
 
 ## Markdown Viewer aka JavaFX Lib: MarkdownFX
 
