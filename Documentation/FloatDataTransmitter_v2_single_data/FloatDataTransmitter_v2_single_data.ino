@@ -23,3 +23,6 @@ void loop() {
   i++;
   delay(500);
 }
+
+Team# 4 digits-teamname,pkt-,Time(s),Depth(m)
+
