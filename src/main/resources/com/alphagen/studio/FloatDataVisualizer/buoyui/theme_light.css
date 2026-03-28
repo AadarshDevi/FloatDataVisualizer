@@ -232,7 +232,7 @@
 }
 
 .seletion-combo-box .menu-item:selected {
-    -fx-background-color: #004a87;
+    -fx-background-color: #028fffff;
     -fx-text-fill: #000000;
 }
 
@@ -247,7 +247,7 @@
 }
 
 .seletion-combo-box .list-cell:selected {
-    -fx-background-color: #004a87;
+    -fx-background-color: #028fffff;
     -fx-text-fill: #000000;
 }
 
@@ -348,6 +348,8 @@
 }
 
 /* Context Menu */
+.text-area .context-menu,
+.text-box .context-menu,
 .popup-menu {
     -fx-background-radius: 8px;
     -fx-background-color: #ffffff;
@@ -361,6 +363,8 @@
     -fx-padding: 5px;
 }
 
+.text-area .context-menu  .menu-item,
+.text-box .context-menu .menu-item,
 .popup-menu .menu-item {
     -fx-padding: 1 100 1 5;
 
@@ -376,16 +380,22 @@
     -fx-font-size: 13px;
 }
 
+.text-area .context-menu .menu-item:focus,
+.text-box .context-menu .menu-item:focus,
 .popup-menu .menu-item:focused {
     -fx-background-color: #028fffff;
     -fx-text-fill: #000000;
 }
 
+.text-area .context-menu .menu-item:selected,
+.text-box .context-menu .menu-item:selected,
 .popup-menu .menu-item:selected {
-    -fx-background-color: #004a87;
+    -fx-background-color: #028fffff;
     -fx-text-fill: #000000;
 }
 
+.text-area .context-menu .menu-item:hover,
+.text-box .context-menu .menu-item:hover,
 .popup-menu .menu-item:hover {
     -fx-background-color: #028fffff;
     -fx-text-fill: #000000;
