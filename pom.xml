@@ -158,7 +158,9 @@
                                 <argument>--input</argument>
                                 <argument>${project.build.directory}</argument>
                                 <argument>--name</argument>
-                                <argument>${project.artifactId} ${project.version} Beta 2</argument>
+                                <argument>
+                                    FloatDataVisualizer_v${project.version}_beta_2_win_11_x86_64_msi_consolebundled
+                                </argument>
                                 <argument>--app-version</argument>
                                 <argument>${project.version}</argument>  <!-- #5 Uses YOUR 2.1.3.0 -->
                                 <argument>--vendor</argument>
@@ -194,7 +196,9 @@
                                 <argument>--input</argument>
                                 <argument>${project.build.directory}</argument>
                                 <argument>--name</argument>
-                                <argument>${project.artifactId} ${project.version} Beta 2</argument>
+                                <argument>
+                                    FloatDataVisualizer_v${project.version}_beta_2_win_11_x86_64_exe_consolebundled
+                                </argument>
                                 <argument>--app-version</argument>
                                 <argument>${project.version}</argument>
                                 <argument>--vendor</argument>
