@@ -5,6 +5,28 @@
 
 /* COMPLETE CORRECTED CSS for ProgressIndicator */
 
+.labels {
+    -fx-font-family: "Bahnschrift SemiBold Condensed";
+    -fx-text-fill: #000000;
+    -fx-font-size: 14px;
+    -fx-background-color: #ffffff;
+}
+
+.measurement-labels {
+    -fx-background-radius: 6px;
+    -fx-background-color: #ffffff;
+    
+    transition-property: -fx-background-color;
+    transition-duration: 0.25s;
+}
+
+.measurement-labels:hover {
+    -fx-background-color: #ebebeb;
+}
+
+.labels-bold {
+    -fx-font-weight: bold;
+}
 /* Indeterminate mode - Spinning ring + smooth cyan dots */
 .progress-indicator:indeterminate .spinner .arc {
     -fx-stroke: #028fffff; /* Cyan background ring */
