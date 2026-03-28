@@ -61,6 +61,7 @@ public class GrapherController {
 	@FXML public Label serialPortLabel;
 	@FXML public Label rawDataFormatLabel;
 	@FXML public TilePane measurementsTilePane;
+	@FXML public TextArea terminalTextArea;
 	private Future<?> activeTask;
 	private Future<?> activeDataBase;
 	@Setter private ConnectionConfig connectionConfig;
@@ -75,7 +76,6 @@ public class GrapherController {
 		System.out.println();
 		System.out.println(" >>> Serial Communication > Initializing");
 		graphPane.getSelectionModel().select(2);
-		terminalTab.setDisable(true);
 		checkBoxesContainer.setDisable(true);
 		checkBoxesContainer.setVisible(false);
 		checkBoxesContainer.setManaged(false);
@@ -253,6 +253,7 @@ public class GrapherController {
 
 					// todo insert data into table
 					tableView.getItems().add(dp);
+					terminalTextArea.setText(terminalTextArea.getText() + "\n" + dp.toRaw());
 				});
 			}
 		});
