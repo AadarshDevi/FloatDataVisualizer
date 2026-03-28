@@ -6,7 +6,7 @@
 
     <groupId>com.alphagen.studio</groupId>
     <artifactId>FloatDataVisualizer</artifactId>
-    <version>2.0.0</version> <!-- group 2 -->
+    <version>1.5.7</version> <!-- group 2 -->
     <name>FloatDataVisualizer</name>
 
     <properties>
@@ -176,7 +176,7 @@
                                 <argument>--win-dir-chooser</argument>
                                 <argument>--icon</argument>
                                 <argument>${project.basedir}/src/main/resources/icon.ico</argument>
-                                <argument>--verboss</argument>
+                                <argument>--verbose</argument>
                             </arguments>
                         </configuration>
                     </execution>
@@ -209,7 +209,7 @@
                                 <argument>--win-shortcut</argument>
                                 <argument>--icon</argument>
                                 <argument>${project.basedir}/src/main/resources/icon.ico</argument>
-                                <argument>--verboss</argument>
+                                <argument>--verbose</argument>
                             </arguments>
                         </configuration>
                     </execution>

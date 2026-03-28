@@ -238,3 +238,7 @@ A basic Markdown file reader. Takes in a **.md file** and **a vbox**. It must ha
 1. Make sure either Win11, MacOS or Linux is ready and the rest commented
 2. change the project version in pom to correct version
 3. change project version in AppData.java
+4. new command:
+      ```
+      mvn clean install -DskipTests
+      ```
