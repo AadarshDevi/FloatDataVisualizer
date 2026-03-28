@@ -440,7 +440,7 @@ public class ConnectionEditorController {
 		connectionOptions.setValue(ccg.port().getSystemPortName());
 
 		FloatConfig fcg = ccg.floatConfig();
-		dataFormat.setText(fcg.teamData());
+		dataFormat.setText(fcg.teamData() + "," + fcg.pkt() + "," + ccg.measurementConfigs()[0].name() + "(" + ccg.measurementConfigs()[0].unit() + ")");
 		startFlagTextField.setText(fcg.startFlag());
 		endFlagTextField.setText(fcg.endFlag());
 
