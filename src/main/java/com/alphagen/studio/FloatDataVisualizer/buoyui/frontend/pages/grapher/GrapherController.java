@@ -315,17 +315,6 @@ public class GrapherController {
 
 		try (BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(file))) {
 
-			for (int i = 0; i < connectionConfig.measurementConfigs().length; i++) {
-				bufferedWriter.write(connectionConfig.measurementConfigs()[i].name());
-				bufferedWriter.write("(");
-				bufferedWriter.write(connectionConfig.measurementConfigs()[i].unit());
-				bufferedWriter.write(")");
-				if (i != connectionConfig.measurementConfigs().length - 1) {
-					bufferedWriter.write(",");
-				}
-			}
-			bufferedWriter.newLine();
-
 			for (DataPoint dp : list) {
 				bufferedWriter.write(dp.toRaw());
 				bufferedWriter.newLine();
