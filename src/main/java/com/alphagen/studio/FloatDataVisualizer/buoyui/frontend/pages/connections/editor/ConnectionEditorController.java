@@ -445,4 +445,15 @@ public class ConnectionEditorController {
 		endFlagTextField.setText(fcg.endFlag());
 
 	}
+
+	@FXML
+	public void resetFields() {
+		connectionName.setText("");
+		baudRate.setText("");
+		connectionOptions.setValue(null);
+		dataFormat.setText("");
+		startFlagTextField.setText("");
+		endFlagTextField.setText("");
+		resetErrorLabels();
+	}
 }
