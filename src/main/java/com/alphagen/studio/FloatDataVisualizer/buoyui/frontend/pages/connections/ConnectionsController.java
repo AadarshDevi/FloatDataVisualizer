@@ -24,7 +24,9 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.TilePane;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -179,6 +181,7 @@ public class ConnectionsController {
 	public void deleteAll() {
 		Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
 		alert.setTitle("Delete All Connections");
+		alert.setHeaderText(null);
 		alert.setContentText("Do you want to delete all connections?");
 		alert.getButtonTypes().setAll(ButtonType.OK, ButtonType.CANCEL);
 		Optional<ButtonType> result = alert.showAndWait();
