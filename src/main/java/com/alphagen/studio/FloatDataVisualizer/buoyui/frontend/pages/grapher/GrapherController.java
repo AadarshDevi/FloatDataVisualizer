@@ -245,7 +245,6 @@ public class GrapherController {
 		}
 
 		tableView.getItems().removeAll(tableView.getItems());
-		measurementsTilePane.getChildren().removeAll(measurementsTilePane.getChildren());
 
 		System.out.println(" >>> Serial Communication > Start");
 
