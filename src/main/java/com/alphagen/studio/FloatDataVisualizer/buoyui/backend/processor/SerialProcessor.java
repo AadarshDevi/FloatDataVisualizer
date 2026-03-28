@@ -16,6 +16,7 @@ public class SerialProcessor implements Runnable {
 	private final SerialPort sp;
 	@Getter private final AtomicBoolean startDataTransfer = new AtomicBoolean(false);
 	@Getter private final AtomicBoolean stopDataTransfer = new AtomicBoolean(false);
+	@Getter private AtomicBoolean disconnected = new AtomicBoolean(false);
 	@Setter private ConnectionConfig connectionConfig;
 	@Setter private DataPointProcessor dpp;
 
@@ -29,6 +30,7 @@ public class SerialProcessor implements Runnable {
 	@Override
 	public void run() {
 
+		disconnected.set(false);
 		sp.openPort();
 		System.out.println();
 
@@ -50,7 +52,8 @@ public class SerialProcessor implements Runnable {
 
 					if (rawline == null) {
 						if (!sp.isOpen() || sp.bytesAvailable() == -1) {
-							System.err.println("Disconnected from Serial Port");
+							System.err.println(" >>> Disconnected from Serial Port");
+							disconnected.set(true);
 							stopDataTransfer.set(true);
 							break;
 						}
@@ -96,6 +99,8 @@ public class SerialProcessor implements Runnable {
 			stopDataTransfer.set(false);
 
 			ControllerManager.getGrapherController().stopingDataTransfer();
+
+			System.out.println(" >>> Hardware Status > Disconnected: " + disconnected);
 		}
 	}
 }
