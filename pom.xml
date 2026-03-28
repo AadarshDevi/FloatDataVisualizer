@@ -5,8 +5,8 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.alphagen.studio</groupId>
-    <artifactId>Float Data Visualizer</artifactId>
-    <version>1.5.4</version> <!-- group 2 -->
+    <artifactId>FloatDataVisualizer</artifactId>
+    <version>1.4.4</version> <!-- group 2 -->
     <name>FloatDataVisualizer</name>
 
     <properties>
@@ -158,7 +158,7 @@
                                 <argument>--input</argument>
                                 <argument>${project.build.directory}</argument>
                                 <argument>--name</argument>
-                                <argument>${project.artifactId} ${project.version} Beta 2</argument>
+                                <argument>FloatDataVisualizer ${project.version}-Beta</argument>
                                 <argument>--app-version</argument>
                                 <argument>${project.version}</argument>  <!-- #5 Uses YOUR 2.1.3.0 -->
                                 <argument>--vendor</argument>
@@ -194,7 +194,7 @@
                                 <argument>--input</argument>
                                 <argument>${project.build.directory}</argument>
                                 <argument>--name</argument>
-                                <argument>${project.artifactId} ${project.version} Beta 2</argument>
+                                <argument>FloatDataVisualizer</argument>
                                 <argument>--app-version</argument>
                                 <argument>${project.version}</argument>
                                 <argument>--vendor</argument>
