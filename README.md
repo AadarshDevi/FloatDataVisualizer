@@ -19,7 +19,157 @@ Use the table below to choose the correct app version for your os.
 |   ☑️   | Debian Based Linux  |    x86_64    |    .deb    | App  | [Link](https://github.com/AadarshDevi/FloatDataVisualizer/releases/download/v2.0.0-beta-1-multiplatform/FloatDataVisualizer_v2.0.0_beta_1_2_debian_linux_x86_64.deb)  |
 |   ☑️   | Red Hat Based Linux |    x86_64    |    .rpm    | App  | [Link](https://github.com/AadarshDevi/FloatDataVisualizer/releases/download/v2.0.0-beta-1-multiplatform/FloatDataVisualizer_v2.0.0_beta_1_2_red_hat_linux_x86_64.rpm) |
 
-Once you have downloaded the executable, run it so the app can be downloaded.
+Once you have downloaded the executable, run it so the app can be downloaded. You do not
+need to change any of the settings unless stated otherwise.
+
+### How the App Works
+
+The app is connected to a float receiver, a board like an Arduino, ESP32, Raspberry PI, etc. The
+board sends data to the app using serial communication. The float receiver gets data from the
+float wirelessly (LoRa, Wi-Fi, Bluetooth). Below is a simple flowchart of how the setup looks like.
+It uses the setup our team had for the competition.
+
+```
+                        Serial Comms                    Wireless Comms
+Float Data Visualizer ----------------> Float Receiver ----------------> Float
+                       baudRate 115200                       LoRa
+```
+
+Open **_FloatDataVisualizer_**.
+
+### Page: Connections
+
+This is the page of app where you will see when the app is launched. It has the app name and
+the text saying connections on the right. Right now there are no configs so it is empty.
+
+![connections_page.png](connections_page.png)
+
+In this page, you can manage your various configurations instead of having change the settings everytime
+you open the app. Users can quit/close the app by clicking the **_Quit_** button.
+
+A connection is a file that stores config data like baud rate, port of the board, types of data,
+etc. Now that we are in the connections page, let's create a connection to the float's data receiver.
+
+### Connection: Creation
+
+To create a connection click the **_button that says create_**. It should open a window titled
+**_New Connection_**
+
+![img_3.png](img_3.png)
+
+There is a list of fields that you **_have_** to enter to create a connection. The values are
+in the table below. In the table, a **_float receiver_** means an Arduino, ESP32, or RPi boards used
+to receive data from your float.
+
+| Field           | Description                                                                                                  | Accepted Values               |
+|:----------------|:-------------------------------------------------------------------------------------------------------------|:------------------------------|
+| Connection Name | This will be the name of the config. it has to be unique.                                                    | A - Z, a - z, 0 - 9, "_", " " |
+| Baud Rate       | This is the baud rate your float receiver have.                                                              | 0 - 9                         |
+| Port            | The port your float receiver. It gets updated automatically when there are new ports added or ports removed. | Values on the dropdown        |
+
+Now we got the simple data entered, next are the inputs that need information about the float.
+
+#### Data Format
+
+![img_4.png](img_4.png)
+
+When you created your float, you made your float send data in a specific format. Our float sent data
+in the format below:
+
+```
+PN12-MiramarWaterJets,pkt-,time,depth,pressure
+```
+
+To convert the format of the float to the app, it is simple. We add the units the measurements are in,
+time in sec (s), depth in meters (m), and pressure in pascals (Pa). You do not have to capitalize the
+name of the units. time/Time will not affect the use of the app. With this method, the team info and packet
+number placement is rigid.
+
+```
+PN12-MiramarWaterJets,pkt-,Time(s),Depth(m),Pressure(Pa)
+```
+
+The **_time, depth, pressure_** texts are placeholders for the actual data the float will send.
+
+comparing both formats:
+
+```
+Float: PN12-MiramarWaterJets,pkt-,time,depth,pressure
+  App: PN12-MiramarWaterJets,pkt-,Time(s),Depth(m),Pressure(Pa)
+```
+
+The team info, in our case `PN12-MiramarWaterJets`, is really important because if you receive another team's
+data, it will not record the data. If you have a typo in the name, then the app will not record the data. The
+team info is **_case-sensitive_**.
+
+#### Flags
+
+Flags are special text that is sent to the app. These texts do not show up on the data. We use this
+to tell the app to start and stop receiving data from the float receiver.
+
+Before the float sends data, it must send a flag/text called the **_Start Data Transfer Flag_**. It tells the app
+to start recording the data when this text is received. This flag is entered in the **_Start Flag_**
+input. Our team used:
+
+```
+--start-data-transfer
+```
+
+Just like the Start Data Transfer Flag, we have the **_End Data Transfer Flag_**. This flag tells the
+app to stop recording data. This flag is entered in the **_End Flag_** input. Our team used:
+
+```
+--end-data-transfer
+```
+
+It is advised to have a unique name for both flags to avoid accidentally starting or stopping recording
+data.
+
+Once all the fields have been filled, click **_Confirm_**. This will create a new connection. Below is
+the connection used for this tutorial (The info is different for each team):
+
+```
+Connection Name: Serial Connection 1
+Baud rate: 115200
+Port: COM4
+
+Team Number and Name:  PN12-MiramarWaterJets,pkt-,Time(s),Depth(m),Pressure(Pa)
+Start Flag: --start-data-transfer
+End Flag: --end-data-transfer
+```
+
+and our float sends data using the format below:
+
+```
+Start Data Transfer Flag (Before Data Transmission): --start-data-transfer
+Data Format: PN12-MiramarWaterJets,pkt-,time,depth,pressure
+End Data Transfer Flag (After Data Transmission): --end-data-transfer
+```
+
+This is how our connection looks in the **_Connection Editor_**:
+
+![img_7.png](img_7.png)
+![img_6.png](img_6.png)
+
+Now we have a connection created. It now appears in **_Connections_**.
+
+![img_8.png](img_8.png)
+
+### Collect Data
+
+To start collecting data from your receiver, click the connection you have created. It will take
+you to a new page, the Grapher Page.
+
+### Page: Grapher
+
+In the **_Grapher Page_**, there are a few tabs.
+
+| Tab              | Description                                                                                                                                      |           View            |
+|:-----------------|:-------------------------------------------------------------------------------------------------------------------------------------------------|:-------------------------:|
+| Config           | Shows the configuration of the connection. It is the information you entered to create the connection.                                           |  ![img_9.png](img_9.png)  |
+| Terminal         | This tabs shows all the raw data your app is receiving from the float.                                                                           | ![img_10.png](img_10.png) |
+| Table            | This your data in form of a table                                                                                                                | ![img_12.png](img_12.png) |
+| Tabs after Table | The tabs after the **_Table Tab_** are scatter plots for each of the data points beoing recorded. Depth, Pressure, etc, will have their own tab. | ![img_11.png](img_11.png) |
 
 ## Releases
 
