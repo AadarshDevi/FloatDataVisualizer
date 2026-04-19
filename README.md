@@ -1,16 +1,25 @@
 # Float Data Visualizer 2.0.0
 
-This is the Float Data Visualizer. It is used to communicate with the floats' data receiver
-via Serial Communication.
+The Float Data Visualizer is a Data Acquisition Application that gets data from your team's
+profiling float and displays the data using scatter plots and a table.
 
-## Table of Contents
+## Getting Started
 
-1. Getting Started
-2. User Manual
-3. Downloads
-4. Technical Documentation
-5. Author
-6. [Feature List](#features-list)
+Please follow each step to get started in using the app.
+
+### Download
+
+Use the table below to choose the correct app version for your os.
+
+| Status |      Platform       | Architecture | Executable | Type |                                                                               Download                                                                                |
+|:------:|:-------------------:|:------------:|:----------:|:----:|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
+|   ☑️   |     Windows 11      |    x86_64    |    .msi    | App  |    [Link](https://github.com/AadarshDevi/FloatDataVisualizer/releases/download/v2.0.0-beta-1-multiplatform/FloatDataVisualizer_v2.0.0_beta_1_2_win_11_x86_64.msi)     |
+|   ☑️   |     Windows 11      |    x86_64    |    .exe    | App  |    [Link](https://github.com/AadarshDevi/FloatDataVisualizer/releases/download/v2.0.0-beta-1-multiplatform/FloatDataVisualizer_v2.0.0_beta_1_2_win_11_x86_64.exe)     |
+|   ☑️   |        MacOS        |    x86_64    |    .dmg    | App  |     [Link](https://github.com/AadarshDevi/FloatDataVisualizer/releases/download/v2.0.0-beta-1-multiplatform/FloatDataVisualizer_v2.0.0_beta_1_2_macos_x86_64.dmg)     |
+|   ☑️   | Debian Based Linux  |    x86_64    |    .deb    | App  | [Link](https://github.com/AadarshDevi/FloatDataVisualizer/releases/download/v2.0.0-beta-1-multiplatform/FloatDataVisualizer_v2.0.0_beta_1_2_debian_linux_x86_64.deb)  |
+|   ☑️   | Red Hat Based Linux |    x86_64    |    .rpm    | App  | [Link](https://github.com/AadarshDevi/FloatDataVisualizer/releases/download/v2.0.0-beta-1-multiplatform/FloatDataVisualizer_v2.0.0_beta_1_2_red_hat_linux_x86_64.rpm) |
+
+Once you have downloaded the executable, run it so the app can be downloaded.
 
 ## Releases
 
