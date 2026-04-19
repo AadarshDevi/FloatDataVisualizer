@@ -403,7 +403,11 @@ Root: C:\Users\{user}\AppData\Roaming\FloatDataVisualizer\2.0.0
 1. Connections: ~~Create~~, Edit, ~~Delete~~, Duplicate, Delete All, Export, Import, Export All
     - create: if the connection name already exists, throw error label
 
-# Features List
+# Todo List
+
+## Codebase
+
+Revamp codebase to separate them from front end and backend using an api class.
 
 ## Connections Page
 
@@ -423,18 +427,18 @@ Root: C:\Users\{user}\AppData\Roaming\FloatDataVisualizer\2.0.0
 ## Connection Editor
 
 1. [x] Write Connection
-2. [ ] Reset Connection Data in Editor
+2. [x] Reset Connection Data in Editor
 3. [x] Autofill data based on last connection
-4. [ ] Autofill data: float-info, start/end transfer flags
-5. [ ] error labels become label for each and the text is replaced (visible become text="")
+4. [x] Autofill data: float-info, start/end transfer flags
+5. [x] error labels become label for each and the text is replaced (visible become text="")
 
 ## Preferences
 
 1. [ ] Theme Changing: Light/Dark
-2. [ ] Default Team Start Data Transfer Flag
-3. [ ] Default Team End Data Transfer Flag
-4. [ ] Default Team Info
-5. [ ] Default Team Info Data
+2. [x] Default Team Start Data Transfer Flag
+3. [x] Default Team End Data Transfer Flag
+4. [x] Default Team Info
+5. [x] Default Team Info Data
 
 ## DataViewer
 
@@ -447,13 +451,17 @@ Root: C:\Users\{user}\AppData\Roaming\FloatDataVisualizer\2.0.0
     4. [ ] Mouse Scroll Down --> Scroll Down
     5. [ ] Shift + Mouse Scroll Up --> Scroll Left
     6. [ ] Shift + Mouse Scroll Down --> Scroll Right
-3. [ ] Import CSV (.float.data)
-4. [ ] Export CSV (.float.data)
-5. [ ] Import Raw Data CSV (.raw.float.data)
-6. [ ] Export Raw Data CSV (.raw.float.data)
-7. [ ] Start Data Receiving
-8. [ ] Stop Data Receiving
-9. [ ] Tabs for multiple Data Recorded
+3. [ ] Import CSV aka View Data CSV (.data.float.csv) // hide tabs: configs, terminal, run graphs
+4. [ ] Export CSV (.data.float.csv)
+5. [ ] Import Raw Data CSV aka View Raw Data CSV (.raw.float.csv) // hide tabs: config, table, graphs
+6. [ ] Export Raw Data CSV (.raw.float.csv)
+7. [x] Start Data Receiving
+8. [x] Stop Data Receiving
+9. [x] Tabs for multiple Data Recorded
+10. Grapher Page Modes:
+    1. Grapher.Mode.VIEWER_RAW: view raw data
+    2. Grapher.Mode.VIEWER_DATA: view and plot data
+    3. Grapher.Mode.PLOTTER: receiver and plot data
 
 ## DataStorage
 
