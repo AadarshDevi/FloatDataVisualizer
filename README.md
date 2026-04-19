@@ -437,6 +437,9 @@ Revamp codebase to separate them from front end and backend using an api class.
 3. [x] Autofill data based on last connection
 4. [x] Autofill data: float-info, start/end transfer flags
 5. [x] error labels become label for each and the text is replaced (visible become text="")
+6. Connection Editor Mode:
+    1. ConnectionEditor.Mode.EDIT: edit connections
+    2. ConnectionEditor.Mode.CREATE: create connections
 
 ## Preferences
 
