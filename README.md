@@ -5,7 +5,14 @@ profiling float and displays the data using scatter plots and a table.
 
 ## Getting Started
 
-Please follow each step to get started in using the app.
+Please follow each step to get started in using the app. It goes in detail so you, the user can feel comfortable using
+the app.
+
+### Bug Report
+
+If you find any issues, please use the [Issues Page](https://github.com/AadarshDevi/FloatDataVisualizer/issues) to
+report bugs, glitches etc. Before reporting the bug, it is recommended to use the Console version of the app so that I
+can use it to fix the app.
 
 ### Download
 
@@ -155,12 +162,10 @@ Now we have a connection created. It now appears in **_Connections_**.
 
 ![img_8.png](./img_8.png)
 
-### Collect Data
+### Page: Grapher
 
 To start collecting data from your receiver, click the connection you have created. It will take
 you to a new page, the Grapher Page.
-
-### Page: Grapher
 
 In the **_Grapher Page_**, there are a few tabs.
 
@@ -170,6 +175,83 @@ In the **_Grapher Page_**, there are a few tabs.
 | Terminal         | This tabs shows all the raw data your app is receiving from the float.                                                                           | ![img_10.png](img_10.png) |
 | Table            | This your data in form of a table                                                                                                                | ![img_12.png](img_12.png) |
 | Tabs after Table | The tabs after the **_Table Tab_** are scatter plots for each of the data points beoing recorded. Depth, Pressure, etc, will have their own tab. | ![img_11.png](img_11.png) |
+
+#### Collect Data
+
+To start collecting data from your float click **_Start Button_**. App will start recording the data it receives. You
+will see the Table Tab and graphs being filled up by the data. For you, the depth and pressure tabs will be different
+based on the data being recorded.
+
+|   Tab    |           Image           |
+|:--------:|:-------------------------:|
+| Terminal | ![img_13.png](img_13.png) |
+|  Table   | ![img_14.png](img_14.png) |
+|  Depth   | ![img_15.png](img_15.png) |
+| Pressure | ![img_16.png](img_16.png) |
+
+Now we have the data recorded. If the **_Stop Button_** is disabled, then the receiver has ended receiving data. If it
+is not disabled, user can click it to stop receiving data.
+
+#### Viewing Data: Graphs
+
+There are a few features to view the data in the graphs and table. In the graphs tabs, there are a few shortcuts:
+
+| Name                | Shortcut                  | Description            |
+|:--------------------|:--------------------------|:-----------------------|
+| Zoom In             | Ctrl + Alt + Scroll Up    | Graph size increases   |
+| Zoom Out            | Ctrl + Alt + Scroll Down  | Graph size decreases   |
+| Horizontal Zoom In  | Shift + Alt + Scroll Up   | Graph width increases  |
+| Horizontal Zoom Out | Shift + Alt + Scroll Down | Graph width decreases  |
+| Vertical Zoom In    | Ctrl + Scroll Down        | Graph height increases |
+| Vertical Zoom Out   | Ctrl + Scroll Down        | Graph height decreases |
+
+To reset the size of the graph, right-click the graph and click **_Reset Size_**. It will set the graph back to the
+original size.
+
+If you want to take a picture of the graph, you can right-click and click **_Screenshot_**. This will create a PNG
+image of the graph. The zoom does affect the graph, bigger the graph, larger the screenshot. Before the screenshot
+is created, it will ask you to enter the name of the image.
+
+Asking for the name of the screenshot.
+
+![img_17.png](img_17.png)
+
+The screenshot in my desktop.
+
+![img_18.png](img_18.png)
+
+The graph screenshot.
+
+![img_19.png](img_19.png)
+
+#### Viewing Data: Table
+
+Just like the graph, there is a table, it has the data. In the **_Table Tab_**, if you right-click, you can export
+the data in a csv in 2 formats: raw data or the parsed data. Raw data is the data your floats sends (minus the flags)
+and parsed data is data in a csv without the packet and team info. it has the time and the measurements recorded by your
+float.
+
+![img_20.png](img_20.png)
+
+Data exported raw.
+
+![img_21.png](img_21.png)
+
+Data exported as CSV and Parsed
+
+![img_22.png](img_22.png)
+
+## Other Features
+
+| Feature                   | Description                                                                                                                                                                     | Image                     |
+|:--------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:--------------------------|
+| Connection Available      | If a connection's float receiver is not connected, the connection is disabled. If the board is connected later, the connection will become enabled.                             | ![img_23.png](img_23.png) |
+| Serial Port unavailable   | When creating a connection, if the port is empty (no boards connected), you can connect a board and it will appear on the list of ports.                                        |                           |
+| Deleteing All Connections | Right click in the empty space in the **_Connections Page_** and click **_Delete All_**. It will ask you to confim if you want to delete all the connections.                   | ![img_24.png](img_24.png) |
+| View Measurements         | Did you forget what measurements the connection records? Connections Page > Connection > Right Click > Measurements. It will show what data the app is recording.               | ![img_25.png](img_25.png) |
+| Delete Connection         | To delete a connection (only 1 connection, not all) go to Connections Page > Connection > Right Click > Delete. It will ask you to confim if you want to delete the connection. | ![img_26.png](img_26.png) |
+
+# Other Docs (Dev Docs)
 
 ## Releases
 
