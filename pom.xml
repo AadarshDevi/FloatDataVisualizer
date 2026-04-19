@@ -177,6 +177,7 @@
                                 <argument>--icon</argument>
                                 <argument>${project.basedir}/src/main/resources/icon.ico</argument>
                                 <argument>--verbose</argument>
+                                <argument>--win-console</argument>
                             </arguments>
                         </configuration>
                     </execution>
@@ -210,6 +211,7 @@
                                 <argument>--icon</argument>
                                 <argument>${project.basedir}/src/main/resources/icon.ico</argument>
                                 <argument>--verbose</argument>
+                                <argument>--win-console</argument>
                             </arguments>
                         </configuration>
                     </execution>
