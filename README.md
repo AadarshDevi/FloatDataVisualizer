@@ -148,12 +148,12 @@ End Data Transfer Flag (After Data Transmission): --end-data-transfer
 
 This is how our connection looks in the **_Connection Editor_**:
 
-![img_7.png](img_7.png)
-![img_6.png](img_6.png)
+![img_7.png](./img_7.png)
+![img_6.png](./img_6.png)
 
 Now we have a connection created. It now appears in **_Connections_**.
 
-![img_8.png](img_8.png)
+![img_8.png](./img_8.png)
 
 ### Collect Data
 
