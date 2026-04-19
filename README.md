@@ -251,7 +251,7 @@ Data exported as CSV and Parsed
 | View Measurements         | Did you forget what measurements the connection records? Connections Page > Connection > Right Click > Measurements. It will show what data the app is recording.               | ![img_25.png](img_25.png) |
 | Delete Connection         | To delete a connection (only 1 connection, not all) go to Connections Page > Connection > Right Click > Delete. It will ask you to confim if you want to delete the connection. | ![img_26.png](img_26.png) |
 
-# Other Docs (Dev Docs)
+# Other Docs (Dev Docs) - Outdated
 
 ## Releases
 
