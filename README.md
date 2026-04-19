@@ -425,6 +425,10 @@ Revamp codebase to separate them from front end and backend using an api class.
 10. [x] Able to store different types of data in MeasurementConfigs
 11. [x] View different types of data float data visualizer will record
 12. [ ] Add CSS for MeasurementViewer
+13. Connection Page View:
+    1. ConnectionPage.View.Tile
+    2. ConnectionPage.View.Detail
+14. rename connection name
 
 ## Connection Editor
 
