@@ -250,6 +250,8 @@ Data exported as CSV and Parsed
 | Deleteing All Connections | Right click in the empty space in the **_Connections Page_** and click **_Delete All_**. It will ask you to confim if you want to delete all the connections.                   | ![img_24.png](img_24.png) |
 | View Measurements         | Did you forget what measurements the connection records? Connections Page > Connection > Right Click > Measurements. It will show what data the app is recording.               | ![img_25.png](img_25.png) |
 | Delete Connection         | To delete a connection (only 1 connection, not all) go to Connections Page > Connection > Right Click > Delete. It will ask you to confim if you want to delete the connection. | ![img_26.png](img_26.png) |
+| Autofill Config Info      | Use the Autofill button in **_Connection Editor_** to autofill the connection and float data fields. can only be used if there was already a previous connection created.       |                           |
+| Reset Button              | Want to reset all the fields? use the Reset Button on the **_Connection Creator_**                                                                                              |                           |
 
 # Other Docs (Dev Docs) - Outdated
 
