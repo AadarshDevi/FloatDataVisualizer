@@ -289,8 +289,8 @@ The actual (base) app is actively being worked on. Then Win11, Linux will be rel
 ### Executable Creation Platform
 
 1. Windows 11 x86_64: MSI Vector A16 HX A8W
-2. MacOS x86_64 (Intel): Late 2013 Macbook Pro
-3. MacOS ARM (M-Series): Macbook M2
+2. MacOS x86_64 (Intel): Late 2013 MacBook Pro
+3. MacOS ARM (M-Series): MacBook M2
 4. Debian x86_64: MSI Vector A16 HX A8W w/ VirtualBox Debian Linux
 
 ### Console App
@@ -342,7 +342,7 @@ the app.
 
 ## Build Project (Prerequisites)
 
-1. IntelliJ Idea
+1. IntelliJ IDEA
 2. Java 23.0.2
 3. JavaFX 23.0.2
 4. jSerialComm 2.11.2
@@ -440,6 +440,13 @@ Revamp codebase to separate them from front end and backend using an api class.
 6. Connection Editor Mode:
     1. ConnectionEditor.Mode.EDIT: edit connections
     2. ConnectionEditor.Mode.CREATE: create connections
+
+## Connection
+
+1. Connection Type:
+    1. Connection.Type.Serial
+    2. Connection.Type.Wireless
+    3. Connection.Type.Server (need icon for it)
 
 ## Preferences
 
