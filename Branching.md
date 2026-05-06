@@ -30,3 +30,14 @@ Examples:
 
 1. new feature - send data to server: new branch > `feat/server_send`
 2. a fix - logging fix: new branch > `fix/logging/launcher`
+
+## Notes
+
+branches `feat/`, `fix/`, `lab/`, `release/`, and `hotfix/` are created when needed
+these branches are temps.
+
+## Permanent Branches
+
+```
+main --> dev
+```
