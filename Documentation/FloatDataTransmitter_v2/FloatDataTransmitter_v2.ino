@@ -1,7 +1,13 @@
+
+const unsigned int baudRate = 115200;
+const String startDataFlag = "--start-data-transfer"
+const String endDataFlag = "--end-data-transfer"
+
+
 void setup() {
   Serial.begin(115200);
   randomSeed(analogRead(A0));
-  Serial.println("--start-transfer");
+  Serial.println("--start-data-transfer");
 }
 int i = 0;
 int packet_id = 0;
@@ -12,7 +18,7 @@ void loop() {
   long pressure = random(100, 1000);
   if(i >= 50) {
     delay(1000);
-    Serial.println("--end-transfer");
+    Serial.println("--end-data-transfer");
     Serial.end();
     delay(1000);
     return;
