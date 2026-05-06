@@ -49,7 +49,7 @@ Open **_FloatDataVisualizer_**.
 This is the page of app where you will see when the app is launched. It has the app name and
 the text saying connections on the right. Right now there are no configs so it is empty.
 
-![connections_page.png](connections_page.png)
+![connections_page.png](src/main/java/com/alphagen/studio/FloatDataVisualizer/Documentation/BuoyUI/readme_imgs/connections_page.png)
 
 In this page, you can manage your various configurations instead of having change the settings everytime
 you open the app. Users can quit/close the app by clicking the **_Quit_** button.
@@ -62,7 +62,7 @@ etc. Now that we are in the connections page, let's create a connection to the f
 To create a connection click the **_button that says create_**. It should open a window titled
 **_New Connection_**
 
-![img_3.png](img_3.png)
+![img_3.png](src/main/java/com/alphagen/studio/FloatDataVisualizer/Documentation/BuoyUI/readme_imgs/img_3.png)
 
 There is a list of fields that you **_have_** to enter to create a connection. The values are
 in the table below. In the table, a **_float receiver_** means an Arduino, ESP32, or RPi boards used
@@ -78,7 +78,7 @@ Now we got the simple data entered, next are the inputs that need information ab
 
 #### Data Format
 
-![img_4.png](img_4.png)
+![img_4.png](src/main/java/com/alphagen/studio/FloatDataVisualizer/Documentation/BuoyUI/readme_imgs/img_4.png)
 
 When you created your float, you made your float send data in a specific format. Our float sent data
 in the format below:
@@ -155,12 +155,12 @@ End Data Transfer Flag (After Data Transmission): --end-data-transfer
 
 This is how our connection looks in the **_Connection Editor_**:
 
-![img_7.png](./img_7.png)
-![img_6.png](./img_6.png)
+![img_7.png](src/main/java/com/alphagen/studio/FloatDataVisualizer/Documentation/BuoyUI/readme_imgs/img_7.png)
+![img_6.png](src/main/java/com/alphagen/studio/FloatDataVisualizer/Documentation/BuoyUI/readme_imgs/img_6.png)
 
 Now we have a connection created. It now appears in **_Connections_**.
 
-![img_8.png](./img_8.png)
+![img_8.png](src/main/java/com/alphagen/studio/FloatDataVisualizer/Documentation/BuoyUI/readme_imgs/img_8.png)
 
 ### Page: Grapher
 
@@ -169,12 +169,12 @@ you to a new page, the Grapher Page.
 
 In the **_Grapher Page_**, there are a few tabs.
 
-| Tab              | Description                                                                                                                                      |           View            |
-|:-----------------|:-------------------------------------------------------------------------------------------------------------------------------------------------|:-------------------------:|
-| Config           | Shows the configuration of the connection. It is the information you entered to create the connection.                                           |  ![img_9.png](img_9.png)  |
-| Terminal         | This tabs shows all the raw data your app is receiving from the float.                                                                           | ![img_10.png](img_10.png) |
-| Table            | This your data in form of a table                                                                                                                | ![img_12.png](img_12.png) |
-| Tabs after Table | The tabs after the **_Table Tab_** are scatter plots for each of the data points beoing recorded. Depth, Pressure, etc, will have their own tab. | ![img_11.png](img_11.png) |
+| Tab              | Description                                                                                                                                      |                                                       View                                                       |
+|:-----------------|:-------------------------------------------------------------------------------------------------------------------------------------------------|:----------------------------------------------------------------------------------------------------------------:|
+| Config           | Shows the configuration of the connection. It is the information you entered to create the connection.                                           |  ![img_9.png](src/main/java/com/alphagen/studio/FloatDataVisualizer/Documentation/BuoyUI/readme_imgs/img_9.png)  |
+| Terminal         | This tabs shows all the raw data your app is receiving from the float.                                                                           | ![img_10.png](src/main/java/com/alphagen/studio/FloatDataVisualizer/Documentation/BuoyUI/readme_imgs/img_10.png) |
+| Table            | This your data in form of a table                                                                                                                | ![img_12.png](src/main/java/com/alphagen/studio/FloatDataVisualizer/Documentation/BuoyUI/readme_imgs/img_12.png) |
+| Tabs after Table | The tabs after the **_Table Tab_** are scatter plots for each of the data points beoing recorded. Depth, Pressure, etc, will have their own tab. | ![img_11.png](src/main/java/com/alphagen/studio/FloatDataVisualizer/Documentation/BuoyUI/readme_imgs/img_11.png) |
 
 #### Collect Data
 
@@ -182,12 +182,12 @@ To start collecting data from your float click **_Start Button_**. App will star
 will see the Table Tab and graphs being filled up by the data. For you, the depth and pressure tabs will be different
 based on the data being recorded.
 
-|   Tab    |           Image           |
-|:--------:|:-------------------------:|
-| Terminal | ![img_13.png](img_13.png) |
-|  Table   | ![img_14.png](img_14.png) |
-|  Depth   | ![img_15.png](img_15.png) |
-| Pressure | ![img_16.png](img_16.png) |
+|   Tab    |                                                      Image                                                       |
+|:--------:|:----------------------------------------------------------------------------------------------------------------:|
+| Terminal | ![img_13.png](src/main/java/com/alphagen/studio/FloatDataVisualizer/Documentation/BuoyUI/readme_imgs/img_13.png) |
+|  Table   | ![img_14.png](src/main/java/com/alphagen/studio/FloatDataVisualizer/Documentation/BuoyUI/readme_imgs/img_14.png) |
+|  Depth   | ![img_15.png](src/main/java/com/alphagen/studio/FloatDataVisualizer/Documentation/BuoyUI/readme_imgs/img_15.png) |
+| Pressure | ![img_16.png](src/main/java/com/alphagen/studio/FloatDataVisualizer/Documentation/BuoyUI/readme_imgs/img_16.png) |
 
 Now we have the data recorded. If the **_Stop Button_** is disabled, then the receiver has ended receiving data. If it
 is not disabled, user can click it to stop receiving data.
@@ -214,15 +214,15 @@ is created, it will ask you to enter the name of the image.
 
 Asking for the name of the screenshot.
 
-![img_17.png](img_17.png)
+![img_17.png](src/main/java/com/alphagen/studio/FloatDataVisualizer/Documentation/BuoyUI/readme_imgs/img_17.png)
 
 The screenshot in my desktop.
 
-![img_18.png](img_18.png)
+![img_18.png](src/main/java/com/alphagen/studio/FloatDataVisualizer/Documentation/BuoyUI/readme_imgs/img_18.png)
 
 The graph screenshot.
 
-![img_19.png](img_19.png)
+![img_19.png](src/main/java/com/alphagen/studio/FloatDataVisualizer/Documentation/BuoyUI/readme_imgs/img_19.png)
 
 #### Viewing Data: Table
 
@@ -231,27 +231,27 @@ the data in a csv in 2 formats: raw data or the parsed data. Raw data is the dat
 and parsed data is data in a csv without the packet and team info. it has the time and the measurements recorded by your
 float.
 
-![img_20.png](img_20.png)
+![img_20.png](src/main/java/com/alphagen/studio/FloatDataVisualizer/Documentation/BuoyUI/readme_imgs/img_20.png)
 
 Data exported raw.
 
-![img_21.png](img_21.png)
+![img_21.png](src/main/java/com/alphagen/studio/FloatDataVisualizer/Documentation/BuoyUI/readme_imgs/img_21.png)
 
 Data exported as CSV and Parsed
 
-![img_22.png](img_22.png)
+![img_22.png](src/main/java/com/alphagen/studio/FloatDataVisualizer/Documentation/BuoyUI/readme_imgs/img_22.png)
 
 ## Other Features
 
-| Feature                   | Description                                                                                                                                                                     | Image                     |
-|:--------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:--------------------------|
-| Connection Available      | If a connection's float receiver is not connected, the connection is disabled. If the board is connected later, the connection will become enabled.                             | ![img_23.png](img_23.png) |
-| Serial Port unavailable   | When creating a connection, if the port is empty (no boards connected), you can connect a board and it will appear on the list of ports.                                        |                           |
-| Deleteing All Connections | Right click in the empty space in the **_Connections Page_** and click **_Delete All_**. It will ask you to confim if you want to delete all the connections.                   | ![img_24.png](img_24.png) |
-| View Measurements         | Did you forget what measurements the connection records? Connections Page > Connection > Right Click > Measurements. It will show what data the app is recording.               | ![img_25.png](img_25.png) |
-| Delete Connection         | To delete a connection (only 1 connection, not all) go to Connections Page > Connection > Right Click > Delete. It will ask you to confim if you want to delete the connection. | ![img_26.png](img_26.png) |
-| Autofill Config Info      | Use the Autofill button in **_Connection Editor_** to autofill the connection and float data fields. can only be used if there was already a previous connection created.       |                           |
-| Reset Button              | Want to reset all the fields? use the Reset Button on the **_Connection Creator_**                                                                                              |                           |
+| Feature                   | Description                                                                                                                                                                     | Image                                                                                                            |
+|:--------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-----------------------------------------------------------------------------------------------------------------|
+| Connection Available      | If a connection's float receiver is not connected, the connection is disabled. If the board is connected later, the connection will become enabled.                             | ![img_23.png](src/main/java/com/alphagen/studio/FloatDataVisualizer/Documentation/BuoyUI/readme_imgs/img_23.png) |
+| Serial Port unavailable   | When creating a connection, if the port is empty (no boards connected), you can connect a board and it will appear on the list of ports.                                        |                                                                                                                  |
+| Deleteing All Connections | Right click in the empty space in the **_Connections Page_** and click **_Delete All_**. It will ask you to confim if you want to delete all the connections.                   | ![img_24.png](src/main/java/com/alphagen/studio/FloatDataVisualizer/Documentation/BuoyUI/readme_imgs/img_24.png) |
+| View Measurements         | Did you forget what measurements the connection records? Connections Page > Connection > Right Click > Measurements. It will show what data the app is recording.               | ![img_25.png](src/main/java/com/alphagen/studio/FloatDataVisualizer/Documentation/BuoyUI/readme_imgs/img_25.png) |
+| Delete Connection         | To delete a connection (only 1 connection, not all) go to Connections Page > Connection > Right Click > Delete. It will ask you to confim if you want to delete the connection. | ![img_26.png](src/main/java/com/alphagen/studio/FloatDataVisualizer/Documentation/BuoyUI/readme_imgs/img_26.png) |
+| Autofill Config Info      | Use the Autofill button in **_Connection Editor_** to autofill the connection and float data fields. can only be used if there was already a previous connection created.       |                                                                                                                  |
+| Reset Button              | Want to reset all the fields? use the Reset Button on the **_Connection Creator_**                                                                                              |                                                                                                                  |
 
 # Other Docs (Dev Docs) - Outdated
 
