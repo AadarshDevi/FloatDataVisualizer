@@ -456,34 +456,29 @@ Revamp codebase to separate them from front end and backend using an api class.
 4. [x] Default Team Info
 5. [x] Default Team Info Data
 
-## DataViewer
+## Grapher Page
 
-1. [ ] Change Data View: Graph/Table
-    1. [ ] Via Buttons: GraphView Button & TableView Button
-2. [ ] Zoom In/Out Graph --> Bigger and Smaller Graphs
-    1. [ ] Ctrl + Mouse Scroll Up --> Zoom In
-    2. [ ] Ctrl + Mouse Scroll Down --> Zoom Out
-    3. [ ] Mouse Scroll Up --> Scroll Up
-    4. [ ] Mouse Scroll Down --> Scroll Down
-    5. [ ] Shift + Mouse Scroll Up --> Scroll Left
-    6. [ ] Shift + Mouse Scroll Down --> Scroll Right
-3. [ ] Import CSV aka View Data CSV (.data.float.csv) // hide tabs: configs, terminal, run graphs
-4. [ ] Export CSV (.data.float.csv)
-5. [ ] Import Raw Data CSV aka View Raw Data CSV (.raw.float.csv) // hide tabs: config, table, graphs
-6. [ ] Export Raw Data CSV (.raw.float.csv)
+1. ~~[ ]Change Data View: Graph/Table~~
+    1. ~~[ ] Via Buttons: GraphView Button & TableView Button~~
+2. [x] Zoom In/Out Graph --> Bigger and Smaller Graphs
+    1. [x] Mouse Scroll Up/Down --> Scroll Up/Down
+    2. [x] Shift + Mouse Scroll Up/Down --> Scroll Left/Right
+    3. [x] Ctrl + Alt + Mouse Scroll Up/Down --> Zoom In/Out
+    4. [x] Ctrl + Mouse Scroll Up/Down --> Vertical Zoom In/Out
+    5. [x] Shift + Alt + Mouse Scroll Up/Down --> Horizontal Zoom In/Out
+3. [ ] Import CSV (.float.data)
+4. [x] Export CSV (.float.data)
+5. [ ] Import Raw Data CSV (.raw.float.data)
+6. [x] Export Raw Data CSV (.raw.float.data)
 7. [x] Start Data Receiving
 8. [x] Stop Data Receiving
 9. [x] Tabs for multiple Data Recorded
-10. Grapher Page Modes:
-    1. Grapher.Mode.VIEWER_RAW: view raw data
-    2. Grapher.Mode.VIEWER_DATA: view and plot data
-    3. Grapher.Mode.PLOTTER: receiver and plot data
 
-## DataStorage
+## Data Point Processor
 
-1. [ ] data stored in double[]
-    1. [ ] double[].length = number of data recording + 1 (for time)
-2. [ ] --item-template
+1. [x] data stored in double[]
+    1. [x] double[].length = number of data recording + 1 (for time)
+2. ~~[x] --item-template~~
 
 ## Markdown Viewer aka JavaFX Lib: MarkdownFX
 
@@ -504,3 +499,7 @@ A basic Markdown file reader. Takes in a **.md file** and **a vbox**. It must ha
 1. Make sure either Win11, MacOS or Linux is ready and the rest commented
 2. change the project version in pom to correct version
 3. change project version in AppData.java
+4. new command:
+      ```
+      mvn clean install -DskipTests
+      ```

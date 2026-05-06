@@ -51,7 +51,7 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>1.18.38</version>
+            <version>1.18.42</version>
             <scope>provided</scope>
         </dependency>
         <!-- Source: https://mvnrepository.com/artifact/org.openani.jsystemthemedetector/jSystemThemeDetector -->
@@ -176,7 +176,8 @@
                                 <argument>--win-dir-chooser</argument>
                                 <argument>--icon</argument>
                                 <argument>${project.basedir}/src/main/resources/icon.ico</argument>
-                                <argument>--verboss</argument>
+                                <argument>--verbose</argument>
+                                <argument>--win-console</argument>
                             </arguments>
                         </configuration>
                     </execution>
@@ -209,7 +210,8 @@
                                 <argument>--win-shortcut</argument>
                                 <argument>--icon</argument>
                                 <argument>${project.basedir}/src/main/resources/icon.ico</argument>
-                                <argument>--verboss</argument>
+                                <argument>--verbose</argument>
+                                <argument>--win-console</argument>
                             </arguments>
                         </configuration>
                     </execution>

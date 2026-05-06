@@ -111,6 +111,8 @@
                 <argument>--win-dir-chooser</argument>
                 <argument>--icon</argument>
                 <argument>${project.basedir}/src/main/resources/icon.ico</argument>
+                <argument>--verbose</argument>
+                <argument>--win-console</argument>
               </arguments>
             </configuration>
           </execution>
@@ -143,6 +145,8 @@
                 <argument>--win-shortcut</argument>
                 <argument>--icon</argument>
                 <argument>${project.basedir}/src/main/resources/icon.ico</argument>
+                <argument>--verbose</argument>
+                <argument>--win-console</argument>
               </arguments>
             </configuration>
           </execution>
@@ -190,7 +194,7 @@
     <dependency>
       <groupId>org.projectlombok</groupId>
       <artifactId>lombok</artifactId>
-      <version>1.18.38</version>
+      <version>1.18.42</version>
       <scope>provided</scope>
     </dependency>
   </dependencies>

@@ -209,10 +209,33 @@ public class GrapherController {
 			System.out.println(" >>> Parsed Array > " + dpp.getParsedArray().size());
 			System.err.println(" >>> Serial Communication > Stop");
 		}
+
+		if ((sp != null) && sp.getDisconnected().get()) {
+			Platform.runLater(() -> {
+				System.err.println(" >>> Disconnected from Device");
+				Alert alert = new Alert(Alert.AlertType.ERROR);
+				alert.setTitle("Connection Exception");
+				alert.setHeaderText(null);
+				alert.setContentText("Disconnected from Hardware.");
+				alert.showAndWait();
+			});
+		}
 	}
 
 	@FXML
 	public void startingDataTransfer() {
+
+		if (!connectionConfig.port().openPort()) {
+			System.err.println(" >>> Port not found");
+			Alert alert = new Alert(Alert.AlertType.ERROR);
+			alert.setTitle("Connection Exception");
+			alert.setHeaderText(null);
+			alert.setContentText("Hardware not connected to device. Serial Port disconnected and not found.");
+			alert.showAndWait();
+			return;
+		}
+		connectionConfig.port().closePort();
+
 		// disable start button and enable stop button
 		startDataTransfer.setDisable(true);
 		stopDataTransfer.setDisable(false);
@@ -222,7 +245,6 @@ public class GrapherController {
 		}
 
 		tableView.getItems().removeAll(tableView.getItems());
-		measurementsTilePane.getChildren().removeAll(measurementsTilePane.getChildren());
 
 		System.out.println(" >>> Serial Communication > Start");
 
@@ -246,7 +268,7 @@ public class GrapherController {
 						int measureIndex = i - 3;
 						ScatterPlotController spc = (ScatterPlotController) graphPane.getTabs().get(i).getProperties().get("plot_controller");
 						try {
-							spc.addData(dp.packetNum(), dp.time(), measures[measureIndex], measureIndex + 1);
+							spc.addData(dp.packetNum(), dp.time(), measures[measureIndex], measureIndex);
 						} catch (ArrayIndexOutOfBoundsException | NullPointerException _) {
 						}
 					}
