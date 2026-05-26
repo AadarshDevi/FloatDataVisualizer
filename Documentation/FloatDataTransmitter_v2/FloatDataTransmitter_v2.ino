@@ -9,8 +9,10 @@ void setup() {
   randomSeed(analogRead(A0));
   Serial.println("--start-data-transfer");
 }
+
 int i = 0;
 int packet_id = 0;
+
 void loop() {
   unsigned long time_in_us = micros(); // us
   float time_in_s = ((float)time_in_us) / 1000000; // s
