@@ -1,11 +1,26 @@
 package com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.managers;
 
+import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.app.AppData;
+import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.app.Platform;
+import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.app.PlatformDetector;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.constants.FolderConstants;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.data.ConnectionConfig;
+import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.data.ConnectionType;
+import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.data.FloatConfig;
+import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.data.MeasurementConfig;
+import com.fazecast.jSerialComm.SerialPort;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.io.File;
+import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.Objects;
+import java.util.Properties;
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.stream.Stream;
 
 public class Connections {
 
