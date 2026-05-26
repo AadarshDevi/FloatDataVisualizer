@@ -23,19 +23,31 @@ public class Connections {
 
 	public boolean create() {return true;}
 
-	public boolean delete() {return true;}
+	public boolean delete(String connectionName) {
+		Path connectionFile = FolderConstants.CONNECTIONS.resolve(connectionName + FolderConstants.FLOAT_CONNECTION_FILE_EXTENSION);
+		try {
+			Files.deleteIfExists(connectionFile);
+			return true;
+		} catch (IOException e) {
+			System.err.printf("%s > Unable to delete connection: %s%n", e.getMessage(), connectionName);
+			return false;
+		}
+	}
 
 	public boolean deleteAll() {
-
-		File connFolder = new File(FolderConstants.CONNECTIONS.toString());
-		File[] files = connFolder.listFiles();
-		System.out.println("Deleted All Connections: " + files.length);
-
-		for (File file : files) {
-			file.delete();
+		Path connectionsFolderPath = Paths.get(FolderConstants.CONNECTIONS.toString());
+		try (Stream<Path> paths = Files.list(connectionsFolderPath)) {
+			AtomicInteger fileCount = new AtomicInteger();
+			paths.forEach(path -> {
+				boolean _ = path.toFile().delete();
+				fileCount.getAndIncrement();
+			});
+			System.out.println("Connections Deleted: " + fileCount.get());
+			return true;
+		} catch (IOException e) {
+			System.out.println("Unable to delete Connections");
+			return false;
 		}
-
-		return true;
 	}
 
 	public boolean importing() {return true;}
