@@ -1,10 +1,8 @@
 package com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.pages.connections.datacard;
 
 import com.alphagen.studio.FloatDataVisualizer.buoyui.Controller;
-import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.constants.FolderConstants;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.data.ConnectionConfig;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.data.ConnectionType;
-import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.processor.ConnectionProcessor;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.managers.Connections;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.managers.ControllerManager;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.managers.StageManager;
@@ -25,8 +23,6 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
 import java.util.Optional;
 
 public class DataCardController extends Controller {
