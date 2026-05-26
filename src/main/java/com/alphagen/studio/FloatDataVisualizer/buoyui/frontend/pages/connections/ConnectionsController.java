@@ -3,7 +3,6 @@ package com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.pages.connection
 import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.constants.FolderConstants;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.data.ConnectionConfig;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.data.FloatConfig;
-import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.processor.ConnectionProcessor;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.managers.Connections;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.managers.ControllerManager;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.managers.DataCardManager;
@@ -192,7 +191,8 @@ public class ConnectionsController {
 		System.out.println("Deleting All Connections");
 		connections.getChildren().removeAll(connections.getChildren());
 
-		Connections.getInstance().deleteAll();
+		boolean success = Connections.getInstance().deleteAll();
+		System.out.println((success) ? "All Connections Deleted Successfully" : "Connections Deletion Failed");
 
 		alert = new Alert(Alert.AlertType.INFORMATION);
 		alert.setTitle("Delete All Connections");
