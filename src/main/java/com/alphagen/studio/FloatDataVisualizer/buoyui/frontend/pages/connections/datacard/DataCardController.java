@@ -233,14 +233,15 @@ public class DataCardController extends Controller {
 
 		if (name == null || name.isBlank()) return;
 
-		success = ConnectionProcessor.renameConnection(connectionConfig, new ConnectionConfig(
-			name,
-			connectionConfig.baudRate(),
-			connectionConfig.port(),
-			connectionConfig.portType(),
-			connectionConfig.floatConfig(),
-			connectionConfig.measurementConfigs()
-		));
+		// fixme: connection rename
+//		success = Connections.Processor.renameConnection(connectionConfig, new ConnectionConfig(
+//			name,
+//			connectionConfig.baudRate(),
+//			connectionConfig.port(),
+//			connectionConfig.portType(),
+//			connectionConfig.floatConfig(),
+//			connectionConfig.measurementConfigs()
+//		));
 
 		if (!success) {
 			Alert alert = new Alert(Alert.AlertType.ERROR);
