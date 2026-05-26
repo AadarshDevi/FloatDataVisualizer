@@ -149,7 +149,7 @@ public class ConnectionsController {
 		connections.getChildren().add(dataCard);
 
 		Path filePath = FolderConstants.CONNECTIONS.resolve(currentConnectionConfig.connectionName() + FolderConstants.FLOAT_CONNECTION_FILE_EXTENSION);
-		boolean success = ConnectionProcessor.writeConnection(filePath, currentConnectionConfig);
+		boolean success = Connections.Processor.writeConnection(filePath, currentConnectionConfig);
 		if (!success) {
 			System.err.println("Connection Writing Failed");
 			Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -160,7 +160,7 @@ public class ConnectionsController {
 			System.exit(-1);
 		}
 
-		ConnectionProcessor.readAllConnections();
+		Connections.Processor.readAllConnections();
 		ControllerManager.setConnectionEditorController(null);
 	}
 
@@ -267,6 +267,6 @@ public class ConnectionsController {
 
 	public void repopulateConnections() {
 		connections.getChildren().removeAll(connections.getChildren());
-		ConnectionProcessor.readAllConnections();
+		Connections.Processor.readAllConnections();
 	}
 }
