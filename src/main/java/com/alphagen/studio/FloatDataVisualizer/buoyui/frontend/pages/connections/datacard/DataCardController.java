@@ -5,7 +5,7 @@ import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.constants.FolderCo
 import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.data.ConnectionConfig;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.data.ConnectionType;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.processor.ConnectionProcessor;
-import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.managers.ConnectionManager;
+import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.managers.Connections;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.managers.ControllerManager;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.managers.StageManager;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.pages.PageConstants;
@@ -186,7 +186,7 @@ public class DataCardController extends Controller {
 			return;
 		}
 		System.out.println(" >>> Connection Data Card > " + connectionConfig);
-		ConnectionManager.setCurrentConnection(this.connectionConfig);
+		Connections.setCurrentConnection(this.connectionConfig);
 		System.out.println("\nSerial Graph");
 		Stage stage = StageManager.getMainStage();
 		GrapherController gc = StageManager.setGraphingScene();
