@@ -113,28 +113,31 @@ public class ConnectionEditorController {
 
 		System.out.println();
 		if (
-			isValidConnectionName && isValidBaudRate && isValidPort
+			!(isValidConnectionName && isValidBaudRate && isValidPort
 				&& isValidTeamName && isValidMeasurementData
-				&& isValidStartFlag && isValidEndFlag
+				&& isValidStartFlag && isValidEndFlag)
 		) {
-			ConnectionConfig connection = new ConnectionConfig(
-				connectionName.getText(),
-				Integer.parseInt(baudRate.getText()),
-				SerialPort.getCommPort(connectionOptions.getValue()),
-				ConnectionType.SERIAL,
-				new FloatConfig(
-					dataFormat.getText().trim().split(",")[0],
-					dataFormat.getText().trim().split(",")[1],
-					startFlagTextField.getText().trim(),
-					endFlagTextField.getText().trim()
-				),
-				getMeasurementConfigs()
-			);
-			Connections.setCurrentConnection(connection);
-			System.out.println("Connection created: " + connection.connectionName());
-			Stage stage = StageManager.getConnectionCreatorStage();
-			stage.close();
+			System.err.println("Unable to create connection");
+			return;
 		}
+
+		ConnectionConfig connection = new ConnectionConfig(
+			connectionName.getText(),
+			Integer.parseInt(baudRate.getText()),
+			SerialPort.getCommPort(connectionOptions.getValue()),
+			ConnectionType.SERIAL,
+			new FloatConfig(
+				dataFormat.getText().trim().split(",")[0],
+				dataFormat.getText().trim().split(",")[1],
+				startFlagTextField.getText().trim(),
+				endFlagTextField.getText().trim()
+			),
+			getMeasurementConfigs()
+		);
+		Connections.setCurrentConnection(connection);
+		System.out.println("Connection created: " + connection.connectionName());
+		Stage stage = StageManager.getConnectionCreatorStage();
+		stage.close();
 	}
 
 	public boolean isValidConnectionName(String value) {
