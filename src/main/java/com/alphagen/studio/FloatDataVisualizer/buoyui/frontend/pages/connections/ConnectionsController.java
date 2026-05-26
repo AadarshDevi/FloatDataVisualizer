@@ -4,7 +4,7 @@ import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.constants.FolderCo
 import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.data.ConnectionConfig;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.data.FloatConfig;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.processor.ConnectionProcessor;
-import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.managers.ConnectionManager;
+import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.managers.Connections;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.managers.ControllerManager;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.managers.DataCardManager;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.managers.StageManager;
@@ -30,7 +30,6 @@ import javafx.stage.StageStyle;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.io.File;
 import java.io.IOException;
 import java.nio.file.Path;
 import java.util.ArrayList;
@@ -141,12 +140,12 @@ public class ConnectionsController {
 			stage.showAndWait();
 		}
 
-		if (ConnectionManager.getCurrentConnection() == null) {
+		if (Connections.getCurrentConnection() == null) {
 			return;
 		}
 		System.out.println("Creating Connection");
 
-		Button dataCard = DataCardManager.createDataCard(ConnectionManager.getCurrentConnection());
+		Button dataCard = DataCardManager.createDataCard(Connections.getCurrentConnection());
 		connections.getChildren().add(dataCard);
 
 		Path filePath = FolderConstants.CONNECTIONS.resolve(currentConnectionConfig.connectionName() + FolderConstants.FLOAT_CONNECTION_FILE_EXTENSION);
@@ -193,13 +192,7 @@ public class ConnectionsController {
 		System.out.println("Deleting All Connections");
 		connections.getChildren().removeAll(connections.getChildren());
 
-		File connFolder = new File(FolderConstants.CONNECTIONS.toString());
-		File[] files = connFolder.listFiles();
-		System.out.println("Deleted All Connections: " + files.length);
-
-		for (File file : files) {
-			file.delete();
-		}
+		Connections.getInstance().deleteAll();
 
 		alert = new Alert(Alert.AlertType.INFORMATION);
 		alert.setTitle("Delete All Connections");
