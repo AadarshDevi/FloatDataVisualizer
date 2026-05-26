@@ -15,7 +15,7 @@
 .measurement-labels {
     -fx-background-radius: 6px;
     -fx-background-color: #ffffff;
-    
+
     transition-property: -fx-background-color;
     transition-duration: 0.25s;
 }
@@ -475,7 +475,7 @@
 
 .tabbed-pane:bottom .tab:focused:hover {
     -fx-background-color: #eeeeee;
-    -fx-border-color: #028fff;  
+    -fx-border-color: #028fff;
 }
 
 .tabbed-pane:bottom .tab:focused:selected {
