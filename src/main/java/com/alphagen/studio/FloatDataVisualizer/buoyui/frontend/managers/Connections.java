@@ -73,6 +73,7 @@ public class Connections {
 
 	public boolean exportAll() {return true;}
 
+	// put in processor
 	public boolean rename() {return true;}
 
 	public boolean edit() {return true;}
