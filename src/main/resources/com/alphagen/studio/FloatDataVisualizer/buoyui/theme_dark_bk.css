@@ -61,7 +61,6 @@
 
 /* SVGs */
 .connections_name,
-.connection_type,
 .version_name,
 .app_name {
     -fx-fill: #ffffff;
@@ -89,7 +88,7 @@
 
 .card-1-shadow {
     -fx-effect: dropshadow(three-pass-box, #028fffff, 8, 0, 0, 0);
-    -fx-background-color: #0e319a;
+    -fx-background-color: #ffffff;
     -fx-scale-x: 1;
     -fx-scale-y: 1;
     transition-property:
@@ -105,8 +104,8 @@
 } */
 
 .data-card {
-    -fx-effect: dropshadow(three-pass-box, #212e54, 8, 0, 0, 0);
-    -fx-background-color: #192b61;
+    -fx-effect: dropshadow(three-pass-box, #dededeff, 8, 0, 0, 0);
+    -fx-background-color: #ffffff;
     -fx-scale-x: 1;
     -fx-scale-y: 1;
     transition-property: -fx-background-color;
@@ -118,12 +117,12 @@
     /* -fx-scale-x: 0.99;
     -fx-scale-y: 0.99; */
     /* -fx-effect: dropshadow(three-pass-box, #ababab, 16, 0, 0, 0); */
-    -fx-background-color: #1c3683;
+    -fx-background-color: #eeeeee;
 }
 
 .data-card-text {
     -fx-font-family: "Bahnschrift SemiBold Condensed";
-    -fx-text-fill: #cecece;
+    -fx-text-fill: #000000;
     -fx-font-weight: bold;
     -fx-font-size: 12px;
 }
@@ -292,7 +291,7 @@
 }
 
 .scroll-bar .track-background {
-    -fx-background-color: #151b2d;
+    -fx-background-color: #313131;
     -fx-border-width: 0px;
 }
 
@@ -312,7 +311,7 @@
 
 /* Button */
 .buttons {
-    -fx-background-color: #151b2d;
+    -fx-background-color: #1e1f22ff;
     -fx-background-radius: 7px;
 
     -fx-border-width: 1px;
@@ -328,20 +327,16 @@
 }
 
 .buttons:hover {
-    -fx-background-color: #212e54;
+    -fx-background-color: #434343ff;
 }
 
 /* Root BorderPane */
 .root {
     -fx-background-radius: 20px;
-    /* -fx-background-color: #191e2d; */
-    /* -fx-background-color: #202a46; */
-    -fx-background-color: #151b2d;
+    -fx-background-color: #1e1f22ff;
     -fx-border-radius: 15px;
     -fx-border-width: 2px;
-    /* -fx-border-color: #202a46; */
-    /* -fx-border-color: #191e2d; */
-    -fx-border-color: #202943;
+    -fx-border-color: #26282bff;
 }
 
 /* TextField */
