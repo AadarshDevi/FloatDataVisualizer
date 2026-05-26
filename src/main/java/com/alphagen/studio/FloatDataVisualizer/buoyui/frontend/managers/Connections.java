@@ -73,9 +73,6 @@ public class Connections {
 
 	public boolean exportAll() {return true;}
 
-	// put in processor
-	public boolean rename() {return true;}
-
 	public boolean edit() {return true;}
 
 	private static class Parser {
@@ -270,6 +267,8 @@ public class Connections {
 			return filePath;
 
 		}
+
+		public boolean rename() {return true;}
 
 	}
 }
