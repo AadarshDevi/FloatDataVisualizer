@@ -66,14 +66,7 @@ public class DataCardController extends Controller {
 
 		System.out.println("Deleting Connection");
 
-		Path connectionFile = FolderConstants.CONNECTIONS.resolve(connectionConfig.connectionName() + FolderConstants.FLOAT_CONNECTION_FILE_EXTENSION);
-		try {
-			Files.delete(connectionFile);
-		} catch (IOException e) {
-			System.err.println("Unable to delete connection: " + connectionConfig.connectionName());
-			System.err.println(e.getMessage());
-			return;
-		}
+		Connections.getInstance().delete(connectionConfig.connectionName());
 
 		ControllerManager.getConnectionsController().deleteConnection(dataCard);
 		System.out.println("Deleted Connection: " + connectionConfig.connectionName());
