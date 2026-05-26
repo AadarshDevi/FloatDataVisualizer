@@ -45,7 +45,7 @@ public class StageManager {
 
 		ControllerManager.setConnectionsController(cc);
 
-		ArrayList<ConnectionConfig> connectionsList = ConnectionProcessor.readAllConnections();
+		ArrayList<ConnectionConfig> connectionsList = Connections.Processor.readAllConnections();
 		if (connectionsList != null) {
 			System.out.println("Connections Found: " + connectionsList.size());
 			cc.setConnectionConfigs(connectionsList);
