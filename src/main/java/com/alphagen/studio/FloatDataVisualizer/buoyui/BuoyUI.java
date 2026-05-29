@@ -3,6 +3,7 @@ package com.alphagen.studio.FloatDataVisualizer.buoyui;
 import com.alphagen.studio.FloatDataVisualizer.Launcher;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.Backend;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.app.PlatformDetector;
+import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.settings.SettingsManager;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.managers.StageManager;
 import javafx.application.Application;
 import javafx.scene.Scene;
@@ -70,6 +71,7 @@ public class BuoyUI extends Application {
 		LOGGER.info("All startup folders and files are ready.");
 
 		// todo: read settings file
+		SettingsManager sm = SettingsManager.getInstance();
 
 		StageManager.setConnectionsScene();
 		Scene scene = StageManager.getConnectionsScene();
