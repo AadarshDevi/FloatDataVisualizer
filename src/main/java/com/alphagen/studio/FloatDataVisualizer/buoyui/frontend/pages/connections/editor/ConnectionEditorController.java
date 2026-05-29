@@ -16,6 +16,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
 import java.io.File;
@@ -23,30 +24,19 @@ import java.util.stream.Stream;
 
 public class ConnectionEditorController {
 
-	@FXML
-	public Label error_label_connection_name;
-	@FXML
-	public Label error_label_baud_rate;
-	@FXML
-	public Label error_label_port;
-	@FXML
-	public Label error_label_data_format;
-	@FXML
-	public Label error_label_start_flag;
-	@FXML
-	public Label error_label_end_flag;
-	@FXML
-	TextField connectionName;
-	@FXML
-	TextField baudRate;
-	@FXML
-	ChoiceBox<String> connectionOptions;
-	@FXML
-	TextField dataFormat;
-	@FXML
-	TextField startFlagTextField;
-	@FXML
-	TextField endFlagTextField;
+	@FXML Label error_label_connection_name;
+	@FXML Label error_label_baud_rate;
+	@FXML Label error_label_port;
+	@FXML Label error_label_data_format;
+	@FXML Label error_label_start_flag;
+	@FXML Label error_label_end_flag;
+	@FXML TextField connectionName;
+	@FXML TextField baudRate;
+	@FXML ChoiceBox<String> connectionOptions;
+	@FXML TextField dataFormat;
+	@FXML TextField startFlagTextField;
+	@FXML TextField endFlagTextField;
+	@FXML BorderPane root;
 
 	@FXML
 	public void initialize() {
@@ -476,5 +466,9 @@ public class ConnectionEditorController {
 		startFlagTextField.setText("");
 		endFlagTextField.setText("");
 		resetErrorLabels();
+	}
+
+	public void fullscreen() {
+		root.setPrefHeight(root.getPrefHeight() * 1.5);
 	}
 }

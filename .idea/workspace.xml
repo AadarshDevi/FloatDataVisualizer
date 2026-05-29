@@ -7,6 +7,10 @@
     <list default="true" id="776164ce-7a69-48e2-8934-c0376db3d4b9" name="Changes" comment="fixed lombok issues">
       <change afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/buoyui/frontend/util/FullscreenButton.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/buoyui/frontend/pages/connections/ConnectionsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/buoyui/frontend/pages/connections/ConnectionsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/buoyui/frontend/pages/connections/editor/ConnectionEditorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/buoyui/frontend/pages/connections/editor/ConnectionEditorController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/alphagen/studio/FloatDataVisualizer/buoyui/frontend/pages/connections/Connections_v5.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/alphagen/studio/FloatDataVisualizer/buoyui/frontend/pages/connections/Connections_v5.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/alphagen/studio/FloatDataVisualizer/buoyui/frontend/pages/connections/editor/ConnectionsEditor_v5.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/alphagen/studio/FloatDataVisualizer/buoyui/frontend/pages/connections/editor/ConnectionsEditor_v5.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,61 +72,61 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.0" />
-      <entry key="MS500" value="1.0000015321617066" />
-      <entry key="S2" value="1.0352655529353174" />
-      <entry key="S5" value="1.2870569836302184" />
-      <entry key="S10" value="1.7407631624025883" />
-      <entry key="S30" value="3.8835263689883788" />
-      <entry key="S60" value="6.489425635059726" />
-      <entry key="M2" value="11.038916125325159" />
-      <entry key="M5" value="27.019638847288256" />
-      <entry key="M10" value="54.27897835810833" />
-      <entry key="M15" value="77.20241982708953" />
-      <entry key="M30" value="123.2134810973627" />
-      <entry key="H1" value="170.93057514670568" />
-      <entry key="H2" value="215.6632883944363" />
-      <entry key="H4" value="251.43583775808665" />
-      <entry key="D1" value="294.3516965512141" />
-      <entry key="W1" value="303.42813772269733" />
+      <entry key="MS100" value="5.591119338671018E-12" />
+      <entry key="MS500" value="0.0056169902617227" />
+      <entry key="S2" value="0.2887725624071537" />
+      <entry key="S5" value="0.7937073653872383" />
+      <entry key="S10" value="1.357976363012394" />
+      <entry key="S30" value="2.8216701003007194" />
+      <entry key="S60" value="4.47347474036395" />
+      <entry key="M2" value="6.698865225262994" />
+      <entry key="M5" value="10.648945503164873" />
+      <entry key="M10" value="18.951569061287852" />
+      <entry key="M15" value="31.297353556017875" />
+      <entry key="M30" value="73.93968092182573" />
+      <entry key="H1" value="137.500771235108" />
+      <entry key="H2" value="204.36259256243812" />
+      <entry key="H4" value="259.3331561836981" />
+      <entry key="D1" value="326.24263753114707" />
+      <entry key="W1" value="340.5223512405626" />
     </decayedCancelled>
     <decayedSelected>
-      <entry key="MS100" value="1.1634141167541607E-134" />
-      <entry key="MS500" value="1.633604301166776E-27" />
-      <entry key="S2" value="2.0277086127672168E-7" />
-      <entry key="S5" value="0.00240831589720966" />
-      <entry key="S10" value="0.06346097155969013" />
-      <entry key="S30" value="0.618385635915766" />
-      <entry key="S60" value="1.1205636295424444" />
-      <entry key="M2" value="1.6695242893938718" />
-      <entry key="M5" value="3.9642981329494638" />
-      <entry key="M10" value="8.087896597539658" />
-      <entry key="M15" value="10.937714071656993" />
-      <entry key="M30" value="15.356688447203888" />
-      <entry key="H1" value="18.69144553975077" />
-      <entry key="H2" value="20.959087470869566" />
-      <entry key="H4" value="22.353048754985274" />
-      <entry key="D1" value="23.704444297627035" />
-      <entry key="W1" value="23.957207791877764" />
+      <entry key="MS100" value="1.0" />
+      <entry key="MS500" value="1.0001188970054373" />
+      <entry key="S2" value="1.1044221736256454" />
+      <entry key="S5" value="1.4050581272602107" />
+      <entry key="S10" value="1.637132086774462" />
+      <entry key="S30" value="2.0106807200730166" />
+      <entry key="S60" value="2.5655360231690314" />
+      <entry key="M2" value="3.396088903269187" />
+      <entry key="M5" value="4.93591617550406" />
+      <entry key="M10" value="8.212495142598907" />
+      <entry key="M15" value="12.052644527322494" />
+      <entry key="M30" value="21.517130146880046" />
+      <entry key="H1" value="31.481940440821173" />
+      <entry key="H2" value="39.17648385219214" />
+      <entry key="H4" value="44.096830443457634" />
+      <entry key="D1" value="48.936236046930894" />
+      <entry key="W1" value="49.84589600265677" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="0.06983044612951374" />
-      <entry key="MS500" value="0.5872310336864223" />
-      <entry key="S2" value="0.8902571308242118" />
-      <entry key="S5" value="1.1570606176266842" />
-      <entry key="S10" value="1.6749168355077846" />
-      <entry key="S30" value="4.395825596363015" />
-      <entry key="S60" value="7.53411813091088" />
-      <entry key="M2" value="12.658079457113246" />
-      <entry key="M5" value="30.940189840735805" />
-      <entry key="M10" value="62.3232182155267" />
-      <entry key="M15" value="88.1006751912915" />
-      <entry key="M30" value="138.54204191162856" />
-      <entry key="H1" value="189.60462125175943" />
-      <entry key="H2" value="236.6124720835443" />
-      <entry key="H4" value="273.7835398226773" />
-      <entry key="D1" value="318.0551817730494" />
-      <entry key="W1" value="327.3852066119888" />
+      <entry key="MS100" value="1.0962659707442133E-11" />
+      <entry key="MS500" value="0.008027440977027062" />
+      <entry key="S2" value="0.5135564591871207" />
+      <entry key="S5" value="1.5107128348776322" />
+      <entry key="S10" value="2.5062822143622836" />
+      <entry key="S30" value="4.573170577213815" />
+      <entry key="S60" value="6.849324934531072" />
+      <entry key="M2" value="9.960605840620767" />
+      <entry key="M5" value="15.507596268107331" />
+      <entry key="M10" value="27.10948237811496" />
+      <entry key="M15" value="43.30255421377953" />
+      <entry key="M30" value="95.41927748477879" />
+      <entry key="H1" value="168.95629605012587" />
+      <entry key="H2" value="243.52275403435863" />
+      <entry key="H4" value="303.4207808944489" />
+      <entry key="D1" value="375.1771601427743" />
+      <entry key="W1" value="390.3679975116232" />
     </decayedShown>
   </component>
   <component name="OptimizeOnSaveOptions">
@@ -249,14 +253,6 @@
       <workItem from="1766969579896" duration="1000" />
       <workItem from="1766969593668" duration="4000" />
       <workItem from="1766969654651" duration="15000" />
-    </task>
-    <task id="LOCAL-00379" summary="using Log4J for logging.&#10;replacing System.out with LOGGER">
-      <option name="closed" value="true" />
-      <created>1779823912945</created>
-      <option name="number" value="00379" />
-      <option name="presentableId" value="LOCAL-00379" />
-      <option name="project" value="LOCAL" />
-      <updated>1779823912945</updated>
     </task>
     <task id="LOCAL-00380" summary="added Log4J Core and API for logging">
       <option name="closed" value="true" />
@@ -642,7 +638,15 @@
       <option name="project" value="LOCAL" />
       <updated>1780068901644</updated>
     </task>
-    <option name="localTasksCounter" value="428" />
+    <task id="LOCAL-00428" summary="fixed lombok issues">
+      <option name="closed" value="true" />
+      <created>1780068990272</created>
+      <option name="number" value="00428" />
+      <option name="presentableId" value="LOCAL-00428" />
+      <option name="project" value="LOCAL" />
+      <updated>1780068990274</updated>
+    </task>
+    <option name="localTasksCounter" value="429" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
