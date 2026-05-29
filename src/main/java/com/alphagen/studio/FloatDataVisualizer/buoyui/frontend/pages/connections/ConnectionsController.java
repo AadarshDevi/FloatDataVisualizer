@@ -6,6 +6,7 @@ import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.constants.Debug;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.constants.FolderConstants;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.data.ConnectionConfig;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.data.FloatConfig;
+import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.settings.SettingsManager;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.managers.Connections;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.managers.ControllerManager;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.managers.DataCardManager;
@@ -140,7 +141,7 @@ public class ConnectionsController {
 			button.getStylesheets().add(ThemeProcessor.getThemeCSS().toString()); // testme: theme
 		}
 
-		System.out.println("New theme: " + ThemeProcessor.getTheme());
+//		System.out.println("New theme: " + ThemeProcessor.getTheme());
 	}
 
 	public void setThemeCSS() {
@@ -254,6 +255,7 @@ public class ConnectionsController {
 	@FXML
 	public void quitApp() {
 		serialPortWatcher.shutdownNow();
+		SettingsManager.getInstance().writeSettings();
 		LOGGER.info("App Quit");
 		Platform.exit();
 		System.exit(0);
