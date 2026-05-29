@@ -1,5 +1,6 @@
 package com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.pages.grapher;
 
+import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.app.theme.ThemeProcessor;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.constants.Debug;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.data.ConnectionConfig;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.data.DataPoint;
@@ -118,7 +119,10 @@ public class GrapherController {
 		StringBuilder measurementsString = new StringBuilder();
 		for (MeasurementConfig measurementConfig : measurementConfigs) {
 			measurementsString.append(",").append(measurementConfig.name()).append("(").append(measurementConfig.unit()).append(")");
-			measurementsTilePane.getChildren().add(new MeasurementLabel(measurementConfig.name() + " (" + measurementConfig.unit() + ")"));
+			MeasurementLabel ml = new MeasurementLabel(measurementConfig.name() + " (" + measurementConfig.unit() + ")");
+			ml.getStylesheets().clear(); // testme: theme
+			ml.getStylesheets().add(ThemeProcessor.getThemeCSS().toString()); // testme: theme
+			measurementsTilePane.getChildren().add(ml);
 		}
 		rawDataFormatLabel.setText(fc.teamData() + "," + fc.pkt() + measurementsString);
 		endFlagLabel.setText(fc.endFlag());
@@ -154,6 +158,9 @@ public class GrapherController {
 			} catch (IOException e) {
 				throw new RuntimeException(e);
 			}
+
+			scatterPlot.getStylesheets().clear(); // testme: theme
+			scatterPlot.getStylesheets().add(ThemeProcessor.getThemeCSS().toString()); // testme: theme
 
 			ScatterPlotController spc = fxmlLoader.getController();
 			spc.setAxes(timeConfig, measurementConfig);

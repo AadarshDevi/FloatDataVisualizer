@@ -1,6 +1,7 @@
 package com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.pages.connections.datacard;
 
 import com.alphagen.studio.FloatDataVisualizer.buoyui.Controller;
+import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.app.theme.ThemeProcessor;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.constants.Debug;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.data.ConnectionConfig;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.data.ConnectionType;
@@ -142,6 +143,9 @@ public class DataCardController extends Controller {
 		}
 		MeasurementViewerController mvc = measurementViewerLoader.getController();
 		mvc.setData(connectionConfig);
+
+		measurementViewer.getStylesheets().clear(); // testme: theme
+		measurementViewer.getStylesheets().add(ThemeProcessor.getThemeCSS().toString()); // testme: theme
 
 		{
 			Scene scene = new Scene(measurementViewer);

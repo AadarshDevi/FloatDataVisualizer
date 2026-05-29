@@ -1,5 +1,6 @@
 package com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.managers;
 
+import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.app.theme.ThemeProcessor;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.data.ConnectionConfig;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.pages.PageConstants;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.pages.connections.ConnectionsController;
@@ -56,6 +57,8 @@ public class StageManager {
 		Scene scene = new Scene(buoyUI);
 		buoyUI.getProperties().put("grapher", cc);
 		StageUtil.customTitleBarDrag(StageManager.getMainStage(), scene, buoyUI);
+		buoyUI.getStylesheets().clear();  // testme: theme
+		buoyUI.getStylesheets().add(ThemeProcessor.getThemeCSS().toString()); // testme: theme
 		StageManager.getMainStage().initStyle(StageStyle.TRANSPARENT);
 		connectionsScene = scene;
 	}
@@ -75,6 +78,9 @@ public class StageManager {
 		GrapherController gc = grapherLoader.getController();
 		Scene scene = new Scene(grapherUI);
 		grapherUI.getProperties().put("grapher", gc);
+
+		grapherUI.getStylesheets().clear(); // testme: theme
+		grapherUI.getStylesheets().add(ThemeProcessor.getThemeCSS().toString()); // testme: theme
 //		StageManager.createInvisPane(scene, grapherUI);
 		StageUtil.customTitleBarDrag(StageManager.getMainStage(), scene, grapherUI);
 //		StageManager.getMainStage().initStyle(StageStyle.TRANSPARENT);

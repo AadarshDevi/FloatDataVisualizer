@@ -1,5 +1,6 @@
 package com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.pages.connections;
 
+import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.app.theme.ThemeProcessor;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.constants.Debug;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.constants.FolderConstants;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.data.ConnectionConfig;
@@ -164,6 +165,9 @@ public class ConnectionsController {
 			stage.initModality(Modality.APPLICATION_MODAL);
 			stage.initStyle(StageStyle.TRANSPARENT);
 
+			connectionCreatorPane.getStylesheets().clear(); // testme: theme
+			connectionCreatorPane.getStylesheets().add(ThemeProcessor.getThemeCSS().toString()); // testme: theme
+
 			if (Debug.useWindowModes) {
 				if (appStage.isFullScreen()) {
 					cec.fullscreen();
@@ -241,6 +245,8 @@ public class ConnectionsController {
 			Button dataCard = DataCardManager.createDataCard(connectionConfig);
 			DataCardController dcc = (DataCardController) dataCard.getProperties().get("dcc");
 			dcc.invalidConnection();
+			dataCard.getStylesheets().clear(); // testme: theme
+			dataCard.getStylesheets().add(ThemeProcessor.getThemeCSS().toString()); // testme: theme
 			connections.getChildren().add(dataCard);
 		}
 		LOGGER.info("Added Connections: " + count);
