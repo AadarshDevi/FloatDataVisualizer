@@ -42,8 +42,6 @@ public class ConnectionsController {
 
 	@Getter private final ExecutorService serialPortWatcher = Executors.newSingleThreadExecutor();
 	@FXML public TilePane connections;
-	@FXML public Button refresh_connections;
-	@FXML public Button export_all_connections;
 	@FXML public Button import_connection_s;
 	@Setter
 	@Getter
@@ -54,12 +52,6 @@ public class ConnectionsController {
 
 	@FXML
 	public void initialize() {
-		refresh_connections.setVisible(false);
-		refresh_connections.setManaged(false);
-		export_all_connections.setVisible(false);
-		export_all_connections.setManaged(false);
-		import_connection_s.setVisible(false);
-		import_connection_s.setManaged(false);
 		startHardwareWatcher();
 	}
 
