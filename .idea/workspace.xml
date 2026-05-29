@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="776164ce-7a69-48e2-8934-c0376db3d4b9" name="Changes" comment="formatting changes">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/buoyui/backend/processor/DataPointProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/buoyui/backend/processor/DataPointProcessor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/buoyui/backend/processor/SerialProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/buoyui/backend/processor/SerialProcessor.java" afterDir="false" />
+    <list default="true" id="776164ce-7a69-48e2-8934-c0376db3d4b9" name="Changes" comment="a atomic var iis final">
       <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/buoyui/frontend/pages/grapher/GrapherController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/buoyui/frontend/pages/grapher/GrapherController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -70,61 +67,61 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.3721484954340701E-133" />
-      <entry key="MS500" value="2.675963730238883E-27" />
-      <entry key="S2" value="2.2744168056191383E-7" />
-      <entry key="S5" value="0.002201648695497604" />
-      <entry key="S10" value="0.04692173109678702" />
-      <entry key="S30" value="0.3618607402900761" />
-      <entry key="S60" value="0.6356430132380168" />
-      <entry key="M2" value="1.1213062441417112" />
-      <entry key="M5" value="6.713880148319305" />
-      <entry key="M10" value="24.290837124701092" />
-      <entry key="M15" value="43.60675006535312" />
-      <entry key="M30" value="97.33255993164558" />
-      <entry key="H1" value="192.29811291044376" />
-      <entry key="H2" value="349.05161697423364" />
-      <entry key="H4" value="539.3777967755996" />
-      <entry key="D1" value="858.1700697555257" />
-      <entry key="W1" value="939.4158599623368" />
+      <entry key="MS100" value="1.0435549120401564" />
+      <entry key="MS500" value="2.0851632950972925" />
+      <entry key="S2" value="4.463104674777698" />
+      <entry key="S5" value="6.483803242157628" />
+      <entry key="S10" value="8.840069143604849" />
+      <entry key="S30" value="15.063120254509984" />
+      <entry key="S60" value="19.997018117802526" />
+      <entry key="M2" value="24.20238223666034" />
+      <entry key="M5" value="30.257329104686033" />
+      <entry key="M10" value="44.61306275344234" />
+      <entry key="M15" value="62.06909417401831" />
+      <entry key="M30" value="114.19993817044175" />
+      <entry key="H1" value="209.11804530448978" />
+      <entry key="H2" value="366.9813725040749" />
+      <entry key="H4" value="560.0038522731296" />
+      <entry key="D1" value="885.6722508389022" />
+      <entry key="W1" value="969.0248962573203" />
     </decayedCancelled>
     <decayedSelected>
-      <entry key="MS100" value="1.0" />
-      <entry key="MS500" value="1.0" />
-      <entry key="S2" value="1.0000029527691492" />
-      <entry key="S5" value="1.006138917512152" />
-      <entry key="S10" value="1.0783512458038844" />
-      <entry key="S30" value="1.4296449707606036" />
-      <entry key="S60" value="1.7131086329031269" />
-      <entry key="M2" value="2.1603899387049275" />
-      <entry key="M5" value="3.7817950919221692" />
-      <entry key="M10" value="8.423618075737938" />
-      <entry key="M15" value="13.62045615232003" />
-      <entry key="M30" value="27.45177954302621" />
-      <entry key="H1" value="51.12122250368364" />
-      <entry key="H2" value="87.78454340298262" />
-      <entry key="H4" value="127.94599771945201" />
-      <entry key="D1" value="187.49694059755984" />
-      <entry key="W1" value="201.52325601962653" />
+      <entry key="MS100" value="0.0" />
+      <entry key="MS500" value="1.325305249793479E-218" />
+      <entry key="S2" value="3.39297189245941E-55" />
+      <entry key="S5" value="1.6401725516661661E-22" />
+      <entry key="S10" value="1.3768164312311926E-11" />
+      <entry key="S30" value="3.341438453085436E-4" />
+      <entry key="S60" value="0.026190122893236453" />
+      <entry key="M2" value="0.26712126477180076" />
+      <entry key="M5" value="1.6389606263653897" />
+      <entry key="M10" value="5.545413445870736" />
+      <entry key="M15" value="10.307384918526822" />
+      <entry key="M30" value="23.880802869821558" />
+      <entry key="H1" value="47.68046052972713" />
+      <entry key="H2" value="84.77887706423647" />
+      <entry key="H4" value="125.7365407453285" />
+      <entry key="D1" value="186.95337920075391" />
+      <entry key="W1" value="201.43969152836323" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="5.012133212409707E-8" />
-      <entry key="MS500" value="0.03467404600212016" />
-      <entry key="S2" value="0.4315219715317971" />
-      <entry key="S5" value="0.7206275704852985" />
-      <entry key="S10" value="0.9499950683968976" />
-      <entry key="S30" value="1.6862670803728885" />
-      <entry key="S60" value="2.277649075121305" />
-      <entry key="M2" value="3.2362333213831405" />
-      <entry key="M5" value="10.465891569554776" />
-      <entry key="M10" value="32.68314459626756" />
-      <entry key="M15" value="57.19371402507934" />
-      <entry key="M30" value="124.7485739401808" />
-      <entry key="H1" value="243.38108495549832" />
-      <entry key="H2" value="436.7999258676819" />
-      <entry key="H4" value="667.2962627115414" />
-      <entry key="D1" value="1045.660110438663" />
-      <entry key="W1" value="1140.938052806776" />
+      <entry key="MS100" value="0.9952965506986576" />
+      <entry key="MS500" value="2.0709211614228087" />
+      <entry key="S2" value="4.456884279217203" />
+      <entry key="S5" value="6.479687459515625" />
+      <entry key="S10" value="8.836252231492315" />
+      <entry key="S30" value="15.058060298289353" />
+      <entry key="S60" value="20.016682182757496" />
+      <entry key="M2" value="24.459833501265006" />
+      <entry key="M5" value="31.88130295824374" />
+      <entry key="M10" value="50.136732308833736" />
+      <entry key="M15" value="72.35035747039733" />
+      <entry key="M30" value="138.04922865052998" />
+      <entry key="H1" value="256.76262733572514" />
+      <entry key="H2" value="451.7251537086635" />
+      <entry key="H4" value="685.7132854953549" />
+      <entry key="D1" value="1072.6187415734294" />
+      <entry key="W1" value="1170.4635238285982" />
     </decayedShown>
   </component>
   <component name="OptimizeOnSaveOptions">
@@ -251,30 +248,6 @@
       <workItem from="1766969579896" duration="1000" />
       <workItem from="1766969593668" duration="4000" />
       <workItem from="1766969654651" duration="15000" />
-    </task>
-    <task id="LOCAL-00418" summary="added a better menu">
-      <option name="closed" value="true" />
-      <created>1780023610516</created>
-      <option name="number" value="00418" />
-      <option name="presentableId" value="LOCAL-00418" />
-      <option name="project" value="LOCAL" />
-      <updated>1780023610516</updated>
-    </task>
-    <task id="LOCAL-00419" summary="what need to do">
-      <option name="closed" value="true" />
-      <created>1780023624065</created>
-      <option name="number" value="00419" />
-      <option name="presentableId" value="LOCAL-00419" />
-      <option name="project" value="LOCAL" />
-      <updated>1780023624065</updated>
-    </task>
-    <task id="LOCAL-00420" summary="using correct connections page ui version">
-      <option name="closed" value="true" />
-      <created>1780023642333</created>
-      <option name="number" value="00420" />
-      <option name="presentableId" value="LOCAL-00420" />
-      <option name="project" value="LOCAL" />
-      <updated>1780023642333</updated>
     </task>
     <task id="LOCAL-00421" summary="updated fxml for better menu">
       <option name="closed" value="true" />
@@ -644,7 +617,31 @@
       <option name="project" value="LOCAL" />
       <updated>1780094487055</updated>
     </task>
-    <option name="localTasksCounter" value="467" />
+    <task id="LOCAL-00467" summary="datapoints will not be printed on the terminal">
+      <option name="closed" value="true" />
+      <created>1780095657405</created>
+      <option name="number" value="00467" />
+      <option name="presentableId" value="LOCAL-00467" />
+      <option name="project" value="LOCAL" />
+      <updated>1780095657405</updated>
+    </task>
+    <task id="LOCAL-00468" summary="appendText = scroll down&#10;scrollTo = scroll down">
+      <option name="closed" value="true" />
+      <created>1780095719655</created>
+      <option name="number" value="00468" />
+      <option name="presentableId" value="LOCAL-00468" />
+      <option name="project" value="LOCAL" />
+      <updated>1780095719655</updated>
+    </task>
+    <task id="LOCAL-00469" summary="a atomic var iis final">
+      <option name="closed" value="true" />
+      <created>1780095728859</created>
+      <option name="number" value="00469" />
+      <option name="presentableId" value="LOCAL-00469" />
+      <option name="project" value="LOCAL" />
+      <updated>1780095728859</updated>
+    </task>
+    <option name="localTasksCounter" value="470" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -674,9 +671,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="created a debugger which can enable and disable features" />
-    <MESSAGE value="using debug:useWindowModes to disable fullscreen funcs" />
-    <MESSAGE value="something max width" />
     <MESSAGE value="getting scrollpane for controller" />
     <MESSAGE value="something idea file" />
     <MESSAGE value="getting scrollpane from fxml" />
@@ -699,7 +693,10 @@
     <MESSAGE value="theme can now be wrote to float.settings when quitting app" />
     <MESSAGE value="float.settings can now read and write theme" />
     <MESSAGE value="formatting changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="formatting changes" />
+    <MESSAGE value="datapoints will not be printed on the terminal" />
+    <MESSAGE value="appendText = scroll down&#10;scrollTo = scroll down" />
+    <MESSAGE value="a atomic var iis final" />
+    <option name="LAST_COMMIT_MESSAGE" value="a atomic var iis final" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -287,7 +287,6 @@ public class GrapherController {
 						}
 					}
 
-					// todo insert data into table
 					tableView.getItems().add(dp);
 					tableView.scrollTo(tableView.getItems().size() - 1);
 					terminalTextArea.appendText(dp.toRaw() + "\n"); // textarea autoscroll
