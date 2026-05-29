@@ -1,0 +1,25 @@
+package com.alphagen.studio.FloatDataVisualizer.buoyui.backend.app.theme;
+
+import lombok.Getter;
+import lombok.Setter;
+
+import java.net.URL;
+
+public class ThemeProcessor {
+
+	private static final String cssThemePath = "/com/alphagen/studio/FloatDataVisualizer/buoyui";
+	@Getter
+	@Setter
+	private static Theme theme = Theme.DARK;
+
+	public static URL getThemeCSS() {
+
+		URL url = ThemeProcessor.class.getResource(cssThemePath + "/theme_dark.css");
+
+		if (url == null) {
+			throw new RuntimeException("Resource not found.");
+		}
+
+		return url;
+	}
+}
