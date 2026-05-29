@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="776164ce-7a69-48e2-8934-c0376db3d4b9" name="Changes" comment="fixed a wierd bug. had to delete .idea folder">
+    <list default="true" id="776164ce-7a69-48e2-8934-c0376db3d4b9" name="Changes" comment="fixed lombok issues">
       <change afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/buoyui/frontend/util/FullscreenButton.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,61 +68,61 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="0.0027198685815202545" />
-      <entry key="MS500" value="0.616537696686949" />
-      <entry key="S2" value="3.551572707332849" />
-      <entry key="S5" value="7.102402517371506" />
-      <entry key="S10" value="9.93314742628042" />
-      <entry key="S30" value="13.363284495176044" />
-      <entry key="S60" value="16.247215914472786" />
-      <entry key="M2" value="21.680265481110606" />
-      <entry key="M5" value="39.23321866231471" />
-      <entry key="M10" value="66.21989421691396" />
-      <entry key="M15" value="87.4683817567063" />
-      <entry key="M30" value="128.34687609957774" />
-      <entry key="H1" value="170.34268188801732" />
-      <entry key="H2" value="210.4490840536135" />
-      <entry key="H4" value="242.9642310184504" />
-      <entry key="D1" value="282.233877237001" />
-      <entry key="W1" value="290.55801807881653" />
+      <entry key="MS100" value="1.0" />
+      <entry key="MS500" value="1.0000015321617066" />
+      <entry key="S2" value="1.0352655529353174" />
+      <entry key="S5" value="1.2870569836302184" />
+      <entry key="S10" value="1.7407631624025883" />
+      <entry key="S30" value="3.8835263689883788" />
+      <entry key="S60" value="6.489425635059726" />
+      <entry key="M2" value="11.038916125325159" />
+      <entry key="M5" value="27.019638847288256" />
+      <entry key="M10" value="54.27897835810833" />
+      <entry key="M15" value="77.20241982708953" />
+      <entry key="M30" value="123.2134810973627" />
+      <entry key="H1" value="170.93057514670568" />
+      <entry key="H2" value="215.6632883944363" />
+      <entry key="H4" value="251.43583775808665" />
+      <entry key="D1" value="294.3516965512141" />
+      <entry key="W1" value="303.42813772269733" />
     </decayedCancelled>
     <decayedSelected>
-      <entry key="MS100" value="1.0" />
-      <entry key="MS500" value="1.0" />
-      <entry key="S2" value="1.0" />
-      <entry key="S5" value="1.0" />
-      <entry key="S10" value="1.000000000019194" />
-      <entry key="S30" value="1.0004203714392097" />
-      <entry key="S60" value="1.0487842644206187" />
-      <entry key="M2" value="1.695815608877345" />
-      <entry key="M5" value="5.345745528188418" />
-      <entry key="M10" value="9.696181281043879" />
-      <entry key="M15" value="12.14250698019902" />
-      <entry key="M30" value="15.546602538768708" />
-      <entry key="H1" value="18.002727719342378" />
-      <entry key="H2" value="19.688365099425" />
-      <entry key="H4" value="20.740441510455774" />
-      <entry key="D1" value="21.772703118251044" />
-      <entry key="W1" value="21.96705799398046" />
+      <entry key="MS100" value="1.1634141167541607E-134" />
+      <entry key="MS500" value="1.633604301166776E-27" />
+      <entry key="S2" value="2.0277086127672168E-7" />
+      <entry key="S5" value="0.00240831589720966" />
+      <entry key="S10" value="0.06346097155969013" />
+      <entry key="S30" value="0.618385635915766" />
+      <entry key="S60" value="1.1205636295424444" />
+      <entry key="M2" value="1.6695242893938718" />
+      <entry key="M5" value="3.9642981329494638" />
+      <entry key="M10" value="8.087896597539658" />
+      <entry key="M15" value="10.937714071656993" />
+      <entry key="M30" value="15.356688447203888" />
+      <entry key="H1" value="18.69144553975077" />
+      <entry key="H2" value="20.959087470869566" />
+      <entry key="H4" value="22.353048754985274" />
+      <entry key="D1" value="23.704444297627035" />
+      <entry key="W1" value="23.957207791877764" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="0.013330027935860793" />
-      <entry key="MS500" value="0.8856269543303951" />
-      <entry key="S2" value="4.183773872216701" />
-      <entry key="S5" value="7.878774615544981" />
-      <entry key="S10" value="10.789114058391615" />
-      <entry key="S30" value="14.303210866353274" />
-      <entry key="S60" value="17.259904065326534" />
-      <entry key="M2" value="23.338597710900586" />
-      <entry key="M5" value="44.523997941671" />
-      <entry key="M10" value="75.86526656925389" />
-      <entry key="M15" value="99.56792267297467" />
-      <entry key="M30" value="143.8652947433724" />
-      <entry key="H1" value="188.32875274978514" />
-      <entry key="H2" value="230.12817957528324" />
-      <entry key="H4" value="263.6997220402851" />
-      <entry key="D1" value="304.0056999445535" />
-      <entry key="W1" value="312.5249487447427" />
+      <entry key="MS100" value="0.06983044612951374" />
+      <entry key="MS500" value="0.5872310336864223" />
+      <entry key="S2" value="0.8902571308242118" />
+      <entry key="S5" value="1.1570606176266842" />
+      <entry key="S10" value="1.6749168355077846" />
+      <entry key="S30" value="4.395825596363015" />
+      <entry key="S60" value="7.53411813091088" />
+      <entry key="M2" value="12.658079457113246" />
+      <entry key="M5" value="30.940189840735805" />
+      <entry key="M10" value="62.3232182155267" />
+      <entry key="M15" value="88.1006751912915" />
+      <entry key="M30" value="138.54204191162856" />
+      <entry key="H1" value="189.60462125175943" />
+      <entry key="H2" value="236.6124720835443" />
+      <entry key="H4" value="273.7835398226773" />
+      <entry key="D1" value="318.0551817730494" />
+      <entry key="W1" value="327.3852066119888" />
     </decayedShown>
   </component>
   <component name="OptimizeOnSaveOptions">
@@ -251,14 +249,6 @@
       <workItem from="1766969579896" duration="1000" />
       <workItem from="1766969593668" duration="4000" />
       <workItem from="1766969654651" duration="15000" />
-    </task>
-    <task id="LOCAL-00378" summary="removed everything from it to github issues">
-      <option name="closed" value="true" />
-      <created>1779821861512</created>
-      <option name="number" value="00378" />
-      <option name="presentableId" value="LOCAL-00378" />
-      <option name="project" value="LOCAL" />
-      <updated>1779821861512</updated>
     </task>
     <task id="LOCAL-00379" summary="using Log4J for logging.&#10;replacing System.out with LOGGER">
       <option name="closed" value="true" />
@@ -644,7 +634,15 @@
       <option name="project" value="LOCAL" />
       <updated>1780067533153</updated>
     </task>
-    <option name="localTasksCounter" value="427" />
+    <task id="LOCAL-00427" summary="fixed lombok issues">
+      <option name="closed" value="true" />
+      <created>1780068901644</created>
+      <option name="number" value="00427" />
+      <option name="presentableId" value="LOCAL-00427" />
+      <option name="project" value="LOCAL" />
+      <updated>1780068901644</updated>
+    </task>
+    <option name="localTasksCounter" value="428" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -674,7 +672,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="removed todos and made them into issues" />
     <MESSAGE value="theme backups and fixing" />
     <MESSAGE value="updated fxml to use css instead of in the fxml itself" />
     <MESSAGE value="testing dark theme" />
@@ -699,7 +696,8 @@
     <MESSAGE value="controller ready for implementations" />
     <MESSAGE value="fxml update to have fullscreen and windowed mode button" />
     <MESSAGE value="fixed a wierd bug. had to delete .idea folder" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed a wierd bug. had to delete .idea folder" />
+    <MESSAGE value="fixed lombok issues" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed lombok issues" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
