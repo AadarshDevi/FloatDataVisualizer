@@ -4,14 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="776164ce-7a69-48e2-8934-c0376db3d4b9" name="Changes" comment="fixed lombok issues">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/buoyui/frontend/util/FullscreenButton.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/buoyui/frontend/pages/connections/ConnectionsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/buoyui/frontend/pages/connections/ConnectionsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/buoyui/frontend/pages/connections/editor/ConnectionEditorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/buoyui/frontend/pages/connections/editor/ConnectionEditorController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/alphagen/studio/FloatDataVisualizer/buoyui/frontend/pages/connections/Connections_v5.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/alphagen/studio/FloatDataVisualizer/buoyui/frontend/pages/connections/Connections_v5.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/alphagen/studio/FloatDataVisualizer/buoyui/frontend/pages/connections/editor/ConnectionsEditor_v5.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/alphagen/studio/FloatDataVisualizer/buoyui/frontend/pages/connections/editor/ConnectionsEditor_v5.fxml" afterDir="false" />
-    </list>
+    <list default="true" id="776164ce-7a69-48e2-8934-c0376db3d4b9" name="Changes" comment="added vars for fullscreen in connections editor controller." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -72,61 +65,61 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="5.591119338671018E-12" />
-      <entry key="MS500" value="0.0056169902617227" />
-      <entry key="S2" value="0.2887725624071537" />
-      <entry key="S5" value="0.7937073653872383" />
-      <entry key="S10" value="1.357976363012394" />
-      <entry key="S30" value="2.8216701003007194" />
-      <entry key="S60" value="4.47347474036395" />
-      <entry key="M2" value="6.698865225262994" />
-      <entry key="M5" value="10.648945503164873" />
-      <entry key="M10" value="18.951569061287852" />
-      <entry key="M15" value="31.297353556017875" />
-      <entry key="M30" value="73.93968092182573" />
-      <entry key="H1" value="137.500771235108" />
-      <entry key="H2" value="204.36259256243812" />
-      <entry key="H4" value="259.3331561836981" />
-      <entry key="D1" value="326.24263753114707" />
-      <entry key="W1" value="340.5223512405626" />
+      <entry key="MS100" value="1.0000000001156113" />
+      <entry key="MS500" value="1.0106675219178256" />
+      <entry key="S2" value="1.480051704848243" />
+      <entry key="S5" value="2.732042540783288" />
+      <entry key="S10" value="4.580484437543962" />
+      <entry key="S30" value="8.151359134306018" />
+      <entry key="S60" value="11.301101155117138" />
+      <entry key="M2" value="16.02688340246079" />
+      <entry key="M5" value="24.094862581596175" />
+      <entry key="M10" value="33.98377157320862" />
+      <entry key="M15" value="46.19049346642256" />
+      <entry key="M30" value="88.12087428609694" />
+      <entry key="H1" value="152.36258543367666" />
+      <entry key="H2" value="221.08021050785945" />
+      <entry key="H4" value="277.9850277430483" />
+      <entry key="D1" value="347.54089192490704" />
+      <entry key="W1" value="362.4177150613332" />
     </decayedCancelled>
     <decayedSelected>
-      <entry key="MS100" value="1.0" />
-      <entry key="MS500" value="1.0001188970054373" />
-      <entry key="S2" value="1.1044221736256454" />
-      <entry key="S5" value="1.4050581272602107" />
-      <entry key="S10" value="1.637132086774462" />
-      <entry key="S30" value="2.0106807200730166" />
-      <entry key="S60" value="2.5655360231690314" />
-      <entry key="M2" value="3.396088903269187" />
-      <entry key="M5" value="4.93591617550406" />
-      <entry key="M10" value="8.212495142598907" />
-      <entry key="M15" value="12.052644527322494" />
-      <entry key="M30" value="21.517130146880046" />
-      <entry key="H1" value="31.481940440821173" />
-      <entry key="H2" value="39.17648385219214" />
-      <entry key="H4" value="44.096830443457634" />
-      <entry key="D1" value="48.936236046930894" />
-      <entry key="W1" value="49.84589600265677" />
+      <entry key="MS100" value="0.0" />
+      <entry key="MS500" value="7.817669578632255E-159" />
+      <entry key="S2" value="3.283912197363981E-40" />
+      <entry key="S5" value="2.1726854656016285E-16" />
+      <entry key="S10" value="2.0357995046535313E-8" />
+      <entry key="S30" value="0.004658293786519177" />
+      <entry key="S60" value="0.12348664676797168" />
+      <entry key="M2" value="0.7450749993023452" />
+      <entry key="M5" value="2.690643453974484" />
+      <entry key="M10" value="6.063443201966273" />
+      <entry key="M15" value="9.84566693237388" />
+      <entry key="M30" value="19.447587883234775" />
+      <entry key="H1" value="29.929688095246316" />
+      <entry key="H2" value="38.19845555688186" />
+      <entry key="H4" value="43.54291996344571" />
+      <entry key="D1" value="48.833245791453116" />
+      <entry key="W1" value="49.830896080962724" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="1.0962659707442133E-11" />
-      <entry key="MS500" value="0.008027440977027062" />
-      <entry key="S2" value="0.5135564591871207" />
-      <entry key="S5" value="1.5107128348776322" />
-      <entry key="S10" value="2.5062822143622836" />
-      <entry key="S30" value="4.573170577213815" />
-      <entry key="S60" value="6.849324934531072" />
-      <entry key="M2" value="9.960605840620767" />
-      <entry key="M5" value="15.507596268107331" />
-      <entry key="M10" value="27.10948237811496" />
-      <entry key="M15" value="43.30255421377953" />
-      <entry key="M30" value="95.41927748477879" />
-      <entry key="H1" value="168.95629605012587" />
-      <entry key="H2" value="243.52275403435863" />
-      <entry key="H4" value="303.4207808944489" />
-      <entry key="D1" value="375.1771601427743" />
-      <entry key="W1" value="390.3679975116232" />
+      <entry key="MS100" value="0.9012504627157496" />
+      <entry key="MS500" value="0.9898837950915127" />
+      <entry key="S2" value="1.4726007388900961" />
+      <entry key="S5" value="2.7264228796193994" />
+      <entry key="S10" value="4.575618835812993" />
+      <entry key="S30" value="8.15061393219897" />
+      <entry key="S60" value="11.40730702495211" />
+      <entry key="M2" value="16.73324115736344" />
+      <entry key="M5" value="26.737123949575174" />
+      <entry key="M10" value="40.00316779804724" />
+      <entry key="M15" value="55.99475011538555" />
+      <entry key="M30" value="107.53312902137674" />
+      <entry key="H1" value="182.26643390920407" />
+      <entry key="H2" value="259.2623824020883" />
+      <entry key="H4" value="321.5186718243957" />
+      <entry key="D1" value="396.37239672685666" />
+      <entry key="W1" value="412.24835702956216" />
     </decayedShown>
   </component>
   <component name="OptimizeOnSaveOptions">
@@ -253,38 +246,6 @@
       <workItem from="1766969579896" duration="1000" />
       <workItem from="1766969593668" duration="4000" />
       <workItem from="1766969654651" duration="15000" />
-    </task>
-    <task id="LOCAL-00380" summary="added Log4J Core and API for logging">
-      <option name="closed" value="true" />
-      <created>1779823931093</created>
-      <option name="number" value="00380" />
-      <option name="presentableId" value="LOCAL-00380" />
-      <option name="project" value="LOCAL" />
-      <updated>1779823931094</updated>
-    </task>
-    <task id="LOCAL-00381" summary="added log4j as requires">
-      <option name="closed" value="true" />
-      <created>1779823944875</created>
-      <option name="number" value="00381" />
-      <option name="presentableId" value="LOCAL-00381" />
-      <option name="project" value="LOCAL" />
-      <updated>1779823944875</updated>
-    </task>
-    <task id="LOCAL-00382" summary="created methods for connection operations">
-      <option name="closed" value="true" />
-      <created>1779824353296</created>
-      <option name="number" value="00382" />
-      <option name="presentableId" value="LOCAL-00382" />
-      <option name="project" value="LOCAL" />
-      <updated>1779824353296</updated>
-    </task>
-    <task id="LOCAL-00383" summary="moved deleting files to Connections from ConnectionsController">
-      <option name="closed" value="true" />
-      <created>1779824383843</created>
-      <option name="number" value="00383" />
-      <option name="presentableId" value="LOCAL-00383" />
-      <option name="project" value="LOCAL" />
-      <updated>1779824383843</updated>
     </task>
     <task id="LOCAL-00384" summary="file was renamed to Connections">
       <option name="closed" value="true" />
@@ -646,7 +607,39 @@
       <option name="project" value="LOCAL" />
       <updated>1780068990274</updated>
     </task>
-    <option name="localTasksCounter" value="429" />
+    <task id="LOCAL-00429" summary="connections page is not fullscreen ready">
+      <option name="closed" value="true" />
+      <created>1780071575957</created>
+      <option name="number" value="00429" />
+      <option name="presentableId" value="LOCAL-00429" />
+      <option name="project" value="LOCAL" />
+      <updated>1780071575958</updated>
+    </task>
+    <task id="LOCAL-00430" summary="connections page ui is not fullscreen ready">
+      <option name="closed" value="true" />
+      <created>1780071592390</created>
+      <option name="number" value="00430" />
+      <option name="presentableId" value="LOCAL-00430" />
+      <option name="project" value="LOCAL" />
+      <updated>1780071592390</updated>
+    </task>
+    <task id="LOCAL-00431" summary="connections editor is fullscreen ready">
+      <option name="closed" value="true" />
+      <created>1780071668798</created>
+      <option name="number" value="00431" />
+      <option name="presentableId" value="LOCAL-00431" />
+      <option name="project" value="LOCAL" />
+      <updated>1780071668798</updated>
+    </task>
+    <task id="LOCAL-00432" summary="added vars for fullscreen in connections editor controller.">
+      <option name="closed" value="true" />
+      <created>1780071732851</created>
+      <option name="number" value="00432" />
+      <option name="presentableId" value="LOCAL-00432" />
+      <option name="project" value="LOCAL" />
+      <updated>1780071732851</updated>
+    </task>
+    <option name="localTasksCounter" value="433" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -676,10 +669,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="theme backups and fixing" />
-    <MESSAGE value="updated fxml to use css instead of in the fxml itself" />
-    <MESSAGE value="testing dark theme" />
-    <MESSAGE value="have the current light and dark themes so i do not lose those progresses." />
     <MESSAGE value="replaced inline css (css in fxml) with external css" />
     <MESSAGE value="updated dark theme css" />
     <MESSAGE value="light theme is light and dark theme is dark" />
@@ -701,7 +690,11 @@
     <MESSAGE value="fxml update to have fullscreen and windowed mode button" />
     <MESSAGE value="fixed a wierd bug. had to delete .idea folder" />
     <MESSAGE value="fixed lombok issues" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed lombok issues" />
+    <MESSAGE value="connections page is not fullscreen ready" />
+    <MESSAGE value="connections page ui is not fullscreen ready" />
+    <MESSAGE value="connections editor is fullscreen ready" />
+    <MESSAGE value="added vars for fullscreen in connections editor controller." />
+    <option name="LAST_COMMIT_MESSAGE" value="added vars for fullscreen in connections editor controller." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
