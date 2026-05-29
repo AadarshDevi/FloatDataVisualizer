@@ -125,6 +125,10 @@
     -fx-stroke: #000000;
 }
 
+.import-special {
+    
+}
+
 /* General styling */
 .progress-indicator {
     -fx-pref-width: 80px;

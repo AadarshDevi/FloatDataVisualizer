@@ -35,7 +35,7 @@
 
 /* Tilepane */
 .tilepane {
-    -fx-background-color: transparent;
+    -fx-background-color: #202943;
 }
 
 /* Indeterminate mode - Spinning ring + smooth cyan dots */
@@ -350,7 +350,7 @@
 }
 
 .scroll-bar .viewport {
-    -fx-background-color: transparent;
+    -fx-background-color: #202943;
     -fx-background-radius: 10px;
     -fx-border-width: 0px;
 }
