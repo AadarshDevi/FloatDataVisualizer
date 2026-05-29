@@ -24,6 +24,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.TilePane;
+import javafx.scene.shape.SVGPath;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
@@ -43,6 +44,13 @@ public class ConnectionsController {
 	@Getter private final ExecutorService serialPortWatcher = Executors.newSingleThreadExecutor();
 	@FXML public TilePane connections;
 	@FXML public Button import_connection_s;
+	@FXML public Button button_theme_change; // todo: implement
+	@FXML public Button button_fullscreen; // todo: implement
+	@FXML public Button button_user_manual; // todo: implement
+	@FXML public SVGPath fullscreen; // todo: implement
+	@FXML public SVGPath windowedScreen; // todo: implement
+	@FXML public SVGPath lightTheme; // todo: implement
+	@FXML public SVGPath darkTheme; // todo: implement
 	@Setter
 	@Getter
 	private ConnectionConfig currentConnectionConfig;
@@ -267,5 +275,15 @@ public class ConnectionsController {
 	public void repopulateConnections() {
 		connections.getChildren().removeAll(connections.getChildren());
 		ConnectionProcessor.readAllConnections();
+	}
+
+	@FXML
+	public void importConnections() {
+		// todo: implement
+	}
+
+	@FXML
+	public void fullscreenApp() {
+		// todo: implement
 	}
 }
