@@ -1,5 +1,6 @@
 package com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.pages.connections;
 
+import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.constants.Debug;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.constants.FolderConstants;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.data.ConnectionConfig;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.data.FloatConfig;
@@ -63,6 +64,11 @@ public class ConnectionsController {
 
 	@FXML
 	public void initialize() {
+		if (!Debug.useWindowModes) {
+			button_fullscreen.setDisable(true);
+			button_fullscreen.setVisible(false);
+			button_fullscreen.setManaged(false);
+		}
 		startHardwareWatcher();
 	}
 
@@ -116,18 +122,29 @@ public class ConnectionsController {
 
 	@FXML
 	public void fullscreenApp() {
+		if (!Debug.useWindowModes) {
+			return;
+		}
+
 		Stage appStage = StageManager.getMainStage();
+		double oldWidth = scrollPane.getWidth() - 24;
+		double oldHeight = scrollPane.getHeight();
+//		System.out.println("oldWidth: " + oldWidth + " oldHeight: " + oldHeight);
 		if (appStage.isFullScreen()) {
 			appStage.setFullScreen(false);
 			fullscreen.setVisible(true);
 			windowedScreen.setVisible(false);
-			connections.setPrefWidth(connections.getPrefWidth() * 2 / 3);
 		} else {
 			appStage.setFullScreen(true);
 			fullscreen.setVisible(false);
 			windowedScreen.setVisible(true);
-			connections.setPrefWidth(connections.getPrefWidth() * 1.5);
 		}
+
+		double newWidth = scrollPane.getWidth() - 24;
+		double newHeight = (oldHeight * newWidth) / oldWidth;
+//		System.out.println("newWidth: " + newWidth + " newHeight: " + newHeight);
+		connections.setPrefWidth(newWidth);
+		connections.setPrefHeight(newHeight);
 	}
 
 	@FXML
@@ -157,8 +174,10 @@ public class ConnectionsController {
 			stage.initModality(Modality.APPLICATION_MODAL);
 			stage.initStyle(StageStyle.TRANSPARENT);
 
-			if (appStage.isFullScreen()) {
-				cec.fullscreen();
+			if (Debug.useWindowModes) {
+				if (appStage.isFullScreen()) {
+					cec.fullscreen();
+				}
 			}
 
 			StageManager.setConnectionCreatorStage(stage);
