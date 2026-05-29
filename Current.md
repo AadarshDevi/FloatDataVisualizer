@@ -1,4 +1,3 @@
-doing theming:
-
-Light Theme: theme_light.css
-Dark Theme: theme_dark.css
+1. Implement import, and its UI (Later stuff)
+2. Implement full screen
+3. Implement theme change
