@@ -10,11 +10,16 @@ public class ThemeProcessor {
 	private static final String cssThemePath = "/com/alphagen/studio/FloatDataVisualizer/buoyui";
 	@Getter
 	@Setter
-	private static Theme theme = Theme.DARK;
+	private static Theme theme = Theme.LIGHT;
 
 	public static URL getThemeCSS() {
 
-		URL url = ThemeProcessor.class.getResource(cssThemePath + "/theme_dark.css");
+		URL url;
+
+		url = switch (theme) {
+			case DARK -> ThemeProcessor.class.getResource(cssThemePath + "/theme_dark.css");
+			case LIGHT -> ThemeProcessor.class.getResource(cssThemePath + "/theme_light.css");
+		};
 
 		if (url == null) {
 			throw new RuntimeException("Resource not found.");
