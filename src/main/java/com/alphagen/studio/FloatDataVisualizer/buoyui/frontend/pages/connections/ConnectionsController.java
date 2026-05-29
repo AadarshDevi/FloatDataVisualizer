@@ -1,5 +1,6 @@
 package com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.pages.connections;
 
+import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.app.theme.Theme;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.app.theme.ThemeProcessor;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.constants.Debug;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.constants.FolderConstants;
@@ -62,6 +63,7 @@ public class ConnectionsController {
 	@Setter
 	@Getter
 	private FloatConfig currentFloatConfig;
+	@FXML private BorderPane root;
 
 	@FXML
 	public void initialize() {
@@ -71,6 +73,8 @@ public class ConnectionsController {
 			button_fullscreen.setManaged(false);
 		}
 		startHardwareWatcher();
+		button_theme_change.setOnAction(event -> setTheme());
+		setThemeCSS();
 	}
 
 	public void startHardwareWatcher() {
@@ -109,6 +113,47 @@ public class ConnectionsController {
 				}
 			}
 		});
+	}
+
+	public void setTheme() {
+		switch (ThemeProcessor.getTheme()) {
+			case DARK:
+				lightTheme.setVisible(false);
+				darkTheme.setVisible(true);
+				ThemeProcessor.setTheme(Theme.LIGHT);
+				root.getStylesheets().clear(); // testme: theme
+				root.getStylesheets().add(ThemeProcessor.getThemeCSS().toString()); // testme: theme
+				break;
+			case LIGHT:
+				lightTheme.setVisible(true);
+				darkTheme.setVisible(false);
+				ThemeProcessor.setTheme(Theme.DARK);
+				root.getStylesheets().clear(); // testme: theme
+				root.getStylesheets().add(ThemeProcessor.getThemeCSS().toString()); // testme: theme
+				break;
+		}
+
+		ObservableList<Node> bps = connections.getChildren();
+		for (Node node : bps) {
+			Button button = (Button) node;
+			button.getStylesheets().clear(); // testme: theme
+			button.getStylesheets().add(ThemeProcessor.getThemeCSS().toString()); // testme: theme
+		}
+
+		System.out.println("New theme: " + ThemeProcessor.getTheme());
+	}
+
+	public void setThemeCSS() {
+		switch (ThemeProcessor.getTheme()) {
+			case DARK:
+				lightTheme.setVisible(true);
+				darkTheme.setVisible(false);
+				break;
+			case LIGHT:
+				lightTheme.setVisible(false);
+				darkTheme.setVisible(true);
+				break;
+		}
 	}
 
 	@FXML
