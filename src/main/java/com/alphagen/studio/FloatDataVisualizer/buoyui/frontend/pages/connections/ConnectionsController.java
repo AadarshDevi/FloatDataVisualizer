@@ -84,8 +84,14 @@ public class ConnectionsController {
 					// Update the UI safely
 					Platform.runLater(() -> {
 						// You could also refresh a ComboBox here
-						LOGGER.info("Refreshed Connections");
-						refreshConnections();
+						LOGGER.info("Refreshing Connections");
+
+						ObservableList<Node> dataCards = connections.getChildren();
+						for (Node node : dataCards) {
+							Button dataCard = (Button) node;
+							DataCardController dcc = (DataCardController) dataCard.getProperties().get("dcc");
+							dcc.invalidConnection();
+						}
 
 						if (ControllerManager.getConnectionEditorController() != null) {
 							ControllerManager.getConnectionEditorController().updatePorts(SerialPort.getCommPorts());
@@ -103,22 +109,6 @@ public class ConnectionsController {
 			}
 		});
 	}
-
-	@FXML
-	public void refreshConnections() {
-		LOGGER.info("Refreshing Connections");
-		ObservableList<Node> dataCards = connections.getChildren();
-		for (Node node : dataCards) {
-			Button dataCard = (Button) node;
-			DataCardController dcc = (DataCardController) dataCard.getProperties().get("dcc");
-			dcc.invalidConnection();
-		}
-	}
-
-//	@FXML
-//	public void test() {
-//		System.out.println("Created Connection");
-//	}
 
 	@FXML
 	public void fullscreenApp() {
