@@ -13,11 +13,12 @@ module com.alphagen.studio.FloatDataVisualizer {
 
 	opens com.alphagen.studio.FloatDataVisualizer to javafx.fxml, javafx.controls;
 	opens com.alphagen.studio.FloatDataVisualizer.buoyui to javafx.fxml, javafx.controls;
+	opens com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.pages to javafx.controls, javafx.fxml;
 	opens com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.pages.connections to javafx.fxml, javafx.controls;
-	opens com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.pages.grapher to javafx.fxml, javafx.controls;
-	opens com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.pages.grapher.scatterplot to javafx.fxml, javafx.controls;
 	opens com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.pages.connections.editor to javafx.fxml, javafx.controls;
 	opens com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.pages.connections.datacard to javafx.fxml, javafx.controls;
+	opens com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.pages.grapher to javafx.fxml, javafx.controls;
+	opens com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.pages.grapher.scatterplot to javafx.fxml, javafx.controls;
 	opens com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.managers to javafx.fxml, javafx.controls;
 	opens com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.util to javafx.fxml, javafx.controls;
 	opens com.alphagen.studio.FloatDataVisualizer.buoyui.lib.fxml to javafx.fxml, javafx.controls;
@@ -34,5 +35,4 @@ module com.alphagen.studio.FloatDataVisualizer {
 	exports com.alphagen.studio.FloatDataVisualizer.buoyui.backend.processor;
 	exports com.alphagen.studio.FloatDataVisualizer.buoyui.backend.app;
 	exports com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.pages;
-	opens com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.pages to javafx.controls, javafx.fxml;
 }

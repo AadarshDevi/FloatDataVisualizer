@@ -47,11 +47,12 @@
             <artifactId>javafx-swing</artifactId>
             <version>25.0.1</version>
         </dependency>
+        <!-- Source: https://mvnrepository.com/artifact/org.projectlombok/lombok -->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>1.18.42</version>
-            <scope>provided</scope>
+            <version>1.18.46</version>
+            <scope>compile</scope>
         </dependency>
         <!-- Source: https://mvnrepository.com/artifact/org.openani.jsystemthemedetector/jSystemThemeDetector -->
         <dependency>
@@ -86,16 +87,18 @@
                 <configuration>
                     <source>23</source>
                     <target>23</target>
+                    <compilerArgs>
+                        <arg>-proc:full</arg>
+                    </compilerArgs>
                     <annotationProcessorPaths>
                         <path>
                             <groupId>org.projectlombok</groupId>
                             <artifactId>lombok</artifactId>
-                            <version>1.18.34</version>
+                            <version>1.18.46</version>
                         </path>
                     </annotationProcessorPaths>
                 </configuration>
             </plugin>
-
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-dependency-plugin</artifactId>
