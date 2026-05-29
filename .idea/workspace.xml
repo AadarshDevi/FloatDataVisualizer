@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="776164ce-7a69-48e2-8934-c0376db3d4b9" name="Changes" comment="refreshConnections was used but 2 places so was a method, but now, only a thread uses it so moved to the thread:serialPortWatcher">
+    <list default="true" id="776164ce-7a69-48e2-8934-c0376db3d4b9" name="Changes" comment="update Current.md to show what is being worked on">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Current.md" beforeDir="false" afterPath="$PROJECT_DIR$/Current.md" afterDir="false" />
     </list>
@@ -68,61 +68,61 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.0000000000000002" />
-      <entry key="MS500" value="1.0007986012720542" />
-      <entry key="S2" value="1.2458179437652481" />
-      <entry key="S5" value="2.070969427519601" />
-      <entry key="S10" value="3.1704837308746" />
-      <entry key="S30" value="9.06716677978845" />
-      <entry key="S60" value="21.36820226263071" />
-      <entry key="M2" value="42.96225757055819" />
-      <entry key="M5" value="78.11687116131989" />
-      <entry key="M10" value="104.60407057002102" />
-      <entry key="M15" value="122.19869808456266" />
-      <entry key="M30" value="166.2562236949281" />
-      <entry key="H1" value="243.34456371014423" />
-      <entry key="H2" value="347.8438060919989" />
-      <entry key="H4" value="448.39090847361945" />
-      <entry key="D1" value="584.7614121950719" />
-      <entry key="W1" value="615.5929029778019" />
+      <entry key="MS100" value="1.0639161084609374" />
+      <entry key="MS500" value="2.0888129551625516" />
+      <entry key="S2" value="4.837308314007368" />
+      <entry key="S5" value="7.432130202713275" />
+      <entry key="S10" value="9.677882824151414" />
+      <entry key="S30" value="14.740676944632812" />
+      <entry key="S60" value="24.44079277694033" />
+      <entry key="M2" value="44.9094317205162" />
+      <entry key="M5" value="82.71921936391423" />
+      <entry key="M10" value="112.15421627021496" />
+      <entry key="M15" value="131.13580194068106" />
+      <entry key="M30" value="176.78922982350332" />
+      <entry key="H1" value="254.80232437725564" />
+      <entry key="H2" value="360.02589840461417" />
+      <entry key="H4" value="461.2189647808491" />
+      <entry key="D1" value="598.5066309561431" />
+      <entry key="W1" value="629.5545850199751" />
     </decayedCancelled>
     <decayedSelected>
-      <entry key="MS100" value="1.103753557271189E-22" />
-      <entry key="MS500" value="4.060452395876117E-5" />
-      <entry key="S2" value="0.07982585994971185" />
-      <entry key="S5" value="0.3637956001920316" />
-      <entry key="S10" value="0.6031547095976134" />
-      <entry key="S30" value="0.8463369761552451" />
-      <entry key="S60" value="0.95698847206886" />
-      <entry key="M2" value="1.1552600083261397" />
-      <entry key="M5" value="1.7341651225276065" />
-      <entry key="M10" value="3.55659439290422" />
-      <entry key="M15" value="6.386174051195736" />
-      <entry key="M30" value="16.752031796800182" />
-      <entry key="H1" value="34.71547185597913" />
-      <entry key="H2" value="54.935594973188905" />
-      <entry key="H4" value="71.11150703617847" />
-      <entry key="D1" value="89.59232248048642" />
-      <entry key="W1" value="93.3537498672496" />
+      <entry key="MS100" value="7.825605437289518E-25" />
+      <entry key="MS500" value="1.5090498602003951E-5" />
+      <entry key="S2" value="0.06232695377119703" />
+      <entry key="S5" value="0.3297107693482098" />
+      <entry key="S10" value="0.5881528942353313" />
+      <entry key="S30" value="1.073205933588567" />
+      <entry key="S60" value="1.4234990391568498" />
+      <entry key="M2" value="1.79969167513009" />
+      <entry key="M5" value="2.5118370006242507" />
+      <entry key="M10" value="4.331655917063329" />
+      <entry key="M15" value="7.11910070965148" />
+      <entry key="M30" value="17.403158521943148" />
+      <entry key="H1" value="35.35376566402814" />
+      <entry key="H2" value="55.649108886979164" />
+      <entry key="H4" value="71.92595806482616" />
+      <entry key="D1" value="90.55333518441255" />
+      <entry key="W1" value="94.34794572589136" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="1.3468978825236463E-5" />
-      <entry key="MS500" value="0.10638172814116102" />
-      <entry key="S2" value="0.816381773160385" />
-      <entry key="S5" value="2.0897450385692147" />
-      <entry key="S10" value="3.5394235148935156" />
-      <entry key="S30" value="9.808981340973958" />
-      <entry key="S60" value="22.265296811540058" />
-      <entry key="M2" value="44.08056516709814" />
-      <entry key="M5" value="79.82849783635423" />
-      <entry key="M10" value="108.13892245278484" />
-      <entry key="M15" value="128.5600423237616" />
-      <entry key="M30" value="182.97759375656625" />
-      <entry key="H1" value="278.0294130193153" />
-      <entry key="H2" value="402.7555774905104" />
-      <entry key="H4" value="519.4870846616568" />
-      <entry key="D1" value="674.3505212811333" />
-      <entry key="W1" value="708.9461744731639" />
+      <entry key="MS100" value="1.0479820924666647" />
+      <entry key="MS500" value="2.0799904484484304" />
+      <entry key="S2" value="4.86586004579713" />
+      <entry key="S5" value="7.679029700972567" />
+      <entry key="S10" value="10.180394906567832" />
+      <entry key="S30" value="15.741838432157843" />
+      <entry key="S60" value="25.808602850879534" />
+      <entry key="M2" value="46.6695645735407" />
+      <entry key="M5" value="85.205977509876" />
+      <entry key="M10" value="116.46282223232546" />
+      <entry key="M15" value="138.2293296692462" />
+      <entry key="M30" value="194.1614772756983" />
+      <entry key="H1" value="290.12534321263183" />
+      <entry key="H2" value="415.6510864144074" />
+      <entry key="H4" value="533.1295212595137" />
+      <entry key="D1" value="689.0567356918375" />
+      <entry key="W1" value="723.9020497677279" />
     </decayedShown>
   </component>
   <component name="OptimizeOnSaveOptions">
@@ -249,14 +249,6 @@
       <workItem from="1766969579896" duration="1000" />
       <workItem from="1766969593668" duration="4000" />
       <workItem from="1766969654651" duration="15000" />
-    </task>
-    <task id="LOCAL-00398" summary="ConnectionProcessor to Connctions.Processor">
-      <option name="closed" value="true" />
-      <created>1779827905398</created>
-      <option name="number" value="00398" />
-      <option name="presentableId" value="LOCAL-00398" />
-      <option name="project" value="LOCAL" />
-      <updated>1779827905398</updated>
     </task>
     <task id="LOCAL-00399" summary="moved rename from Connections to Connctions.Processor">
       <option name="closed" value="true" />
@@ -642,7 +634,15 @@
       <option name="project" value="LOCAL" />
       <updated>1780077137165</updated>
     </task>
-    <option name="localTasksCounter" value="447" />
+    <task id="LOCAL-00447" summary="update Current.md to show what is being worked on">
+      <option name="closed" value="true" />
+      <created>1780077313862</created>
+      <option name="number" value="00447" />
+      <option name="presentableId" value="LOCAL-00447" />
+      <option name="project" value="LOCAL" />
+      <updated>1780077313862</updated>
+    </task>
+    <option name="localTasksCounter" value="448" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -672,7 +672,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="double colon for end data transfer flag label fixed to single colon" />
     <MESSAGE value="new fxml backup" />
     <MESSAGE value="added a better menu" />
     <MESSAGE value="what need to do" />
@@ -697,7 +696,8 @@
     <MESSAGE value="something idea file" />
     <MESSAGE value="getting scrollpane from fxml" />
     <MESSAGE value="refreshConnections was used but 2 places so was a method, but now, only a thread uses it so moved to the thread:serialPortWatcher" />
-    <option name="LAST_COMMIT_MESSAGE" value="refreshConnections was used but 2 places so was a method, but now, only a thread uses it so moved to the thread:serialPortWatcher" />
+    <MESSAGE value="update Current.md to show what is being worked on" />
+    <option name="LAST_COMMIT_MESSAGE" value="update Current.md to show what is being worked on" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
