@@ -1,7 +1,7 @@
 package com.alphagen.studio.FloatDataVisualizer.buoyui.backend.settings;
 
 import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.app.AppMode;
-import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.app.Theme;
+import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.app.theme.Theme;
 import lombok.Data;
 
 @Data

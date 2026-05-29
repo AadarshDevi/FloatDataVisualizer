@@ -4,7 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="776164ce-7a69-48e2-8934-c0376db3d4b9" name="Changes" comment="update Current.md to show what is being worked on" />
+    <list default="true" id="776164ce-7a69-48e2-8934-c0376db3d4b9" name="Changes" comment="a light theme backup">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/buoyui/backend/app/theme/ThemeProcessor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/buoyui/backend/settings/SettingsData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/buoyui/backend/settings/SettingsData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/buoyui/frontend/managers/StageManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/buoyui/frontend/managers/StageManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/buoyui/frontend/pages/connections/ConnectionsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/buoyui/frontend/pages/connections/ConnectionsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/buoyui/frontend/pages/connections/datacard/DataCardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/buoyui/frontend/pages/connections/datacard/DataCardController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/buoyui/frontend/pages/grapher/GrapherController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/buoyui/frontend/pages/grapher/GrapherController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/alphagen/studio/FloatDataVisualizer/buoyui/theme_dark.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/alphagen/studio/FloatDataVisualizer/buoyui/theme_dark.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/alphagen/studio/FloatDataVisualizer/buoyui/theme_light.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/alphagen/studio/FloatDataVisualizer/buoyui/theme_light.css" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -65,61 +75,61 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.0639161084609374" />
-      <entry key="MS500" value="2.0888129551625516" />
-      <entry key="S2" value="4.837308314007368" />
-      <entry key="S5" value="7.432130202713275" />
-      <entry key="S10" value="9.677882824151414" />
-      <entry key="S30" value="14.740676944632812" />
-      <entry key="S60" value="24.44079277694033" />
-      <entry key="M2" value="44.9094317205162" />
-      <entry key="M5" value="82.71921936391423" />
-      <entry key="M10" value="112.15421627021496" />
-      <entry key="M15" value="131.13580194068106" />
-      <entry key="M30" value="176.78922982350332" />
-      <entry key="H1" value="254.80232437725564" />
-      <entry key="H2" value="360.02589840461417" />
-      <entry key="H4" value="461.2189647808491" />
-      <entry key="D1" value="598.5066309561431" />
-      <entry key="W1" value="629.5545850199751" />
+      <entry key="MS100" value="1.0010763502040803" />
+      <entry key="MS500" value="1.5032242185849738" />
+      <entry key="S2" value="3.2377163684667245" />
+      <entry key="S5" value="4.201994389607618" />
+      <entry key="S10" value="5.450437807417944" />
+      <entry key="S30" value="14.11588028549535" />
+      <entry key="S60" value="23.070478934496116" />
+      <entry key="M2" value="31.024755705444793" />
+      <entry key="M5" value="38.601484210298594" />
+      <entry key="M10" value="42.96294197014567" />
+      <entry key="M15" value="47.53784750213342" />
+      <entry key="M30" value="74.9454722981091" />
+      <entry key="H1" value="153.73528314566028" />
+      <entry key="H2" value="289.43469413522615" />
+      <entry key="H4" value="441.39606680632977" />
+      <entry key="D1" value="673.1847266833827" />
+      <entry key="W1" value="729.0766511529278" />
     </decayedCancelled>
     <decayedSelected>
-      <entry key="MS100" value="7.825605437289518E-25" />
-      <entry key="MS500" value="1.5090498602003951E-5" />
-      <entry key="S2" value="0.06232695377119703" />
-      <entry key="S5" value="0.3297107693482098" />
-      <entry key="S10" value="0.5881528942353313" />
-      <entry key="S30" value="1.073205933588567" />
-      <entry key="S60" value="1.4234990391568498" />
-      <entry key="M2" value="1.79969167513009" />
-      <entry key="M5" value="2.5118370006242507" />
-      <entry key="M10" value="4.331655917063329" />
-      <entry key="M15" value="7.11910070965148" />
-      <entry key="M30" value="17.403158521943148" />
-      <entry key="H1" value="35.35376566402814" />
-      <entry key="H2" value="55.649108886979164" />
-      <entry key="H4" value="71.92595806482616" />
-      <entry key="D1" value="90.55333518441255" />
-      <entry key="W1" value="94.34794572589136" />
+      <entry key="MS100" value="0.0" />
+      <entry key="MS500" value="0.0" />
+      <entry key="S2" value="0.0" />
+      <entry key="S5" value="4.583894250935166E-145" />
+      <entry key="S10" value="6.770961829988357E-73" />
+      <entry key="S30" value="9.632916828235174E-25" />
+      <entry key="S60" value="1.5133092523178256E-12" />
+      <entry key="M2" value="2.538462166209444E-6" />
+      <entry key="M5" value="0.01949452134714336" />
+      <entry key="M10" value="0.6486114620959389" />
+      <entry key="M15" value="2.5594950966437344" />
+      <entry key="M30" value="12.578395031089128" />
+      <entry key="H1" value="34.8354886403392" />
+      <entry key="H2" value="66.48542528772214" />
+      <entry key="H4" value="96.80585167584144" />
+      <entry key="D1" value="136.68955973578343" />
+      <entry key="W1" value="145.46945019134944" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="1.0479820924666647" />
-      <entry key="MS500" value="2.0799904484484304" />
-      <entry key="S2" value="4.86586004579713" />
-      <entry key="S5" value="7.679029700972567" />
-      <entry key="S10" value="10.180394906567832" />
-      <entry key="S30" value="15.741838432157843" />
-      <entry key="S60" value="25.808602850879534" />
-      <entry key="M2" value="46.6695645735407" />
-      <entry key="M5" value="85.205977509876" />
-      <entry key="M10" value="116.46282223232546" />
-      <entry key="M15" value="138.2293296692462" />
-      <entry key="M30" value="194.1614772756983" />
-      <entry key="H1" value="290.12534321263183" />
-      <entry key="H2" value="415.6510864144074" />
-      <entry key="H4" value="533.1295212595137" />
-      <entry key="D1" value="689.0567356918375" />
-      <entry key="W1" value="723.9020497677279" />
+      <entry key="MS100" value="0.9803647876629622" />
+      <entry key="MS500" value="1.4532744156979922" />
+      <entry key="S2" value="3.1880392624679446" />
+      <entry key="S5" value="4.175306341212015" />
+      <entry key="S10" value="5.433824451055735" />
+      <entry key="S30" value="14.101917399354829" />
+      <entry key="S60" value="23.058123856221304" />
+      <entry key="M2" value="31.015724181937873" />
+      <entry key="M5" value="38.61570612493776" />
+      <entry key="M10" value="43.604430617990836" />
+      <entry key="M15" value="50.083491991188346" />
+      <entry key="M30" value="87.49341581088989" />
+      <entry key="H1" value="188.5315087579242" />
+      <entry key="H2" value="355.884745764791" />
+      <entry key="H4" value="538.1770138335011" />
+      <entry key="D1" value="809.8685874302371" />
+      <entry key="W1" value="874.545238896437" />
     </decayedShown>
   </component>
   <component name="OptimizeOnSaveOptions">
@@ -246,46 +256,6 @@
       <workItem from="1766969579896" duration="1000" />
       <workItem from="1766969593668" duration="4000" />
       <workItem from="1766969654651" duration="15000" />
-    </task>
-    <task id="LOCAL-00400" summary="moved rename from Connections to Connctions.Processor">
-      <option name="closed" value="true" />
-      <created>1779828245740</created>
-      <option name="number" value="00400" />
-      <option name="presentableId" value="LOCAL-00400" />
-      <option name="project" value="LOCAL" />
-      <updated>1779828245740</updated>
-    </task>
-    <task id="LOCAL-00401" summary="removed todos and made them into issues">
-      <option name="closed" value="true" />
-      <created>1779831313726</created>
-      <option name="number" value="00401" />
-      <option name="presentableId" value="LOCAL-00401" />
-      <option name="project" value="LOCAL" />
-      <updated>1779831313726</updated>
-    </task>
-    <task id="LOCAL-00402" summary="theme backups and fixing">
-      <option name="closed" value="true" />
-      <created>1779834502506</created>
-      <option name="number" value="00402" />
-      <option name="presentableId" value="LOCAL-00402" />
-      <option name="project" value="LOCAL" />
-      <updated>1779834502506</updated>
-    </task>
-    <task id="LOCAL-00403" summary="updated fxml to use css instead of in the fxml itself">
-      <option name="closed" value="true" />
-      <created>1779836521928</created>
-      <option name="number" value="00403" />
-      <option name="presentableId" value="LOCAL-00403" />
-      <option name="project" value="LOCAL" />
-      <updated>1779836521928</updated>
-    </task>
-    <task id="LOCAL-00404" summary="testing dark theme">
-      <option name="closed" value="true" />
-      <created>1779836537565</created>
-      <option name="number" value="00404" />
-      <option name="presentableId" value="LOCAL-00404" />
-      <option name="project" value="LOCAL" />
-      <updated>1779836537565</updated>
     </task>
     <task id="LOCAL-00405" summary="have the current light and dark themes so i do not lose those progresses.">
       <option name="closed" value="true" />
@@ -639,7 +609,47 @@
       <option name="project" value="LOCAL" />
       <updated>1780077453875</updated>
     </task>
-    <option name="localTasksCounter" value="449" />
+    <task id="LOCAL-00449" summary="workspace.xml .idea file">
+      <option name="closed" value="true" />
+      <created>1780077471482</created>
+      <option name="number" value="00449" />
+      <option name="presentableId" value="LOCAL-00449" />
+      <option name="project" value="LOCAL" />
+      <updated>1780077471482</updated>
+    </task>
+    <task id="LOCAL-00450" summary="fixed connections ui">
+      <option name="closed" value="true" />
+      <created>1780090500355</created>
+      <option name="number" value="00450" />
+      <option name="presentableId" value="LOCAL-00450" />
+      <option name="project" value="LOCAL" />
+      <updated>1780090500355</updated>
+    </task>
+    <task id="LOCAL-00451" summary="moved themes to correct package">
+      <option name="closed" value="true" />
+      <created>1780090514136</created>
+      <option name="number" value="00451" />
+      <option name="presentableId" value="LOCAL-00451" />
+      <option name="project" value="LOCAL" />
+      <updated>1780090514136</updated>
+    </task>
+    <task id="LOCAL-00452" summary="added missiing exports">
+      <option name="closed" value="true" />
+      <created>1780090527311</created>
+      <option name="number" value="00452" />
+      <option name="presentableId" value="LOCAL-00452" />
+      <option name="project" value="LOCAL" />
+      <updated>1780090527311</updated>
+    </task>
+    <task id="LOCAL-00453" summary="a light theme backup">
+      <option name="closed" value="true" />
+      <created>1780090536315</created>
+      <option name="number" value="00453" />
+      <option name="presentableId" value="LOCAL-00453" />
+      <option name="project" value="LOCAL" />
+      <updated>1780090536315</updated>
+    </task>
+    <option name="localTasksCounter" value="454" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -669,11 +679,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="new fxml backup" />
-    <MESSAGE value="added a better menu" />
-    <MESSAGE value="what need to do" />
-    <MESSAGE value="using correct connections page ui version" />
-    <MESSAGE value="updated fxml for better menu" />
     <MESSAGE value="a basic menu for importing data" />
     <MESSAGE value="deleted the refresh connections and export all connections buttons" />
     <MESSAGE value="controller ready for implementations" />
@@ -694,7 +699,12 @@
     <MESSAGE value="getting scrollpane from fxml" />
     <MESSAGE value="refreshConnections was used but 2 places so was a method, but now, only a thread uses it so moved to the thread:serialPortWatcher" />
     <MESSAGE value="update Current.md to show what is being worked on" />
-    <option name="LAST_COMMIT_MESSAGE" value="update Current.md to show what is being worked on" />
+    <MESSAGE value="workspace.xml .idea file" />
+    <MESSAGE value="fixed connections ui" />
+    <MESSAGE value="moved themes to correct package" />
+    <MESSAGE value="added missiing exports" />
+    <MESSAGE value="a light theme backup" />
+    <option name="LAST_COMMIT_MESSAGE" value="a light theme backup" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
