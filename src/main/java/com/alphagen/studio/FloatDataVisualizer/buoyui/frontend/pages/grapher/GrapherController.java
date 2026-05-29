@@ -8,6 +8,7 @@ import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.data.FloatConfig;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.data.MeasurementConfig;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.processor.DataPointProcessor;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.processor.SerialProcessor;
+import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.settings.SettingsManager;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.managers.Connections;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.managers.ControllerManager;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.managers.StageManager;
@@ -68,6 +69,7 @@ public class GrapherController {
 	@FXML public ScrollPane configScroll;
 	//	@FXML public ScrollPane tableScroll;
 	@FXML public VBox configVBox;
+	private SettingsManager sm;
 	private Future<?> activeTask;
 	private Future<?> activeDataBase;
 	@Setter private ConnectionConfig connectionConfig;
@@ -79,6 +81,7 @@ public class GrapherController {
 
 	@FXML
 	public void initialize() {
+		sm = SettingsManager.getInstance();
 		System.out.println();
 		System.out.println(" >>> Serial Communication > Initializing");
 		graphPane.getSelectionModel().select(2);
@@ -288,8 +291,13 @@ public class GrapherController {
 					}
 
 					tableView.getItems().add(dp);
-					tableView.scrollTo(tableView.getItems().size() - 1);
-					terminalTextArea.appendText(dp.toRaw() + "\n"); // textarea autoscroll
+					if (sm.getAutoscrollTable())
+						tableView.scrollTo(tableView.getItems().size() - 1); // table autoscroll
+
+					if (sm.getAutoscrollTerminal())
+						terminalTextArea.appendText(dp.toRaw() + "\n"); // textarea autoscroll
+					else
+						terminalTextArea.setText(terminalTextArea.getText() + dp.toRaw() + "\n");
 				});
 			}
 		});
