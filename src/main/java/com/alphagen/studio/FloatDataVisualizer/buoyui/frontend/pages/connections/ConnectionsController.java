@@ -21,6 +21,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.TilePane;
 import javafx.scene.shape.SVGPath;
@@ -50,6 +51,7 @@ public class ConnectionsController {
 	@FXML public Button button_user_manual; // todo: implement
 	@FXML public SVGPath fullscreen;
 	@FXML public SVGPath windowedScreen;
+	@FXML public ScrollPane scrollPane;
 	@FXML public SVGPath lightTheme; // todo: implement
 	@FXML public SVGPath darkTheme; // todo: implement
 	@Setter
