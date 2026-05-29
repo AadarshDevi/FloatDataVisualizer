@@ -1,5 +1,6 @@
 package com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.pages.grapher;
 
+import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.constants.Debug;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.data.ConnectionConfig;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.data.DataPoint;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.data.FloatConfig;
@@ -25,6 +26,7 @@ import javafx.scene.control.*;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.TilePane;
+import javafx.scene.layout.VBox;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import lombok.Setter;
@@ -62,6 +64,10 @@ public class GrapherController {
 	@FXML public Label rawDataFormatLabel;
 	@FXML public TilePane measurementsTilePane;
 	@FXML public TextArea terminalTextArea;
+	//	@FXML public ScrollPane terminalScroll;
+	@FXML public ScrollPane configScroll;
+	//	@FXML public ScrollPane tableScroll;
+	@FXML public VBox configVBox;
 	private Future<?> activeTask;
 	private Future<?> activeDataBase;
 	@Setter private ConnectionConfig connectionConfig;
@@ -133,6 +139,7 @@ public class GrapherController {
 		MeasurementConfig timeConfig = measurementConfigs[0];
 
 		timeTableCol.setText(timeConfig.name() + " (" + timeConfig.unit() + ")");
+
 		for (int i = 1; i < measurementConfigs.length; i++) {
 
 			MeasurementConfig measurementConfig = measurementConfigs[i];
@@ -291,6 +298,10 @@ public class GrapherController {
 		Scene scene = StageManager.getConnectionsScene();
 		ControllerManager.setGrapherController(null);
 		stage.setScene(scene);
+		if (Debug.useWindowModes) {
+			ControllerManager.getConnectionsController().fullscreenApp();
+			stage.setFullScreen(stage.isFullScreen()); // fixme: when going home, it goes to fullscreen
+		}
 	}
 
 	@FXML
@@ -368,5 +379,74 @@ public class GrapherController {
 			throw new RuntimeException(e);
 		}
 
+	}
+
+	public void fullscreen() { // fixme: when going here, fullscreen to windowed mode
+
+		if (!Debug.useWindowModes) {
+			return;
+		}
+
+		Stage stage = StageManager.getMainStage();
+		System.out.println("isFullScreen: " + stage.isFullScreen());
+
+		if (!stage.isFullScreen()) {
+			System.out.println("Fullscreen: No");
+			return;
+		}
+
+		System.out.println("Fullscreen: Yes");
+
+		double scrollWidth = graphPane.getWidth() - 24;
+		double scrollHeight = graphPane.getHeight() - 24;
+		System.out.println("scrollWidth: " + scrollWidth + " scrollHeight: " + scrollHeight);
+
+		double oldWidth = configScroll.getWidth() - 24;
+		double oldHeight = configScroll.getHeight();
+		System.out.println("oldWidth: " + oldWidth + " oldWidth: " + oldHeight);
+
+		oldWidth = configScroll.getPrefWidth() - 24;
+		oldHeight = configScroll.getPrefHeight();
+		System.out.println("oldPrefWidth: " + oldWidth + " oldPrefWidth: " + oldHeight);
+
+		stage.setFullScreen(true);
+
+		double newWidth = configScroll.getWidth() - 24;
+		double newHeight = (oldHeight * newWidth) / oldWidth;
+		System.out.println("newWidth: " + newWidth + " newHeight: " + newHeight);
+
+		configVBox.setPrefWidth(newWidth);
+		configVBox.setPrefHeight(newHeight);
+		System.out.println();
+
+
+//		if (StageManager.getMainStage().isFullScreen()) {
+//
+//			double scrollWidth = graphPane.getWidth() - 24;
+//			double scrollHeight = graphPane.getHeight() - 24;
+//			System.out.println("scrollWidth: " + scrollWidth + " scrollHeight: " + scrollHeight);
+//
+//			spc.getScatterPlot().setPrefSize(scrollWidth, scrollHeight);
+//			spc.getScatterPlot().setMinSize(scrollWidth, scrollHeight);
+//
+//			double oldWidth = spc.getScatterPlot().getWidth();
+//			double oldHeight = spc.getScatterPlot().getHeight();
+//			System.out.println("oldWidth: " + oldWidth + " oldHeight: " + oldHeight);
+//
+//			oldWidth = spc.getScatterPlot().getPrefWidth() - 24;
+//			oldHeight = spc.getScatterPlot().getPrefHeight();
+//			System.out.println("oldPrefWidth: " + oldWidth + " oldPrefWidth: " + oldHeight);
+//
+//			double newWidth = spc.getScrollPane().getWidth() - 24;
+//			double newHeight = (oldHeight * newWidth) / oldWidth;
+//			System.out.println("newWidth: " + newWidth + " newHeight: " + newHeight);
+//
+//			spc.getScatterPlot().setPrefWidth(newWidth);
+//			spc.getScatterPlot().setPrefHeight(newHeight);
+//
+//			spc.getScatterPlot().setMinWidth(newWidth);
+//			spc.getScatterPlot().setMinHeight(newHeight);
+//			System.out.println();
+//		}
 	}
 }
