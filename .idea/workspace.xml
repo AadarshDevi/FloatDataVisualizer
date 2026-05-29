@@ -4,14 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="776164ce-7a69-48e2-8934-c0376db3d4b9" name="Changes" comment="project completed basic fullscreen.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/buoyui/backend/constants/Debug.java" afterDir="false" />
+    <list default="true" id="776164ce-7a69-48e2-8934-c0376db3d4b9" name="Changes" comment="using debug:useWindowModes to disable fullscreen funcs">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/buoyui/frontend/pages/connections/ConnectionsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/buoyui/frontend/pages/connections/ConnectionsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/buoyui/frontend/pages/connections/datacard/DataCardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/buoyui/frontend/pages/connections/datacard/DataCardController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/buoyui/frontend/pages/grapher/GrapherController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/buoyui/frontend/pages/grapher/GrapherController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/buoyui/frontend/pages/grapher/scatterplot/ScatterPlotController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/buoyui/frontend/pages/grapher/scatterplot/ScatterPlotController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/alphagen/studio/FloatDataVisualizer/buoyui/frontend/pages/connections/Connections_v5.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/alphagen/studio/FloatDataVisualizer/buoyui/frontend/pages/connections/Connections_v5.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/alphagen/studio/FloatDataVisualizer/buoyui/frontend/pages/grapher/Graping_v3.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/alphagen/studio/FloatDataVisualizer/buoyui/frontend/pages/grapher/Graping_v3.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/alphagen/studio/FloatDataVisualizer/buoyui/frontend/pages/grapher/scatterplot/ScatterPlot_v2.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/alphagen/studio/FloatDataVisualizer/buoyui/frontend/pages/grapher/scatterplot/ScatterPlot_v2.fxml" afterDir="false" />
     </list>
@@ -75,61 +72,61 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.0" />
-      <entry key="MS500" value="1.0000006291904024" />
-      <entry key="S2" value="1.0281640769565885" />
-      <entry key="S5" value="1.2398160298314698" />
-      <entry key="S10" value="1.489710804679125" />
-      <entry key="S30" value="1.806378230441598" />
-      <entry key="S60" value="2.181079570621735" />
-      <entry key="M2" value="3.870696267112078" />
-      <entry key="M5" value="11.087134773525898" />
-      <entry key="M10" value="23.02935085922493" />
-      <entry key="M15" value="35.44605214445984" />
-      <entry key="M30" value="74.95330811660085" />
-      <entry key="H1" value="149.01595972158262" />
-      <entry key="H2" value="247.40934706954357" />
-      <entry key="H4" value="339.81472078754365" />
-      <entry key="D1" value="462.70582590223125" />
-      <entry key="W1" value="490.18983387626935" />
+      <entry key="MS100" value="8.198872604235679E-8" />
+      <entry key="MS500" value="0.04039780464778127" />
+      <entry key="S2" value="0.657284001339838" />
+      <entry key="S5" value="1.2689359167537748" />
+      <entry key="S10" value="1.8738200927022006" />
+      <entry key="S30" value="7.300514808203809" />
+      <entry key="S60" value="16.366684890045196" />
+      <entry key="M2" value="27.35499682494674" />
+      <entry key="M5" value="40.54425881771075" />
+      <entry key="M10" value="53.36903754992334" />
+      <entry key="M15" value="65.50122723760144" />
+      <entry key="M30" value="103.83464633901501" />
+      <entry key="H1" value="177.73539430672534" />
+      <entry key="H2" value="279.34704941033203" />
+      <entry key="H4" value="376.99366221925044" />
+      <entry key="D1" value="509.00024102950016" />
+      <entry key="W1" value="538.7797212440001" />
     </decayedCancelled>
     <decayedSelected>
-      <entry key="MS100" value="0.0" />
-      <entry key="MS500" value="1.7118259438114708E-127" />
-      <entry key="S2" value="2.62623210679275E-32" />
-      <entry key="S5" value="3.392374301849066E-13" />
-      <entry key="S10" value="8.176361808973401E-7" />
-      <entry key="S30" value="0.014831492268410485" />
-      <entry key="S60" value="0.17640676775108938" />
-      <entry key="M2" value="0.6894670327901234" />
-      <entry key="M5" value="2.3499733859389784" />
-      <entry key="M10" value="5.8762412108995035" />
-      <entry key="M15" value="9.934146159554137" />
-      <entry key="M30" value="21.863738360760895" />
-      <entry key="H1" value="39.75159572978069" />
-      <entry key="H2" value="58.33288413472344" />
-      <entry key="H4" value="72.54496247864847" />
-      <entry key="D1" value="88.30240187266612" />
-      <entry key="W1" value="91.45916613405136" />
+      <entry key="MS100" value="1.0" />
+      <entry key="MS500" value="1.0" />
+      <entry key="S2" value="1.0" />
+      <entry key="S5" value="1.0" />
+      <entry key="S10" value="1.0" />
+      <entry key="S30" value="1.0000000008930587" />
+      <entry key="S60" value="1.0000432875342244" />
+      <entry key="M2" value="1.0108003370198002" />
+      <entry key="M5" value="1.4456895638383664" />
+      <entry key="M10" value="3.5590830197568404" />
+      <entry key="M15" value="6.707602494628395" />
+      <entry key="M30" value="17.572422946436376" />
+      <entry key="H1" value="35.60870591024562" />
+      <entry key="H2" value="55.42881089005518" />
+      <entry key="H4" value="71.07529888249496" />
+      <entry key="D1" value="88.79412736735217" />
+      <entry key="W1" value="92.38377350875992" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="3.735260972645195E-11" />
-      <entry key="MS500" value="0.008212902036543028" />
-      <entry key="S2" value="0.329023272498193" />
-      <entry key="S5" value="0.8578703525177732" />
-      <entry key="S10" value="1.2756452413539938" />
-      <entry key="S30" value="1.7431592655844856" />
-      <entry key="S60" value="2.312685197087364" />
-      <entry key="M2" value="4.527648246087088" />
-      <entry key="M5" value="13.408184442034484" />
-      <entry key="M10" value="28.872463407229958" />
-      <entry key="M15" value="45.343704477244266" />
-      <entry key="M30" value="96.77813469498562" />
-      <entry key="H1" value="188.73304278941572" />
-      <entry key="H2" value="305.71720594770943" />
-      <entry key="H4" value="412.344176603822" />
-      <entry key="D1" value="551.0050822733992" />
-      <entry key="W1" value="581.6485344184954" />
+      <entry key="MS100" value="8.606509312969629E-8" />
+      <entry key="MS500" value="0.0418650880612918" />
+      <entry key="S2" value="0.810050492556148" />
+      <entry key="S5" value="1.7347758369148556" />
+      <entry key="S10" value="2.55507365952178" />
+      <entry key="S30" value="8.179511235200893" />
+      <entry key="S60" value="17.30353539306105" />
+      <entry key="M2" value="28.33269134378086" />
+      <entry key="M5" value="41.971082476856935" />
+      <entry key="M10" value="56.90693284276971" />
+      <entry key="M15" value="72.1833387419309" />
+      <entry key="M30" value="121.37530408522488" />
+      <entry key="H1" value="213.31291510929464" />
+      <entry key="H2" value="334.75194057746626" />
+      <entry key="H4" value="448.05369752012786" />
+      <entry key="D1" value="597.7911935116786" />
+      <entry key="W1" value="631.1630227600444" />
     </decayedShown>
   </component>
   <component name="OptimizeOnSaveOptions">
@@ -256,54 +253,6 @@
       <workItem from="1766969579896" duration="1000" />
       <workItem from="1766969593668" duration="4000" />
       <workItem from="1766969654651" duration="15000" />
-    </task>
-    <task id="LOCAL-00385" summary="replaced ConnectionManager to Connections">
-      <option name="closed" value="true" />
-      <created>1779824494719</created>
-      <option name="number" value="00385" />
-      <option name="presentableId" value="LOCAL-00385" />
-      <option name="project" value="LOCAL" />
-      <updated>1779824494719</updated>
-    </task>
-    <task id="LOCAL-00386" summary="replaced ConnectionManager to Connections">
-      <option name="closed" value="true" />
-      <created>1779824558062</created>
-      <option name="number" value="00386" />
-      <option name="presentableId" value="LOCAL-00386" />
-      <option name="project" value="LOCAL" />
-      <updated>1779824558062</updated>
-    </task>
-    <task id="LOCAL-00387" summary="moved if true condition out and made it: if false (return) true">
-      <option name="closed" value="true" />
-      <created>1779827592229</created>
-      <option name="number" value="00387" />
-      <option name="presentableId" value="LOCAL-00387" />
-      <option name="project" value="LOCAL" />
-      <updated>1779827592229</updated>
-    </task>
-    <task id="LOCAL-00388" summary="class moved to Connections">
-      <option name="closed" value="true" />
-      <created>1779827609648</created>
-      <option name="number" value="00388" />
-      <option name="presentableId" value="LOCAL-00388" />
-      <option name="project" value="LOCAL" />
-      <updated>1779827609648</updated>
-    </task>
-    <task id="LOCAL-00389" summary="moved delete, delete all, create from ConnectionsManager to Connections">
-      <option name="closed" value="true" />
-      <created>1779827662853</created>
-      <option name="number" value="00389" />
-      <option name="presentableId" value="LOCAL-00389" />
-      <option name="project" value="LOCAL" />
-      <updated>1779827662853</updated>
-    </task>
-    <task id="LOCAL-00390" summary="imports">
-      <option name="closed" value="true" />
-      <created>1779827669434</created>
-      <option name="number" value="00390" />
-      <option name="presentableId" value="LOCAL-00390" />
-      <option name="project" value="LOCAL" />
-      <updated>1779827669434</updated>
     </task>
     <task id="LOCAL-00391" summary="new classes: Parser and Processor.&#10;Parser: parse data&#10;Processor: read/write data">
       <option name="closed" value="true" />
@@ -649,7 +598,55 @@
       <option name="project" value="LOCAL" />
       <updated>1780071879346</updated>
     </task>
-    <option name="localTasksCounter" value="434" />
+    <task id="LOCAL-00434" summary="1. getting scrollpanes">
+      <option name="closed" value="true" />
+      <created>1780076814239</created>
+      <option name="number" value="00434" />
+      <option name="presentableId" value="LOCAL-00434" />
+      <option name="project" value="LOCAL" />
+      <updated>1780076814239</updated>
+    </task>
+    <task id="LOCAL-00435" summary="created a debugger which can enable and disable features">
+      <option name="closed" value="true" />
+      <created>1780076843394</created>
+      <option name="number" value="00435" />
+      <option name="presentableId" value="LOCAL-00435" />
+      <option name="project" value="LOCAL" />
+      <updated>1780076843394</updated>
+    </task>
+    <task id="LOCAL-00436" summary="something idea file">
+      <option name="closed" value="true" />
+      <created>1780076855944</created>
+      <option name="number" value="00436" />
+      <option name="presentableId" value="LOCAL-00436" />
+      <option name="project" value="LOCAL" />
+      <updated>1780076855944</updated>
+    </task>
+    <task id="LOCAL-00437" summary="getting scrollpane from fxml">
+      <option name="closed" value="true" />
+      <created>1780076892082</created>
+      <option name="number" value="00437" />
+      <option name="presentableId" value="LOCAL-00437" />
+      <option name="project" value="LOCAL" />
+      <updated>1780076892082</updated>
+    </task>
+    <task id="LOCAL-00438" summary="using debug:useWindowModes to disable fullscreen funcs">
+      <option name="closed" value="true" />
+      <created>1780076927117</created>
+      <option name="number" value="00438" />
+      <option name="presentableId" value="LOCAL-00438" />
+      <option name="project" value="LOCAL" />
+      <updated>1780076927117</updated>
+    </task>
+    <task id="LOCAL-00439" summary="using debug:useWindowModes to disable fullscreen funcs">
+      <option name="closed" value="true" />
+      <created>1780076941346</created>
+      <option name="number" value="00439" />
+      <option name="presentableId" value="LOCAL-00439" />
+      <option name="project" value="LOCAL" />
+      <updated>1780076941346</updated>
+    </task>
+    <option name="localTasksCounter" value="440" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -679,11 +676,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="updated dark theme css" />
-    <MESSAGE value="light theme is light and dark theme is dark" />
-    <MESSAGE value="added a css class" />
-    <MESSAGE value="using correct scatter-plot" />
-    <MESSAGE value="finished dark theme" />
     <MESSAGE value="finished light theme" />
     <MESSAGE value="updated the correct theme files" />
     <MESSAGE value="terminal tab now resets" />
@@ -704,7 +696,12 @@
     <MESSAGE value="connections editor is fullscreen ready" />
     <MESSAGE value="added vars for fullscreen in connections editor controller." />
     <MESSAGE value="project completed basic fullscreen." />
-    <option name="LAST_COMMIT_MESSAGE" value="project completed basic fullscreen." />
+    <MESSAGE value="1. getting scrollpanes" />
+    <MESSAGE value="created a debugger which can enable and disable features" />
+    <MESSAGE value="something idea file" />
+    <MESSAGE value="getting scrollpane from fxml" />
+    <MESSAGE value="using debug:useWindowModes to disable fullscreen funcs" />
+    <option name="LAST_COMMIT_MESSAGE" value="using debug:useWindowModes to disable fullscreen funcs" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
