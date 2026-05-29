@@ -1,0 +1,747 @@
+
+@font-face {
+    font-family: "Bahnschrift";
+    src: url(fonts/bahnschrift.ttf);
+}
+
+/* COMPLETE CORRECTED CSS for ProgressIndicator */
+
+.labels {
+    -fx-font-family: "Bahnschrift SemiBold Condensed";
+    -fx-text-fill: #000000;
+    -fx-font-size: 14px;
+    -fx-background-color: #ffffff;
+}
+
+.measurement-labels {
+    -fx-background-radius: 6px;
+    -fx-background-color: #ffffff;
+
+    transition-property: -fx-background-color;
+    transition-duration: 0.25s;
+}
+
+.measurement-labels:hover {
+    -fx-background-color: #ebebeb;
+}
+
+.labels-bold {
+    -fx-font-weight: bold;
+}
+
+.vbox { 
+    -fx-background-color: #ffffff;
+}
+
+/* Tilepane */
+.tilepane {
+    -fx-background-color: transparent;
+}
+
+/* Indeterminate mode - Spinning ring + smooth cyan dots */
+.progress-indicator:indeterminate .spinner .arc {
+    -fx-stroke: #028fffff; /* Cyan background ring */
+    -fx-stroke-width: 3;
+}
+
+.progress-indicator:indeterminate .spinner .segment {
+    -fx-background-color: radial-gradient(
+        center 50% 50%,
+        radius 50%,
+        #028fffff 40%,
+        #028fffff 70%
+    );
+}
+
+/* Scatterplot */
+
+.scatter-plot .chart-plot-background {
+    -fx-background-color: #ffffff;
+}
+
+.scatter-plot .axis {
+    -fx-background-color: #ffffff;
+    -fx-tick-label-fill: #000000 !important; 
+    -fx-axis-label-fill: #000000 !important;
+}
+
+.scatter-plot .chart .chart-content {
+    -fx-background-color: #ffffff;
+}
+
+.scatter-plot .axis .text {
+    -fx-fill: #000000 !important;
+}
+
+.scatter-plot .axis-label {
+    -fx-text-fill: #000000 !important;
+}
+
+.scatter-plot .chart-vertical-grid-lines,
+.scatter-plot .chart-horizontal-grid-lines {
+    -fx-stroke: #aaaaaa;
+}
+
+.scatter-plot .axis-tick-mark {
+    -fx-fill: #000000;
+}
+
+.scatter-plot .chart-legend {
+    -fx-fill: #0e319a;
+    -fx-background-color: #ffffff;
+}
+
+.scatter-plot .chart-legend-item {
+    -fx-text-fill: #000000 !important;
+    -fx-background-color: transparent;
+}
+
+.scatter-plot .chart-legend-item .text {
+    -fx-fill: #000000 !important;
+    -fx-background-color: transparent;
+}
+
+.quit-svg {
+    -fx-fill: #ff6868;
+}
+
+.progress-indicator:determinate .spinner .arc {
+    -fx-stroke: #028fffff;
+    -fx-stroke-width: 6;
+    -fx-stroke-linecap: round;
+}
+
+.progress-indicator .percentage {
+    -fx-fill: transparent;
+}
+
+/* SVGs */
+
+.svg {
+    -fx-fill: #000000;
+}
+
+.svg-outline {
+    -fx-stroke: #000000;
+}
+
+/* General styling */
+.progress-indicator {
+    -fx-pref-width: 80px;
+    -fx-pref-height: 80px;
+}
+
+/* Button Group */
+.button-group-container {
+    -fx-background-color: #ebebeb;
+    -fx-background-radius: 10px;
+}
+
+.button-group-active {
+    -fx-background-color: #ffffff !important;
+}
+
+.button-group-inactive {
+    -fx-background-color: #ebebeb !important;
+}
+
+.card-1-shadow {
+    -fx-effect: dropshadow(three-pass-box, #028fffff, 8, 0, 0, 0);
+    -fx-background-color: #ffffff;
+    -fx-scale-x: 1;
+    -fx-scale-y: 1;
+    transition-property:
+        -fx-scale-x,
+        -fx-scale-y;
+    transition-duration: 0.25s;
+}
+
+.data-card {
+    -fx-effect: dropshadow(three-pass-box, #dededeff, 8, 0, 0, 0);
+    -fx-background-color: #ffffff;
+    -fx-scale-x: 1;
+    -fx-scale-y: 1;
+    transition-property: -fx-background-color;
+    transition-duration: 0.25s;
+}
+
+.data-card:hover {
+    -fx-background-color: #e8e8e8;
+}
+
+.data-card-text {
+    -fx-font-family: "Bahnschrift SemiBold Condensed";
+    -fx-text-fill: #000000;
+    -fx-font-weight: bold;
+    -fx-font-size: 12px;
+}
+
+.data-card-text-bigger {
+    -fx-font-size: 18px;
+}
+
+.data-card-button {
+    -fx-background-color: transparent;
+}
+
+.connection-editor-heading {
+    -fx-font-family: "Bahnschrift SemiBold Condensed";
+    -fx-text-fill: #000000;
+    -fx-font-weight: bold;
+    -fx-font-size: 28px;
+}
+
+.connection-editor-fields {
+    -fx-font-family: "Bahnschrift SemiBold Condensed";
+    -fx-text-fill: #000000;
+    -fx-font-weight: bold;
+    -fx-font-size: 20px;
+}
+
+.connection-editor-error {
+    -fx-font-family: "Bahnschrift SemiBold Condensed";
+    -fx-text-fill: #ff0000;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+}
+
+.right-click-menu {
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 7px;
+    -fx-margin: 0px;
+    -fx-border-radius: 5px;
+    -fx-border-width: 2px;
+    -fx-border-color: #e1e1e1;
+}
+
+.right-click-menu .menu-item {
+    -fx-padding: 5 80 5 5;
+    -fx-min-width: 140;
+    -fx-background-radius: 7px;
+}
+
+/* Specific CSS */
+
+.port-seletion-combo-box .menu-item {
+    -fx-padding: 1 332 1 1;
+}
+
+/* Base JavaFX Component CSS */
+
+/* Error */
+.error {
+    -fx-border-color: #ff0000 !important;
+}
+
+/* Deletion */
+.delete,
+.confirm {
+    -fx-text-fill: #000000;
+}
+
+.delete:hover,
+.delete:selected,
+.delete:focused {
+    -fx-background-color: #ff0000 !important;
+    -fx-text-fill: #ffffff;
+}
+
+.delete:hover .svg-path,
+.delete:selected .svg-path,
+.delete:focused .svg-path {
+    -fx-fill: #ffffff;
+}
+
+.confirm:hover,
+.confirm:selected,
+.confirm:focused {
+    -fx-background-color: #028fffff !important;
+    -fx-text-fill: #ffffff;
+}
+
+.confirm:hover .svg-path,
+.confirm:selected .svg-path,
+.confirm:focused .svg-path {
+    -fx-fill: #ffffff;
+}
+
+/* ComboBox */
+.seletion-combo-box {
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 7px;
+
+    -fx-border-radius: 5px;
+    -fx-border-width: 2px;
+    -fx-border-color: #e1e1e1;
+    -fx-text-fill: #000000;
+    transition: -fx-background-color 0.25s;
+    -fx-font-family: "Bahnschrift SemiBold Condensed";
+    -fx-font-weight: bold;
+    -fx-font-size: 13px;
+}
+
+.seletion-combo-box:hover {-fx-background-color: #dadada;}
+.seletion-combo-box:selected {-fx-background-color: #dadada;}
+.seletion-combo-box:focused {-fx-background-color: #dadada;}
+
+.seletion-combo-box .menu-item {
+    -fx-background-radius: 5px;
+    -fx-background-color: #ffffff;
+
+    -fx-font-family: "Bahnschrift SemiBold Condensed";
+    -fx-font-weight: bold;
+    -fx-font-size: 13px;
+}
+
+.seletion-combo-box .menu-item .label {
+    -fx-text-fill: #000000;
+}
+
+.seletion-combo-box .arrow {
+    -fx-background-color: #028fffff;
+}
+
+.seletion-combo-box .menu-item:focused {
+    -fx-background-color: #028fffff;
+    -fx-text-fill: #000000;
+}
+
+.seletion-combo-box .menu-item:selected {
+    -fx-background-color: #028fffff;
+    -fx-text-fill: #000000;
+}
+
+.seletion-combo-box .menu-item:hover {
+    -fx-background-color: #028fffff;
+    -fx-text-fill: #000000;
+}
+
+.seletion-combo-box .list-cell {
+    -fx-background-color: #ffffff;
+    -fx-text-fill: #000000;
+}
+
+.seletion-combo-box .list-cell:selected {
+    -fx-background-color: #028fffff;
+    -fx-text-fill: #000000;
+}
+
+.seletion-combo-box .list-cell:focused {
+    -fx-background-color: #028fffff;
+    -fx-text-fill: #000000;
+}
+
+.seletion-combo-box .context-menu {
+    -fx-background-radius: 8px;
+    -fx-background-color: #ffffff;
+
+    -fx-border-radius: 5px;
+    -fx-border-width: 2px;
+    -fx-border-color: #e1e1e1;
+
+    -fx-padding: 5px;
+}
+
+/* ScrollPane */
+
+.scroll-bar {
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 10px;
+}
+
+.scroll-bar .viewport {
+    -fx-background-color: transparent;
+    -fx-background-radius: 10px;
+    -fx-border-width: 0px;
+}
+
+.scroll-bar .viewport .vbox {
+    -fx-background-color: transparent;
+    -fx-background-radius: 10 0 0 10;
+}
+
+.scroll-bar .increment-button,
+.scroll-bar .increment-arrow,
+.scroll-bar .decrement-button,
+.scroll-bar .decrement-arrow,
+.scroll-bar .track,
+.scroll-bar .corner {
+    -fx-background-color: transparent;
+    -fx-border-width: 0px;
+}
+
+.scroll-bar .track-background {
+    -fx-background-color: transparent;
+    -fx-background-radius: 0 10 10 0;
+    -fx-border-width: 0px;
+}
+
+.scroll-bar .thumb {
+    -fx-background-color: #028fffff;
+    -fx-background-radius: 20px;
+}
+
+/* Button */
+.buttons {
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 7px;
+
+    -fx-border-width: 1px;
+    -fx-border-radius: 7px;
+    -fx-border-color: transparent;
+
+    -fx-font-family: "Bahnschrift SemiBold Condensed";
+    -fx-text-fill: #000000;
+    -fx-font-weight: bold;
+    -fx-font-size: 15px;
+
+    transition: -fx-background-color 0.25s;
+}
+
+.buttons:hover {
+    -fx-background-color: #eeeeee;
+}
+
+/* Root BorderPane */
+.root {
+    -fx-background-radius: 20px;
+    -fx-background-color: #ffffff;
+    -fx-border-radius: 15px;
+    -fx-border-width: 2px;
+    -fx-border-color: #f4f6fa;
+}
+
+/* TextField */
+.text-box {
+    -fx-border-radius: 0px;
+    -fx-border-width: 0 0 2 0;
+    -fx-border-color: #028fff;
+
+    -fx-highlight-fill: #028fff;
+    -fx-highlight-text-fill: #000000;
+
+    -fx-text-fill: #000000;
+    -fx-initial-color: #000000;
+    -fx-prompt-text-fill: #000000;
+    -fx-font-family: "Bahnschrift SemiBold Condensed";
+    -fx-font-weight: 600;
+
+    -fx-background-color: #ffffff;
+    transition: -fx-background-color 0.25s;
+}
+
+.text-box:hover {
+    -fx-background-color: #f4f6fa;
+}
+
+.text-box:selected {
+    -fx-background-color: #f4f6fa;
+}
+
+.text-box:focused {
+    -fx-background-color: #f4f6fa;
+}
+
+.error-text {
+    -fx-text-fill: #ff0000;
+
+    -fx-font-family: "Bahnschrift SemiBold Condensed";
+    -fx-font-weight: bold;
+    -fx-font-size: 13px;
+}
+
+/* TextArea */
+
+.text-area {
+    -fx-text-inner-color: #000000 !important;
+    
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 5px;
+    -fx-border-width: 0px;
+    -fx-highlight-fill: #028fff;
+    -fx-highlight-text-fill: #000000;
+}
+
+.text-area .content {
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 5 0 0 5;
+}
+
+.text-area .scroll-pane,
+.text-area .viewport{
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 5px;
+}
+
+/* Context Menu */
+.text-area .context-menu,
+.text-box .context-menu,
+.popup-menu {
+    -fx-background-radius: 8px;
+    -fx-background-color: #ffffff;
+
+    -fx-text-fill: #000000;
+
+    -fx-border-radius: 5px;
+    -fx-border-width: 2px;
+    -fx-border-color: #f4f6fa;
+
+    -fx-padding: 5px;
+}
+
+.text-area .context-menu  .menu-item,
+.text-box .context-menu .menu-item,
+.popup-menu .menu-item {
+    -fx-padding: 1 100 1 5;
+
+    -fx-background-radius: 5px;
+    -fx-background-color: #ffffff;
+
+    -fx-border-radius: 5px;
+
+    -fx-font-family: "Bahnschrift SemiBold Condensed";
+    -fx-font-weight: bold;
+    -fx-font-size: 13px;
+}
+
+.text-area .context-menu  .menu-item .label,
+.text-box .context-menu .menu-item .label,
+.popup-menu .menu-item .label {
+    -fx-text-fill: #000000;
+}
+.popup-menu .menu-item:focused .label,
+.popup-menu .menu-item:selected .label,
+.popup-menu .menu-item:hover .label {
+    -fx-text-fill: #ffffff;
+}
+
+.text-area .context-menu .menu-item:focus,
+.text-box .context-menu .menu-item:focus,
+.popup-menu .menu-item:focused {
+    -fx-background-color: #028fffff;
+}
+
+.text-area .context-menu .menu-item:selected,
+.text-box .context-menu .menu-item:selected,
+.popup-menu .menu-item:selected {
+    -fx-background-color: #028fffff;
+}
+
+.text-area .context-menu .menu-item:hover,
+.text-box .context-menu .menu-item:hover,
+.popup-menu .menu-item:hover {
+    -fx-background-color: #028fffff;
+}
+
+/* CheckBox */
+.check-box {
+    -fx-font-family: "Bahnschrift SemiBold Condensed";
+    -fx-text-fill: #000000;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+}
+
+.check-box .box {
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 8px;
+    -fx-border-radius: 5px;
+    -fx-border-width: 2px;
+    -fx-border-color: #e1e1e1;
+}
+
+.check-box:selected .box {
+    -fx-background-color: #028fffff;
+}
+
+.check-box .box:hover {
+    -fx-background-color: #52b1fe;
+}
+
+.check-box .mark {
+    -fx-background-color: transparent;
+    -fx-opacity: 0;
+}
+
+/* Tabbed Pane */
+.tabbed-pane:bottom .tab-header-background {
+    -fx-background-color: #ffffff;
+}
+
+.tabbed-pane:bottom .headers-region {
+    -fx-background-color: transparent;
+    -fx-background-insets: 0px;
+    -fx-faint-focus-color: transparent;
+    -fx-focus-color: transparent;
+}
+
+.tabbed-pane:bottom .tab {
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 0px;
+    -fx-border-radius: 0px;
+    -fx-padding: 0px 10px;
+    -fx-border-width: 2px 0px 0px 0px;
+    -fx-border-color: #f4f6fa;
+    -fx-text-fill: #000000;
+    -fx-font-family: "Bahnschrift SemiBold Condensed";
+    -fx-font-weight: bold;
+    -fx-font-size: 12px;
+}
+
+.tabbed-pane:bottom .tab .tab-label {
+    -fx-text-fill: #000000;
+}
+
+.tabbed-pane:bottom .tab:hover {
+    -fx-background-color: #f4f6fa;
+    -fx-border-color: #028fff;
+}
+
+.tabbed-pane:bottom .tab:selected {
+    -fx-border-color: #028fff;
+}
+
+.tabbed-pane:bottom .tab:selected:hover {
+    -fx-background-color: #f4f6fa;
+    -fx-border-color: #028fff;
+}
+
+.tabbed-pane:bottom .tab:focused {
+    -fx-border-color: #028fff;
+}
+
+.tabbed-pane:bottom .tab:focused:hover {
+    -fx-background-color: #f4f6fa;
+    -fx-border-color: #028fff;
+}
+
+.tabbed-pane:bottom .tab:focused:selected {
+    -fx-border-color: #028fff;
+}
+
+.tabbed-pane:bottom .tab-content-area {
+    -fx-background-color: transparent;
+    -fx-background-insets: 0px;
+    -fx-faint-focus-color: transparent;
+    -fx-focus-color: transparent;
+    -fx-border-width: 2px 0px 0px 0px;
+    -fx-border-color: transparent;
+}
+
+.tabbed-pane:bottom .tab-content-area:focused {
+    -fx-background-color: transparent;
+    -fx-background-insets: 0px;
+    -fx-faint-focus-color: transparent;
+    -fx-focus-color: transparent;
+}
+
+.tabbed-pane:bottom .tab-content-area:selected {
+    -fx-background-color: transparent;
+    -fx-background-insets: 0px;
+    -fx-faint-focus-color: transparent;
+    -fx-focus-color: transparent;
+}
+
+/* Table View */
+
+.table {
+    -fx-background-color: #ffffff;
+    -fx-border-radius: 10px;
+    -fx-table-header-border-color: #000000;
+    -fx-table-cell-border-color: #000000; /* Removes grid lines */
+}
+
+
+.table .table-cell {
+    -fx-text-fill: #000000;
+}
+
+.table .table-row-cell {
+    -fx-background-color: #ffffff;
+    -fx-border-radius: 0px;
+    -fx-text-fill: #000000;
+    -fx-border-width: 2px;
+}
+
+.table .table-row-cell:hover {
+    -fx-background-color: #028fff; /* Row color */
+}
+
+.table .table-row-cell:selected {
+    -fx-background-color: #028fff; /* Row color */
+}
+
+.table .table-row-cell:focused {
+    -fx-background-color: #028fff; /* Row color */
+}
+
+.table .column-header-background {
+    -fx-background-color: transparent;
+    -fx-border-radius: 10px;
+}
+
+.table .column-header-background .filler {
+    -fx-background-color: transparent;
+    -fx-background-radius: 0px;
+    -fx-border-radius: 0px;
+    -fx-padding: 0px 10px;
+    -fx-border-width: 0px 0px 2px 0px;
+    -fx-border-color: #eeeeee;
+}
+
+.table .column-header-background .filler:hover {
+    -fx-background-color: #ffffff;
+}
+
+.table .column-header-background .filler:selected {
+    -fx-background-color: #ffffff;
+}
+
+.table .column-header-background .filler:focused {
+    -fx-background-color: #ffffff;
+}
+
+.table .column-header-background .column-header {
+    -fx-background-color: transparent;
+    -fx-background-radius: 0px;
+    -fx-border-radius: 0px;
+    -fx-padding: 0px 10px;
+    -fx-border-width: 0px 2px 2px 0px;
+    -fx-border-color: #eeeeee;
+}
+
+.table .column-header-background .column-header .label {
+    -fx-text-fill: #000000;
+    -fx-font-family: "Bahnschrift SemiBold Condensed";
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-alignment: CENTER_LEFT;
+}
+
+.table .column-header-background .column-header .arrow {
+    -fx-background-color: #028fff;
+}
+
+.table .column-header-background .column-header:hover {
+    -fx-border-color: #028fff;
+    -fx-background-color: #f4f6fa;
+}
+
+.table .column-header-background .column-header:selected {
+    -fx-border-color: #028fff;
+    -fx-background-color: #f4f6fa;
+}
+
+.table .column-header-background .column-header:selected:hover {
+    -fx-border-color: #028fff;
+    -fx-background-color: #f4f6fa;
+}
+
+.table .column-header-background .column-header:focused {
+    -fx-border-color: #028fff;
+    -fx-background-color: #f4f6fa;
+}
+
+.table .column-header-background .column-header:focused:hover {
+    -fx-border-color: #028fff;
+    -fx-background-color: #f4f6fa;
+}
