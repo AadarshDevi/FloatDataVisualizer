@@ -22,7 +22,7 @@ public class ThemeProcessor {
 		};
 
 		if (url == null) {
-			throw new RuntimeException("Resource not found.");
+			throw new RuntimeException("Theme \"" + theme + "\" not found.");
 		}
 
 		return url;

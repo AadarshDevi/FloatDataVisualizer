@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="776164ce-7a69-48e2-8934-c0376db3d4b9" name="Changes" comment="there are 2 theme constants. need to remove them.">
+    <list default="true" id="776164ce-7a69-48e2-8934-c0376db3d4b9" name="Changes" comment="themes integration fully completed.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/buoyui/backend/app/theme/ThemeProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/buoyui/backend/app/theme/ThemeProcessor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/buoyui/backend/constants/Debug.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/buoyui/backend/constants/Debug.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/buoyui/frontend/pages/connections/ConnectionsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/buoyui/frontend/pages/connections/ConnectionsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/alphagen/studio/FloatDataVisualizer/buoyui/frontend/pages/connections/Connections_v5.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/alphagen/studio/FloatDataVisualizer/buoyui/frontend/pages/connections/Connections_v5.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,61 +70,61 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.023163564812476" />
-      <entry key="MS500" value="1.9457712233282258" />
-      <entry key="S2" value="3.6889997064860616" />
-      <entry key="S5" value="5.222157715165292" />
-      <entry key="S10" value="7.114215047398952" />
-      <entry key="S30" value="12.710051370947092" />
-      <entry key="S60" value="23.643652087569897" />
-      <entry key="M2" value="43.103245537113004" />
-      <entry key="M5" value="71.71848799140756" />
-      <entry key="M10" value="88.40017245842937" />
-      <entry key="M15" value="97.67119239293001" />
-      <entry key="M30" value="128.9832552290372" />
-      <entry key="H1" value="208.80543757071814" />
-      <entry key="H2" value="345.5030005589728" />
-      <entry key="H4" value="499.2646471126799" />
-      <entry key="D1" value="734.9050038757512" />
-      <entry key="W1" value="791.8791904882711" />
+      <entry key="MS100" value="1.0" />
+      <entry key="MS500" value="1.0" />
+      <entry key="S2" value="1.000000000000282" />
+      <entry key="S5" value="1.0000150414100917" />
+      <entry key="S10" value="1.007282714307735" />
+      <entry key="S30" value="1.687985165697313" />
+      <entry key="S60" value="3.615641158625493" />
+      <entry key="M2" value="7.364680794441173" />
+      <entry key="M5" value="15.86170477502548" />
+      <entry key="M10" value="29.963049459695675" />
+      <entry key="M15" value="45.39145536186853" />
+      <entry key="M30" value="89.56941955317188" />
+      <entry key="H1" value="175.67471734397503" />
+      <entry key="H2" value="321.8776918159805" />
+      <entry key="H4" value="494.6446882586667" />
+      <entry key="D1" value="773.2444706368761" />
+      <entry key="W1" value="842.6075514731563" />
     </decayedCancelled>
     <decayedSelected>
-      <entry key="MS100" value="9.248466902236404E-150" />
-      <entry key="MS500" value="1.5603209846670256E-30" />
-      <entry key="S2" value="3.5343006235687344E-8" />
-      <entry key="S5" value="0.0010454936392634583" />
-      <entry key="S10" value="0.03233409406900799" />
-      <entry key="S30" value="0.3185812650657194" />
-      <entry key="S60" value="0.5644300355808892" />
-      <entry key="M2" value="0.7512862748865426" />
-      <entry key="M5" value="0.9034650695628513" />
-      <entry key="M10" value="1.4437280002698265" />
-      <entry key="M15" value="3.112474798692411" />
-      <entry key="M30" value="12.509165214170427" />
-      <entry key="H1" value="34.33984992255445" />
-      <entry key="H2" value="66.04701245415725" />
-      <entry key="H4" value="96.75404712737921" />
-      <entry key="D1" value="137.44107570866515" />
-      <entry key="W1" value="146.43164663455678" />
+      <entry key="MS100" value="0.0" />
+      <entry key="MS500" value="2.0708277576652156E-164" />
+      <entry key="S2" value="1.199719701992223E-41" />
+      <entry key="S5" value="4.390244450289822E-17" />
+      <entry key="S10" value="7.675207821638659E-9" />
+      <entry key="S30" value="0.003697632402711111" />
+      <entry key="S60" value="0.1344070286986654" />
+      <entry key="M2" value="1.0332009484250202" />
+      <entry key="M5" value="5.249488198593145" />
+      <entry key="M10" value="11.57327695065491" />
+      <entry key="M15" value="16.15219529245588" />
+      <entry key="M30" value="26.91621237869957" />
+      <entry key="H1" value="47.87655319191944" />
+      <entry key="H2" value="81.23143245331237" />
+      <entry key="H4" value="116.47728362100644" />
+      <entry key="D1" value="166.5072218458943" />
+      <entry key="W1" value="177.98392302049422" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="0.9883108576846213" />
-      <entry key="MS500" value="1.9323307998683625" />
-      <entry key="S2" value="3.6819134998212473" />
-      <entry key="S5" value="5.2078452137180555" />
-      <entry key="S10" value="7.120548340145732" />
-      <entry key="S30" value="12.990772080032455" />
-      <entry key="S60" value="24.171963520285388" />
-      <entry key="M2" value="43.826625409389614" />
-      <entry key="M5" value="72.60585484224337" />
-      <entry key="M10" value="89.83135945249298" />
-      <entry key="M15" value="100.76719177222232" />
-      <entry key="M30" value="141.46202039389763" />
-      <entry key="H1" value="243.10643567343303" />
-      <entry key="H2" value="411.5147656175227" />
-      <entry key="H4" value="595.9937401534706" />
-      <entry key="D1" value="872.340337541251" />
-      <entry key="W1" value="938.3099672665682" />
+      <entry key="MS100" value="0.0025593621169108655" />
+      <entry key="MS500" value="0.3031282047654343" />
+      <entry key="S2" value="0.7420045815554788" />
+      <entry key="S5" value="0.8875021937119176" />
+      <entry key="S10" value="0.9490238121744647" />
+      <entry key="S30" value="1.657918572246155" />
+      <entry key="S60" value="3.7089513210740632" />
+      <entry key="M2" value="8.346037008000119" />
+      <entry key="M5" value="21.05347297373303" />
+      <entry key="M10" value="41.484230974766135" />
+      <entry key="M15" value="61.49735718940045" />
+      <entry key="M30" value="116.44481177930803" />
+      <entry key="H1" value="223.51012266507672" />
+      <entry key="H2" value="403.0721186743651" />
+      <entry key="H4" value="611.0950184184558" />
+      <entry key="D1" value="939.7452379672276" />
+      <entry key="W1" value="1020.5904886139696" />
     </decayedShown>
   </component>
   <component name="OptimizeOnSaveOptions">
@@ -250,22 +251,6 @@
       <workItem from="1766969579896" duration="1000" />
       <workItem from="1766969593668" duration="4000" />
       <workItem from="1766969654651" duration="15000" />
-    </task>
-    <task id="LOCAL-00409" summary="added a css class">
-      <option name="closed" value="true" />
-      <created>1780012009733</created>
-      <option name="number" value="00409" />
-      <option name="presentableId" value="LOCAL-00409" />
-      <option name="project" value="LOCAL" />
-      <updated>1780012009733</updated>
-    </task>
-    <task id="LOCAL-00410" summary="using correct scatter-plot">
-      <option name="closed" value="true" />
-      <created>1780012046746</created>
-      <option name="number" value="00410" />
-      <option name="presentableId" value="LOCAL-00410" />
-      <option name="project" value="LOCAL" />
-      <updated>1780012046746</updated>
     </task>
     <task id="LOCAL-00411" summary="finished dark theme">
       <option name="closed" value="true" />
@@ -643,7 +628,23 @@
       <option name="project" value="LOCAL" />
       <updated>1780090704936</updated>
     </task>
-    <option name="localTasksCounter" value="458" />
+    <task id="LOCAL-00458" summary="themes integration fully completed.">
+      <option name="closed" value="true" />
+      <created>1780090835566</created>
+      <option name="number" value="00458" />
+      <option name="presentableId" value="LOCAL-00458" />
+      <option name="project" value="LOCAL" />
+      <updated>1780090835566</updated>
+    </task>
+    <task id="LOCAL-00459" summary="themes integration fully completed.">
+      <option name="closed" value="true" />
+      <created>1780090843527</created>
+      <option name="number" value="00459" />
+      <option name="presentableId" value="LOCAL-00459" />
+      <option name="project" value="LOCAL" />
+      <updated>1780090843527</updated>
+    </task>
+    <option name="localTasksCounter" value="460" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -673,7 +674,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fixed a wierd bug. had to delete .idea folder" />
     <MESSAGE value="fixed lombok issues" />
     <MESSAGE value="connections page is not fullscreen ready" />
     <MESSAGE value="connections page ui is not fullscreen ready" />
@@ -698,7 +698,8 @@
     <MESSAGE value="light and dark themes fixed" />
     <MESSAGE value="theme processor integrated into code" />
     <MESSAGE value="there are 2 theme constants. need to remove them." />
-    <option name="LAST_COMMIT_MESSAGE" value="there are 2 theme constants. need to remove them." />
+    <MESSAGE value="themes integration fully completed." />
+    <option name="LAST_COMMIT_MESSAGE" value="themes integration fully completed." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
