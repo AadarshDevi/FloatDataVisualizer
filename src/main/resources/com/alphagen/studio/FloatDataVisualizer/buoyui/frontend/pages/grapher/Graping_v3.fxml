@@ -22,7 +22,7 @@
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="661.0" prefWidth="1153.0" styleClass="root" stylesheets="@../../../theme_light.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.pages.grapher.GrapherController">
     <bottom>
-        <HBox alignment="CENTER" prefHeight="32.0" prefWidth="857.0" spacing="10.0" style="-fx-background-color: transparent;" BorderPane.alignment="CENTER">
+        <HBox alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="32.0" prefWidth="857.0" spacing="10.0" style="-fx-background-color: transparent;" BorderPane.alignment="CENTER">
             <BorderPane.margin>
                 <Insets bottom="15.0" left="30.0" right="30.0" top="12.0" />
             </BorderPane.margin>
@@ -68,9 +68,9 @@
             <tabs>
             <Tab fx:id="tableTab1" text="Config">
                <content>
-                  <ScrollPane styleClass="scroll-bar">
+                  <ScrollPane fx:id="configScroll" styleClass="scroll-bar">
                      <content>
-                        <VBox prefHeight="499.0" prefWidth="1129.0">
+                        <VBox fx:id="configVBox" prefHeight="499.0" prefWidth="1129.0">
                            <children>
                               <HBox layoutX="20.0" layoutY="20.0" prefHeight="40.0" prefWidth="1129.0">
                                  <children>
@@ -284,7 +284,7 @@
         </TabPane>
     </center>
    <top>
-      <HBox alignment="CENTER" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="32.0" prefWidth="857.0" spacing="10.0" style="-fx-background-color: transparent;" BorderPane.alignment="CENTER">
+      <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="32.0" prefWidth="857.0" spacing="10.0" style="-fx-background-color: transparent;" BorderPane.alignment="CENTER">
          <children>
             <Label fx:id="connection_name_label" alignment="CENTER" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="32.0" prefWidth="820.0" text="Connection Name">
                <styleClass>
