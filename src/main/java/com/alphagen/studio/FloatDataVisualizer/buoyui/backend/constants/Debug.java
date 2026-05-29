@@ -7,11 +7,6 @@ public class Debug {
 	public static boolean useWindowModes = false;
 
 	/**
-	 * To use theme changing, set true
-	 */
-	public static boolean useThemeChange = false;
-
-	/**
 	 * To use ___, set true
 	 */
 	public static boolean use = false;
