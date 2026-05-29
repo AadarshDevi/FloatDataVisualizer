@@ -245,6 +245,7 @@ public class GrapherController {
 		}
 
 		tableView.getItems().removeAll(tableView.getItems());
+		terminalTextArea.clear();
 
 		System.out.println(" >>> Serial Communication > Start");
 
