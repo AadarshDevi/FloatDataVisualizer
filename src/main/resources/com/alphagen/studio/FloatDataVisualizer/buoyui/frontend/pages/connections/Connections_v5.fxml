@@ -36,7 +36,7 @@
       </BorderPane>
     </top>
     <center>
-        <ScrollPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="317.0" prefWidth="813.0" style="-fx-background-color: transparent;" styleClass="scroll-bar" BorderPane.alignment="CENTER">
+        <ScrollPane fx:id="scrollPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="317.0" prefWidth="813.0" style="-fx-background-color: transparent;" styleClass="scroll-bar" BorderPane.alignment="CENTER">
             <BorderPane.margin>
                 <Insets left="30.0" right="30.0" top="30.0" />
             </BorderPane.margin>
