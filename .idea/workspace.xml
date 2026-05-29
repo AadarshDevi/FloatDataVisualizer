@@ -4,11 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="776164ce-7a69-48e2-8934-c0376db3d4b9" name="Changes" comment="themes integration fully completed.">
+    <list default="true" id="776164ce-7a69-48e2-8934-c0376db3d4b9" name="Changes" comment="replaced random exception toa more better exception">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/buoyui/BuoyUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/buoyui/BuoyUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/buoyui/backend/app/theme/ThemeProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/buoyui/backend/app/theme/ThemeProcessor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/buoyui/backend/settings/SettingsData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/buoyui/backend/settings/SettingsData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/buoyui/backend/settings/SettingsManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/buoyui/backend/settings/SettingsManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/buoyui/frontend/pages/connections/ConnectionsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/buoyui/frontend/pages/connections/ConnectionsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/alphagen/studio/FloatDataVisualizer/buoyui/frontend/pages/connections/Connections_v5.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/alphagen/studio/FloatDataVisualizer/buoyui/frontend/pages/connections/Connections_v5.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,61 +72,61 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.0" />
-      <entry key="MS500" value="1.0" />
-      <entry key="S2" value="1.000000000000282" />
-      <entry key="S5" value="1.0000150414100917" />
-      <entry key="S10" value="1.007282714307735" />
-      <entry key="S30" value="1.687985165697313" />
-      <entry key="S60" value="3.615641158625493" />
-      <entry key="M2" value="7.364680794441173" />
-      <entry key="M5" value="15.86170477502548" />
-      <entry key="M10" value="29.963049459695675" />
-      <entry key="M15" value="45.39145536186853" />
-      <entry key="M30" value="89.56941955317188" />
-      <entry key="H1" value="175.67471734397503" />
-      <entry key="H2" value="321.8776918159805" />
-      <entry key="H4" value="494.6446882586667" />
-      <entry key="D1" value="773.2444706368761" />
-      <entry key="W1" value="842.6075514731563" />
+      <entry key="MS100" value="1.7955364837549186" />
+      <entry key="MS500" value="1.9552829363832118" />
+      <entry key="S2" value="1.9895724898386409" />
+      <entry key="S5" value="2.0730854569635957" />
+      <entry key="S10" value="2.537661731872187" />
+      <entry key="S30" value="5.5626944306079515" />
+      <entry key="S60" value="9.090834265561858" />
+      <entry key="M2" value="13.772301525601296" />
+      <entry key="M5" value="27.353117596494656" />
+      <entry key="M10" value="48.795068845207936" />
+      <entry key="M15" value="67.95047478101817" />
+      <entry key="M30" value="117.8594684908563" />
+      <entry key="H1" value="207.9455497407547" />
+      <entry key="H2" value="358.5627690371843" />
+      <entry key="H4" value="538.7856776704813" />
+      <entry key="D1" value="834.3468908270979" />
+      <entry key="W1" value="908.6903971848441" />
     </decayedCancelled>
     <decayedSelected>
-      <entry key="MS100" value="0.0" />
-      <entry key="MS500" value="2.0708277576652156E-164" />
-      <entry key="S2" value="1.199719701992223E-41" />
-      <entry key="S5" value="4.390244450289822E-17" />
-      <entry key="S10" value="7.675207821638659E-9" />
-      <entry key="S30" value="0.003697632402711111" />
-      <entry key="S60" value="0.1344070286986654" />
-      <entry key="M2" value="1.0332009484250202" />
-      <entry key="M5" value="5.249488198593145" />
-      <entry key="M10" value="11.57327695065491" />
-      <entry key="M15" value="16.15219529245588" />
-      <entry key="M30" value="26.91621237869957" />
-      <entry key="H1" value="47.87655319191944" />
-      <entry key="H2" value="81.23143245331237" />
-      <entry key="H4" value="116.47728362100644" />
-      <entry key="D1" value="166.5072218458943" />
-      <entry key="W1" value="177.98392302049422" />
+      <entry key="MS100" value="3.602061546216709E-72" />
+      <entry key="MS500" value="5.174356448223086E-15" />
+      <entry key="S2" value="3.419864919304154E-4" />
+      <entry key="S5" value="0.06037767875168377" />
+      <entry key="S10" value="0.38508630486966644" />
+      <entry key="S30" value="2.1559036735831962" />
+      <entry key="S60" value="4.601734753167275" />
+      <entry key="M2" value="8.126841519719008" />
+      <entry key="M5" value="13.79938779334627" />
+      <entry key="M10" value="20.093543593238415" />
+      <entry key="M15" value="25.247698133308074" />
+      <entry key="M30" value="37.51260685419776" />
+      <entry key="H1" value="59.45119671585287" />
+      <entry key="H2" value="94.0581912985279" />
+      <entry key="H4" value="131.31008605915326" />
+      <entry key="D1" value="185.26809542998078" />
+      <entry key="W1" value="197.79444296499267" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="0.0025593621169108655" />
-      <entry key="MS500" value="0.3031282047654343" />
-      <entry key="S2" value="0.7420045815554788" />
-      <entry key="S5" value="0.8875021937119176" />
-      <entry key="S10" value="0.9490238121744647" />
-      <entry key="S30" value="1.657918572246155" />
-      <entry key="S60" value="3.7089513210740632" />
-      <entry key="M2" value="8.346037008000119" />
-      <entry key="M5" value="21.05347297373303" />
-      <entry key="M10" value="41.484230974766135" />
-      <entry key="M15" value="61.49735718940045" />
-      <entry key="M30" value="116.44481177930803" />
-      <entry key="H1" value="223.51012266507672" />
-      <entry key="H2" value="403.0721186743651" />
-      <entry key="H4" value="611.0950184184558" />
-      <entry key="D1" value="939.7452379672276" />
-      <entry key="W1" value="1020.5904886139696" />
+      <entry key="MS100" value="0.817996514428969" />
+      <entry key="MS500" value="1.1172864915086353" />
+      <entry key="S2" value="1.6199422430179318" />
+      <entry key="S5" value="1.944033699065042" />
+      <entry key="S10" value="2.770463885265937" />
+      <entry key="S30" value="7.5651916782603825" />
+      <entry key="S60" value="13.548529360631052" />
+      <entry key="M2" value="21.779979950960563" />
+      <entry key="M5" value="41.07023179722637" />
+      <entry key="M10" value="68.82411253017426" />
+      <entry key="M15" value="93.14182280177023" />
+      <entry key="M30" value="155.3251686930029" />
+      <entry key="H1" value="267.35272262049904" />
+      <entry key="H2" value="452.58220567126637" />
+      <entry key="H4" value="670.067512211904" />
+      <entry key="D1" value="1019.6081663768912" />
+      <entry key="W1" value="1106.4837963184277" />
     </decayedShown>
   </component>
   <component name="OptimizeOnSaveOptions">
@@ -251,30 +253,6 @@
       <workItem from="1766969579896" duration="1000" />
       <workItem from="1766969593668" duration="4000" />
       <workItem from="1766969654651" duration="15000" />
-    </task>
-    <task id="LOCAL-00411" summary="finished dark theme">
-      <option name="closed" value="true" />
-      <created>1780014623409</created>
-      <option name="number" value="00411" />
-      <option name="presentableId" value="LOCAL-00411" />
-      <option name="project" value="LOCAL" />
-      <updated>1780014623409</updated>
-    </task>
-    <task id="LOCAL-00412" summary="finished dark theme">
-      <option name="closed" value="true" />
-      <created>1780014765947</created>
-      <option name="number" value="00412" />
-      <option name="presentableId" value="LOCAL-00412" />
-      <option name="project" value="LOCAL" />
-      <updated>1780014765947</updated>
-    </task>
-    <task id="LOCAL-00413" summary="finished light theme">
-      <option name="closed" value="true" />
-      <created>1780017534322</created>
-      <option name="number" value="00413" />
-      <option name="presentableId" value="LOCAL-00413" />
-      <option name="project" value="LOCAL" />
-      <updated>1780017534322</updated>
     </task>
     <task id="LOCAL-00414" summary="updated the correct theme files">
       <option name="closed" value="true" />
@@ -644,7 +622,31 @@
       <option name="project" value="LOCAL" />
       <updated>1780090843527</updated>
     </task>
-    <option name="localTasksCounter" value="460" />
+    <task id="LOCAL-00460" summary="getting root borderpane">
+      <option name="closed" value="true" />
+      <created>1780093335589</created>
+      <option name="number" value="00460" />
+      <option name="presentableId" value="LOCAL-00460" />
+      <option name="project" value="LOCAL" />
+      <updated>1780093335589</updated>
+    </task>
+    <task id="LOCAL-00461" summary="methods to change global theme var and apply the correct theme">
+      <option name="closed" value="true" />
+      <created>1780093376176</created>
+      <option name="number" value="00461" />
+      <option name="presentableId" value="LOCAL-00461" />
+      <option name="project" value="LOCAL" />
+      <updated>1780093376176</updated>
+    </task>
+    <task id="LOCAL-00462" summary="replaced random exception toa more better exception">
+      <option name="closed" value="true" />
+      <created>1780093402991</created>
+      <option name="number" value="00462" />
+      <option name="presentableId" value="LOCAL-00462" />
+      <option name="project" value="LOCAL" />
+      <updated>1780093402992</updated>
+    </task>
+    <option name="localTasksCounter" value="463" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -674,9 +676,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fixed lombok issues" />
-    <MESSAGE value="connections page is not fullscreen ready" />
-    <MESSAGE value="connections page ui is not fullscreen ready" />
     <MESSAGE value="connections editor is fullscreen ready" />
     <MESSAGE value="added vars for fullscreen in connections editor controller." />
     <MESSAGE value="project completed basic fullscreen." />
@@ -699,7 +698,10 @@
     <MESSAGE value="theme processor integrated into code" />
     <MESSAGE value="there are 2 theme constants. need to remove them." />
     <MESSAGE value="themes integration fully completed." />
-    <option name="LAST_COMMIT_MESSAGE" value="themes integration fully completed." />
+    <MESSAGE value="getting root borderpane" />
+    <MESSAGE value="methods to change global theme var and apply the correct theme" />
+    <MESSAGE value="replaced random exception toa more better exception" />
+    <option name="LAST_COMMIT_MESSAGE" value="replaced random exception toa more better exception" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
