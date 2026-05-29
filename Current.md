@@ -1,3 +1,10 @@
-1. Implement import, and its UI (Later stuff)
-2. Implement full screen
-3. Implement theme change
+## Fullscreen
+
+To use the broken fullscreen window mode
+
+```java
+Debug {
+	// disabled = false and enable = true
+	public static final boolean useWindowModes = true;
+}
+```
