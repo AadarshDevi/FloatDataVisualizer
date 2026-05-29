@@ -3,8 +3,7 @@ package com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.pages.connection
 import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.constants.FolderConstants;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.data.ConnectionConfig;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.data.FloatConfig;
-import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.processor.ConnectionProcessor;
-import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.managers.ConnectionManager;
+import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.managers.Connections;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.managers.ControllerManager;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.managers.DataCardManager;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.managers.StageManager;
@@ -30,8 +29,9 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import lombok.Getter;
 import lombok.Setter;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
-import java.io.File;
 import java.io.IOException;
 import java.nio.file.Path;
 import java.util.ArrayList;
@@ -41,6 +41,7 @@ import java.util.concurrent.Executors;
 
 public class ConnectionsController {
 
+	private static final Logger LOGGER = LogManager.getLogger(ConnectionsController.class);
 	@Getter private final ExecutorService serialPortWatcher = Executors.newSingleThreadExecutor();
 	@FXML public TilePane connections;
 	@FXML public Button import_connection_s;
@@ -75,7 +76,7 @@ public class ConnectionsController {
 					// Update the UI safely
 					Platform.runLater(() -> {
 						// You could also refresh a ComboBox here
-						System.out.println(" >>> Connection Refresher: Refreshed Connections");
+						LOGGER.info("Refreshed Connections");
 						refreshConnections();
 
 						if (ControllerManager.getConnectionEditorController() != null) {
@@ -97,14 +98,12 @@ public class ConnectionsController {
 
 	@FXML
 	public void refreshConnections() {
-		System.out.println("\nRefreshing Connections");
-//		System.out.println("Enabled\t  Working");
+		LOGGER.info("Refreshing Connections");
 		ObservableList<Node> dataCards = connections.getChildren();
 		for (Node node : dataCards) {
 			Button dataCard = (Button) node;
 			DataCardController dcc = (DataCardController) dataCard.getProperties().get("dcc");
 			dcc.invalidConnection();
-//			System.out.println(!dcc.isDisabled() + "\t  " + dcc.isWorking());
 		}
 	}
 
@@ -116,7 +115,7 @@ public class ConnectionsController {
 	@FXML
 	public void createConnection() {
 
-		System.out.println("Opening ConnectionEditorUI");
+		LOGGER.info("Opening ConnectionEditorUI");
 		BorderPane connectionCreatorPane;
 		try {
 			FXMLLoader fxmlLoader = new FXMLLoader(PageConstants.CONNECTIONS_EDITOR_PAGE);
@@ -141,18 +140,18 @@ public class ConnectionsController {
 			stage.showAndWait();
 		}
 
-		if (ConnectionManager.getCurrentConnection() == null) {
+		if (Connections.getCurrentConnection() == null) {
 			return;
 		}
-		System.out.println("Creating Connection");
+		LOGGER.info("Creating Connection");
 
-		Button dataCard = DataCardManager.createDataCard(ConnectionManager.getCurrentConnection());
+		Button dataCard = DataCardManager.createDataCard(Connections.getCurrentConnection());
 		connections.getChildren().add(dataCard);
 
 		Path filePath = FolderConstants.CONNECTIONS.resolve(currentConnectionConfig.connectionName() + FolderConstants.FLOAT_CONNECTION_FILE_EXTENSION);
-		boolean success = ConnectionProcessor.writeConnection(filePath, currentConnectionConfig);
+		boolean success = Connections.Processor.writeConnection(filePath, currentConnectionConfig);
 		if (!success) {
-			System.err.println("Connection Writing Failed");
+			LOGGER.error("Connection Writing Failed");
 			Alert alert = new Alert(Alert.AlertType.ERROR);
 			alert.setTitle("Connection Exception");
 			alert.setHeaderText(null);
@@ -161,7 +160,7 @@ public class ConnectionsController {
 			System.exit(-1);
 		}
 
-		ConnectionProcessor.readAllConnections();
+		Connections.Processor.readAllConnections();
 		ControllerManager.setConnectionEditorController(null);
 	}
 
@@ -172,7 +171,7 @@ public class ConnectionsController {
 	@FXML
 	public void quitApp() {
 		serialPortWatcher.shutdownNow();
-		System.out.println("App Quit");
+		LOGGER.info("App Quit");
 		Platform.exit();
 		System.exit(0);
 	}
@@ -190,38 +189,27 @@ public class ConnectionsController {
 			return;
 		}
 
-		System.out.println("Deleting All Connections");
+		LOGGER.info("Deleting All Connections...");
 		connections.getChildren().removeAll(connections.getChildren());
 
-		File connFolder = new File(FolderConstants.CONNECTIONS.toString());
-		File[] files = connFolder.listFiles();
-		System.out.println("Deleted All Connections: " + files.length);
-
-		for (File file : files) {
-			file.delete();
-		}
+		boolean success = Connections.getInstance().deleteAll();
+		System.out.println((success) ? "All Connections Deleted Successfully" : "Connections Deletion Failed");
 
 		alert = new Alert(Alert.AlertType.INFORMATION);
 		alert.setTitle("Delete All Connections");
 		alert.setContentText("All connections have been deleted");
-
 	}
 
 	public void setConnectionConfigs(ArrayList<ConnectionConfig> connectionsList) {
-		System.out.println("\nAdding ConnectionConfigs");
-//		System.out.println("Enabled\t  Working");
+		LOGGER.info("\nAdding ConnectionConfigs");
 		int count = connectionsList.size();
 		for (ConnectionConfig connectionConfig : connectionsList) {
-
 			Button dataCard = DataCardManager.createDataCard(connectionConfig);
 			DataCardController dcc = (DataCardController) dataCard.getProperties().get("dcc");
-
 			dcc.invalidConnection();
-//			System.out.println(!dcc.isDisabled() + "\t  " + dcc.isWorking());
-
 			connections.getChildren().add(dataCard);
 		}
-		System.out.println("Added Connections: " + count);
+		LOGGER.info("Added Connections: " + count);
 	}
 
 	// fixme make sure this works later on :(
@@ -274,7 +262,7 @@ public class ConnectionsController {
 
 	public void repopulateConnections() {
 		connections.getChildren().removeAll(connections.getChildren());
-		ConnectionProcessor.readAllConnections();
+		Connections.Processor.readAllConnections();
 	}
 
 	@FXML

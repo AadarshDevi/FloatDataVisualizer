@@ -1,4 +1,3 @@
-
 @font-face {
     font-family: "Bahnschrift";
     src: url(fonts/bahnschrift.ttf);
@@ -8,36 +7,34 @@
 
 .labels {
     -fx-font-family: "Bahnschrift SemiBold Condensed";
-    -fx-text-fill: #000000;
+    -fx-text-fill: #ffffff;
     -fx-font-size: 14px;
-    -fx-background-color: #ffffff;
+    -fx-background-color: #202943;
 }
 
 .measurement-labels {
     -fx-background-radius: 6px;
-    -fx-background-color: #ffffff;
+    -fx-background-color: #202943;
 
     transition-property: -fx-background-color;
     transition-duration: 0.25s;
 }
 
 .measurement-labels:hover {
-    -fx-background-color: #ebebeb;
+    -fx-background-color: #233979;
 }
 
 .labels-bold {
     -fx-font-weight: bold;
 }
 
-.vbox { 
-    -fx-background-color: #ffffff;
+.vbox {
+    -fx-background-color: #202943;
 }
-
 /* Tilepane */
 .tilepane {
     -fx-background-color: transparent;
 }
-
 /* Indeterminate mode - Spinning ring + smooth cyan dots */
 .progress-indicator:indeterminate .spinner .arc {
     -fx-stroke: #028fffff; /* Cyan background ring */
@@ -50,67 +47,21 @@
         radius 50%,
         #028fffff 40%,
         #028fffff 70%
-    );
-}
-
-/* Scatterplot */
-
-.scatter-plot .chart-plot-background {
-    -fx-background-color: #ffffff;
-}
-
-.scatter-plot .axis {
-    -fx-background-color: #ffffff;
-    -fx-tick-label-fill: #000000 !important; 
-    -fx-axis-label-fill: #000000 !important;
-}
-
-.scatter-plot .chart .chart-content {
-    -fx-background-color: #ffffff;
-}
-
-.scatter-plot .axis .text {
-    -fx-fill: #000000 !important;
-}
-
-.scatter-plot .axis-label {
-    -fx-text-fill: #000000 !important;
-}
-
-.scatter-plot .chart-vertical-grid-lines,
-.scatter-plot .chart-horizontal-grid-lines {
-    -fx-stroke: #aaaaaa;
-}
-
-.scatter-plot .axis-tick-mark {
-    -fx-fill: #000000;
-}
-
-.scatter-plot .chart-legend {
-    -fx-fill: #0e319a;
-    -fx-background-color: #ffffff;
-}
-
-.scatter-plot .chart-legend-item {
-    -fx-text-fill: #000000 !important;
-    -fx-background-color: transparent;
-}
-
-.scatter-plot .chart-legend-item .text {
-    -fx-fill: #000000 !important;
-    -fx-background-color: transparent;
+    ); /* Glowing cyan dots */
 }
 
 .quit-svg {
     -fx-fill: #ff6868;
 }
 
+/* Determinate mode - Static progress arc */
 .progress-indicator:determinate .spinner .arc {
-    -fx-stroke: #028fffff;
+    -fx-stroke: #028fffff; /* Dark blue fill */
     -fx-stroke-width: 6;
     -fx-stroke-linecap: round;
 }
 
+/* Hide percentage text */
 .progress-indicator .percentage {
     -fx-fill: transparent;
 }
@@ -118,13 +69,12 @@
 /* SVGs */
 
 .svg {
-    -fx-fill: #000000;
+    -fx-fill: #ffffff;
 }
 
 .svg-outline {
-    -fx-stroke: #000000;
+    -fx-stroke: #ffffff;
 }
-
 /* General styling */
 .progress-indicator {
     -fx-pref-width: 80px;
@@ -147,7 +97,7 @@
 
 .card-1-shadow {
     -fx-effect: dropshadow(three-pass-box, #028fffff, 8, 0, 0, 0);
-    -fx-background-color: #ffffff;
+    -fx-background-color: #0e319a;
     -fx-scale-x: 1;
     -fx-scale-y: 1;
     transition-property:
@@ -156,22 +106,32 @@
     transition-duration: 0.25s;
 }
 
+/* .card-1-shadow-reveal:hover {
+    -fx-scale-x: 0.99;
+    -fx-scale-y: 0.99;
+    -fx-effect: dropshadow(three-pass-box, #028fffff, 16, 0, 0, 0);
+} */
+
 .data-card {
-    -fx-effect: dropshadow(three-pass-box, #dededeff, 8, 0, 0, 0);
-    -fx-background-color: #ffffff;
+    -fx-effect: dropshadow(three-pass-box, #212e54, 8, 0, 0, 0);
+    -fx-background-color: #192b61;
     -fx-scale-x: 1;
     -fx-scale-y: 1;
     transition-property: -fx-background-color;
+    /* transition-property: -fx-scale-x, -fx-scale-y; */
     transition-duration: 0.25s;
 }
 
 .data-card:hover {
-    -fx-background-color: #e8e8e8;
+    /* -fx-scale-x: 0.99;
+    -fx-scale-y: 0.99; */
+    /* -fx-effect: dropshadow(three-pass-box, #ababab, 16, 0, 0, 0); */
+    -fx-background-color: #1c3683;
 }
 
 .data-card-text {
     -fx-font-family: "Bahnschrift SemiBold Condensed";
-    -fx-text-fill: #000000;
+    -fx-text-fill: #cecece;
     -fx-font-weight: bold;
     -fx-font-size: 12px;
 }
@@ -186,21 +146,21 @@
 
 .connection-editor-heading {
     -fx-font-family: "Bahnschrift SemiBold Condensed";
-    -fx-text-fill: #000000;
+    -fx-text-fill: #ffffff;
     -fx-font-weight: bold;
     -fx-font-size: 28px;
 }
 
 .connection-editor-fields {
     -fx-font-family: "Bahnschrift SemiBold Condensed";
-    -fx-text-fill: #000000;
+    -fx-text-fill: #ffffff;
     -fx-font-weight: bold;
     -fx-font-size: 20px;
 }
 
 .connection-editor-error {
     -fx-font-family: "Bahnschrift SemiBold Condensed";
-    -fx-text-fill: #ff0000;
+    -fx-text-fill: #ff6868;
     -fx-font-weight: bold;
     -fx-font-size: 14px;
 }
@@ -230,19 +190,19 @@
 
 /* Error */
 .error {
-    -fx-border-color: #ff0000 !important;
+    -fx-border-color: #ff6868 !important;
 }
 
 /* Deletion */
 .delete,
 .confirm {
-    -fx-text-fill: #000000;
+    -fx-text-fill: #ffffff;
 }
 
 .delete:hover,
 .delete:selected,
 .delete:focused {
-    -fx-background-color: #ff0000 !important;
+    -fx-background-color: #ff6868 !important;
     -fx-text-fill: #ffffff;
 }
 
@@ -267,26 +227,27 @@
 
 /* ComboBox */
 .seletion-combo-box {
-    -fx-background-color: #ffffff;
+    -fx-background-color: #202943;
     -fx-background-radius: 7px;
 
     -fx-border-radius: 5px;
     -fx-border-width: 2px;
-    -fx-border-color: #e1e1e1;
-    -fx-text-fill: #000000;
+    -fx-border-color: #028fffff;
+
+    -fx-text-fill: #ffffff;
     transition: -fx-background-color 0.25s;
     -fx-font-family: "Bahnschrift SemiBold Condensed";
     -fx-font-weight: bold;
     -fx-font-size: 13px;
 }
 
-.seletion-combo-box:hover {-fx-background-color: #dadada;}
-.seletion-combo-box:selected {-fx-background-color: #dadada;}
-.seletion-combo-box:focused {-fx-background-color: #dadada;}
+.seletion-combo-box:hover {-fx-background-color: #23315d;}
+.seletion-combo-box:selected {-fx-background-color: #23315d;}
+.seletion-combo-box:focused {-fx-background-color: #23315d;}
 
 .seletion-combo-box .menu-item {
     -fx-background-radius: 5px;
-    -fx-background-color: #ffffff;
+    -fx-background-color: #202943;
 
     -fx-font-family: "Bahnschrift SemiBold Condensed";
     -fx-font-weight: bold;
@@ -294,7 +255,7 @@
 }
 
 .seletion-combo-box .menu-item .label {
-    -fx-text-fill: #000000;
+    -fx-text-fill: #ffffff;
 }
 
 .seletion-combo-box .arrow {
@@ -303,63 +264,72 @@
 
 .seletion-combo-box .menu-item:focused {
     -fx-background-color: #028fffff;
-    -fx-text-fill: #000000;
+    -fx-text-fill: #ffffff;
 }
 
 .seletion-combo-box .menu-item:selected {
     -fx-background-color: #028fffff;
-    -fx-text-fill: #000000;
+    -fx-text-fill: #ffffff;
 }
 
 .seletion-combo-box .menu-item:hover {
     -fx-background-color: #028fffff;
-    -fx-text-fill: #000000;
+    -fx-text-fill: #ffffff;
 }
 
 .seletion-combo-box .list-cell {
-    -fx-background-color: #ffffff;
-    -fx-text-fill: #000000;
+    -fx-background-color: #202943;
+    -fx-text-fill: #ffffff;
 }
 
 .seletion-combo-box .list-cell:selected {
     -fx-background-color: #028fffff;
-    -fx-text-fill: #000000;
+    -fx-text-fill: #ffffff;
 }
 
 .seletion-combo-box .list-cell:focused {
     -fx-background-color: #028fffff;
-    -fx-text-fill: #000000;
+    -fx-text-fill: #ffffff;
 }
 
 .seletion-combo-box .context-menu {
     -fx-background-radius: 8px;
-    -fx-background-color: #ffffff;
+    -fx-background-color: #202943;
 
     -fx-border-radius: 5px;
     -fx-border-width: 2px;
-    -fx-border-color: #e1e1e1;
+    -fx-border-color: #233979;
 
     -fx-padding: 5px;
 }
 
 /* ScrollPane */
 
+/* .text-area .scroll-bar, */
 .scroll-bar {
-    -fx-background-color: #ffffff;
+    -fx-background-color: #202943;
     -fx-background-radius: 10px;
 }
 
+/* .text-area .scroll-bar .viewport, */
 .scroll-bar .viewport {
     -fx-background-color: transparent;
     -fx-background-radius: 10px;
     -fx-border-width: 0px;
 }
 
+/* .text-area .scroll-bar .viewport .content, */
 .scroll-bar .viewport .vbox {
     -fx-background-color: transparent;
     -fx-background-radius: 10 0 0 10;
 }
 
+/* .text-area .scroll-bar .increment-button, */
+/* .text-area .scroll-bar .increment-arrow, */
+/* .text-area .scroll-bar .decrement-button, */
+/* .text-area .scroll-bar .decrement-arrow, */
+/* .text-area .scroll-bar .track, */
+/* .text-area .scroll-bar .corner, */
 .scroll-bar .increment-button,
 .scroll-bar .increment-arrow,
 .scroll-bar .decrement-button,
@@ -370,12 +340,14 @@
     -fx-border-width: 0px;
 }
 
+/* .text-area .scroll-bar .track-background, */
 .scroll-bar .track-background {
-    -fx-background-color: transparent;
+    -fx-background-color: #202943;
     -fx-background-radius: 0 10 10 0;
     -fx-border-width: 0px;
 }
 
+/* .text-area .scroll-bar .thumb, */
 .scroll-bar .thumb {
     -fx-background-color: #028fffff;
     -fx-background-radius: 20px;
@@ -383,7 +355,7 @@
 
 /* Button */
 .buttons {
-    -fx-background-color: #ffffff;
+    -fx-background-color: #151b2d;
     -fx-background-radius: 7px;
 
     -fx-border-width: 1px;
@@ -391,7 +363,7 @@
     -fx-border-color: transparent;
 
     -fx-font-family: "Bahnschrift SemiBold Condensed";
-    -fx-text-fill: #000000;
+    -fx-text-fill: #ececec;
     -fx-font-weight: bold;
     -fx-font-size: 15px;
 
@@ -399,16 +371,20 @@
 }
 
 .buttons:hover {
-    -fx-background-color: #eeeeee;
+    -fx-background-color: #212e54;
 }
 
 /* Root BorderPane */
 .root {
     -fx-background-radius: 20px;
-    -fx-background-color: #ffffff;
+    /* -fx-background-color: #191e2d; */
+    /* -fx-background-color: #202a46; */
+    -fx-background-color: #151b2d;
     -fx-border-radius: 15px;
     -fx-border-width: 2px;
-    -fx-border-color: #f4f6fa;
+    /* -fx-border-color: #202a46; */
+    /* -fx-border-color: #191e2d; */
+    -fx-border-color: #202943;
 }
 
 /* TextField */
@@ -418,32 +394,32 @@
     -fx-border-color: #028fff;
 
     -fx-highlight-fill: #028fff;
-    -fx-highlight-text-fill: #000000;
+    -fx-highlight-text-fill: #ffffff;
 
-    -fx-text-fill: #000000;
-    -fx-initial-color: #000000;
-    -fx-prompt-text-fill: #000000;
+    -fx-text-fill: #ffffff;
+    -fx-initial-color: #ffffff;
+    -fx-prompt-text-fill: #ffffff;
     -fx-font-family: "Bahnschrift SemiBold Condensed";
     -fx-font-weight: 600;
 
-    -fx-background-color: #ffffff;
+    -fx-background-color: #202943;
     transition: -fx-background-color 0.25s;
 }
 
 .text-box:hover {
-    -fx-background-color: #f4f6fa;
+    -fx-background-color: #23315d;
 }
 
 .text-box:selected {
-    -fx-background-color: #f4f6fa;
+    -fx-background-color: #23315d;
 }
 
 .text-box:focused {
-    -fx-background-color: #f4f6fa;
+    -fx-background-color: #23315d;
 }
 
 .error-text {
-    -fx-text-fill: #ff0000;
+    -fx-text-fill: #ff6868;
 
     -fx-font-family: "Bahnschrift SemiBold Condensed";
     -fx-font-weight: bold;
@@ -453,23 +429,23 @@
 /* TextArea */
 
 .text-area {
-    -fx-text-inner-color: #000000 !important;
+    -fx-text-inner-color: #ffffff !important;
     
-    -fx-background-color: #ffffff;
+    -fx-background-color: #202943;
     -fx-background-radius: 5px;
     -fx-border-width: 0px;
     -fx-highlight-fill: #028fff;
-    -fx-highlight-text-fill: #000000;
+    -fx-highlight-text-fill: #ffffff;
 }
 
 .text-area .content {
-    -fx-background-color: #ffffff;
+    -fx-background-color: #202943;
     -fx-background-radius: 5 0 0 5;
 }
 
 .text-area .scroll-pane,
 .text-area .viewport{
-    -fx-background-color: #ffffff;
+    -fx-background-color: #202943;
     -fx-background-radius: 5px;
 }
 
@@ -478,13 +454,13 @@
 .text-box .context-menu,
 .popup-menu {
     -fx-background-radius: 8px;
-    -fx-background-color: #ffffff;
+    -fx-background-color: #151b2d;
 
-    -fx-text-fill: #000000;
+    -fx-text-fill: #ffffff;
 
     -fx-border-radius: 5px;
     -fx-border-width: 2px;
-    -fx-border-color: #f4f6fa;
+    -fx-border-color: #202943;
 
     -fx-padding: 5px;
 }
@@ -495,7 +471,7 @@
     -fx-padding: 1 100 1 5;
 
     -fx-background-radius: 5px;
-    -fx-background-color: #ffffff;
+    -fx-background-color: #151b2d;
 
     -fx-border-radius: 5px;
 
@@ -507,11 +483,6 @@
 .text-area .context-menu  .menu-item .label,
 .text-box .context-menu .menu-item .label,
 .popup-menu .menu-item .label {
-    -fx-text-fill: #000000;
-}
-.popup-menu .menu-item:focused .label,
-.popup-menu .menu-item:selected .label,
-.popup-menu .menu-item:hover .label {
     -fx-text-fill: #ffffff;
 }
 
@@ -536,7 +507,7 @@
 /* CheckBox */
 .check-box {
     -fx-font-family: "Bahnschrift SemiBold Condensed";
-    -fx-text-fill: #000000;
+    -fx-text-fill: #ffffff;
     -fx-font-weight: bold;
     -fx-font-size: 14px;
 }
@@ -564,7 +535,7 @@
 
 /* Tabbed Pane */
 .tabbed-pane:bottom .tab-header-background {
-    -fx-background-color: #ffffff;
+    -fx-background-color: #151b2d;
 }
 
 .tabbed-pane:bottom .headers-region {
@@ -575,24 +546,24 @@
 }
 
 .tabbed-pane:bottom .tab {
-    -fx-background-color: #ffffff;
+    -fx-background-color: #151b2d;
     -fx-background-radius: 0px;
     -fx-border-radius: 0px;
     -fx-padding: 0px 10px;
     -fx-border-width: 2px 0px 0px 0px;
-    -fx-border-color: #f4f6fa;
-    -fx-text-fill: #000000;
+    -fx-border-color: #202943;
+    -fx-text-fill: #ffffff;
     -fx-font-family: "Bahnschrift SemiBold Condensed";
     -fx-font-weight: bold;
     -fx-font-size: 12px;
 }
 
 .tabbed-pane:bottom .tab .tab-label {
-    -fx-text-fill: #000000;
+    -fx-text-fill: #ffffff;
 }
 
 .tabbed-pane:bottom .tab:hover {
-    -fx-background-color: #f4f6fa;
+    -fx-background-color: #202943;
     -fx-border-color: #028fff;
 }
 
@@ -601,7 +572,7 @@
 }
 
 .tabbed-pane:bottom .tab:selected:hover {
-    -fx-background-color: #f4f6fa;
+    -fx-background-color: #202943;
     -fx-border-color: #028fff;
 }
 
@@ -610,7 +581,7 @@
 }
 
 .tabbed-pane:bottom .tab:focused:hover {
-    -fx-background-color: #f4f6fa;
+    -fx-background-color: #202943;
     -fx-border-color: #028fff;
 }
 
@@ -644,34 +615,49 @@
 /* Table View */
 
 .table {
-    -fx-background-color: #ffffff;
+    -fx-background-color: #202943;
     -fx-border-radius: 10px;
-    -fx-table-header-border-color: #000000;
-    -fx-table-cell-border-color: #000000; /* Removes grid lines */
+    -fx-table-header-border-color: #028fff;
+    -fx-table-cell-border-color: #028fff; /* Removes grid lines */
 }
 
 
 .table .table-cell {
-    -fx-text-fill: #000000;
+    /* -fx-background-color: #202943; */
+    /* -fx-border-radius: 0px; */
+    -fx-text-fill: #ffffff;
+    /* -fx-border-width: 2px; */
 }
 
+/* .table .table-cell:hover {
+    -fx-background-color: #233979;
+}
+
+.table .table-cell:selected  {
+    -fx-background-color: #233979;
+}
+
+.table .table-cell:focuesed {
+    -fx-background-color: #233979;
+} */
+
 .table .table-row-cell {
-    -fx-background-color: #ffffff;
+    -fx-background-color: #202943;
     -fx-border-radius: 0px;
-    -fx-text-fill: #000000;
+    -fx-text-fill: #ffffff;
     -fx-border-width: 2px;
 }
 
 .table .table-row-cell:hover {
-    -fx-background-color: #028fff; /* Row color */
+    -fx-background-color: #233979; /* Row color */
 }
 
 .table .table-row-cell:selected {
-    -fx-background-color: #028fff; /* Row color */
+    -fx-background-color: #233979; /* Row color */
 }
 
 .table .table-row-cell:focused {
-    -fx-background-color: #028fff; /* Row color */
+    -fx-background-color: #233979; /* Row color */
 }
 
 .table .column-header-background {
@@ -680,24 +666,24 @@
 }
 
 .table .column-header-background .filler {
-    -fx-background-color: transparent;
+    -fx-background-color: #202943;
     -fx-background-radius: 0px;
     -fx-border-radius: 0px;
     -fx-padding: 0px 10px;
     -fx-border-width: 0px 0px 2px 0px;
-    -fx-border-color: #eeeeee;
+    -fx-border-color: #233979;
 }
 
 .table .column-header-background .filler:hover {
-    -fx-background-color: #ffffff;
+    -fx-background-color: #233979;
 }
 
 .table .column-header-background .filler:selected {
-    -fx-background-color: #ffffff;
+    -fx-background-color: #233979;
 }
 
 .table .column-header-background .filler:focused {
-    -fx-background-color: #ffffff;
+    -fx-background-color: #233979;
 }
 
 .table .column-header-background .column-header {
@@ -706,11 +692,11 @@
     -fx-border-radius: 0px;
     -fx-padding: 0px 10px;
     -fx-border-width: 0px 2px 2px 0px;
-    -fx-border-color: #eeeeee;
+    -fx-border-color: #233979;
 }
 
 .table .column-header-background .column-header .label {
-    -fx-text-fill: #000000;
+    -fx-text-fill: #ffffff;
     -fx-font-family: "Bahnschrift SemiBold Condensed";
     -fx-font-weight: bold;
     -fx-font-size: 14px;
@@ -723,25 +709,25 @@
 
 .table .column-header-background .column-header:hover {
     -fx-border-color: #028fff;
-    -fx-background-color: #f4f6fa;
+    -fx-background-color: #202943;
 }
 
 .table .column-header-background .column-header:selected {
     -fx-border-color: #028fff;
-    -fx-background-color: #f4f6fa;
+    -fx-background-color: #202943;
 }
 
 .table .column-header-background .column-header:selected:hover {
     -fx-border-color: #028fff;
-    -fx-background-color: #f4f6fa;
+    -fx-background-color: #202943;
 }
 
 .table .column-header-background .column-header:focused {
     -fx-border-color: #028fff;
-    -fx-background-color: #f4f6fa;
+    -fx-background-color: #202943;
 }
 
 .table .column-header-background .column-header:focused:hover {
     -fx-border-color: #028fff;
-    -fx-background-color: #f4f6fa;
+    -fx-background-color: #202943;
 }

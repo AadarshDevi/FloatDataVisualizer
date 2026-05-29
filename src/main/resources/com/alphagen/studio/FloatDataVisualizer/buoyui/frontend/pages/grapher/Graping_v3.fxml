@@ -29,7 +29,7 @@
             <children>
                 <Button fx:id="stopDataTransfer1" maxHeight="-Infinity" minHeight="-Infinity" mnemonicParsing="false" onAction="#backHome" prefHeight="32.0" prefWidth="100.0" styleClass="buttons" text=" Home">
                     <graphic>
-                        <SVGPath content="M 19 10V 19C 19 20.1046 18.1046 21 17 21H 7C 5.89543 21 5 20.1046 5 19V 10M 21 12L 12 3L 3 12" fill="#00d61d00" scaleX="0.9" scaleY="0.9" stroke="BLACK" strokeWidth="3.0" styleClass="svg-path" />
+                        <SVGPath content="M 19 10V 19C 19 20.1046 18.1046 21 17 21H 7C 5.89543 21 5 20.1046 5 19V 10M 21 12L 12 3L 3 12" fill="#00d61d00" scaleX="0.9" scaleY="0.9" stroke="BLACK" strokeWidth="3.0" styleClass="svg-outline" />
                     </graphic>
                     <opaqueInsets>
                         <Insets />
@@ -51,7 +51,7 @@
                 </Button>
                 <Button fx:id="stopDataTransfer" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#stopingDataTransfer" prefHeight="32.0" prefWidth="100.0" styleClass="buttons" text="Stop">
                     <graphic>
-                        <SVGPath content="M 27,29H 5c -1.103,0-2-0.897-2-2V 5c 0-1.103,0.897-2,2-2h 22c 1.103,0,2,0.897,2,2v 22C 29,28.103,28.103,29,27,29zM 27,27v 1V 27L 27,27L 27,27zM 5,5v 22h 21.997L 27,5H 5z" fill="#ff1414" scaleX="0.5" scaleY="0.5" stroke="#ff1414" strokeWidth="3.0" styleClass="svg-path" />
+                        <SVGPath content="M 27,29H 5c -1.103,0-2-0.897-2-2V 5c 0-1.103,0.897-2,2-2h 22c 1.103,0,2,0.897,2,2v 22C 29,28.103,28.103,29,27,29zM 27,27v 1V 27L 27,27L 27,27zM 5,5v 22h 21.997L 27,5H 5z" fill="#ff1414" scaleX="0.5" scaleY="0.5" stroke="#ff1414" strokeWidth="3.0" styleClass="quit-svg" />
                     </graphic>
                     <opaqueInsets>
                         <Insets />
@@ -170,7 +170,7 @@
                                           <Insets left="10.0" />
                                        </padding>
                                     </Label>
-                                    <Label prefHeight="38.0" prefWidth="180.0" text="End Data Transfer Flag::">
+                                    <Label prefHeight="38.0" prefWidth="180.0" text="End Data Transfer Flag:">
                                        <padding>
                                           <Insets right="10.0" />
                                        </padding>
@@ -216,7 +216,7 @@
                <content>
                   <BorderPane>
                      <center>
-                        <TextArea fx:id="terminalTextArea" editable="false" prefHeight="200.0" prefWidth="200.0" text="&#10;">
+                        <TextArea fx:id="terminalTextArea" editable="false" prefHeight="200.0" prefWidth="200.0" styleClass="textarea" text="&#10;">
                            <BorderPane.margin>
                               <Insets bottom="3.0" />
                            </BorderPane.margin>

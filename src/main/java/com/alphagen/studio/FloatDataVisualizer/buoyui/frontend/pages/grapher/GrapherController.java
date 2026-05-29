@@ -6,7 +6,7 @@ import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.data.FloatConfig;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.data.MeasurementConfig;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.processor.DataPointProcessor;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.processor.SerialProcessor;
-import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.managers.ConnectionManager;
+import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.managers.Connections;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.managers.ControllerManager;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.managers.StageManager;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.pages.CardConstants;
@@ -80,7 +80,7 @@ public class GrapherController {
 		checkBoxesContainer.setVisible(false);
 		checkBoxesContainer.setManaged(false);
 
-		this.connectionConfig = ConnectionManager.getCurrentConnection();
+		this.connectionConfig = Connections.getCurrentConnection();
 
 		if (connectionConfig == null) {
 			System.out.println(" >>> Serial Communication > Null ConnectionConfig");
@@ -245,6 +245,7 @@ public class GrapherController {
 		}
 
 		tableView.getItems().removeAll(tableView.getItems());
+		terminalTextArea.clear();
 
 		System.out.println(" >>> Serial Communication > Start");
 
