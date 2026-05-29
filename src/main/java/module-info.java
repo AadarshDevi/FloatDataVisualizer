@@ -35,4 +35,5 @@ module com.alphagen.studio.FloatDataVisualizer {
 	exports com.alphagen.studio.FloatDataVisualizer.buoyui.backend.processor;
 	exports com.alphagen.studio.FloatDataVisualizer.buoyui.backend.app;
 	exports com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.pages;
+	exports com.alphagen.studio.FloatDataVisualizer.buoyui.backend.app.theme;
 }
