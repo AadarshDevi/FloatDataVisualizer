@@ -131,12 +131,15 @@ public class ConnectionsController {
 	@FXML
 	public void createConnection() {
 
+		Stage appStage = StageManager.getMainStage();
+
 		LOGGER.info("Opening ConnectionEditorUI");
 		BorderPane connectionCreatorPane;
+		ConnectionEditorController cec;
 		try {
 			FXMLLoader fxmlLoader = new FXMLLoader(PageConstants.CONNECTIONS_EDITOR_PAGE);
 			connectionCreatorPane = fxmlLoader.load();
-			ConnectionEditorController cec = fxmlLoader.getController();
+			cec = fxmlLoader.getController();
 			ControllerManager.setConnectionEditorController(cec);
 		} catch (IOException e) {
 			throw new RuntimeException(e);
@@ -151,6 +154,10 @@ public class ConnectionsController {
 			stage.initOwner(StageManager.getMainStage());
 			stage.initModality(Modality.APPLICATION_MODAL);
 			stage.initStyle(StageStyle.TRANSPARENT);
+
+			if (appStage.isFullScreen()) {
+				cec.fullscreen();
+			}
 
 			StageManager.setConnectionCreatorStage(stage);
 			stage.showAndWait();
@@ -283,11 +290,6 @@ public class ConnectionsController {
 
 	@FXML
 	public void importConnections() {
-		// todo: implement
-	}
-
-	@FXML
-	public void fullscreenApp() {
 		// todo: implement
 	}
 }
