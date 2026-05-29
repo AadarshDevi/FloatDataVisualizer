@@ -25,7 +25,7 @@ public class DataPointProcessor implements Runnable {
 			}
 
 			try {
-				System.out.println(" >>> " + raw);
+//				System.out.println(" >>> " + raw);
 
 				String[] parsed = raw.split(",");
 

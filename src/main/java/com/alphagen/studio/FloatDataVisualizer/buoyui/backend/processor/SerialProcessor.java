@@ -73,7 +73,7 @@ public class SerialProcessor implements Runnable {
 					}
 
 					if (startDataTransfer.get() && !stopDataTransfer.get() && dataline.startsWith(connectionConfig.floatConfig().teamData())) {
-						System.out.println(dataline);
+//						System.out.println(dataline);
 						dpp.getRawArray().put(dataline);
 //						System.out.println(" >>> Raw Size > " + dpp.getRawArray().size());
 					}

@@ -277,7 +277,7 @@ public class GrapherController {
 				}
 
 				Platform.runLater(() -> {
-					System.out.println(" >>> Measurement Configs > " + Arrays.toString(dp.measurements()));
+//					System.out.println(" >>> Measurement Configs > " + Arrays.toString(dp.measurements()));
 					double[] measures = dp.measurements();
 					for (int i = 3; i < graphPane.getTabs().size(); i++) {
 						int measureIndex = i - 3;
