@@ -1,0 +1,712 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="776164ce-7a69-48e2-8934-c0376db3d4b9" name="Changes" comment="fxml update to have fullscreen and windowed mode button">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/buoyui/frontend/util/FullscreenButton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/project.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Record" />
+        <option value="Exception" />
+        <option value="Enum" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="FormatOnSaveOptions">
+    <option name="myRunOnSave" value="true" />
+  </component>
+  <component name="Git.Settings">
+    <option name="PUSH_AUTO_UPDATE" value="true" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="better-menu" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="HARD" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;AadarshDevi&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/AadarshDevi/FloatDataVisualizer.git&quot;,
+    &quot;accountId&quot;: &quot;81734ebf-13b7-4f3e-9b75-59c3dba3a626&quot;
+  }
+}</component>
+  <component name="KubernetesApiPersistence">{}</component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHomeTypeForPersistence" value="WRAPPER" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="McpProjectServerCommands">
+    <commands />
+    <urls />
+  </component>
+  <component name="NextEditCompletionFeaturesState">
+    <decayedCancelled>
+      <entry key="MS100" value="2.6750427258549933E-9" />
+      <entry key="MS500" value="0.024567283250528184" />
+      <entry key="S2" value="0.643337861741791" />
+      <entry key="S5" value="1.416082751788872" />
+      <entry key="S10" value="2.499279444730242" />
+      <entry key="S30" value="6.504421553063644" />
+      <entry key="S60" value="11.198822962549839" />
+      <entry key="M2" value="18.082827704772036" />
+      <entry key="M5" value="34.39423885287285" />
+      <entry key="M10" value="54.77712263981827" />
+      <entry key="M15" value="70.00119079537157" />
+      <entry key="M30" value="98.56847127564349" />
+      <entry key="H1" value="129.38100128417318" />
+      <entry key="H2" value="161.14005762969694" />
+      <entry key="H4" value="187.9115297478983" />
+      <entry key="D1" value="220.78188993778232" />
+      <entry key="W1" value="227.78594607010155" />
+    </decayedCancelled>
+    <decayedSelected>
+      <entry key="MS100" value="1.0" />
+      <entry key="MS500" value="1.000000018730959" />
+      <entry key="S2" value="1.0117049831565457" />
+      <entry key="S5" value="1.1771093626275704" />
+      <entry key="S10" value="1.5170791170411213" />
+      <entry key="S30" value="2.787756099289031" />
+      <entry key="S60" value="4.074373914699471" />
+      <entry key="M2" value="5.3189871096743895" />
+      <entry key="M5" value="6.634345751162268" />
+      <entry key="M10" value="7.42019335684801" />
+      <entry key="M15" value="7.816099828696801" />
+      <entry key="M30" value="8.464900263078212" />
+      <entry key="H1" value="9.185477677172123" />
+      <entry key="H2" value="9.863322849535965" />
+      <entry key="H4" value="10.355392635099147" />
+      <entry key="D1" value="10.879831764903765" />
+      <entry key="W1" value="10.982488773673538" />
+    </decayedSelected>
+    <decayedShown>
+      <entry key="MS100" value="0.0031075644466007496" />
+      <entry key="MS500" value="0.3272145064354387" />
+      <entry key="S2" value="1.3017421557165523" />
+      <entry key="S5" value="2.3580908728393193" />
+      <entry key="S10" value="3.812174446196972" />
+      <entry key="S30" value="9.123726755146423" />
+      <entry key="S60" value="15.144372656640497" />
+      <entry key="M2" value="23.315694939685553" />
+      <entry key="M5" value="40.98296314010204" />
+      <entry key="M10" value="62.169152244904495" />
+      <entry key="M15" value="77.79609711757142" />
+      <entry key="M30" value="107.02067234231019" />
+      <entry key="H1" value="138.55908080249648" />
+      <entry key="H2" value="170.99919568740467" />
+      <entry key="H4" value="198.26464452891074" />
+      <entry key="D1" value="231.6613070471285" />
+      <entry key="W1" value="238.76837458855886" />
+    </decayedShown>
+  </component>
+  <component name="OptimizeOnSaveOptions">
+    <option name="myRunOnSave" value="true" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+    <option name="sortByName" value="true" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
+  <component name="ProjectId" id="36BG7uekh9QQYGGp2bkWucsOQfj" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Launcher.executor": "Run",
+    "Maven.FloatDataVisualizer [clean].executor": "Run",
+    "Maven.FloatDataVisualizer [package].executor": "Run",
+    "Maven.FloatDataVisualizer [verify].executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.MCP Project settings loaded": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "code.cleanup.on.save": "true",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
+    "git-widget-placeholder": "dev",
+    "ignore.virus.scanning.warn.message": "true",
+    "junie.onboarding.icon.badge.shown": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/aadar/IdeaProjects/FloatDataVisualizer/src/main/resources/com/alphagen/studio/FloatDataVisualizer/buoyui/frontend/pages/connections",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "rearrange.code.on.save": "true",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "preferences.sourceCode.JAVA",
+    "to.speed.mode.migration.done": "true",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.alphagen.studio.FloatDataVisualizer.buoyui.backend.data" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\aadar\IdeaProjects\FloatDataVisualizer\src\main\resources\com\alphagen\studio\FloatDataVisualizer\buoyui\frontend\pages\connections" />
+      <recent name="C:\Users\aadar\IdeaProjects\FloatDataVisualizer\src\main\resources\com\alphagen\studio\FloatDataVisualizer\buoyui" />
+      <recent name="C:\Users\aadar\IdeaProjects\FloatDataVisualizer\src\main\resources\com\alphagen\studio\FloatDataVisualizer\buoyui\frontend\pages\connections\datacard" />
+      <recent name="C:\Users\aadar\IdeaProjects\FloatDataVisualizer\src\main\resources\com\alphagen\studio\FloatDataVisualizer\buoyui\frontend\pages\grapher\scatterplot" />
+      <recent name="C:\Users\aadar\IdeaProjects\FloatDataVisualizer\src\main\resources\com\alphagen\studio\FloatDataVisualizer\buoyui\frontend\pages\grapher" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\aadar\IdeaProjects\FloatDataVisualizer" />
+      <recent name="C:\Users\aadar\IdeaProjects\FloatDataVisualizer\Documentation\BuoyUI\readme_imgs" />
+      <recent name="C:\Users\aadar\IdeaProjects\FloatDataVisualizer\src\main\java\com\alphagen\studio\FloatDataVisualizer\Documentation\BuoyUI\readme_imgs" />
+      <recent name="C:\Users\aadar\IdeaProjects\FloatDataVisualizer\src\main\java\com\alphagen\studio\FloatDataVisualizer\buoyui\frontend\pages\connections\datacard" />
+      <recent name="C:\Users\aadar\IdeaProjects\FloatDataVisualizer\src\main\resources\com\alphagen\studio\FloatDataVisualizer\buoyui\frontend\pages" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.pages" />
+      <recent name="com.alphagen.studio.FloatDataVisualizer.buoyui.frontend" />
+      <recent name="com.alphagen.studio.FloatDataVisualizer.buoyui.backend.constants" />
+      <recent name="com.alphagen.studio.FloatDataVisualizer.buoyui" />
+      <recent name="com.alphagen.studio.FloatDataVisualizer.buoyui.backend.app" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.alphagen.studio.FloatDataVisualizer.buoyui.backend" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Launcher" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="com.alphagen.studio.FloatDataVisualizer.Launcher" />
+      <module name="FloatDataVisualizer" />
+      <option name="VM_PARAMETERS" value="--enable-native-access=javafx.graphics --enable-native-access=com.fazecast.jSerialComm" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-30f59d01ecdd-37e91769500f-intellij.indexing.shared.core-IU-261.24374.151" />
+        <option value="bundled-js-predefined-d6986cc7102b-31caf2ab9e3c-JavaScript-IU-261.24374.151" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="776164ce-7a69-48e2-8934-c0376db3d4b9" name="Changes" comment="" />
+      <created>1764472387042</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1764472387042</updated>
+      <workItem from="1764472388951" duration="1205000" />
+      <workItem from="1764473607847" duration="990000" />
+      <workItem from="1764474649980" duration="770000" />
+      <workItem from="1764475462093" duration="636000" />
+      <workItem from="1764694028184" duration="1881000" />
+      <workItem from="1764695970781" duration="261000" />
+      <workItem from="1764696305925" duration="581000" />
+      <workItem from="1764702979793" duration="1047000" />
+      <workItem from="1764704282683" duration="1051000" />
+      <workItem from="1764712624573" duration="2453000" />
+      <workItem from="1764805760225" duration="1505000" />
+      <workItem from="1764877918652" duration="3021000" />
+      <workItem from="1764884082191" duration="134000" />
+      <workItem from="1766168586577" duration="2317000" />
+      <workItem from="1766969579896" duration="1000" />
+      <workItem from="1766969593668" duration="4000" />
+      <workItem from="1766969654651" duration="15000" />
+    </task>
+    <task id="LOCAL-00377" summary="fixed a few performance issue">
+      <option name="closed" value="true" />
+      <created>1779821844765</created>
+      <option name="number" value="00377" />
+      <option name="presentableId" value="LOCAL-00377" />
+      <option name="project" value="LOCAL" />
+      <updated>1779821844765</updated>
+    </task>
+    <task id="LOCAL-00378" summary="removed everything from it to github issues">
+      <option name="closed" value="true" />
+      <created>1779821861512</created>
+      <option name="number" value="00378" />
+      <option name="presentableId" value="LOCAL-00378" />
+      <option name="project" value="LOCAL" />
+      <updated>1779821861512</updated>
+    </task>
+    <task id="LOCAL-00379" summary="using Log4J for logging.&#10;replacing System.out with LOGGER">
+      <option name="closed" value="true" />
+      <created>1779823912945</created>
+      <option name="number" value="00379" />
+      <option name="presentableId" value="LOCAL-00379" />
+      <option name="project" value="LOCAL" />
+      <updated>1779823912945</updated>
+    </task>
+    <task id="LOCAL-00380" summary="added Log4J Core and API for logging">
+      <option name="closed" value="true" />
+      <created>1779823931093</created>
+      <option name="number" value="00380" />
+      <option name="presentableId" value="LOCAL-00380" />
+      <option name="project" value="LOCAL" />
+      <updated>1779823931094</updated>
+    </task>
+    <task id="LOCAL-00381" summary="added log4j as requires">
+      <option name="closed" value="true" />
+      <created>1779823944875</created>
+      <option name="number" value="00381" />
+      <option name="presentableId" value="LOCAL-00381" />
+      <option name="project" value="LOCAL" />
+      <updated>1779823944875</updated>
+    </task>
+    <task id="LOCAL-00382" summary="created methods for connection operations">
+      <option name="closed" value="true" />
+      <created>1779824353296</created>
+      <option name="number" value="00382" />
+      <option name="presentableId" value="LOCAL-00382" />
+      <option name="project" value="LOCAL" />
+      <updated>1779824353296</updated>
+    </task>
+    <task id="LOCAL-00383" summary="moved deleting files to Connections from ConnectionsController">
+      <option name="closed" value="true" />
+      <created>1779824383843</created>
+      <option name="number" value="00383" />
+      <option name="presentableId" value="LOCAL-00383" />
+      <option name="project" value="LOCAL" />
+      <updated>1779824383843</updated>
+    </task>
+    <task id="LOCAL-00384" summary="file was renamed to Connections">
+      <option name="closed" value="true" />
+      <created>1779824408915</created>
+      <option name="number" value="00384" />
+      <option name="presentableId" value="LOCAL-00384" />
+      <option name="project" value="LOCAL" />
+      <updated>1779824408915</updated>
+    </task>
+    <task id="LOCAL-00385" summary="replaced ConnectionManager to Connections">
+      <option name="closed" value="true" />
+      <created>1779824494719</created>
+      <option name="number" value="00385" />
+      <option name="presentableId" value="LOCAL-00385" />
+      <option name="project" value="LOCAL" />
+      <updated>1779824494719</updated>
+    </task>
+    <task id="LOCAL-00386" summary="replaced ConnectionManager to Connections">
+      <option name="closed" value="true" />
+      <created>1779824558062</created>
+      <option name="number" value="00386" />
+      <option name="presentableId" value="LOCAL-00386" />
+      <option name="project" value="LOCAL" />
+      <updated>1779824558062</updated>
+    </task>
+    <task id="LOCAL-00387" summary="moved if true condition out and made it: if false (return) true">
+      <option name="closed" value="true" />
+      <created>1779827592229</created>
+      <option name="number" value="00387" />
+      <option name="presentableId" value="LOCAL-00387" />
+      <option name="project" value="LOCAL" />
+      <updated>1779827592229</updated>
+    </task>
+    <task id="LOCAL-00388" summary="class moved to Connections">
+      <option name="closed" value="true" />
+      <created>1779827609648</created>
+      <option name="number" value="00388" />
+      <option name="presentableId" value="LOCAL-00388" />
+      <option name="project" value="LOCAL" />
+      <updated>1779827609648</updated>
+    </task>
+    <task id="LOCAL-00389" summary="moved delete, delete all, create from ConnectionsManager to Connections">
+      <option name="closed" value="true" />
+      <created>1779827662853</created>
+      <option name="number" value="00389" />
+      <option name="presentableId" value="LOCAL-00389" />
+      <option name="project" value="LOCAL" />
+      <updated>1779827662853</updated>
+    </task>
+    <task id="LOCAL-00390" summary="imports">
+      <option name="closed" value="true" />
+      <created>1779827669434</created>
+      <option name="number" value="00390" />
+      <option name="presentableId" value="LOCAL-00390" />
+      <option name="project" value="LOCAL" />
+      <updated>1779827669434</updated>
+    </task>
+    <task id="LOCAL-00391" summary="new classes: Parser and Processor.&#10;Parser: parse data&#10;Processor: read/write data">
+      <option name="closed" value="true" />
+      <created>1779827718083</created>
+      <option name="number" value="00391" />
+      <option name="presentableId" value="LOCAL-00391" />
+      <option name="project" value="LOCAL" />
+      <updated>1779827718083</updated>
+    </task>
+    <task id="LOCAL-00392" summary="methods now change from ConnectionsProcessor to Connections.Processor">
+      <option name="closed" value="true" />
+      <created>1779827753329</created>
+      <option name="number" value="00392" />
+      <option name="presentableId" value="LOCAL-00392" />
+      <option name="project" value="LOCAL" />
+      <updated>1779827753329</updated>
+    </task>
+    <task id="LOCAL-00393" summary="added a success or not boolean">
+      <option name="closed" value="true" />
+      <created>1779827771995</created>
+      <option name="number" value="00393" />
+      <option name="presentableId" value="LOCAL-00393" />
+      <option name="project" value="LOCAL" />
+      <updated>1779827771995</updated>
+    </task>
+    <task id="LOCAL-00394" summary="imports">
+      <option name="closed" value="true" />
+      <created>1779827780016</created>
+      <option name="number" value="00394" />
+      <option name="presentableId" value="LOCAL-00394" />
+      <option name="project" value="LOCAL" />
+      <updated>1779827780016</updated>
+    </task>
+    <task id="LOCAL-00395" summary="delete all connections moved to Connections">
+      <option name="closed" value="true" />
+      <created>1779827793476</created>
+      <option name="number" value="00395" />
+      <option name="presentableId" value="LOCAL-00395" />
+      <option name="project" value="LOCAL" />
+      <updated>1779827793476</updated>
+    </task>
+    <task id="LOCAL-00396" summary="commented for a better replacement">
+      <option name="closed" value="true" />
+      <created>1779827806117</created>
+      <option name="number" value="00396" />
+      <option name="presentableId" value="LOCAL-00396" />
+      <option name="project" value="LOCAL" />
+      <updated>1779827806117</updated>
+    </task>
+    <task id="LOCAL-00397" summary="imports">
+      <option name="closed" value="true" />
+      <created>1779827813074</created>
+      <option name="number" value="00397" />
+      <option name="presentableId" value="LOCAL-00397" />
+      <option name="project" value="LOCAL" />
+      <updated>1779827813074</updated>
+    </task>
+    <task id="LOCAL-00398" summary="ConnectionProcessor to Connctions.Processor">
+      <option name="closed" value="true" />
+      <created>1779827905398</created>
+      <option name="number" value="00398" />
+      <option name="presentableId" value="LOCAL-00398" />
+      <option name="project" value="LOCAL" />
+      <updated>1779827905398</updated>
+    </task>
+    <task id="LOCAL-00399" summary="moved rename from Connections to Connctions.Processor">
+      <option name="closed" value="true" />
+      <created>1779827966400</created>
+      <option name="number" value="00399" />
+      <option name="presentableId" value="LOCAL-00399" />
+      <option name="project" value="LOCAL" />
+      <updated>1779827966400</updated>
+    </task>
+    <task id="LOCAL-00400" summary="moved rename from Connections to Connctions.Processor">
+      <option name="closed" value="true" />
+      <created>1779828245740</created>
+      <option name="number" value="00400" />
+      <option name="presentableId" value="LOCAL-00400" />
+      <option name="project" value="LOCAL" />
+      <updated>1779828245740</updated>
+    </task>
+    <task id="LOCAL-00401" summary="removed todos and made them into issues">
+      <option name="closed" value="true" />
+      <created>1779831313726</created>
+      <option name="number" value="00401" />
+      <option name="presentableId" value="LOCAL-00401" />
+      <option name="project" value="LOCAL" />
+      <updated>1779831313726</updated>
+    </task>
+    <task id="LOCAL-00402" summary="theme backups and fixing">
+      <option name="closed" value="true" />
+      <created>1779834502506</created>
+      <option name="number" value="00402" />
+      <option name="presentableId" value="LOCAL-00402" />
+      <option name="project" value="LOCAL" />
+      <updated>1779834502506</updated>
+    </task>
+    <task id="LOCAL-00403" summary="updated fxml to use css instead of in the fxml itself">
+      <option name="closed" value="true" />
+      <created>1779836521928</created>
+      <option name="number" value="00403" />
+      <option name="presentableId" value="LOCAL-00403" />
+      <option name="project" value="LOCAL" />
+      <updated>1779836521928</updated>
+    </task>
+    <task id="LOCAL-00404" summary="testing dark theme">
+      <option name="closed" value="true" />
+      <created>1779836537565</created>
+      <option name="number" value="00404" />
+      <option name="presentableId" value="LOCAL-00404" />
+      <option name="project" value="LOCAL" />
+      <updated>1779836537565</updated>
+    </task>
+    <task id="LOCAL-00405" summary="have the current light and dark themes so i do not lose those progresses.">
+      <option name="closed" value="true" />
+      <created>1779836557514</created>
+      <option name="number" value="00405" />
+      <option name="presentableId" value="LOCAL-00405" />
+      <option name="project" value="LOCAL" />
+      <updated>1779836557514</updated>
+    </task>
+    <task id="LOCAL-00406" summary="replaced inline css (css in fxml) with external css">
+      <option name="closed" value="true" />
+      <created>1779919305131</created>
+      <option name="number" value="00406" />
+      <option name="presentableId" value="LOCAL-00406" />
+      <option name="project" value="LOCAL" />
+      <updated>1779919305132</updated>
+    </task>
+    <task id="LOCAL-00407" summary="updated dark theme css">
+      <option name="closed" value="true" />
+      <created>1779919323595</created>
+      <option name="number" value="00407" />
+      <option name="presentableId" value="LOCAL-00407" />
+      <option name="project" value="LOCAL" />
+      <updated>1779919323595</updated>
+    </task>
+    <task id="LOCAL-00408" summary="light theme is light and dark theme is dark">
+      <option name="closed" value="true" />
+      <created>1780012000550</created>
+      <option name="number" value="00408" />
+      <option name="presentableId" value="LOCAL-00408" />
+      <option name="project" value="LOCAL" />
+      <updated>1780012000550</updated>
+    </task>
+    <task id="LOCAL-00409" summary="added a css class">
+      <option name="closed" value="true" />
+      <created>1780012009733</created>
+      <option name="number" value="00409" />
+      <option name="presentableId" value="LOCAL-00409" />
+      <option name="project" value="LOCAL" />
+      <updated>1780012009733</updated>
+    </task>
+    <task id="LOCAL-00410" summary="using correct scatter-plot">
+      <option name="closed" value="true" />
+      <created>1780012046746</created>
+      <option name="number" value="00410" />
+      <option name="presentableId" value="LOCAL-00410" />
+      <option name="project" value="LOCAL" />
+      <updated>1780012046746</updated>
+    </task>
+    <task id="LOCAL-00411" summary="finished dark theme">
+      <option name="closed" value="true" />
+      <created>1780014623409</created>
+      <option name="number" value="00411" />
+      <option name="presentableId" value="LOCAL-00411" />
+      <option name="project" value="LOCAL" />
+      <updated>1780014623409</updated>
+    </task>
+    <task id="LOCAL-00412" summary="finished dark theme">
+      <option name="closed" value="true" />
+      <created>1780014765947</created>
+      <option name="number" value="00412" />
+      <option name="presentableId" value="LOCAL-00412" />
+      <option name="project" value="LOCAL" />
+      <updated>1780014765947</updated>
+    </task>
+    <task id="LOCAL-00413" summary="finished light theme">
+      <option name="closed" value="true" />
+      <created>1780017534322</created>
+      <option name="number" value="00413" />
+      <option name="presentableId" value="LOCAL-00413" />
+      <option name="project" value="LOCAL" />
+      <updated>1780017534322</updated>
+    </task>
+    <task id="LOCAL-00414" summary="updated the correct theme files">
+      <option name="closed" value="true" />
+      <created>1780017653634</created>
+      <option name="number" value="00414" />
+      <option name="presentableId" value="LOCAL-00414" />
+      <option name="project" value="LOCAL" />
+      <updated>1780017653634</updated>
+    </task>
+    <task id="LOCAL-00415" summary="terminal tab now resets">
+      <option name="closed" value="true" />
+      <created>1780019068885</created>
+      <option name="number" value="00415" />
+      <option name="presentableId" value="LOCAL-00415" />
+      <option name="project" value="LOCAL" />
+      <updated>1780019068885</updated>
+    </task>
+    <task id="LOCAL-00416" summary="double colon for end data transfer flag label fixed to single colon">
+      <option name="closed" value="true" />
+      <created>1780019084974</created>
+      <option name="number" value="00416" />
+      <option name="presentableId" value="LOCAL-00416" />
+      <option name="project" value="LOCAL" />
+      <updated>1780019084974</updated>
+    </task>
+    <task id="LOCAL-00417" summary="new fxml backup">
+      <option name="closed" value="true" />
+      <created>1780023602174</created>
+      <option name="number" value="00417" />
+      <option name="presentableId" value="LOCAL-00417" />
+      <option name="project" value="LOCAL" />
+      <updated>1780023602176</updated>
+    </task>
+    <task id="LOCAL-00418" summary="added a better menu">
+      <option name="closed" value="true" />
+      <created>1780023610516</created>
+      <option name="number" value="00418" />
+      <option name="presentableId" value="LOCAL-00418" />
+      <option name="project" value="LOCAL" />
+      <updated>1780023610516</updated>
+    </task>
+    <task id="LOCAL-00419" summary="what need to do">
+      <option name="closed" value="true" />
+      <created>1780023624065</created>
+      <option name="number" value="00419" />
+      <option name="presentableId" value="LOCAL-00419" />
+      <option name="project" value="LOCAL" />
+      <updated>1780023624065</updated>
+    </task>
+    <task id="LOCAL-00420" summary="using correct connections page ui version">
+      <option name="closed" value="true" />
+      <created>1780023642333</created>
+      <option name="number" value="00420" />
+      <option name="presentableId" value="LOCAL-00420" />
+      <option name="project" value="LOCAL" />
+      <updated>1780023642333</updated>
+    </task>
+    <task id="LOCAL-00421" summary="updated fxml for better menu">
+      <option name="closed" value="true" />
+      <created>1780023662563</created>
+      <option name="number" value="00421" />
+      <option name="presentableId" value="LOCAL-00421" />
+      <option name="project" value="LOCAL" />
+      <updated>1780023662563</updated>
+    </task>
+    <task id="LOCAL-00422" summary="a basic menu for importing data">
+      <option name="closed" value="true" />
+      <created>1780023674584</created>
+      <option name="number" value="00422" />
+      <option name="presentableId" value="LOCAL-00422" />
+      <option name="project" value="LOCAL" />
+      <updated>1780023674584</updated>
+    </task>
+    <task id="LOCAL-00423" summary="deleted the refresh connections and export all connections buttons">
+      <option name="closed" value="true" />
+      <created>1780024895104</created>
+      <option name="number" value="00423" />
+      <option name="presentableId" value="LOCAL-00423" />
+      <option name="project" value="LOCAL" />
+      <updated>1780024895105</updated>
+    </task>
+    <task id="LOCAL-00424" summary="controller ready for implementations">
+      <option name="closed" value="true" />
+      <created>1780024908449</created>
+      <option name="number" value="00424" />
+      <option name="presentableId" value="LOCAL-00424" />
+      <option name="project" value="LOCAL" />
+      <updated>1780024908449</updated>
+    </task>
+    <task id="LOCAL-00425" summary="fxml update to have fullscreen and windowed mode button">
+      <option name="closed" value="true" />
+      <created>1780024934553</created>
+      <option name="number" value="00425" />
+      <option name="presentableId" value="LOCAL-00425" />
+      <option name="project" value="LOCAL" />
+      <updated>1780024934553</updated>
+    </task>
+    <option name="localTasksCounter" value="426" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/dev" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="moved rename from Connections to Connctions.Processor" />
+    <MESSAGE value="removed todos and made them into issues" />
+    <MESSAGE value="theme backups and fixing" />
+    <MESSAGE value="updated fxml to use css instead of in the fxml itself" />
+    <MESSAGE value="testing dark theme" />
+    <MESSAGE value="have the current light and dark themes so i do not lose those progresses." />
+    <MESSAGE value="replaced inline css (css in fxml) with external css" />
+    <MESSAGE value="updated dark theme css" />
+    <MESSAGE value="light theme is light and dark theme is dark" />
+    <MESSAGE value="added a css class" />
+    <MESSAGE value="using correct scatter-plot" />
+    <MESSAGE value="finished dark theme" />
+    <MESSAGE value="finished light theme" />
+    <MESSAGE value="updated the correct theme files" />
+    <MESSAGE value="terminal tab now resets" />
+    <MESSAGE value="double colon for end data transfer flag label fixed to single colon" />
+    <MESSAGE value="new fxml backup" />
+    <MESSAGE value="added a better menu" />
+    <MESSAGE value="what need to do" />
+    <MESSAGE value="using correct connections page ui version" />
+    <MESSAGE value="updated fxml for better menu" />
+    <MESSAGE value="a basic menu for importing data" />
+    <MESSAGE value="deleted the refresh connections and export all connections buttons" />
+    <MESSAGE value="controller ready for implementations" />
+    <MESSAGE value="fxml update to have fullscreen and windowed mode button" />
+    <option name="LAST_COMMIT_MESSAGE" value="fxml update to have fullscreen and windowed mode button" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>

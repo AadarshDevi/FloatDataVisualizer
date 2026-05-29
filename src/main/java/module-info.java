@@ -8,6 +8,7 @@ module com.alphagen.studio.FloatDataVisualizer {
 	requires static lombok;
 	requires jdk.security.jgss;
 	requires java.sql;
+	requires org.apache.logging.log4j;
 	requires org.apache.logging.log4j.core;
 
 	opens com.alphagen.studio.FloatDataVisualizer to javafx.fxml, javafx.controls;
