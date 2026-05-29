@@ -170,7 +170,7 @@
                                           <Insets left="10.0" />
                                        </padding>
                                     </Label>
-                                    <Label prefHeight="38.0" prefWidth="180.0" text="End Data Transfer Flag::">
+                                    <Label prefHeight="38.0" prefWidth="180.0" text="End Data Transfer Flag:">
                                        <padding>
                                           <Insets right="10.0" />
                                        </padding>
