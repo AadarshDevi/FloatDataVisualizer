@@ -10,7 +10,7 @@
     <center>
         <ScrollPane pannable="true" prefHeight="499.0" prefWidth="1129.0" styleClass="scroll-bar" BorderPane.alignment="CENTER">
             <content>
-                <ScatterChart fx:id="scatterPlot" prefHeight="475.0" prefWidth="1105.0">
+                <ScatterChart fx:id="scatterPlot" prefHeight="475.0" prefWidth="1105.0" styleClass="scatter-plot">
                     <xAxis>
                         <NumberAxis />
                     </xAxis>
