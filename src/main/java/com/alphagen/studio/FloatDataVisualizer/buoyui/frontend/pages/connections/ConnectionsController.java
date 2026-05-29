@@ -46,10 +46,10 @@ public class ConnectionsController {
 	@FXML public TilePane connections;
 	@FXML public Button import_connection_s;
 	@FXML public Button button_theme_change; // todo: implement
-	@FXML public Button button_fullscreen; // todo: implement
+	@FXML public Button button_fullscreen;
 	@FXML public Button button_user_manual; // todo: implement
-	@FXML public SVGPath fullscreen; // todo: implement
-	@FXML public SVGPath windowedScreen; // todo: implement
+	@FXML public SVGPath fullscreen;
+	@FXML public SVGPath windowedScreen;
 	@FXML public SVGPath lightTheme; // todo: implement
 	@FXML public SVGPath darkTheme; // todo: implement
 	@Setter
@@ -111,6 +111,22 @@ public class ConnectionsController {
 //	public void test() {
 //		System.out.println("Created Connection");
 //	}
+
+	@FXML
+	public void fullscreenApp() {
+		Stage appStage = StageManager.getMainStage();
+		if (appStage.isFullScreen()) {
+			appStage.setFullScreen(false);
+			fullscreen.setVisible(true);
+			windowedScreen.setVisible(false);
+			connections.setPrefWidth(connections.getPrefWidth() * 2 / 3);
+		} else {
+			appStage.setFullScreen(true);
+			fullscreen.setVisible(false);
+			windowedScreen.setVisible(true);
+			connections.setPrefWidth(connections.getPrefWidth() * 1.5);
+		}
+	}
 
 	@FXML
 	public void createConnection() {
