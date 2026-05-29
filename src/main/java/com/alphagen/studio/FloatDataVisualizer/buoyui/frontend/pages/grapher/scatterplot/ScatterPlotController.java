@@ -31,6 +31,9 @@ public class ScatterPlotController {
 	@FXML
 	public ScatterChart<Number, Number> scatterPlot;
 	@FXML public ContextMenu contextMenu;
+	@Getter
+	@FXML
+	ScrollPane scrollPane;
 	private int oldPacketNum = -1;
 	private XYChart.Series<Number, Number> series;
 
