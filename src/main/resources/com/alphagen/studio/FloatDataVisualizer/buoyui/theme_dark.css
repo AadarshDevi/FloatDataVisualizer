@@ -32,10 +32,12 @@
 .vbox {
     -fx-background-color: #202943;
 }
+
 /* Tilepane */
 .tilepane {
     -fx-background-color: transparent;
 }
+
 /* Indeterminate mode - Spinning ring + smooth cyan dots */
 .progress-indicator:indeterminate .spinner .arc {
     -fx-stroke: #028fffff; /* Cyan background ring */
@@ -48,7 +50,7 @@
         radius 50%,
         #028fffff 40%,
         #028fffff 70%
-    ); /* Glowing cyan dots */
+    );
 }
 
 /* Scatterplot */
@@ -99,22 +101,16 @@
     -fx-background-color: transparent;
 }
 
-/* 233979 */
-
-
-
 .quit-svg {
     -fx-fill: #ff6868;
 }
 
-/* Determinate mode - Static progress arc */
 .progress-indicator:determinate .spinner .arc {
-    -fx-stroke: #028fffff; /* Dark blue fill */
+    -fx-stroke: #028fffff;
     -fx-stroke-width: 6;
     -fx-stroke-linecap: round;
 }
 
-/* Hide percentage text */
 .progress-indicator .percentage {
     -fx-fill: transparent;
 }
@@ -128,6 +124,7 @@
 .svg-outline {
     -fx-stroke: #ffffff;
 }
+
 /* General styling */
 .progress-indicator {
     -fx-pref-width: 80px;
@@ -159,26 +156,16 @@
     transition-duration: 0.25s;
 }
 
-/* .card-1-shadow-reveal:hover {
-    -fx-scale-x: 0.99;
-    -fx-scale-y: 0.99;
-    -fx-effect: dropshadow(three-pass-box, #028fffff, 16, 0, 0, 0);
-} */
-
 .data-card {
     -fx-effect: dropshadow(three-pass-box, #212e54, 8, 0, 0, 0);
     -fx-background-color: #192b61;
     -fx-scale-x: 1;
     -fx-scale-y: 1;
     transition-property: -fx-background-color;
-    /* transition-property: -fx-scale-x, -fx-scale-y; */
     transition-duration: 0.25s;
 }
 
 .data-card:hover {
-    /* -fx-scale-x: 0.99;
-    -fx-scale-y: 0.99; */
-    /* -fx-effect: dropshadow(three-pass-box, #ababab, 16, 0, 0, 0); */
     -fx-background-color: #1c3683;
 }
 
@@ -286,7 +273,6 @@
     -fx-border-radius: 5px;
     -fx-border-width: 2px;
     -fx-border-color: #028fffff;
-
     -fx-text-fill: #ffffff;
     transition: -fx-background-color 0.25s;
     -fx-font-family: "Bahnschrift SemiBold Condensed";
@@ -358,31 +344,22 @@
 
 /* ScrollPane */
 
-/* .text-area .scroll-bar, */
 .scroll-bar {
     -fx-background-color: #202943;
     -fx-background-radius: 10px;
 }
 
-/* .text-area .scroll-bar .viewport, */
 .scroll-bar .viewport {
     -fx-background-color: transparent;
     -fx-background-radius: 10px;
     -fx-border-width: 0px;
 }
 
-/* .text-area .scroll-bar .viewport .content, */
 .scroll-bar .viewport .vbox {
     -fx-background-color: transparent;
     -fx-background-radius: 10 0 0 10;
 }
 
-/* .text-area .scroll-bar .increment-button, */
-/* .text-area .scroll-bar .increment-arrow, */
-/* .text-area .scroll-bar .decrement-button, */
-/* .text-area .scroll-bar .decrement-arrow, */
-/* .text-area .scroll-bar .track, */
-/* .text-area .scroll-bar .corner, */
 .scroll-bar .increment-button,
 .scroll-bar .increment-arrow,
 .scroll-bar .decrement-button,
@@ -393,14 +370,12 @@
     -fx-border-width: 0px;
 }
 
-/* .text-area .scroll-bar .track-background, */
 .scroll-bar .track-background {
     -fx-background-color: #202943;
     -fx-background-radius: 0 10 10 0;
     -fx-border-width: 0px;
 }
 
-/* .text-area .scroll-bar .thumb, */
 .scroll-bar .thumb {
     -fx-background-color: #028fffff;
     -fx-background-radius: 20px;
@@ -430,13 +405,9 @@
 /* Root BorderPane */
 .root {
     -fx-background-radius: 20px;
-    /* -fx-background-color: #191e2d; */
-    /* -fx-background-color: #202a46; */
     -fx-background-color: #151b2d;
     -fx-border-radius: 15px;
     -fx-border-width: 2px;
-    /* -fx-border-color: #202a46; */
-    /* -fx-border-color: #191e2d; */
     -fx-border-color: #202943;
 }
 
@@ -676,23 +647,8 @@
 
 
 .table .table-cell {
-    /* -fx-background-color: #202943; */
-    /* -fx-border-radius: 0px; */
     -fx-text-fill: #ffffff;
-    /* -fx-border-width: 2px; */
 }
-
-/* .table .table-cell:hover {
-    -fx-background-color: #233979;
-}
-
-.table .table-cell:selected  {
-    -fx-background-color: #233979;
-}
-
-.table .table-cell:focuesed {
-    -fx-background-color: #233979;
-} */
 
 .table .table-row-cell {
     -fx-background-color: #202943;
@@ -783,4 +739,15 @@
 .table .column-header-background .column-header:focused:hover {
     -fx-border-color: #028fff;
     -fx-background-color: #202943;
+}
+
+.table {
+    -fx-background-color: #151b2d;
+    -fx-background-color: #202943;
+    -fx-background-color: #23315d;
+    -fx-background-color: #212e54;
+    -fx-background-color: #192b61;
+    -fx-background-color: #1c3683;
+    -fx-background-color: #0e319a;
+    -fx-background-color: #233979;
 }
