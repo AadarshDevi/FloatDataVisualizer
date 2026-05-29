@@ -1,6 +1,7 @@
 package com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.pages.connections.datacard;
 
 import com.alphagen.studio.FloatDataVisualizer.buoyui.Controller;
+import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.constants.Debug;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.data.ConnectionConfig;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.data.ConnectionType;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.managers.Connections;
@@ -174,14 +175,17 @@ public class DataCardController extends Controller {
 			System.err.println("Connection Disabled: " + connectionConfig.connectionName());
 			return;
 		}
+
 		System.out.println(" >>> Connection Data Card > " + connectionConfig);
 		Connections.setCurrentConnection(this.connectionConfig);
 		System.out.println("\nSerial Graph");
 		Stage stage = StageManager.getMainStage();
 		GrapherController gc = StageManager.setGraphingScene();
 		ControllerManager.setGrapherController(gc);
-//		gc.setup();
 		stage.setScene(StageManager.getGraphingScene());
+		if (!Debug.useWindowModes) {
+			gc.fullscreen();
+		}
 	}
 
 	@FXML
