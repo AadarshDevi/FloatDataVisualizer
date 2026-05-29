@@ -1,7 +1,7 @@
 package com.alphagen.studio.FloatDataVisualizer.buoyui.backend.processor;
 
 import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.data.DataPoint;
-import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.managers.ConnectionManager;
+import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.managers.Connections;
 import lombok.Getter;
 
 import java.util.Arrays;
@@ -41,7 +41,7 @@ public class DataPointProcessor implements Runnable {
 				DataPoint dp = DataPoint.builder()
 					.teamInfo(parsed[0])
 					.packetNum(Integer.parseInt(parsed[1].replaceAll(
-						ConnectionManager.getCurrentConnection()
+						Connections.getCurrentConnection()
 							.floatConfig().pkt(),
 						""
 					)))

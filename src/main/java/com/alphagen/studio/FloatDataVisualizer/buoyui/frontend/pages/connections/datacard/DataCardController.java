@@ -1,11 +1,9 @@
 package com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.pages.connections.datacard;
 
 import com.alphagen.studio.FloatDataVisualizer.buoyui.Controller;
-import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.constants.FolderConstants;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.data.ConnectionConfig;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.data.ConnectionType;
-import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.processor.ConnectionProcessor;
-import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.managers.ConnectionManager;
+import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.managers.Connections;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.managers.ControllerManager;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.managers.StageManager;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.pages.PageConstants;
@@ -25,8 +23,6 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
 import java.util.Optional;
 
 public class DataCardController extends Controller {
@@ -70,14 +66,7 @@ public class DataCardController extends Controller {
 
 		System.out.println("Deleting Connection");
 
-		Path connectionFile = FolderConstants.CONNECTIONS.resolve(connectionConfig.connectionName() + FolderConstants.FLOAT_CONNECTION_FILE_EXTENSION);
-		try {
-			Files.delete(connectionFile);
-		} catch (IOException e) {
-			System.err.println("Unable to delete connection: " + connectionConfig.connectionName());
-			System.err.println(e.getMessage());
-			return;
-		}
+		Connections.getInstance().delete(connectionConfig.connectionName());
 
 		ControllerManager.getConnectionsController().deleteConnection(dataCard);
 		System.out.println("Deleted Connection: " + connectionConfig.connectionName());
@@ -186,7 +175,7 @@ public class DataCardController extends Controller {
 			return;
 		}
 		System.out.println(" >>> Connection Data Card > " + connectionConfig);
-		ConnectionManager.setCurrentConnection(this.connectionConfig);
+		Connections.setCurrentConnection(this.connectionConfig);
 		System.out.println("\nSerial Graph");
 		Stage stage = StageManager.getMainStage();
 		GrapherController gc = StageManager.setGraphingScene();
@@ -244,14 +233,15 @@ public class DataCardController extends Controller {
 
 		if (name == null || name.isBlank()) return;
 
-		success = ConnectionProcessor.renameConnection(connectionConfig, new ConnectionConfig(
-			name,
-			connectionConfig.baudRate(),
-			connectionConfig.port(),
-			connectionConfig.portType(),
-			connectionConfig.floatConfig(),
-			connectionConfig.measurementConfigs()
-		));
+		// fixme: connection rename
+//		success = Connections.Processor.renameConnection(connectionConfig, new ConnectionConfig(
+//			name,
+//			connectionConfig.baudRate(),
+//			connectionConfig.port(),
+//			connectionConfig.portType(),
+//			connectionConfig.floatConfig(),
+//			connectionConfig.measurementConfigs()
+//		));
 
 		if (!success) {
 			Alert alert = new Alert(Alert.AlertType.ERROR);

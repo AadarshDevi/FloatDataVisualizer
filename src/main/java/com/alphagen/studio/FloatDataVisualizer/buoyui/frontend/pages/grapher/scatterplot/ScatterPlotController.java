@@ -2,7 +2,7 @@ package com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.pages.grapher.sc
 
 import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.data.ConnectionConfig;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.data.MeasurementConfig;
-import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.managers.ConnectionManager;
+import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.managers.Connections;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.managers.StageManager;
 import javafx.application.Platform;
 import javafx.embed.swing.SwingFXUtils;
@@ -24,7 +24,7 @@ import java.io.File;
 import java.io.IOException;
 
 public class ScatterPlotController {
-	private static final ConnectionConfig cc = ConnectionManager.getCurrentConnection();
+	private static final ConnectionConfig cc = Connections.getCurrentConnection();
 	private final double zoomX = 1.0;
 	private final double zoomY = 1.0;
 	@Getter
