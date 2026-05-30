@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="776164ce-7a69-48e2-8934-c0376db3d4b9" name="Changes" comment="pom.xml ready for exe creation">
+    <list default="true" id="776164ce-7a69-48e2-8934-c0376db3d4b9" name="Changes" comment="updated README. all contents will be placed into the Wiki instead of the README.md">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
@@ -68,61 +68,61 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.0" />
-      <entry key="MS500" value="1.0000163878507695" />
-      <entry key="S2" value="1.135996582767385" />
-      <entry key="S5" value="2.513728323367346" />
-      <entry key="S10" value="5.476976733430406" />
-      <entry key="S30" value="16.78982833863507" />
-      <entry key="S60" value="26.33216396811082" />
-      <entry key="M2" value="34.3515510565696" />
-      <entry key="M5" value="44.03552545212081" />
-      <entry key="M10" value="53.60474768042547" />
-      <entry key="M15" value="60.65417240628961" />
-      <entry key="M30" value="81.92493837178434" />
-      <entry key="H1" value="141.32940715423516" />
-      <entry key="H2" value="289.8722811170352" />
-      <entry key="H4" value="541.4022782467646" />
-      <entry key="D1" value="1116.2780923364683" />
-      <entry key="W1" value="1290.5896389363088" />
+      <entry key="MS100" value="1.0339606637308671" />
+      <entry key="MS500" value="1.5652794072836027" />
+      <entry key="S2" value="2.632102642817617" />
+      <entry key="S5" value="3.353695793758605" />
+      <entry key="S10" value="4.469470169402644" />
+      <entry key="S30" value="12.260132322631941" />
+      <entry key="S60" value="22.837264616211645" />
+      <entry key="M2" value="42.205389586839196" />
+      <entry key="M5" value="88.3887251997671" />
+      <entry key="M10" value="130.18605793763578" />
+      <entry key="M15" value="153.2759508830571" />
+      <entry key="M30" value="193.7874379422701" />
+      <entry key="H1" value="262.38117776680986" />
+      <entry key="H2" value="414.15113117180096" />
+      <entry key="H4" value="668.654756832561" />
+      <entry key="D1" value="1255.4919266535755" />
+      <entry key="W1" value="1434.6400954444644" />
     </decayedCancelled>
     <decayedSelected>
       <entry key="MS100" value="0.0" />
       <entry key="MS500" value="0.0" />
-      <entry key="S2" value="2.9377145470548945E-192" />
-      <entry key="S5" value="2.4389552813557678E-77" />
-      <entry key="S10" value="4.9385780153357545E-39" />
-      <entry key="S30" value="1.7029450698116816E-13" />
-      <entry key="S60" value="4.1266755019163777E-7" />
-      <entry key="M2" value="6.423920534177212E-4" />
-      <entry key="M5" value="0.0528743666080729" />
-      <entry key="M10" value="0.2402271325284243" />
-      <entry key="M15" value="0.4755468283994676" />
-      <entry key="M30" value="1.9423303850287346" />
-      <entry key="H1" value="9.641883510491125" />
-      <entry key="H2" value="36.53548172169579" />
-      <entry key="H4" value="86.33885217847104" />
-      <entry key="D1" value="197.56467824426463" />
-      <entry key="W1" value="230.02566649121366" />
+      <entry key="S2" value="1.2038460029950773E-283" />
+      <entry key="S5" value="6.79560886253132E-114" />
+      <entry key="S10" value="2.6068388639368045E-57" />
+      <entry key="S30" value="1.3762734408918422E-19" />
+      <entry key="S60" value="3.7098159535101437E-10" />
+      <entry key="M2" value="1.9260882519844467E-5" />
+      <entry key="M5" value="0.013001563662628116" />
+      <entry key="M10" value="0.1191234497436816" />
+      <entry key="M15" value="0.2979271571349119" />
+      <entry key="M30" value="1.537380986465703" />
+      <entry key="H1" value="8.578099529608687" />
+      <entry key="H2" value="34.46112398312824" />
+      <entry key="H4" value="83.85202803616914" />
+      <entry key="D1" value="196.60467996816087" />
+      <entry key="W1" value="229.8656570494011" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="0.9460576467255959" />
-      <entry key="MS500" value="0.9889871225358569" />
-      <entry key="S2" value="1.132811578412934" />
-      <entry key="S5" value="2.510606277055573" />
-      <entry key="S10" value="5.473151153718048" />
-      <entry key="S30" value="16.78493097854197" />
-      <entry key="S60" value="26.328112449479693" />
-      <entry key="M2" value="34.34945027821181" />
-      <entry key="M5" value="44.08625030704545" />
-      <entry key="M10" value="53.84278812214253" />
-      <entry key="M15" value="61.127509403564325" />
-      <entry key="M30" value="83.86413268717583" />
-      <entry key="H1" value="150.96403641525106" />
-      <entry key="H2" value="326.3930667688714" />
-      <entry key="H4" value="627.722956614894" />
-      <entry key="D1" value="1313.8356096789003" />
-      <entry key="W1" value="1520.6141087275669" />
+      <entry key="MS100" value="0.9714295666686699" />
+      <entry key="MS500" value="1.545933887880465" />
+      <entry key="S2" value="2.6240652448329302" />
+      <entry key="S5" value="3.3496165869485166" />
+      <entry key="S10" value="4.466730891136067" />
+      <entry key="S30" value="12.25752050815018" />
+      <entry key="S60" value="22.83476113419196" />
+      <entry key="M2" value="42.202478991374896" />
+      <entry key="M5" value="88.39761192197398" />
+      <entry key="M10" value="130.30109612451594" />
+      <entry key="M15" value="153.57009089363333" />
+      <entry key="M30" value="195.32088681554697" />
+      <entry key="H1" value="270.9520256699216" />
+      <entry key="H2" value="448.5979748966438" />
+      <entry key="H4" value="752.4889201000186" />
+      <entry key="D1" value="1452.0894440490183" />
+      <entry key="W1" value="1664.5045513986856" />
     </decayedShown>
   </component>
   <component name="OptimizeOnSaveOptions">
@@ -249,14 +249,6 @@
       <workItem from="1766969579896" duration="1000" />
       <workItem from="1766969593668" duration="4000" />
       <workItem from="1766969654651" duration="15000" />
-    </task>
-    <task id="LOCAL-00443" summary="something idea file">
-      <option name="closed" value="true" />
-      <created>1780077072213</created>
-      <option name="number" value="00443" />
-      <option name="presentableId" value="LOCAL-00443" />
-      <option name="project" value="LOCAL" />
-      <updated>1780077072213</updated>
     </task>
     <task id="LOCAL-00444" summary="getting scrollpane from fxml">
       <option name="closed" value="true" />
@@ -642,7 +634,15 @@
       <option name="project" value="LOCAL" />
       <updated>1780110155519</updated>
     </task>
-    <option name="localTasksCounter" value="492" />
+    <task id="LOCAL-00492" summary="updated README. all contents will be placed into the Wiki instead of the README.md">
+      <option name="closed" value="true" />
+      <created>1780111750130</created>
+      <option name="number" value="00492" />
+      <option name="presentableId" value="LOCAL-00492" />
+      <option name="project" value="LOCAL" />
+      <updated>1780111750131</updated>
+    </task>
+    <option name="localTasksCounter" value="493" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -672,7 +672,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="formatting changes" />
     <MESSAGE value="datapoints will not be printed on the terminal" />
     <MESSAGE value="appendText = scroll down&#10;scrollTo = scroll down" />
     <MESSAGE value="a atomic var iis final" />
@@ -697,7 +696,8 @@
     <MESSAGE value="selection combo box css works now" />
     <MESSAGE value="fixed a few ui issues" />
     <MESSAGE value="pom.xml ready for exe creation" />
-    <option name="LAST_COMMIT_MESSAGE" value="pom.xml ready for exe creation" />
+    <MESSAGE value="updated README. all contents will be placed into the Wiki instead of the README.md" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated README. all contents will be placed into the Wiki instead of the README.md" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -3,24 +3,61 @@
 The Float Data Visualizer is a Data Acquisition Application that gets data from your team's
 profiling float and displays the data using scatter plots and a table.
 
-## Getting Started
-
-Please follow each step to get started in using the app. It goes in detail so you, the user can feel comfortable using
-the app.
-
-### Bug Report
+## Bug Report
 
 If you find any issues, please use the [Issues Page](https://github.com/AadarshDevi/FloatDataVisualizer/issues) to
 report bugs, glitches etc. Before reporting the bug, it is recommended to use the Console version of the app so that I
 can use it to fix the app.
 
-### Resources
+## Resources
 
-Any information about the app can be found in the (Float Data Visualizer
-Wiki)[https://github.com/AadarshDevi/FloatDataVisualizer/wiki]. Some quick Links:
+Any information about the app, including (Getting Started)[] can be found in the (Float Data Visualizer
+Wiki)[https://github.com/AadarshDevi/FloatDataVisualizer/wiki].
 
-1. Downloads
-2. Getting Started
+## Community Notes
+
+From Float Data Visualizer v2.0.0 onward, the app will be updated less frequently.
+
+## Table of Contents (For wiki)
+
+1. Getting Started
+    2. Glitches
+    3. Bug reports
+    4. Feature requests
+2. Connection Page
+    4. change theme
+    5. Auto Connection
+    3. Create Connection
+        4. Autofill Fields
+        5. Reset Fields
+    3. Delete Connection
+        4. Delete All
+    5. View Measurements
+2. Grapher Page
+    3. Tabs
+        4. Config Tab
+        4. Terminal Tab
+        5. Table Tab
+        6. Graph Tabs
+    7. Data
+        8. Collect
+        9. Export Raw
+        10. Export CSV
+    11. Graphs
+        12. Screenshots (dark mode disclaimer)
+        13. Size Changes: Increase & Decrease
+            14. Width & Height
+            15. Width
+            16. height
+        14.
+4. Downloads
+    5. latest release
+    6. all releases
+5. Technical Documentation
+    6. Programming Lang, loggers, ui, threading, etc
+    7. Project info: author name, project name
+
+# Delete Below
 
 ### Download
 
