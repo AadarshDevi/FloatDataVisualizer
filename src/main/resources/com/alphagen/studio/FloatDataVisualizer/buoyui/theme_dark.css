@@ -1,4 +1,3 @@
-
 @font-face {
     font-family: "Bahnschrift";
     src: url(fonts/bahnschrift.ttf);
@@ -46,10 +45,10 @@
 
 .progress-indicator:indeterminate .spinner .segment {
     -fx-background-color: radial-gradient(
-        center 50% 50%,
-        radius 50%,
-        #028fffff 40%,
-        #028fffff 70%
+            center 50% 50%,
+            radius 50%,
+            #028fffff 40%,
+            #028fffff 70%
     );
 }
 
@@ -61,8 +60,12 @@
 
 .scatter-plot .axis {
     -fx-background-color: #202943;
-    -fx-tick-label-fill: #ffffff !important; 
+    -fx-tick-label-fill: #ffffff !important;
     -fx-axis-label-fill: #ffffff !important;
+}
+
+.axis:bottom, .axis:left, .axis:right, .axis:top {
+    -fx-background-color: #202943 !important;
 }
 
 .scatter-plot .chart .chart-content {
@@ -93,12 +96,12 @@
 
 .scatter-plot .chart-legend-item {
     -fx-text-fill: #ffffff !important;
-    -fx-background-color: transparent;
+    -fx-background-color: #151b2d;
 }
 
 .scatter-plot .chart-legend-item .text {
     -fx-fill: #ffffff !important;
-    -fx-background-color: transparent;
+    -fx-background-color: #202943;
 }
 
 .quit-svg {
@@ -150,9 +153,8 @@
     -fx-background-color: #0e319a;
     -fx-scale-x: 1;
     -fx-scale-y: 1;
-    transition-property:
-        -fx-scale-x,
-        -fx-scale-y;
+    transition-property: -fx-scale-x,
+    -fx-scale-y;
     transition-duration: 0.25s;
 }
 
@@ -280,9 +282,17 @@
     -fx-font-size: 13px;
 }
 
-.seletion-combo-box:hover {-fx-background-color: #23315d;}
-.seletion-combo-box:selected {-fx-background-color: #23315d;}
-.seletion-combo-box:focused {-fx-background-color: #23315d;}
+.seletion-combo-box:hover {
+    -fx-background-color: #23315d;
+}
+
+.seletion-combo-box:selected {
+    -fx-background-color: #23315d;
+}
+
+.seletion-combo-box:focused {
+    -fx-background-color: #23315d;
+}
 
 .seletion-combo-box .menu-item {
     -fx-background-radius: 5px;
@@ -347,6 +357,14 @@
 .scroll-bar {
     -fx-background-color: #202943;
     -fx-background-radius: 10px;
+    -fx-background-insets: 0;
+    -fx-padding: 0;
+}
+
+.scroll-bar:focused,
+.scroll-bar > .filler,
+.scroll-bar > .viewport {
+    -fx-background-color: #202943;
 }
 
 .scroll-bar .viewport {
@@ -356,7 +374,7 @@
 }
 
 .scroll-bar .viewport .vbox {
-    -fx-background-color: transparent;
+    -fx-background-color: #202943;
     -fx-background-radius: 10 0 0 10;
 }
 
@@ -364,9 +382,13 @@
 .scroll-bar .increment-arrow,
 .scroll-bar .decrement-button,
 .scroll-bar .decrement-arrow,
-.scroll-bar .track,
+.scroll-bar .track {
+    -fx-background-color: #202943 !important;
+    -fx-border-width: 0px;
+}
+
 .scroll-bar .corner {
-    -fx-background-color: transparent;
+    -fx-background-color: #202943;
     -fx-border-width: 0px;
 }
 
@@ -454,7 +476,7 @@
 
 .text-area {
     -fx-text-inner-color: #ffffff !important;
-    
+
     -fx-background-color: #202943;
     -fx-background-radius: 5px;
     -fx-border-width: 0px;
@@ -468,7 +490,7 @@
 }
 
 .text-area .scroll-pane,
-.text-area .viewport{
+.text-area .viewport {
     -fx-background-color: #202943;
     -fx-background-radius: 5px;
 }
@@ -489,7 +511,7 @@
     -fx-padding: 5px;
 }
 
-.text-area .context-menu  .menu-item,
+.text-area .context-menu .menu-item,
 .text-box .context-menu .menu-item,
 .popup-menu .menu-item {
     -fx-padding: 1 100 1 5;
@@ -504,7 +526,7 @@
     -fx-font-size: 13px;
 }
 
-.text-area .context-menu  .menu-item .label,
+.text-area .context-menu .menu-item .label,
 .text-box .context-menu .menu-item .label,
 .popup-menu .menu-item .label {
     -fx-text-fill: #ffffff;
