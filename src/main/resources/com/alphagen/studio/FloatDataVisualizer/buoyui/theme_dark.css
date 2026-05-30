@@ -284,24 +284,39 @@
 
     -fx-border-radius: 5px;
     -fx-border-width: 2px;
-    -fx-border-color: #028fffff;
-    -fx-text-fill: #ffffff;
-    transition: -fx-background-color 0.25s;
+    -fx-border-color: #028fff;
+
     -fx-font-family: "Bahnschrift SemiBold Condensed";
     -fx-font-weight: bold;
     -fx-font-size: 13px;
+   -fx-text-base-color: #ffffff !important;
 }
 
-.seletion-combo-box:hover {
-    -fx-background-color: #23315d;
-}
 
-.seletion-combo-box:selected {
-    -fx-background-color: #23315d;
-}
-
+.seletion-combo-box:hover,
 .seletion-combo-box:focused {
     -fx-background-color: #23315d;
+}
+
+.seletion-combo-box .list-cell {
+    -fx-text-fill: #ffffff;
+}
+
+.seletion-combo-box .list-view .list-cell {
+    -fx-text-fill: #ffffff;
+}
+
+.seletion-combo-box .list-view .list-cell:focused {
+    -fx-text-fill: #ffffff;
+}
+
+.seletion-combo-box .list-view .list-cell:hover {
+    -fx-text-fill: #ffffff;
+}
+
+.seletion-combo-box .cell:filled:hover {
+    -fx-background-color: #028fff;
+    -fx-text-fill: #ffffff !important;
 }
 
 .seletion-combo-box .menu-item {
@@ -321,33 +336,17 @@
     -fx-background-color: #028fffff;
 }
 
-.seletion-combo-box .menu-item:focused {
-    -fx-background-color: #028fffff;
-    -fx-text-fill: #ffffff;
-}
-
-.seletion-combo-box .menu-item:selected {
-    -fx-background-color: #028fffff;
-    -fx-text-fill: #ffffff;
-}
-
-.seletion-combo-box .menu-item:hover {
+.seletion-combo-box .menu-item:focused,
+.seletion-combo-box .menu-item:selected,
+.seletion-combo-box .menu-item:hover,
+.seletion-combo-box .list-cell:selected,
+.seletion-combo-box .list-cell:focused {
     -fx-background-color: #028fffff;
     -fx-text-fill: #ffffff;
 }
 
 .seletion-combo-box .list-cell {
     -fx-background-color: #202943;
-    -fx-text-fill: #ffffff;
-}
-
-.seletion-combo-box .list-cell:selected {
-    -fx-background-color: #028fffff;
-    -fx-text-fill: #ffffff;
-}
-
-.seletion-combo-box .list-cell:focused {
-    -fx-background-color: #028fffff;
     -fx-text-fill: #ffffff;
 }
 

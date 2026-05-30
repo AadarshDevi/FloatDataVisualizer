@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="776164ce-7a69-48e2-8934-c0376db3d4b9" name="Changes" comment="">
+    <list default="true" id="776164ce-7a69-48e2-8934-c0376db3d4b9" name="Changes" comment="delete all menu item after export all menu item">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/alphagen/studio/FloatDataVisualizer/buoyui/frontend/pages/connections/Connections_v5.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/alphagen/studio/FloatDataVisualizer/buoyui/frontend/pages/connections/Connections_v5.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/alphagen/studio/FloatDataVisualizer/buoyui/theme_dark.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/alphagen/studio/FloatDataVisualizer/buoyui/theme_dark.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,61 +68,61 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.0254707200679796" />
-      <entry key="MS500" value="2.0325193152608163" />
-      <entry key="S2" value="5.293559203091077" />
-      <entry key="S5" value="9.771543372597629" />
-      <entry key="S10" value="14.668566108985189" />
-      <entry key="S30" value="22.275323231955173" />
-      <entry key="S60" value="25.57639376852274" />
-      <entry key="M2" value="27.72296657826916" />
-      <entry key="M5" value="30.335536773386767" />
-      <entry key="M10" value="37.18003295330021" />
-      <entry key="M15" value="46.73964349934589" />
-      <entry key="M30" value="80.74766944348123" />
-      <entry key="H1" value="162.38779041347541" />
-      <entry key="H2" value="329.92266299104716" />
-      <entry key="H4" value="574.1819448089524" />
-      <entry key="D1" value="1064.710175249397" />
-      <entry key="W1" value="1203.5431029076876" />
+      <entry key="MS100" value="1.0096915016150563" />
+      <entry key="MS500" value="1.711950571686565" />
+      <entry key="S2" value="5.131162024289002" />
+      <entry key="S5" value="11.303364096692112" />
+      <entry key="S10" value="18.400948409754914" />
+      <entry key="S30" value="29.930167626691436" />
+      <entry key="S60" value="35.05604634831307" />
+      <entry key="M2" value="38.35069097955815" />
+      <entry key="M5" value="41.73705061698277" />
+      <entry key="M10" value="48.822935387277816" />
+      <entry key="M15" value="58.44842117454352" />
+      <entry key="M30" value="92.507742780506" />
+      <entry key="H1" value="174.1546939233547" />
+      <entry key="H2" value="341.69003705885945" />
+      <entry key="H4" value="585.981007913335" />
+      <entry key="D1" value="1076.6483595490718" />
+      <entry key="W1" value="1215.5331267423492" />
     </decayedCancelled>
     <decayedSelected>
       <entry key="MS100" value="0.0" />
-      <entry key="MS500" value="1.1549996167254571E-294" />
-      <entry key="S2" value="4.337998953281574E-74" />
-      <entry key="S5" value="7.649767037600367E-30" />
-      <entry key="S10" value="5.043554984485969E-15" />
-      <entry key="S30" value="4.214878270642758E-5" />
-      <entry key="S60" value="0.0129640343923871" />
-      <entry key="M2" value="0.2327496871307734" />
-      <entry key="M5" value="1.4741255002830487" />
-      <entry key="M10" value="3.2094146093100155" />
-      <entry key="M15" value="4.602921870614188" />
-      <entry key="M30" value="9.010125912654399" />
-      <entry key="H1" value="23.061085114458123" />
-      <entry key="H2" value="57.519085628727446" />
-      <entry key="H4" value="108.47271776925828" />
-      <entry key="D1" value="204.5690041469218" />
-      <entry key="W1" value="230.33506053874223" />
+      <entry key="MS500" value="5.364831456032743E-299" />
+      <entry key="S2" value="3.581236510825653E-75" />
+      <entry key="S5" value="2.8206268375711678E-30" />
+      <entry key="S10" value="3.0625661071734695E-15" />
+      <entry key="S30" value="3.569175805686186E-5" />
+      <entry key="S60" value="0.011929757796885319" />
+      <entry key="M2" value="0.2232722926292132" />
+      <entry key="M5" value="1.4498155362240441" />
+      <entry key="M10" value="3.1828411947965325" />
+      <entry key="M15" value="4.577479065269462" />
+      <entry key="M30" value="8.985189518808028" />
+      <entry key="H1" value="23.02915111365747" />
+      <entry key="H2" value="57.47924685176758" />
+      <entry key="H4" value="108.43514616241461" />
+      <entry key="D1" value="204.5571930423502" />
+      <entry key="W1" value="230.33316067069174" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="0.9907112610636045" />
-      <entry key="MS500" value="2.02018453241421" />
-      <entry key="S2" value="5.286263994606417" />
-      <entry key="S5" value="9.765995215433279" />
-      <entry key="S10" value="14.657662478980045" />
-      <entry key="S30" value="22.23354897108019" />
-      <entry key="S60" value="25.547377430629854" />
-      <entry key="M2" value="27.924589161531358" />
-      <entry key="M5" value="31.790458084442204" />
-      <entry key="M10" value="40.37513000706137" />
-      <entry key="M15" value="51.33002606042783" />
-      <entry key="M30" value="89.74578000694089" />
-      <entry key="H1" value="185.43212905525655" />
-      <entry key="H2" value="387.41876837087045" />
-      <entry key="H4" value="682.6318806736119" />
-      <entry key="D1" value="1269.271770391834" />
-      <entry key="W1" value="1433.876965908846" />
+      <entry key="MS100" value="0.9820154289605296" />
+      <entry key="MS500" value="1.7011632623286763" />
+      <entry key="S2" value="5.119827341115238" />
+      <entry key="S5" value="11.291811702879025" />
+      <entry key="S10" value="18.387707497103964" />
+      <entry key="S30" value="29.89199489282505" />
+      <entry key="S60" value="35.0278574490169" />
+      <entry key="M2" value="38.543336533273354" />
+      <entry key="M5" value="43.16766604577319" />
+      <entry key="M10" value="51.99142028865257" />
+      <entry key="M15" value="63.01332516710277" />
+      <entry key="M30" value="101.48089755713433" />
+      <entry key="H1" value="197.16709540344195" />
+      <entry key="H2" value="399.1463063960705" />
+      <entry key="H4" value="694.3933734692893" />
+      <entry key="D1" value="1281.1981429156676" />
+      <entry key="W1" value="1445.8650897283237" />
     </decayedShown>
   </component>
   <component name="OptimizeOnSaveOptions">
@@ -249,14 +249,6 @@
       <workItem from="1766969579896" duration="1000" />
       <workItem from="1766969593668" duration="4000" />
       <workItem from="1766969654651" duration="15000" />
-    </task>
-    <task id="LOCAL-00438" summary="using debug:useWindowModes to disable fullscreen funcs">
-      <option name="closed" value="true" />
-      <created>1780076927117</created>
-      <option name="number" value="00438" />
-      <option name="presentableId" value="LOCAL-00438" />
-      <option name="project" value="LOCAL" />
-      <updated>1780076927117</updated>
     </task>
     <task id="LOCAL-00439" summary="using debug:useWindowModes to disable fullscreen funcs">
       <option name="closed" value="true" />
@@ -642,7 +634,15 @@
       <option name="project" value="LOCAL" />
       <updated>1780104093326</updated>
     </task>
-    <option name="localTasksCounter" value="487" />
+    <task id="LOCAL-00487" summary="delete all menu item after export all menu item">
+      <option name="closed" value="true" />
+      <created>1780105239182</created>
+      <option name="number" value="00487" />
+      <option name="presentableId" value="LOCAL-00487" />
+      <option name="project" value="LOCAL" />
+      <updated>1780105239182</updated>
+    </task>
+    <option name="localTasksCounter" value="488" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -672,7 +672,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="replaced random exception toa more better exception" />
     <MESSAGE value="theme can now be read from float.settings" />
     <MESSAGE value="theme can now be wrote to float.settings when quitting app" />
     <MESSAGE value="float.settings can now read and write theme" />
@@ -697,7 +696,8 @@
     <MESSAGE value="idea file" />
     <MESSAGE value="bug: .csv exists in file name, it still adds .csv" />
     <MESSAGE value="found a way to stop hardware disconnected aka unable to start from trying to gather information" />
-    <option name="LAST_COMMIT_MESSAGE" value="found a way to stop hardware disconnected aka unable to start from trying to gather information" />
+    <MESSAGE value="delete all menu item after export all menu item" />
+    <option name="LAST_COMMIT_MESSAGE" value="delete all menu item after export all menu item" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
