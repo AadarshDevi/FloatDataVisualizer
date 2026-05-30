@@ -326,9 +326,13 @@ public class GrapherController {
 		FileChooser fileChooser = new FileChooser();
 		fileChooser.setTitle("Export Screenshot");
 		File rawPath = fileChooser.showSaveDialog(StageManager.getMainStage());
+		File file;
 
 		if (rawPath == null) return;
-		File file = new File(rawPath.getAbsolutePath() + ".csv");
+		if (rawPath.getName().endsWith(".csv"))
+			file = new File(rawPath.getAbsolutePath());
+		else
+			file = new File(rawPath.getAbsolutePath() + ".csv");
 
 		try (BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(file))) {
 
@@ -379,12 +383,15 @@ public class GrapherController {
 		FileChooser fileChooser = new FileChooser();
 		fileChooser.setTitle("Export Screenshot");
 		File rawPath = fileChooser.showSaveDialog(StageManager.getMainStage());
+		File file;
 
 		if (rawPath == null) return;
-		File file = new File(rawPath.getAbsolutePath() + ".csv");
+		if (rawPath.getName().endsWith(".csv"))
+			file = new File(rawPath.getAbsolutePath());
+		else
+			file = new File(rawPath.getAbsolutePath() + ".csv");
 
 		try (BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(file))) {
-
 			for (DataPoint dp : list) {
 				bufferedWriter.write(dp.toRaw());
 				bufferedWriter.newLine();

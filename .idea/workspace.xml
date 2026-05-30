@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="776164ce-7a69-48e2-8934-c0376db3d4b9" name="Changes" comment="screenshot during dark theme broken">
+    <list default="true" id="776164ce-7a69-48e2-8934-c0376db3d4b9" name="Changes" comment="idea file">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/buoyui/frontend/pages/grapher/scatterplot/ScatterPlotController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/buoyui/frontend/pages/grapher/scatterplot/ScatterPlotController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/alphagen/studio/FloatDataVisualizer/buoyui/frontend/pages/grapher/scatterplot/ScatterPlot_v2.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/alphagen/studio/FloatDataVisualizer/buoyui/frontend/pages/grapher/scatterplot/ScatterPlot_v2.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/alphagen/studio/FloatDataVisualizer/buoyui/theme_dark.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/alphagen/studio/FloatDataVisualizer/buoyui/theme_dark.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/buoyui/frontend/pages/grapher/GrapherController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/buoyui/frontend/pages/grapher/GrapherController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,59 +70,59 @@
     <decayedCancelled>
       <entry key="MS100" value="1.0" />
       <entry key="MS500" value="1.0" />
-      <entry key="S2" value="1.0" />
-      <entry key="S5" value="1.0" />
-      <entry key="S10" value="1.0000000000000113" />
-      <entry key="S30" value="1.000065720907299" />
-      <entry key="S60" value="1.0294673116837716" />
-      <entry key="M2" value="1.9510532357348542" />
-      <entry key="M5" value="11.490478153197431" />
-      <entry key="M10" value="26.442432128640473" />
-      <entry key="M15" value="38.02050635259555" />
-      <entry key="M30" value="75.61466818836077" />
-      <entry key="H1" value="165.0249041293553" />
-      <entry key="H2" value="335.8242786507396" />
-      <entry key="H4" value="568.9977603832666" />
-      <entry key="D1" value="1009.5367223188784" />
-      <entry key="W1" value="1130.0530931111061" />
+      <entry key="S2" value="1.0000715097755177" />
+      <entry key="S5" value="1.0219657565474534" />
+      <entry key="S10" value="1.1482093101633613" />
+      <entry key="S30" value="1.6080689042061143" />
+      <entry key="S60" value="3.173155041660262" />
+      <entry key="M2" value="8.100222496938748" />
+      <entry key="M5" value="18.57934673131569" />
+      <entry key="M10" value="32.056285315029356" />
+      <entry key="M15" value="44.004954127223336" />
+      <entry key="M30" value="81.07473723705043" />
+      <entry key="H1" value="167.93947604932575" />
+      <entry key="H2" value="337.9188039835875" />
+      <entry key="H4" value="574.9774729711048" />
+      <entry key="D1" value="1031.657464682181" />
+      <entry key="W1" value="1157.950783766562" />
     </decayedCancelled>
     <decayedSelected>
-      <entry key="MS100" value="0.0" />
-      <entry key="MS500" value="2.7733141228507355E-277" />
-      <entry key="S2" value="1.1896191669063332E-69" />
-      <entry key="S5" value="5.209787458850966E-28" />
-      <entry key="S10" value="4.384436259897944E-14" />
-      <entry key="S30" value="8.83886935375086E-5" />
-      <entry key="S60" value="0.019369909862955337" />
-      <entry key="M2" value="0.2988401706393202" />
-      <entry key="M5" value="1.5975018687413756" />
-      <entry key="M10" value="2.8837337528185145" />
-      <entry key="M15" value="3.9228276279022976" />
-      <entry key="M30" value="9.387228458763714" />
-      <entry key="H1" value="27.24752365685943" />
-      <entry key="H2" value="64.74863430815292" />
-      <entry key="H4" value="114.49040206210262" />
-      <entry key="D1" value="200.8371307755591" />
-      <entry key="W1" value="223.01725301154852" />
+      <entry key="MS100" value="1.1455538028957014E-55" />
+      <entry key="MS500" value="1.0364823810652044E-11" />
+      <entry key="S2" value="0.0023370888887704762" />
+      <entry key="S5" value="0.1292048747119584" />
+      <entry key="S10" value="0.5048330339995025" />
+      <entry key="S30" value="1.261999232918611" />
+      <entry key="S60" value="1.5884004286027762" />
+      <entry key="M2" value="1.7845330923818807" />
+      <entry key="M5" value="2.1363837050116383" />
+      <entry key="M10" value="3.0403034444679617" />
+      <entry key="M15" value="4.01508949944109" />
+      <entry key="M30" value="8.763414126833991" />
+      <entry key="H1" value="25.14667187786355" />
+      <entry key="H2" value="61.68365285342768" />
+      <entry key="H4" value="111.92281790306039" />
+      <entry key="D1" value="201.47923985797013" />
+      <entry key="W1" value="224.80122382226617" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="0.757858283255199" />
-      <entry key="MS500" value="0.9460576467255959" />
-      <entry key="S2" value="0.9862327044933592" />
-      <entry key="S5" value="0.9944701686732144" />
-      <entry key="S10" value="0.9972312513521189" />
-      <entry key="S30" value="0.999226007977594" />
-      <entry key="S60" value="1.047880644778753" />
-      <entry key="M2" value="2.2455706621470592" />
-      <entry key="M5" value="13.077970567352862" />
-      <entry key="M10" value="29.31640912920545" />
-      <entry key="M15" value="41.93389479807945" />
-      <entry key="M30" value="84.98901356052366" />
-      <entry key="H1" value="192.25175113418166" />
-      <entry key="H2" value="400.5463124808926" />
-      <entry key="H4" value="683.4636886867684" />
-      <entry key="D1" value="1210.3665025804505" />
-      <entry key="W1" value="1353.069175599467" />
+      <entry key="MS100" value="0.018198962288569622" />
+      <entry key="MS500" value="0.44875502533400863" />
+      <entry key="S2" value="0.8194224618954635" />
+      <entry key="S5" value="1.0266945833522925" />
+      <entry key="S10" value="1.5041819813016444" />
+      <entry key="S30" value="2.7534644122820784" />
+      <entry key="S60" value="4.687305586677309" />
+      <entry key="M2" value="9.842140068351817" />
+      <entry key="M5" value="20.695492752499526" />
+      <entry key="M10" value="35.08313315370181" />
+      <entry key="M15" value="48.00850981179221" />
+      <entry key="M30" value="89.82549483557699" />
+      <entry key="H1" value="193.06688834642168" />
+      <entry key="H2" value="399.5770879587392" />
+      <entry key="H4" value="686.8763684630784" />
+      <entry key="D1" value="1233.1293328314748" />
+      <entry key="W1" value="1382.7508280706745" />
     </decayedShown>
   </component>
   <component name="OptimizeOnSaveOptions">
@@ -251,38 +249,6 @@
       <workItem from="1766969579896" duration="1000" />
       <workItem from="1766969593668" duration="4000" />
       <workItem from="1766969654651" duration="15000" />
-    </task>
-    <task id="LOCAL-00432" summary="added vars for fullscreen in connections editor controller.">
-      <option name="closed" value="true" />
-      <created>1780071732851</created>
-      <option name="number" value="00432" />
-      <option name="presentableId" value="LOCAL-00432" />
-      <option name="project" value="LOCAL" />
-      <updated>1780071732851</updated>
-    </task>
-    <task id="LOCAL-00433" summary="project completed basic fullscreen.">
-      <option name="closed" value="true" />
-      <created>1780071879345</created>
-      <option name="number" value="00433" />
-      <option name="presentableId" value="LOCAL-00433" />
-      <option name="project" value="LOCAL" />
-      <updated>1780071879346</updated>
-    </task>
-    <task id="LOCAL-00434" summary="1. getting scrollpanes">
-      <option name="closed" value="true" />
-      <created>1780076814239</created>
-      <option name="number" value="00434" />
-      <option name="presentableId" value="LOCAL-00434" />
-      <option name="project" value="LOCAL" />
-      <updated>1780076814239</updated>
-    </task>
-    <task id="LOCAL-00435" summary="created a debugger which can enable and disable features">
-      <option name="closed" value="true" />
-      <created>1780076843394</created>
-      <option name="number" value="00435" />
-      <option name="presentableId" value="LOCAL-00435" />
-      <option name="project" value="LOCAL" />
-      <updated>1780076843394</updated>
     </task>
     <task id="LOCAL-00436" summary="something idea file">
       <option name="closed" value="true" />
@@ -644,7 +610,39 @@
       <option name="project" value="LOCAL" />
       <updated>1780100914491</updated>
     </task>
-    <option name="localTasksCounter" value="481" />
+    <task id="LOCAL-00481" summary="formatting">
+      <option name="closed" value="true" />
+      <created>1780102018201</created>
+      <option name="number" value="00481" />
+      <option name="presentableId" value="LOCAL-00481" />
+      <option name="project" value="LOCAL" />
+      <updated>1780102018201</updated>
+    </task>
+    <task id="LOCAL-00482" summary="added alert for the darkmode screenshot">
+      <option name="closed" value="true" />
+      <created>1780102036496</created>
+      <option name="number" value="00482" />
+      <option name="presentableId" value="LOCAL-00482" />
+      <option name="project" value="LOCAL" />
+      <updated>1780102036496</updated>
+    </task>
+    <task id="LOCAL-00483" summary="fixing the dark theme for the scatter chart">
+      <option name="closed" value="true" />
+      <created>1780102053046</created>
+      <option name="number" value="00483" />
+      <option name="presentableId" value="LOCAL-00483" />
+      <option name="project" value="LOCAL" />
+      <updated>1780102053046</updated>
+    </task>
+    <task id="LOCAL-00484" summary="idea file">
+      <option name="closed" value="true" />
+      <created>1780102060114</created>
+      <option name="number" value="00484" />
+      <option name="presentableId" value="LOCAL-00484" />
+      <option name="project" value="LOCAL" />
+      <updated>1780102060115</updated>
+    </task>
+    <option name="localTasksCounter" value="485" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -674,10 +672,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="light and dark themes fixed" />
-    <MESSAGE value="theme processor integrated into code" />
-    <MESSAGE value="there are 2 theme constants. need to remove them." />
-    <MESSAGE value="themes integration fully completed." />
     <MESSAGE value="getting root borderpane" />
     <MESSAGE value="methods to change global theme var and apply the correct theme" />
     <MESSAGE value="replaced random exception toa more better exception" />
@@ -699,7 +693,11 @@
     <MESSAGE value="something idea file" />
     <MESSAGE value="fixed the screenshot having the white border.&#10;screenshot of root instead of just the graph" />
     <MESSAGE value="screenshot during dark theme broken" />
-    <option name="LAST_COMMIT_MESSAGE" value="screenshot during dark theme broken" />
+    <MESSAGE value="formatting" />
+    <MESSAGE value="added alert for the darkmode screenshot" />
+    <MESSAGE value="fixing the dark theme for the scatter chart" />
+    <MESSAGE value="idea file" />
+    <option name="LAST_COMMIT_MESSAGE" value="idea file" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
