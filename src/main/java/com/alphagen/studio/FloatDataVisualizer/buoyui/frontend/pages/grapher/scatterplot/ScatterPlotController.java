@@ -1,5 +1,7 @@
 package com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.pages.grapher.scatterplot;
 
+import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.app.theme.Theme;
+import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.app.theme.ThemeProcessor;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.data.ConnectionConfig;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.data.MeasurementConfig;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.managers.Connections;
@@ -12,10 +14,7 @@ import javafx.scene.SnapshotParameters;
 import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.ScatterChart;
 import javafx.scene.chart.XYChart;
-import javafx.scene.control.ContextMenu;
-import javafx.scene.control.MenuItem;
-import javafx.scene.control.ScrollPane;
-import javafx.scene.control.Tooltip;
+import javafx.scene.control.*;
 import javafx.scene.image.WritableImage;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.FileChooser;
@@ -24,6 +23,7 @@ import lombok.Getter;
 import javax.imageio.ImageIO;
 import java.io.File;
 import java.io.IOException;
+import java.util.Optional;
 
 public class ScatterPlotController {
 	private static final ConnectionConfig cc = Connections.getCurrentConnection();
@@ -95,6 +95,20 @@ public class ScatterPlotController {
 	}
 
 	public void screenshotGraph() {
+
+		// fixme: find a way to lose the weird white borders (its CSS)
+		if (ThemeProcessor.getTheme() == Theme.DARK) {
+			Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+			alert.setTitle("Visual Bug");
+			alert.setHeaderText(null);
+			alert.setContentText("When taking a screenshot, there will be a white border\naround the graph using dark theme.");
+			alert.getButtonTypes().setAll(ButtonType.OK, ButtonType.CANCEL);
+			Optional<ButtonType> result = alert.showAndWait();
+
+			if (result.isPresent() && result.get() == ButtonType.CANCEL) {
+				return;
+			}
+		}
 
 		WritableImage writableImage = scatterPlot.snapshot(new SnapshotParameters(), null);
 
