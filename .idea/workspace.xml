@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="776164ce-7a69-48e2-8934-c0376db3d4b9" name="Changes" comment="fixed a few ui issues">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="776164ce-7a69-48e2-8934-c0376db3d4b9" name="Changes" comment="pom.xml ready for exe creation">
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -249,14 +248,6 @@
       <workItem from="1766969579896" duration="1000" />
       <workItem from="1766969593668" duration="4000" />
       <workItem from="1766969654651" duration="15000" />
-    </task>
-    <task id="LOCAL-00441" summary="something max width">
-      <option name="closed" value="true" />
-      <created>1780077049963</created>
-      <option name="number" value="00441" />
-      <option name="presentableId" value="LOCAL-00441" />
-      <option name="project" value="LOCAL" />
-      <updated>1780077049963</updated>
     </task>
     <task id="LOCAL-00442" summary="getting scrollpane for controller">
       <option name="closed" value="true" />
@@ -642,7 +633,15 @@
       <option name="project" value="LOCAL" />
       <updated>1780109009702</updated>
     </task>
-    <option name="localTasksCounter" value="490" />
+    <task id="LOCAL-00490" summary="pom.xml ready for exe creation">
+      <option name="closed" value="true" />
+      <created>1780110144862</created>
+      <option name="number" value="00490" />
+      <option name="presentableId" value="LOCAL-00490" />
+      <option name="project" value="LOCAL" />
+      <updated>1780110144862</updated>
+    </task>
+    <option name="localTasksCounter" value="491" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -672,7 +671,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="float.settings can now read and write theme" />
     <MESSAGE value="formatting changes" />
     <MESSAGE value="datapoints will not be printed on the terminal" />
     <MESSAGE value="appendText = scroll down&#10;scrollTo = scroll down" />
@@ -697,7 +695,8 @@
     <MESSAGE value="delete all menu item after export all menu item" />
     <MESSAGE value="selection combo box css works now" />
     <MESSAGE value="fixed a few ui issues" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed a few ui issues" />
+    <MESSAGE value="pom.xml ready for exe creation" />
+    <option name="LAST_COMMIT_MESSAGE" value="pom.xml ready for exe creation" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
