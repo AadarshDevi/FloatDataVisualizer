@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="776164ce-7a69-48e2-8934-c0376db3d4b9" name="Changes" comment="idea file">
+    <list default="true" id="776164ce-7a69-48e2-8934-c0376db3d4b9" name="Changes" comment="bug: .csv exists in file name, it still adds .csv">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/buoyui/frontend/pages/grapher/GrapherController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/buoyui/frontend/pages/grapher/GrapherController.java" afterDir="false" />
     </list>
@@ -68,61 +68,61 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.0" />
-      <entry key="MS500" value="1.0" />
-      <entry key="S2" value="1.0000715097755177" />
-      <entry key="S5" value="1.0219657565474534" />
-      <entry key="S10" value="1.1482093101633613" />
-      <entry key="S30" value="1.6080689042061143" />
-      <entry key="S60" value="3.173155041660262" />
-      <entry key="M2" value="8.100222496938748" />
-      <entry key="M5" value="18.57934673131569" />
-      <entry key="M10" value="32.056285315029356" />
-      <entry key="M15" value="44.004954127223336" />
-      <entry key="M30" value="81.07473723705043" />
-      <entry key="H1" value="167.93947604932575" />
-      <entry key="H2" value="337.9188039835875" />
-      <entry key="H4" value="574.9774729711048" />
-      <entry key="D1" value="1031.657464682181" />
-      <entry key="W1" value="1157.950783766562" />
+      <entry key="MS100" value="1.0000000000000004" />
+      <entry key="MS500" value="1.0008234678811037" />
+      <entry key="S2" value="1.1693993213442835" />
+      <entry key="S5" value="1.4915465660277116" />
+      <entry key="S10" value="1.701103819721351" />
+      <entry key="S30" value="1.888443612111895" />
+      <entry key="S60" value="1.9545570241995243" />
+      <entry key="M2" value="2.1297082145470414" />
+      <entry key="M5" value="3.521031044876793" />
+      <entry key="M10" value="10.221091486998185" />
+      <entry key="M15" value="19.863469050702165" />
+      <entry key="M30" value="54.07547898445099" />
+      <entry key="H1" value="135.97058845128694" />
+      <entry key="H2" value="303.6560346543217" />
+      <entry key="H4" value="547.734776015513" />
+      <entry key="D1" value="1037.198474817554" />
+      <entry key="W1" value="1175.622135432819" />
     </decayedCancelled>
     <decayedSelected>
-      <entry key="MS100" value="1.1455538028957014E-55" />
-      <entry key="MS500" value="1.0364823810652044E-11" />
-      <entry key="S2" value="0.0023370888887704762" />
-      <entry key="S5" value="0.1292048747119584" />
-      <entry key="S10" value="0.5048330339995025" />
-      <entry key="S30" value="1.261999232918611" />
-      <entry key="S60" value="1.5884004286027762" />
-      <entry key="M2" value="1.7845330923818807" />
-      <entry key="M5" value="2.1363837050116383" />
-      <entry key="M10" value="3.0403034444679617" />
-      <entry key="M15" value="4.01508949944109" />
-      <entry key="M30" value="8.763414126833991" />
-      <entry key="H1" value="25.14667187786355" />
-      <entry key="H2" value="61.68365285342768" />
-      <entry key="H4" value="111.92281790306039" />
-      <entry key="D1" value="201.47923985797013" />
-      <entry key="W1" value="224.80122382226617" />
+      <entry key="MS100" value="0.0" />
+      <entry key="MS500" value="1.6272197015585573E-259" />
+      <entry key="S2" value="2.6576973986413596E-65" />
+      <entry key="S5" value="2.5034253459006417E-26" />
+      <entry key="S10" value="2.8852269325855127E-13" />
+      <entry key="S30" value="1.6240501735106263E-4" />
+      <entry key="S60" value="0.025447632097909022" />
+      <entry key="M2" value="0.3260939243900702" />
+      <entry key="M5" value="1.6870031733646134" />
+      <entry key="M10" value="3.433337883041478" />
+      <entry key="M15" value="4.8146059716300815" />
+      <entry key="M30" value="9.214980775743774" />
+      <entry key="H1" value="23.321770934516156" />
+      <entry key="H2" value="57.84327404000075" />
+      <entry key="H4" value="108.77797459677626" />
+      <entry key="D1" value="204.6648392881328" />
+      <entry key="W1" value="230.35047256664944" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="0.018198962288569622" />
-      <entry key="MS500" value="0.44875502533400863" />
-      <entry key="S2" value="0.8194224618954635" />
-      <entry key="S5" value="1.0266945833522925" />
-      <entry key="S10" value="1.5041819813016444" />
-      <entry key="S30" value="2.7534644122820784" />
-      <entry key="S60" value="4.687305586677309" />
-      <entry key="M2" value="9.842140068351817" />
-      <entry key="M5" value="20.695492752499526" />
-      <entry key="M10" value="35.08313315370181" />
-      <entry key="M15" value="48.00850981179221" />
-      <entry key="M30" value="89.82549483557699" />
-      <entry key="H1" value="193.06688834642168" />
-      <entry key="H2" value="399.5770879587392" />
-      <entry key="H4" value="686.8763684630784" />
-      <entry key="D1" value="1233.1293328314748" />
-      <entry key="W1" value="1382.7508280706745" />
+      <entry key="MS100" value="4.1435006832187326E-16" />
+      <entry key="MS500" value="8.834339350372073E-4" />
+      <entry key="S2" value="0.2520638523035818" />
+      <entry key="S5" value="0.8599800555450354" />
+      <entry key="S10" value="1.3079922725507898" />
+      <entry key="S30" value="1.7352233876197645" />
+      <entry key="S60" value="1.899827085238814" />
+      <entry key="M2" value="2.4130393167460005" />
+      <entry key="M5" value="5.186345012263506" />
+      <entry key="M10" value="13.639249418772078" />
+      <entry key="M15" value="24.665048454024678" />
+      <entry key="M30" value="63.2782151395343" />
+      <entry key="H1" value="159.27544536756784" />
+      <entry key="H2" value="361.47620975517884" />
+      <entry key="H4" value="656.4899099995966" />
+      <entry key="D1" value="1241.8559025291393" />
+      <entry key="W1" value="1405.9714105101236" />
     </decayedShown>
   </component>
   <component name="OptimizeOnSaveOptions">
@@ -249,14 +249,6 @@
       <workItem from="1766969579896" duration="1000" />
       <workItem from="1766969593668" duration="4000" />
       <workItem from="1766969654651" duration="15000" />
-    </task>
-    <task id="LOCAL-00436" summary="something idea file">
-      <option name="closed" value="true" />
-      <created>1780076855944</created>
-      <option name="number" value="00436" />
-      <option name="presentableId" value="LOCAL-00436" />
-      <option name="project" value="LOCAL" />
-      <updated>1780076855944</updated>
     </task>
     <task id="LOCAL-00437" summary="getting scrollpane from fxml">
       <option name="closed" value="true" />
@@ -642,7 +634,15 @@
       <option name="project" value="LOCAL" />
       <updated>1780102060115</updated>
     </task>
-    <option name="localTasksCounter" value="485" />
+    <task id="LOCAL-00485" summary="bug: .csv exists in file name, it still adds .csv">
+      <option name="closed" value="true" />
+      <created>1780102431631</created>
+      <option name="number" value="00485" />
+      <option name="presentableId" value="LOCAL-00485" />
+      <option name="project" value="LOCAL" />
+      <updated>1780102431631</updated>
+    </task>
+    <option name="localTasksCounter" value="486" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -672,7 +672,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="getting root borderpane" />
     <MESSAGE value="methods to change global theme var and apply the correct theme" />
     <MESSAGE value="replaced random exception toa more better exception" />
     <MESSAGE value="theme can now be read from float.settings" />
@@ -697,7 +696,8 @@
     <MESSAGE value="added alert for the darkmode screenshot" />
     <MESSAGE value="fixing the dark theme for the scatter chart" />
     <MESSAGE value="idea file" />
-    <option name="LAST_COMMIT_MESSAGE" value="idea file" />
+    <MESSAGE value="bug: .csv exists in file name, it still adds .csv" />
+    <option name="LAST_COMMIT_MESSAGE" value="bug: .csv exists in file name, it still adds .csv" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

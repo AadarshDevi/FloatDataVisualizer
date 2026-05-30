@@ -236,6 +236,13 @@ public class GrapherController {
 				alert.showAndWait();
 			});
 		}
+
+		if (connectionConfig.port().isOpen()) {
+			connectionConfig.port().closePort();
+			System.out.println(" [Debug] Port Closed? " + connectionConfig.port().isOpen());
+		}
+
+		System.out.println("\n >>> [Debug] Stopping Data Transfer\n");
 	}
 
 	@FXML
