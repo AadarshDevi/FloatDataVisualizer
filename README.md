@@ -14,6 +14,14 @@ If you find any issues, please use the [Issues Page](https://github.com/AadarshD
 report bugs, glitches etc. Before reporting the bug, it is recommended to use the Console version of the app so that I
 can use it to fix the app.
 
+### Resources
+
+Any information about the app can be found in the (Float Data Visualizer
+Wiki)[https://github.com/AadarshDevi/FloatDataVisualizer/wiki]. Some quick Links:
+
+1. Downloads
+2. Getting Started
+
 ### Download
 
 Use the table below to choose the correct app version for your os.
