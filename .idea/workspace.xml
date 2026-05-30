@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="776164ce-7a69-48e2-8934-c0376db3d4b9" name="Changes" comment="something idea file">
+    <list default="true" id="776164ce-7a69-48e2-8934-c0376db3d4b9" name="Changes" comment="fixed the screenshot having the white border.&#10;screenshot of root instead of just the graph">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/buoyui/frontend/pages/grapher/scatterplot/ScatterPlotController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/buoyui/frontend/pages/grapher/scatterplot/ScatterPlotController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/alphagen/studio/FloatDataVisualizer/buoyui/frontend/pages/grapher/scatterplot/ScatterPlot_v2.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/alphagen/studio/FloatDataVisualizer/buoyui/frontend/pages/grapher/scatterplot/ScatterPlot_v2.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,61 +68,61 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.000000000000032" />
-      <entry key="MS500" value="1.0023318227675375" />
-      <entry key="S2" value="1.3464645631844991" />
-      <entry key="S5" value="1.9978762298858892" />
-      <entry key="S10" value="2.695773681707669" />
-      <entry key="S30" value="5.792448830398461" />
-      <entry key="S60" value="9.88392663970518" />
-      <entry key="M2" value="15.01861165130107" />
-      <entry key="M5" value="20.56616942757005" />
-      <entry key="M10" value="24.469718067253506" />
-      <entry key="M15" value="30.721380838053665" />
-      <entry key="M30" value="65.50405729595883" />
-      <entry key="H1" value="156.2524471239831" />
-      <entry key="H2" value="326.97792366644114" />
-      <entry key="H4" value="555.7313596143306" />
-      <entry key="D1" value="980.1832065231306" />
-      <entry key="W1" value="1095.1136988527935" />
+      <entry key="MS100" value="4.9E-324" />
+      <entry key="MS500" value="3.3363999346795686E-65" />
+      <entry key="S2" value="3.0627794471508025E-16" />
+      <entry key="S5" value="3.1573933770728788E-6" />
+      <entry key="S10" value="0.008154227375605191" />
+      <entry key="S30" value="1.7266003615368155" />
+      <entry key="S60" value="7.428238208390258" />
+      <entry key="M2" value="17.394282142247917" />
+      <entry key="M5" value="31.72721952426722" />
+      <entry key="M10" value="40.72066771875288" />
+      <entry key="M15" value="48.56439920996907" />
+      <entry key="M30" value="83.9241802098059" />
+      <entry key="H1" value="174.22266602559412" />
+      <entry key="H2" value="344.90614732096816" />
+      <entry key="H4" value="574.6425553909037" />
+      <entry key="D1" value="1002.6988505263894" />
+      <entry key="W1" value="1118.8770084273513" />
     </decayedCancelled>
     <decayedSelected>
-      <entry key="MS100" value="0.0" />
-      <entry key="MS500" value="0.0" />
-      <entry key="S2" value="0.0" />
-      <entry key="S5" value="1.1635325458598924E-226" />
-      <entry key="S10" value="1.9339861373596508E-113" />
-      <entry key="S30" value="7.345420931459218E-38" />
-      <entry key="S60" value="6.139983882694022E-19" />
-      <entry key="M2" value="2.022293562503246E-9" />
-      <entry key="M5" value="0.001456495020552274" />
-      <entry key="M10" value="0.17013342175959434" />
-      <entry key="M15" value="0.9683581797390814" />
-      <entry key="M30" value="7.222891519087451" />
-      <entry key="H1" value="26.606714414269064" />
-      <entry key="H2" value="64.93245584246412" />
-      <entry key="H4" value="114.041528477991" />
-      <entry key="D1" value="197.15544428866517" />
-      <entry key="W1" value="218.22599271231056" />
+      <entry key="MS100" value="1.0" />
+      <entry key="MS500" value="1.0" />
+      <entry key="S2" value="1.0" />
+      <entry key="S5" value="1.0" />
+      <entry key="S10" value="1.0" />
+      <entry key="S30" value="1.0" />
+      <entry key="S60" value="1.0" />
+      <entry key="M2" value="1.0000000006904062" />
+      <entry key="M5" value="1.0009475741644374" />
+      <entry key="M10" value="1.1372276860296686" />
+      <entry key="M15" value="1.839081400475851" />
+      <entry key="M30" value="7.723495626626388" />
+      <entry key="H1" value="26.670437201850852" />
+      <entry key="H2" value="64.779753654544" />
+      <entry key="H4" value="114.02474444884578" />
+      <entry key="D1" value="197.86137990801922" />
+      <entry key="W1" value="219.17946412490184" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="2.397562741608195E-6" />
-      <entry key="MS500" value="0.0759928246446058" />
-      <entry key="S2" value="0.7784630969053628" />
-      <entry key="S5" value="1.6505607623209144" />
-      <entry key="S10" value="2.485337757196487" />
-      <entry key="S30" value="5.711150461260056" />
-      <entry key="S60" value="9.841499373868226" />
-      <entry key="M2" value="14.996855391386305" />
-      <entry key="M5" value="20.55875197321865" />
-      <entry key="M10" value="24.634588458689187" />
-      <entry key="M15" value="31.683730095097363" />
-      <entry key="M30" value="72.71447601847323" />
-      <entry key="H1" value="182.8373876590636" />
-      <entry key="H2" value="391.8827754982745" />
-      <entry key="H4" value="669.7480114115695" />
-      <entry key="D1" value="1177.3313481476846" />
-      <entry key="W1" value="1313.3385337035847" />
+      <entry key="MS100" value="6.136231253054532E-9" />
+      <entry key="MS500" value="0.022781396544009045" />
+      <entry key="S2" value="0.38850363439202507" />
+      <entry key="S5" value="0.6851095682773775" />
+      <entry key="S10" value="0.8358587821093905" />
+      <entry key="S30" value="2.6639693193819696" />
+      <entry key="S60" value="8.39143093485304" />
+      <entry key="M2" value="18.370403113133793" />
+      <entry key="M5" value="32.715622488439394" />
+      <entry key="M10" value="41.85022478971205" />
+      <entry key="M15" value="50.395980636345506" />
+      <entry key="M30" value="91.63491381412736" />
+      <entry key="H1" value="200.87151847593375" />
+      <entry key="H2" value="409.6584981326248" />
+      <entry key="H4" value="688.6425004414332" />
+      <entry key="D1" value="1200.552914565075" />
+      <entry key="W1" value="1338.0553114948368" />
     </decayedShown>
   </component>
   <component name="OptimizeOnSaveOptions">
@@ -250,14 +249,6 @@
       <workItem from="1766969579896" duration="1000" />
       <workItem from="1766969593668" duration="4000" />
       <workItem from="1766969654651" duration="15000" />
-    </task>
-    <task id="LOCAL-00430" summary="connections page ui is not fullscreen ready">
-      <option name="closed" value="true" />
-      <created>1780071592390</created>
-      <option name="number" value="00430" />
-      <option name="presentableId" value="LOCAL-00430" />
-      <option name="project" value="LOCAL" />
-      <updated>1780071592390</updated>
     </task>
     <task id="LOCAL-00431" summary="connections editor is fullscreen ready">
       <option name="closed" value="true" />
@@ -643,7 +634,15 @@
       <option name="project" value="LOCAL" />
       <updated>1780100583160</updated>
     </task>
-    <option name="localTasksCounter" value="479" />
+    <task id="LOCAL-00479" summary="fixed the screenshot having the white border.&#10;screenshot of root instead of just the graph">
+      <option name="closed" value="true" />
+      <created>1780100712490</created>
+      <option name="number" value="00479" />
+      <option name="presentableId" value="LOCAL-00479" />
+      <option name="project" value="LOCAL" />
+      <updated>1780100712490</updated>
+    </task>
+    <option name="localTasksCounter" value="480" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -673,7 +672,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="a light theme backup" />
     <MESSAGE value="unifying theme managing" />
     <MESSAGE value="light and dark themes fixed" />
     <MESSAGE value="theme processor integrated into code" />
@@ -698,7 +696,8 @@
     <MESSAGE value="alert for the bug when taking a screenshot of the graph" />
     <MESSAGE value="fixing some css" />
     <MESSAGE value="something idea file" />
-    <option name="LAST_COMMIT_MESSAGE" value="something idea file" />
+    <MESSAGE value="fixed the screenshot having the white border.&#10;screenshot of root instead of just the graph" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed the screenshot having the white border.&#10;screenshot of root instead of just the graph" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

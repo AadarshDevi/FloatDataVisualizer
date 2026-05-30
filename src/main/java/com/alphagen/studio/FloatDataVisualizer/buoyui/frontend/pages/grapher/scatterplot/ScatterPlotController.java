@@ -96,7 +96,7 @@ public class ScatterPlotController {
 
 	public void screenshotGraph() {
 
-		WritableImage writableImage = root.snapshot(new SnapshotParameters(), null);
+		WritableImage writableImage = scatterPlot.snapshot(new SnapshotParameters(), null);
 
 		FileChooser fileChooser = new FileChooser();
 		fileChooser.setTitle("Export Screenshot");
