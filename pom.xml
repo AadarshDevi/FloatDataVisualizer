@@ -3,7 +3,7 @@
          xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-
+    <!-- to build exes, run: mvn clean verify -->
     <groupId>com.alphagen.studio</groupId>
     <artifactId>FloatDataVisualizer</artifactId>
     <version>2.0.0</version> <!-- group 2 -->
@@ -120,6 +120,22 @@
 
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.3.0</version>
+                <configuration>
+                    <outputDirectory>${project.build.directory}/libs</outputDirectory>
+                    <archive>
+                        <manifest>
+                            <addClasspath>true</addClasspath>
+                            <classpathPrefix>./</classpathPrefix>
+                            <mainClass>com.alphagen.studio.FloatDataVisualizer.Launcher</mainClass>
+                        </manifest>
+                    </archive>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-resources-plugin</artifactId>
                 <version>3.3.1</version>
                 <executions>
@@ -165,23 +181,24 @@
                                 <argument>--input</argument>
                                 <argument>${project.build.directory}/libs</argument>
                                 <argument>--name</argument>
-                                <argument>FloatDataVisualizer_MSI</argument>
+                                <argument>FloatDataVisualizer</argument>
                                 <argument>--app-version</argument>
                                 <argument>${project.version}</argument>
                                 <argument>--vendor</argument>
                                 <argument>Aadarsh Devi</argument>
-                                <argument>--module</argument>
-                                <argument>
-                                    com.alphagen.studio.FloatDataVisualizer/com.alphagen.studio.FloatDataVisualizer.Launcher
-                                </argument>
+
+                                <argument>--main-jar</argument>
+                                <argument>FloatDataVisualizer-${project.version}.jar</argument>
+                                <argument>--main-class</argument>
+                                <argument>com.alphagen.studio.FloatDataVisualizer.Launcher</argument>
 
                                 <argument>--win-menu</argument>
                                 <argument>--win-shortcut</argument>
                                 <argument>--win-dir-chooser</argument>
                                 <argument>--icon</argument>
                                 <argument>${project.basedir}/src/main/resources/icon.ico</argument>
-                                <argument>--verbose</argument>
-                                <argument>--win-console</argument>
+                                <!--                                <argument>&#45;&#45;verbose</argument>-->
+                                <!--                                <argument>&#45;&#45;win-console</argument>-->
                             </arguments>
                         </configuration>
                     </execution>
@@ -201,7 +218,7 @@
                                 <argument>--input</argument>
                                 <argument>${project.build.directory}/libs</argument>
                                 <argument>--name</argument>
-                                <argument>FloatDataVisualizer_EXE</argument>
+                                <argument>FloatDataVisualizer</argument>
                                 <argument>--app-version</argument>
                                 <argument>${project.version}</argument>
                                 <argument>--vendor</argument>
@@ -214,8 +231,8 @@
                                 <argument>--win-shortcut</argument>
                                 <argument>--icon</argument>
                                 <argument>${project.basedir}/src/main/resources/icon.ico</argument>
-                                <argument>--verbose</argument>
-                                <argument>--win-console</argument>
+                                <!--                                <argument>&#45;&#45;verbose</argument>-->
+                                <!--                                <argument>&#45;&#45;win-console</argument>-->
                             </arguments>
                         </configuration>
                     </execution>
