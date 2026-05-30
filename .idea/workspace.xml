@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="776164ce-7a69-48e2-8934-c0376db3d4b9" name="Changes" comment="README.md contains the future structure of the wiki">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -249,14 +248,6 @@
       <workItem from="1766969579896" duration="1000" />
       <workItem from="1766969593668" duration="4000" />
       <workItem from="1766969654651" duration="15000" />
-    </task>
-    <task id="LOCAL-00446" summary="refreshConnections was used but 2 places so was a method, but now, only a thread uses it so moved to the thread:serialPortWatcher">
-      <option name="closed" value="true" />
-      <created>1780077137165</created>
-      <option name="number" value="00446" />
-      <option name="presentableId" value="LOCAL-00446" />
-      <option name="project" value="LOCAL" />
-      <updated>1780077137165</updated>
     </task>
     <task id="LOCAL-00447" summary="update Current.md to show what is being worked on">
       <option name="closed" value="true" />
@@ -642,7 +633,15 @@
       <option name="project" value="LOCAL" />
       <updated>1780112468639</updated>
     </task>
-    <option name="localTasksCounter" value="495" />
+    <task id="LOCAL-00495" summary="README.md contains the future structure of the wiki">
+      <option name="closed" value="true" />
+      <created>1780112489146</created>
+      <option name="number" value="00495" />
+      <option name="presentableId" value="LOCAL-00495" />
+      <option name="project" value="LOCAL" />
+      <updated>1780112489146</updated>
+    </task>
+    <option name="localTasksCounter" value="496" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
