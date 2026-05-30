@@ -3,13 +3,7 @@
 The Float Data Visualizer is a Data Acquisition Application that gets data from your team's
 profiling float and displays the data using scatter plots and a table.
 
-## Bug Report
-
-If you find any issues, please use the [Issues Page](https://github.com/AadarshDevi/FloatDataVisualizer/issues) to
-report bugs, glitches etc. Before reporting the bug, it is recommended to use the Console version of the app so that I
-can use it to fix the app.
-
-## Resources
+## Getting Started
 
 Any information about the app, including (Getting Started)[] can be found in the (Float Data Visualizer
 Wiki)[https://github.com/AadarshDevi/FloatDataVisualizer/wiki].
@@ -17,6 +11,12 @@ Wiki)[https://github.com/AadarshDevi/FloatDataVisualizer/wiki].
 ## Community Notes
 
 From Float Data Visualizer v2.0.0 onward, the app will be updated less frequently.
+
+## Bug Report
+
+If you find any issues, please use the [Issues Page](https://github.com/AadarshDevi/FloatDataVisualizer/issues) to
+report bugs, glitches etc. Before reporting the bug, it is recommended to use the Console version of the app so that I
+can use it to fix the app.
 
 ## Table of Contents (For wiki)
 
