@@ -19,9 +19,12 @@
                     </yAxis>
                 </ScatterChart>
             </content>
-            <padding>
-                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-            </padding>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
         </ScrollPane>
     </center>
 </BorderPane>
