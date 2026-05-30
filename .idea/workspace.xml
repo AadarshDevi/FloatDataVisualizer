@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="776164ce-7a69-48e2-8934-c0376db3d4b9" name="Changes" comment="bug: .csv exists in file name, it still adds .csv">
+    <list default="true" id="776164ce-7a69-48e2-8934-c0376db3d4b9" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/buoyui/frontend/pages/grapher/GrapherController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/buoyui/frontend/pages/grapher/GrapherController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/alphagen/studio/FloatDataVisualizer/buoyui/frontend/pages/connections/Connections_v5.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/alphagen/studio/FloatDataVisualizer/buoyui/frontend/pages/connections/Connections_v5.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,61 +68,61 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.0000000000000004" />
-      <entry key="MS500" value="1.0008234678811037" />
-      <entry key="S2" value="1.1693993213442835" />
-      <entry key="S5" value="1.4915465660277116" />
-      <entry key="S10" value="1.701103819721351" />
-      <entry key="S30" value="1.888443612111895" />
-      <entry key="S60" value="1.9545570241995243" />
-      <entry key="M2" value="2.1297082145470414" />
-      <entry key="M5" value="3.521031044876793" />
-      <entry key="M10" value="10.221091486998185" />
-      <entry key="M15" value="19.863469050702165" />
-      <entry key="M30" value="54.07547898445099" />
-      <entry key="H1" value="135.97058845128694" />
-      <entry key="H2" value="303.6560346543217" />
-      <entry key="H4" value="547.734776015513" />
-      <entry key="D1" value="1037.198474817554" />
-      <entry key="W1" value="1175.622135432819" />
+      <entry key="MS100" value="1.0254707200679796" />
+      <entry key="MS500" value="2.0325193152608163" />
+      <entry key="S2" value="5.293559203091077" />
+      <entry key="S5" value="9.771543372597629" />
+      <entry key="S10" value="14.668566108985189" />
+      <entry key="S30" value="22.275323231955173" />
+      <entry key="S60" value="25.57639376852274" />
+      <entry key="M2" value="27.72296657826916" />
+      <entry key="M5" value="30.335536773386767" />
+      <entry key="M10" value="37.18003295330021" />
+      <entry key="M15" value="46.73964349934589" />
+      <entry key="M30" value="80.74766944348123" />
+      <entry key="H1" value="162.38779041347541" />
+      <entry key="H2" value="329.92266299104716" />
+      <entry key="H4" value="574.1819448089524" />
+      <entry key="D1" value="1064.710175249397" />
+      <entry key="W1" value="1203.5431029076876" />
     </decayedCancelled>
     <decayedSelected>
       <entry key="MS100" value="0.0" />
-      <entry key="MS500" value="1.6272197015585573E-259" />
-      <entry key="S2" value="2.6576973986413596E-65" />
-      <entry key="S5" value="2.5034253459006417E-26" />
-      <entry key="S10" value="2.8852269325855127E-13" />
-      <entry key="S30" value="1.6240501735106263E-4" />
-      <entry key="S60" value="0.025447632097909022" />
-      <entry key="M2" value="0.3260939243900702" />
-      <entry key="M5" value="1.6870031733646134" />
-      <entry key="M10" value="3.433337883041478" />
-      <entry key="M15" value="4.8146059716300815" />
-      <entry key="M30" value="9.214980775743774" />
-      <entry key="H1" value="23.321770934516156" />
-      <entry key="H2" value="57.84327404000075" />
-      <entry key="H4" value="108.77797459677626" />
-      <entry key="D1" value="204.6648392881328" />
-      <entry key="W1" value="230.35047256664944" />
+      <entry key="MS500" value="1.1549996167254571E-294" />
+      <entry key="S2" value="4.337998953281574E-74" />
+      <entry key="S5" value="7.649767037600367E-30" />
+      <entry key="S10" value="5.043554984485969E-15" />
+      <entry key="S30" value="4.214878270642758E-5" />
+      <entry key="S60" value="0.0129640343923871" />
+      <entry key="M2" value="0.2327496871307734" />
+      <entry key="M5" value="1.4741255002830487" />
+      <entry key="M10" value="3.2094146093100155" />
+      <entry key="M15" value="4.602921870614188" />
+      <entry key="M30" value="9.010125912654399" />
+      <entry key="H1" value="23.061085114458123" />
+      <entry key="H2" value="57.519085628727446" />
+      <entry key="H4" value="108.47271776925828" />
+      <entry key="D1" value="204.5690041469218" />
+      <entry key="W1" value="230.33506053874223" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="4.1435006832187326E-16" />
-      <entry key="MS500" value="8.834339350372073E-4" />
-      <entry key="S2" value="0.2520638523035818" />
-      <entry key="S5" value="0.8599800555450354" />
-      <entry key="S10" value="1.3079922725507898" />
-      <entry key="S30" value="1.7352233876197645" />
-      <entry key="S60" value="1.899827085238814" />
-      <entry key="M2" value="2.4130393167460005" />
-      <entry key="M5" value="5.186345012263506" />
-      <entry key="M10" value="13.639249418772078" />
-      <entry key="M15" value="24.665048454024678" />
-      <entry key="M30" value="63.2782151395343" />
-      <entry key="H1" value="159.27544536756784" />
-      <entry key="H2" value="361.47620975517884" />
-      <entry key="H4" value="656.4899099995966" />
-      <entry key="D1" value="1241.8559025291393" />
-      <entry key="W1" value="1405.9714105101236" />
+      <entry key="MS100" value="0.9907112610636045" />
+      <entry key="MS500" value="2.02018453241421" />
+      <entry key="S2" value="5.286263994606417" />
+      <entry key="S5" value="9.765995215433279" />
+      <entry key="S10" value="14.657662478980045" />
+      <entry key="S30" value="22.23354897108019" />
+      <entry key="S60" value="25.547377430629854" />
+      <entry key="M2" value="27.924589161531358" />
+      <entry key="M5" value="31.790458084442204" />
+      <entry key="M10" value="40.37513000706137" />
+      <entry key="M15" value="51.33002606042783" />
+      <entry key="M30" value="89.74578000694089" />
+      <entry key="H1" value="185.43212905525655" />
+      <entry key="H2" value="387.41876837087045" />
+      <entry key="H4" value="682.6318806736119" />
+      <entry key="D1" value="1269.271770391834" />
+      <entry key="W1" value="1433.876965908846" />
     </decayedShown>
   </component>
   <component name="OptimizeOnSaveOptions">
@@ -249,14 +249,6 @@
       <workItem from="1766969579896" duration="1000" />
       <workItem from="1766969593668" duration="4000" />
       <workItem from="1766969654651" duration="15000" />
-    </task>
-    <task id="LOCAL-00437" summary="getting scrollpane from fxml">
-      <option name="closed" value="true" />
-      <created>1780076892082</created>
-      <option name="number" value="00437" />
-      <option name="presentableId" value="LOCAL-00437" />
-      <option name="project" value="LOCAL" />
-      <updated>1780076892082</updated>
     </task>
     <task id="LOCAL-00438" summary="using debug:useWindowModes to disable fullscreen funcs">
       <option name="closed" value="true" />
@@ -642,7 +634,15 @@
       <option name="project" value="LOCAL" />
       <updated>1780102431631</updated>
     </task>
-    <option name="localTasksCounter" value="486" />
+    <task id="LOCAL-00486" summary="found a way to stop hardware disconnected aka unable to start from trying to gather information">
+      <option name="closed" value="true" />
+      <created>1780104093326</created>
+      <option name="number" value="00486" />
+      <option name="presentableId" value="LOCAL-00486" />
+      <option name="project" value="LOCAL" />
+      <updated>1780104093326</updated>
+    </task>
+    <option name="localTasksCounter" value="487" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -672,7 +672,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="methods to change global theme var and apply the correct theme" />
     <MESSAGE value="replaced random exception toa more better exception" />
     <MESSAGE value="theme can now be read from float.settings" />
     <MESSAGE value="theme can now be wrote to float.settings when quitting app" />
@@ -697,7 +696,8 @@
     <MESSAGE value="fixing the dark theme for the scatter chart" />
     <MESSAGE value="idea file" />
     <MESSAGE value="bug: .csv exists in file name, it still adds .csv" />
-    <option name="LAST_COMMIT_MESSAGE" value="bug: .csv exists in file name, it still adds .csv" />
+    <MESSAGE value="found a way to stop hardware disconnected aka unable to start from trying to gather information" />
+    <option name="LAST_COMMIT_MESSAGE" value="found a way to stop hardware disconnected aka unable to start from trying to gather information" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
