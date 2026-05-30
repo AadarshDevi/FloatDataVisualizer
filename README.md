@@ -21,41 +21,41 @@ From Float Data Visualizer v2.0.0 onward, the app will be updated less frequentl
 ## Table of Contents (For wiki)
 
 1. Getting Started
+    1. Roadmap to learn the app
     2. Glitches
     3. Bug reports
     4. Feature requests
 2. Connection Page
-    4. change theme
-    5. Auto Connection
+    1. change theme
+    2. Auto Connection
     3. Create Connection
-        4. Autofill Fields
-        5. Reset Fields
-    3. Delete Connection
-        4. Delete All
+        1. Autofill Fields
+        2. Reset Fields
+    4. Delete Connection
+        1. Delete All
     5. View Measurements
-2. Grapher Page
-    3. Tabs
-        4. Config Tab
-        4. Terminal Tab
-        5. Table Tab
-        6. Graph Tabs
-    7. Data
-        8. Collect
-        9. Export Raw
-        10. Export CSV
-    11. Graphs
-        12. Screenshots (dark mode disclaimer)
-        13. Size Changes: Increase & Decrease
-            14. Width & Height
-            15. Width
-            16. height
-        14.
+3. Grapher Page
+    1. Tabs
+        1. Config Tab
+        2. Terminal Tab
+        3. Table Tab
+        4. Graph Tabs
+    2. Data
+        1. Collect
+        2. Export Raw
+        3. Export CSV
+    3. Graphs
+        1. Screenshots (dark mode disclaimer)
+        2. Size Changes: Increase & Decrease
+            1. Width & Height
+            2. Width
+            3. height
 4. Downloads
-    5. latest release
-    6. all releases
+    1. latest release
+    2. all releases
 5. Technical Documentation
-    6. Programming Lang, loggers, ui, threading, etc
-    7. Project info: author name, project name
+    1. Programming Lang, loggers, ui, threading, etc
+    2. Project info: author name, project name
 
 # Delete Below
 
