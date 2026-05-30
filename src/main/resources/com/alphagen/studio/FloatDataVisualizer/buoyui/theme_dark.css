@@ -72,6 +72,12 @@
     -fx-background-color: #202943;
 }
 
+.scatter-plot .chart-content {
+    /* This fills the blank corner gap behind where the axes cross */
+    -fx-background-color: #202943 !important;
+}
+
+
 .scatter-plot .axis .text {
     -fx-fill: #ffffff !important;
 }
@@ -92,6 +98,10 @@
 .scatter-plot .chart-legend {
     -fx-fill: #0e319a;
     -fx-background-color: #151b2d;
+}
+
+.scatter-plot Legend {
+    -fx-background-color: #151b2d !important;
 }
 
 .scatter-plot .chart-legend-item {
@@ -357,8 +367,6 @@
 .scroll-bar {
     -fx-background-color: #202943;
     -fx-background-radius: 10px;
-    -fx-background-insets: 0;
-    -fx-padding: 0;
 }
 
 .scroll-bar:focused,
@@ -371,6 +379,10 @@
     -fx-background-color: #202943;
     -fx-background-radius: 10px;
     -fx-border-width: 0px;
+}
+
+.scroll-bar > .viewport > .view {
+    -fx-background-color: #202943 !important;
 }
 
 .scroll-bar .viewport .vbox {
@@ -390,6 +402,10 @@
 .scroll-bar .corner {
     -fx-background-color: #202943;
     -fx-border-width: 0px;
+}
+
+.scroll-bar .content {
+    -fx-background-color: #202943 !important;
 }
 
 .scroll-bar .track-background {
