@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="776164ce-7a69-48e2-8934-c0376db3d4b9" name="Changes" comment="delete all menu item after export all menu item">
+    <list default="true" id="776164ce-7a69-48e2-8934-c0376db3d4b9" name="Changes" comment="selection combo box css works now">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/alphagen/studio/FloatDataVisualizer/buoyui/theme_dark.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/alphagen/studio/FloatDataVisualizer/buoyui/theme_dark.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/alphagen/studio/FloatDataVisualizer/buoyui/frontend/pages/connections/editor/ConnectionsEditor_v5.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/alphagen/studio/FloatDataVisualizer/buoyui/frontend/pages/connections/editor/ConnectionsEditor_v5.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,61 +68,61 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.0096915016150563" />
-      <entry key="MS500" value="1.711950571686565" />
-      <entry key="S2" value="5.131162024289002" />
-      <entry key="S5" value="11.303364096692112" />
-      <entry key="S10" value="18.400948409754914" />
-      <entry key="S30" value="29.930167626691436" />
-      <entry key="S60" value="35.05604634831307" />
-      <entry key="M2" value="38.35069097955815" />
-      <entry key="M5" value="41.73705061698277" />
-      <entry key="M10" value="48.822935387277816" />
-      <entry key="M15" value="58.44842117454352" />
-      <entry key="M30" value="92.507742780506" />
-      <entry key="H1" value="174.1546939233547" />
-      <entry key="H2" value="341.69003705885945" />
-      <entry key="H4" value="585.981007913335" />
-      <entry key="D1" value="1076.6483595490718" />
-      <entry key="W1" value="1215.5331267423492" />
+      <entry key="MS100" value="1.1705502934475334" />
+      <entry key="MS500" value="2.0773519944959684" />
+      <entry key="S2" value="4.396308525921156" />
+      <entry key="S5" value="6.4017015161627135" />
+      <entry key="S10" value="7.5135531184819175" />
+      <entry key="S30" value="8.454499381005697" />
+      <entry key="S60" value="8.720377613834014" />
+      <entry key="M2" value="8.858420506404084" />
+      <entry key="M5" value="8.96766997681855" />
+      <entry key="M10" value="10.159903102413189" />
+      <entry key="M15" value="13.890272554670725" />
+      <entry key="M30" value="35.80089547045266" />
+      <entry key="H1" value="102.75102685779612" />
+      <entry key="H2" value="259.7030784280843" />
+      <entry key="H4" value="510.9358915486982" />
+      <entry key="D1" value="1058.2236987150775" />
+      <entry key="W1" value="1220.0608734131276" />
     </decayedCancelled>
     <decayedSelected>
       <entry key="MS100" value="0.0" />
-      <entry key="MS500" value="5.364831456032743E-299" />
-      <entry key="S2" value="3.581236510825653E-75" />
-      <entry key="S5" value="2.8206268375711678E-30" />
-      <entry key="S10" value="3.0625661071734695E-15" />
-      <entry key="S30" value="3.569175805686186E-5" />
-      <entry key="S60" value="0.011929757796885319" />
-      <entry key="M2" value="0.2232722926292132" />
-      <entry key="M5" value="1.4498155362240441" />
-      <entry key="M10" value="3.1828411947965325" />
-      <entry key="M15" value="4.577479065269462" />
-      <entry key="M30" value="8.985189518808028" />
-      <entry key="H1" value="23.02915111365747" />
-      <entry key="H2" value="57.47924685176758" />
-      <entry key="H4" value="108.43514616241461" />
-      <entry key="D1" value="204.5571930423502" />
-      <entry key="W1" value="230.33316067069174" />
+      <entry key="MS500" value="0.0" />
+      <entry key="S2" value="0.0" />
+      <entry key="S5" value="6.541702820390363E-224" />
+      <entry key="S10" value="4.663994831834888E-112" />
+      <entry key="S30" value="1.9060112948345027E-37" />
+      <entry key="S60" value="8.717870054383276E-19" />
+      <entry key="M2" value="1.908640848249055E-9" />
+      <entry key="M5" value="8.591490264202848E-4" />
+      <entry key="M10" value="0.07748057710967933" />
+      <entry key="M15" value="0.3844840112688753" />
+      <entry key="M30" value="2.604073275896769" />
+      <entry key="H1" value="12.397693888372348" />
+      <entry key="H2" value="42.173782957811454" />
+      <entry key="H4" value="92.88291016330125" />
+      <entry key="D1" value="199.34669803245933" />
+      <entry key="W1" value="229.48571219789324" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="0.9820154289605296" />
-      <entry key="MS500" value="1.7011632623286763" />
-      <entry key="S2" value="5.119827341115238" />
-      <entry key="S5" value="11.291811702879025" />
-      <entry key="S10" value="18.387707497103964" />
-      <entry key="S30" value="29.89199489282505" />
-      <entry key="S60" value="35.0278574490169" />
-      <entry key="M2" value="38.543336533273354" />
-      <entry key="M5" value="43.16766604577319" />
-      <entry key="M10" value="51.99142028865257" />
-      <entry key="M15" value="63.01332516710277" />
-      <entry key="M30" value="101.48089755713433" />
-      <entry key="H1" value="197.16709540344195" />
-      <entry key="H2" value="399.1463063960705" />
-      <entry key="H4" value="694.3933734692893" />
-      <entry key="D1" value="1281.1981429156676" />
-      <entry key="W1" value="1445.8650897283237" />
+      <entry key="MS100" value="1.0109650053022066" />
+      <entry key="MS500" value="1.915993262213384" />
+      <entry key="S2" value="4.336639911142089" />
+      <entry key="S5" value="6.3750385327475065" />
+      <entry key="S10" value="7.499603131848503" />
+      <entry key="S30" value="8.449689484504628" />
+      <entry key="S60" value="8.717950963441638" />
+      <entry key="M2" value="8.857201614803934" />
+      <entry key="M5" value="8.968028835503603" />
+      <entry key="M10" value="10.236789517506601" />
+      <entry key="M15" value="14.27353715324394" />
+      <entry key="M30" value="38.4013992446515" />
+      <entry key="H1" value="115.13966280470426" />
+      <entry key="H2" value="301.8599818722136" />
+      <entry key="H4" value="603.7992781940283" />
+      <entry key="D1" value="1257.5631741107902" />
+      <entry key="W1" value="1449.5453920898922" />
     </decayedShown>
   </component>
   <component name="OptimizeOnSaveOptions">
@@ -249,14 +249,6 @@
       <workItem from="1766969579896" duration="1000" />
       <workItem from="1766969593668" duration="4000" />
       <workItem from="1766969654651" duration="15000" />
-    </task>
-    <task id="LOCAL-00439" summary="using debug:useWindowModes to disable fullscreen funcs">
-      <option name="closed" value="true" />
-      <created>1780076941346</created>
-      <option name="number" value="00439" />
-      <option name="presentableId" value="LOCAL-00439" />
-      <option name="project" value="LOCAL" />
-      <updated>1780076941346</updated>
     </task>
     <task id="LOCAL-00440" summary="using debug:useWindowModes to disable fullscreen funcs">
       <option name="closed" value="true" />
@@ -642,7 +634,15 @@
       <option name="project" value="LOCAL" />
       <updated>1780105239182</updated>
     </task>
-    <option name="localTasksCounter" value="488" />
+    <task id="LOCAL-00488" summary="selection combo box css works now">
+      <option name="closed" value="true" />
+      <created>1780108455305</created>
+      <option name="number" value="00488" />
+      <option name="presentableId" value="LOCAL-00488" />
+      <option name="project" value="LOCAL" />
+      <updated>1780108455305</updated>
+    </task>
+    <option name="localTasksCounter" value="489" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -672,7 +672,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="theme can now be read from float.settings" />
     <MESSAGE value="theme can now be wrote to float.settings when quitting app" />
     <MESSAGE value="float.settings can now read and write theme" />
     <MESSAGE value="formatting changes" />
@@ -697,7 +696,8 @@
     <MESSAGE value="bug: .csv exists in file name, it still adds .csv" />
     <MESSAGE value="found a way to stop hardware disconnected aka unable to start from trying to gather information" />
     <MESSAGE value="delete all menu item after export all menu item" />
-    <option name="LAST_COMMIT_MESSAGE" value="delete all menu item after export all menu item" />
+    <MESSAGE value="selection combo box css works now" />
+    <option name="LAST_COMMIT_MESSAGE" value="selection combo box css works now" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
