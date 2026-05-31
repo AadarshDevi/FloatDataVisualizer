@@ -5,8 +5,8 @@ profiling float and displays the data using scatter plots and a table.
 
 ## Getting Started
 
-Any information about the app, including (Getting Started)[] can be found in the (Float Data Visualizer
-Wiki)[https://github.com/AadarshDevi/FloatDataVisualizer/wiki].
+Any information about the app, including (Getting Started)[] can be found in the [Float Data Visualizer
+Wiki](https://github.com/AadarshDevi/FloatDataVisualizer/wiki).
 
 ## Community Notes
 
