@@ -1,0 +1,16 @@
+Index: src/main/java/com/alphagen/studio/FloatDataVisualizer/datawriter/DataWriter.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.alphagen.studio.FloatDataVisualizer.datawriter;\n\nimport com.alphagen.studio.FloatDataVisualizer.data.DataPointRecord;\n\nimport java.io.*;\n\npublic class DataWriter {\n\n    private final File datafile;\n    private final BufferedWriter bw;\n\n    public DataWriter(String filepath) throws IOException {\n         datafile = new File(filepath);\n         bw = new BufferedWriter(new PrintWriter(new FileWriter(datafile)));\n    }\n\n    public void writeRaw(DataPointRecord dpr) throws IOException {\n        bw.write(dpr.toString());\n        bw.newLine();\n    }\n\n    public void write(DataPointRecord dpr) throws IOException {\n        bw.write(dpr.time() + \",\");\n        bw.write(Double.toString(dpr.depth()));\n        bw.newLine();\n    }\n\n\n    public boolean close() {\n        try {\n            bw.close();\n            return true;\n        } catch (IOException e) {\n            return false;\n        }\n    }\n\n    public String getAbsFilePath() {\n        return datafile.getAbsolutePath();\n    }\n}\n
+===================================================================
+diff --git a/src/main/java/com/alphagen/studio/FloatDataVisualizer/datawriter/DataWriter.java b/src/main/java/com/alphagen/studio/FloatDataVisualizer/datawriter/DataWriter.java
+--- a/src/main/java/com/alphagen/studio/FloatDataVisualizer/datawriter/DataWriter.java	(revision 01ab4950738d17f5be1eb7c632e8481fac9cfae5)
++++ b/src/main/java/com/alphagen/studio/FloatDataVisualizer/datawriter/DataWriter.java	(date 1763065558273)
+@@ -25,7 +25,6 @@
+         bw.newLine();
+     }
+ 
+-
+     public boolean close() {
+         try {
+             bw.close();

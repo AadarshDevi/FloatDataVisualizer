@@ -4,8 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="776164ce-7a69-48e2-8934-c0376db3d4b9" name="Changes" comment="README.md contains the future structure of the wiki">
+    <list default="true" id="776164ce-7a69-48e2-8934-c0376db3d4b9" name="Changes" comment="unicode space problems">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/buoyui/backend/app/PlatformDetector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/buoyui/backend/app/PlatformDetector.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/buoyui/backend/settings/SettingsManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/buoyui/backend/settings/SettingsManager.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -210,7 +213,6 @@
     <configuration name="Launcher" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="com.alphagen.studio.FloatDataVisualizer.Launcher" />
       <module name="FloatDataVisualizer" />
-      <option name="VM_PARAMETERS" value="--enable-native-access=javafx.graphics --enable-native-access=com.fazecast.jSerialComm" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -248,30 +250,6 @@
       <workItem from="1766969579896" duration="1000" />
       <workItem from="1766969593668" duration="4000" />
       <workItem from="1766969654651" duration="15000" />
-    </task>
-    <task id="LOCAL-00447" summary="update Current.md to show what is being worked on">
-      <option name="closed" value="true" />
-      <created>1780077313862</created>
-      <option name="number" value="00447" />
-      <option name="presentableId" value="LOCAL-00447" />
-      <option name="project" value="LOCAL" />
-      <updated>1780077313862</updated>
-    </task>
-    <task id="LOCAL-00448" summary="update Current.md to show what is being worked on">
-      <option name="closed" value="true" />
-      <created>1780077453875</created>
-      <option name="number" value="00448" />
-      <option name="presentableId" value="LOCAL-00448" />
-      <option name="project" value="LOCAL" />
-      <updated>1780077453875</updated>
-    </task>
-    <task id="LOCAL-00449" summary="workspace.xml .idea file">
-      <option name="closed" value="true" />
-      <created>1780077471482</created>
-      <option name="number" value="00449" />
-      <option name="presentableId" value="LOCAL-00449" />
-      <option name="project" value="LOCAL" />
-      <updated>1780077471482</updated>
     </task>
     <task id="LOCAL-00450" summary="fixed connections ui">
       <option name="closed" value="true" />
@@ -641,7 +619,31 @@
       <option name="project" value="LOCAL" />
       <updated>1780112489146</updated>
     </task>
-    <option name="localTasksCounter" value="496" />
+    <task id="LOCAL-00496" summary="when port was invalid, the app crashed">
+      <option name="closed" value="true" />
+      <created>1780196884745</created>
+      <option name="number" value="00496" />
+      <option name="presentableId" value="LOCAL-00496" />
+      <option name="project" value="LOCAL" />
+      <updated>1780196884747</updated>
+    </task>
+    <task id="LOCAL-00497" summary="whene data card is added, it did not use the set theme">
+      <option name="closed" value="true" />
+      <created>1780196903842</created>
+      <option name="number" value="00497" />
+      <option name="presentableId" value="LOCAL-00497" />
+      <option name="project" value="LOCAL" />
+      <updated>1780196903842</updated>
+    </task>
+    <task id="LOCAL-00498" summary="unicode space problems">
+      <option name="closed" value="true" />
+      <created>1780196916087</created>
+      <option name="number" value="00498" />
+      <option name="presentableId" value="LOCAL-00498" />
+      <option name="project" value="LOCAL" />
+      <updated>1780196916087</updated>
+    </task>
+    <option name="localTasksCounter" value="499" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -671,9 +673,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="appendText = scroll down&#10;scrollTo = scroll down" />
-    <MESSAGE value="a atomic var iis final" />
-    <MESSAGE value="removed an empty line" />
     <MESSAGE value="possible terminal and table autoscroll added" />
     <MESSAGE value="settings var for terminal and table autoscroll" />
     <MESSAGE value="settings fields for easier placement in settings package" />
@@ -696,7 +695,10 @@
     <MESSAGE value="pom.xml ready for exe creation" />
     <MESSAGE value="updated README. all contents will be placed into the Wiki instead of the README.md" />
     <MESSAGE value="README.md contains the future structure of the wiki" />
-    <option name="LAST_COMMIT_MESSAGE" value="README.md contains the future structure of the wiki" />
+    <MESSAGE value="when port was invalid, the app crashed" />
+    <MESSAGE value="whene data card is added, it did not use the set theme" />
+    <MESSAGE value="unicode space problems" />
+    <option name="LAST_COMMIT_MESSAGE" value="unicode space problems" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
