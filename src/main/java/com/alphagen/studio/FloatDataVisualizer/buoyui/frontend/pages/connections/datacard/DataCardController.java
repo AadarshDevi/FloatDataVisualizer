@@ -1,8 +1,6 @@
 package com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.pages.connections.datacard;
 
 import com.alphagen.studio.FloatDataVisualizer.buoyui.Controller;
-import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.app.Platform;
-import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.app.PlatformDetector;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.app.theme.ThemeProcessor;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.constants.Debug;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.data.ConnectionConfig;
@@ -148,9 +146,6 @@ public class DataCardController extends Controller {
 
 		measurementViewer.getStylesheets().clear(); // testme: theme
 		measurementViewer.getStylesheets().add(ThemeProcessor.getThemeCSS().toString()); // testme: theme
-
-		if (PlatformDetector.getOSPLATFORM() != Platform.WIN11)
-			measurementViewer.setPrefSize(measurementViewer.getPrefWidth() * 1.1, measurementViewer.getPrefHeight() * 1.1);
 
 		{
 			Scene scene = new Scene(measurementViewer);
