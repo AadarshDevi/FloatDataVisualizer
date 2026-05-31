@@ -10,62 +10,69 @@ import java.util.Properties;
 
 public class SettingsManager {
 
-	private static SettingsManager sm;
-	@Getter
-	private final SettingsData settingsData;
-	private Properties properties;
+    private static SettingsManager sm;
+    @Getter
+    private final SettingsData settingsData;
+    private Properties properties;
 
-	private SettingsManager() {
-		settingsData = new SettingsData();
-		readSettings();
-	}
+    private SettingsManager() {
+        settingsData = new SettingsData();
+        readSettings();
+    }
 
-	// todo: read settings
-	private void readSettings() {
+    public static SettingsManager getInstance() {
+        if (sm == null) sm = new SettingsManager();
+        return sm;
+    }
 
-		properties = new Properties();
-		try {
-			properties.load(new FileInputStream(new File(FolderConstants.SETTINGS.toUri())));
-		} catch (IOException e) {
-			throw new RuntimeException(e);
-		}
+    // todo: read settings
+    private void readSettings() {
 
-		ThemeProcessor.setTheme(Theme.valueOf(properties.getProperty(SettingsField.theme)));
-		settingsData.setAutoscrollTerminal(Boolean.parseBoolean(properties.getProperty(SettingsField.terminalAutoscroll)));
-		settingsData.setAutoscrollTable(Boolean.parseBoolean(properties.getProperty(SettingsField.tableAutoScroll)));
-	}
+        properties = new Properties();
+        try {
+            properties.load(new FileInputStream(new File(FolderConstants.SETTINGS.toUri())));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        System.out.println(properties.size());
 
-	public static SettingsManager getInstance() {
-		if (sm == null) sm = new SettingsManager();
-		return sm;
-	}
+        if (properties.size() == 0) {
+            properties.put(SettingsField.theme, Theme.LIGHT.toString());
+            properties.put(SettingsField.terminalAutoscroll, Boolean.toString(true));
+            properties.put(SettingsField.tableAutoScroll, Boolean.toString(true));
+        }
 
-	// todo: write settings
-	public void writeSettings() {
-		try (PrintWriter pw = new PrintWriter(new File(FolderConstants.SETTINGS.toUri()))) {
-			pw.println(SettingsField.theme + "=" + ThemeProcessor.getTheme());
-			pw.println(SettingsField.terminalAutoscroll + "=" + settingsData.getAutoscrollTerminal());
-			pw.println(SettingsField.tableAutoScroll + "=" + settingsData.getAutoscrollTable());
-		} catch (FileNotFoundException e) {
-			System.err.println("Unable to find settings file.");
-		}
-	}
+        ThemeProcessor.setTheme(Theme.valueOf(properties.getProperty(SettingsField.theme)));
+        settingsData.setAutoscrollTerminal(Boolean.parseBoolean(properties.getProperty(SettingsField.terminalAutoscroll)));
+        settingsData.setAutoscrollTable(Boolean.parseBoolean(properties.getProperty(SettingsField.tableAutoScroll)));
+    }
+
+    // todo: write settings
+    public void writeSettings() {
+        try (PrintWriter pw = new PrintWriter(new File(FolderConstants.SETTINGS.toUri()))) {
+            pw.println(SettingsField.theme + "=" + ThemeProcessor.getTheme());
+            pw.println(SettingsField.terminalAutoscroll + "=" + settingsData.getAutoscrollTerminal());
+            pw.println(SettingsField.tableAutoScroll + "=" + settingsData.getAutoscrollTable());
+        } catch (FileNotFoundException e) {
+            System.err.println("Unable to find settings file.");
+        }
+    }
 
 
-	public boolean getAutoscrollTerminal() {
-		return settingsData.getAutoscrollTerminal();
-	}
+    public boolean getAutoscrollTerminal() {
+        return settingsData.getAutoscrollTerminal();
+    }
 
-	public void setAutoscrollTerminal(boolean autoscroll) {
-		settingsData.setAutoscrollTerminal(autoscroll);
-	}
+    public void setAutoscrollTerminal(boolean autoscroll) {
+        settingsData.setAutoscrollTerminal(autoscroll);
+    }
 
-	public boolean getAutoscrollTable() {
-		return settingsData.getAutoscrollTable();
-	}
+    public boolean getAutoscrollTable() {
+        return settingsData.getAutoscrollTable();
+    }
 
-	public void setAutoscrollTable(boolean autoscroll) {
-		settingsData.setAutoscrollTable(autoscroll);
-	}
+    public void setAutoscrollTable(boolean autoscroll) {
+        settingsData.setAutoscrollTable(autoscroll);
+    }
 
 }
