@@ -1,5 +1,6 @@
 package com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.managers;
 
+import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.app.theme.ThemeProcessor;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.data.ConnectionConfig;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.pages.CardConstants;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.pages.connections.datacard.DataCardController;
@@ -29,19 +30,22 @@ public class DataCardManager {
 //				.build();
 //	}
 
-	public static Button createDataCard(ConnectionConfig connectionConfig) {
-		FXMLLoader fxmlLoader = new FXMLLoader(CardConstants.CONNECTION_DATA_CARD);
-		Button dataCard = null;  // Explicit type arg helps inference
-		try {
-			dataCard = fxmlLoader.load();
-		} catch (IOException e) {
-			throw new RuntimeException(e);
-		}
-		DataCardController dcc = fxmlLoader.getController();
-		dcc.setConnection(connectionConfig);
+    public static Button createDataCard(ConnectionConfig connectionConfig) {
+        FXMLLoader fxmlLoader = new FXMLLoader(CardConstants.CONNECTION_DATA_CARD);
+        Button dataCard = null;  // Explicit type arg helps inference
+        try {
+            dataCard = fxmlLoader.load();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        DataCardController dcc = fxmlLoader.getController();
+        dcc.setConnection(connectionConfig);
 
-		dataCard.getProperties().put("dcc", dcc);
-		return dataCard;
-	}
+        dataCard.getStylesheets().clear(); // testme: theme
+        dataCard.getStylesheets().add(ThemeProcessor.getThemeCSS().toString()); // testme: theme
+
+        dataCard.getProperties().put("dcc", dcc);
+        return dataCard;
+    }
 
 }
