@@ -303,6 +303,8 @@
                     <!--                        </configuration>-->
                     <!--                    </execution>-->
 
+                                <!--                                <argument>&#45;&#45;resource-dir</argument>-->
+                                <!--                                <argument>${project.basedir}/src/main/resources/jpackage/linux</argument>-->
                     <!--                    <execution>-->
                     <!--                        <id>jpackage-rpm</id>-->
                     <!--                        <phase>verify</phase>-->
