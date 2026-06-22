@@ -1,4 +1,4 @@
-# Float Data Visualizer 3.0.0
+# Float Data Visualizer 2.0.0
 
 The Float Data Visualizer is a Data Acquisition Application that gets data from your team's
 profiling float and displays the data using scatter plots and a table.
