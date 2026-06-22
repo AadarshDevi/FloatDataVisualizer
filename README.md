@@ -19,7 +19,7 @@ can use it to fix the app.
 
 ### Download
 
-Check [Releases](https://github.com/AadarshDevi/FloatDataVisualizer/wiki/Downloads#latest-downloads) for the app.
+Check [Downloads](https://github.com/AadarshDevi/FloatDataVisualizer/wiki/Downloads#latest-downloads) for the app.
 
 Once you have downloaded the executable, run it so the app can be downloaded. You do not
 need to change any of the settings unless stated otherwise.
