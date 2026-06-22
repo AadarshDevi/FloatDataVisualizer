@@ -16,15 +16,7 @@ can use it to fix the app.
 
 ### Download
 
-Use the table below to choose the correct app version for your os.
-
-| Status |      Platform       | Architecture | Executable | Type |                                                                               Download                                                                                |
-|:------:|:-------------------:|:------------:|:----------:|:----:|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
-|   ☑️   |     Windows 11      |    x86_64    |    .msi    | App  |    [Link](https://github.com/AadarshDevi/FloatDataVisualizer/releases/download/v2.0.0-beta-1-multiplatform/FloatDataVisualizer_v2.0.0_beta_1_2_win_11_x86_64.msi)     |
-|   ☑️   |     Windows 11      |    x86_64    |    .exe    | App  |    [Link](https://github.com/AadarshDevi/FloatDataVisualizer/releases/download/v2.0.0-beta-1-multiplatform/FloatDataVisualizer_v2.0.0_beta_1_2_win_11_x86_64.exe)     |
-|   ☑️   |        MacOS        |    x86_64    |    .dmg    | App  |     [Link](https://github.com/AadarshDevi/FloatDataVisualizer/releases/download/v2.0.0-beta-1-multiplatform/FloatDataVisualizer_v2.0.0_beta_1_2_macos_x86_64.dmg)     |
-|   ☑️   | Debian Based Linux  |    x86_64    |    .deb    | App  | [Link](https://github.com/AadarshDevi/FloatDataVisualizer/releases/download/v2.0.0-beta-1-multiplatform/FloatDataVisualizer_v2.0.0_beta_1_2_debian_linux_x86_64.deb)  |
-|   ☑️   | Red Hat Based Linux |    x86_64    |    .rpm    | App  | [Link](https://github.com/AadarshDevi/FloatDataVisualizer/releases/download/v2.0.0-beta-1-multiplatform/FloatDataVisualizer_v2.0.0_beta_1_2_red_hat_linux_x86_64.rpm) |
+Check [Releases](https://github.com/AadarshDevi/FloatDataVisualizer/releases) for the app.
 
 Once you have downloaded the executable, run it so the app can be downloaded. You do not
 need to change any of the settings unless stated otherwise.
