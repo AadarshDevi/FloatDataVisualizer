@@ -36,6 +36,7 @@ public class SettingsManager {
         if (properties.isEmpty()) {
             properties.put(SettingsField.theme, Theme.LIGHT.toString());
             properties.put(SettingsField.terminalAutoscroll, Boolean.toString(true));
+            properties.put(SettingsField.terminalVerbose, Boolean.toString(false));
             properties.put(SettingsField.tableAutoScroll, Boolean.toString(true));
         }
 
