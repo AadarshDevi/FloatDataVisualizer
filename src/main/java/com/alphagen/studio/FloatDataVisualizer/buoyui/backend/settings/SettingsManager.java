@@ -51,6 +51,7 @@ public class SettingsManager {
         try (PrintWriter pw = new PrintWriter(new File(FolderConstants.SETTINGS.toUri()))) {
             pw.println(SettingsField.theme + "=" + ThemeProcessor.getTheme());
             pw.println(SettingsField.terminalAutoscroll + "=" + settingsData.getAutoscrollTerminal());
+            pw.println(SettingsField.terminalVerbose + "=" + settingsData.getTerminalVerbose());
             pw.println(SettingsField.tableAutoScroll + "=" + settingsData.getAutoscrollTable());
         } catch (FileNotFoundException e) {
             System.err.println("Unable to find settings file.");
