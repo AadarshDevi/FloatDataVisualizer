@@ -165,6 +165,12 @@ public class ScatterPlotController {
 			}
 		});
 		series.getData().add(data);
+                Tooltip.install(node, new Tooltip(
+                        "Time: " +
+                                time + cc.measurementConfigs()[0].unit() + ", " +
+                                cc.measurementConfigs()[measureIndex].name() + ": " +
+                                measure + cc.measurementConfigs()[measureIndex].unit()
+                ));
 
 	}
 
