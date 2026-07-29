@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="776164ce-7a69-48e2-8934-c0376db3d4b9" name="Changes" comment="port now has 1 chance to open">
+    <list default="true" id="776164ce-7a69-48e2-8934-c0376db3d4b9" name="Changes" comment="issues with space unicode">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/buoyui/backend/processor/SerialCommunicator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/buoyui/backend/processor/SerialCommunicator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/buoyui/backend/processor/SerialProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/buoyui/backend/processor/SerialProcessor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/buoyui/backend/settings/SettingsManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/buoyui/backend/settings/SettingsManager.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -676,7 +676,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="methods to get some class info" />
     <MESSAGE value="added terminal verbose var and accessor and mod methods" />
     <MESSAGE value="space unicode issues" />
     <MESSAGE value="imports: lombok" />
@@ -691,7 +690,6 @@
     <MESSAGE value="converted parsedArray from &lt;DataPoint&gt; to &lt;Object&gt; so verbose output is possible" />
     <MESSAGE value="strings can now be added to parsedArray cause Strings and DataPoints are Objects" />
     <MESSAGE value="printing the raw data collected" />
-    <MESSAGE value="issues with space unicode" />
     <MESSAGE value="Future&lt;?&gt;s are surrounded by if to make sure it cancels the process i they are not null" />
     <MESSAGE value="fixed wrong buttons being active" />
     <MESSAGE value="table now clears instead of removeing all data." />
@@ -699,9 +697,11 @@
     <MESSAGE value="Object read" />
     <MESSAGE value="checks if object is string. if string it will add to terminal. if not, it will create DataPoint" />
     <MESSAGE value="changing timeouts" />
-    <MESSAGE value="logs" />
     <MESSAGE value="port now has 1 chance to open" />
-    <option name="LAST_COMMIT_MESSAGE" value="port now has 1 chance to open" />
+    <MESSAGE value="moved port opening to a better place" />
+    <MESSAGE value="logs" />
+    <MESSAGE value="issues with space unicode" />
+    <option name="LAST_COMMIT_MESSAGE" value="issues with space unicode" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
