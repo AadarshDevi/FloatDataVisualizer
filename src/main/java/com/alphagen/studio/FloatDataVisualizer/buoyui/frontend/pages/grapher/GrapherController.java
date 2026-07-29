@@ -305,7 +305,9 @@ public class GrapherController {
             ((ScatterPlotController) graphPane.getTabs().get(i).getProperties().get("plot_controller")).reset();
         }
 
-        tableView.getItems().removeAll(tableView.getItems());
+        System.out.println("[StartData] Graphs Reset");
+
+        tableView.getItems().clear(); //.removeAll(tableView.getItems());
         terminalTextArea.clear();
 
         activeTask = receiver.submit(serialCommunicator);
