@@ -76,123 +76,139 @@ public class GrapherController {
 	private SerialProcessor sp;
 	private DataPointProcessor dpp;
 	private Future<?> activeUIUpdater;
+    private final ExecutorService receiver = Executors.newSingleThreadExecutor();
+    private final ExecutorService database = Executors.newSingleThreadExecutor();
+    private final ExecutorService uiUpdater = Executors.newSingleThreadExecutor();
+    private final AtomicBoolean running = new AtomicBoolean(false);
+    @FXML public TabPane graphPane;
+    @FXML public Tab controlsTab;
+    @FXML public Tab tableTab;
+    @FXML public Tab terminalTab;
+    @FXML public Button startDataTransfer;
+    @FXML public Button stopDataTransfer;
+    @FXML public HBox checkBoxesContainer;
+    @FXML public Label connection_name_label;
+    @FXML public TableView<DataPoint> tableView;
+    @FXML public Label startFlagLabel;
+    @FXML public Label endFlagLabel;
+    @FXML public TableColumn<DataPoint, String> timeTableCol;
+    @FXML public Label teamInfoLabel;
+    @FXML public Label packetLabel;
+    @FXML public Label baudRateLabel;
+    @FXML public Label serialPortLabel;
+    @FXML public Label rawDataFormatLabel;
+    @FXML public TilePane measurementsTilePane;
+    @FXML public TextArea terminalTextArea;
+    @FXML public ScrollPane configScroll;
+    @FXML public VBox configVBox;
+    private SettingsManager sm;
+    private Future<?> activeTask;
+    private Future<?> activeDataBase;
+    @Setter private ConnectionConfig connectionConfig;
+    private SerialCommunicator serialCommunicator;
+    private DataPointProcessor dataPointProcessor;
+    private Future<?> activeUIUpdater;
 
-	// todo: add css in the fxml for the table rows, focused, selected, hover, normal, font
+    @FXML
+    public void initialize() {
+        sm = SettingsManager.getInstance();
+        System.out.println();
+        System.out.println(" >>> Serial Communication > Initializing");
+        graphPane.getSelectionModel().select(2);
+        checkBoxesContainer.setDisable(true);
+        checkBoxesContainer.setVisible(false);
+        checkBoxesContainer.setManaged(false);
 
-	@FXML
-	public void initialize() {
-		sm = SettingsManager.getInstance();
-		System.out.println();
-		System.out.println(" >>> Serial Communication > Initializing");
-		graphPane.getSelectionModel().select(2);
-		checkBoxesContainer.setDisable(true);
-		checkBoxesContainer.setVisible(false);
-		checkBoxesContainer.setManaged(false);
+        this.connectionConfig = Connections.getCurrentConnection();
 
-		this.connectionConfig = Connections.getCurrentConnection();
+        if (connectionConfig == null) {
+            System.out.println(" >>> Serial Communication > Null ConnectionConfig");
+            return;
+        }
 
-		if (connectionConfig == null) {
-			System.out.println(" >>> Serial Communication > Null ConnectionConfig");
-			return;
-		}
+        connection_name_label.setText(connectionConfig.connectionName());
 
-		connection_name_label.setText(connectionConfig.connectionName());
-		// todo: setup tabs > depth, pressure etc
+        FloatConfig fc = connectionConfig.floatConfig();
+        MeasurementConfig[] measurementConfigs = connectionConfig.measurementConfigs();
+        teamInfoLabel.setText(fc.teamData());
+        packetLabel.setText(fc.pkt());
+        baudRateLabel.setText(Integer.toString(connectionConfig.baudRate()));
+        serialPortLabel.setText(connectionConfig.port().getDescriptivePortName());
+        StringBuilder measurementsString = new StringBuilder();
+        for (MeasurementConfig measurementConfig : measurementConfigs) {
+            measurementsString.append(",").append(measurementConfig.name()).append("(").append(measurementConfig.unit()).append(")");
+            MeasurementLabel ml = new MeasurementLabel(measurementConfig.name() + " (" + measurementConfig.unit() + ")");
+            ml.getStylesheets().clear(); // testme: theme
+            ml.getStylesheets().add(ThemeProcessor.getThemeCSS().toString()); // testme: theme
+            measurementsTilePane.getChildren().add(ml);
+        }
+        rawDataFormatLabel.setText(fc.teamData() + "," + fc.pkt() + measurementsString);
+        endFlagLabel.setText(fc.endFlag());
+        startFlagLabel.setText(fc.startFlag());
 
-		// todo:
-		// 		1. get length of MeasurementsConfig
-		// 		2. create checkbox
-		// 			1. get size
-		// 			2. get style
-		// 			3. selected = false
-		// 		3. create table col
-		// 			1. get size
-		// 			2. get style
-		// 			3. add to table
-		// 		4. put data
-		// 		5. lock table col length and checkbox length
+        // todo: update (7/29/2026) - better solution: https://stackoverflow.com/questions/27739833/adapt-tableview-menu-button
+        @SuppressWarnings("unchecked")
+        TableColumn<DataPoint, String> teamCol = (TableColumn<DataPoint, String>) tableView.getColumns().getFirst();
+        teamCol.setCellValueFactory(dp -> new SimpleStringProperty(dp.getValue().teamInfo()));
 
-		FloatConfig fc = connectionConfig.floatConfig();
-		MeasurementConfig[] measurementConfigs = connectionConfig.measurementConfigs();
-		teamInfoLabel.setText(fc.teamData());
-		packetLabel.setText(fc.pkt());
-		baudRateLabel.setText(Integer.toString(connectionConfig.baudRate()));
-		serialPortLabel.setText(connectionConfig.port().getDescriptivePortName());
-		StringBuilder measurementsString = new StringBuilder();
-		for (MeasurementConfig measurementConfig : measurementConfigs) {
-			measurementsString.append(",").append(measurementConfig.name()).append("(").append(measurementConfig.unit()).append(")");
-			MeasurementLabel ml = new MeasurementLabel(measurementConfig.name() + " (" + measurementConfig.unit() + ")");
-			ml.getStylesheets().clear(); // testme: theme
-			ml.getStylesheets().add(ThemeProcessor.getThemeCSS().toString()); // testme: theme
-			measurementsTilePane.getChildren().add(ml);
-		}
-		rawDataFormatLabel.setText(fc.teamData() + "," + fc.pkt() + measurementsString);
-		endFlagLabel.setText(fc.endFlag());
-		startFlagLabel.setText(fc.startFlag());
+        @SuppressWarnings("unchecked") // todo
+        TableColumn<DataPoint, Number> packetNum = (TableColumn<DataPoint, Number>) tableView.getColumns().get(1);
+        packetNum.setCellValueFactory(dp -> new SimpleIntegerProperty(dp.getValue().packetNum()));
 
-		@SuppressWarnings("unchecked")
-		TableColumn<DataPoint, String> teamCol = (TableColumn<DataPoint, String>) tableView.getColumns().getFirst();
-		teamCol.setCellValueFactory(dp -> new SimpleStringProperty(dp.getValue().teamInfo()));
+        @SuppressWarnings("unchecked") // todo
+        TableColumn<DataPoint, Double> timeCol = (TableColumn<DataPoint, Double>) tableView.getColumns().get(2);
+        timeCol.setCellValueFactory(dp -> new SimpleDoubleProperty(dp.getValue().time()).asObject());
 
-		@SuppressWarnings("unchecked") // todo
-		TableColumn<DataPoint, Number> packetNum = (TableColumn<DataPoint, Number>) tableView.getColumns().get(1);
-		packetNum.setCellValueFactory(dp -> new SimpleIntegerProperty(dp.getValue().packetNum()));
+        MeasurementConfig timeConfig = measurementConfigs[0];
 
-		@SuppressWarnings("unchecked") // todo
-		TableColumn<DataPoint, Double> timeCol = (TableColumn<DataPoint, Double>) tableView.getColumns().get(2);
-		timeCol.setCellValueFactory(dp -> new SimpleDoubleProperty(dp.getValue().time()).asObject());
+        timeTableCol.setText(timeConfig.name() + " (" + timeConfig.unit() + ")");
 
-		MeasurementConfig timeConfig = measurementConfigs[0];
+        for (int i = 1; i < measurementConfigs.length; i++) {
 
-		timeTableCol.setText(timeConfig.name() + " (" + timeConfig.unit() + ")");
+            MeasurementConfig measurementConfig = measurementConfigs[i];
 
-		for (int i = 1; i < measurementConfigs.length; i++) {
+            // Tabs > ScatterPlots
+            Tab tab = new Tab(measurementConfig.name());
 
-			MeasurementConfig measurementConfig = measurementConfigs[i];
+            FXMLLoader fxmlLoader = new FXMLLoader(CardConstants.SCATTER_PLOT);
+            BorderPane scatterPlot;
+            try {
+                scatterPlot = fxmlLoader.load();
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
 
-			// Tabs > ScatterPlots
-			Tab tab = new Tab(measurementConfig.name());
+            scatterPlot.getStylesheets().clear(); // testme: theme
+            scatterPlot.getStylesheets().add(ThemeProcessor.getThemeCSS().toString()); // testme: theme
 
-			FXMLLoader fxmlLoader = new FXMLLoader(CardConstants.SCATTER_PLOT);
-			BorderPane scatterPlot;
-			try {
-				scatterPlot = fxmlLoader.load();
-			} catch (IOException e) {
-				throw new RuntimeException(e);
-			}
+            ScatterPlotController spc = fxmlLoader.getController();
+            spc.setAxes(timeConfig, measurementConfig);
+            scatterPlot.getProperties().put("controller", spc);
+            tab.getProperties().put("plot", scatterPlot);
+            tab.getProperties().put("plot_controller", spc);
+            tab.setContent(scatterPlot);
+            graphPane.getTabs().add(tab);
 
-			scatterPlot.getStylesheets().clear(); // testme: theme
-			scatterPlot.getStylesheets().add(ThemeProcessor.getThemeCSS().toString()); // testme: theme
-
-			ScatterPlotController spc = fxmlLoader.getController();
-			spc.setAxes(timeConfig, measurementConfig);
-			scatterPlot.getProperties().put("controller", spc);
-			tab.getProperties().put("plot", scatterPlot);
-			tab.getProperties().put("plot_controller", spc);
-			tab.setContent(scatterPlot);
-			graphPane.getTabs().add(tab);
-
-			// Table
-			TableColumn<DataPoint, Double> col = new TableColumn<>();
-			col.setText(measurementConfig.name() + " (" + measurementConfig.unit() + ")");
-			col.setMinWidth(150);
-			col.setPrefWidth(150);
-			tableView.getColumns().add(col);
+            // Table
+            TableColumn<DataPoint, Double> col = new TableColumn<>();
+            col.setText(measurementConfig.name() + " (" + measurementConfig.unit() + ")");
+            col.setMinWidth(150);
+            col.setPrefWidth(150);
+            tableView.getColumns().add(col);
 
 
-			int finalI = i;
-			col.setCellValueFactory(dp -> {
-				try {
-					double num = dp.getValue().measurements()[finalI - 1];
-					return new SimpleDoubleProperty(num).asObject();
-				} catch (ArrayIndexOutOfBoundsException _) {
-					System.out.println(" >>> Column will not get data because it receives less data");
-				}
-				return new SimpleObjectProperty<>(null);
-			});
+            int finalI = i;
+            col.setCellValueFactory(dp -> {
+                try {
+                    double num = dp.getValue().measurements()[finalI - 1];
+                    return new SimpleDoubleProperty(num).asObject();
+                } catch (ArrayIndexOutOfBoundsException _) {
+                    System.out.println(" >>> Column will not get data because it receives less data");
+                }
+                return new SimpleObjectProperty<>(null);
+            });
 
-
-			// todo for selective export
+            // todo for selective export
 //			CheckBox cb = new CheckBox();
 //			cb.setMinWidth(150);
 //			cb.setPrefWidth(150);
@@ -200,7 +216,7 @@ public class GrapherController {
 //
 //			// link the size of checkbox to table col
 //			checkBoxesContainer.getChildren().add(cb);
-		}
+        }
 
 		stopingDataTransfer();
 		sp = new SerialProcessor(connectionConfig);
@@ -208,6 +224,33 @@ public class GrapherController {
 		sp.setDpp(dpp);
 		System.out.println(" >>> Grapher: SP & DPP > Ready");
 	}
+        dataPointProcessor = new DataPointProcessor();
+        // todo: get verbose from settings file
+        serialCommunicator = new SerialCommunicator(connectionConfig, dataPointProcessor, false);
+//        sp = new SerialProcessor(connectionConfig);
+//        sp.setDpp(dpp);
+        System.out.println(" >>> Grapher: SP & DPP > Ready");
+        ContextMenu terminalMenu = new ContextMenu();
+        exportOutput.setDisable(true);
+
+        CheckMenuItem autoscrollTerminal = new CheckMenuItem("Auto-Scroll");
+        autoscrollTerminal.setOnAction(event -> {
+            boolean autoscroll = !SettingsManager.getInstance().getAutoscrollTerminal();
+            autoscrollTerminal.setSelected(autoscroll);
+            SettingsManager.getInstance().setAutoscrollTerminal(autoscroll);
+        });
+
+        // verbose output
+        CheckMenuItem verboseOutput = new CheckMenuItem("Verbose");
+        verboseOutput.setSelected(false); // todo get from settings
+        verboseOutput.setOnAction(event -> {
+            boolean verbose = !serialCommunicator.isVerbose();
+            verboseOutput.setSelected(verbose);
+            serialCommunicator.setVerbose(verbose);
+        });
+        terminalMenu.getItems().addAll(exportOutput, autoscrollTerminal, verboseOutput);
+        terminalTextArea.setContextMenu(terminalMenu);
+    }
 
 	@FXML
 	public void stopingDataTransfer() {
@@ -218,8 +261,8 @@ public class GrapherController {
 			activeUIUpdater.cancel(true);
 		}
 
-		stopDataTransfer.setDisable(true);
-		startDataTransfer.setDisable(false);
+        stopDataTransfer.setDisable(true);
+        startDataTransfer.setDisable(false);
 
 		if (dpp != null) {
 			System.out.println(" >>> Parsed Array > " + dpp.getParsedArray().size());
@@ -237,53 +280,63 @@ public class GrapherController {
 			});
 		}
 
-		if (connectionConfig.port().isOpen()) {
-			connectionConfig.port().closePort();
-			System.out.println(" [Debug] Port Closed? " + connectionConfig.port().isOpen());
-		}
+        if (serialCommunicator.isConnected()) {
+            serialCommunicator.close();
+            System.out.println(" [Debug] Port Closed? " + serialCommunicator.isConnected());
+        }
 
-		System.out.println("\n >>> [Debug] Stopping Data Transfer\n");
-	}
+        System.out.println("\n >>> [Debug] Stopping Data Transfer\n");
+    }
 
-	@FXML
-	public void startingDataTransfer() {
+    // fixme the app is broken here
+    @FXML
+    public void startingDataTransfer() {
 
-		if (!connectionConfig.port().openPort()) {
-			System.err.println(" >>> Port not found");
-			Alert alert = new Alert(Alert.AlertType.ERROR);
-			alert.setTitle("Connection Exception");
-			alert.setHeaderText(null);
-			alert.setContentText("Hardware not connected to device. Serial Port disconnected and not found.");
-			alert.showAndWait();
-			return;
-		}
-		connectionConfig.port().closePort();
+        activeUIUpdater.cancel(true);
+        activeTask.cancel(true);
+        activeDataBase.cancel(true);
 
-		// disable start button and enable stop button
-		startDataTransfer.setDisable(true);
-		stopDataTransfer.setDisable(false);
+        // check if the serial comms is still running
+        if (serialCommunicator.isConnected()) {
+            serialCommunicator.stop();
+        }
 
-		for (int i = 3; i < graphPane.getTabs().size(); i++) {
-			((ScatterPlotController) graphPane.getTabs().get(i).getProperties().get("plot_controller")).reset();
-		}
+        if (!serialCommunicator.open()) {
+            System.err.println(" >>> Port not found");
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Connection Exception");
+            alert.setHeaderText(null);
+            alert.setContentText("Hardware not connected to device. Serial Port disconnected and not found.");
+            alert.showAndWait();
+            return;
+        }
+        serialCommunicator.close();
 
-		tableView.getItems().removeAll(tableView.getItems());
-		terminalTextArea.clear();
+        // disable buttons
+        startDataTransfer.setDisable(false);
+        stopDataTransfer.setDisable(true);
 
-		System.out.println(" >>> Serial Communication > Start");
+        for (int i = 3; i < graphPane.getTabs().size(); i++) {
+            ((ScatterPlotController) graphPane.getTabs().get(i).getProperties().get("plot_controller")).reset();
+        }
 
-		activeTask = receiver.submit(sp);
-		activeDataBase = database.submit(dpp);
-		activeUIUpdater = uiUpdater.submit(() -> {
-			System.out.println(" >>> Grapher > Running UI Updater");
-			LinkedBlockingQueue<DataPoint> rawArray = dpp.getParsedArray();
-			while (!Thread.currentThread().isInterrupted()) {
-				DataPoint dp;
-				try {
-					dp = rawArray.take();
-				} catch (InterruptedException e) {
-					throw new RuntimeException(e);
-				}
+        tableView.getItems().removeAll(tableView.getItems());
+        terminalTextArea.clear();
+
+        activeTask = receiver.submit(serialCommunicator);
+        activeDataBase = database.submit(dataPointProcessor);
+        activeUIUpdater = uiUpdater.submit(() -> {
+            while (!Thread.currentThread().isInterrupted()) {
+                IO.println("Running UI Updater");
+                LinkedBlockingQueue<DataPoint> linkedBlockingQueue = dataPointProcessor.getParsedArray();
+
+                // 1. get data
+                DataPoint dataPoint;
+                try {
+                    dataPoint = linkedBlockingQueue.take();
+                } catch (InterruptedException e) {
+                    throw new RuntimeException(e);
+                }
 
 				Platform.runLater(() -> {
 //					System.out.println(" >>> Measurement Configs > " + Arrays.toString(dp.measurements()));
@@ -300,6 +353,10 @@ public class GrapherController {
 					tableView.getItems().add(dp);
 					if (sm.getAutoscrollTable())
 						tableView.scrollTo(tableView.getItems().size() - 1); // table autoscroll
+                Platform.runLater(() -> {
+                    tableView.getItems().add(dataPoint);
+                    if (sm.getAutoscrollTable())
+                        tableView.scrollTo(dataPoint);
 
 					if (sm.getAutoscrollTerminal())
 						terminalTextArea.appendText(dp.toRaw() + "\n"); // textarea autoscroll
@@ -324,128 +381,141 @@ public class GrapherController {
 			stage.setFullScreen(stage.isFullScreen()); // fixme: when going home, it goes to fullscreen
 		}
 	}
+    @FXML
+    public void backHome() {
 
-	@FXML
-	public void exportData() {
+        System.out.println(" >>> Serial Communication > Back Home");
+        Stage stage = StageManager.getMainStage();
+        Scene scene = StageManager.getConnectionsScene();
+        ControllerManager.setGrapherController(null);
+        stage.setScene(scene);
+        if (Debug.useWindowModes) {
+            ControllerManager.getConnectionsController().fullscreenApp();
+            stage.setFullScreen(stage.isFullScreen()); // fixme: when going home, it goes to fullscreen
+        }
+    }
 
-		ObservableList<DataPoint> list = tableView.getItems();
+    @FXML
+    public void exportData() {
 
-		FileChooser fileChooser = new FileChooser();
-		fileChooser.setTitle("Export Screenshot");
-		File rawPath = fileChooser.showSaveDialog(StageManager.getMainStage());
-		File file;
+        ObservableList<DataPoint> list = tableView.getItems();
 
-		if (rawPath == null) return;
-		if (rawPath.getName().endsWith(".csv"))
-			file = new File(rawPath.getAbsolutePath());
-		else
-			file = new File(rawPath.getAbsolutePath() + ".csv");
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("Export Screenshot");
+        File rawPath = fileChooser.showSaveDialog(StageManager.getMainStage());
+        File file;
 
-		try (BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(file))) {
+        if (rawPath == null) return;
+        if (rawPath.getName().endsWith(".csv"))
+            file = new File(rawPath.getAbsolutePath());
+        else
+            file = new File(rawPath.getAbsolutePath() + ".csv");
 
-			for (int i = 0; i < connectionConfig.measurementConfigs().length; i++) {
-				bufferedWriter.write(connectionConfig.measurementConfigs()[i].name());
-				bufferedWriter.write("(");
-				bufferedWriter.write(connectionConfig.measurementConfigs()[i].unit());
-				bufferedWriter.write(")");
-				if (i != connectionConfig.measurementConfigs().length - 1) {
-					bufferedWriter.write(",");
-				}
-			}
-			bufferedWriter.newLine();
+        try (BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(file))) {
 
-			for (DataPoint dp : list) {
-				double[] measurements = dp.measurements();
+            for (int i = 0; i < connectionConfig.measurementConfigs().length; i++) {
+                bufferedWriter.write(connectionConfig.measurementConfigs()[i].name());
+                bufferedWriter.write("(");
+                bufferedWriter.write(connectionConfig.measurementConfigs()[i].unit());
+                bufferedWriter.write(")");
+                if (i != connectionConfig.measurementConfigs().length - 1) {
+                    bufferedWriter.write(",");
+                }
+            }
+            bufferedWriter.newLine();
 
-				bufferedWriter.write(Double.toString(dp.time()));
-				bufferedWriter.write(",");
+            for (DataPoint dp : list) {
+                double[] measurements = dp.measurements();
 
-				for (int i = 0; i < measurements.length; i++) {
-					double measurement = measurements[i];
-					bufferedWriter.write(Double.toString(measurement));
-					if (i != measurements.length - 1) {
-						bufferedWriter.write(",");
-					}
-				}
-				bufferedWriter.newLine();
-			}
-		} catch (IOException e) {
-			throw new RuntimeException(e);
-		}
-	}
+                bufferedWriter.write(Double.toString(dp.time()));
+                bufferedWriter.write(",");
 
-	@FXML
-	public void exportRaw() {
-		// todo: based on the tab, export data.
-		//  if tab == terminal then export raw data
-		//  if tab == table then export csv
+                for (int i = 0; i < measurements.length; i++) {
+                    double measurement = measurements[i];
+                    bufferedWriter.write(Double.toString(measurement));
+                    if (i != measurements.length - 1) {
+                        bufferedWriter.write(",");
+                    }
+                }
+                bufferedWriter.newLine();
+            }
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
 
-		// todo same for the screen shot button
-		//  	update the svg to a screen shot svg
+    @FXML
+    public void exportRaw() {
+        // todo: based on the tab, export data.
+        //  if tab == terminal then export raw data
+        //  if tab == table then export csv
 
-		// todo add a shortcut to do the entire window screenshot
+        // todo same for the screen shot button
+        //  	update the svg to a screen shot svg
 
-		ObservableList<DataPoint> list = tableView.getItems();
+        // todo add a shortcut to do the entire window screenshot
 
-		FileChooser fileChooser = new FileChooser();
-		fileChooser.setTitle("Export Screenshot");
-		File rawPath = fileChooser.showSaveDialog(StageManager.getMainStage());
-		File file;
+        ObservableList<DataPoint> list = tableView.getItems();
 
-		if (rawPath == null) return;
-		if (rawPath.getName().endsWith(".csv"))
-			file = new File(rawPath.getAbsolutePath());
-		else
-			file = new File(rawPath.getAbsolutePath() + ".csv");
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("Export Screenshot");
+        File rawPath = fileChooser.showSaveDialog(StageManager.getMainStage());
+        File file;
 
-		try (BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(file))) {
-			for (DataPoint dp : list) {
-				bufferedWriter.write(dp.toRaw());
-				bufferedWriter.newLine();
-			}
-		} catch (IOException e) {
-			throw new RuntimeException(e);
-		}
+        if (rawPath == null) return;
+        if (rawPath.getName().endsWith(".csv"))
+            file = new File(rawPath.getAbsolutePath());
+        else
+            file = new File(rawPath.getAbsolutePath() + ".csv");
 
-	}
+        try (BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(file))) {
+            for (DataPoint dp : list) {
+                bufferedWriter.write(dp.toRaw());
+                bufferedWriter.newLine();
+            }
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
 
-	public void fullscreen() { // fixme: when going here, fullscreen to windowed mode
+    }
 
-		if (!Debug.useWindowModes) {
-			return;
-		}
+    public void fullscreen() { // fixme: when going here, fullscreen to windowed mode
 
-		Stage stage = StageManager.getMainStage();
-		System.out.println("isFullScreen: " + stage.isFullScreen());
+        if (!Debug.useWindowModes) {
+            return;
+        }
 
-		if (!stage.isFullScreen()) {
-			System.out.println("Fullscreen: No");
-			return;
-		}
+        Stage stage = StageManager.getMainStage();
+        System.out.println("isFullScreen: " + stage.isFullScreen());
 
-		System.out.println("Fullscreen: Yes");
+        if (!stage.isFullScreen()) {
+            System.out.println("Fullscreen: No");
+            return;
+        }
 
-		double scrollWidth = graphPane.getWidth() - 24;
-		double scrollHeight = graphPane.getHeight() - 24;
-		System.out.println("scrollWidth: " + scrollWidth + " scrollHeight: " + scrollHeight);
+        System.out.println("Fullscreen: Yes");
 
-		double oldWidth = configScroll.getWidth() - 24;
-		double oldHeight = configScroll.getHeight();
-		System.out.println("oldWidth: " + oldWidth + " oldWidth: " + oldHeight);
+        double scrollWidth = graphPane.getWidth() - 24;
+        double scrollHeight = graphPane.getHeight() - 24;
+        System.out.println("scrollWidth: " + scrollWidth + " scrollHeight: " + scrollHeight);
 
-		oldWidth = configScroll.getPrefWidth() - 24;
-		oldHeight = configScroll.getPrefHeight();
-		System.out.println("oldPrefWidth: " + oldWidth + " oldPrefWidth: " + oldHeight);
+        double oldWidth = configScroll.getWidth() - 24;
+        double oldHeight = configScroll.getHeight();
+        System.out.println("oldWidth: " + oldWidth + " oldWidth: " + oldHeight);
 
-		stage.setFullScreen(true);
+        oldWidth = configScroll.getPrefWidth() - 24;
+        oldHeight = configScroll.getPrefHeight();
+        System.out.println("oldPrefWidth: " + oldWidth + " oldPrefWidth: " + oldHeight);
 
-		double newWidth = configScroll.getWidth() - 24;
-		double newHeight = (oldHeight * newWidth) / oldWidth;
-		System.out.println("newWidth: " + newWidth + " newHeight: " + newHeight);
+        stage.setFullScreen(true);
 
-		configVBox.setPrefWidth(newWidth);
-		configVBox.setPrefHeight(newHeight);
-		System.out.println();
+        double newWidth = configScroll.getWidth() - 24;
+        double newHeight = (oldHeight * newWidth) / oldWidth;
+        System.out.println("newWidth: " + newWidth + " newHeight: " + newHeight);
+
+        configVBox.setPrefWidth(newWidth);
+        configVBox.setPrefHeight(newHeight);
+        System.out.println();
 
 
 //		if (StageManager.getMainStage().isFullScreen()) {
@@ -476,5 +546,5 @@ public class GrapherController {
 //			spc.getScatterPlot().setMinHeight(newHeight);
 //			System.out.println();
 //		}
-	}
+    }
 }

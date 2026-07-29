@@ -19,21 +19,33 @@ class SettingsData {
 	private int default_baudRate = 115200;
 	private String default_startDataTransferFlag = "--start-data-transfer";
 	private String default_endDataTransferFlag = "--end-data-transfer";
+    // file data
+    private final String settingsVersion = "2.0.0";
+    // autoscroll
+    private final AtomicBoolean terminalAutoscroll = new AtomicBoolean(true);
+    private final AtomicBoolean terminalVerbose = new AtomicBoolean(false);
+    // app data
+    private AppMode appMode = AppMode.USER;
+    // default autofill data
+    private String default_teamInfo = "";
+    private int default_baudRate = 115200;
+    private String default_startDataTransferFlag = "--start-data-transfer";
+    private String default_endDataTransferFlag = "--end-data-transfer";
 
-	public boolean getAutoscrollTerminal() {
-		return terminalAutoscroll.get();
-	}
+    public boolean getAutoscrollTerminal() {
+        return terminalAutoscroll.get();
+    }
 
-	public void setAutoscrollTerminal(boolean autoscroll) {
-		terminalAutoscroll.set(autoscroll);
-	}
+    public void setAutoscrollTerminal(boolean autoscroll) {
+        terminalAutoscroll.set(autoscroll);
+    }
 
-	public boolean getAutoscrollTable() {
-		return tableAutoscroll.get();
-	}
+    public boolean getAutoscrollTable() {
+        return tableAutoscroll.get();
+    }
 
-	public void setAutoscrollTable(boolean autoscroll) {
-		tableAutoscroll.set(autoscroll);
-	}
+    public void setAutoscrollTable(boolean autoscroll) {
+        tableAutoscroll.set(autoscroll);
+    }
 
 }

@@ -21,70 +21,70 @@ import java.util.ArrayList;
 
 public class StageManager {
 
-	private static final Logger LOGGER = LogManager.getLogger(StageManager.class);
-	@Getter
-	private static Stage mainStage;
-	@Getter
-	@Setter
-	private static Stage connectionCreatorStage;
-	@Getter private static Scene connectionsScene;
-	@Getter private static Scene graphingScene;
+    private static final Logger LOGGER = LogManager.getLogger(StageManager.class);
+    @Getter
+    private static Stage mainStage;
+    @Getter
+    @Setter
+    private static Stage connectionCreatorStage;
+    @Getter private static Scene connectionsScene;
+    @Getter private static Scene graphingScene;
 
-	public static void setMainStage(Stage stage) {
-		mainStage = stage;
-		mainStage.initStyle(StageStyle.TRANSPARENT);
-	}
+    public static void setMainStage(Stage stage) {
+        mainStage = stage;
+        mainStage.initStyle(StageStyle.TRANSPARENT);
+    }
 
-	public static void setConnectionsScene() {
-		LOGGER.info("Loading ConnectionsUI");
-		FXMLLoader fxmlLoader = new FXMLLoader(PageConstants.CONNECTIONS_PAGE);
-		BorderPane buoyUI = null;
-		try {
-			buoyUI = fxmlLoader.load();
-		} catch (IOException e) {
-			throw new RuntimeException(e);
-		}
-		ConnectionsController cc = fxmlLoader.getController();
+    public static void setConnectionsScene() {
+        LOGGER.info("Loading ConnectionsUI");
+        FXMLLoader fxmlLoader = new FXMLLoader(PageConstants.CONNECTIONS_PAGE);
+        BorderPane buoyUI = null;
+        try {
+            buoyUI = fxmlLoader.load();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        ConnectionsController cc = fxmlLoader.getController();
 
-		ControllerManager.setConnectionsController(cc);
+        ControllerManager.setConnectionsController(cc);
 
-		ArrayList<ConnectionConfig> connectionsList = Connections.Processor.readAllConnections();
-		if (connectionsList != null) {
-			LOGGER.info("Connections Found: {}", connectionsList.size());
-			cc.setConnectionConfigs(connectionsList);
-		}
+        ArrayList<ConnectionConfig> connectionsList = Connections.Processor.readAllConnections();
+        if (connectionsList != null) {
+            LOGGER.info("Connections Found: {}", connectionsList.size());
+            cc.setConnectionConfigs(connectionsList);
+        }
 
-		Scene scene = new Scene(buoyUI);
-		buoyUI.getProperties().put("grapher", cc);
-		StageUtil.customTitleBarDrag(StageManager.getMainStage(), scene, buoyUI);
-		buoyUI.getStylesheets().clear();  // testme: theme
-		buoyUI.getStylesheets().add(ThemeProcessor.getThemeCSS().toString()); // testme: theme
-		StageManager.getMainStage().initStyle(StageStyle.TRANSPARENT);
-		connectionsScene = scene;
-	}
+        Scene scene = new Scene(buoyUI);
+        buoyUI.getProperties().put("grapher", cc);
+        StageUtil.customTitleBarDrag(StageManager.getMainStage(), scene, buoyUI);
+        buoyUI.getStylesheets().clear();  // testme: theme
+        buoyUI.getStylesheets().add(ThemeProcessor.getThemeCSS().toString()); // testme: theme
+        StageManager.getMainStage().initStyle(StageStyle.TRANSPARENT);
+        connectionsScene = scene;
+    }
 
 
-	public static GrapherController setGraphingScene() {
+    public static GrapherController setGraphingScene() {
 
-		System.out.println("Loading GraphingUI");
+        System.out.println("Loading GraphingUI");
 
-		FXMLLoader grapherLoader = new FXMLLoader(PageConstants.GRAPHING_PAGE);
-		BorderPane grapherUI = null;
-		try {
-			grapherUI = grapherLoader.load();
-		} catch (IOException e) {
-			throw new RuntimeException(e);
-		}
-		GrapherController gc = grapherLoader.getController();
-		Scene scene = new Scene(grapherUI);
-		grapherUI.getProperties().put("grapher", gc);
+        FXMLLoader grapherLoader = new FXMLLoader(PageConstants.GRAPHING_PAGE);
+        BorderPane grapherUI = null;
+        try {
+            grapherUI = grapherLoader.load();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        GrapherController gc = grapherLoader.getController();
+        Scene scene = new Scene(grapherUI);
+        grapherUI.getProperties().put("grapher", gc);
 
-		grapherUI.getStylesheets().clear(); // testme: theme
-		grapherUI.getStylesheets().add(ThemeProcessor.getThemeCSS().toString()); // testme: theme
+        grapherUI.getStylesheets().clear(); // testme: theme
+        grapherUI.getStylesheets().add(ThemeProcessor.getThemeCSS().toString());
 //		StageManager.createInvisPane(scene, grapherUI);
-		StageUtil.customTitleBarDrag(StageManager.getMainStage(), scene, grapherUI);
+        StageUtil.customTitleBarDrag(StageManager.getMainStage(), scene, grapherUI);
 //		StageManager.getMainStage().initStyle(StageStyle.TRANSPARENT);
-		graphingScene = scene;
-		return gc;
-	}
+        graphingScene = scene;
+        return gc;
+    }
 }
