@@ -21,15 +21,14 @@ public class SerialCommunicator implements Runnable {
     private final String startFlag;
     private final String endFlag;
     private final String teamData;
-
-    private final boolean verbose;
-
     private final AtomicBoolean running;
     private final AtomicBoolean collectData;
-
     // for future to send cmd to float
     private final AtomicReference<String> command = new AtomicReference<>();
     private final AtomicInteger errorCode = new AtomicInteger(0);
+    @Getter
+    @Setter
+    private boolean verbose;
 
     public SerialCommunicator(ConnectionConfig connectionConfig, DataPointProcessor dataPointProcessor, boolean verbose) {
 
