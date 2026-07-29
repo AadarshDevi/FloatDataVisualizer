@@ -295,6 +295,8 @@ public class GrapherController {
         }
         serialCommunicator.close();
 
+        System.out.println("[StartData] Serial Ready");
+
         // disable buttons
         startDataTransfer.setDisable(true);
         stopDataTransfer.setDisable(false);
@@ -309,6 +311,8 @@ public class GrapherController {
 
         tableView.getItems().clear(); //.removeAll(tableView.getItems());
         terminalTextArea.clear();
+
+        System.out.println("[StartData] Table & Terminal Reset");
 
         activeTask = receiver.submit(serialCommunicator);
         activeDataBase = database.submit(dataPointProcessor);
