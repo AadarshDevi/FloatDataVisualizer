@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="776164ce-7a69-48e2-8934-c0376db3d4b9" name="Changes" comment="fixing timeouts">
+    <list default="true" id="776164ce-7a69-48e2-8934-c0376db3d4b9" name="Changes" comment="fixed formatting">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/buoyui/backend/processor/DataPointProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/buoyui/backend/processor/DataPointProcessor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/buoyui/backend/processor/SerialCommunicator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/buoyui/backend/processor/SerialCommunicator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/buoyui/frontend/pages/grapher/GrapherController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/buoyui/frontend/pages/grapher/GrapherController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -677,16 +675,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="imports: lombok" />
-    <MESSAGE value="moved properties to local:readSettings()" />
-    <MESSAGE value="used exisitng method to check for empty properties" />
-    <MESSAGE value="sout to iop" />
-    <MESSAGE value="read if terminal is verbose" />
-    <MESSAGE value="set if terminal is verbose" />
-    <MESSAGE value="write if terminal is verbose" />
-    <MESSAGE value="terminal verbose methods" />
-    <MESSAGE value="idea file" />
-    <MESSAGE value="converted parsedArray from &lt;DataPoint&gt; to &lt;Object&gt; so verbose output is possible" />
     <MESSAGE value="strings can now be added to parsedArray cause Strings and DataPoints are Objects" />
     <MESSAGE value="printing the raw data collected" />
     <MESSAGE value="Future&lt;?&gt;s are surrounded by if to make sure it cancels the process i they are not null" />
@@ -702,7 +690,17 @@
     <MESSAGE value="issues with space unicode" />
     <MESSAGE value="found the random number" />
     <MESSAGE value="fixing timeouts" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixing timeouts" />
+    <MESSAGE value="Fixed log to have the correct header" />
+    <MESSAGE value="moved log out of the loop because it is a one time log." />
+    <MESSAGE value="import: Serial Port Timeout Exception" />
+    <MESSAGE value="fixed timeouts" />
+    <MESSAGE value="updated log to say that serial comms ready" />
+    <MESSAGE value="moved try above the read data to combat SerialPort Timeout Exception" />
+    <MESSAGE value="improved exception logs" />
+    <MESSAGE value="fixed and corrected log and log type" />
+    <MESSAGE value="added a is running bool to check if serial comms is running" />
+    <MESSAGE value="fixed formatting" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed formatting" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
