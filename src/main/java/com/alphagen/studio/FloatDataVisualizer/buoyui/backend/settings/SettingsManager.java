@@ -43,6 +43,7 @@ public class SettingsManager {
         ThemeProcessor.setTheme(Theme.valueOf(properties.getProperty(SettingsField.theme)));
         settingsData.setAutoscrollTerminal(Boolean.parseBoolean(properties.getProperty(SettingsField.terminalAutoscroll)));
         settingsData.setAutoscrollTable(Boolean.parseBoolean(properties.getProperty(SettingsField.tableAutoScroll)));
+        settingsData.setVerboseTerminal(Boolean.parseBoolean(properties.getProperty(SettingsField.terminalVerbose)));
     }
 
     // todo: write settings
