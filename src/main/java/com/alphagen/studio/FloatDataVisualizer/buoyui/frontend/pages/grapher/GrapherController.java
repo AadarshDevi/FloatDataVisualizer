@@ -262,6 +262,7 @@ public class GrapherController {
         }
 
         System.out.println("\n >>> [Debug] Stopping Data Transfer\n");
+        running.set(false);
     }
 
     // fixme the app is broken here
