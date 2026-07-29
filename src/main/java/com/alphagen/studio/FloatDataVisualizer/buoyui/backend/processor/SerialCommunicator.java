@@ -105,17 +105,18 @@ public class SerialCommunicator implements Runnable {
 
             // 2. read stream
             while (running.get() && !Thread.currentThread().isInterrupted()) {
-                String rawdata = bufferedReader.readLine();
-
-                System.out.println("[SerialRawData] " + rawdata);
-
-                if (rawdata == null && (!serialPort.isOpen() || (serialPort.bytesAvailable() == -1))) {
-                    System.err.println("[SerialData] Unusable");
-                }
-                rawdata = rawdata.trim();
-
-                // catch reading exceptions
                 try {
+
+                    String rawdata = bufferedReader.readLine();
+
+                    System.out.println("[SerialRawData] " + rawdata);
+
+                    if (rawdata == null && (!serialPort.isOpen() || (serialPort.bytesAvailable() == -1))) {
+                        System.err.println("[SerialData] Unusable");
+                    }
+                    rawdata = rawdata.trim();
+
+                    // catch reading exceptions
 
                     if (rawdata.equals(startFlag)) {
                         collectData.set(true);
@@ -135,6 +136,7 @@ public class SerialCommunicator implements Runnable {
                 } catch (InterruptedException e) {
                     System.err.println("[SerialData] Unusable");
                     running.set(false);
+                } catch (SerialPortTimeoutException _) {
                 }
             }
 
