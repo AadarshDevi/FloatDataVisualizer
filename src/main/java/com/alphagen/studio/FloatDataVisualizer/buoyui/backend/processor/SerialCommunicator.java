@@ -34,7 +34,7 @@ public class SerialCommunicator implements Runnable {
 
         serialPort = connectionConfig.port();
         serialPort.setBaudRate(connectionConfig.baudRate());
-        serialPort.setComPortTimeouts(SerialPort.TIMEOUT_READ_BLOCKING, 1000, 1000);
+        serialPort.setComPortTimeouts(SerialPort.TIMEOUT_READ_BLOCKING, 0, 0);
 
         FloatConfig floatConfig = connectionConfig.floatConfig();
         startFlag = floatConfig.startFlag();
