@@ -187,18 +187,14 @@ public class GrapherController {
 //			checkBoxesContainer.getChildren().add(cb);
         }
 
-		stopingDataTransfer();
-		sp = new SerialProcessor(connectionConfig);
-		dpp = new DataPointProcessor();
-		sp.setDpp(dpp);
-		System.out.println(" >>> Grapher: SP & DPP > Ready");
-	}
         dataPointProcessor = new DataPointProcessor();
         // todo: get verbose from settings file
         serialCommunicator = new SerialCommunicator(connectionConfig, dataPointProcessor, false);
 //        sp = new SerialProcessor(connectionConfig);
 //        sp.setDpp(dpp);
         System.out.println(" >>> Grapher: SP & DPP > Ready");
+        stopingDataTransfer();
+
         ContextMenu terminalMenu = new ContextMenu();
         exportOutput.setDisable(true);
 
