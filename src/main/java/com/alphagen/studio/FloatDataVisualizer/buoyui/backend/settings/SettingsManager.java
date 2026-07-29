@@ -33,7 +33,7 @@ public class SettingsManager {
         }
         System.out.println(properties.size());
 
-        if (properties.size() == 0) {
+        if (properties.isEmpty()) {
             properties.put(SettingsField.theme, Theme.LIGHT.toString());
             properties.put(SettingsField.terminalAutoscroll, Boolean.toString(true));
             properties.put(SettingsField.tableAutoScroll, Boolean.toString(true));
