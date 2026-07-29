@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="776164ce-7a69-48e2-8934-c0376db3d4b9" name="Changes" comment="unicode space problems">
+    <list default="true" id="776164ce-7a69-48e2-8934-c0376db3d4b9" name="Changes" comment="trying to fix the scrolling that happens when viewing config">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/buoyui/backend/app/PlatformDetector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/buoyui/backend/app/PlatformDetector.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/buoyui/backend/settings/SettingsManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/buoyui/backend/settings/SettingsManager.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,7 +45,7 @@
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/AadarshDevi/FloatDataVisualizer.git&quot;,
-    &quot;accountId&quot;: &quot;81734ebf-13b7-4f3e-9b75-59c3dba3a626&quot;
+    &quot;accountId&quot;: &quot;230fecb7-2f3e-4601-a35f-5c8a35bb089a&quot;
   }
 }</component>
   <component name="KubernetesApiPersistence">{}</component>
@@ -70,61 +68,61 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.0002562784872127" />
-      <entry key="MS500" value="1.1913120962278334" />
-      <entry key="S2" value="1.66135648258106" />
-      <entry key="S5" value="1.849444285234863" />
-      <entry key="S10" value="2.0279018612514235" />
-      <entry key="S30" value="4.517506725178569" />
-      <entry key="S60" value="11.750542094168217" />
-      <entry key="M2" value="29.667758361978418" />
-      <entry key="M5" value="78.77100909612788" />
-      <entry key="M10" value="127.95970809947377" />
-      <entry key="M15" value="155.98385500926494" />
-      <entry key="M30" value="203.44387825926066" />
-      <entry key="H1" value="276.0464137659002" />
-      <entry key="H2" value="429.6446399975953" />
-      <entry key="H4" value="685.4469423465044" />
-      <entry key="D1" value="1275.8724202561739" />
-      <entry key="W1" value="1456.3759382173937" />
+      <entry key="MS100" value="1.0149225825200847" />
+      <entry key="MS500" value="1.6166072868499524" />
+      <entry key="S2" value="3.91071314160346" />
+      <entry key="S5" value="7.855906294616433" />
+      <entry key="S10" value="11.419334475587082" />
+      <entry key="S30" value="15.63355543473776" />
+      <entry key="S60" value="17.228920045232258" />
+      <entry key="M2" value="20.37828626121733" />
+      <entry key="M5" value="47.35732633861661" />
+      <entry key="M10" value="97.80848829975986" />
+      <entry key="M15" value="133.8715849410241" />
+      <entry key="M30" value="197.78172795436" />
+      <entry key="H1" value="282.01106758623393" />
+      <entry key="H2" value="441.4692116350207" />
+      <entry key="H4" value="701.5533965978558" />
+      <entry key="D1" value="1303.6277689344172" />
+      <entry key="W1" value="1488.5203791573017" />
     </decayedCancelled>
     <decayedSelected>
-      <entry key="MS100" value="0.0" />
-      <entry key="MS500" value="0.0" />
-      <entry key="S2" value="1.3378581239834467E-307" />
-      <entry key="S5" value="1.780590385712244E-123" />
-      <entry key="S10" value="4.219704238109877E-62" />
-      <entry key="S30" value="3.481454075405261E-21" />
-      <entry key="S60" value="5.900384797117256E-11" />
-      <entry key="M2" value="7.681396226327767E-6" />
-      <entry key="M5" value="0.009001215949074716" />
-      <entry key="M10" value="0.09911743596941894" />
-      <entry key="M15" value="0.26355946901493427" />
-      <entry key="M30" value="1.4459916041696956" />
-      <entry key="H1" value="8.31923157999382" />
-      <entry key="H2" value="33.93716068265676" />
-      <entry key="H4" value="83.21212333085067" />
-      <entry key="D1" value="196.35382105427553" />
-      <entry key="W1" value="229.82373433946262" />
+      <entry key="MS100" value="1.2722522384379218E-92" />
+      <entry key="MS500" value="4.177491927182286E-19" />
+      <entry key="S2" value="2.6678785856738002E-5" />
+      <entry key="S5" value="0.02102160612507496" />
+      <entry key="S10" value="0.24534384961973718" />
+      <entry key="S30" value="1.4935720400254218" />
+      <entry key="S60" value="2.424348519110071" />
+      <entry key="M2" value="3.107410313126442" />
+      <entry key="M5" value="3.616611914452657" />
+      <entry key="M10" value="3.856807409733526" />
+      <entry key="M15" value="4.044844288195212" />
+      <entry key="M30" value="5.121863304402078" />
+      <entry key="H1" value="11.51055785298269" />
+      <entry key="H2" value="36.3011148986805" />
+      <entry key="H4" value="85.1944067056085" />
+      <entry key="D1" value="199.5541452493655" />
+      <entry key="W1" value="233.68982328882953" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="0.9268271781739614" />
-      <entry key="MS500" value="1.1735446889606207" />
-      <entry key="S2" value="1.6552633111085355" />
-      <entry key="S5" value="1.8467438925626478" />
-      <entry key="S10" value="2.0264276919585402" />
-      <entry key="S30" value="4.515779870239205" />
-      <entry key="S60" value="11.747583582776015" />
-      <entry key="M2" value="29.66408716625506" />
-      <entry key="M5" value="78.77562557797788" />
-      <entry key="M10" value="128.05453924137325" />
-      <entry key="M15" value="156.24344350697297" />
-      <entry key="M30" value="204.88584574526521" />
-      <entry key="H1" value="284.3584456834168" />
-      <entry key="H2" value="463.5676530897523" />
-      <entry key="H4" value="768.6412947558294" />
-      <entry key="D1" value="1472.2190807600555" />
-      <entry key="W1" value="1686.1984706631627" />
+      <entry key="MS100" value="0.9871687242557952" />
+      <entry key="MS500" value="1.6071325884864047" />
+      <entry key="S2" value="3.9046144563639125" />
+      <entry key="S5" value="7.864751303565043" />
+      <entry key="S10" value="11.613071231878685" />
+      <entry key="S30" value="17.009720555413328" />
+      <entry key="S60" value="19.552350599530453" />
+      <entry key="M2" value="23.418656482431466" />
+      <entry key="M5" value="50.94075803964306" />
+      <entry key="M10" value="101.64601668597693" />
+      <entry key="M15" value="137.9022487850933" />
+      <entry key="M30" value="202.894415033021" />
+      <entry key="H1" value="293.5121323428733" />
+      <entry key="H2" value="477.75536414603306" />
+      <entry key="H4" value="786.7297146456481" />
+      <entry key="D1" value="1503.1746579999888" />
+      <entry key="W1" value="1722.2089834244282" />
     </decayedShown>
   </component>
   <component name="OptimizeOnSaveOptions">
@@ -145,41 +143,41 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.Launcher.executor&quot;: &quot;Run&quot;,
-    &quot;Maven.FloatDataVisualizer [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.FloatDataVisualizer [package].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.FloatDataVisualizer [verify].executor&quot;: &quot;Run&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
-    &quot;code.cleanup.on.save&quot;: &quot;true&quot;,
-    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
-    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;dev&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/aadar/IdeaProjects/FloatDataVisualizer/src/main/resources/com/alphagen/studio/FloatDataVisualizer/buoyui/frontend/pages/connections&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;rearrange.code.on.save&quot;: &quot;true&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.runner&quot;,
-    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Launcher.executor": "Run",
+    "Maven.FloatDataVisualizer [clean].executor": "Run",
+    "Maven.FloatDataVisualizer [package].executor": "Run",
+    "Maven.FloatDataVisualizer [verify].executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.MCP Project settings loaded": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "code.cleanup.on.save": "true",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
+    "git-widget-placeholder": "dev",
+    "ignore.virus.scanning.warn.message": "true",
+    "junie.onboarding.icon.badge.shown": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/CryosArtic/IdeaProjects/FloatDataVisualizer",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "rearrange.code.on.save": "true",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "actions.on.save",
+    "to.speed.mode.migration.done": "true",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.alphagen.studio.FloatDataVisualizer.buoyui.backend.data" />
@@ -213,6 +211,7 @@
     <configuration name="Launcher" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="com.alphagen.studio.FloatDataVisualizer.Launcher" />
       <module name="FloatDataVisualizer" />
+      <option name="VM_PARAMETERS" value="--enable-native-access=javafx.graphics --enable-native-access=com.fazecast.jSerialComm" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -221,8 +220,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-30f59d01ecdd-37e91769500f-intellij.indexing.shared.core-IU-261.24374.151" />
-        <option value="bundled-js-predefined-d6986cc7102b-31caf2ab9e3c-JavaScript-IU-261.24374.151" />
+        <option value="bundled-jdk-30f59d01ecdd-63390994e64e-intellij.indexing.shared.core-IU-262.8665.258" />
       </set>
     </attachedChunks>
   </component>
@@ -250,30 +248,6 @@
       <workItem from="1766969579896" duration="1000" />
       <workItem from="1766969593668" duration="4000" />
       <workItem from="1766969654651" duration="15000" />
-    </task>
-    <task id="LOCAL-00450" summary="fixed connections ui">
-      <option name="closed" value="true" />
-      <created>1780090500355</created>
-      <option name="number" value="00450" />
-      <option name="presentableId" value="LOCAL-00450" />
-      <option name="project" value="LOCAL" />
-      <updated>1780090500355</updated>
-    </task>
-    <task id="LOCAL-00451" summary="moved themes to correct package">
-      <option name="closed" value="true" />
-      <created>1780090514136</created>
-      <option name="number" value="00451" />
-      <option name="presentableId" value="LOCAL-00451" />
-      <option name="project" value="LOCAL" />
-      <updated>1780090514136</updated>
-    </task>
-    <task id="LOCAL-00452" summary="added missiing exports">
-      <option name="closed" value="true" />
-      <created>1780090527311</created>
-      <option name="number" value="00452" />
-      <option name="presentableId" value="LOCAL-00452" />
-      <option name="project" value="LOCAL" />
-      <updated>1780090527311</updated>
     </task>
     <task id="LOCAL-00453" summary="a light theme backup">
       <option name="closed" value="true" />
@@ -619,13 +593,13 @@
       <option name="project" value="LOCAL" />
       <updated>1780112489146</updated>
     </task>
-    <task id="LOCAL-00496" summary="when port was invalid, the app crashed">
+    <task id="LOCAL-00496" summary="README.md contains the future structure of the wiki">
       <option name="closed" value="true" />
-      <created>1780196884745</created>
+      <created>1780112563093</created>
       <option name="number" value="00496" />
       <option name="presentableId" value="LOCAL-00496" />
       <option name="project" value="LOCAL" />
-      <updated>1780196884747</updated>
+      <updated>1780112563093</updated>
     </task>
     <task id="LOCAL-00497" summary="whene data card is added, it did not use the set theme">
       <option name="closed" value="true" />
@@ -643,7 +617,31 @@
       <option name="project" value="LOCAL" />
       <updated>1780196916087</updated>
     </task>
-    <option name="localTasksCounter" value="499" />
+    <task id="LOCAL-00499" summary="macOS filepath for project settings and files fixed">
+      <option name="closed" value="true" />
+      <created>1780251331238</created>
+      <option name="number" value="00499" />
+      <option name="presentableId" value="LOCAL-00499" />
+      <option name="project" value="LOCAL" />
+      <updated>1780251331238</updated>
+    </task>
+    <task id="LOCAL-00500" summary="trying to fix the scrolling that happens when viewing config">
+      <option name="closed" value="true" />
+      <created>1780251827345</created>
+      <option name="number" value="00500" />
+      <option name="presentableId" value="LOCAL-00500" />
+      <option name="project" value="LOCAL" />
+      <updated>1780251827345</updated>
+    </task>
+    <task id="LOCAL-00501" summary="trying to fix the scrolling that happens when viewing config">
+      <option name="closed" value="true" />
+      <created>1780252115544</created>
+      <option name="number" value="00501" />
+      <option name="presentableId" value="LOCAL-00501" />
+      <option name="project" value="LOCAL" />
+      <updated>1780252115544</updated>
+    </task>
+    <option name="localTasksCounter" value="502" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -673,8 +671,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="possible terminal and table autoscroll added" />
-    <MESSAGE value="settings var for terminal and table autoscroll" />
     <MESSAGE value="settings fields for easier placement in settings package" />
     <MESSAGE value="fixed weird settings data retrieval" />
     <MESSAGE value="random thing" />
@@ -698,7 +694,9 @@
     <MESSAGE value="when port was invalid, the app crashed" />
     <MESSAGE value="whene data card is added, it did not use the set theme" />
     <MESSAGE value="unicode space problems" />
-    <option name="LAST_COMMIT_MESSAGE" value="unicode space problems" />
+    <MESSAGE value="macOS filepath for project settings and files fixed" />
+    <MESSAGE value="trying to fix the scrolling that happens when viewing config" />
+    <option name="LAST_COMMIT_MESSAGE" value="trying to fix the scrolling that happens when viewing config" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
