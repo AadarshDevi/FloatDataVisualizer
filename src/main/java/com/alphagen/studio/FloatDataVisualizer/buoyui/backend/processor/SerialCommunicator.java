@@ -68,6 +68,8 @@ public class SerialCommunicator implements Runnable {
     @Override
     public void run() {
 
+        System.out.println("[Serial] 1. Ready");
+
         // try to connect to serialport 5 times
         int attempts = 0;
         final int MAX_ATTEMPTS = 5;
@@ -79,9 +81,12 @@ public class SerialCommunicator implements Runnable {
         } while (!serialPort.isOpen() || attempts > MAX_ATTEMPTS);
 
         if (!serialPort.isOpen()) {
+            System.err.println("[Serial] 2. Unopenable - " + serialPort.getDescriptivePortName());
             errorCode.set(-2); // unable to connect to hardware
             return;
         }
+
+        System.out.println("[Serial] 2. Open - " + serialPort.isOpen());
 
         // 1. open stream
         // 2. read through stream
@@ -92,12 +97,15 @@ public class SerialCommunicator implements Runnable {
                 new InputStreamReader(serialPort.getInputStream())
         )) {
 
+            System.out.println("[SerialReader] 3. Ready - " + bufferedReader.ready());
             // 2. read stream
             while (running.get() && !Thread.currentThread().isInterrupted()) {
                 String rawdata = bufferedReader.readLine();
 
+                System.out.println("[SerialRawData] " + rawdata);
+
                 if (rawdata == null && (!serialPort.isOpen() || (serialPort.bytesAvailable() == -1))) {
-                    System.err.println("Unable to get data");
+                    System.err.println("[SerialData] Unusable");
                 }
                 rawdata = rawdata.trim();
 
@@ -111,6 +119,8 @@ public class SerialCommunicator implements Runnable {
                         collectData.set(false);
                     }
 
+                    System.err.println("[SerialData] " + rawdata);
+
                     if (verbose) {
                         dataPointProcessor.getRawArray().put(rawdata);
                     } else if (collectData.get() && rawdata.startsWith(teamData)) {
@@ -119,11 +129,20 @@ public class SerialCommunicator implements Runnable {
 
                 } catch (InterruptedException e) {
                     System.err.println("Unable to add data: " + rawdata);
+                    System.err.println("[SerialData] Unusable");
                 }
             }
+
+            System.err.println("[Serial] B. Ended");
+
         } catch (IOException e) {
             System.err.println("Unable to open serialport in " + serialPort.getDescriptivePortName());
+            System.err.println("[SerialError] Unopenable - " + serialPort.getDescriptivePortName());
+            System.err.println("[SerialError] " + e.getMessage());
+            e.printStackTrace();
         }
+
+        System.out.println("[Serial] A. Closed");
     }
 
     public void stop() {
