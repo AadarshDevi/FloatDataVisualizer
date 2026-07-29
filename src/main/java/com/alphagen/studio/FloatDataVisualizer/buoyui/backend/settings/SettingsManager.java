@@ -10,9 +10,7 @@ import java.util.Properties;
 public class SettingsManager {
 
     private static SettingsManager sm;
-    @Getter
     private final SettingsData settingsData;
-    private Properties properties;
 
     private SettingsManager() {
         settingsData = new SettingsData();
@@ -27,7 +25,7 @@ public class SettingsManager {
     // todo: read settings
     private void readSettings() {
 
-        properties = new Properties();
+        Properties properties = new Properties();
         try {
             properties.load(new FileInputStream(new File(FolderConstants.SETTINGS.toUri())));
         } catch (IOException e) {
