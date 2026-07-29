@@ -172,4 +172,8 @@ public class SerialCommunicator implements Runnable {
         return serialPort.openPort();
     }
 
+    public boolean isRunning() {
+        return running.get();
+    }
+
 }
