@@ -12,6 +12,7 @@ public class DataPointProcessor implements Runnable {
 	@Getter private final LinkedBlockingQueue<DataPoint> parsedArray = new LinkedBlockingQueue<>();
 	@Getter private final LinkedBlockingQueue<String> rawArray = new LinkedBlockingQueue<>();
 	private final LinkedBlockingQueue<DataPoint> storedArray = new LinkedBlockingQueue<>();
+    @Getter private final LinkedBlockingQueue<Object> parsedArray = new LinkedBlockingQueue<>();
 
 	@Override
 	public void run() {
