@@ -317,8 +317,8 @@ public class GrapherController {
         activeTask = receiver.submit(serialCommunicator);
         activeDataBase = database.submit(dataPointProcessor);
         activeUIUpdater = uiUpdater.submit(() -> {
+            System.out.println("[UI Updater] Ready");
             while (!Thread.currentThread().isInterrupted()) {
-                System.out.println("[UI Updater] Ready");
                 LinkedBlockingQueue<Object> linkedBlockingQueue = dataPointProcessor.getParsedArray();
 
                 // 1. get data
