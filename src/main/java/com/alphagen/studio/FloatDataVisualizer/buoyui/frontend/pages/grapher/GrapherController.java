@@ -345,21 +345,10 @@ public class GrapherController {
         running.set(true);
     }
 
-	@FXML
-	public void backHome() {
-		stopingDataTransfer();
-		System.out.println(" >>> Serial Communication > Back Home");
-		Stage stage = StageManager.getMainStage();
-		Scene scene = StageManager.getConnectionsScene();
-		ControllerManager.setGrapherController(null);
-		stage.setScene(scene);
-		if (Debug.useWindowModes) {
-			ControllerManager.getConnectionsController().fullscreenApp();
-			stage.setFullScreen(stage.isFullScreen()); // fixme: when going home, it goes to fullscreen
-		}
-	}
     @FXML
     public void backHome() {
+        if (running.get())
+            stopingDataTransfer();
 
         System.out.println(" >>> Serial Communication > Back Home");
         Stage stage = StageManager.getMainStage();
