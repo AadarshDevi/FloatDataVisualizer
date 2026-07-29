@@ -67,6 +67,14 @@ public class SettingsManager {
         settingsData.setAutoscrollTerminal(autoscroll);
     }
 
+    public boolean getVerboseTerminal() {
+        return settingsData.getVerboseTerminal();
+    }
+
+    public void setVerboseTerminal(boolean autoscroll) {
+        settingsData.setVerboseTerminal(autoscroll);
+    }
+
     public boolean getAutoscrollTable() {
         return settingsData.getAutoscrollTable();
     }
