@@ -195,10 +195,20 @@ public class GrapherController {
         System.out.println(" >>> Grapher: SP & DPP > Ready");
         stopingDataTransfer();
 
+        // add context menu for terminal
         ContextMenu terminalMenu = new ContextMenu();
+        terminalMenu.getStyleClass().add("popup-menu");
+
+        // export terminal ouput
+        MenuItem exportOutput = new MenuItem("Export Output");
+        exportOutput.setOnAction(event -> {
+            // code
+        });
         exportOutput.setDisable(true);
 
+        // autoscroll
         CheckMenuItem autoscrollTerminal = new CheckMenuItem("Auto-Scroll");
+        autoscrollTerminal.setSelected(SettingsManager.getInstance().getAutoscrollTerminal());
         autoscrollTerminal.setOnAction(event -> {
             boolean autoscroll = !SettingsManager.getInstance().getAutoscrollTerminal();
             autoscrollTerminal.setSelected(autoscroll);
