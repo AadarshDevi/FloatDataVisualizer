@@ -3,7 +3,6 @@ package com.alphagen.studio.FloatDataVisualizer.buoyui.backend.settings;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.app.theme.Theme;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.app.theme.ThemeProcessor;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.constants.FolderConstants;
-import lombok.Getter;
 
 import java.io.*;
 import java.util.Properties;
