@@ -47,7 +47,7 @@ public class SerialCommunicator implements Runnable {
         this.collectData = new AtomicBoolean(false);
 
         this.dataPointProcessor = dataPointProcessor;
-        
+
 //        serialPort.addDataListener(new SerialPortDataListener() {
 //            @Override
 //            public int getListeningEvents() {
