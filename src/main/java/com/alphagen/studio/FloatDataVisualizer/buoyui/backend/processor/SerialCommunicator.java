@@ -3,6 +3,8 @@ package com.alphagen.studio.FloatDataVisualizer.buoyui.backend.processor;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.data.ConnectionConfig;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.data.FloatConfig;
 import com.fazecast.jSerialComm.SerialPort;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.io.BufferedReader;
 import java.io.IOException;
