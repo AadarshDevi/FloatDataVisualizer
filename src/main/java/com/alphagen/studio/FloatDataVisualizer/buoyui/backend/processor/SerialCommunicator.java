@@ -74,11 +74,11 @@ public class SerialCommunicator implements Runnable {
         int attempts = 0;
         final int MAX_ATTEMPTS = 5;
 
-        do {
-            if (!serialPort.isOpen())
-                serialPort.openPort();
-            attempts++;
-        } while (!serialPort.isOpen() || attempts > MAX_ATTEMPTS);
+        serialPort.openPort();
+//        do {
+//            if (!serialPort.isOpen())
+//            attempts++;
+//        } while (!serialPort.isOpen() || attempts > MAX_ATTEMPTS);
 
         if (!serialPort.isOpen()) {
             System.err.println("[Serial] 2. Unopenable - " + serialPort.getDescriptivePortName());
@@ -97,7 +97,10 @@ public class SerialCommunicator implements Runnable {
                 new InputStreamReader(serialPort.getInputStream())
         )) {
 
+            running.set(true);
+
             System.out.println("[SerialReader] 3. Ready - " + bufferedReader.ready());
+
             // 2. read stream
             while (running.get() && !Thread.currentThread().isInterrupted()) {
                 String rawdata = bufferedReader.readLine();
@@ -128,15 +131,14 @@ public class SerialCommunicator implements Runnable {
                     }
 
                 } catch (InterruptedException e) {
-                    System.err.println("Unable to add data: " + rawdata);
                     System.err.println("[SerialData] Unusable");
+                    running.set(false);
                 }
             }
 
             System.err.println("[Serial] B. Ended");
 
         } catch (IOException e) {
-            System.err.println("Unable to open serialport in " + serialPort.getDescriptivePortName());
             System.err.println("[SerialError] Unopenable - " + serialPort.getDescriptivePortName());
             System.err.println("[SerialError] " + e.getMessage());
             e.printStackTrace();
