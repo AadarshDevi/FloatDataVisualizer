@@ -73,6 +73,7 @@ public class GrapherController {
     private Future<?> activeTask;
     private Future<?> activeDataBase;
     @Setter private ConnectionConfig connectionConfig;
+    //	private SerialProcessor seri;
     private SerialCommunicator serialCommunicator;
     private DataPointProcessor dataPointProcessor;
     private Future<?> activeUIUpdater;
