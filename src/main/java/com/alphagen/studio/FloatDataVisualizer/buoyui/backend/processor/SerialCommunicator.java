@@ -74,9 +74,9 @@ public class SerialCommunicator implements Runnable {
         int attempts = 0;
         final int MAX_ATTEMPTS = 5;
 
-        serialPort.openPort();
 //        do {
 //            if (!serialPort.isOpen())
+        serialPort.openPort();
 //            attempts++;
 //        } while (!serialPort.isOpen() || attempts > MAX_ATTEMPTS);
 
