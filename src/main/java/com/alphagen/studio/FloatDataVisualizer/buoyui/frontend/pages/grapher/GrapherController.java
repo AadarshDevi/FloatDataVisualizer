@@ -318,8 +318,8 @@ public class GrapherController {
         activeDataBase = database.submit(dataPointProcessor);
         activeUIUpdater = uiUpdater.submit(() -> {
             while (!Thread.currentThread().isInterrupted()) {
-                IO.println("Running UI Updater");
-                LinkedBlockingQueue<DataPoint> linkedBlockingQueue = dataPointProcessor.getParsedArray();
+                System.out.println("[UI Updater] Ready");
+                LinkedBlockingQueue<Object> linkedBlockingQueue = dataPointProcessor.getParsedArray();
 
                 // 1. get data
                 DataPoint dataPoint;
