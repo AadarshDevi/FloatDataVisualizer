@@ -31,7 +31,7 @@ public class SettingsManager {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-        System.out.println(properties.size());
+        IO.println(properties.size());
 
         if (properties.isEmpty()) {
             properties.put(SettingsField.theme, Theme.LIGHT.toString());
