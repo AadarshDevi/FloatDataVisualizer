@@ -330,6 +330,16 @@ public class GrapherController {
                     throw new RuntimeException(e);
                 }
 
+                if (obj instanceof String terminalOutput) {
+                    if (sm.getAutoscrollTerminal())
+                        terminalTextArea.appendText(terminalOutput + "\n"); // textarea autoscroll
+                    else
+                        terminalTextArea.setText(terminalTextArea.getText() + terminalOutput + "\n");
+                    continue;
+                }
+
+                DataPoint dataPoint = (DataPoint) obj;
+
                 Platform.runLater(() -> {
                     // 2. add to table
                     tableView.getItems().add(dataPoint);
