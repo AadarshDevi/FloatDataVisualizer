@@ -134,7 +134,7 @@ public class SerialCommunicator implements Runnable {
                     }
 
                 } catch (InterruptedException e) {
-                    System.err.println("[SerialData] Unusable");
+                    System.err.println("[SerialException::Internal] Unusable");
                     running.set(false);
                 } catch (SerialPortTimeoutException _) {
                 }
@@ -143,8 +143,8 @@ public class SerialCommunicator implements Runnable {
             System.err.println("[Serial] B. Ended");
 
         } catch (IOException e) {
-            System.err.println("[SerialError] Unopenable - " + serialPort.getDescriptivePortName());
-            System.err.println("[SerialError] " + e.getMessage());
+            System.err.println("[SerialException::External] Unopenable - " + serialPort.getDescriptivePortName());
+            System.err.println("[SerialException::External] " + e.getMessage());
             e.printStackTrace();
         }
 
