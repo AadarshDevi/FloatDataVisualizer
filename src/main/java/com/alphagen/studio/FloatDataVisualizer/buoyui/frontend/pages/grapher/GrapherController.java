@@ -232,9 +232,11 @@ public class GrapherController {
     public void stopingDataTransfer() {
         // disable stop button and enable start button
 
-        activeTask.cancel(true);
-        activeDataBase.cancel(true);
-        activeUIUpdater.cancel(true);
+        if (activeTask != null) {
+            activeTask.cancel(true);
+            activeDataBase.cancel(true);
+            activeUIUpdater.cancel(true);
+        }
 
         if (dataPointProcessor != null) {
             System.out.println(" >>> Parsed Array > " + dataPointProcessor.getParsedArray().size());
@@ -269,9 +271,13 @@ public class GrapherController {
     @FXML
     public void startingDataTransfer() {
 
-        activeUIUpdater.cancel(true);
-        activeTask.cancel(true);
-        activeDataBase.cancel(true);
+        System.out.println("[StartData]");
+
+        if (activeUIUpdater != null) {
+            activeUIUpdater.cancel(true);
+            activeTask.cancel(true);
+            activeDataBase.cancel(true);
+        }
 
         // check if the serial comms is still running
         if (serialCommunicator.isConnected()) {
