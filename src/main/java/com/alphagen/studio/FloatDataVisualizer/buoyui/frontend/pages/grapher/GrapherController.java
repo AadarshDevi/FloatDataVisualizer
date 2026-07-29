@@ -322,9 +322,10 @@ public class GrapherController {
                 LinkedBlockingQueue<Object> linkedBlockingQueue = dataPointProcessor.getParsedArray();
 
                 // 1. get data
-                DataPoint dataPoint;
+                Object obj;
+
                 try {
-                    dataPoint = linkedBlockingQueue.take();
+                    obj = linkedBlockingQueue.take();
                 } catch (InterruptedException e) {
                     throw new RuntimeException(e);
                 }
