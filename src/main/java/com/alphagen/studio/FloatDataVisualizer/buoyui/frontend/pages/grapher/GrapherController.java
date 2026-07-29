@@ -330,19 +330,33 @@ public class GrapherController {
 					if (sm.getAutoscrollTable())
 						tableView.scrollTo(tableView.getItems().size() - 1); // table autoscroll
                 Platform.runLater(() -> {
+                Platform.runLater(() -> {
+                    // 2. add to table
                     tableView.getItems().add(dataPoint);
                     if (sm.getAutoscrollTable())
                         tableView.scrollTo(dataPoint);
 
-					if (sm.getAutoscrollTerminal())
-						terminalTextArea.appendText(dp.toRaw() + "\n"); // textarea autoscroll
-					else
-						terminalTextArea.setText(terminalTextArea.getText() + dp.toRaw() + "\n");
-				});
-			}
-		});
-		System.out.println(" >>> Serial Communication > Serial and Database");
-	}
+                    if (sm.getAutoscrollTerminal())
+                        terminalTextArea.appendText(dataPoint.toRaw() + "\n"); // textarea autoscroll
+                    else
+                        terminalTextArea.setText(terminalTextArea.getText() + dataPoint.toRaw() + "\n");
+
+                    // 3. get measurements
+                    double[] data = dataPoint.measurements();
+                    for (int i = 3; i < graphPane.getTabs().size(); i++) {
+                        // a. get ScatterPlotController
+                        // b. get data (double) from data[] - 3 // 3 is the first data graph
+                        // |--- dataIndex = i - 3
+                        // c. add packet num, time, data, index
+                        ((ScatterPlotController) graphPane.getTabs().get(i).getProperties().get("plot_controller"))
+                                .addData(dataPoint.packetNum(), dataPoint.time(), data[i - 3], i - 3);
+                    }
+                });
+
+            }
+        });
+        running.set(true);
+    }
 
 	@FXML
 	public void backHome() {
