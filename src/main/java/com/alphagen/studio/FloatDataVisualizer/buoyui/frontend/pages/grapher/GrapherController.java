@@ -296,11 +296,10 @@ public class GrapherController {
         serialCommunicator.close();
 
         // disable buttons
-        startDataTransfer.setDisable(false);
-        stopDataTransfer.setDisable(true);
         startDataTransfer.setDisable(true);
         stopDataTransfer.setDisable(false);
 
+        System.out.println("[StartData] Buttons Set");
 
         for (int i = 3; i < graphPane.getTabs().size(); i++) {
             ((ScatterPlotController) graphPane.getTabs().get(i).getProperties().get("plot_controller")).reset();
