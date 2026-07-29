@@ -314,22 +314,6 @@ public class GrapherController {
                     throw new RuntimeException(e);
                 }
 
-				Platform.runLater(() -> {
-//					System.out.println(" >>> Measurement Configs > " + Arrays.toString(dp.measurements()));
-					double[] measures = dp.measurements();
-					for (int i = 3; i < graphPane.getTabs().size(); i++) {
-						int measureIndex = i - 3;
-						ScatterPlotController spc = (ScatterPlotController) graphPane.getTabs().get(i).getProperties().get("plot_controller");
-						try {
-							spc.addData(dp.packetNum(), dp.time(), measures[measureIndex], measureIndex);
-						} catch (ArrayIndexOutOfBoundsException | NullPointerException _) {
-						}
-					}
-
-					tableView.getItems().add(dp);
-					if (sm.getAutoscrollTable())
-						tableView.scrollTo(tableView.getItems().size() - 1); // table autoscroll
-                Platform.runLater(() -> {
                 Platform.runLater(() -> {
                     // 2. add to table
                     tableView.getItems().add(dataPoint);
