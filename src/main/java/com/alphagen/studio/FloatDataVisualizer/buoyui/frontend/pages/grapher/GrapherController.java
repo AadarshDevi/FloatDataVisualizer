@@ -335,6 +335,11 @@ public class GrapherController {
                         terminalTextArea.appendText(terminalOutput + "\n"); // textarea autoscroll
                     else
                         terminalTextArea.setText(terminalTextArea.getText() + terminalOutput + "\n");
+
+                    if (terminalOutput.equals(connectionConfig.floatConfig().endFlag())) {
+                        stopingDataTransfer();
+                    }
+
                     continue;
                 }
 
