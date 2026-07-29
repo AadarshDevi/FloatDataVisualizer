@@ -27,7 +27,7 @@ public class DataPointProcessor implements Runnable {
             }
 
             try {
-                System.out.println("[RawData]" + raw);
+                System.out.println("[RawData] " + raw);
 
                 if (!raw.startsWith(Connections.getCurrentConnection().floatConfig().teamData())) {
                     parsedArray.put(raw);
