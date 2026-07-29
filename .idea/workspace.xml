@@ -4,13 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="776164ce-7a69-48e2-8934-c0376db3d4b9" name="Changes" comment="added if before stopDataTransfer()">
+    <list default="true" id="776164ce-7a69-48e2-8934-c0376db3d4b9" name="Changes" comment="port now has 1 chance to open">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/buoyui/backend/processor/SerialCommunicator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/buoyui/backend/processor/SerialCommunicator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/buoyui/backend/settings/SettingsData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/buoyui/backend/settings/SettingsData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/buoyui/backend/settings/SettingsField.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/buoyui/backend/settings/SettingsField.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/buoyui/backend/settings/SettingsManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/buoyui/backend/settings/SettingsManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/buoyui/frontend/pages/grapher/GrapherController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/buoyui/frontend/pages/grapher/GrapherController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/buoyui/backend/processor/SerialProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/buoyui/backend/processor/SerialProcessor.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -679,32 +676,32 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="delete all menu item after export all menu item" />
-    <MESSAGE value="selection combo box css works now" />
-    <MESSAGE value="fixed a few ui issues" />
-    <MESSAGE value="pom.xml ready for exe creation" />
-    <MESSAGE value="updated README. all contents will be placed into the Wiki instead of the README.md" />
-    <MESSAGE value="README.md contains the future structure of the wiki" />
-    <MESSAGE value="when port was invalid, the app crashed" />
-    <MESSAGE value="whene data card is added, it did not use the set theme" />
-    <MESSAGE value="macOS filepath for project settings and files fixed" />
-    <MESSAGE value="trying to fix the scrolling that happens when viewing config" />
-    <MESSAGE value="updated to java 25.0.3 from java 23" />
-    <MESSAGE value="updated to jserialcomm 2.11.4 from jserialcomm 2.11.2" />
-    <MESSAGE value="single annotations do not take a separate line" />
-    <MESSAGE value="improved version of SerialProcessor" />
-    <MESSAGE value="formatted tooltip" />
-    <MESSAGE value="unicode space problems" />
-    <MESSAGE value="wierd bug for imports like it was replaced even though it wasnt" />
-    <MESSAGE value="updated SerialProcessor to SerialCOmmunicator" />
-    <MESSAGE value="imports" />
-    <MESSAGE value="removed comments" />
-    <MESSAGE value="relocated data processor and serial processor , and stopDataTransfer()" />
-    <MESSAGE value="completely overwritten terminal context-menu" />
-    <MESSAGE value="moved the place where the buttons were acive/disbled" />
-    <MESSAGE value="rewritten to be more understandable" />
-    <MESSAGE value="added if before stopDataTransfer()" />
-    <option name="LAST_COMMIT_MESSAGE" value="added if before stopDataTransfer()" />
+    <MESSAGE value="methods to get some class info" />
+    <MESSAGE value="added terminal verbose var and accessor and mod methods" />
+    <MESSAGE value="space unicode issues" />
+    <MESSAGE value="imports: lombok" />
+    <MESSAGE value="moved properties to local:readSettings()" />
+    <MESSAGE value="used exisitng method to check for empty properties" />
+    <MESSAGE value="sout to iop" />
+    <MESSAGE value="read if terminal is verbose" />
+    <MESSAGE value="set if terminal is verbose" />
+    <MESSAGE value="write if terminal is verbose" />
+    <MESSAGE value="terminal verbose methods" />
+    <MESSAGE value="idea file" />
+    <MESSAGE value="converted parsedArray from &lt;DataPoint&gt; to &lt;Object&gt; so verbose output is possible" />
+    <MESSAGE value="strings can now be added to parsedArray cause Strings and DataPoints are Objects" />
+    <MESSAGE value="printing the raw data collected" />
+    <MESSAGE value="issues with space unicode" />
+    <MESSAGE value="Future&lt;?&gt;s are surrounded by if to make sure it cancels the process i they are not null" />
+    <MESSAGE value="fixed wrong buttons being active" />
+    <MESSAGE value="table now clears instead of removeing all data." />
+    <MESSAGE value="converted the &lt;DataPoint&gt; to &lt;Object&gt;" />
+    <MESSAGE value="Object read" />
+    <MESSAGE value="checks if object is string. if string it will add to terminal. if not, it will create DataPoint" />
+    <MESSAGE value="changing timeouts" />
+    <MESSAGE value="logs" />
+    <MESSAGE value="port now has 1 chance to open" />
+    <option name="LAST_COMMIT_MESSAGE" value="port now has 1 chance to open" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
