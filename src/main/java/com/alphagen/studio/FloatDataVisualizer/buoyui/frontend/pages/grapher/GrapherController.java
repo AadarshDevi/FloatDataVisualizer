@@ -298,6 +298,9 @@ public class GrapherController {
         // disable buttons
         startDataTransfer.setDisable(false);
         stopDataTransfer.setDisable(true);
+        startDataTransfer.setDisable(true);
+        stopDataTransfer.setDisable(false);
+
 
         for (int i = 3; i < graphPane.getTabs().size(); i++) {
             ((ScatterPlotController) graphPane.getTabs().get(i).getProperties().get("plot_controller")).reset();
