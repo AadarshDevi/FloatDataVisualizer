@@ -227,33 +227,34 @@ public class GrapherController {
         terminalTextArea.setContextMenu(terminalMenu);
     }
 
-	@FXML
-	public void stopingDataTransfer() {
-		// disable stop button and enable start button
-		if (activeTask != null && !activeTask.isCancelled()) {
-			activeTask.cancel(true);
-			activeDataBase.cancel(true);
-			activeUIUpdater.cancel(true);
-		}
+    // fixme later
+    @FXML
+    public void stopingDataTransfer() {
+        // disable stop button and enable start button
+
+        activeTask.cancel(true);
+        activeDataBase.cancel(true);
+        activeUIUpdater.cancel(true);
+
+        if (dataPointProcessor != null) {
+            System.out.println(" >>> Parsed Array > " + dataPointProcessor.getParsedArray().size());
+            System.err.println(" >>> Serial Communication > Stop");
+        }
 
         stopDataTransfer.setDisable(true);
         startDataTransfer.setDisable(false);
 
-		if (dpp != null) {
-			System.out.println(" >>> Parsed Array > " + dpp.getParsedArray().size());
-			System.err.println(" >>> Serial Communication > Stop");
-		}
-
-		if ((sp != null) && sp.getDisconnected().get()) {
-			Platform.runLater(() -> {
-				System.err.println(" >>> Disconnected from Device");
-				Alert alert = new Alert(Alert.AlertType.ERROR);
-				alert.setTitle("Connection Exception");
-				alert.setHeaderText(null);
-				alert.setContentText("Disconnected from Hardware.");
-				alert.showAndWait();
-			});
-		}
+        if (serialCommunicator == null) {
+            Platform.runLater(() -> {
+                System.err.println(" >>> Disconnected from Device");
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Connection Exception");
+                alert.setHeaderText(null);
+                alert.setContentText("Disconnected from Hardware.");
+                alert.showAndWait();
+            });
+            return;
+        }
 
         if (serialCommunicator.isConnected()) {
             serialCommunicator.close();
