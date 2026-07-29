@@ -345,11 +345,14 @@ public class GrapherController {
                     double[] data = dataPoint.measurements();
                     for (int i = 3; i < graphPane.getTabs().size(); i++) {
                         // a. get ScatterPlotController
+                        ScatterPlotController scatterPlotController = (ScatterPlotController) graphPane.getTabs().get(i).getProperties().get("plot_controller");
+
                         // b. get data (double) from data[] - 3 // 3 is the first data graph
                         // |--- dataIndex = i - 3
+                        int dataIndex = i - 3;
+
                         // c. add packet num, time, data, index
-                        ((ScatterPlotController) graphPane.getTabs().get(i).getProperties().get("plot_controller"))
-                                .addData(dataPoint.packetNum(), dataPoint.time(), data[i - 3], i - 3);
+                        scatterPlotController.addData(dataPoint.packetNum(), dataPoint.time(), data[dataIndex], dataIndex);
                     }
                 });
 
