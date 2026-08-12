@@ -230,7 +230,10 @@ public class GrapherController {
     // fixme later
     @FXML
     public void stopingDataTransfer() {
+        
         // disable stop button and enable start button
+        stopDataTransfer.setDisable(true);
+        startDataTransfer.setDisable(false);
 
         if (activeTask != null) {
             activeTask.cancel(true);
@@ -242,9 +245,6 @@ public class GrapherController {
             System.out.println(" >>> Parsed Array > " + dataPointProcessor.getParsedArray().size());
             System.err.println(" >>> Serial Communication > Stop");
         }
-
-        stopDataTransfer.setDisable(true);
-        startDataTransfer.setDisable(false);
 
         if (serialCommunicator == null) {
             Platform.runLater(() -> {
