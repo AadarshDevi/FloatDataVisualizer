@@ -148,6 +148,7 @@ public class SerialCommunicator implements Runnable {
             System.err.println("[SerialException::External] Unopenable - " + serialPort.getDescriptivePortName());
             System.err.println("[SerialException::External] " + e.getMessage());
             e.printStackTrace();
+            stop();
         }
 
         System.out.println("[Serial] A. Closed");
