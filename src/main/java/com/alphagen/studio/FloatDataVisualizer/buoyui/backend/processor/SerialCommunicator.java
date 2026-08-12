@@ -107,7 +107,6 @@ public class SerialCommunicator implements Runnable {
             // 2. read stream
             while (running.get() && !Thread.currentThread().isInterrupted()) {
                 try {
-
                     String rawdata = bufferedReader.readLine();
 
                     System.out.println("[SerialRawData] " + rawdata);
@@ -116,8 +115,6 @@ public class SerialCommunicator implements Runnable {
                         System.err.println("[SerialData] Unusable");
                     }
                     rawdata = rawdata.trim();
-
-                    // catch reading exceptions
 
                     if (rawdata.equals(startFlag)) {
                         collectData.set(true);
