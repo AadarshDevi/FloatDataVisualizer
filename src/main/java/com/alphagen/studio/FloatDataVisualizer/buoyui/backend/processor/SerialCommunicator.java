@@ -120,8 +120,7 @@ public class SerialCommunicator implements Runnable {
                     if (rawdata.equals(startFlag)) {
                         collectData.set(true);
                     } else if (rawdata.equals(endFlag)) {
-                        running.set(false);
-                        collectData.set(false);
+                        stop();
                     }
 
                     System.err.println("[SerialData] " + rawdata);
