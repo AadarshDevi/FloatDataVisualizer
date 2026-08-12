@@ -123,7 +123,7 @@ public class SerialCommunicator implements Runnable {
                         stop();
                     }
 
-                    System.err.println("[SerialData] " + rawdata);
+                    System.out.println("[SerialData] " + rawdata);
 
                     if (verbose) {
                         dataPointProcessor.getRawArray().put(rawdata);
