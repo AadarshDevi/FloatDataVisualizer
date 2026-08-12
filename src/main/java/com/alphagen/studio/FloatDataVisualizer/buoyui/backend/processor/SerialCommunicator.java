@@ -112,7 +112,8 @@ public class SerialCommunicator implements Runnable {
                     System.out.println("[SerialRawData] " + rawdata);
 
                     if (rawdata == null && (!serialPort.isOpen() || (serialPort.bytesAvailable() == -1))) {
-                        System.err.println("[SerialData] Unusable");
+                        collectData.set(false);
+                        throw new SerialPortIOException("[SerialException::External] Connection - " + serialPort.getDescriptivePortName());
                     }
                     rawdata = rawdata.trim();
 
