@@ -127,8 +127,12 @@ public class SerialCommunicator implements Runnable {
 
                     if (verbose) {
                         dataPointProcessor.getRawArray().put(rawdata);
-                    } else if (collectData.get() && rawdata.startsWith(teamData)) {
-                        dataPointProcessor.getRawArray().put(rawdata);
+                    }
+
+                    if (collectData.get()) {
+                        if (collectData.get()) {
+                            dataPointProcessor.getRawArray().put(rawdata);
+                        }
                     }
 
                 } catch (InterruptedException e) {
