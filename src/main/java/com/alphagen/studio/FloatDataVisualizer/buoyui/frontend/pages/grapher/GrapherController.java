@@ -188,8 +188,7 @@ public class GrapherController {
         }
 
         dataPointProcessor = new DataPointProcessor();
-        // todo: get verbose from settings file
-        serialCommunicator = new SerialCommunicator(connectionConfig, dataPointProcessor, false);
+        serialCommunicator = new SerialCommunicator(connectionConfig, dataPointProcessor, sm.getVerboseTerminal());
 //        sp = new SerialProcessor(connectionConfig);
 //        sp.setDpp(dpp);
         System.out.println(" >>> Grapher: SP & DPP > Ready");
