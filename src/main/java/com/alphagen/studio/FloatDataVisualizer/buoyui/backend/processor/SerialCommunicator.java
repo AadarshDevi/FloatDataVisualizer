@@ -144,6 +144,14 @@ public class SerialCommunicator implements Runnable {
 
             System.out.println("[Serial] B. Finished");
 
+        } catch (SerialPortIOException _) {
+            System.err.println("[SerialException::External] Disconnected");
+            stop();
+            try {
+                dataPointProcessor.getRawArray().put("[SerialException] Disconnected"); // writing to terminal
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
         } catch (IOException e) {
             System.err.println("[SerialException::External] Unopenable - " + serialPort.getDescriptivePortName());
             System.err.println("[SerialException::External] " + e.getMessage());
