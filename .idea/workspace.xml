@@ -4,9 +4,31 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="776164ce-7a69-48e2-8934-c0376db3d4b9" name="Changes" comment="fixed formatting">
+    <list default="true" id="776164ce-7a69-48e2-8934-c0376db3d4b9" name="Changes" comment="idea file">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/buoyui/backend/processor/SerialCommunicator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/buoyui/backend/processor/SerialCommunicator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/buoyui/frontend/pages/grapher/GrapherController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/buoyui/frontend/pages/grapher/GrapherController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/alphagen/studio/FloatDataVisualizer/buoyui/logos/design/Designs.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/alphagen/studio/FloatDataVisualizer/buoyui/logos/design/ImageExport.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/alphagen/studio/FloatDataVisualizer/buoyui/logos/design/design.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/alphagen/studio/FloatDataVisualizer/buoyui/logos/design/design1-alt.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/alphagen/studio/FloatDataVisualizer/buoyui/logos/design/design1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/alphagen/studio/FloatDataVisualizer/buoyui/logos/design/design2-alt-2-1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/alphagen/studio/FloatDataVisualizer/buoyui/logos/design/design2-alt-2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/alphagen/studio/FloatDataVisualizer/buoyui/logos/design/design2-alt.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/alphagen/studio/FloatDataVisualizer/buoyui/logos/design/design2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/alphagen/studio/FloatDataVisualizer/buoyui/logos/design/design3-alt.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/alphagen/studio/FloatDataVisualizer/buoyui/logos/design/design3-x-export.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/alphagen/studio/FloatDataVisualizer/buoyui/logos/design/design3-x-fixed.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/alphagen/studio/FloatDataVisualizer/buoyui/logos/design/design3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/alphagen/studio/FloatDataVisualizer/buoyui/logos/design/design4-alt-2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/alphagen/studio/FloatDataVisualizer/buoyui/logos/design/design4-alt-3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/alphagen/studio/FloatDataVisualizer/buoyui/logos/design/design4-alt.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/alphagen/studio/FloatDataVisualizer/buoyui/logos/design/design4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/alphagen/studio/FloatDataVisualizer/buoyui/logos/design/design5-alt.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/alphagen/studio/FloatDataVisualizer/buoyui/logos/design/design5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/alphagen/studio/FloatDataVisualizer/buoyui/logos/design/design_ideaboard.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/alphagen/studio/FloatDataVisualizer/buoyui/logos/design/design_ideaboard_update_2.png" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -675,8 +697,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="strings can now be added to parsedArray cause Strings and DataPoints are Objects" />
-    <MESSAGE value="printing the raw data collected" />
     <MESSAGE value="Future&lt;?&gt;s are surrounded by if to make sure it cancels the process i they are not null" />
     <MESSAGE value="fixed wrong buttons being active" />
     <MESSAGE value="table now clears instead of removeing all data." />
@@ -700,7 +720,9 @@
     <MESSAGE value="fixed and corrected log and log type" />
     <MESSAGE value="added a is running bool to check if serial comms is running" />
     <MESSAGE value="fixed formatting" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed formatting" />
+    <MESSAGE value="stop data transfer method invoked when end flag is received" />
+    <MESSAGE value="idea file" />
+    <option name="LAST_COMMIT_MESSAGE" value="idea file" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
