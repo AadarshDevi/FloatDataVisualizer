@@ -137,7 +137,7 @@ public class SerialCommunicator implements Runnable {
 
                 } catch (InterruptedException e) {
                     System.err.println("[SerialException::Internal] Unusable");
-                    running.set(false);
+                    stop();
                 } catch (SerialPortTimeoutException _) {
                 }
             }
