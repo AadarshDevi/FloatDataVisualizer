@@ -216,11 +216,12 @@ public class GrapherController {
 
         // verbose output
         CheckMenuItem verboseOutput = new CheckMenuItem("Verbose");
-        verboseOutput.setSelected(false); // todo get from settings
+        verboseOutput.setSelected(sm.getVerboseTerminal());
         verboseOutput.setOnAction(event -> {
-            boolean verbose = !serialCommunicator.isVerbose();
+            boolean verbose = !sm.getVerboseTerminal();
             verboseOutput.setSelected(verbose);
             serialCommunicator.setVerbose(verbose);
+            sm.setVerboseTerminal(verbose);
         });
         terminalMenu.getItems().addAll(exportOutput, autoscrollTerminal, verboseOutput);
         terminalTextArea.setContextMenu(terminalMenu);
