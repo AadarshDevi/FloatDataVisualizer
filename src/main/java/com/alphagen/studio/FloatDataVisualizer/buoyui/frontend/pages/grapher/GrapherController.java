@@ -338,6 +338,15 @@ public class GrapherController {
 
                     if (terminalOutput.equals(connectionConfig.floatConfig().endFlag())) {
                         stopingDataTransfer();
+                    } else if (terminalOutput.equals("[SerialException] Disconnected")) {
+
+                        stopingDataTransfer();
+
+                        Alert alert = new Alert(Alert.AlertType.ERROR);
+                        alert.setTitle("Serial Exception");
+                        alert.setHeaderText(null);
+                        alert.setContentText("Receiver disconnected from this device.");
+                        alert.showAndWait();
                     }
 
                     continue;
