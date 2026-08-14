@@ -246,7 +246,7 @@ public class GrapherController {
     // fixme later
     @FXML
     public void stopingDataTransfer() {
-        
+
         // disable stop button and enable start button
         stopDataTransfer.setDisable(true);
         startDataTransfer.setDisable(false);
