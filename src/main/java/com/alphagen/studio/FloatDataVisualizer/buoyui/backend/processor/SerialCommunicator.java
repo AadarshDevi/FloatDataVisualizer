@@ -108,7 +108,7 @@ public class SerialCommunicator implements Runnable {
                 try {
                     String rawdata = bufferedReader.readLine();
 
-                    System.out.println("[SerialRawData] " + rawdata);
+//                    System.out.println("[SerialRawData] " + rawdata);
 
                     if (rawdata == null && (!serialPort.isOpen() || (serialPort.bytesAvailable() == -1))) {
                         collectData.set(false);
@@ -122,7 +122,7 @@ public class SerialCommunicator implements Runnable {
                         stop();
                     }
 
-                    System.out.println("[SerialData] " + rawdata);
+//                    System.out.println("[SerialData] " + rawdata);
 
                     if (verbose) {
                         dataPointProcessor.getRawArray().put(rawdata);
