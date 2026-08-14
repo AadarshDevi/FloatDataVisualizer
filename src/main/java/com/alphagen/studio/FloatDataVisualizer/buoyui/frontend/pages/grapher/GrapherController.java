@@ -193,6 +193,23 @@ public class GrapherController {
         System.out.println(" >>> Grapher: SP & DPP > Ready");
         stopingDataTransfer();
 
+        ContextMenu tableMenu = new ContextMenu();
+        tableMenu.getStyleClass().add("popup-menu");
+        CheckMenuItem autoscrollTableMenuItem = new CheckMenuItem("Autoscroll");
+        autoscrollTableMenuItem.setSelected(SettingsManager.getInstance().getAutoscrollTable());
+        autoscrollTableMenuItem.setOnAction(event -> {
+            boolean autoscroll = !SettingsManager.getInstance().getAutoscrollTable();
+            autoscrollTableMenuItem.setSelected(autoscroll);
+            SettingsManager.getInstance().setAutoscrollTable(autoscroll);
+        });
+        MenuItem exportDataMenuItem = new MenuItem("Export CSV");
+        exportDataMenuItem.setOnAction(event -> exportData());
+        MenuItem exportRawDataMenuItem = new MenuItem("Export Raw CSV");
+        exportRawDataMenuItem.setOnAction(event -> exportRaw());
+        tableMenu.getStyleClass().add("popup-menu");
+        tableMenu.getItems().addAll(autoscrollTableMenuItem, exportDataMenuItem, exportRawDataMenuItem);
+        tableView.setContextMenu(tableMenu);
+
         // add context menu for terminal
         ContextMenu terminalMenu = new ContextMenu();
         terminalMenu.getStyleClass().add("popup-menu");
