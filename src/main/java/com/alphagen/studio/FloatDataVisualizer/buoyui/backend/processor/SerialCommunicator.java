@@ -102,7 +102,6 @@ public class SerialCommunicator implements Runnable {
             running.set(true);
 
             System.out.println("[SerialReader] Ready");
-//            System.out.println("[SerialReader] 3. Ready - " + bufferedReader.ready());
 
             // 2. read stream
             while (running.get() && !Thread.currentThread().isInterrupted()) {
