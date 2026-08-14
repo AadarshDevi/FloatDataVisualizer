@@ -347,6 +347,9 @@ public class GrapherController {
                 }
 
                 if (obj instanceof String terminalOutput) {
+
+//                    System.out.println("[Grapher] Data > \"" + terminalOutput + "\"");
+
                     if (sm.getAutoscrollTerminal())
                         terminalTextArea.appendText(terminalOutput + "\n"); // textarea autoscroll
                     else
