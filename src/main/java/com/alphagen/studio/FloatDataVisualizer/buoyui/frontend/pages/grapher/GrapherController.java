@@ -165,7 +165,6 @@ public class GrapherController {
             col.setPrefWidth(150);
             tableView.getColumns().add(col);
 
-
             int finalI = i;
             col.setCellValueFactory(dp -> {
                 try {
