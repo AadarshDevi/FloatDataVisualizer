@@ -46,17 +46,19 @@ public class DataPointProcessor implements Runnable {
                 }
 
                 DataPoint dp = DataPoint.builder()
-                        .teamInfo(parsed[0])
-                        .packetNum(Integer.parseInt(parsed[1].replaceAll(
-                                Connections.getCurrentConnection()
-                                        .floatConfig().pkt(),
-                                ""
-                        )))
-                        .time(Double.parseDouble(parsed[2].trim()))
+                        .teamInfo(parsed[0])                            // PN12-MiramarWaterJets
+                        .packetNum(
+                                Integer.parseInt(
+                                        parsed[1].replaceAll( // pkt-#
+                                                Connections.getCurrentConnection()
+                                                        .floatConfig().pkt(),
+                                                "" // pkt-# > #
+                                        )))
+                        .time(Double.parseDouble(parsed[2].trim())) // time > #.#
                         .measurements(Arrays.stream(array)
                                 .mapToDouble(Double::parseDouble)
-                                .toArray())
-                        .build();
+                                .toArray()) // measurement values as doubles that come after time val
+                        .build();   // new object created
 
                 parsedArray.add(dp);
 
