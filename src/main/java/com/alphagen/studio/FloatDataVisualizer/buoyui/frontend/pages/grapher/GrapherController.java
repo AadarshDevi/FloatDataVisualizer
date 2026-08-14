@@ -355,9 +355,9 @@ public class GrapherController {
                     else
                         terminalTextArea.setText(terminalTextArea.getText() + terminalOutput + "\n");
 
-                    if (terminalOutput.equals(connectionConfig.floatConfig().endFlag())) {
+                    if (terminalOutput.trim().equals(connectionConfig.floatConfig().endFlag())) {
                         stopingDataTransfer();
-                    } else if (terminalOutput.equals("[SerialException] Disconnected")) {
+                    } else if (terminalOutput.trim().equals("[SerialException] Disconnected")) {
 
                         stopingDataTransfer();
 
