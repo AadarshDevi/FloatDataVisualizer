@@ -98,7 +98,7 @@ public class UserSystem {
                 case WINDOWS:
                     String settingsFolderPath = System.getProperty("APPDATA");
                     if (settingsFolderPath == null) {
-                        path = Path.of(System.getProperty("user.home"), "AppData", "FloatDataVisualizer", "3.0.0");
+                        path = Path.of(System.getProperty("user.home"), "AppData", "Roaming", "FloatDataVisualizer", "3.0.0");
                         break;
                     }
                     path = Path.of(settingsFolderPath, "FloatDataVisualizer", "3.0.0");
