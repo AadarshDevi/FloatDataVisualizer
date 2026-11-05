@@ -4,11 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="776164ce-7a69-48e2-8934-c0376db3d4b9" name="Changes" comment="unicode space problems">
+    <list default="true" id="776164ce-7a69-48e2-8934-c0376db3d4b9" name="Changes" comment="correct pom files">
+      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/project.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/buoyui/core/CoreAPI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/buoyui/core/system/System.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/buoyui/backend/app/PlatformDetector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/buoyui/backend/app/PlatformDetector.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/buoyui/backend/settings/SettingsManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/buoyui/backend/settings/SettingsManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,9 +20,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Record" />
         <option value="Exception" />
         <option value="Enum" />
+        <option value="Record" />
         <option value="Class" />
       </list>
     </option>
@@ -47,7 +49,7 @@
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/AadarshDevi/FloatDataVisualizer.git&quot;,
-    &quot;accountId&quot;: &quot;81734ebf-13b7-4f3e-9b75-59c3dba3a626&quot;
+    &quot;accountId&quot;: &quot;a4e9eb38-495a-4030-8e20-b3ce3da2cbdb&quot;
   }
 }</component>
   <component name="KubernetesApiPersistence">{}</component>
@@ -157,6 +159,7 @@
     &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;code.cleanup.on.save&quot;: &quot;true&quot;,
     &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
     &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
@@ -199,11 +202,11 @@
       <recent name="C:\Users\aadar\IdeaProjects\FloatDataVisualizer\src\main\resources\com\alphagen\studio\FloatDataVisualizer\buoyui\frontend\pages" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.alphagen.studio.FloatDataVisualizer.buoyui.core" />
       <recent name="com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.pages" />
       <recent name="com.alphagen.studio.FloatDataVisualizer.buoyui.frontend" />
       <recent name="com.alphagen.studio.FloatDataVisualizer.buoyui.backend.constants" />
       <recent name="com.alphagen.studio.FloatDataVisualizer.buoyui" />
-      <recent name="com.alphagen.studio.FloatDataVisualizer.buoyui.backend.app" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.alphagen.studio.FloatDataVisualizer.buoyui.backend" />
@@ -221,8 +224,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-30f59d01ecdd-37e91769500f-intellij.indexing.shared.core-IU-261.24374.151" />
-        <option value="bundled-js-predefined-d6986cc7102b-31caf2ab9e3c-JavaScript-IU-261.24374.151" />
+        <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.28238.7" />
       </set>
     </attachedChunks>
   </component>
@@ -250,38 +252,6 @@
       <workItem from="1766969579896" duration="1000" />
       <workItem from="1766969593668" duration="4000" />
       <workItem from="1766969654651" duration="15000" />
-    </task>
-    <task id="LOCAL-00450" summary="fixed connections ui">
-      <option name="closed" value="true" />
-      <created>1780090500355</created>
-      <option name="number" value="00450" />
-      <option name="presentableId" value="LOCAL-00450" />
-      <option name="project" value="LOCAL" />
-      <updated>1780090500355</updated>
-    </task>
-    <task id="LOCAL-00451" summary="moved themes to correct package">
-      <option name="closed" value="true" />
-      <created>1780090514136</created>
-      <option name="number" value="00451" />
-      <option name="presentableId" value="LOCAL-00451" />
-      <option name="project" value="LOCAL" />
-      <updated>1780090514136</updated>
-    </task>
-    <task id="LOCAL-00452" summary="added missiing exports">
-      <option name="closed" value="true" />
-      <created>1780090527311</created>
-      <option name="number" value="00452" />
-      <option name="presentableId" value="LOCAL-00452" />
-      <option name="project" value="LOCAL" />
-      <updated>1780090527311</updated>
-    </task>
-    <task id="LOCAL-00453" summary="a light theme backup">
-      <option name="closed" value="true" />
-      <created>1780090536315</created>
-      <option name="number" value="00453" />
-      <option name="presentableId" value="LOCAL-00453" />
-      <option name="project" value="LOCAL" />
-      <updated>1780090536315</updated>
     </task>
     <task id="LOCAL-00454" summary="unifying theme managing">
       <option name="closed" value="true" />
@@ -643,7 +613,39 @@
       <option name="project" value="LOCAL" />
       <updated>1780196916087</updated>
     </task>
-    <option name="localTasksCounter" value="499" />
+    <task id="LOCAL-00499" summary="unicode space problems">
+      <option name="closed" value="true" />
+      <created>1780196934862</created>
+      <option name="number" value="00499" />
+      <option name="presentableId" value="LOCAL-00499" />
+      <option name="project" value="LOCAL" />
+      <updated>1780196934862</updated>
+    </task>
+    <task id="LOCAL-00500" summary="if settings was empty, app crashed because there was no default options">
+      <option name="closed" value="true" />
+      <created>1780196963690</created>
+      <option name="number" value="00500" />
+      <option name="presentableId" value="LOCAL-00500" />
+      <option name="project" value="LOCAL" />
+      <updated>1780196963690</updated>
+    </task>
+    <task id="LOCAL-00501" summary="idea files">
+      <option name="closed" value="true" />
+      <created>1780196988471</created>
+      <option name="number" value="00501" />
+      <option name="presentableId" value="LOCAL-00501" />
+      <option name="project" value="LOCAL" />
+      <updated>1780196988471</updated>
+    </task>
+    <task id="LOCAL-00502" summary="correct pom files">
+      <option name="closed" value="true" />
+      <created>1780255036616</created>
+      <option name="number" value="00502" />
+      <option name="presentableId" value="LOCAL-00502" />
+      <option name="project" value="LOCAL" />
+      <updated>1780255036617</updated>
+    </task>
+    <option name="localTasksCounter" value="503" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -673,9 +675,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="possible terminal and table autoscroll added" />
-    <MESSAGE value="settings var for terminal and table autoscroll" />
-    <MESSAGE value="settings fields for easier placement in settings package" />
     <MESSAGE value="fixed weird settings data retrieval" />
     <MESSAGE value="random thing" />
     <MESSAGE value="alert for the bug when taking a screenshot of the graph" />
@@ -698,7 +697,10 @@
     <MESSAGE value="when port was invalid, the app crashed" />
     <MESSAGE value="whene data card is added, it did not use the set theme" />
     <MESSAGE value="unicode space problems" />
-    <option name="LAST_COMMIT_MESSAGE" value="unicode space problems" />
+    <MESSAGE value="if settings was empty, app crashed because there was no default options" />
+    <MESSAGE value="idea files" />
+    <MESSAGE value="correct pom files" />
+    <option name="LAST_COMMIT_MESSAGE" value="correct pom files" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
