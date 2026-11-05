@@ -78,7 +78,6 @@ public class UserSystem {
     }
 
     class FileSystem {
-        private final OperatingSystem os;
         private final Path rootAppSettingsPath;
         private final Path rootAppDataPath;
 
