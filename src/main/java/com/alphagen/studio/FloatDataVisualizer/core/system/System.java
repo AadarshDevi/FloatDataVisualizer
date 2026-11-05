@@ -1,4 +1,4 @@
-package com.alphagen.studio.FloatDataVisualizer.buoyui.core.system;
+package com.alphagen.studio.FloatDataVisualizer.core.system;
 
 import com.jthemedetecor.OsThemeDetector;
 import org.apache.logging.log4j.LogManager;
