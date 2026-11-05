@@ -35,6 +35,7 @@ public class FileSystem {
                 break;
             case MACOS:
                 // todo: implement macos folder paths
+                break;
             case LINUX:
                 // todo: implement linux folder paths
             case OTHER:
