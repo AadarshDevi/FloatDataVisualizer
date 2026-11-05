@@ -84,6 +84,10 @@ public class System {
 
         public FileSystem(OperatingSystem os) {
             this.os = os;
+
+            // setting base file locations
+            rootAppDataPath = getRootAppDataPath();
+            rootAppSettingsPath = getRootAppSettingsPath();
         }
 
         public boolean validFile(String filepath) {
