@@ -110,7 +110,7 @@ public class UserSystem {
             return path;
         }
 
-        public Path getRootAppDataPath() {
+        public Path getRootAppDataPath(OperatingSystem os) {
 
         }
 
