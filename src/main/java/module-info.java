@@ -10,6 +10,7 @@ module com.alphagen.studio.FloatDataVisualizer {
     requires java.sql;
     requires org.apache.logging.log4j;
     requires org.apache.logging.log4j.core;
+    requires com.jthemedetector;
 
     opens com.alphagen.studio.FloatDataVisualizer to javafx.fxml, javafx.controls;
     opens com.alphagen.studio.FloatDataVisualizer.buoyui to javafx.fxml, javafx.controls;
