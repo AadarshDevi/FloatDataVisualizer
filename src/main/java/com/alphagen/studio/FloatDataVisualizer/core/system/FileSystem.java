@@ -76,7 +76,8 @@ public class FileSystem {
                 path = Path.of(System.getProperty("user.home"), AppInfo.appName, AppInfo.appVersion);
                 break;
         }
-        LOGGER.info("App Root > Data Path: {}", path);
+        LOGGER.info("App Root Folder > Data Path: {}", path);
+
         return path;
     }
 
