@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="776164ce-7a69-48e2-8934-c0376db3d4b9" name="Changes" comment=".idea">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/core/system/Current.md" afterDir="false" />
+    <list default="true" id="776164ce-7a69-48e2-8934-c0376db3d4b9" name="Changes" comment="file to not forget what i am doing">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/core/system/SettingsFile.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/core/system/Current.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/core/system/Current.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -674,7 +675,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="deleted unneeded record" />
     <MESSAGE value="added break;" />
     <MESSAGE value="class to hold info of the app" />
     <MESSAGE value=".idea file" />
@@ -699,7 +699,8 @@
     <MESSAGE value="created docs folder" />
     <MESSAGE value="log for folder creation" />
     <MESSAGE value=".idea" />
-    <option name="LAST_COMMIT_MESSAGE" value=".idea" />
+    <MESSAGE value="file to not forget what i am doing" />
+    <option name="LAST_COMMIT_MESSAGE" value="file to not forget what i am doing" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
