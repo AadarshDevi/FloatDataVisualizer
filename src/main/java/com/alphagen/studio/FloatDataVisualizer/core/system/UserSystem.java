@@ -10,8 +10,8 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
-public class System {
-    private static final Logger LOGGER = LogManager.getLogger(System.class);
+public class UserSystem {
+    private static final Logger LOGGER = LogManager.getLogger(UserSystem.class);
     @Getter
     private final FileSystem fileSystem;
     @Getter
@@ -20,7 +20,7 @@ public class System {
     @Getter
     private final OperatingSystem os;
 
-    public System() {
+    public UserSystem() {
         this.os = detectOS();
         fileSystem = new FileSystem(os);
         this.theme = detectTheme();
