@@ -63,12 +63,7 @@ public class FileSystem {
         Path path = null;
         switch (os) {
             case WINDOWS:
-                String settingsFolderPath = System.getProperty("APPDATA");
-                if (settingsFolderPath == null) {
-                    path = Path.of(System.getProperty("user.home"), "AppData", "Roaming", AppInfo.appName, AppInfo.appVersion);
-                    break;
-                }
-                path = Path.of(settingsFolderPath, AppInfo.appName, AppInfo.appVersion);
+                path = Path.of(System.getProperty("user.home"), "Documents", AppInfo.appName, AppInfo.appVersion);
                 break;
             case MACOS:
                 // todo: implement macos folder paths
