@@ -71,7 +71,7 @@ public class System {
         }
 
         public boolean validFile(Path filepath) {
-            return Files.exists(filepath);
+            return Files.isRegularFile(filepath);
         }
 
         public boolean validFolder(String folderPath) {
