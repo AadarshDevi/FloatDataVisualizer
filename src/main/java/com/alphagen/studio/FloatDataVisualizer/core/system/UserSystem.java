@@ -147,8 +147,5 @@ public class UserSystem {
                 Files.createDirectories(newFolderPath);
             return newFolderPath;
         }
-
-        record FilePath(Path settingsFilePath, Path databaseFilePath) {
-        }
     }
 }
