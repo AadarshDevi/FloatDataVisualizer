@@ -53,7 +53,7 @@ public class UserSystem {
         return theme;
     }
 
-    enum OperatingSystem {
+    public enum OperatingSystem {
         WINDOWS,
         MACOS,
         LINUX,
