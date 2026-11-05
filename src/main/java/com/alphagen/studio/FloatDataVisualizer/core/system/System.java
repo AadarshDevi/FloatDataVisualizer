@@ -83,6 +83,8 @@ public class System {
         private final Path rootAppDataPath;
 
         public FileSystem(OperatingSystem os) {
+
+            // getting os
             this.os = os;
 
             // setting base file locations
