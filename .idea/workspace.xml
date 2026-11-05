@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="776164ce-7a69-48e2-8934-c0376db3d4b9" name="Changes" comment=".idea file">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/core/system/FileSystem.java" afterDir="false" />
+    <list default="true" id="776164ce-7a69-48e2-8934-c0376db3d4b9" name="Changes" comment=".idea">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/core/AppInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/core/AppInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/core/system/UserSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/core/system/UserSystem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/core/system/FileSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/core/system/FileSystem.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -676,14 +674,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="creating folder if it does not exist" />
-    <MESSAGE value="vars to place app data/settings paths" />
-    <MESSAGE value="get app data/settings root folders and place it" />
-    <MESSAGE value="setting os" />
-    <MESSAGE value="method to set app setting root folder path" />
-    <MESSAGE value="system renamed to usersystem" />
-    <MESSAGE value="todo for app settings path" />
-    <MESSAGE value="returning path" />
     <MESSAGE value="checking if i am able to create sttings root" />
     <MESSAGE value="removed OperatingSystem os from filesystem. it is used and immediately discarded" />
     <MESSAGE value="added OperatingSystem os to method headers: app settings and data" />
@@ -701,7 +691,15 @@
     <MESSAGE value=".idea file" />
     <MESSAGE value="replaced hardcoded strings with an app ingo string" />
     <MESSAGE value="same here, replaced hardcoded app name and version" />
-    <option name="LAST_COMMIT_MESSAGE" value="same here, replaced hardcoded app name and version" />
+    <MESSAGE value="removed imports needed for file sys" />
+    <MESSAGE value="FileSystem moved from UserSystem to a separate file" />
+    <MESSAGE value="app info vars now public" />
+    <MESSAGE value=".idea" />
+    <MESSAGE value="macos case is now a todo" />
+    <MESSAGE value="added a todo for linux path" />
+    <MESSAGE value="returning user's home path" />
+    <MESSAGE value="adding app name and version" />
+    <option name="LAST_COMMIT_MESSAGE" value="adding app name and version" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
