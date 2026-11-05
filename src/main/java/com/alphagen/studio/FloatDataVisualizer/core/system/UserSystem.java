@@ -74,7 +74,6 @@ public class UserSystem {
             OperatingSystem os,
             SystemTheme theme
     ) {
-
     }
 
     class FileSystem {
