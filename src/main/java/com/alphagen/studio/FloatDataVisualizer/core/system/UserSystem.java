@@ -18,9 +18,7 @@ public class UserSystem {
     private final OperatingSystem os;
     @Getter
     @Setter
-    private final SystemTheme theme;
-    @Getter
-    private final OperatingSystem os;
+    private SystemTheme theme;
 
     public UserSystem() {
         this.os = detectOS();
