@@ -45,7 +45,28 @@ public class FileSystem {
     }
 
     public Path getRootAppDataPath(UserSystem.OperatingSystem os) {
-
+        Path path = null;
+        switch (os) {
+            case WINDOWS:
+                String settingsFolderPath = System.getProperty("APPDATA");
+                if (settingsFolderPath == null) {
+                    path = Path.of(System.getProperty("user.home"), "AppData", "Roaming", AppInfo.appName, AppInfo.appVersion);
+                    break;
+                }
+                path = Path.of(settingsFolderPath, AppInfo.appName, AppInfo.appVersion);
+                break;
+            case MACOS:
+                // todo: implement macos folder paths
+                break;
+            case LINUX:
+                // todo: implement linux folder paths
+                break;
+            case OTHER:
+            default:
+                path = Path.of(System.getProperty("user.home"), AppInfo.appName, AppInfo.appVersion);
+                break;
+        }
+        return path;
     }
 
     public boolean validFile(String filepath) {
