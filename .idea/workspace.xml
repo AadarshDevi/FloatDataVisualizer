@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="776164ce-7a69-48e2-8934-c0376db3d4b9" name="Changes" comment="unicode space problems">
+    <list default="true" id="776164ce-7a69-48e2-8934-c0376db3d4b9" name="Changes" comment="detecting theme set">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/buoyui/core/CoreAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/core/CoreAPI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/buoyui/core/system/System.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/core/system/System.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/core/system/System.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/core/system/System.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -201,11 +200,11 @@
       <recent name="C:\Users\aadar\IdeaProjects\FloatDataVisualizer\src\main\resources\com\alphagen\studio\FloatDataVisualizer\buoyui\frontend\pages" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.alphagen.studio.FloatDataVisualizer" />
       <recent name="com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.pages" />
       <recent name="com.alphagen.studio.FloatDataVisualizer.buoyui.frontend" />
       <recent name="com.alphagen.studio.FloatDataVisualizer.buoyui.backend.constants" />
       <recent name="com.alphagen.studio.FloatDataVisualizer.buoyui" />
-      <recent name="com.alphagen.studio.FloatDataVisualizer.buoyui.backend.app" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.alphagen.studio.FloatDataVisualizer.buoyui.backend" />
@@ -675,19 +674,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="possible terminal and table autoscroll added" />
-    <MESSAGE value="settings var for terminal and table autoscroll" />
-    <MESSAGE value="settings fields for easier placement in settings package" />
-    <MESSAGE value="fixed weird settings data retrieval" />
-    <MESSAGE value="random thing" />
-    <MESSAGE value="alert for the bug when taking a screenshot of the graph" />
-    <MESSAGE value="fixing some css" />
-    <MESSAGE value="something idea file" />
-    <MESSAGE value="fixed the screenshot having the white border.&#10;screenshot of root instead of just the graph" />
-    <MESSAGE value="screenshot during dark theme broken" />
-    <MESSAGE value="formatting" />
-    <MESSAGE value="added alert for the darkmode screenshot" />
-    <MESSAGE value="fixing the dark theme for the scatter chart" />
     <MESSAGE value="idea file" />
     <MESSAGE value="bug: .csv exists in file name, it still adds .csv" />
     <MESSAGE value="found a way to stop hardware disconnected aka unable to start from trying to gather information" />
@@ -700,7 +686,20 @@
     <MESSAGE value="when port was invalid, the app crashed" />
     <MESSAGE value="whene data card is added, it did not use the set theme" />
     <MESSAGE value="unicode space problems" />
-    <option name="LAST_COMMIT_MESSAGE" value="unicode space problems" />
+    <MESSAGE value="idea fileSOME GIT STUFF" />
+    <MESSAGE value="method overload chain for validFile(String) -&gt; validFile(Path)" />
+    <MESSAGE value="main method for validFile(Path)" />
+    <MESSAGE value="main method for validFolder(Path)" />
+    <MESSAGE value="method overloading chain for validFolder(String) -&gt; validFolder(Path)" />
+    <MESSAGE value="getting os from operating system" />
+    <MESSAGE value="imports" />
+    <MESSAGE value="constructor for system so filesystem can be setup" />
+    <MESSAGE value="file system, theme, and os vars" />
+    <MESSAGE value="file created it does not exist" />
+    <MESSAGE value="added lombok for certain vars: filesys, theme, os" />
+    <MESSAGE value="detecting theme set" />
+    <MESSAGE value="creating folder if it does not exist" />
+    <option name="LAST_COMMIT_MESSAGE" value="creating folder if it does not exist" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
