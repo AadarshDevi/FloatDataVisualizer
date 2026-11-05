@@ -75,7 +75,7 @@ public class System {
         }
 
         public boolean validFolder(String folderPath) {
-            return validFile(Path.of(folderPath)) && Files.isDirectory(Path.of(folderPath));
+            return validFolder(Path.of(folderPath));
         }
 
         public boolean validFolder(Path folderPath) {
