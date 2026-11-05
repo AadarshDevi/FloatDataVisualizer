@@ -97,7 +97,7 @@ public class UserSystem {
                         path = Path.of(System.getProperty("user.home"), "AppData", "Roaming", AppInfo.appName, AppInfo.appVersion);
                         break;
                     }
-                    path = Path.of(settingsFolderPath, "FloatDataVisualizer", "3.0.0");
+                    path = Path.of(settingsFolderPath, AppInfo.appName, AppInfo.appVersion);
                     break;
                 case LINUX:
                 case MACOS:
