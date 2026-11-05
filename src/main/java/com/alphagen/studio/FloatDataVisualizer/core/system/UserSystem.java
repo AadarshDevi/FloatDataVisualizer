@@ -97,7 +97,12 @@ public class UserSystem {
             // todo: implement win11/10 folder paths
             switch (this.os) {
                 case WINDOWS:
-
+                    String settingsFolderPath = System.getProperty("APPDATA");
+                    if (settingsFolderPath == null) {
+                        path = Path.of(System.getProperty("user.home"), "AppData", "FloatDataVisualizer", "3.0.0");
+                        break;
+                    }
+                    path = Path.of(settingsFolderPath, "FloatDataVisualizer", "3.0.0");
                 case LINUX:
                 case MACOS:
                 case OTHER:
