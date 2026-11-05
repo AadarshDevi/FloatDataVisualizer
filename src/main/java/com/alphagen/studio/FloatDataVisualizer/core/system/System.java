@@ -79,6 +79,8 @@ public class System {
 
     class FileSystem {
         private final OperatingSystem os;
+        private final Path rootAppSettingsPath;
+        private final Path rootAppDataPath;
 
         public FileSystem(OperatingSystem os) {
             this.os = os;
