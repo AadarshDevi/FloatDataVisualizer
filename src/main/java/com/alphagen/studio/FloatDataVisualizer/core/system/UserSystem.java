@@ -98,6 +98,7 @@ public class UserSystem {
                         break;
                     }
                     path = Path.of(settingsFolderPath, "FloatDataVisualizer", "3.0.0");
+                    break;
                 case LINUX:
                 case MACOS:
                 case OTHER:
