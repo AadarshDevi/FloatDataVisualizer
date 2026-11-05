@@ -66,6 +66,12 @@ public class System {
     }
 
     class FileSystem {
+        private final OperatingSystem os;
+
+        public FileSystem(OperatingSystem os) {
+            this.os = os;
+        }
+
         public boolean validFile(String filepath) {
             return validFile(Path.of(filepath));
         }
