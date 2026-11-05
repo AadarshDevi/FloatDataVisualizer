@@ -82,9 +82,6 @@ public class UserSystem {
 
         public FileSystem(OperatingSystem os) {
 
-            // getting os
-            this.os = os;
-
             // setting base file locations
             rootAppDataPath = getRootAppDataPath(os);
             rootAppSettingsPath = getRootAppSettingsPath(os);
