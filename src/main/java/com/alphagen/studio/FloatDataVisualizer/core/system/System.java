@@ -78,8 +78,12 @@ public class System {
             return validFile(Path.of(folderPath)) && Files.isDirectory(Path.of(folderPath));
         }
 
-        public File createFile(String filename, String filepath) {
-            return null;
+        public boolean validFolder(Path folderPath) {
+            return Files.isDirectory(folderPath);
+        }
+
+        public Path createFile(String filename, String filepath) throws IOException {
+            return createFile(filename, Path.of(filepath));
         }
 
         public File createFile(String filename, Path filepath) throws IOException {
