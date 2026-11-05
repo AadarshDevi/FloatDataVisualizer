@@ -34,6 +34,8 @@ public class FileSystem {
                 }
                 path = Path.of(settingsFolderPath, AppInfo.appName, AppInfo.appVersion);
                 break;
+            case MACOS:
+                // todo: implement macos folder paths
             case LINUX:
             case MACOS:
             case OTHER:
