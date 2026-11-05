@@ -41,7 +41,8 @@ public class FileSystem {
                 break;
             case OTHER:
             default:
-                return Path.of(System.getProperty("user.home"), AppInfo.appName, AppInfo.appVersion);
+                path = Path.of(System.getProperty("user.home"), AppInfo.appName, AppInfo.appVersion);
+                break;
         }
         return path;
     }
