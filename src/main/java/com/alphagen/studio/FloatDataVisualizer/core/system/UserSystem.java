@@ -15,6 +15,8 @@ public class UserSystem {
     @Getter
     private final FileSystem fileSystem;
     @Getter
+    private final OperatingSystem os;
+    @Getter
     @Setter
     private final SystemTheme theme;
     @Getter
