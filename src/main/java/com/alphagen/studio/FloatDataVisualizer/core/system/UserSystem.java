@@ -94,7 +94,7 @@ public class UserSystem {
 
         public Path getRootAppSettingsPath() {
             Path path = null;
-
+            // todo: implement win11/10 folder paths
             switch (this.os) {
                 case WINDOWS:
 
