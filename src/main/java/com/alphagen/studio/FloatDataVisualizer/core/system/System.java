@@ -92,6 +92,24 @@ public class System {
             rootAppSettingsPath = getRootAppSettingsPath();
         }
 
+        public Path getRootAppSettingsPath() {
+            Path path = null;
+
+            switch (this.os) {
+                case WINDOWS:
+
+                case LINUX:
+                case MACOS:
+                case OTHER:
+                default:
+            }
+
+        }
+
+        public Path getRootAppDataPath() {
+
+        }
+
         public boolean validFile(String filepath) {
             return validFile(Path.of(filepath));
         }
