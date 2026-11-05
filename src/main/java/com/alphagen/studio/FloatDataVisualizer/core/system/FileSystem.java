@@ -38,6 +38,7 @@ public class FileSystem {
                 break;
             case LINUX:
                 // todo: implement linux folder paths
+                break;
             case OTHER:
             default:
                 return Path.of(System.getProperty("user.home"), AppInfo.appName, AppInfo.appVersion);
