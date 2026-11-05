@@ -94,7 +94,7 @@ public class UserSystem {
         public Path getRootAppSettingsPath(OperatingSystem os) {
             Path path = null;
             // todo: implement win11/10 folder paths
-            switch (this.os) {
+            switch (os) {
                 case WINDOWS:
                     String settingsFolderPath = System.getProperty("APPDATA");
                     if (settingsFolderPath == null) {
