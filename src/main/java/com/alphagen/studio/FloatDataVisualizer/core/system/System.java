@@ -1,6 +1,8 @@
 package com.alphagen.studio.FloatDataVisualizer.core.system;
 
 import com.jthemedetecor.OsThemeDetector;
+import lombok.Getter;
+import lombok.Setter;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -10,8 +12,12 @@ import java.nio.file.Path;
 
 public class System {
     private static final Logger LOGGER = LogManager.getLogger(System.class);
+    @Getter
     private final FileSystem fileSystem;
+    @Getter
+    @Setter
     private final SystemTheme theme;
+    @Getter
     private final OperatingSystem os;
 
     public System() {
