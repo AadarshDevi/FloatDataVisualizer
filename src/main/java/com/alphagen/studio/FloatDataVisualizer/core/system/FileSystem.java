@@ -37,7 +37,7 @@ public class FileSystem {
             case MACOS:
                 // todo: implement macos folder paths
             case LINUX:
-            case MACOS:
+                // todo: implement linux folder paths
             case OTHER:
             default:
         }
