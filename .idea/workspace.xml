@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="776164ce-7a69-48e2-8934-c0376db3d4b9" name="Changes" comment="removed todo, it was distributed already">
+    <list default="true" id="776164ce-7a69-48e2-8934-c0376db3d4b9" name="Changes" comment="added logs for add data and settings">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/core/system/FileSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/core/system/FileSystem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/core/system/UserSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/core/system/UserSystem.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -675,9 +674,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="switched from the old and deleted global os to local os" />
-    <MESSAGE value="added roaming folder" />
-    <MESSAGE value="moved global var up" />
     <MESSAGE value="theme is now not final" />
     <MESSAGE value="removed empty line" />
     <MESSAGE value="removed sub class's global os" />
@@ -694,13 +690,16 @@
     <MESSAGE value="added a todo for linux path" />
     <MESSAGE value="returning user's home path" />
     <MESSAGE value="adding app name and version" />
-    <MESSAGE value=".idea" />
     <MESSAGE value="removed todo, it was distributed already" />
     <MESSAGE value="method duplicated for app data" />
     <MESSAGE value="added break for case mac" />
     <MESSAGE value="added switch break for case linx" />
     <MESSAGE value="path added instead of returning. also added a break for it" />
-    <option name="LAST_COMMIT_MESSAGE" value="path added instead of returning. also added a break for it" />
+    <MESSAGE value="UserSystem.OperatingSystem is now public" />
+    <MESSAGE value=".idea" />
+    <MESSAGE value="logger is final, fixed case" />
+    <MESSAGE value="added logs for add data and settings" />
+    <option name="LAST_COMMIT_MESSAGE" value="added logs for add data and settings" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
