@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="776164ce-7a69-48e2-8934-c0376db3d4b9" name="Changes" comment="system renamed to usersystem">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/core/AppInfo.java" afterDir="false" />
+    <list default="true" id="776164ce-7a69-48e2-8934-c0376db3d4b9" name="Changes" comment=".idea file">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/core/system/FileSystem.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/core/AppInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/core/AppInfo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/core/system/UserSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/core/system/UserSystem.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -675,16 +676,11 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="file system, theme, and os vars" />
-    <MESSAGE value="file created it does not exist" />
-    <MESSAGE value="added lombok for certain vars: filesys, theme, os" />
-    <MESSAGE value="detecting theme set" />
     <MESSAGE value="creating folder if it does not exist" />
     <MESSAGE value="vars to place app data/settings paths" />
     <MESSAGE value="get app data/settings root folders and place it" />
     <MESSAGE value="setting os" />
     <MESSAGE value="method to set app setting root folder path" />
-    <MESSAGE value=".idea file" />
     <MESSAGE value="system renamed to usersystem" />
     <MESSAGE value="todo for app settings path" />
     <MESSAGE value="returning path" />
@@ -700,7 +696,12 @@
     <MESSAGE value="removed empty line" />
     <MESSAGE value="removed sub class's global os" />
     <MESSAGE value="deleted unneeded record" />
-    <option name="LAST_COMMIT_MESSAGE" value="deleted unneeded record" />
+    <MESSAGE value="added break;" />
+    <MESSAGE value="class to hold info of the app" />
+    <MESSAGE value=".idea file" />
+    <MESSAGE value="replaced hardcoded strings with an app ingo string" />
+    <MESSAGE value="same here, replaced hardcoded app name and version" />
+    <option name="LAST_COMMIT_MESSAGE" value="same here, replaced hardcoded app name and version" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
