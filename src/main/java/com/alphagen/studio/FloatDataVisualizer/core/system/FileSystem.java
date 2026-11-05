@@ -45,6 +45,17 @@ public class FileSystem {
                 break;
         }
         LOGGER.info("App Root > Settings Path: {}", path);
+
+        if (!validFile(path)) {
+            try {
+                path = createFile("", path);
+                LOGGER.info("App Settings File: Created");
+            } catch (IOException e) {
+                LOGGER.info("App Settings File: Failed to create");
+                LOGGER.error(e.getMessage());
+                return null;
+            }
+        }
         return path;
     }
 
