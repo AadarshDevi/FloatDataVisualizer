@@ -23,6 +23,7 @@ public class System {
     public System() {
         this.os = detectOS();
         fileSystem = new FileSystem(os);
+        this.theme = detectTheme();
     }
 
     public OperatingSystem detectOS() {
