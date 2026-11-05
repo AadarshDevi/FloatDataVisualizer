@@ -44,6 +44,7 @@ public class FileSystem {
                 path = Path.of(System.getProperty("user.home"), AppInfo.appName, AppInfo.appVersion);
                 break;
         }
+        LOGGER.info("App Root > Settings Path: {}", path);
         return path;
     }
 
@@ -69,6 +70,7 @@ public class FileSystem {
                 path = Path.of(System.getProperty("user.home"), AppInfo.appName, AppInfo.appVersion);
                 break;
         }
+        LOGGER.info("App Root > Data Path: {}", path);
         return path;
     }
 
