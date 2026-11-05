@@ -12,6 +12,10 @@ public class System {
     private static final Logger LOGGER = LogManager.getLogger(System.class);
     private static final boolean systemThemeOverride = false;
 
+    public System() {
+        this.os = detectOS();
+        fileSystem = new FileSystem(os);
+    }
 
     public OperatingSystem detectOS() {
         String osName = java.lang.System.getProperty("os.name").toLowerCase();
