@@ -67,7 +67,7 @@ public class System {
 
     class FileSystem {
         public boolean validFile(String filepath) {
-            return validFile(Path.of(filepath)) && !Files.isDirectory(Path.of(filepath));
+            return validFile(Path.of(filepath));
         }
 
         public boolean validFile(Path filepath) {
