@@ -97,9 +97,11 @@ public class System {
             return createFile(filename, Path.of(filepath));
         }
 
-        public File createFile(String filename, Path filepath) throws IOException {
-            Path path = Files.createFile(Path.of(String.valueOf(filepath), filename));
-            return null;
+        public Path createFile(String filename, Path filepath) throws IOException {
+            Path newFilepath = filepath.resolve(filename);
+            if (!validFolder(newFilepath))
+                Files.createFile(newFilepath);
+            return newFilepath;
         }
 
         record FilePath(Path settingsFilePath, Path databaseFilePath) {
