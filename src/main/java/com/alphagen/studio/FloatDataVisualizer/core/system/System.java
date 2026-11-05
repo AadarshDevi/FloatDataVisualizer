@@ -111,6 +111,17 @@ public class System {
             return newFilepath;
         }
 
+        public Path createFolder(String folderName, String folderPath) throws IOException {
+            return createFolder(folderName, Path.of(folderPath));
+        }
+
+        public Path createFolder(String folderName, Path folderPath) throws IOException {
+            Path newFolderPath = folderPath.resolve(folderName);
+            if (!validFolder(newFolderPath))
+                Files.createDirectories(newFolderPath);
+            return newFolderPath;
+        }
+
         record FilePath(Path settingsFilePath, Path databaseFilePath) {
         }
     }
