@@ -40,7 +40,7 @@ public class FileSystem {
                 // todo: implement linux folder paths
             case OTHER:
             default:
-                return Path.of(System.getProperty("user.home"));
+                return Path.of(System.getProperty("user.home"), AppInfo.appName, AppInfo.appVersion);
         }
         return path;
     }
