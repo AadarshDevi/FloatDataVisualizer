@@ -103,7 +103,7 @@ public class UserSystem {
                 case OTHER:
                 default:
             }
-
+            return path;
         }
 
         public Path getRootAppDataPath() {
