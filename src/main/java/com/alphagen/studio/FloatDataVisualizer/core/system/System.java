@@ -10,7 +10,9 @@ import java.nio.file.Path;
 
 public class System {
     private static final Logger LOGGER = LogManager.getLogger(System.class);
-    private static final boolean systemThemeOverride = false;
+    private final FileSystem fileSystem;
+    private final SystemTheme theme;
+    private final OperatingSystem os;
 
     public System() {
         this.os = detectOS();
