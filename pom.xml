@@ -126,6 +126,16 @@
             <scope>compile</scope>
         </dependency>
 
+        <!--    Jackson: JSON Parser    -->
+
+        <!-- Source: https://mvnrepository.com/artifact/tools.jackson.core/jackson-databind -->
+        <dependency>
+            <groupId>tools.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>3.2.4</version>
+            <scope>compile</scope>
+        </dependency>
+
         <dependency>
             <groupId>com.fazecast</groupId>
             <artifactId>jSerialComm</artifactId>
