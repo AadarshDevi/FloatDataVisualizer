@@ -51,6 +51,16 @@
             <scope>compile</scope>
         </dependency>
 
+        <!--    Lombok: Annotation    -->
+
+        <!-- Source: https://mvnrepository.com/artifact/org.projectlombok/lombok -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.48</version>
+            <scope>compile</scope>
+        </dependency>
+
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-api</artifactId>

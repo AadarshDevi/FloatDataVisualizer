@@ -4,17 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="776164ce-7a69-48e2-8934-c0376db3d4b9" name="Changes" comment=".idea">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/core/data/DataPacket.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/core/data/DataPoint.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/core/data/TeamInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_11_5_2026_11_49_AM_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_11_5_2026_11_49_AM__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_5_2026_11_52_AM_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_5_2026_11_52_AM__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="776164ce-7a69-48e2-8934-c0376db3d4b9" name="Changes" comment="dep updated: javafx">
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/core/system/Current.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/core/system/Current.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -682,14 +673,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value=".idea file" />
-    <MESSAGE value="replaced hardcoded strings with an app ingo string" />
-    <MESSAGE value="same here, replaced hardcoded app name and version" />
-    <MESSAGE value="removed imports needed for file sys" />
-    <MESSAGE value="FileSystem moved from UserSystem to a separate file" />
-    <MESSAGE value="app info vars now public" />
-    <MESSAGE value="macos case is now a todo" />
-    <MESSAGE value="added a todo for linux path" />
     <MESSAGE value="returning user's home path" />
     <MESSAGE value="adding app name and version" />
     <MESSAGE value="removed todo, it was distributed already" />
@@ -707,7 +690,15 @@
     <MESSAGE value="file updated: current.md" />
     <MESSAGE value="class to write and read settings file" />
     <MESSAGE value=".idea" />
-    <option name="LAST_COMMIT_MESSAGE" value=".idea" />
+    <MESSAGE value="class for team info" />
+    <MESSAGE value="whatever i am working on" />
+    <MESSAGE value="the data packet from the float" />
+    <MESSAGE value="class to hold the name of the sensor data and it's unit" />
+    <MESSAGE value="updated maven" />
+    <MESSAGE value="packagin is a jar" />
+    <MESSAGE value="proj name moved down" />
+    <MESSAGE value="dep updated: javafx" />
+    <option name="LAST_COMMIT_MESSAGE" value="dep updated: javafx" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
