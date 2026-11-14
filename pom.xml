@@ -34,6 +34,18 @@
                 <installer.type>DMG</installer.type>
                 <installer.icon>icon.icns</installer.icon>
             </properties>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.panteleyev</groupId>
+                        <artifactId>jpackage-maven-plugin</artifactId>
+                        <configuration>
+                            <macPackageName>floatdatavisualizer</macPackageName>
+                            <macSign>true</macSign>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
         </profile>
 
         <profile>
