@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="776164ce-7a69-48e2-8934-c0376db3d4b9" name="Changes" comment=".idea">
+    <list default="true" id="776164ce-7a69-48e2-8934-c0376db3d4b9" name="Changes" comment="chnaged from ${version} to alpha">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -674,8 +673,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="removed old mvn dep plugin" />
-    <MESSAGE value="plugin by openjfx to generate exes" />
     <MESSAGE value="profiles added" />
     <MESSAGE value="jpackage mvn plugin added" />
     <MESSAGE value="suppression added for mvn property" />
@@ -699,7 +696,9 @@
     <MESSAGE value="old exe xml removed. it was replaced with profiles. redundancies were erased" />
     <MESSAGE value=".idea" />
     <MESSAGE value="exe dest folder moved to dest from dist, and xml:module replaced with input, mainjar, mainclass" />
-    <option name="LAST_COMMIT_MESSAGE" value="exe dest folder moved to dest from dist, and xml:module replaced with input, mainjar, mainclass" />
+    <MESSAGE value="chnaged from ${version} to alpha" />
+    <MESSAGE value="macos-pkg added" />
+    <option name="LAST_COMMIT_MESSAGE" value="macos-pkg added" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
