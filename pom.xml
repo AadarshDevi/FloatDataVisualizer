@@ -74,6 +74,19 @@
                 <installer.icon>icon.png</installer.icon>
             </properties>
         </profile>
+
+        <profile>
+            <id>deb</id>
+            <activation>
+                <property>
+                    <name>deb</name>
+                </property>
+            </activation>
+            <properties>
+                <installer.type>DEB</installer.type>
+                <installer.icon>icon.png</installer.icon>
+            </properties>
+        </profile>
     </profiles>
 
     <repositories>
