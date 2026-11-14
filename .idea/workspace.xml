@@ -4,7 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="776164ce-7a69-48e2-8934-c0376db3d4b9" name="Changes" comment=".idea">
+    <list default="true" id="776164ce-7a69-48e2-8934-c0376db3d4b9" name="Changes" comment="plugin by openjfx to generate exes">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/icon.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
@@ -132,7 +133,7 @@
     <option name="myRunOnSave" value="true" />
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
+    <option name="selectedTabId" value="ProjectErrors" />
     <option name="sortByName" value="true" />
   </component>
   <component name="ProjectColorInfo">{
@@ -166,7 +167,7 @@
     "ignore.virus.scanning.warn.message": "true",
     "junie.onboarding.icon.badge.shown": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/aadar/IdeaProjects/FloatDataVisualizer/src/main/resources/com/alphagen/studio/FloatDataVisualizer/buoyui/frontend/pages/connections",
+    "last_opened_file_path": "C:/Users/CryosArtic/IdeaProjects/FloatDataVisualizer/src/main/resources",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -177,7 +178,7 @@
     "project.structure.side.proportion": "0.0",
     "rearrange.code.on.save": "true",
     "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "reference.settings.project.maven.runner",
+    "settings.editor.selected.configurable": "terminal",
     "to.speed.mode.migration.done": "true",
     "vue.rearranger.settings.migration": "true"
   }
@@ -187,11 +188,11 @@
       <recent name="com.alphagen.studio.FloatDataVisualizer.buoyui.backend.data" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\CryosArtic\IdeaProjects\FloatDataVisualizer\src\main\resources" />
       <recent name="C:\Users\aadar\IdeaProjects\FloatDataVisualizer\src\main\resources\com\alphagen\studio\FloatDataVisualizer\buoyui\frontend\pages\connections" />
       <recent name="C:\Users\aadar\IdeaProjects\FloatDataVisualizer\src\main\resources\com\alphagen\studio\FloatDataVisualizer\buoyui" />
       <recent name="C:\Users\aadar\IdeaProjects\FloatDataVisualizer\src\main\resources\com\alphagen\studio\FloatDataVisualizer\buoyui\frontend\pages\connections\datacard" />
       <recent name="C:\Users\aadar\IdeaProjects\FloatDataVisualizer\src\main\resources\com\alphagen\studio\FloatDataVisualizer\buoyui\frontend\pages\grapher\scatterplot" />
-      <recent name="C:\Users\aadar\IdeaProjects\FloatDataVisualizer\src\main\resources\com\alphagen\studio\FloatDataVisualizer\buoyui\frontend\pages\grapher" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\aadar\IdeaProjects\FloatDataVisualizer" />
@@ -674,11 +675,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="log for folder creation" />
-    <MESSAGE value="file to not forget what i am doing" />
-    <MESSAGE value="file updated: current.md" />
-    <MESSAGE value="class to write and read settings file" />
-    <MESSAGE value="class for team info" />
     <MESSAGE value="whatever i am working on" />
     <MESSAGE value="the data packet from the float" />
     <MESSAGE value="class to hold the name of the sensor data and it's unit" />
@@ -699,7 +695,12 @@
     <MESSAGE value="nitrite db bom added" />
     <MESSAGE value="mvn plugin for junit" />
     <MESSAGE value="mvn plugin used for lombok" />
-    <option name="LAST_COMMIT_MESSAGE" value="mvn plugin used for lombok" />
+    <MESSAGE value="removed old mvn dep plugin" />
+    <MESSAGE value="plugin by openjfx to generate exes" />
+    <MESSAGE value="profiles added" />
+    <MESSAGE value="jpackage mvn plugin added" />
+    <MESSAGE value="suppression added for mvn property" />
+    <option name="LAST_COMMIT_MESSAGE" value="suppression added for mvn property" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
