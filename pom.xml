@@ -21,6 +21,56 @@
         </argLine>
     </properties>
 
+    <profiles>
+        <profile>
+            <id>dmg</id>
+            <activation>
+                <property>
+                    <name>dmg</name>
+                </property>
+            </activation>
+            <properties>
+                <installer.type>DMG</installer.type>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>msi</id>
+            <activation>
+                <property>
+                    <name>msi</name>
+                </property>
+            </activation>
+            <properties>
+                <installer.type>MSI</installer.type>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>exe</id>
+            <activation>
+                <property>
+                    <name>exe</name>
+                </property>
+            </activation>
+            <properties>
+                <installer.type>EXE</installer.type>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>rpm</id>
+            <activation>
+                <property>
+                    <name>rpm</name>
+                </property>
+            </activation>
+            <properties>
+                <installer.type>RPM</installer.type>
+            </properties>
+        </profile>
+    </profiles>
+
     <repositories>
         <repository>
             <id>jitpack.io</id>
