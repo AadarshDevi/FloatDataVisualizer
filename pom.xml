@@ -414,8 +414,11 @@
                     <description>Float Data Visualizer is a Data Acquisition App for the MateFloat Competition.
                     </description>
 
-                    <destination>${project.build.directory}/dist</destination>
-                    <module>com.alphagnfss.etr3/com.alphagnfss.etr3.Launcher</module>
+                    <destination>${project.build.directory}/dest</destination>
+                    <!--                    <module>com.alphagnfss.etr3/com.alphagnfss.etr3.Launcher</module>-->
+                    <input>target/libs</input>
+                    <mainJar>${name}-${project.version}.jar</mainJar>
+                    <mainClass>com.alphagen.studio.FloatDataVisualizer.Launcher</mainClass>
                     <!--suppress UnresolvedMavenProperty -->
                     <type>${installer.type}</type>
                     <icon>${project.build.directory}/classes/${installer.icon}</icon>
