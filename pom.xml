@@ -32,6 +32,7 @@
             </activation>
             <properties>
                 <installer.type>DMG</installer.type>
+                <installer.icon>icon.icns</installer.icon>
             </properties>
         </profile>
 
@@ -44,6 +45,7 @@
             </activation>
             <properties>
                 <installer.type>MSI</installer.type>
+                <installer.icon>icon.ico</installer.icon>
             </properties>
         </profile>
 
@@ -56,6 +58,7 @@
             </activation>
             <properties>
                 <installer.type>EXE</installer.type>
+                <installer.icon>icon.ico</installer.icon>
             </properties>
         </profile>
 
@@ -68,6 +71,7 @@
             </activation>
             <properties>
                 <installer.type>RPM</installer.type>
+                <installer.icon>icon.png</installer.icon>
             </properties>
         </profile>
     </profiles>
