@@ -69,7 +69,6 @@
             <scope>compile</scope>
         </dependency>
 
-
         <!--    Apache Log4J: Logging    -->
 
         <!-- Source: https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core -->
@@ -144,37 +143,15 @@
             <scope>compile</scope>
         </dependency>
 
+        <!--    jSerialComm: Serial Comms    -->
+
         <dependency>
             <groupId>com.fazecast</groupId>
             <artifactId>jSerialComm</artifactId>
             <version>2.11.2</version>
         </dependency>
-        <dependency>
-            <groupId>org.openjfx</groupId>
-            <artifactId>javafx-swing</artifactId>
-            <version>25.0.1</version>
-        </dependency>
-        <!-- Source: https://mvnrepository.com/artifact/org.openani.jsystemthemedetector/jSystemThemeDetector -->
-        <dependency>
-            <groupId>org.openani.jsystemthemedetector</groupId>
-            <artifactId>jSystemThemeDetector</artifactId>
-            <version>3.9</version>
-            <scope>compile</scope>
-        </dependency>
-        <!-- Source: https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core -->
-        <dependency>
-            <groupId>org.apache.logging.log4j</groupId>
-            <artifactId>log4j-core</artifactId>
-            <version>2.26.0</version>
-            <scope>compile</scope>
-        </dependency>
-        <!-- Source: https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-api -->
-        <dependency>
-            <groupId>org.apache.logging.log4j</groupId>
-            <artifactId>log4j-api</artifactId>
-            <version>2.26.0</version>
-            <scope>compile</scope>
-        </dependency>
+
+        <!--    jSystemThemeDetector: System Theme Detector    -->
 
         <!-- Source: https://mvnrepository.com/artifact/com.github.Dansoftowner/jSystemThemeDetector -->
         <dependency>
