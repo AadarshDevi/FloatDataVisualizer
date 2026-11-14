@@ -674,8 +674,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="mvn plugin for junit" />
-    <MESSAGE value="mvn plugin used for lombok" />
     <MESSAGE value="removed old mvn dep plugin" />
     <MESSAGE value="plugin by openjfx to generate exes" />
     <MESSAGE value="profiles added" />
@@ -692,14 +690,16 @@
     <MESSAGE value="fixed app name, and changed version to use the version in mvn" />
     <MESSAGE value="mvn jpackage plugin: added icon" />
     <MESSAGE value="javafx mvn plugin was moved up the order" />
-    <MESSAGE value=".idea" />
     <MESSAGE value="updated profile:dmg to add dmg specific xml" />
     <MESSAGE value="updated profile:msi to add msi specific xml" />
     <MESSAGE value="updated profile:exe to add exe specific xml" />
     <MESSAGE value="updated profile:rpm to add rpm specific xml" />
     <MESSAGE value="updated profile:deb to add deb specific xml" />
     <MESSAGE value="description and vendor info added to jpackage" />
-    <option name="LAST_COMMIT_MESSAGE" value="description and vendor info added to jpackage" />
+    <MESSAGE value="old exe xml removed. it was replaced with profiles. redundancies were erased" />
+    <MESSAGE value=".idea" />
+    <MESSAGE value="exe dest folder moved to dest from dist, and xml:module replaced with input, mainjar, mainclass" />
+    <option name="LAST_COMMIT_MESSAGE" value="exe dest folder moved to dest from dist, and xml:module replaced with input, mainjar, mainclass" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

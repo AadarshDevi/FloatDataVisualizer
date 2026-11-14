@@ -120,7 +120,7 @@
                         <configuration>
                             <linuxShortcut>true</linuxShortcut>
                             <linuxMenuGroup>Utility</linuxMenuGroup>
-                            <linuxAppRelease>${version}</linuxAppRelease>
+                            <linuxAppRelease>alpha</linuxAppRelease>
                             <linuxPackageName>floatdatavisualizer</linuxPackageName>
                         </configuration>
                     </plugin>
@@ -147,7 +147,7 @@
                         <configuration>
                             <linuxShortcut>true</linuxShortcut>
                             <linuxMenuGroup>Utility</linuxMenuGroup>
-                            <linuxAppRelease>${version}</linuxAppRelease>
+                            <linuxAppRelease>alpha</linuxAppRelease>
                             <linuxPackageName>floatdatavisualizer</linuxPackageName>
                         </configuration>
                     </plugin>
@@ -408,7 +408,7 @@
                 <version>1.6.5</version>
                 <configuration>
                     <name>FloatDataVisualizer</name>
-                    <appVersion>${version}</appVersion>
+                    <appVersion>${project.version}</appVersion>
 
                     <vendor>Aadarsh Devi</vendor>
                     <description>Float Data Visualizer is a Data Acquisition App for the MateFloat Competition.
