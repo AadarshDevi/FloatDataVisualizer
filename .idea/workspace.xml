@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="776164ce-7a69-48e2-8934-c0376db3d4b9" name="Changes" comment="dep updated: junit 5">
+    <list default="true" id="776164ce-7a69-48e2-8934-c0376db3d4b9" name="Changes" comment=".idea">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
@@ -674,17 +674,10 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="path added instead of returning. also added a break for it" />
-    <MESSAGE value="UserSystem.OperatingSystem is now public" />
-    <MESSAGE value="logger is final, fixed case" />
-    <MESSAGE value="added logs for add data and settings" />
-    <MESSAGE value="create settings file" />
-    <MESSAGE value="created docs folder" />
     <MESSAGE value="log for folder creation" />
     <MESSAGE value="file to not forget what i am doing" />
     <MESSAGE value="file updated: current.md" />
     <MESSAGE value="class to write and read settings file" />
-    <MESSAGE value=".idea" />
     <MESSAGE value="class for team info" />
     <MESSAGE value="whatever i am working on" />
     <MESSAGE value="the data packet from the float" />
@@ -699,7 +692,14 @@
     <MESSAGE value="dep added: nitrite nosql embedded db" />
     <MESSAGE value="dep added: jackson" />
     <MESSAGE value="javafx-swing" />
-    <option name="LAST_COMMIT_MESSAGE" value="javafx-swing" />
+    <MESSAGE value="dep updated: j serial comm and system theme detector" />
+    <MESSAGE value=".idea" />
+    <MESSAGE value="added vm args" />
+    <MESSAGE value="junit will now be able to read" />
+    <MESSAGE value="nitrite db bom added" />
+    <MESSAGE value="mvn plugin for junit" />
+    <MESSAGE value="mvn plugin used for lombok" />
+    <option name="LAST_COMMIT_MESSAGE" value="mvn plugin used for lombok" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

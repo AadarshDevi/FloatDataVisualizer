@@ -213,7 +213,7 @@
                     </annotationProcessorPaths>
                 </configuration>
             </plugin>
-            
+
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-dependency-plugin</artifactId>
@@ -233,261 +233,286 @@
                 </executions>
             </plugin>
 
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-jar-plugin</artifactId>
-                <version>3.3.0</version>
-                <configuration>
-                    <outputDirectory>${project.build.directory}/libs</outputDirectory>
-                    <archive>
-                        <manifest>
-                            <addClasspath>true</addClasspath>
-                            <classpathPrefix>./</classpathPrefix>
-                            <mainClass>com.alphagen.studio.FloatDataVisualizer.Launcher</mainClass>
-                        </manifest>
-                    </archive>
-                </configuration>
-            </plugin>
 
             <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-resources-plugin</artifactId>
-                <version>3.3.1</version>
+                <groupId>org.openjfx</groupId>
+                <artifactId>javafx-maven-plugin</artifactId>
+                <version>0.0.8</version>
                 <executions>
                     <execution>
-                        <id>copy-jar-to-libs</id>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>copy-resources</goal>
-                        </goals>
+                        <!-- Default configuration for running with: mvn clean javafx:run -->
+                        <id>default-cli</id>
                         <configuration>
-                            <outputDirectory>${project.build.directory}/libs</outputDirectory>
-                            <resources>
-                                <resource>
-                                    <directory>${project.build.directory}</directory>
-                                    <includes>
-                                        <include>FloatDataVisualizer-${project.version}.jar</include>
-                                    </includes>
-                                </resource>
-                            </resources>
+                            <mainClass>com.alphagnfss.etr3.Launcher</mainClass>
+                            <options>
+                                <option>--enable-native-access=javafx.graphics</option>
+                            </options>
+                            <launcher>app</launcher>
+                            <jlinkZipName>app</jlinkZipName>
+                            <jlinkImageName>app</jlinkImageName>
+                            <noManPages>true</noManPages>
+                            <stripDebug>true</stripDebug>
+                            <noHeaderFiles>true</noHeaderFiles>
                         </configuration>
                     </execution>
                 </executions>
             </plugin>
 
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>exec-maven-plugin</artifactId>
-                <version>3.1.0</version>
-                <executions>
-                    <execution>
-                        <id>jpackage-msi</id>
-                        <phase>verify</phase>
-                        <goals>
-                            <goal>exec</goal>
-                        </goals>
-                        <configuration>
-                            <executable>jpackage</executable>
-                            <arguments>
-                                <argument>--type</argument>
-                                <argument>msi</argument>
-                                <argument>--dest</argument>
-                                <argument>${project.build.directory}/jpackage</argument>
-                                <argument>--input</argument>
-                                <argument>${project.build.directory}/libs</argument>
-                                <argument>--name</argument>
-                                <argument>FloatDataVisualizer</argument>
-                                <argument>--app-version</argument>
-                                <argument>${project.version}</argument>
-                                <argument>--vendor</argument>
-                                <argument>Aadarsh Devi</argument>
+            <!--            <plugin>-->
+            <!--                <groupId>org.apache.maven.plugins</groupId>-->
+            <!--                <artifactId>maven-jar-plugin</artifactId>-->
+            <!--                <version>3.3.0</version>-->
+            <!--                <configuration>-->
+            <!--                    <outputDirectory>${project.build.directory}/libs</outputDirectory>-->
+            <!--                    <archive>-->
+            <!--                        <manifest>-->
+            <!--                            <addClasspath>true</addClasspath>-->
+            <!--                            <classpathPrefix>./</classpathPrefix>-->
+            <!--                            <mainClass>com.alphagen.studio.FloatDataVisualizer.Launcher</mainClass>-->
+            <!--                        </manifest>-->
+            <!--                    </archive>-->
+            <!--                </configuration>-->
+            <!--            </plugin>-->
 
-                                <argument>--main-jar</argument>
-                                <argument>FloatDataVisualizer-${project.version}.jar</argument>
-                                <argument>--main-class</argument>
-                                <argument>com.alphagen.studio.FloatDataVisualizer.Launcher</argument>
+            <!--            <plugin>-->
+            <!--                <groupId>org.apache.maven.plugins</groupId>-->
+            <!--                <artifactId>maven-resources-plugin</artifactId>-->
+            <!--                <version>3.3.1</version>-->
+            <!--                <executions>-->
+            <!--                    <execution>-->
+            <!--                        <id>copy-jar-to-libs</id>-->
+            <!--                        <phase>package</phase>-->
+            <!--                        <goals>-->
+            <!--                            <goal>copy-resources</goal>-->
+            <!--                        </goals>-->
+            <!--                        <configuration>-->
+            <!--                            <outputDirectory>${project.build.directory}/libs</outputDirectory>-->
+            <!--                            <resources>-->
+            <!--                                <resource>-->
+            <!--                                    <directory>${project.build.directory}</directory>-->
+            <!--                                    <includes>-->
+            <!--                                        <include>FloatDataVisualizer-${project.version}.jar</include>-->
+            <!--                                    </includes>-->
+            <!--                                </resource>-->
+            <!--                            </resources>-->
+            <!--                        </configuration>-->
+            <!--                    </execution>-->
+            <!--                </executions>-->
+            <!--            </plugin>-->
 
-                                <argument>--win-menu</argument>
-                                <argument>--win-shortcut</argument>
-                                <argument>--win-dir-chooser</argument>
-                                <argument>--icon</argument>
-                                <argument>${project.basedir}/src/main/resources/icon.ico</argument>
-                                <!--                                <argument>&#45;&#45;verbose</argument>-->
-                                <!--                                <argument>&#45;&#45;win-console</argument>-->
-                            </arguments>
-                        </configuration>
-                    </execution>
-                    <execution>
-                        <id>jpackage-exe</id>
-                        <phase>verify</phase>
-                        <goals>
-                            <goal>exec</goal>
-                        </goals>
-                        <configuration>
-                            <executable>jpackage</executable>
-                            <arguments>
-                                <argument>--type</argument>
-                                <argument>exe</argument>
-                                <argument>--dest</argument>
-                                <argument>${project.build.directory}/jpackage</argument>
-                                <argument>--input</argument>
-                                <argument>${project.build.directory}/libs</argument>
-                                <argument>--name</argument>
-                                <argument>FloatDataVisualizer</argument>
-                                <argument>--app-version</argument>
-                                <argument>${project.version}</argument>
-                                <argument>--vendor</argument>
-                                <argument>Aadarsh Devi</argument>
-                                <argument>--main-jar</argument>
-                                <argument>FloatDataVisualizer-${project.version}.jar</argument>
-                                <argument>--main-class</argument>
-                                <argument>com.alphagen.studio.FloatDataVisualizer.Launcher</argument>
-                                <argument>--win-menu</argument>
-                                <argument>--win-shortcut</argument>
-                                <argument>--icon</argument>
-                                <argument>${project.basedir}/src/main/resources/icon.ico</argument>
-                                <!--                                <argument>&#45;&#45;verbose</argument>-->
-                                <!--                                <argument>&#45;&#45;win-console</argument>-->
-                            </arguments>
-                        </configuration>
-                    </execution>
-                    <execution>
-                        <id>jpackage-dmg</id>
-                        <phase>verify</phase>
-                        <goals>
-                            <goal>exec</goal>
-                        </goals>
-                        <configuration>
-                            <executable>jpackage</executable>
-                            <arguments>
-                                <argument>--type</argument>
-                                <argument>dmg</argument>
-                                <argument>--dest</argument>
-                                <argument>${project.build.directory}/jpackage</argument>
-                                <argument>--input</argument>
-                                <argument>${project.build.directory}/libs</argument>
-                                <argument>--name</argument>
-                                <argument>FloatDataVisualizer</argument>
-                                <argument>--app-version</argument>
-                                <argument>${project.version}</argument>
-                                <argument>--vendor</argument>
-                                <argument>Aadarsh Devi</argument>
-                                <argument>--main-jar</argument>
-                                <argument>FloatDataVisualizer-${project.version}.jar</argument>
-                                <argument>--main-class</argument>
-                                <argument>com.alphagen.studio.FloatDataVisualizer.Launcher</argument>
-                                <argument>--mac-package-name</argument>
-                                <argument>FloatDataVisualizer</argument>
-                                <argument>--icon</argument>
-                                <argument>${project.basedir}/src/main/resources/icon.icns</argument>
-                            </arguments>
-                        </configuration>
-                    </execution>
+            <!--            <plugin>-->
+            <!--                <groupId>org.codehaus.mojo</groupId>-->
+            <!--                <artifactId>exec-maven-plugin</artifactId>-->
+            <!--                <version>3.1.0</version>-->
+            <!--                <executions>-->
+            <!--                    <execution>-->
+            <!--                        <id>jpackage-msi</id>-->
+            <!--                        <phase>verify</phase>-->
+            <!--                        <goals>-->
+            <!--                            <goal>exec</goal>-->
+            <!--                        </goals>-->
+            <!--                        <configuration>-->
+            <!--                            <executable>jpackage</executable>-->
+            <!--                            <arguments>-->
+            <!--                                <argument>&#45;&#45;type</argument>-->
+            <!--                                <argument>msi</argument>-->
+            <!--                                <argument>&#45;&#45;dest</argument>-->
+            <!--                                <argument>${project.build.directory}/jpackage</argument>-->
+            <!--                                <argument>&#45;&#45;input</argument>-->
+            <!--                                <argument>${project.build.directory}/libs</argument>-->
+            <!--                                <argument>&#45;&#45;name</argument>-->
+            <!--                                <argument>FloatDataVisualizer</argument>-->
+            <!--                                <argument>&#45;&#45;app-version</argument>-->
+            <!--                                <argument>${project.version}</argument>-->
+            <!--                                <argument>&#45;&#45;vendor</argument>-->
+            <!--                                <argument>Aadarsh Devi</argument>-->
 
-                    <execution>
-                        <id>jpackage-deb</id>
-                        <phase>verify</phase>
-                        <goals>
-                            <goal>exec</goal>
-                        </goals>
-                        <configuration>
-                            <executable>jpackage</executable>
-                            <arguments>
-                                <argument>--type</argument>
-                                <argument>deb</argument>
-                                <argument>--dest</argument>
-                                <argument>${project.build.directory}/jpackage</argument>
-                                <argument>--input</argument>
-                                <argument>${project.build.directory}/libs</argument>
-                                <argument>--name</argument>
-                                <argument>FloatDataVisualizer</argument>
-                                <argument>--app-version</argument>
-                                <argument>${project.version}</argument>
-                                <argument>--vendor</argument>
-                                <argument>Aadarsh Devi</argument>
-                                <argument>--main-jar</argument>
-                                <argument>FloatDataVisualizer-${project.version}.jar</argument>
-                                <argument>--main-class</argument>
-                                <argument>com.alphagen.studio.FloatDataVisualizer.Launcher</argument>
-                                <argument>--linux-shortcut</argument>
-                                <argument>--linux-menu-group</argument>
-                                <argument>Utility</argument>
-                                <argument>--linux-deb-maintainer</argument>
-                                <argument>Aadarsh.Devi@example.com</argument>
-                                <!--                                <argument>&#45;&#45;resource-dir</argument>-->
-                                <!--                                <argument>${project.basedir}/src/main/resources/jpackage/linux</argument>-->
-                            </arguments>
-                        </configuration>
-                    </execution>
+            <!--                                <argument>&#45;&#45;main-jar</argument>-->
+            <!--                                <argument>FloatDataVisualizer-${project.version}.jar</argument>-->
+            <!--                                <argument>&#45;&#45;main-class</argument>-->
+            <!--                                <argument>com.alphagen.studio.FloatDataVisualizer.Launcher</argument>-->
+
+            <!--                                <argument>&#45;&#45;win-menu</argument>-->
+            <!--                                <argument>&#45;&#45;win-shortcut</argument>-->
+            <!--                                <argument>&#45;&#45;win-dir-chooser</argument>-->
+            <!--                                <argument>&#45;&#45;icon</argument>-->
+            <!--                                <argument>${project.basedir}/src/main/resources/icon.ico</argument>-->
+            <!--                                &lt;!&ndash;                                <argument>&#45;&#45;verbose</argument>&ndash;&gt;-->
+            <!--                                &lt;!&ndash;                                <argument>&#45;&#45;win-console</argument>&ndash;&gt;-->
+            <!--                            </arguments>-->
+            <!--                        </configuration>-->
+            <!--                    </execution>-->
+            <!--                    <execution>-->
+            <!--                        <id>jpackage-exe</id>-->
+            <!--                        <phase>verify</phase>-->
+            <!--                        <goals>-->
+            <!--                            <goal>exec</goal>-->
+            <!--                        </goals>-->
+            <!--                        <configuration>-->
+            <!--                            <executable>jpackage</executable>-->
+            <!--                            <arguments>-->
+            <!--                                <argument>&#45;&#45;type</argument>-->
+            <!--                                <argument>exe</argument>-->
+            <!--                                <argument>&#45;&#45;dest</argument>-->
+            <!--                                <argument>${project.build.directory}/jpackage</argument>-->
+            <!--                                <argument>&#45;&#45;input</argument>-->
+            <!--                                <argument>${project.build.directory}/libs</argument>-->
+            <!--                                <argument>&#45;&#45;name</argument>-->
+            <!--                                <argument>FloatDataVisualizer</argument>-->
+            <!--                                <argument>&#45;&#45;app-version</argument>-->
+            <!--                                <argument>${project.version}</argument>-->
+            <!--                                <argument>&#45;&#45;vendor</argument>-->
+            <!--                                <argument>Aadarsh Devi</argument>-->
+            <!--                                <argument>&#45;&#45;main-jar</argument>-->
+            <!--                                <argument>FloatDataVisualizer-${project.version}.jar</argument>-->
+            <!--                                <argument>&#45;&#45;main-class</argument>-->
+            <!--                                <argument>com.alphagen.studio.FloatDataVisualizer.Launcher</argument>-->
+            <!--                                <argument>&#45;&#45;win-menu</argument>-->
+            <!--                                <argument>&#45;&#45;win-shortcut</argument>-->
+            <!--                                <argument>&#45;&#45;icon</argument>-->
+            <!--                                <argument>${project.basedir}/src/main/resources/icon.ico</argument>-->
+            <!--                                &lt;!&ndash;                                <argument>&#45;&#45;verbose</argument>&ndash;&gt;-->
+            <!--                                &lt;!&ndash;                                <argument>&#45;&#45;win-console</argument>&ndash;&gt;-->
+            <!--                            </arguments>-->
+            <!--                        </configuration>-->
+            <!--                    </execution>-->
+            <!--                    <execution>-->
+            <!--                        <id>jpackage-dmg</id>-->
+            <!--                        <phase>verify</phase>-->
+            <!--                        <goals>-->
+            <!--                            <goal>exec</goal>-->
+            <!--                        </goals>-->
+            <!--                        <configuration>-->
+            <!--                            <executable>jpackage</executable>-->
+            <!--                            <arguments>-->
+            <!--                                <argument>&#45;&#45;type</argument>-->
+            <!--                                <argument>dmg</argument>-->
+            <!--                                <argument>&#45;&#45;dest</argument>-->
+            <!--                                <argument>${project.build.directory}/jpackage</argument>-->
+            <!--                                <argument>&#45;&#45;input</argument>-->
+            <!--                                <argument>${project.build.directory}/libs</argument>-->
+            <!--                                <argument>&#45;&#45;name</argument>-->
+            <!--                                <argument>FloatDataVisualizer</argument>-->
+            <!--                                <argument>&#45;&#45;app-version</argument>-->
+            <!--                                <argument>${project.version}</argument>-->
+            <!--                                <argument>&#45;&#45;vendor</argument>-->
+            <!--                                <argument>Aadarsh Devi</argument>-->
+            <!--                                <argument>&#45;&#45;main-jar</argument>-->
+            <!--                                <argument>FloatDataVisualizer-${project.version}.jar</argument>-->
+            <!--                                <argument>&#45;&#45;main-class</argument>-->
+            <!--                                <argument>com.alphagen.studio.FloatDataVisualizer.Launcher</argument>-->
+            <!--                                <argument>&#45;&#45;mac-package-name</argument>-->
+            <!--                                <argument>FloatDataVisualizer</argument>-->
+            <!--                                <argument>&#45;&#45;icon</argument>-->
+            <!--                                <argument>${project.basedir}/src/main/resources/icon.icns</argument>-->
+            <!--                            </arguments>-->
+            <!--                        </configuration>-->
+            <!--                    </execution>-->
+
+            <!--                    <execution>-->
+            <!--                        <id>jpackage-deb</id>-->
+            <!--                        <phase>verify</phase>-->
+            <!--                        <goals>-->
+            <!--                            <goal>exec</goal>-->
+            <!--                        </goals>-->
+            <!--                        <configuration>-->
+            <!--                            <executable>jpackage</executable>-->
+            <!--                            <arguments>-->
+            <!--                                <argument>&#45;&#45;type</argument>-->
+            <!--                                <argument>deb</argument>-->
+            <!--                                <argument>&#45;&#45;dest</argument>-->
+            <!--                                <argument>${project.build.directory}/jpackage</argument>-->
+            <!--                                <argument>&#45;&#45;input</argument>-->
+            <!--                                <argument>${project.build.directory}/libs</argument>-->
+            <!--                                <argument>&#45;&#45;name</argument>-->
+            <!--                                <argument>FloatDataVisualizer</argument>-->
+            <!--                                <argument>&#45;&#45;app-version</argument>-->
+            <!--                                <argument>${project.version}</argument>-->
+            <!--                                <argument>&#45;&#45;vendor</argument>-->
+            <!--                                <argument>Aadarsh Devi</argument>-->
+            <!--                                <argument>&#45;&#45;main-jar</argument>-->
+            <!--                                <argument>FloatDataVisualizer-${project.version}.jar</argument>-->
+            <!--                                <argument>&#45;&#45;main-class</argument>-->
+            <!--                                <argument>com.alphagen.studio.FloatDataVisualizer.Launcher</argument>-->
+            <!--                                <argument>&#45;&#45;linux-shortcut</argument>-->
+            <!--                                <argument>&#45;&#45;linux-menu-group</argument>-->
+            <!--                                <argument>Utility</argument>-->
+            <!--                                <argument>&#45;&#45;linux-deb-maintainer</argument>-->
+            <!--                                <argument>Aadarsh.Devi@example.com</argument>-->
+            <!--                                &lt;!&ndash;                                <argument>&#45;&#45;resource-dir</argument>&ndash;&gt;-->
+            <!--                                &lt;!&ndash;                                <argument>${project.basedir}/src/main/resources/jpackage/linux</argument>&ndash;&gt;-->
+            <!--                            </arguments>-->
+            <!--                        </configuration>-->
+            <!--                    </execution>-->
 
 
-                    <execution>
-                        <id>jpackage-rpm</id>
-                        <phase>verify</phase>
-                        <goals>
-                            <goal>exec</goal>
-                        </goals>
-                        <configuration>
-                            <executable>jpackage</executable>
-                            <arguments>
-                                <argument>--type</argument>
-                                <argument>rpm</argument>
-                                <argument>--dest</argument>
-                                <argument>${project.build.directory}/jpackage</argument>
-                                <argument>--input</argument>
-                                <argument>${project.build.directory}/libs</argument>
-                                <argument>--name</argument>
-                                <argument>FloatDataVisualizer</argument>
-                                <argument>--app-version</argument>
-                                <argument>${project.version}</argument>
-                                <argument>--vendor</argument>
-                                <argument>Aadarsh Devi</argument>
-                                <argument>--main-jar</argument>
-                                <argument>FloatDataVisualizer-${project.version}.jar</argument>
-                                <argument>--main-class</argument>
-                                <argument>com.alphagen.studio.FloatDataVisualizer.Launcher</argument>
-                                <argument>--linux-shortcut</argument>
-                                <argument>--linux-menu-group</argument>
-                                <argument>Utility</argument>
-                                <!--                                <argument>&#45;&#45;resource-dir</argument>-->
-                                <!--                                <argument>${project.basedir}/src/main/resources/jpackage/linux</argument>-->
-                            </arguments>
-                        </configuration>
-                    </execution>
+            <!--                    <execution>-->
+            <!--                        <id>jpackage-rpm</id>-->
+            <!--                        <phase>verify</phase>-->
+            <!--                        <goals>-->
+            <!--                            <goal>exec</goal>-->
+            <!--                        </goals>-->
+            <!--                        <configuration>-->
+            <!--                            <executable>jpackage</executable>-->
+            <!--                            <arguments>-->
+            <!--                                <argument>&#45;&#45;type</argument>-->
+            <!--                                <argument>rpm</argument>-->
+            <!--                                <argument>&#45;&#45;dest</argument>-->
+            <!--                                <argument>${project.build.directory}/jpackage</argument>-->
+            <!--                                <argument>&#45;&#45;input</argument>-->
+            <!--                                <argument>${project.build.directory}/libs</argument>-->
+            <!--                                <argument>&#45;&#45;name</argument>-->
+            <!--                                <argument>FloatDataVisualizer</argument>-->
+            <!--                                <argument>&#45;&#45;app-version</argument>-->
+            <!--                                <argument>${project.version}</argument>-->
+            <!--                                <argument>&#45;&#45;vendor</argument>-->
+            <!--                                <argument>Aadarsh Devi</argument>-->
+            <!--                                <argument>&#45;&#45;main-jar</argument>-->
+            <!--                                <argument>FloatDataVisualizer-${project.version}.jar</argument>-->
+            <!--                                <argument>&#45;&#45;main-class</argument>-->
+            <!--                                <argument>com.alphagen.studio.FloatDataVisualizer.Launcher</argument>-->
+            <!--                                <argument>&#45;&#45;linux-shortcut</argument>-->
+            <!--                                <argument>&#45;&#45;linux-menu-group</argument>-->
+            <!--                                <argument>Utility</argument>-->
+            <!--                                &lt;!&ndash;                                <argument>&#45;&#45;resource-dir</argument>&ndash;&gt;-->
+            <!--                                &lt;!&ndash;                                <argument>${project.basedir}/src/main/resources/jpackage/linux</argument>&ndash;&gt;-->
+            <!--                            </arguments>-->
+            <!--                        </configuration>-->
+            <!--                    </execution>-->
 
-                    <!--                    <execution>-->
-                    <!--                        <id>jpackage-appimage</id>-->
-                    <!--                        <phase>verify</phase>-->
-                    <!--                        <goals>-->
-                    <!--                            <goal>exec</goal>-->
-                    <!--                        </goals>-->
-                    <!--                        <configuration>-->
-                    <!--                            <executable>jpackage</executable>-->
-                    <!--                            <arguments>-->
-                    <!--                                <argument>&#45;&#45;type</argument>-->
-                    <!--                                <argument>app-image</argument>-->
-                    <!--                                <argument>&#45;&#45;dest</argument>-->
-                    <!--                                <argument>${project.build.directory}/jpackage</argument>-->
-                    <!--                                <argument>&#45;&#45;input</argument>-->
-                    <!--                                <argument>${project.build.directory}/libs</argument>-->
-                    <!--                                <argument>&#45;&#45;name</argument>-->
-                    <!--                                <argument>FloatDataVisualizer</argument>-->
-                    <!--                                <argument>&#45;&#45;app-version</argument>-->
-                    <!--                                <argument>${project.version}</argument>-->
-                    <!--                                <argument>&#45;&#45;vendor</argument>-->
-                    <!--                                <argument>Aadarsh Devi</argument>-->
-                    <!--                                <argument>&#45;&#45;main-jar</argument>-->
-                    <!--                                <argument>FloatDataVisualizer-${project.version}.jar</argument>-->
-                    <!--                                <argument>&#45;&#45;main-class</argument>-->
-                    <!--                                <argument>com.alphagen.studio.FloatDataVisualizer.Launcher</argument>-->
-                    <!--                                <argument>&#45;&#45;linux-shortcut</argument>-->
-                    <!--                                <argument>&#45;&#45;linux-menu-group</argument>-->
-                    <!--                                <argument>Utility</argument>-->
-                    <!--                            </arguments>-->
-                    <!--                        </configuration>-->
-                    <!--                    </execution>-->
-                </executions>
-            </plugin>
+            <!--                    &lt;!&ndash;                    <execution>&ndash;&gt;-->
+            <!--                    &lt;!&ndash;                        <id>jpackage-appimage</id>&ndash;&gt;-->
+            <!--                    &lt;!&ndash;                        <phase>verify</phase>&ndash;&gt;-->
+            <!--                    &lt;!&ndash;                        <goals>&ndash;&gt;-->
+            <!--                    &lt;!&ndash;                            <goal>exec</goal>&ndash;&gt;-->
+            <!--                    &lt;!&ndash;                        </goals>&ndash;&gt;-->
+            <!--                    &lt;!&ndash;                        <configuration>&ndash;&gt;-->
+            <!--                    &lt;!&ndash;                            <executable>jpackage</executable>&ndash;&gt;-->
+            <!--                    &lt;!&ndash;                            <arguments>&ndash;&gt;-->
+            <!--                    &lt;!&ndash;                                <argument>&#45;&#45;type</argument>&ndash;&gt;-->
+            <!--                    &lt;!&ndash;                                <argument>app-image</argument>&ndash;&gt;-->
+            <!--                    &lt;!&ndash;                                <argument>&#45;&#45;dest</argument>&ndash;&gt;-->
+            <!--                    &lt;!&ndash;                                <argument>${project.build.directory}/jpackage</argument>&ndash;&gt;-->
+            <!--                    &lt;!&ndash;                                <argument>&#45;&#45;input</argument>&ndash;&gt;-->
+            <!--                    &lt;!&ndash;                                <argument>${project.build.directory}/libs</argument>&ndash;&gt;-->
+            <!--                    &lt;!&ndash;                                <argument>&#45;&#45;name</argument>&ndash;&gt;-->
+            <!--                    &lt;!&ndash;                                <argument>FloatDataVisualizer</argument>&ndash;&gt;-->
+            <!--                    &lt;!&ndash;                                <argument>&#45;&#45;app-version</argument>&ndash;&gt;-->
+            <!--                    &lt;!&ndash;                                <argument>${project.version}</argument>&ndash;&gt;-->
+            <!--                    &lt;!&ndash;                                <argument>&#45;&#45;vendor</argument>&ndash;&gt;-->
+            <!--                    &lt;!&ndash;                                <argument>Aadarsh Devi</argument>&ndash;&gt;-->
+            <!--                    &lt;!&ndash;                                <argument>&#45;&#45;main-jar</argument>&ndash;&gt;-->
+            <!--                    &lt;!&ndash;                                <argument>FloatDataVisualizer-${project.version}.jar</argument>&ndash;&gt;-->
+            <!--                    &lt;!&ndash;                                <argument>&#45;&#45;main-class</argument>&ndash;&gt;-->
+            <!--                    &lt;!&ndash;                                <argument>com.alphagen.studio.FloatDataVisualizer.Launcher</argument>&ndash;&gt;-->
+            <!--                    &lt;!&ndash;                                <argument>&#45;&#45;linux-shortcut</argument>&ndash;&gt;-->
+            <!--                    &lt;!&ndash;                                <argument>&#45;&#45;linux-menu-group</argument>&ndash;&gt;-->
+            <!--                    &lt;!&ndash;                                <argument>Utility</argument>&ndash;&gt;-->
+            <!--                    &lt;!&ndash;                            </arguments>&ndash;&gt;-->
+            <!--                    &lt;!&ndash;                        </configuration>&ndash;&gt;-->
+            <!--                    &lt;!&ndash;                    </execution>&ndash;&gt;-->
+            <!--                </executions>-->
+            <!--            </plugin>-->
         </plugins>
     </build>
 </project>
