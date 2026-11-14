@@ -346,6 +346,7 @@
                     <module>com.alphagnfss.etr3/com.alphagnfss.etr3.Launcher</module>
                     <!--suppress UnresolvedMavenProperty -->
                     <type>${installer.type}</type>
+                    <icon>${project.build.directory}/classes/${installer.icon}</icon>
                     <javaOptions>
                         <option>--enable-native-access=javafx.graphics</option>
                     </javaOptions>
