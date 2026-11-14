@@ -4,7 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="776164ce-7a69-48e2-8934-c0376db3d4b9" name="Changes" comment="dep updated: javafx">
+    <list default="true" id="776164ce-7a69-48e2-8934-c0376db3d4b9" name="Changes" comment="dep updated: junit 5">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -673,12 +674,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="returning user's home path" />
-    <MESSAGE value="adding app name and version" />
-    <MESSAGE value="removed todo, it was distributed already" />
-    <MESSAGE value="method duplicated for app data" />
-    <MESSAGE value="added break for case mac" />
-    <MESSAGE value="added switch break for case linx" />
     <MESSAGE value="path added instead of returning. also added a break for it" />
     <MESSAGE value="UserSystem.OperatingSystem is now public" />
     <MESSAGE value="logger is final, fixed case" />
@@ -698,7 +693,13 @@
     <MESSAGE value="packagin is a jar" />
     <MESSAGE value="proj name moved down" />
     <MESSAGE value="dep updated: javafx" />
-    <option name="LAST_COMMIT_MESSAGE" value="dep updated: javafx" />
+    <MESSAGE value="dep updated: lombok" />
+    <MESSAGE value="dep added: log4j and slf4j-log4j adapter" />
+    <MESSAGE value="dep updated: junit 5" />
+    <MESSAGE value="dep added: nitrite nosql embedded db" />
+    <MESSAGE value="dep added: jackson" />
+    <MESSAGE value="javafx-swing" />
+    <option name="LAST_COMMIT_MESSAGE" value="javafx-swing" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
