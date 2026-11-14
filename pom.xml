@@ -283,6 +283,21 @@
                 </executions>
             </plugin>
 
+            <plugin>
+                <groupId>org.panteleyev</groupId>
+                <artifactId>jpackage-maven-plugin</artifactId>
+                <version>1.6.5</version>
+                <configuration>
+                    <name>EntertainmentTracker</name>
+                    <appVersion>1.0.0</appVersion>
+                    <destination>${project.build.directory}/dist</destination>
+                    <module>com.alphagnfss.etr3/com.alphagnfss.etr3.Launcher</module>
+                    <type>${installer.type}</type>
+                    <javaOptions>
+                        <option>--enable-native-access=javafx.graphics</option>
+                    </javaOptions>
+                </configuration>
+            </plugin>
 
             <plugin>
                 <groupId>org.openjfx</groupId>
