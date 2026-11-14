@@ -112,6 +112,20 @@
                 <installer.type>RPM</installer.type>
                 <installer.icon>icon.png</installer.icon>
             </properties>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.panteleyev</groupId>
+                        <artifactId>jpackage-maven-plugin</artifactId>
+                        <configuration>
+                            <linuxShortcut>true</linuxShortcut>
+                            <linuxMenuGroup>Utility</linuxMenuGroup>
+                            <linuxAppRelease>${version}</linuxAppRelease>
+                            <linuxPackageName>floatdatavisualizer</linuxPackageName>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
         </profile>
 
         <profile>
