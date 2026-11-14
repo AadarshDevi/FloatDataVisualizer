@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="776164ce-7a69-48e2-8934-c0376db3d4b9" name="Changes" comment="plugin by openjfx to generate exes">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/icon.png" afterDir="false" />
+    <list default="true" id="776164ce-7a69-48e2-8934-c0376db3d4b9" name="Changes" comment=".idea">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
@@ -675,24 +674,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="whatever i am working on" />
-    <MESSAGE value="the data packet from the float" />
-    <MESSAGE value="class to hold the name of the sensor data and it's unit" />
-    <MESSAGE value="updated maven" />
-    <MESSAGE value="packagin is a jar" />
-    <MESSAGE value="proj name moved down" />
-    <MESSAGE value="dep updated: javafx" />
-    <MESSAGE value="dep updated: lombok" />
-    <MESSAGE value="dep added: log4j and slf4j-log4j adapter" />
-    <MESSAGE value="dep updated: junit 5" />
-    <MESSAGE value="dep added: nitrite nosql embedded db" />
-    <MESSAGE value="dep added: jackson" />
-    <MESSAGE value="javafx-swing" />
-    <MESSAGE value="dep updated: j serial comm and system theme detector" />
-    <MESSAGE value=".idea" />
-    <MESSAGE value="added vm args" />
-    <MESSAGE value="junit will now be able to read" />
-    <MESSAGE value="nitrite db bom added" />
     <MESSAGE value="mvn plugin for junit" />
     <MESSAGE value="mvn plugin used for lombok" />
     <MESSAGE value="removed old mvn dep plugin" />
@@ -700,7 +681,25 @@
     <MESSAGE value="profiles added" />
     <MESSAGE value="jpackage mvn plugin added" />
     <MESSAGE value="suppression added for mvn property" />
-    <option name="LAST_COMMIT_MESSAGE" value="suppression added for mvn property" />
+    <MESSAGE value="icon for linux" />
+    <MESSAGE value="spacer" />
+    <MESSAGE value="junit is supposed to be somewhere else. this is i think for hunit 4, but i dont need it because i am using junit 5" />
+    <MESSAGE value="icons added to profile" />
+    <MESSAGE value="profile for deb created and updated with icon xml" />
+    <MESSAGE value="javafx mvn plugin added" />
+    <MESSAGE value="mvn dep plugin updated from 361 to 381" />
+    <MESSAGE value="mvn jar plugin added" />
+    <MESSAGE value="fixed app name, and changed version to use the version in mvn" />
+    <MESSAGE value="mvn jpackage plugin: added icon" />
+    <MESSAGE value="javafx mvn plugin was moved up the order" />
+    <MESSAGE value=".idea" />
+    <MESSAGE value="updated profile:dmg to add dmg specific xml" />
+    <MESSAGE value="updated profile:msi to add msi specific xml" />
+    <MESSAGE value="updated profile:exe to add exe specific xml" />
+    <MESSAGE value="updated profile:rpm to add rpm specific xml" />
+    <MESSAGE value="updated profile:deb to add deb specific xml" />
+    <MESSAGE value="description and vendor info added to jpackage" />
+    <option name="LAST_COMMIT_MESSAGE" value="description and vendor info added to jpackage" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
