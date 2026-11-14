@@ -325,6 +325,16 @@
                 </executions>
             </plugin>
 
+            <!-- Jar Plugin: Outputs the main project JAR directly into target/libs -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.4.2</version>
+                <configuration>
+                    <outputDirectory>${project.build.directory}/libs</outputDirectory>
+                </configuration>
+            </plugin>
+
             <plugin>
                 <groupId>org.panteleyev</groupId>
                 <artifactId>jpackage-maven-plugin</artifactId>
