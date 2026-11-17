@@ -22,11 +22,12 @@ ConnectionConfig
 
 ```json
 {
+  "id": 1,
   "name": "Windows 11 Serial Connection Test",
-  "operatingSystem": "windows",
+  "operatingSystem": "WINDOWS",
   "version": "3.0.0",
   "connectionType": "serial",
-  "serialPort": ".//COM3",
+  "serialPort": "COM3",
   "baudRate": 115200,
   "startDataFlag": "--start-data-transfer",
   "endDataFlag": "--end-data-transfer",
