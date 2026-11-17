@@ -16,7 +16,7 @@ public class SerialProcessor implements Runnable {
 	private final SerialPort sp;
 	@Getter private final AtomicBoolean startDataTransfer = new AtomicBoolean(false);
 	@Getter private final AtomicBoolean stopDataTransfer = new AtomicBoolean(false);
-	@Getter private AtomicBoolean disconnected = new AtomicBoolean(false);
+	@Getter private final AtomicBoolean disconnected = new AtomicBoolean(false);
 	@Setter private ConnectionConfig connectionConfig;
 	@Setter private DataPointProcessor dpp;
 
@@ -73,7 +73,7 @@ public class SerialProcessor implements Runnable {
 					}
 
 					if (startDataTransfer.get() && !stopDataTransfer.get() && dataline.startsWith(connectionConfig.floatConfig().teamData())) {
-						System.out.println(dataline);
+//						System.out.println(dataline);
 						dpp.getRawArray().put(dataline);
 //						System.out.println(" >>> Raw Size > " + dpp.getRawArray().size());
 					}

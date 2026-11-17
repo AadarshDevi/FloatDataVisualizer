@@ -1,11 +1,14 @@
 package com.alphagen.studio.FloatDataVisualizer.buoyui.backend.app;
 
 import lombok.Getter;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
 public class PlatformDetector {
+	private static final Logger LOGGER = LogManager.getLogger(PlatformDetector.class);
 	@Getter
 	private static Platform OSPLATFORM;
 	@Getter
@@ -18,13 +21,14 @@ public class PlatformDetector {
 			PROJECTROOT = Paths.get(System.getenv("APPDATA")).resolve("FloatDataVisualizer").resolve(AppData.RELEASE_VERSION);
 		} else if (osName.toLowerCase().contains("mac") || osName.toLowerCase().contains("darwin")) {
 			OSPLATFORM = Platform.MACOS;
-			PROJECTROOT = Paths.get(System.getProperty("user.home")).resolve(".local").resolve("share").resolve("FloatDataVisualizer").resolve(AppData.RELEASE_VERSION);
+			PROJECTROOT = Paths.get(System.getProperty("user.home")).resolve("Library").resolve("Application Support").resolve("FloatDataVisualizer").resolve(AppData.RELEASE_VERSION);
 		} else if (osName.toLowerCase().contains("linux")) {
 			OSPLATFORM = Platform.LINUX;
 			PROJECTROOT = Paths.get(System.getProperty("user.home")).resolve(".local").resolve("share").resolve("FloatDataVisualizer").resolve(AppData.RELEASE_VERSION);
 		}
 
-		System.out.println("OS: " + OSPLATFORM);
-		System.out.println("Project Root: " + PROJECTROOT);
+		LOGGER.info("OS: {}", OSPLATFORM);
+		LOGGER.info("Project Root: {}", PROJECTROOT);
+
 	}
 }

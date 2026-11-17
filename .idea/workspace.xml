@@ -1,0 +1,707 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="776164ce-7a69-48e2-8934-c0376db3d4b9" name="Changes" comment="chnaged from ${version} to alpha">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeCleanupOnSaveOptions">
+    <option name="PROFILE" value="Default" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Exception" />
+        <option value="Enum" />
+        <option value="Class" />
+        <option value="Record" />
+      </list>
+    </option>
+  </component>
+  <component name="FormatOnSaveOptions">
+    <option name="myRunOnSave" value="true" />
+  </component>
+  <component name="Git.Settings">
+    <option name="PUSH_AUTO_UPDATE" value="true" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="dev" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="HARD" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;AadarshDevi&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/AadarshDevi/FloatDataVisualizer.git&quot;,
+    &quot;accountId&quot;: &quot;230fecb7-2f3e-4601-a35f-5c8a35bb089a&quot;
+  }
+}</component>
+  <component name="KubernetesApiPersistence">{}</component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHomeTypeForPersistence" value="WRAPPER" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="MavenRunner">
+    <option name="jreName" value="23" />
+  </component>
+  <component name="McpProjectServerCommands">
+    <commands />
+    <urls />
+  </component>
+  <component name="NextEditCompletionFeaturesState">
+    <decayedCancelled>
+      <entry key="MS100" value="1.0002562784872127" />
+      <entry key="MS500" value="1.1913120962278334" />
+      <entry key="S2" value="1.66135648258106" />
+      <entry key="S5" value="1.849444285234863" />
+      <entry key="S10" value="2.0279018612514235" />
+      <entry key="S30" value="4.517506725178569" />
+      <entry key="S60" value="11.750542094168217" />
+      <entry key="M2" value="29.667758361978418" />
+      <entry key="M5" value="78.77100909612788" />
+      <entry key="M10" value="127.95970809947377" />
+      <entry key="M15" value="155.98385500926494" />
+      <entry key="M30" value="203.44387825926066" />
+      <entry key="H1" value="276.0464137659002" />
+      <entry key="H2" value="429.6446399975953" />
+      <entry key="H4" value="685.4469423465044" />
+      <entry key="D1" value="1275.8724202561739" />
+      <entry key="W1" value="1456.3759382173937" />
+    </decayedCancelled>
+    <decayedSelected>
+      <entry key="MS100" value="0.0" />
+      <entry key="MS500" value="0.0" />
+      <entry key="S2" value="1.3378581239834467E-307" />
+      <entry key="S5" value="1.780590385712244E-123" />
+      <entry key="S10" value="4.219704238109877E-62" />
+      <entry key="S30" value="3.481454075405261E-21" />
+      <entry key="S60" value="5.900384797117256E-11" />
+      <entry key="M2" value="7.681396226327767E-6" />
+      <entry key="M5" value="0.009001215949074716" />
+      <entry key="M10" value="0.09911743596941894" />
+      <entry key="M15" value="0.26355946901493427" />
+      <entry key="M30" value="1.4459916041696956" />
+      <entry key="H1" value="8.31923157999382" />
+      <entry key="H2" value="33.93716068265676" />
+      <entry key="H4" value="83.21212333085067" />
+      <entry key="D1" value="196.35382105427553" />
+      <entry key="W1" value="229.82373433946262" />
+    </decayedSelected>
+    <decayedShown>
+      <entry key="MS100" value="0.9268271781739614" />
+      <entry key="MS500" value="1.1735446889606207" />
+      <entry key="S2" value="1.6552633111085355" />
+      <entry key="S5" value="1.8467438925626478" />
+      <entry key="S10" value="2.0264276919585402" />
+      <entry key="S30" value="4.515779870239205" />
+      <entry key="S60" value="11.747583582776015" />
+      <entry key="M2" value="29.66408716625506" />
+      <entry key="M5" value="78.77562557797788" />
+      <entry key="M10" value="128.05453924137325" />
+      <entry key="M15" value="156.24344350697297" />
+      <entry key="M30" value="204.88584574526521" />
+      <entry key="H1" value="284.3584456834168" />
+      <entry key="H2" value="463.5676530897523" />
+      <entry key="H4" value="768.6412947558294" />
+      <entry key="D1" value="1472.2190807600555" />
+      <entry key="W1" value="1686.1984706631627" />
+    </decayedShown>
+  </component>
+  <component name="OptimizeOnSaveOptions">
+    <option name="myRunOnSave" value="true" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
+    <option name="sortByName" value="true" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
+  <component name="ProjectId" id="36BG7uekh9QQYGGp2bkWucsOQfj" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Launcher.executor": "Run",
+    "CidrDebugProfileConversion": "true",
+    "Maven.FloatDataVisualizer [clean].executor": "Run",
+    "Maven.FloatDataVisualizer [package].executor": "Run",
+    "Maven.FloatDataVisualizer [verify].executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.MCP Project settings loaded": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "code.cleanup.on.save": "true",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
+    "git-widget-placeholder": "pom-xml",
+    "ignore.virus.scanning.warn.message": "true",
+    "junie.onboarding.icon.badge.shown": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/CryosArtic/IdeaProjects/FloatDataVisualizer/src/main/resources",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "rearrange.code.on.save": "true",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "terminal",
+    "to.speed.mode.migration.done": "true",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.alphagen.studio.FloatDataVisualizer.buoyui.backend.data" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\CryosArtic\IdeaProjects\FloatDataVisualizer\src\main\resources" />
+      <recent name="C:\Users\aadar\IdeaProjects\FloatDataVisualizer\src\main\resources\com\alphagen\studio\FloatDataVisualizer\buoyui\frontend\pages\connections" />
+      <recent name="C:\Users\aadar\IdeaProjects\FloatDataVisualizer\src\main\resources\com\alphagen\studio\FloatDataVisualizer\buoyui" />
+      <recent name="C:\Users\aadar\IdeaProjects\FloatDataVisualizer\src\main\resources\com\alphagen\studio\FloatDataVisualizer\buoyui\frontend\pages\connections\datacard" />
+      <recent name="C:\Users\aadar\IdeaProjects\FloatDataVisualizer\src\main\resources\com\alphagen\studio\FloatDataVisualizer\buoyui\frontend\pages\grapher\scatterplot" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\aadar\IdeaProjects\FloatDataVisualizer" />
+      <recent name="C:\Users\aadar\IdeaProjects\FloatDataVisualizer\Documentation\BuoyUI\readme_imgs" />
+      <recent name="C:\Users\aadar\IdeaProjects\FloatDataVisualizer\src\main\java\com\alphagen\studio\FloatDataVisualizer\Documentation\BuoyUI\readme_imgs" />
+      <recent name="C:\Users\aadar\IdeaProjects\FloatDataVisualizer\src\main\java\com\alphagen\studio\FloatDataVisualizer\buoyui\frontend\pages\connections\datacard" />
+      <recent name="C:\Users\aadar\IdeaProjects\FloatDataVisualizer\src\main\resources\com\alphagen\studio\FloatDataVisualizer\buoyui\frontend\pages" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.alphagen.studio.FloatDataVisualizer" />
+      <recent name="com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.pages" />
+      <recent name="com.alphagen.studio.FloatDataVisualizer.buoyui.frontend" />
+      <recent name="com.alphagen.studio.FloatDataVisualizer.buoyui.backend.constants" />
+      <recent name="com.alphagen.studio.FloatDataVisualizer.buoyui" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.alphagen.studio.FloatDataVisualizer.buoyui.backend" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Launcher" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="com.alphagen.studio.FloatDataVisualizer.Launcher" />
+      <module name="FloatDataVisualizer" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-30f59d01ecdd-63390994e64e-intellij.indexing.shared.core-IU-262.8665.258" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="776164ce-7a69-48e2-8934-c0376db3d4b9" name="Changes" comment="" />
+      <created>1764472387042</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1764472387042</updated>
+      <workItem from="1764472388951" duration="1205000" />
+      <workItem from="1764473607847" duration="990000" />
+      <workItem from="1764474649980" duration="770000" />
+      <workItem from="1764475462093" duration="636000" />
+      <workItem from="1764694028184" duration="1881000" />
+      <workItem from="1764695970781" duration="261000" />
+      <workItem from="1764696305925" duration="581000" />
+      <workItem from="1764702979793" duration="1047000" />
+      <workItem from="1764704282683" duration="1051000" />
+      <workItem from="1764712624573" duration="2453000" />
+      <workItem from="1764805760225" duration="1505000" />
+      <workItem from="1764877918652" duration="3021000" />
+      <workItem from="1764884082191" duration="134000" />
+      <workItem from="1766168586577" duration="2317000" />
+      <workItem from="1766969579896" duration="1000" />
+      <workItem from="1766969593668" duration="4000" />
+      <workItem from="1766969654651" duration="15000" />
+    </task>
+    <task id="LOCAL-00450" summary="fixed connections ui">
+      <option name="closed" value="true" />
+      <created>1780090500355</created>
+      <option name="number" value="00450" />
+      <option name="presentableId" value="LOCAL-00450" />
+      <option name="project" value="LOCAL" />
+      <updated>1780090500355</updated>
+    </task>
+    <task id="LOCAL-00451" summary="moved themes to correct package">
+      <option name="closed" value="true" />
+      <created>1780090514136</created>
+      <option name="number" value="00451" />
+      <option name="presentableId" value="LOCAL-00451" />
+      <option name="project" value="LOCAL" />
+      <updated>1780090514136</updated>
+    </task>
+    <task id="LOCAL-00452" summary="added missiing exports">
+      <option name="closed" value="true" />
+      <created>1780090527311</created>
+      <option name="number" value="00452" />
+      <option name="presentableId" value="LOCAL-00452" />
+      <option name="project" value="LOCAL" />
+      <updated>1780090527311</updated>
+    </task>
+    <task id="LOCAL-00453" summary="a light theme backup">
+      <option name="closed" value="true" />
+      <created>1780090536315</created>
+      <option name="number" value="00453" />
+      <option name="presentableId" value="LOCAL-00453" />
+      <option name="project" value="LOCAL" />
+      <updated>1780090536315</updated>
+    </task>
+    <task id="LOCAL-00454" summary="unifying theme managing">
+      <option name="closed" value="true" />
+      <created>1780090592999</created>
+      <option name="number" value="00454" />
+      <option name="presentableId" value="LOCAL-00454" />
+      <option name="project" value="LOCAL" />
+      <updated>1780090592999</updated>
+    </task>
+    <task id="LOCAL-00455" summary="light and dark themes fixed">
+      <option name="closed" value="true" />
+      <created>1780090606933</created>
+      <option name="number" value="00455" />
+      <option name="presentableId" value="LOCAL-00455" />
+      <option name="project" value="LOCAL" />
+      <updated>1780090606933</updated>
+    </task>
+    <task id="LOCAL-00456" summary="theme processor integrated into code">
+      <option name="closed" value="true" />
+      <created>1780090664091</created>
+      <option name="number" value="00456" />
+      <option name="presentableId" value="LOCAL-00456" />
+      <option name="project" value="LOCAL" />
+      <updated>1780090664092</updated>
+    </task>
+    <task id="LOCAL-00457" summary="there are 2 theme constants. need to remove them.">
+      <option name="closed" value="true" />
+      <created>1780090704936</created>
+      <option name="number" value="00457" />
+      <option name="presentableId" value="LOCAL-00457" />
+      <option name="project" value="LOCAL" />
+      <updated>1780090704936</updated>
+    </task>
+    <task id="LOCAL-00458" summary="themes integration fully completed.">
+      <option name="closed" value="true" />
+      <created>1780090835566</created>
+      <option name="number" value="00458" />
+      <option name="presentableId" value="LOCAL-00458" />
+      <option name="project" value="LOCAL" />
+      <updated>1780090835566</updated>
+    </task>
+    <task id="LOCAL-00459" summary="themes integration fully completed.">
+      <option name="closed" value="true" />
+      <created>1780090843527</created>
+      <option name="number" value="00459" />
+      <option name="presentableId" value="LOCAL-00459" />
+      <option name="project" value="LOCAL" />
+      <updated>1780090843527</updated>
+    </task>
+    <task id="LOCAL-00460" summary="getting root borderpane">
+      <option name="closed" value="true" />
+      <created>1780093335589</created>
+      <option name="number" value="00460" />
+      <option name="presentableId" value="LOCAL-00460" />
+      <option name="project" value="LOCAL" />
+      <updated>1780093335589</updated>
+    </task>
+    <task id="LOCAL-00461" summary="methods to change global theme var and apply the correct theme">
+      <option name="closed" value="true" />
+      <created>1780093376176</created>
+      <option name="number" value="00461" />
+      <option name="presentableId" value="LOCAL-00461" />
+      <option name="project" value="LOCAL" />
+      <updated>1780093376176</updated>
+    </task>
+    <task id="LOCAL-00462" summary="replaced random exception toa more better exception">
+      <option name="closed" value="true" />
+      <created>1780093402991</created>
+      <option name="number" value="00462" />
+      <option name="presentableId" value="LOCAL-00462" />
+      <option name="project" value="LOCAL" />
+      <updated>1780093402992</updated>
+    </task>
+    <task id="LOCAL-00463" summary="theme can now be read from float.settings">
+      <option name="closed" value="true" />
+      <created>1780094424983</created>
+      <option name="number" value="00463" />
+      <option name="presentableId" value="LOCAL-00463" />
+      <option name="project" value="LOCAL" />
+      <updated>1780094424983</updated>
+    </task>
+    <task id="LOCAL-00464" summary="theme can now be wrote to float.settings when quitting app">
+      <option name="closed" value="true" />
+      <created>1780094445718</created>
+      <option name="number" value="00464" />
+      <option name="presentableId" value="LOCAL-00464" />
+      <option name="project" value="LOCAL" />
+      <updated>1780094445718</updated>
+    </task>
+    <task id="LOCAL-00465" summary="float.settings can now read and write theme">
+      <option name="closed" value="true" />
+      <created>1780094471326</created>
+      <option name="number" value="00465" />
+      <option name="presentableId" value="LOCAL-00465" />
+      <option name="project" value="LOCAL" />
+      <updated>1780094471326</updated>
+    </task>
+    <task id="LOCAL-00466" summary="formatting changes">
+      <option name="closed" value="true" />
+      <created>1780094487055</created>
+      <option name="number" value="00466" />
+      <option name="presentableId" value="LOCAL-00466" />
+      <option name="project" value="LOCAL" />
+      <updated>1780094487055</updated>
+    </task>
+    <task id="LOCAL-00467" summary="datapoints will not be printed on the terminal">
+      <option name="closed" value="true" />
+      <created>1780095657405</created>
+      <option name="number" value="00467" />
+      <option name="presentableId" value="LOCAL-00467" />
+      <option name="project" value="LOCAL" />
+      <updated>1780095657405</updated>
+    </task>
+    <task id="LOCAL-00468" summary="appendText = scroll down&#10;scrollTo = scroll down">
+      <option name="closed" value="true" />
+      <created>1780095719655</created>
+      <option name="number" value="00468" />
+      <option name="presentableId" value="LOCAL-00468" />
+      <option name="project" value="LOCAL" />
+      <updated>1780095719655</updated>
+    </task>
+    <task id="LOCAL-00469" summary="a atomic var iis final">
+      <option name="closed" value="true" />
+      <created>1780095728859</created>
+      <option name="number" value="00469" />
+      <option name="presentableId" value="LOCAL-00469" />
+      <option name="project" value="LOCAL" />
+      <updated>1780095728859</updated>
+    </task>
+    <task id="LOCAL-00470" summary="removed an empty line">
+      <option name="closed" value="true" />
+      <created>1780095749346</created>
+      <option name="number" value="00470" />
+      <option name="presentableId" value="LOCAL-00470" />
+      <option name="project" value="LOCAL" />
+      <updated>1780095749346</updated>
+    </task>
+    <task id="LOCAL-00471" summary="possible terminal and table autoscroll added">
+      <option name="closed" value="true" />
+      <created>1780097180725</created>
+      <option name="number" value="00471" />
+      <option name="presentableId" value="LOCAL-00471" />
+      <option name="project" value="LOCAL" />
+      <updated>1780097180725</updated>
+    </task>
+    <task id="LOCAL-00472" summary="settings var for terminal and table autoscroll">
+      <option name="closed" value="true" />
+      <created>1780097192617</created>
+      <option name="number" value="00472" />
+      <option name="presentableId" value="LOCAL-00472" />
+      <option name="project" value="LOCAL" />
+      <updated>1780097192617</updated>
+    </task>
+    <task id="LOCAL-00473" summary="settings fields for easier placement in settings package">
+      <option name="closed" value="true" />
+      <created>1780097206622</created>
+      <option name="number" value="00473" />
+      <option name="presentableId" value="LOCAL-00473" />
+      <option name="project" value="LOCAL" />
+      <updated>1780097206622</updated>
+    </task>
+    <task id="LOCAL-00474" summary="fixed weird settings data retrieval">
+      <option name="closed" value="true" />
+      <created>1780097231109</created>
+      <option name="number" value="00474" />
+      <option name="presentableId" value="LOCAL-00474" />
+      <option name="project" value="LOCAL" />
+      <updated>1780097231109</updated>
+    </task>
+    <task id="LOCAL-00475" summary="random thing">
+      <option name="closed" value="true" />
+      <created>1780097236992</created>
+      <option name="number" value="00475" />
+      <option name="presentableId" value="LOCAL-00475" />
+      <option name="project" value="LOCAL" />
+      <updated>1780097236992</updated>
+    </task>
+    <task id="LOCAL-00476" summary="alert for the bug when taking a screenshot of the graph">
+      <option name="closed" value="true" />
+      <created>1780100472406</created>
+      <option name="number" value="00476" />
+      <option name="presentableId" value="LOCAL-00476" />
+      <option name="project" value="LOCAL" />
+      <updated>1780100472407</updated>
+    </task>
+    <task id="LOCAL-00477" summary="fixing some css">
+      <option name="closed" value="true" />
+      <created>1780100573233</created>
+      <option name="number" value="00477" />
+      <option name="presentableId" value="LOCAL-00477" />
+      <option name="project" value="LOCAL" />
+      <updated>1780100573233</updated>
+    </task>
+    <task id="LOCAL-00478" summary="something idea file">
+      <option name="closed" value="true" />
+      <created>1780100583160</created>
+      <option name="number" value="00478" />
+      <option name="presentableId" value="LOCAL-00478" />
+      <option name="project" value="LOCAL" />
+      <updated>1780100583160</updated>
+    </task>
+    <task id="LOCAL-00479" summary="fixed the screenshot having the white border.&#10;screenshot of root instead of just the graph">
+      <option name="closed" value="true" />
+      <created>1780100712490</created>
+      <option name="number" value="00479" />
+      <option name="presentableId" value="LOCAL-00479" />
+      <option name="project" value="LOCAL" />
+      <updated>1780100712490</updated>
+    </task>
+    <task id="LOCAL-00480" summary="screenshot during dark theme broken">
+      <option name="closed" value="true" />
+      <created>1780100914491</created>
+      <option name="number" value="00480" />
+      <option name="presentableId" value="LOCAL-00480" />
+      <option name="project" value="LOCAL" />
+      <updated>1780100914491</updated>
+    </task>
+    <task id="LOCAL-00481" summary="formatting">
+      <option name="closed" value="true" />
+      <created>1780102018201</created>
+      <option name="number" value="00481" />
+      <option name="presentableId" value="LOCAL-00481" />
+      <option name="project" value="LOCAL" />
+      <updated>1780102018201</updated>
+    </task>
+    <task id="LOCAL-00482" summary="added alert for the darkmode screenshot">
+      <option name="closed" value="true" />
+      <created>1780102036496</created>
+      <option name="number" value="00482" />
+      <option name="presentableId" value="LOCAL-00482" />
+      <option name="project" value="LOCAL" />
+      <updated>1780102036496</updated>
+    </task>
+    <task id="LOCAL-00483" summary="fixing the dark theme for the scatter chart">
+      <option name="closed" value="true" />
+      <created>1780102053046</created>
+      <option name="number" value="00483" />
+      <option name="presentableId" value="LOCAL-00483" />
+      <option name="project" value="LOCAL" />
+      <updated>1780102053046</updated>
+    </task>
+    <task id="LOCAL-00484" summary="idea file">
+      <option name="closed" value="true" />
+      <created>1780102060114</created>
+      <option name="number" value="00484" />
+      <option name="presentableId" value="LOCAL-00484" />
+      <option name="project" value="LOCAL" />
+      <updated>1780102060115</updated>
+    </task>
+    <task id="LOCAL-00485" summary="bug: .csv exists in file name, it still adds .csv">
+      <option name="closed" value="true" />
+      <created>1780102431631</created>
+      <option name="number" value="00485" />
+      <option name="presentableId" value="LOCAL-00485" />
+      <option name="project" value="LOCAL" />
+      <updated>1780102431631</updated>
+    </task>
+    <task id="LOCAL-00486" summary="found a way to stop hardware disconnected aka unable to start from trying to gather information">
+      <option name="closed" value="true" />
+      <created>1780104093326</created>
+      <option name="number" value="00486" />
+      <option name="presentableId" value="LOCAL-00486" />
+      <option name="project" value="LOCAL" />
+      <updated>1780104093326</updated>
+    </task>
+    <task id="LOCAL-00487" summary="delete all menu item after export all menu item">
+      <option name="closed" value="true" />
+      <created>1780105239182</created>
+      <option name="number" value="00487" />
+      <option name="presentableId" value="LOCAL-00487" />
+      <option name="project" value="LOCAL" />
+      <updated>1780105239182</updated>
+    </task>
+    <task id="LOCAL-00488" summary="selection combo box css works now">
+      <option name="closed" value="true" />
+      <created>1780108455305</created>
+      <option name="number" value="00488" />
+      <option name="presentableId" value="LOCAL-00488" />
+      <option name="project" value="LOCAL" />
+      <updated>1780108455305</updated>
+    </task>
+    <task id="LOCAL-00489" summary="fixed a few ui issues">
+      <option name="closed" value="true" />
+      <created>1780109009702</created>
+      <option name="number" value="00489" />
+      <option name="presentableId" value="LOCAL-00489" />
+      <option name="project" value="LOCAL" />
+      <updated>1780109009702</updated>
+    </task>
+    <task id="LOCAL-00490" summary="pom.xml ready for exe creation">
+      <option name="closed" value="true" />
+      <created>1780110144862</created>
+      <option name="number" value="00490" />
+      <option name="presentableId" value="LOCAL-00490" />
+      <option name="project" value="LOCAL" />
+      <updated>1780110144862</updated>
+    </task>
+    <task id="LOCAL-00491" summary="pom.xml ready for exe creation">
+      <option name="closed" value="true" />
+      <created>1780110155518</created>
+      <option name="number" value="00491" />
+      <option name="presentableId" value="LOCAL-00491" />
+      <option name="project" value="LOCAL" />
+      <updated>1780110155519</updated>
+    </task>
+    <task id="LOCAL-00492" summary="updated README. all contents will be placed into the Wiki instead of the README.md">
+      <option name="closed" value="true" />
+      <created>1780111750130</created>
+      <option name="number" value="00492" />
+      <option name="presentableId" value="LOCAL-00492" />
+      <option name="project" value="LOCAL" />
+      <updated>1780111750131</updated>
+    </task>
+    <task id="LOCAL-00493" summary="README.md contains the future structure of the wiki">
+      <option name="closed" value="true" />
+      <created>1780112354361</created>
+      <option name="number" value="00493" />
+      <option name="presentableId" value="LOCAL-00493" />
+      <option name="project" value="LOCAL" />
+      <updated>1780112354361</updated>
+    </task>
+    <task id="LOCAL-00494" summary="README.md contains the future structure of the wiki">
+      <option name="closed" value="true" />
+      <created>1780112468639</created>
+      <option name="number" value="00494" />
+      <option name="presentableId" value="LOCAL-00494" />
+      <option name="project" value="LOCAL" />
+      <updated>1780112468639</updated>
+    </task>
+    <task id="LOCAL-00495" summary="README.md contains the future structure of the wiki">
+      <option name="closed" value="true" />
+      <created>1780112489146</created>
+      <option name="number" value="00495" />
+      <option name="presentableId" value="LOCAL-00495" />
+      <option name="project" value="LOCAL" />
+      <updated>1780112489146</updated>
+    </task>
+    <task id="LOCAL-00496" summary="when port was invalid, the app crashed">
+      <option name="closed" value="true" />
+      <created>1780196884745</created>
+      <option name="number" value="00496" />
+      <option name="presentableId" value="LOCAL-00496" />
+      <option name="project" value="LOCAL" />
+      <updated>1780196884747</updated>
+    </task>
+    <task id="LOCAL-00497" summary="whene data card is added, it did not use the set theme">
+      <option name="closed" value="true" />
+      <created>1780196903842</created>
+      <option name="number" value="00497" />
+      <option name="presentableId" value="LOCAL-00497" />
+      <option name="project" value="LOCAL" />
+      <updated>1780196903842</updated>
+    </task>
+    <task id="LOCAL-00498" summary="unicode space problems">
+      <option name="closed" value="true" />
+      <created>1780196916087</created>
+      <option name="number" value="00498" />
+      <option name="presentableId" value="LOCAL-00498" />
+      <option name="project" value="LOCAL" />
+      <updated>1780196916087</updated>
+    </task>
+    <option name="localTasksCounter" value="499" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/dev" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="profiles added" />
+    <MESSAGE value="jpackage mvn plugin added" />
+    <MESSAGE value="suppression added for mvn property" />
+    <MESSAGE value="icon for linux" />
+    <MESSAGE value="spacer" />
+    <MESSAGE value="junit is supposed to be somewhere else. this is i think for hunit 4, but i dont need it because i am using junit 5" />
+    <MESSAGE value="icons added to profile" />
+    <MESSAGE value="profile for deb created and updated with icon xml" />
+    <MESSAGE value="javafx mvn plugin added" />
+    <MESSAGE value="mvn dep plugin updated from 361 to 381" />
+    <MESSAGE value="mvn jar plugin added" />
+    <MESSAGE value="fixed app name, and changed version to use the version in mvn" />
+    <MESSAGE value="mvn jpackage plugin: added icon" />
+    <MESSAGE value="javafx mvn plugin was moved up the order" />
+    <MESSAGE value="updated profile:dmg to add dmg specific xml" />
+    <MESSAGE value="updated profile:msi to add msi specific xml" />
+    <MESSAGE value="updated profile:exe to add exe specific xml" />
+    <MESSAGE value="updated profile:rpm to add rpm specific xml" />
+    <MESSAGE value="updated profile:deb to add deb specific xml" />
+    <MESSAGE value="description and vendor info added to jpackage" />
+    <MESSAGE value="old exe xml removed. it was replaced with profiles. redundancies were erased" />
+    <MESSAGE value=".idea" />
+    <MESSAGE value="exe dest folder moved to dest from dist, and xml:module replaced with input, mainjar, mainclass" />
+    <MESSAGE value="chnaged from ${version} to alpha" />
+    <MESSAGE value="macos-pkg added" />
+    <option name="LAST_COMMIT_MESSAGE" value="macos-pkg added" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>

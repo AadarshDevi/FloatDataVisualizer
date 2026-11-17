@@ -1,52 +1,78 @@
 package com.alphagen.studio.FloatDataVisualizer.buoyui.backend.settings;
 
-import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.app.AppMode;
+import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.app.theme.Theme;
+import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.app.theme.ThemeProcessor;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.constants.FolderConstants;
+import lombok.Getter;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
+import java.io.*;
 import java.util.Properties;
 
 public class SettingsManager {
 
-	private static SettingsManager sm;
-	private final SettingsData settingsData;
+    private static SettingsManager sm;
+    @Getter
+    private final SettingsData settingsData;
+    private Properties properties;
 
-	private SettingsManager() {
-		settingsData = readSettings();
-	}
+    private SettingsManager() {
+        settingsData = new SettingsData();
+        readSettings();
+    }
 
-	// todo: read settings
-	private SettingsData readSettings() {
+    public static SettingsManager getInstance() {
+        if (sm == null) sm = new SettingsManager();
+        return sm;
+    }
 
-		final Properties properties = new Properties();
-		try {
-			properties.load(new FileInputStream(new File(FolderConstants.SETTINGS.toUri())));
-		} catch (IOException e) {
-			throw new RuntimeException(e);
-		}
+    // todo: read settings
+    private void readSettings() {
 
-		return null;
-	}
+        properties = new Properties();
+        try {
+            properties.load(new FileInputStream(new File(FolderConstants.SETTINGS.toUri())));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        System.out.println(properties.size());
 
-	public static SettingsManager getInstance() {
-		if (sm == null) sm = new SettingsManager();
-		return sm;
-	}
+        if (properties.size() == 0) {
+            properties.put(SettingsField.theme, Theme.LIGHT.toString());
+            properties.put(SettingsField.terminalAutoscroll, Boolean.toString(true));
+            properties.put(SettingsField.tableAutoScroll, Boolean.toString(true));
+        }
 
-	public AppMode getAppMode() {
-		return settingsData.getAppMode();
-	}
+        ThemeProcessor.setTheme(Theme.valueOf(properties.getProperty(SettingsField.theme)));
+        settingsData.setAutoscrollTerminal(Boolean.parseBoolean(properties.getProperty(SettingsField.terminalAutoscroll)));
+        settingsData.setAutoscrollTable(Boolean.parseBoolean(properties.getProperty(SettingsField.tableAutoScroll)));
+    }
 
-	public void setAppMode(AppMode newAppMode) {
-		if (newAppMode == AppMode.DEV)
-			settingsData.setAppMode(newAppMode);
-	}
+    // todo: write settings
+    public void writeSettings() {
+        try (PrintWriter pw = new PrintWriter(new File(FolderConstants.SETTINGS.toUri()))) {
+            pw.println(SettingsField.theme + "=" + ThemeProcessor.getTheme());
+            pw.println(SettingsField.terminalAutoscroll + "=" + settingsData.getAutoscrollTerminal());
+            pw.println(SettingsField.tableAutoScroll + "=" + settingsData.getAutoscrollTable());
+        } catch (FileNotFoundException e) {
+            System.err.println("Unable to find settings file.");
+        }
+    }
 
-	// todo: write settings
-	public void writeSettings() {
 
-	}
+    public boolean getAutoscrollTerminal() {
+        return settingsData.getAutoscrollTerminal();
+    }
+
+    public void setAutoscrollTerminal(boolean autoscroll) {
+        settingsData.setAutoscrollTerminal(autoscroll);
+    }
+
+    public boolean getAutoscrollTable() {
+        return settingsData.getAutoscrollTable();
+    }
+
+    public void setAutoscrollTable(boolean autoscroll) {
+        settingsData.setAutoscrollTable(autoscroll);
+    }
 
 }

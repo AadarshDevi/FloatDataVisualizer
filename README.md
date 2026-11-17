@@ -8,14 +8,59 @@ profiling float and displays the data using scatter plots and a table.
 
 ## Getting Started
 
-Please follow each step to get started in using the app. It goes in detail so you, the user can feel comfortable using
-the app.
+Any information about the app, including (Getting Started)[] can be found in the [Float Data Visualizer
+Wiki](https://github.com/AadarshDevi/FloatDataVisualizer/wiki).
 
-### Bug Report
+## Community Notes
+
+From Float Data Visualizer v2.0.0 onward, the app will be updated less frequently.
+
+## Bug Report
 
 If you find any issues, please use the [Issues Page](https://github.com/AadarshDevi/FloatDataVisualizer/issues) to
 report bugs, glitches etc. Before reporting the bug, it is recommended to use the Console version of the app so that I
 can use it to fix the app.
+
+## Table of Contents (For wiki)
+
+1. Getting Started
+    1. Roadmap to learn the app
+    2. Glitches
+    3. Bug reports
+    4. Feature requests
+2. Connection Page
+    1. change theme
+    2. Auto Connection
+    3. Create Connection
+        1. Autofill Fields
+        2. Reset Fields
+    4. Delete Connection
+        1. Delete All
+    5. View Measurements
+3. Grapher Page
+    1. Tabs
+        1. Config Tab
+        2. Terminal Tab
+        3. Table Tab
+        4. Graph Tabs
+    2. Data
+        1. Collect
+        2. Export Raw
+        3. Export CSV
+    3. Graphs
+        1. Screenshots (dark mode disclaimer)
+        2. Size Changes: Increase & Decrease
+            1. Width & Height
+            2. Width
+            3. height
+4. Downloads
+    1. latest release
+    2. all releases
+5. Technical Documentation
+    1. Programming Lang, loggers, ui, threading, etc
+    2. Project info: author name, project name
+
+# Delete Below
 
 ### Download
 

@@ -1,12 +1,15 @@
 package com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.pages.grapher;
 
+import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.app.theme.ThemeProcessor;
+import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.constants.Debug;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.data.ConnectionConfig;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.data.DataPoint;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.data.FloatConfig;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.data.MeasurementConfig;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.processor.DataPointProcessor;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.processor.SerialProcessor;
-import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.managers.ConnectionManager;
+import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.settings.SettingsManager;
+import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.managers.Connections;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.managers.ControllerManager;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.managers.StageManager;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.pages.CardConstants;
@@ -25,6 +28,7 @@ import javafx.scene.control.*;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.TilePane;
+import javafx.scene.layout.VBox;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import lombok.Setter;
@@ -33,7 +37,6 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.Arrays;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
@@ -62,6 +65,11 @@ public class GrapherController {
 	@FXML public Label rawDataFormatLabel;
 	@FXML public TilePane measurementsTilePane;
 	@FXML public TextArea terminalTextArea;
+	//	@FXML public ScrollPane terminalScroll;
+	@FXML public ScrollPane configScroll;
+	//	@FXML public ScrollPane tableScroll;
+	@FXML public VBox configVBox;
+	private SettingsManager sm;
 	private Future<?> activeTask;
 	private Future<?> activeDataBase;
 	@Setter private ConnectionConfig connectionConfig;
@@ -73,6 +81,7 @@ public class GrapherController {
 
 	@FXML
 	public void initialize() {
+		sm = SettingsManager.getInstance();
 		System.out.println();
 		System.out.println(" >>> Serial Communication > Initializing");
 		graphPane.getSelectionModel().select(2);
@@ -80,7 +89,7 @@ public class GrapherController {
 		checkBoxesContainer.setVisible(false);
 		checkBoxesContainer.setManaged(false);
 
-		this.connectionConfig = ConnectionManager.getCurrentConnection();
+		this.connectionConfig = Connections.getCurrentConnection();
 
 		if (connectionConfig == null) {
 			System.out.println(" >>> Serial Communication > Null ConnectionConfig");
@@ -112,7 +121,10 @@ public class GrapherController {
 		StringBuilder measurementsString = new StringBuilder();
 		for (MeasurementConfig measurementConfig : measurementConfigs) {
 			measurementsString.append(",").append(measurementConfig.name()).append("(").append(measurementConfig.unit()).append(")");
-			measurementsTilePane.getChildren().add(new MeasurementLabel(measurementConfig.name() + " (" + measurementConfig.unit() + ")"));
+			MeasurementLabel ml = new MeasurementLabel(measurementConfig.name() + " (" + measurementConfig.unit() + ")");
+			ml.getStylesheets().clear(); // testme: theme
+			ml.getStylesheets().add(ThemeProcessor.getThemeCSS().toString()); // testme: theme
+			measurementsTilePane.getChildren().add(ml);
 		}
 		rawDataFormatLabel.setText(fc.teamData() + "," + fc.pkt() + measurementsString);
 		endFlagLabel.setText(fc.endFlag());
@@ -133,6 +145,7 @@ public class GrapherController {
 		MeasurementConfig timeConfig = measurementConfigs[0];
 
 		timeTableCol.setText(timeConfig.name() + " (" + timeConfig.unit() + ")");
+
 		for (int i = 1; i < measurementConfigs.length; i++) {
 
 			MeasurementConfig measurementConfig = measurementConfigs[i];
@@ -147,6 +160,9 @@ public class GrapherController {
 			} catch (IOException e) {
 				throw new RuntimeException(e);
 			}
+
+			scatterPlot.getStylesheets().clear(); // testme: theme
+			scatterPlot.getStylesheets().add(ThemeProcessor.getThemeCSS().toString()); // testme: theme
 
 			ScatterPlotController spc = fxmlLoader.getController();
 			spc.setAxes(timeConfig, measurementConfig);
@@ -220,6 +236,13 @@ public class GrapherController {
 				alert.showAndWait();
 			});
 		}
+
+		if (connectionConfig.port().isOpen()) {
+			connectionConfig.port().closePort();
+			System.out.println(" [Debug] Port Closed? " + connectionConfig.port().isOpen());
+		}
+
+		System.out.println("\n >>> [Debug] Stopping Data Transfer\n");
 	}
 
 	@FXML
@@ -245,6 +268,7 @@ public class GrapherController {
 		}
 
 		tableView.getItems().removeAll(tableView.getItems());
+		terminalTextArea.clear();
 
 		System.out.println(" >>> Serial Communication > Start");
 
@@ -262,7 +286,7 @@ public class GrapherController {
 				}
 
 				Platform.runLater(() -> {
-					System.out.println(" >>> Measurement Configs > " + Arrays.toString(dp.measurements()));
+//					System.out.println(" >>> Measurement Configs > " + Arrays.toString(dp.measurements()));
 					double[] measures = dp.measurements();
 					for (int i = 3; i < graphPane.getTabs().size(); i++) {
 						int measureIndex = i - 3;
@@ -273,9 +297,14 @@ public class GrapherController {
 						}
 					}
 
-					// todo insert data into table
 					tableView.getItems().add(dp);
-					terminalTextArea.setText(terminalTextArea.getText() + "\n" + dp.toRaw());
+					if (sm.getAutoscrollTable())
+						tableView.scrollTo(tableView.getItems().size() - 1); // table autoscroll
+
+					if (sm.getAutoscrollTerminal())
+						terminalTextArea.appendText(dp.toRaw() + "\n"); // textarea autoscroll
+					else
+						terminalTextArea.setText(terminalTextArea.getText() + dp.toRaw() + "\n");
 				});
 			}
 		});
@@ -290,6 +319,10 @@ public class GrapherController {
 		Scene scene = StageManager.getConnectionsScene();
 		ControllerManager.setGrapherController(null);
 		stage.setScene(scene);
+		if (Debug.useWindowModes) {
+			ControllerManager.getConnectionsController().fullscreenApp();
+			stage.setFullScreen(stage.isFullScreen()); // fixme: when going home, it goes to fullscreen
+		}
 	}
 
 	@FXML
@@ -300,9 +333,13 @@ public class GrapherController {
 		FileChooser fileChooser = new FileChooser();
 		fileChooser.setTitle("Export Screenshot");
 		File rawPath = fileChooser.showSaveDialog(StageManager.getMainStage());
+		File file;
 
 		if (rawPath == null) return;
-		File file = new File(rawPath.getAbsolutePath() + ".csv");
+		if (rawPath.getName().endsWith(".csv"))
+			file = new File(rawPath.getAbsolutePath());
+		else
+			file = new File(rawPath.getAbsolutePath() + ".csv");
 
 		try (BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(file))) {
 
@@ -353,12 +390,15 @@ public class GrapherController {
 		FileChooser fileChooser = new FileChooser();
 		fileChooser.setTitle("Export Screenshot");
 		File rawPath = fileChooser.showSaveDialog(StageManager.getMainStage());
+		File file;
 
 		if (rawPath == null) return;
-		File file = new File(rawPath.getAbsolutePath() + ".csv");
+		if (rawPath.getName().endsWith(".csv"))
+			file = new File(rawPath.getAbsolutePath());
+		else
+			file = new File(rawPath.getAbsolutePath() + ".csv");
 
 		try (BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(file))) {
-
 			for (DataPoint dp : list) {
 				bufferedWriter.write(dp.toRaw());
 				bufferedWriter.newLine();
@@ -367,5 +407,74 @@ public class GrapherController {
 			throw new RuntimeException(e);
 		}
 
+	}
+
+	public void fullscreen() { // fixme: when going here, fullscreen to windowed mode
+
+		if (!Debug.useWindowModes) {
+			return;
+		}
+
+		Stage stage = StageManager.getMainStage();
+		System.out.println("isFullScreen: " + stage.isFullScreen());
+
+		if (!stage.isFullScreen()) {
+			System.out.println("Fullscreen: No");
+			return;
+		}
+
+		System.out.println("Fullscreen: Yes");
+
+		double scrollWidth = graphPane.getWidth() - 24;
+		double scrollHeight = graphPane.getHeight() - 24;
+		System.out.println("scrollWidth: " + scrollWidth + " scrollHeight: " + scrollHeight);
+
+		double oldWidth = configScroll.getWidth() - 24;
+		double oldHeight = configScroll.getHeight();
+		System.out.println("oldWidth: " + oldWidth + " oldWidth: " + oldHeight);
+
+		oldWidth = configScroll.getPrefWidth() - 24;
+		oldHeight = configScroll.getPrefHeight();
+		System.out.println("oldPrefWidth: " + oldWidth + " oldPrefWidth: " + oldHeight);
+
+		stage.setFullScreen(true);
+
+		double newWidth = configScroll.getWidth() - 24;
+		double newHeight = (oldHeight * newWidth) / oldWidth;
+		System.out.println("newWidth: " + newWidth + " newHeight: " + newHeight);
+
+		configVBox.setPrefWidth(newWidth);
+		configVBox.setPrefHeight(newHeight);
+		System.out.println();
+
+
+//		if (StageManager.getMainStage().isFullScreen()) {
+//
+//			double scrollWidth = graphPane.getWidth() - 24;
+//			double scrollHeight = graphPane.getHeight() - 24;
+//			System.out.println("scrollWidth: " + scrollWidth + " scrollHeight: " + scrollHeight);
+//
+//			spc.getScatterPlot().setPrefSize(scrollWidth, scrollHeight);
+//			spc.getScatterPlot().setMinSize(scrollWidth, scrollHeight);
+//
+//			double oldWidth = spc.getScatterPlot().getWidth();
+//			double oldHeight = spc.getScatterPlot().getHeight();
+//			System.out.println("oldWidth: " + oldWidth + " oldHeight: " + oldHeight);
+//
+//			oldWidth = spc.getScatterPlot().getPrefWidth() - 24;
+//			oldHeight = spc.getScatterPlot().getPrefHeight();
+//			System.out.println("oldPrefWidth: " + oldWidth + " oldPrefWidth: " + oldHeight);
+//
+//			double newWidth = spc.getScrollPane().getWidth() - 24;
+//			double newHeight = (oldHeight * newWidth) / oldWidth;
+//			System.out.println("newWidth: " + newWidth + " newHeight: " + newHeight);
+//
+//			spc.getScatterPlot().setPrefWidth(newWidth);
+//			spc.getScatterPlot().setPrefHeight(newHeight);
+//
+//			spc.getScatterPlot().setMinWidth(newWidth);
+//			spc.getScatterPlot().setMinHeight(newHeight);
+//			System.out.println();
+//		}
 	}
 }

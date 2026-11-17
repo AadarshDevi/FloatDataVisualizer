@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=FloatDataVisualizer
+Exec=APPLICATION_LAUNCHER
+Icon=APPLICATION_ICON
+Type=Application
+Terminal=true
+Categories=Utility

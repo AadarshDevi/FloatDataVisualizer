@@ -1,7 +1,7 @@
 package com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.managers;
 
+import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.app.theme.ThemeProcessor;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.data.ConnectionConfig;
-import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.processor.ConnectionProcessor;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.pages.PageConstants;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.pages.connections.ConnectionsController;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.pages.grapher.GrapherController;
@@ -13,15 +13,17 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import lombok.Getter;
 import lombok.Setter;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.io.IOException;
 import java.util.ArrayList;
 
 public class StageManager {
 
+	private static final Logger LOGGER = LogManager.getLogger(StageManager.class);
 	@Getter
 	private static Stage mainStage;
-
 	@Getter
 	@Setter
 	private static Stage connectionCreatorStage;
@@ -34,7 +36,7 @@ public class StageManager {
 	}
 
 	public static void setConnectionsScene() {
-		System.out.println("Loading ConnectionsUI");
+		LOGGER.info("Loading ConnectionsUI");
 		FXMLLoader fxmlLoader = new FXMLLoader(PageConstants.CONNECTIONS_PAGE);
 		BorderPane buoyUI = null;
 		try {
@@ -46,18 +48,17 @@ public class StageManager {
 
 		ControllerManager.setConnectionsController(cc);
 
-		ArrayList<ConnectionConfig> connectionsList = ConnectionProcessor.readAllConnections();
+		ArrayList<ConnectionConfig> connectionsList = Connections.Processor.readAllConnections();
 		if (connectionsList != null) {
-			System.out.println("Connections Found: " + connectionsList.size());
+			LOGGER.info("Connections Found: {}", connectionsList.size());
 			cc.setConnectionConfigs(connectionsList);
-		} else {
-			System.out.println("Connections Found: 0");
 		}
 
 		Scene scene = new Scene(buoyUI);
 		buoyUI.getProperties().put("grapher", cc);
-//		StageManager.createInvisPane(scene, );
 		StageUtil.customTitleBarDrag(StageManager.getMainStage(), scene, buoyUI);
+		buoyUI.getStylesheets().clear();  // testme: theme
+		buoyUI.getStylesheets().add(ThemeProcessor.getThemeCSS().toString()); // testme: theme
 		StageManager.getMainStage().initStyle(StageStyle.TRANSPARENT);
 		connectionsScene = scene;
 	}
@@ -77,6 +78,9 @@ public class StageManager {
 		GrapherController gc = grapherLoader.getController();
 		Scene scene = new Scene(grapherUI);
 		grapherUI.getProperties().put("grapher", gc);
+
+		grapherUI.getStylesheets().clear(); // testme: theme
+		grapherUI.getStylesheets().add(ThemeProcessor.getThemeCSS().toString()); // testme: theme
 //		StageManager.createInvisPane(scene, grapherUI);
 		StageUtil.customTitleBarDrag(StageManager.getMainStage(), scene, grapherUI);
 //		StageManager.getMainStage().initStyle(StageStyle.TRANSPARENT);
