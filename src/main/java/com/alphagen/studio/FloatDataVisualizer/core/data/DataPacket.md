@@ -19,6 +19,7 @@ DataPacket
 ConnectionConfig
 
 1. "commands": list of ids of commands from global command list
+2. "name": name of the connection that is reflected on the file name
 
 ```json
 {
