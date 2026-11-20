@@ -9,10 +9,10 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 import java.util.function.Consumer;
 
-public class SerialReader {
+public class SerialRunner {
 
-    private static final Logger logger = LogManager.getLogger(SerialReader.class);
-    private static SerialReader instance;
+    private static final Logger logger = LogManager.getLogger(SerialRunner.class);
+    private static SerialRunner instance;
     // The actual thread used
     private final ExecutorService executorService = Executors.newSingleThreadExecutor();
 
@@ -25,12 +25,8 @@ public class SerialReader {
     // thing to operate the thread
     private Future<?> future;
 
-    public SerialReader(Consumer<TestData> consumer) {
+    public SerialRunner(Consumer<TestData> consumer) {
         this.consumer = consumer;
-    }
-
-    public static SerialReader getReader() {
-        return instance;
     }
 
     // start running the reader
