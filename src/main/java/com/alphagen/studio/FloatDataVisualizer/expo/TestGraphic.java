@@ -9,6 +9,7 @@ import org.apache.logging.log4j.Logger;
 
 public class TestGraphic extends Scene {
     private static final Logger logger = LogManager.getLogger(TestGraphic.class);
+    private final SerialReader reader;
 
     public TestGraphic() {
         Button startButton = new Button("Start");
