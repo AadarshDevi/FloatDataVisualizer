@@ -677,7 +677,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fixed app name, and changed version to use the version in mvn" />
     <MESSAGE value="mvn jpackage plugin: added icon" />
     <MESSAGE value="javafx mvn plugin was moved up the order" />
     <MESSAGE value="updated profile:dmg to add dmg specific xml" />
@@ -701,6 +700,7 @@
     <MESSAGE value="new main class for javafx testing" />
     <MESSAGE value="javafx native access given in arg line" />
     <MESSAGE value="test class for ui" />
+    <MESSAGE value="moved ui to TestGraphic from Main" />
     <MESSAGE value="commits" />
     <option name="LAST_COMMIT_MESSAGE" value="commits" />
   </component>
