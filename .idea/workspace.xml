@@ -5,10 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="776164ce-7a69-48e2-8934-c0376db3d4b9" name="Changes" comment="commits">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/expo/SerialReader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/expo/TestData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/expo/TestGraphic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/expo/TestGraphic.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -677,19 +673,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="mvn jpackage plugin: added icon" />
-    <MESSAGE value="javafx mvn plugin was moved up the order" />
-    <MESSAGE value="updated profile:dmg to add dmg specific xml" />
-    <MESSAGE value="updated profile:msi to add msi specific xml" />
-    <MESSAGE value="updated profile:exe to add exe specific xml" />
-    <MESSAGE value="updated profile:rpm to add rpm specific xml" />
-    <MESSAGE value="updated profile:deb to add deb specific xml" />
-    <MESSAGE value="description and vendor info added to jpackage" />
-    <MESSAGE value="old exe xml removed. it was replaced with profiles. redundancies were erased" />
-    <MESSAGE value="exe dest folder moved to dest from dist, and xml:module replaced with input, mainjar, mainclass" />
-    <MESSAGE value="chnaged from ${version} to alpha" />
-    <MESSAGE value="macos-pkg added" />
-    <MESSAGE value=".idea" />
     <MESSAGE value="File containing structure of different configs" />
     <MESSAGE value="u[pdated author name" />
     <MESSAGE value="new connection config container record" />
@@ -701,6 +684,19 @@
     <MESSAGE value="javafx native access given in arg line" />
     <MESSAGE value="test class for ui" />
     <MESSAGE value="moved ui to TestGraphic from Main" />
+    <MESSAGE value="creating a new TestGraphic object to be used later" />
+    <MESSAGE value="stage will call the testgraphic stop method" />
+    <MESSAGE value="class to imitate SerialProccessor" />
+    <MESSAGE value="basic data container" />
+    <MESSAGE value="reader class global" />
+    <MESSAGE value="setting scene super with a pane" />
+    <MESSAGE value="imports" />
+    <MESSAGE value="new label to show data being read" />
+    <MESSAGE value="reader object being created and telling what it should be doing" />
+    <MESSAGE value="start and stop buttons are now managed correctly" />
+    <MESSAGE value="adding label to ui" />
+    <MESSAGE value="ui related log" />
+    <MESSAGE value="method to stop reader from running in the background" />
     <MESSAGE value="commits" />
     <option name="LAST_COMMIT_MESSAGE" value="commits" />
   </component>

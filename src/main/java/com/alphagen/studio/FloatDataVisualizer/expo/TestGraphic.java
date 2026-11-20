@@ -65,6 +65,6 @@ public class TestGraphic extends Scene {
     }
 
     public void stop() {
-        reader.stop();
+        reader.shutdown();
     }
 }
