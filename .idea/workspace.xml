@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="776164ce-7a69-48e2-8934-c0376db3d4b9" name="Changes" comment="commits">
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/expo/TestGraphic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/expo/TestGraphic.java" afterDir="false" />
-    </list>
+    <list default="true" id="776164ce-7a69-48e2-8934-c0376db3d4b9" name="Changes" comment="shutdown the reader instead of stopping" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -673,7 +671,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="File containing structure of different configs" />
     <MESSAGE value="u[pdated author name" />
     <MESSAGE value="new connection config container record" />
     <MESSAGE value="connection type" />
@@ -698,7 +695,8 @@
     <MESSAGE value="ui related log" />
     <MESSAGE value="method to stop reader from running in the background" />
     <MESSAGE value="commits" />
-    <option name="LAST_COMMIT_MESSAGE" value="commits" />
+    <MESSAGE value="shutdown the reader instead of stopping" />
+    <option name="LAST_COMMIT_MESSAGE" value="shutdown the reader instead of stopping" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
