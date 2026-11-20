@@ -40,12 +40,16 @@ public class TestGraphic extends Scene {
             startButton.setVisible(false);
             startButton.setManaged(false);
             stopButton.setVisible(true);
+            stopButton.setManaged(true);
+            reader.start();
         });
 
         stopButton.setOnAction(event -> {
             stopButton.setVisible(false);
             stopButton.setManaged(false);
             startButton.setVisible(true);
+            startButton.setManaged(true);
+            reader.stop();
         });
 
         VBox vbox = new VBox(10);
