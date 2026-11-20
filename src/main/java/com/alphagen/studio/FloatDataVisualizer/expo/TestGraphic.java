@@ -28,6 +28,12 @@ public class TestGraphic extends Scene {
         Label label = new Label("-");
         label.setPadding(new Insets(0, 0, 0, 5));
 
+        reader = new SerialReader(data -> {
+            Platform.runLater(() -> {
+                label.setText(String.format("Time: %.2f\tDepth: %.2f", data.time(), data.depth()));
+            });
+        });
+
         stopButton.setVisible(false);
 
         startButton.setOnAction(event -> {
