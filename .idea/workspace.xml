@@ -4,12 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="776164ce-7a69-48e2-8934-c0376db3d4b9" name="Changes" comment="some stuff commits">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/expo/TestGraphic.java" afterDir="false" />
+    <list default="true" id="776164ce-7a69-48e2-8934-c0376db3d4b9" name="Changes" comment="commits">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/Launcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/Launcher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/expo/TestGraphic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/expo/TestGraphic.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -677,11 +675,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="icons added to profile" />
-    <MESSAGE value="profile for deb created and updated with icon xml" />
-    <MESSAGE value="javafx mvn plugin added" />
-    <MESSAGE value="mvn dep plugin updated from 361 to 381" />
-    <MESSAGE value="mvn jar plugin added" />
     <MESSAGE value="fixed app name, and changed version to use the version in mvn" />
     <MESSAGE value="mvn jpackage plugin: added icon" />
     <MESSAGE value="javafx mvn plugin was moved up the order" />
@@ -702,7 +695,12 @@
     <MESSAGE value="connection type" />
     <MESSAGE value="connection version" />
     <MESSAGE value="some stuff commits" />
-    <option name="LAST_COMMIT_MESSAGE" value="some stuff commits" />
+    <MESSAGE value="switched BuoyUI to Main for testing serial reader" />
+    <MESSAGE value="new main class for javafx testing" />
+    <MESSAGE value="javafx native access given in arg line" />
+    <MESSAGE value="test class for ui" />
+    <MESSAGE value="commits" />
+    <option name="LAST_COMMIT_MESSAGE" value="commits" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
