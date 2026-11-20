@@ -15,7 +15,7 @@ import java.util.concurrent.atomic.AtomicReference;
 
 public class TestGraphic extends Scene {
     private static final Logger logger = LogManager.getLogger(TestGraphic.class);
-    private final SerialReader reader;
+    private final SerialRunner reader;
 
     public TestGraphic() {
 
@@ -30,7 +30,7 @@ public class TestGraphic extends Scene {
         Label label = new Label("-");
         label.setPadding(new Insets(0, 0, 0, 5));
         AtomicReference<String> string = new AtomicReference<>();
-        reader = new SerialReader(data -> {
+        reader = new SerialRunner(data -> {
             string.set(String.format("Time: %.2f\tDepth: %.2f", data.time(), data.depth()));
             Platform.runLater(() -> {
                 label.setText(string.get());
