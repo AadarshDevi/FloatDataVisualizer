@@ -25,6 +25,9 @@ public class TestGraphic extends Scene {
         Button stopButton = new Button("Stop");
         stopButton.setPrefSize(60, 20);
 
+        Label label = new Label("-");
+        label.setPadding(new Insets(0, 0, 0, 5));
+
         stopButton.setVisible(false);
 
         startButton.setOnAction(event -> {
