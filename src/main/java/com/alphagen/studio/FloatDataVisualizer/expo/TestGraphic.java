@@ -12,6 +12,9 @@ public class TestGraphic extends Scene {
     private final SerialReader reader;
 
     public TestGraphic() {
+
+        super(new Pane());
+
         Button startButton = new Button("Start");
         startButton.setPrefSize(60, 20);
 
