@@ -11,6 +11,8 @@ import javafx.scene.layout.VBox;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import java.util.concurrent.atomic.AtomicReference;
+
 public class TestGraphic extends Scene {
     private static final Logger logger = LogManager.getLogger(TestGraphic.class);
     private final SerialReader reader;
@@ -27,10 +29,12 @@ public class TestGraphic extends Scene {
 
         Label label = new Label("-");
         label.setPadding(new Insets(0, 0, 0, 5));
-
+        AtomicReference<String> string = new AtomicReference<>();
         reader = new SerialReader(data -> {
+            string.set(String.format("Time: %.2f\tDepth: %.2f", data.time(), data.depth()));
             Platform.runLater(() -> {
-                label.setText(String.format("Time: %.2f\tDepth: %.2f", data.time(), data.depth()));
+                label.setText(string.get());
+                logger.info(string.get());
             });
         });
 
