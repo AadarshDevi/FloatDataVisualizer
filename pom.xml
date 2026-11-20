@@ -16,6 +16,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <!--        <junit.version>5.12.1</junit.version>-->
         <argLine>
+            --enable-native-access=javafx.graphics
             --add-reads com.alphagnfss.etr3=org.junit.jupiter.api
             --add-opens com.alphagnfss.etr3/com.alphagnfss.etr3.database=org.junit.platform.commons
             --add-opens com.alphagnfss.etr3/com.alphagnfss.etr3.validation=org.junit.platform.commons
