@@ -1,0 +1,39 @@
+package com.alphagen.studio.FloatDataVisualizer.core.processor;
+
+
+import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.data.ConnectionConfig;
+import com.alphagen.studio.FloatDataVisualizer.core.data.DataPacket;
+import com.fazecast.jSerialComm.SerialPort;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+import java.util.function.Consumer;
+
+public class SerialProcessor implements Runnable {
+    private static final Logger logger = LogManager.getLogger(SerialProcessor.class);
+    private final SerialPort serialPort;
+    private final Consumer<DataPacket> consumer;
+    private volatile boolean running = false;
+    private volatile boolean stopDataTransfer = false;
+    private volatile boolean startDataTransfer = false;
+
+    public SerialProcessor(ConnectionConfig config, Consumer<DataPacket> consumer) {
+        this.consumer = consumer;
+        serialPort = config.port();
+        serialPort.setBaudRate(config.baudRate());
+        serialPort.setComPortTimeouts(SerialPort.TIMEOUT_READ_BLOCKING, 1000, 0);
+    }
+
+    @Override
+    public void run() {
+        running = true;
+        while (running) {
+            if (stopDataTransfer) {
+                stopDataTransfer = false;
+            } else if (startDataTransfer) {
+                startDataTransfer = false;
+            }
+        }
+
+    }
+}
