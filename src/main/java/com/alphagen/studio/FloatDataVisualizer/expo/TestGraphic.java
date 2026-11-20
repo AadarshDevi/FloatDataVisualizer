@@ -56,6 +56,9 @@ public class TestGraphic extends Scene {
         vbox.setPrefSize(500, 200);
         vbox.getChildren().add(startButton);
         vbox.getChildren().add(stopButton);
+        vbox.getChildren().addFirst(label);
+
+        setRoot(vbox);
 
         super(vbox);
     }
