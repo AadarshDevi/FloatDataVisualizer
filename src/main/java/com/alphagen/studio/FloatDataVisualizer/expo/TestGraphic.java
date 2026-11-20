@@ -60,7 +60,8 @@ public class TestGraphic extends Scene {
 
         setRoot(vbox);
 
-        super(vbox);
+        logger.info("TestGraphic has been created.");
+
     }
 
 }
