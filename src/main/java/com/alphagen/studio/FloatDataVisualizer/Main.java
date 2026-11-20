@@ -12,8 +12,8 @@ public class Main extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
-
-        stage.setScene(new TestGraphic());
+        TestGraphic testGraphic = new TestGraphic();
+        stage.setScene(testGraphic);
         stage.setTitle("MateFloat FloatDataVisualizer Data Reader Testing UI Panel");
         logger.info("Application has been started.");
         stage.show();
