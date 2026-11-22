@@ -36,13 +36,38 @@ public class TestGraphic extends Scene {
         Label label = new Label("-");
         label.setPadding(new Insets(0, 0, 0, 5));
         AtomicReference<String> string = new AtomicReference<>();
-        reader = new SerialRunner(data -> {
-            string.set(String.format("Time: %.2f\tDepth: %.2f", data.time(), data.depth()));
-            Platform.runLater(() -> {
-                label.setText(string.get());
-                logger.info(string.get());
-            });
-        });
+        SerialConnection serialConnection = new SerialConnection(
+                ConnectionConfig.builder()
+                        .connectionName("Float Data Visualizer Windows 11 Serial Connection Test")
+                        .baudRate(115200)
+                        .port(SerialPort.getCommPorts()[0])
+                        .portType(ConnectionType.SERIAL)
+                        .floatConfig(
+                                FloatConfig.builder()
+                                        .endFlag("--end-data-transfer")
+                                        .startFlag("--start-data-transfer")
+                                        .pkt("0")
+                                        .teamData("PN12-MiramarWaterJets")
+                                        .build()
+                        )
+                        .measurementConfigs(
+                                new MeasurementConfig[]{
+                                        new MeasurementConfig("Time", "s"),
+                                        new MeasurementConfig("Depth", "m"),
+                                        new MeasurementConfig("Pressure", "kPa")
+                                }
+                        )
+                        .build(),
+                data -> {
+                    string.set(String.format("Packet Num: %s", data));
+                    Platform.runLater(() -> {
+                                label.setText(string.get());
+                                logger.info(string.get());
+                            }
+                    );
+                }
+        );
+        reader = new RunnableManager(serialConnection);
 
         stopButton.setVisible(false);
 
