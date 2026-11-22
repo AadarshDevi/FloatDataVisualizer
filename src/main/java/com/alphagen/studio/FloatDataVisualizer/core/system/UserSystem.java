@@ -55,13 +55,6 @@ public class UserSystem {
         return theme;
     }
 
-    public enum OperatingSystem {
-        WINDOWS,
-        MACOS,
-        LINUX,
-        OTHER
-    }
-
     enum SystemTheme {
         LIGHT,
         DARK,
