@@ -218,9 +218,9 @@ public class GrapherController {
             logger.error("Serial Communication stopped");
         }
 
-        // todo add a disconnected feature
-        // todo conditional with new COnnectionManager
-//        if ((sp != null) && sp.getDisconnected().get()) {
+//        // todo add a disconnected feature
+//        // todo conditional with new ConnectionManager
+//        if (!serialConnection.isOpen()) {
 //            Platform.runLater(() -> {
 //                logger.error("Disconnected from Device");
 //                Alert alert = new Alert(Alert.AlertType.ERROR);
