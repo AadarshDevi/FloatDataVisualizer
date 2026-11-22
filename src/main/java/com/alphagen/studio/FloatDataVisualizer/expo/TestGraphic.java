@@ -39,26 +39,29 @@ public class TestGraphic extends Scene {
         Label label = new Label("-");
         label.setPadding(new Insets(0, 0, 0, 5));
         AtomicReference<String> string = new AtomicReference<>();
+
+        ConnectionConfig config = ConnectionConfig.builder()
+                .name("Float Data Visualizer Windows 11 Serial Connection Test")
+                .os(OperatingSystem.WINDOWS)
+                .version(new Version(3, 0, 0))
+                .type(ConnectionType.SERIAL)
+                .port(SerialPort.getCommPorts()[0].getSystemPortName())
+                .baudRate(115200)
+                .startFlag("--start-data-transfer")
+                .endFlag("--end-data-transfer")
+                .teamInfo(
+                        TeamInfo.builder()
+                                .teamNum("PN12")
+                                .teamName("MiramarWaterJets")
+                                .build()
+                )
+                .sensor(new SensorUnit("Time", "s"))
+                .sensor(new SensorUnit("Depth", "m"))
+                .sensor(new SensorUnit("Pressure", "kPa"))
+                .build();
+
         SerialConnection serialConnection = new SerialConnection(
-                ConnectionConfig.builder()
-                        .name("Float Data Visualizer Windows 11 Serial Connection Test")
-                        .os(OperatingSystem.WINDOWS)
-                        .version(new Version(3, 0, 0))
-                        .type(ConnectionType.SERIAL)
-                        .port("")
-                        .baudRate(115200)
-                        .startFlag("--start-data-transfer")
-                        .endFlag("--end-data-transfer")
-                        .teamInfo(
-                                TeamInfo.builder()
-                                        .teamNum("PN12")
-                                        .teamName("MiramarWaterJets")
-                                        .build()
-                        )
-                        .sensor(new SensorUnit("Time", "s"))
-                        .sensor(new SensorUnit("Depth", "m"))
-                        .sensor(new SensorUnit("Pressure", "kPa"))
-                        .build(),
+                config,
                 data -> {
 
                     // @test
