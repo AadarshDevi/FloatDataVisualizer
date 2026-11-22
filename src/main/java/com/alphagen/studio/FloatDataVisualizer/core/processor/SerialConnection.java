@@ -60,6 +60,19 @@ public class SerialConnection extends CommunicationChannel {
                     continue;
                 }
 
+                trimmedLine = rawLine.trim();
+
+                if (trimmedLine.equalsIgnoreCase(connectionConfig.startFlag())) {
+                    collecting = true;
+                } else if (trimmedLine.equalsIgnoreCase(connectionConfig.endFlag())) {
+                    collecting = false;
+                    break;
+                }
+
+                if (collecting) {
+                    consumer.accept(trimmedLine);
+                }
+
             }
         } catch (IOException e) {
             logger.error("Unable to open serial port.");
