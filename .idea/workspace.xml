@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="776164ce-7a69-48e2-8934-c0376db3d4b9" name="Changes" comment="commits">
+    <list default="true" id="776164ce-7a69-48e2-8934-c0376db3d4b9" name="Changes" comment="connection config moved as a separate object.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/core/processor/SerialConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/core/processor/SerialConnection.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/expo/TestGraphic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/expo/TestGraphic.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -678,17 +677,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="hecking if dataline is null" />
-    <MESSAGE value="line also cannot be empty" />
-    <MESSAGE value="string outside" />
-    <MESSAGE value="setting up collecting to be true or false" />
-    <MESSAGE value="rawline is now an empty string" />
-    <MESSAGE value="try-catch for serial timeout" />
-    <MESSAGE value="bool collecting --&gt; collectData" />
-    <MESSAGE value="serial timeout exception import" />
-    <MESSAGE value="closing the port and setting collect data to false" />
-    <MESSAGE value="rawline moved inside" />
-    <MESSAGE value="trimmedline removed" />
     <MESSAGE value="continue to next loop instead of logging an error. there will be a heap of logs cause of this" />
     <MESSAGE value="reusing rawLine instead of the now deleted trimmedLine" />
     <MESSAGE value="log line for completing stuff" />
@@ -702,8 +690,19 @@
     <MESSAGE value="port not null" />
     <MESSAGE value="taking the data and putting it on ui" />
     <MESSAGE value="updated log4j logs to show class and its method. and also fixed the coloring" />
+    <MESSAGE value="serial conn: test code commented out" />
+    <MESSAGE value="serial conn: fixed unicode for new line" />
+    <MESSAGE value="TestGraphic: forgot to add string to output log" />
     <MESSAGE value="commits" />
-    <option name="LAST_COMMIT_MESSAGE" value="commits" />
+    <MESSAGE value="isRunning is public now" />
+    <MESSAGE value="reading from serial is semi blocked not blocked" />
+    <MESSAGE value="resetting mc by clear and set DTR" />
+    <MESSAGE value="logging the start and stop of data collection" />
+    <MESSAGE value="imports: text area and serial comm" />
+    <MESSAGE value="runnable manager is not final." />
+    <MESSAGE value="text area logger gui" />
+    <MESSAGE value="connection config moved as a separate object." />
+    <option name="LAST_COMMIT_MESSAGE" value="connection config moved as a separate object." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
