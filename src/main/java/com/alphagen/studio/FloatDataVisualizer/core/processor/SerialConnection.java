@@ -13,8 +13,7 @@ public class SerialConnection extends CommunicationChannel {
     private final SerialPort serialPort;
     private final Consumer<String> consumer;
     private volatile boolean running = false;
-    private volatile boolean stopDataTransfer = false;
-    private volatile boolean startDataTransfer = false;
+    private volatile boolean collecting = false;
 
     public SerialProcessor(ConnectionConfig config, Consumer<DataPacket> consumer) {
         this.consumer = consumer;
