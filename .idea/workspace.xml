@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="776164ce-7a69-48e2-8934-c0376db3d4b9" name="Changes" comment="running removed">
+    <list default="true" id="776164ce-7a69-48e2-8934-c0376db3d4b9" name="Changes" comment="imports">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/core/data/ConnectionConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/core/data/ConnectionConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/core/data/TeamInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/core/data/TeamInfo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/core/processor/SerialConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/core/processor/SerialConnection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/expo/TestGraphic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/expo/TestGraphic.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -678,13 +679,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="ui related log" />
-    <MESSAGE value="method to stop reader from running in the background" />
-    <MESSAGE value="shutdown the reader instead of stopping" />
-    <MESSAGE value="log4j config" />
-    <MESSAGE value="printing out data is now an atomic class." />
-    <MESSAGE value="new serial reader/sender class" />
-    <MESSAGE value="renamed serial reader to runner" />
     <MESSAGE value="parent class for serial communication. will be used as parent class for wifi and bluetooth which will be implemented as plugins" />
     <MESSAGE value="import" />
     <MESSAGE value="class name changed to be more appropriate for the function it does" />
@@ -697,13 +691,20 @@
     <MESSAGE value="removed a running = true because it will be maintained by a diff class" />
     <MESSAGE value="class was renamed a few times and maybe relocated" />
     <MESSAGE value="originally called serial processor or serial reader" />
-    <MESSAGE value="imports" />
     <MESSAGE value="name updated: serial runner to runnable manager" />
     <MESSAGE value="created a serial connection to run" />
-    <MESSAGE value="commits" />
     <MESSAGE value="nothing to add here" />
     <MESSAGE value="running removed" />
-    <option name="LAST_COMMIT_MESSAGE" value="running removed" />
+    <MESSAGE value="resetting run method by clearning body" />
+    <MESSAGE value="removed methods: stop, start, shutdown" />
+    <MESSAGE value="commits" />
+    <MESSAGE value="made these plural" />
+    <MESSAGE value="serial port to port (generalized)" />
+    <MESSAGE value="lombok builder" />
+    <MESSAGE value="builder import" />
+    <MESSAGE value="connection config from buoyui to core" />
+    <MESSAGE value="imports" />
+    <option name="LAST_COMMIT_MESSAGE" value="imports" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
