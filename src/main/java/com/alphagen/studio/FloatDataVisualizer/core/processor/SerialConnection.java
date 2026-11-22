@@ -13,7 +13,7 @@ import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
 import java.util.function.Consumer;
 
-public class SerialConnection extends CommunicationConnection {
+public class SerialConnection implements CommunicationConnection {
     private static final Logger logger = LogManager.getLogger(SerialConnection.class);
     private final SerialPort serialPort;
     private final Consumer<String> consumer;
