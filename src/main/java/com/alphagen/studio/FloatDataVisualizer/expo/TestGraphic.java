@@ -65,17 +65,31 @@ public class TestGraphic extends Scene {
                 data -> {
 
                     // @test
-                    string.set(String.format("Profile + Packet: %s", data));
-                    int[] profileInfo = Arrays.stream(data.split(","))
-                            .map(String::trim)
-                            .mapToInt(Integer::parseInt)
-                            .toArray();
-                    // @test-end
-                    Platform.runLater(() -> {
-                                label.setText("Profile: " + profileInfo[0] + "\tPacket: " + profileInfo[1]);
-                                logger.info(string.get());
-                            }
-                    );
+//                    string.set(String.format("Profile + Packet: %s", data));
+                    try {
+                        int[] profileInfo = Arrays.stream(data.split(","))
+                                .map(String::trim)
+                                .mapToInt(Integer::parseInt)
+                                .toArray();
+                        boolean isRunning = reader.isRunning();
+                        logger.warn(isRunning);
+                        // @test-end
+                        Platform.runLater(() -> {
+                                    label.setText("Profile: " + profileInfo[0] + "\tPacket: " + profileInfo[1]);
+                                    textArea.appendText("Profile: " + profileInfo[0] + "\tPacket: " + profileInfo[1] + "\n");
+//                                logger.info(string.get());
+                                }
+                        );
+                    } catch (Exception e) {
+                        textArea.appendText(data);
+                        if (data.equalsIgnoreCase(config.endFlag())) {
+                            Platform.runLater(() -> {
+                                        logger.info("Data extraction completed.");
+                                        stopButton.fire();
+                                    }
+                            );
+                        }
+                    }
                 }
         );
         reader = new RunnableManager(serialConnection);
