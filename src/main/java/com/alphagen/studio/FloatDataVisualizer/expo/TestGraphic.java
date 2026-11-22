@@ -101,6 +101,8 @@ public class TestGraphic extends Scene {
             startButton.setManaged(false);
             stopButton.setVisible(true);
             stopButton.setManaged(true);
+            label.setText("-");
+            textArea.clear();
             reader.start();
         });
 
