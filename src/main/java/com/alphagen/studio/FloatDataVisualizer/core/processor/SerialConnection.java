@@ -11,7 +11,7 @@ import java.util.function.Consumer;
 public class SerialConnection extends CommunicationChannel {
     private static final Logger logger = LogManager.getLogger(SerialConnection.class);
     private final SerialPort serialPort;
-    private final Consumer<DataPacket> consumer;
+    private final Consumer<String> consumer;
     private volatile boolean running = false;
     private volatile boolean stopDataTransfer = false;
     private volatile boolean startDataTransfer = false;
