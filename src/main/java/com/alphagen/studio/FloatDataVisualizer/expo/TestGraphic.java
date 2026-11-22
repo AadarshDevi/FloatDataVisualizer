@@ -32,6 +32,10 @@ public class TestGraphic extends Scene {
         Button stopButton = new Button("Stop");
         stopButton.setPrefSize(60, 20);
 
+        TextArea textArea = new TextArea();
+        textArea.setEditable(false);
+        textArea.setMaxWidth(Double.MAX_VALUE);
+
         Label label = new Label("-");
         label.setPadding(new Insets(0, 0, 0, 5));
         AtomicReference<String> string = new AtomicReference<>();
