@@ -24,7 +24,6 @@ public class SerialConnection extends CommunicationChannel {
 
     @Override
     public void run() {
-        running = true;
         while (running) {
 //            if (!collecting) continue;
 //            String string = (collecting) ? "yes" : "no";
