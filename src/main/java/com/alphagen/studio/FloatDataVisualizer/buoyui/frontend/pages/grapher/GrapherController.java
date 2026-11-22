@@ -210,9 +210,16 @@ public class GrapherController {
         SerialConnection serialConnection = new SerialConnection(connectionConfig, data -> {
             try {
                 logger.info(data);
+                dpp.getRawArray().put(data);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+        });
+        readerRunnableManager = new RunnableManager(serialConnection);
+
+//        sp = new SerialProcessor(connectionConfig);
         dpp = new DataPointProcessor();
-        sp.setDpp(dpp);
-        System.out.println(" >>> Grapher: SP & DPP > Ready");
+//        sp.setDpp(dpp);
         logger.info("Grapher: SP & DPP > Ready");
     }
 
