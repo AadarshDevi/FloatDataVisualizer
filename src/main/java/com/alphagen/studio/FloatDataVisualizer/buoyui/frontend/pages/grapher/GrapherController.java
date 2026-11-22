@@ -209,16 +209,14 @@ public class GrapherController {
         System.out.println(" >>> Grapher: SP & DPP > Ready");
     }
 
-	@FXML
-	public void stopingDataTransfer() {
-		// disable stop button and enable start button
-		if (activeTask != null && !activeTask.isCancelled()) {
-			activeTask.cancel(true);
-			activeDataBase.cancel(true);
-			activeUIUpdater.cancel(true);
-		}
     @FXML
     public void stopingDataTransfer() {
+        // disable stop button and enable start button
+//		if (activeTask != null && !activeTask.isCancelled()) {
+//			activeTask.cancel(true);
+//			activeDataBase.cancel(true);
+//			activeUIUpdater.cancel(true);
+//		}
 
         stopDataTransfer.setDisable(true);
         startDataTransfer.setDisable(false);
