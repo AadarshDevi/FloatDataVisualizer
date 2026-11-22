@@ -70,7 +70,8 @@ public class UserSystem {
 
     record SystemFile(
             OperatingSystem os,
-            SystemTheme theme
+            SystemTheme theme,
+            Version appVersion
     ) {
     }
 
