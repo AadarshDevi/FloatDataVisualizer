@@ -99,7 +99,7 @@ public class GrapherController {
             return;
         }
 
-        connection_name_label.setText(connectionConfig.connectionName());
+        connection_name_label.setText(connectionConfig.name());
         // todo: setup tabs > depth, pressure etc
 
         // todo:
@@ -119,6 +119,8 @@ public class GrapherController {
         MeasurementConfig[] measurementConfigs = connectionConfig.measurementConfigs();
         teamInfoLabel.setText(fc.teamData());
         packetLabel.setText(fc.pkt());
+        teamInfoLabel.setText(connectionConfig.teamInfo().toString());
+        packetLabel.setText("pkt-");
         baudRateLabel.setText(Integer.toString(connectionConfig.baudRate()));
         serialPortLabel.setText(connectionConfig.port().getDescriptivePortName());
         StringBuilder measurementsString = new StringBuilder();
@@ -129,9 +131,9 @@ public class GrapherController {
             ml.getStylesheets().add(ThemeProcessor.getThemeCSS().toString()); // testme: theme
             measurementsTilePane.getChildren().add(ml);
         }
-        rawDataFormatLabel.setText(fc.teamData() + "," + fc.pkt() + measurementsString);
-        endFlagLabel.setText(fc.endFlag());
-        startFlagLabel.setText(fc.startFlag());
+        rawDataFormatLabel.setText(connectionConfig.teamInfo().toString() + ",pkt-" + measurementsString);
+        endFlagLabel.setText(connectionConfig.endFlag());
+        startFlagLabel.setText(connectionConfig.startFlag());
 
         @SuppressWarnings("unchecked")
         TableColumn<DataPoint, String> teamCol = (TableColumn<DataPoint, String>) tableView.getColumns().getFirst();
