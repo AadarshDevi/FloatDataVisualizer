@@ -4,7 +4,7 @@
         <Console name="ConsoleLogger" target="SYSTEM_OUT">
             <PatternLayout>
                 <Pattern>
-                    %d - %-p - [%c] - %m%n
+                    %highlight{[%d - %-p]: %C{1}.%M - %m}{ERROR=red, WARN=yellow, INFO=default}%n
                 </Pattern>
             </PatternLayout>
         </Console>
