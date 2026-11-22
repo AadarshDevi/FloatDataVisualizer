@@ -223,11 +223,12 @@ public class GrapherController {
 //			activeUIUpdater.cancel(true);
 //		}
 
-        if (readerRunnableManager.isRunning()) {
-            readerRunnableManager.stop();
-            activeDataBase.cancel(true);
-            activeUIUpdater.cancel(true);
-        }
+        // todo replace with ConnectionManager
+//        if (readerRunnableManager.isRunning()) {
+        readerRunnableManager.stop();
+        if (activeDataBase != null) activeDataBase.cancel(true);
+        if (activeUIUpdater != null) activeUIUpdater.cancel(true);
+//        }
 
         stopDataTransfer.setDisable(true);
         startDataTransfer.setDisable(false);
