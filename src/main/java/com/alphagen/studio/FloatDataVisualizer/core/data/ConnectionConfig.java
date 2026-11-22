@@ -4,6 +4,7 @@ import lombok.Singular;
 
 import java.util.List;
 
+@Builder
 public record ConnectionConfig(
         int id,
         String name,
