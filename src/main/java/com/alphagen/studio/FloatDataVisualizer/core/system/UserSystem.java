@@ -19,7 +19,7 @@ public class UserSystem {
     public UserSystem() {
         this.os = detectOS();
         fileSystem = new FileSystem(os);
-        this.theme = detectTheme();
+        this.theme = detectTheme(SystemTheme.DARK); // fixme: need to read from settings file
     }
 
     public OperatingSystem detectOS() {
@@ -37,9 +37,9 @@ public class UserSystem {
         return os;
     }
 
-    public SystemTheme detectTheme() {
+    public SystemTheme detectTheme(SystemTheme userTheme) {
         OsThemeDetector detector = OsThemeDetector.getDetector();
-        SystemTheme theme = SystemTheme.OTHER;
+        SystemTheme theme = SystemTheme.SYSTEM;
 
         boolean isDarkTheme = detector.isDark();
 
