@@ -64,7 +64,8 @@ public class UserSystem {
     enum SystemTheme {
         LIGHT,
         DARK,
-        OTHER
+        OTHER,
+        SYSTEM
     }
 
     record SystemFile(
