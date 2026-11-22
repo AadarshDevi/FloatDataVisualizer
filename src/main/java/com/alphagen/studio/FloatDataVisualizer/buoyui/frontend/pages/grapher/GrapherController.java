@@ -264,11 +264,6 @@ public class GrapherController {
 
         logger.info("Serial Communication > Start");
 
-//		activeTask = receiver.submit(sp);
-//        SerialConnection serialConnection = new SerialConnection(
-//                connectionConfig, data -> {
-//        });
-        readerRunnableManager.start();
         activeDataBase = database.submit(dpp);
         activeUIUpdater = uiUpdater.submit(() -> {
             logger.info("Grapher > Running UI Updater");
@@ -282,7 +277,6 @@ public class GrapherController {
                 }
 
                 Platform.runLater(() -> {
-//					logger.info("Measurement Configs > " + Arrays.toString(dp.measurements()));
                     double[] measures = dp.measurements();
                     for (int i = 3; i < graphPane.getTabs().size(); i++) {
                         int measureIndex = i - 3;
