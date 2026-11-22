@@ -119,6 +119,7 @@ public class TestGraphic extends Scene {
         vbox.getChildren().add(startButton);
         vbox.getChildren().add(stopButton);
         vbox.getChildren().addFirst(label);
+        vbox.getChildren().addAll(textArea);
 
         setRoot(vbox);
 
