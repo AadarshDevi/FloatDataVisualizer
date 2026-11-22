@@ -49,8 +49,8 @@ public class TestGraphic extends Scene {
                 .endFlag("--end-data-transfer")
                 .teamInfo(
                         TeamInfo.builder()
-                                .teamNum("PN12")
-                                .teamName("MiramarWaterJets")
+                                .number("PN12")
+                                .name("MiramarWaterJets")
                                 .build()
                 )
                 .sensor(new SensorUnit("Time", "s"))
