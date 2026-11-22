@@ -86,8 +86,7 @@ public class GrapherController {
     @FXML
     public void initialize() {
         sm = SettingsManager.getInstance();
-        System.out.println();
-        System.out.println(" >>> Serial Communication > Initializing");
+        logger.info("Serial Communication > Initializing");
         graphPane.getSelectionModel().select(2);
         checkBoxesContainer.setDisable(true);
         checkBoxesContainer.setVisible(false);
@@ -96,7 +95,7 @@ public class GrapherController {
         this.connectionConfig = Connections.getCurrentConnection();
 
         if (connectionConfig == null) {
-            System.out.println(" >>> Serial Communication > Null ConnectionConfig");
+            logger.info("Serial Communication > Null ConnectionConfig");
             return;
         }
 
@@ -190,7 +189,7 @@ public class GrapherController {
                     double num = dp.getValue().measurements()[finalI - 1];
                     return new SimpleDoubleProperty(num).asObject();
                 } catch (ArrayIndexOutOfBoundsException _) {
-                    System.out.println(" >>> Column will not get data because it receives less data");
+                    logger.info("Column will not get data because it receives less data");
                 }
                 return new SimpleObjectProperty<>(null);
             });
@@ -208,9 +207,11 @@ public class GrapherController {
 
         stopingDataTransfer();
         sp = new SerialProcessor(connectionConfig);
+                logger.info(data);
         dpp = new DataPointProcessor();
         sp.setDpp(dpp);
         System.out.println(" >>> Grapher: SP & DPP > Ready");
+        logger.info("Grapher: SP & DPP > Ready");
     }
 
     @FXML
@@ -234,6 +235,8 @@ public class GrapherController {
         if (dpp != null) {
             System.out.println(" >>> Parsed Array > " + dpp.getParsedArray().size());
             System.err.println(" >>> Serial Communication > Stop");
+            logger.info("Parsed Array > " + dpp.getParsedArray().size());
+            logger.error("Serial Communication > Stop");
         }
 
         if ((sp != null) && sp.getDisconnected().get()) {
@@ -252,7 +255,7 @@ public class GrapherController {
             System.out.println(" [Debug] Port Closed? " + connectionConfig.port().isOpen());
         }
 
-        System.out.println("\n >>> [Debug] Stopping Data Transfer\n");
+        logger.info("\n[Debug] Stopping Data Transfer\n");
     }
 
     @FXML
@@ -280,7 +283,7 @@ public class GrapherController {
         tableView.getItems().removeAll(tableView.getItems());
         terminalTextArea.clear();
 
-        System.out.println(" >>> Serial Communication > Start");
+        logger.info("Serial Communication > Start");
 
 //		activeTask = receiver.submit(sp);
         SerialConnection serialConnection = new SerialConnection(com.alphagen.studio.FloatDataVisualizer.core.data.ConnectionConfig.toNew(connectionConfig), data -> {
@@ -288,7 +291,7 @@ public class GrapherController {
         });
         activeDataBase = database.submit(dpp);
         activeUIUpdater = uiUpdater.submit(() -> {
-            System.out.println(" >>> Grapher > Running UI Updater");
+            logger.info("Grapher > Running UI Updater");
             LinkedBlockingQueue<DataPoint> rawArray = dpp.getParsedArray();
             while (!Thread.currentThread().isInterrupted()) {
                 DataPoint dp;
@@ -299,7 +302,7 @@ public class GrapherController {
                 }
 
                 Platform.runLater(() -> {
-//					System.out.println(" >>> Measurement Configs > " + Arrays.toString(dp.measurements()));
+//					logger.info("Measurement Configs > " + Arrays.toString(dp.measurements()));
                     double[] measures = dp.measurements();
                     for (int i = 3; i < graphPane.getTabs().size(); i++) {
                         int measureIndex = i - 3;
@@ -321,13 +324,13 @@ public class GrapherController {
                 });
             }
         });
-        System.out.println(" >>> Serial Communication > Serial and Database");
+        logger.info("Serial Communication > Serial and Database");
     }
 
     @FXML
     public void backHome() {
         stopingDataTransfer();
-        System.out.println(" >>> Serial Communication > Back Home");
+        logger.info("Serial Communication > Back Home");
         Stage stage = StageManager.getMainStage();
         Scene scene = StageManager.getConnectionsScene();
         ControllerManager.setGrapherController(null);
@@ -429,65 +432,63 @@ public class GrapherController {
         }
 
         Stage stage = StageManager.getMainStage();
-        System.out.println("isFullScreen: " + stage.isFullScreen());
+        logger.info("isFullScreen: " + stage.isFullScreen());
 
         if (!stage.isFullScreen()) {
-            System.out.println("Fullscreen: No");
+            logger.info("Fullscreen: No");
             return;
         }
 
-        System.out.println("Fullscreen: Yes");
+        logger.info("Fullscreen: Yes");
 
         double scrollWidth = graphPane.getWidth() - 24;
         double scrollHeight = graphPane.getHeight() - 24;
-        System.out.println("scrollWidth: " + scrollWidth + " scrollHeight: " + scrollHeight);
+        logger.info("scrollWidth: " + scrollWidth + " scrollHeight: " + scrollHeight);
 
         double oldWidth = configScroll.getWidth() - 24;
         double oldHeight = configScroll.getHeight();
-        System.out.println("oldWidth: " + oldWidth + " oldWidth: " + oldHeight);
+        logger.info("oldWidth: " + oldWidth + " oldWidth: " + oldHeight);
 
         oldWidth = configScroll.getPrefWidth() - 24;
         oldHeight = configScroll.getPrefHeight();
-        System.out.println("oldPrefWidth: " + oldWidth + " oldPrefWidth: " + oldHeight);
+        logger.info("oldPrefWidth: " + oldWidth + " oldPrefWidth: " + oldHeight);
 
         stage.setFullScreen(true);
 
         double newWidth = configScroll.getWidth() - 24;
         double newHeight = (oldHeight * newWidth) / oldWidth;
-        System.out.println("newWidth: " + newWidth + " newHeight: " + newHeight);
+        logger.info("newWidth: " + newWidth + " newHeight: " + newHeight);
 
         configVBox.setPrefWidth(newWidth);
         configVBox.setPrefHeight(newHeight);
-        System.out.println();
-
 
 //		if (StageManager.getMainStage().isFullScreen()) {
 //
 //			double scrollWidth = graphPane.getWidth() - 24;
 //			double scrollHeight = graphPane.getHeight() - 24;
-//			System.out.println("scrollWidth: " + scrollWidth + " scrollHeight: " + scrollHeight);
+//			logger.info("scrollWidth: " + scrollWidth + " scrollHeight: " + scrollHeight);
 //
 //			spc.getScatterPlot().setPrefSize(scrollWidth, scrollHeight);
 //			spc.getScatterPlot().setMinSize(scrollWidth, scrollHeight);
 //
 //			double oldWidth = spc.getScatterPlot().getWidth();
 //			double oldHeight = spc.getScatterPlot().getHeight();
-//			System.out.println("oldWidth: " + oldWidth + " oldHeight: " + oldHeight);
+//			logger.info("oldWidth: " + oldWidth + " oldHeight: " + oldHeight);
 //
 //			oldWidth = spc.getScatterPlot().getPrefWidth() - 24;
 //			oldHeight = spc.getScatterPlot().getPrefHeight();
-//			System.out.println("oldPrefWidth: " + oldWidth + " oldPrefWidth: " + oldHeight);
+//			logger.info("oldPrefWidth: " + oldWidth + " oldPrefWidth: " + oldHeight);
 //
 //			double newWidth = spc.getScrollPane().getWidth() - 24;
 //			double newHeight = (oldHeight * newWidth) / oldWidth;
-//			System.out.println("newWidth: " + newWidth + " newHeight: " + newHeight);
+//			logger.info("newWidth: " + newWidth + " newHeight: " + newHeight);
 //
 //			spc.getScatterPlot().setPrefWidth(newWidth);
 //			spc.getScatterPlot().setPrefHeight(newHeight);
 //
 //			spc.getScatterPlot().setMinWidth(newWidth);
 //			spc.getScatterPlot().setMinHeight(newHeight);
-//			System.out.println();
+//			logger.info();
 //		}
     }
 }
