@@ -15,7 +15,7 @@ public record ConnectionConfig(
         String startFlag,
         String endFlag,
         TeamInfo teamInfo,
-        @Singular List<SensorUnit> sensorData,
-        @Singular List<Integer> commandList
+        @Singular List<SensorUnit> sensors,
+        @Singular List<Integer> commands
 ) {
 }
