@@ -187,7 +187,7 @@ public class GrapherController {
                 throw new RuntimeException(e);
             }
         });
-        readerRunnableManager = new RunnableManager(serialConnection);
+        readerRunnableManager = new ConnectionManager(serialConnection);
 
         dpp = new DataPointProcessor();
         logger.info("Grapher: SP & DPP > Ready");
