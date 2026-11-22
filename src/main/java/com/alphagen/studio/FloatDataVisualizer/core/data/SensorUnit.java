@@ -12,6 +12,10 @@ public record SensorUnit(
         String name,
         String unit
 ) {
+    public static SensorUnit toSensorUnit(MeasurementConfig config) {
+        return new SensorUnit(config.name(), config.unit());
+    }
+
     @Override
     public String toString() {
         return name + " (" + unit + ")";
