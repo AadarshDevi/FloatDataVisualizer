@@ -131,4 +131,9 @@ public class SerialConnection implements CommunicationConnection {
 
         return true;
     }
+
+    @Override
+    public boolean isOpen() {
+        return (serialPort != null) && serialPort.isOpen();
+    }
 }
