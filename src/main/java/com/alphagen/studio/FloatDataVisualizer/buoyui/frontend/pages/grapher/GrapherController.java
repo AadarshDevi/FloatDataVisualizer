@@ -100,23 +100,7 @@ public class GrapherController {
         }
 
         connection_name_label.setText(connectionConfig.name());
-        // todo: setup tabs > depth, pressure etc
 
-        // todo:
-        // 		1. get length of MeasurementsConfig
-        // 		2. create checkbox
-        // 			1. get size
-        // 			2. get style
-        // 			3. selected = false
-        // 		3. create table col
-        // 			1. get size
-        // 			2. get style
-        // 			3. add to table
-        // 		4. put data
-        // 		5. lock table col length and checkbox length
-
-//        FloatConfig fc = connectionConfig.floatConfig();
-//        MeasurementConfig[] measurementConfigs = connectionConfig.measurementConfigs();
         teamInfoLabel.setText(connectionConfig.teamInfo().toString());
         packetLabel.setText("pkt-");
         baudRateLabel.setText(Integer.toString(connectionConfig.baudRate()));
