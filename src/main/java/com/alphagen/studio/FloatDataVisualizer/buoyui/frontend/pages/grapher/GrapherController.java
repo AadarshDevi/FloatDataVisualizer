@@ -205,8 +205,10 @@ public class GrapherController {
 //			checkBoxesContainer.getChildren().add(cb);
         }
 
-        stopingDataTransfer();
-        sp = new SerialProcessor(connectionConfig);
+//        stopingDataTransfer();
+
+        SerialConnection serialConnection = new SerialConnection(connectionConfig, data -> {
+            try {
                 logger.info(data);
         dpp = new DataPointProcessor();
         sp.setDpp(dpp);
