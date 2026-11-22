@@ -6,7 +6,6 @@ import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.data.ConnectionTyp
 import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.data.FloatConfig;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.data.MeasurementConfig;
 import com.alphagen.studio.FloatDataVisualizer.core.processor.SerialConnection;
-import com.fazecast.jSerialComm.SerialPort;
 import javafx.application.Platform;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
