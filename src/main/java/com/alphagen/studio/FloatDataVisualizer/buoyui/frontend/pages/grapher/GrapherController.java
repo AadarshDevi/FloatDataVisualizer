@@ -276,6 +276,12 @@ public class GrapherController {
                     throw new RuntimeException(e);
                 }
 
+                if (!serialConnection.isConnected()) {
+                    logger.warn("Serial Connection Disconnected");
+                    Platform.runLater(this::stopingDataTransfer);
+                    break;
+                }
+
                 Platform.runLater(() -> {
                     double[] measures = dp.measurements();
                     for (int i = 3; i < graphPane.getTabs().size(); i++) {
