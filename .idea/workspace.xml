@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="776164ce-7a69-48e2-8934-c0376db3d4b9" name="Changes" comment="imports">
+    <list default="true" id="776164ce-7a69-48e2-8934-c0376db3d4b9" name="Changes" comment="rmeoved id, nosql not used">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/core/data/ConnectionConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/core/data/ConnectionConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/core/data/TeamInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/core/data/TeamInfo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/core/processor/SerialConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/core/processor/SerialConnection.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -679,12 +677,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="parent class for serial communication. will be used as parent class for wifi and bluetooth which will be implemented as plugins" />
-    <MESSAGE value="import" />
-    <MESSAGE value="class name changed to be more appropriate for the function it does" />
-    <MESSAGE value="data received from the user is a string" />
-    <MESSAGE value="methods to start, stop and shutdown created, will be changed" />
-    <MESSAGE value="updated so i can send stuff via serial" />
     <MESSAGE value="a single boolean for collecting data" />
     <MESSAGE value="class name changed" />
     <MESSAGE value="run: body - changed to show load from serial" />
@@ -697,14 +689,20 @@
     <MESSAGE value="running removed" />
     <MESSAGE value="resetting run method by clearning body" />
     <MESSAGE value="removed methods: stop, start, shutdown" />
-    <MESSAGE value="commits" />
     <MESSAGE value="made these plural" />
     <MESSAGE value="serial port to port (generalized)" />
     <MESSAGE value="lombok builder" />
     <MESSAGE value="builder import" />
     <MESSAGE value="connection config from buoyui to core" />
     <MESSAGE value="imports" />
-    <option name="LAST_COMMIT_MESSAGE" value="imports" />
+    <MESSAGE value="commits" />
+    <MESSAGE value="builder added" />
+    <MESSAGE value="import" />
+    <MESSAGE value="connection config stored" />
+    <MESSAGE value="serial port now retrieved by name instead of actual serial port" />
+    <MESSAGE value="condition to make sure the port is open" />
+    <MESSAGE value="rmeoved id, nosql not used" />
+    <option name="LAST_COMMIT_MESSAGE" value="rmeoved id, nosql not used" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
