@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="776164ce-7a69-48e2-8934-c0376db3d4b9" name="Changes" comment="methods to start, stop and shutdown created, will be changed">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/expo/RunnableManager.java" afterDir="false" />
+    <list default="true" id="776164ce-7a69-48e2-8934-c0376db3d4b9" name="Changes" comment="running removed">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/core/processor/SerialConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/core/processor/SerialConnection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/expo/SerialRunner.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/expo/TestGraphic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/expo/TestGraphic.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -680,18 +678,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="moved ui to TestGraphic from Main" />
-    <MESSAGE value="creating a new TestGraphic object to be used later" />
-    <MESSAGE value="stage will call the testgraphic stop method" />
-    <MESSAGE value="class to imitate SerialProccessor" />
-    <MESSAGE value="basic data container" />
-    <MESSAGE value="reader class global" />
-    <MESSAGE value="setting scene super with a pane" />
-    <MESSAGE value="imports" />
-    <MESSAGE value="new label to show data being read" />
-    <MESSAGE value="reader object being created and telling what it should be doing" />
-    <MESSAGE value="start and stop buttons are now managed correctly" />
-    <MESSAGE value="adding label to ui" />
     <MESSAGE value="ui related log" />
     <MESSAGE value="method to stop reader from running in the background" />
     <MESSAGE value="shutdown the reader instead of stopping" />
@@ -699,13 +685,25 @@
     <MESSAGE value="printing out data is now an atomic class." />
     <MESSAGE value="new serial reader/sender class" />
     <MESSAGE value="renamed serial reader to runner" />
-    <MESSAGE value="commits" />
     <MESSAGE value="parent class for serial communication. will be used as parent class for wifi and bluetooth which will be implemented as plugins" />
     <MESSAGE value="import" />
     <MESSAGE value="class name changed to be more appropriate for the function it does" />
     <MESSAGE value="data received from the user is a string" />
     <MESSAGE value="methods to start, stop and shutdown created, will be changed" />
-    <option name="LAST_COMMIT_MESSAGE" value="methods to start, stop and shutdown created, will be changed" />
+    <MESSAGE value="updated so i can send stuff via serial" />
+    <MESSAGE value="a single boolean for collecting data" />
+    <MESSAGE value="class name changed" />
+    <MESSAGE value="run: body - changed to show load from serial" />
+    <MESSAGE value="removed a running = true because it will be maintained by a diff class" />
+    <MESSAGE value="class was renamed a few times and maybe relocated" />
+    <MESSAGE value="originally called serial processor or serial reader" />
+    <MESSAGE value="imports" />
+    <MESSAGE value="name updated: serial runner to runnable manager" />
+    <MESSAGE value="created a serial connection to run" />
+    <MESSAGE value="commits" />
+    <MESSAGE value="nothing to add here" />
+    <MESSAGE value="running removed" />
+    <option name="LAST_COMMIT_MESSAGE" value="running removed" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
