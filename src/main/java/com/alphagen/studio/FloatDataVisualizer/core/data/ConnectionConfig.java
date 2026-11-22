@@ -5,6 +5,7 @@ import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.data.MeasurementCo
 import com.alphagen.studio.FloatDataVisualizer.core.system.UserSystem;
 import lombok.Builder;
 import lombok.Singular;
+import org.apache.logging.log4j.LogManager;
 
 import java.util.Arrays;
 import java.util.List;
@@ -55,6 +56,7 @@ public record ConnectionConfig(
      * @see com.alphagen.studio.FloatDataVisualizer.buoyui.backend.data.ConnectionConfig
      */
     public static ConnectionConfig toNew(com.alphagen.studio.FloatDataVisualizer.buoyui.backend.data.ConnectionConfig oldConfig) {
+        LogManager.getLogger(ConnectionConfig.class).info("Converting OldConfig to NewConfig.");
         return ConnectionConfig.builder()
                 .name(oldConfig.connectionName())
                 .os(new UserSystem().detectOS())
