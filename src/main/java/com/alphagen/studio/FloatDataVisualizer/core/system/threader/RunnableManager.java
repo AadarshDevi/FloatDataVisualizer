@@ -13,12 +13,10 @@ public class RunnableManager {
 
     // logger
     private static final Logger logger = LogManager.getLogger(RunnableManager.class);
-
+    // runnable process
+    protected final Runnable runnable;
     // The actual thread used
     private final ExecutorService executorService = Executors.newSingleThreadExecutor();
-    // runnable process
-    private final Runnable runnable;
-
     // thing to operate the thread
     private Future<?> future;
 
