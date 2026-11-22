@@ -49,6 +49,16 @@ public class SerialConnection extends CommunicationChannel {
         )) {
 
             while (!Thread.currentThread().isInterrupted()) {
+                rawLine = serialReader.readLine();
+
+                if (rawLine == null) {
+                    if (!serialPort.isOpen() || serialPort.bytesAvailable() == -1) {
+                        logger.error("Disconnected from SerialPort.");
+                        collecting = false;
+                        break;
+                    }
+                    continue;
+                }
 
             }
         } catch (IOException e) {
