@@ -53,8 +53,8 @@ public class SerialConnection extends CommunicationChannel {
                 String rawLine = "";
                 try {
                     rawLine = serialReader.readLine();
-                } catch (SerialPortTimeoutException e) {
-                    logger.error("SerialPort has been timed out.");
+                } catch (SerialPortTimeoutException _) {
+                    continue;
                 }
 
                 if (rawLine == null || rawLine.isBlank()) {
