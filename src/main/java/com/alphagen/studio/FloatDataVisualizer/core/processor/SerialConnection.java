@@ -46,16 +46,7 @@ public class SerialConnection extends CommunicationConnection {
 
         collectData = false;
 
-//        // there are bytes in serial stream
-//        logger.warn("Byte Remnants: {}", (serialPort.bytesAvailable() > 0));
-//        logger.warn("Port opened. Initial bytesAvailable={}", serialPort.bytesAvailable());
-//        while (serialPort.bytesAvailable() > 0) {
-//            // remove them
-//            byte[] discard = new byte[Math.min(serialPort.bytesAvailable(), 1024)];
-//            serialPort.readBytes(discard, discard.length);
-//        }
-
-        // Optional: toggle DTR to trigger a hardware reset if wired to RESET/EN
+        // Reset Float Reciever
         serialPort.clearDTR();
         try {
             Thread.sleep(100);
@@ -72,26 +63,11 @@ public class SerialConnection extends CommunicationConnection {
                 )
         )) {
 
-            // @test
-//            int packetNum = 0;
-//            int profileNum = 0;
-
             while (!Thread.currentThread().isInterrupted()) {
 
                 String rawLine = "";
                 try {
                     rawLine = serialReader.readLine();
-
-                    // @test
-//                rawLine = profileNum + "," + packetNum;
-//                packetNum++;
-//
-//                if ((packetNum % 15) == 0) {
-//                    packetNum = 0;
-//                    profileNum++;
-//                }
-                    // @test-end
-
                 } catch (SerialPortTimeoutException _) {
                     continue;
                 }
@@ -116,11 +92,6 @@ public class SerialConnection extends CommunicationConnection {
                     break;
                 } else if (collectData) {
                     consumer.accept(rawLine);
-//                try {
-//                    Thread.sleep(250);
-//                } catch (InterruptedException e) {
-//                    throw new RuntimeException(e);
-//                }
                 }
 
             }
