@@ -92,7 +92,7 @@ public class GrapherController {
         checkBoxesContainer.setVisible(false);
         checkBoxesContainer.setManaged(false);
 
-        this.connectionConfig = Connections.getCurrentConnection();
+        this.connectionConfig = ConnectionConfig.toNew(Connections.getCurrentConnection());
 
         if (connectionConfig == null) {
             logger.info("Serial Communication > Null ConnectionConfig");
