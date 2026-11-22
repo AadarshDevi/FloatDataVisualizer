@@ -3,11 +3,13 @@ package com.alphagen.studio.FloatDataVisualizer.expo;
 
 import com.alphagen.studio.FloatDataVisualizer.core.data.*;
 import com.alphagen.studio.FloatDataVisualizer.core.processor.SerialConnection;
+import com.fazecast.jSerialComm.SerialPort;
 import javafx.application.Platform;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextArea;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import org.apache.logging.log4j.LogManager;
