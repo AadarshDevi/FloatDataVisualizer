@@ -31,7 +31,7 @@ public class RunnableManager {
         future = executorService.submit(runnable);
     }
 
-    private synchronized boolean isRunning() {
+    public synchronized boolean isRunning() {
         return future != null && !future.isDone();
     }
 
