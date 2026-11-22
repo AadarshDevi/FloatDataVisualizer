@@ -16,7 +16,7 @@ public class SerialConnection extends CommunicationChannel {
     private final SerialPort serialPort;
     private final Consumer<String> consumer;
     private final ConnectionConfig connectionConfig;
-    private volatile boolean collecting = false;
+    private volatile boolean collectData = false;
 
     public SerialConnection(ConnectionConfig config, Consumer<String> consumer) {
         this.consumer = consumer;
@@ -41,7 +41,7 @@ public class SerialConnection extends CommunicationChannel {
             return;
         }
 
-        collecting = false;
+        collectData = false;
 
         try (BufferedReader serialReader = new BufferedReader(
                 new InputStreamReader(serialPort.getInputStream()
@@ -60,7 +60,7 @@ public class SerialConnection extends CommunicationChannel {
                 if (rawLine == null || rawLine.isBlank()) {
                     if (!serialPort.isOpen() || serialPort.bytesAvailable() == -1) {
                         logger.error("Disconnected from SerialPort.");
-                        collecting = false;
+                        collectData = false;
                         break;
                     }
                     continue;
@@ -69,13 +69,13 @@ public class SerialConnection extends CommunicationChannel {
                 trimmedLine = rawLine.trim();
 
                 if (trimmedLine.equalsIgnoreCase(connectionConfig.startFlag())) {
-                    collecting = true;
+                    collectData = true;
                 } else if (trimmedLine.equalsIgnoreCase(connectionConfig.endFlag())) {
-                    collecting = false;
+                    collectData = false;
                     break;
                 }
 
-                if (collecting) {
+                if (collectData) {
                     consumer.accept(trimmedLine);
                 }
 
