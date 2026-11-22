@@ -88,4 +88,32 @@ public class SerialConnection extends CommunicationChannel {
             logger.info("Closed SerialConnection.");
         }
     }
+
+    public synchronized boolean write(String cmd) {
+
+        // serialport dne
+        if (serialPort == null) {
+            logger.error("Unable to find SerialPort.");
+            return false;
+        }
+
+        // serial port open for write
+        if (!serialPort.isOpen()) {
+            logger.error("SerialPort is not open.");
+            return false;
+        }
+
+        // convert string to byte[]
+        byte[] dataAsBytes = (cmd + "/n").getBytes(StandardCharsets.UTF_8);
+
+        //
+        int bytesWritten = serialPort.writeBytes(dataAsBytes, dataAsBytes.length);
+
+        if (bytesWritten != dataAsBytes.length) {
+            logger.error("Unable to write command \"" + cmd + "\" to SerialPort.");
+            return false;
+        }
+
+        return true;
+    }
 }
