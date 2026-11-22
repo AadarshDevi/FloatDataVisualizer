@@ -221,6 +221,12 @@ public class GrapherController {
 //			activeUIUpdater.cancel(true);
 //		}
 
+        if (readerRunnableManager.isRunning()) {
+            readerRunnableManager.stop();
+            activeDataBase.cancel(true);
+            activeUIUpdater.cancel(true);
+        }
+
         stopDataTransfer.setDisable(true);
         startDataTransfer.setDisable(false);
 
