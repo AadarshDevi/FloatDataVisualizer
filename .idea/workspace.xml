@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="776164ce-7a69-48e2-8934-c0376db3d4b9" name="Changes" comment="connection config moved as a separate object.">
+    <list default="true" id="776164ce-7a69-48e2-8934-c0376db3d4b9" name="Changes" comment="commits">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/expo/TestGraphic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/expo/TestGraphic.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/core/system/UserSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/core/system/UserSystem.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -677,9 +677,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="continue to next loop instead of logging an error. there will be a heap of logs cause of this" />
-    <MESSAGE value="reusing rawLine instead of the now deleted trimmedLine" />
-    <MESSAGE value="log line for completing stuff" />
     <MESSAGE value="method to write data to serial" />
     <MESSAGE value="import: unicode" />
     <MESSAGE value="comment updated from empty" />
@@ -693,7 +690,6 @@
     <MESSAGE value="serial conn: test code commented out" />
     <MESSAGE value="serial conn: fixed unicode for new line" />
     <MESSAGE value="TestGraphic: forgot to add string to output log" />
-    <MESSAGE value="commits" />
     <MESSAGE value="isRunning is public now" />
     <MESSAGE value="reading from serial is semi blocked not blocked" />
     <MESSAGE value="resetting mc by clear and set DTR" />
@@ -702,7 +698,11 @@
     <MESSAGE value="runnable manager is not final." />
     <MESSAGE value="text area logger gui" />
     <MESSAGE value="connection config moved as a separate object." />
-    <option name="LAST_COMMIT_MESSAGE" value="connection config moved as a separate object." />
+    <MESSAGE value="example for using runnable manager and ui updating with data" />
+    <MESSAGE value="resetting text area" />
+    <MESSAGE value="adding text area to ui" />
+    <MESSAGE value="commits" />
+    <option name="LAST_COMMIT_MESSAGE" value="commits" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
