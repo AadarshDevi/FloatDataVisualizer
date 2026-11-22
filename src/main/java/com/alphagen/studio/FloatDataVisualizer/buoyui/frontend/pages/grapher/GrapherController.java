@@ -122,9 +122,9 @@ public class GrapherController {
         baudRateLabel.setText(Integer.toString(connectionConfig.baudRate()));
         serialPortLabel.setText(connectionConfig.port());
         StringBuilder measurementsString = new StringBuilder();
-        for (MeasurementConfig measurementConfig : measurementConfigs) {
-            measurementsString.append(",").append(measurementConfig.name()).append("(").append(measurementConfig.unit()).append(")");
-            MeasurementLabel ml = new MeasurementLabel(measurementConfig.name() + " (" + measurementConfig.unit() + ")");
+        for (SensorUnit sensorUnit : connectionConfig.sensors()) {
+            measurementsString.append(",").append(sensorUnit.name()).append("(").append(sensorUnit.unit()).append(")");
+            MeasurementLabel ml = new MeasurementLabel(sensorUnit.name() + " (" + sensorUnit.unit() + ")");
             ml.getStylesheets().clear(); // testme: theme
             ml.getStylesheets().add(ThemeProcessor.getThemeCSS().toString()); // testme: theme
             measurementsTilePane.getChildren().add(ml);
