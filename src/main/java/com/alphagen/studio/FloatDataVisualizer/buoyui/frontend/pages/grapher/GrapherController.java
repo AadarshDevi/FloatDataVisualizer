@@ -205,6 +205,7 @@ public class GrapherController {
         // todo replace with ConnectionManager
 //        if (readerRunnableManager.isRunning()) {
         readerRunnableManager.stop();
+        logger.info("Serial Communication stopped.");
         if (activeDataBase != null) activeDataBase.cancel(true);
         if (activeUIUpdater != null) activeUIUpdater.cancel(true);
 //        }
