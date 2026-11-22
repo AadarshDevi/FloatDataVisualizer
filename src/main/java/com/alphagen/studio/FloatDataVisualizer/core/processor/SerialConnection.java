@@ -46,6 +46,27 @@ public class SerialConnection extends CommunicationChannel {
 
         collectData = false;
 
+//        // there are bytes in serial stream
+//        logger.warn("Byte Remnants: {}", (serialPort.bytesAvailable() > 0));
+//        logger.warn("Port opened. Initial bytesAvailable={}", serialPort.bytesAvailable());
+//        while (serialPort.bytesAvailable() > 0) {
+//            // remove them
+//            byte[] discard = new byte[Math.min(serialPort.bytesAvailable(), 1024)];
+//            serialPort.readBytes(discard, discard.length);
+//        }
+
+        // Optional: toggle DTR to trigger a hardware reset if wired to RESET/EN
+        serialPort.clearDTR();
+        try {
+            Thread.sleep(100);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+            return;
+        }
+        serialPort.setDTR();
+
+        logger.info("Started SerialConnection");
+
         try (BufferedReader serialReader = new BufferedReader(
                 new InputStreamReader(serialPort.getInputStream()
                 )
