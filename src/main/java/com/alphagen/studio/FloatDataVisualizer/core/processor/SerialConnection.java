@@ -13,6 +13,7 @@ public class SerialConnection extends CommunicationChannel {
     private final SerialPort serialPort;
     private final Consumer<String> consumer;
     private final boolean collecting = false;
+    private final ConnectionConfig connectionConfig;
 
     public SerialConnection(ConnectionConfig config, Consumer<String> consumer) {
         this.consumer = consumer;
