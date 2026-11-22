@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="776164ce-7a69-48e2-8934-c0376db3d4b9" name="Changes" comment="commits">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/core/processor/SerialConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/core/processor/SerialConnection.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -677,11 +676,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="serial port to port (generalized)" />
-    <MESSAGE value="lombok builder" />
-    <MESSAGE value="builder import" />
-    <MESSAGE value="connection config from buoyui to core" />
-    <MESSAGE value="builder added" />
     <MESSAGE value="import" />
     <MESSAGE value="connection config stored" />
     <MESSAGE value="serial port now retrieved by name instead of actual serial port" />
@@ -700,9 +694,14 @@
     <MESSAGE value="try-catch for serial timeout" />
     <MESSAGE value="bool collecting --&gt; collectData" />
     <MESSAGE value="serial timeout exception import" />
-    <MESSAGE value="commits" />
     <MESSAGE value="closing the port and setting collect data to false" />
-    <option name="LAST_COMMIT_MESSAGE" value="closing the port and setting collect data to false" />
+    <MESSAGE value="rawline moved inside" />
+    <MESSAGE value="trimmedline removed" />
+    <MESSAGE value="continue to next loop instead of logging an error. there will be a heap of logs cause of this" />
+    <MESSAGE value="reusing rawLine instead of the now deleted trimmedLine" />
+    <MESSAGE value="commits" />
+    <MESSAGE value="log line for completing stuff" />
+    <option name="LAST_COMMIT_MESSAGE" value="log line for completing stuff" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
