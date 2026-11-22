@@ -21,7 +21,7 @@ import java.util.concurrent.atomic.AtomicReference;
 
 public class TestGraphic extends Scene {
     private static final Logger logger = LogManager.getLogger(TestGraphic.class);
-    private final SerialRunner reader;
+    private final RunnableManager reader;
 
     public TestGraphic() {
 
