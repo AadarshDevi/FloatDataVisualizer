@@ -4,8 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="776164ce-7a69-48e2-8934-c0376db3d4b9" name="Changes" comment="removed a atomic reference cause it wasnt used.">
+    <list default="true" id="776164ce-7a69-48e2-8934-c0376db3d4b9" name="Changes" comment="commits">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/buoyui/backend/data/ConnectionConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/buoyui/backend/data/ConnectionConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/buoyui/frontend/pages/grapher/GrapherController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/buoyui/frontend/pages/grapher/GrapherController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/core/data/ConnectionConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/core/data/ConnectionConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/core/data/SensorUnit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/core/data/SensorUnit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/core/system/FileSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/core/system/FileSystem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/core/system/UserSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/core/system/UserSystem.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -676,18 +682,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="moved the if into an else" />
-    <MESSAGE value="import: array - to map string to int" />
-    <MESSAGE value="port not null" />
-    <MESSAGE value="taking the data and putting it on ui" />
-    <MESSAGE value="updated log4j logs to show class and its method. and also fixed the coloring" />
-    <MESSAGE value="serial conn: test code commented out" />
-    <MESSAGE value="serial conn: fixed unicode for new line" />
-    <MESSAGE value="TestGraphic: forgot to add string to output log" />
-    <MESSAGE value="isRunning is public now" />
-    <MESSAGE value="reading from serial is semi blocked not blocked" />
-    <MESSAGE value="resetting mc by clear and set DTR" />
-    <MESSAGE value="logging the start and stop of data collection" />
     <MESSAGE value="imports: text area and serial comm" />
     <MESSAGE value="runnable manager is not final." />
     <MESSAGE value="text area logger gui" />
@@ -699,9 +693,21 @@
     <MESSAGE value="version import" />
     <MESSAGE value="new theme enum" />
     <MESSAGE value="app version added to system file" />
-    <MESSAGE value="commits" />
     <MESSAGE value="removed a atomic reference cause it wasnt used." />
-    <option name="LAST_COMMIT_MESSAGE" value="removed a atomic reference cause it wasnt used." />
+    <MESSAGE value="space unicode" />
+    <MESSAGE value="removed" />
+    <MESSAGE value="commented out receiver" />
+    <MESSAGE value="fields organized" />
+    <MESSAGE value="activetask commented out" />
+    <MESSAGE value="stop data transfer commented out" />
+    <MESSAGE value="active task commented out" />
+    <MESSAGE value="commits" />
+    <MESSAGE value="formatting: old float config" />
+    <MESSAGE value="formatting: old measurement config" />
+    <MESSAGE value="docs for the Core.ConnectionConfig class" />
+    <MESSAGE value="method for converting old buoy.config to core.config" />
+    <MESSAGE value="javadocs for the old to new config convertion method" />
+    <option name="LAST_COMMIT_MESSAGE" value="javadocs for the old to new config convertion method" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
