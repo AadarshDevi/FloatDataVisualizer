@@ -47,7 +47,7 @@ public class SerialConnection extends CommunicationChannel {
                 new InputStreamReader(serialPort.getInputStream()
                 )
         )) {
-
+            String rawLine;
             while (!Thread.currentThread().isInterrupted()) {
                 rawLine = serialReader.readLine();
 
