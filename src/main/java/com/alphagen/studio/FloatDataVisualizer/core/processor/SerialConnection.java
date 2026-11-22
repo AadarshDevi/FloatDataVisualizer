@@ -26,7 +26,14 @@ public class SerialConnection extends CommunicationChannel {
     @Override
     public void run() {
 
-        if (serialPort == null || !serialPort.isOpen()) {
+        if (serialPort == null) {
+            logger.error("Unable to find SerialPort.");
+            return;
+        }
+
+        serialPort.openPort();
+
+        if (!serialPort.isOpen()) {
             logger.error("Unable to open serial port.");
             return;
         }
