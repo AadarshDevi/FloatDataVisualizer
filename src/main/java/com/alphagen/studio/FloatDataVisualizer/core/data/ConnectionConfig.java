@@ -1,5 +1,8 @@
 package com.alphagen.studio.FloatDataVisualizer.core.data;
 
+import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.data.FloatConfig;
+import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.data.MeasurementConfig;
+import com.alphagen.studio.FloatDataVisualizer.core.system.UserSystem;
 import lombok.Builder;
 import lombok.Singular;
 
