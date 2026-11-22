@@ -3,7 +3,10 @@ package com.alphagen.studio.FloatDataVisualizer.core.processor;
 
 import com.alphagen.studio.FloatDataVisualizer.core.data.ConnectionConfig;
 import com.fazecast.jSerialComm.SerialPort;
+import com.fazecast.jSerialComm.SerialPortDataListener;
+import com.fazecast.jSerialComm.SerialPortEvent;
 import com.fazecast.jSerialComm.SerialPortTimeoutException;
+import lombok.Getter;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
