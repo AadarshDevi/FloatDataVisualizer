@@ -49,11 +49,30 @@ public class SerialConnection extends CommunicationChannel {
                 new InputStreamReader(serialPort.getInputStream()
                 )
         )) {
+
+            // @test
+            int packetNum = 0;
+            int profileNum = 0;
+
             while (!Thread.currentThread().isInterrupted()) {
 
                 String rawLine = "";
                 try {
                     rawLine = serialReader.readLine();
+
+                    // @test
+                    rawLine = profileNum + "," + packetNum;
+                    packetNum++;
+
+                    if ((packetNum % 15) == 0) {
+                        profileNum++;
+                    }
+
+                    if (profileNum == 5) {
+                        break;
+                    }
+                    // @test-end
+
                 } catch (SerialPortTimeoutException _) {
                     continue;
                 }
