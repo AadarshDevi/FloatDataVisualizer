@@ -6,6 +6,7 @@ import com.alphagen.studio.FloatDataVisualizer.core.system.UserSystem;
 import lombok.Builder;
 import lombok.Singular;
 
+import java.util.Arrays;
 import java.util.List;
 
 /**
