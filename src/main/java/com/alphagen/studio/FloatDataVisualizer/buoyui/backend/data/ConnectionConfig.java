@@ -4,5 +4,12 @@ import com.fazecast.jSerialComm.SerialPort;
 import lombok.Builder;
 
 @Builder
-public record ConnectionConfig(String connectionName, int baudRate, SerialPort port, ConnectionType portType,
-							   FloatConfig floatConfig, MeasurementConfig[] measurementConfigs) {}
+public record ConnectionConfig(
+        String connectionName,
+        int baudRate,
+        SerialPort port,
+        ConnectionType portType,
+        FloatConfig floatConfig,
+        MeasurementConfig[] measurementConfigs
+) {
+}
