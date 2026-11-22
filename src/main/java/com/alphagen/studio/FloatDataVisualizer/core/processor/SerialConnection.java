@@ -18,6 +18,7 @@ public class SerialConnection implements CommunicationConnection {
     private final SerialPort serialPort;
     private final Consumer<String> consumer;
     private final ConnectionConfig connectionConfig;
+    private volatile boolean disconnected = false;
     private volatile boolean collectData = false;
 
     public SerialConnection(ConnectionConfig config, Consumer<String> consumer) {
