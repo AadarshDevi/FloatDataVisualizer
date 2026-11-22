@@ -71,6 +71,7 @@ public class GrapherController {
     @FXML public ScrollPane configScroll;
     //	@FXML public ScrollPane tableScroll;
     @FXML public VBox configVBox;
+    private RunnableManager readerRunnableManager;
     private SettingsManager sm;
     //	private Future<?> activeTask;
     private Future<?> activeDataBase;
