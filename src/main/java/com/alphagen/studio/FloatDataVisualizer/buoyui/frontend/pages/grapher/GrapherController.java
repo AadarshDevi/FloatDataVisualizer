@@ -2,12 +2,8 @@ package com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.pages.grapher;
 
 import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.app.theme.ThemeProcessor;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.constants.Debug;
-import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.data.ConnectionConfig;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.data.DataPoint;
-import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.data.FloatConfig;
-import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.data.MeasurementConfig;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.processor.DataPointProcessor;
-import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.processor.SerialProcessor;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.settings.SettingsManager;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.managers.Connections;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.managers.ControllerManager;
