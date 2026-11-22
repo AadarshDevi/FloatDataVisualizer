@@ -93,9 +93,7 @@ public class SerialConnection extends CommunicationChannel {
                 } else if (rawLine.equalsIgnoreCase(connectionConfig.endFlag())) {
                     collectData = false;
                     break;
-                }
-
-                if (collectData) {
+                } else if (collectData) {
                     consumer.accept(rawLine);
                 }
 
