@@ -272,18 +272,7 @@ public class GrapherController {
 
         System.out.println(" >>> Serial Communication > Start");
 
-		activeTask = receiver.submit(sp);
-		activeDataBase = database.submit(dpp);
-		activeUIUpdater = uiUpdater.submit(() -> {
-			System.out.println(" >>> Grapher > Running UI Updater");
-			LinkedBlockingQueue<DataPoint> rawArray = dpp.getParsedArray();
-			while (!Thread.currentThread().isInterrupted()) {
-				DataPoint dp;
-				try {
-					dp = rawArray.take();
-				} catch (InterruptedException e) {
-					throw new RuntimeException(e);
-				}
+//		activeTask = receiver.submit(sp);
         activeDataBase = database.submit(dpp);
         activeUIUpdater = uiUpdater.submit(() -> {
             System.out.println(" >>> Grapher > Running UI Updater");
