@@ -31,6 +31,7 @@ public class SerialConnection extends CommunicationChannel {
     @Override
     public void run() {
 
+        // fixme: uncomment code when having serial
         if (serialPort == null) {
             logger.error("Unable to find SerialPort.");
             return;
@@ -51,8 +52,8 @@ public class SerialConnection extends CommunicationChannel {
         )) {
 
             // @test
-            int packetNum = 0;
-            int profileNum = 0;
+//            int packetNum = 0;
+//            int profileNum = 0;
 
             while (!Thread.currentThread().isInterrupted()) {
 
@@ -61,16 +62,13 @@ public class SerialConnection extends CommunicationChannel {
                     rawLine = serialReader.readLine();
 
                     // @test
-                    rawLine = profileNum + "," + packetNum;
-                    packetNum++;
-
-                    if ((packetNum % 15) == 0) {
-                        profileNum++;
-                    }
-
-                    if (profileNum == 5) {
-                        break;
-                    }
+//                rawLine = profileNum + "," + packetNum;
+//                packetNum++;
+//
+//                if ((packetNum % 15) == 0) {
+//                    packetNum = 0;
+//                    profileNum++;
+//                }
                     // @test-end
 
                 } catch (SerialPortTimeoutException _) {
@@ -95,6 +93,11 @@ public class SerialConnection extends CommunicationChannel {
                     break;
                 } else if (collectData) {
                     consumer.accept(rawLine);
+//                try {
+//                    Thread.sleep(250);
+//                } catch (InterruptedException e) {
+//                    throw new RuntimeException(e);
+//                }
                 }
 
             }
