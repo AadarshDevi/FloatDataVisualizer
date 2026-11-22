@@ -10,7 +10,7 @@ public record ConnectionConfig(
         OperatingSystem os,
         Version version,
         ConnectionType type,
-        String serialPort,
+        String port,
         int baudRate,
         String startFlag,
         String endFlag,
