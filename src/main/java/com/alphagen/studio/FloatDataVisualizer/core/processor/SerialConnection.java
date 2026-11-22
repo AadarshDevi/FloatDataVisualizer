@@ -15,7 +15,7 @@ public class SerialConnection extends CommunicationChannel {
     private volatile boolean running = false;
     private volatile boolean collecting = false;
 
-    public SerialProcessor(ConnectionConfig config, Consumer<DataPacket> consumer) {
+    public SerialConnection(ConnectionConfig config, Consumer<String> consumer) {
         this.consumer = consumer;
         serialPort = config.port();
         serialPort.setBaudRate(config.baudRate());
