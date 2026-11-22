@@ -23,18 +23,8 @@ public class SerialConnection extends CommunicationChannel {
 
     @Override
     public void run() {
-        while (running) {
-//            if (!collecting) continue;
-//            String string = (collecting) ? "yes" : "no";
-//            collecting = !string.equals("yes");
-            try {
-
-                Thread.sleep(1000);
-            } catch (InterruptedException e) {
-                throw new RuntimeException(e);
-            }
+        while (!Thread.currentThread().isInterrupted()) {
         }
-
     }
 
     public void stop() {
