@@ -16,7 +16,6 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.util.Arrays;
-import java.util.concurrent.atomic.AtomicReference;
 
 public class TestGraphic extends Scene {
     private static final Logger logger = LogManager.getLogger(TestGraphic.class);
@@ -38,7 +37,6 @@ public class TestGraphic extends Scene {
 
         Label label = new Label("-");
         label.setPadding(new Insets(0, 0, 0, 5));
-        AtomicReference<String> string = new AtomicReference<>();
 
         ConnectionConfig config = ConnectionConfig.builder()
                 .name("Float Data Visualizer Windows 11 Serial Connection Test")
