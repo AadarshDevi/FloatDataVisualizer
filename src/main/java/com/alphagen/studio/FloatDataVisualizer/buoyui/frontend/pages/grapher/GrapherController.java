@@ -115,10 +115,8 @@ public class GrapherController {
         // 		4. put data
         // 		5. lock table col length and checkbox length
 
-        FloatConfig fc = connectionConfig.floatConfig();
-        MeasurementConfig[] measurementConfigs = connectionConfig.measurementConfigs();
-        teamInfoLabel.setText(fc.teamData());
-        packetLabel.setText(fc.pkt());
+//        FloatConfig fc = connectionConfig.floatConfig();
+//        MeasurementConfig[] measurementConfigs = connectionConfig.measurementConfigs();
         teamInfoLabel.setText(connectionConfig.teamInfo().toString());
         packetLabel.setText("pkt-");
         baudRateLabel.setText(Integer.toString(connectionConfig.baudRate()));
