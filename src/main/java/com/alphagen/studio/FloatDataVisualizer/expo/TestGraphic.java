@@ -37,25 +37,23 @@ public class TestGraphic extends Scene {
         AtomicReference<String> string = new AtomicReference<>();
         SerialConnection serialConnection = new SerialConnection(
                 ConnectionConfig.builder()
-                        .connectionName("Float Data Visualizer Windows 11 Serial Connection Test")
-                        .baudRate(115200)
+                        .name("Float Data Visualizer Windows 11 Serial Connection Test")
+                        .os(OperatingSystem.WINDOWS)
+                        .version(new Version(3, 0, 0))
+                        .type(ConnectionType.SERIAL)
                         .port(null)
-                        .portType(ConnectionType.SERIAL)
-                        .floatConfig(
-                                FloatConfig.builder()
-                                        .endFlag("--end-data-transfer")
-                                        .startFlag("--start-data-transfer")
-                                        .pkt("0")
-                                        .teamData("PN12-MiramarWaterJets")
+                        .baudRate(115200)
+                        .startFlag("--start-data-transfer")
+                        .endFlag("--end-data-transfer")
+                        .teamInfo(
+                                TeamInfo.builder()
+                                        .teamNum("PN12")
+                                        .teamName("MiramarWaterJets")
                                         .build()
                         )
-                        .measurementConfigs(
-                                new MeasurementConfig[]{
-                                        new MeasurementConfig("Time", "s"),
-                                        new MeasurementConfig("Depth", "m"),
-                                        new MeasurementConfig("Pressure", "kPa")
-                                }
-                        )
+                        .sensor(new SensorUnit("Time", "s"))
+                        .sensor(new SensorUnit("Depth", "m"))
+                        .sensor(new SensorUnit("Pressure", "kPa"))
                         .build(),
                 data -> {
                     string.set(String.format("Packet Num: %s", data));
