@@ -120,7 +120,7 @@ public class GrapherController {
         teamInfoLabel.setText(connectionConfig.teamInfo().toString());
         packetLabel.setText("pkt-");
         baudRateLabel.setText(Integer.toString(connectionConfig.baudRate()));
-        serialPortLabel.setText(connectionConfig.port().getDescriptivePortName());
+        serialPortLabel.setText(connectionConfig.port());
         StringBuilder measurementsString = new StringBuilder();
         for (MeasurementConfig measurementConfig : measurementConfigs) {
             measurementsString.append(",").append(measurementConfig.name()).append("(").append(measurementConfig.unit()).append(")");
