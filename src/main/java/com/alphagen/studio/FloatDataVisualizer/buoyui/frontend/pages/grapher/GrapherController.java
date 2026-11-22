@@ -231,8 +231,6 @@ public class GrapherController {
 //            });
 //        }
 
-        readerRunnableManager.stop();
-
         logger.info("\n[Debug] Stopping Data Transfer\n");
     }
 
