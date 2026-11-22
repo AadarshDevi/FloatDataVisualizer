@@ -25,7 +25,7 @@ public class SerialConnection extends CommunicationChannel {
         this.connectionConfig = config;
         serialPort = SerialPort.getCommPort(connectionConfig.port());
         serialPort.setBaudRate(config.baudRate());
-        serialPort.setComPortTimeouts(SerialPort.TIMEOUT_READ_BLOCKING, 1000, 1000);
+        serialPort.setComPortTimeouts(SerialPort.TIMEOUT_READ_SEMI_BLOCKING, 1000, 1000);
     }
 
     @Override
