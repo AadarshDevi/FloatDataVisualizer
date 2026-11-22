@@ -20,4 +20,17 @@ public class ConnectionManager extends RunnableManager {
         return (CommunicationConnection) runnable;
     }
 
+    public synchronized boolean isConnected() {
+        return getRunnable().isConnected();
+    }
+
+    public synchronized void restart() {
+        stop();
+        start();
+    }
+
+    public boolean isPortOpen() {
+        return getRunnable().isPortAvailable();
+    }
+
 }

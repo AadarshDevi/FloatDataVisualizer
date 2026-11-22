@@ -163,4 +163,21 @@ public class SerialConnection implements CommunicationConnection {
     public boolean isOpen() {
         return (serialPort != null) && serialPort.isOpen();
     }
+
+    @Override
+    public boolean isConnected() {
+        return !disconnected;
+    }
+
+    public boolean isPortAvailable() {
+        if (connectionConfig == null || connectionConfig.port() == null) {
+            return false;
+        }
+        for (SerialPort port : SerialPort.getCommPorts()) {
+            if (connectionConfig.port().equalsIgnoreCase(port.getSystemPortName())) {
+                return true;
+            }
+        }
+        return false;
+    }
 }
