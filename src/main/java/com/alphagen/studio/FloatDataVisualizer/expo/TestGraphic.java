@@ -1,10 +1,7 @@
 package com.alphagen.studio.FloatDataVisualizer.expo;
 
 
-import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.data.ConnectionConfig;
-import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.data.ConnectionType;
-import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.data.FloatConfig;
-import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.data.MeasurementConfig;
+import com.alphagen.studio.FloatDataVisualizer.core.data.*;
 import com.alphagen.studio.FloatDataVisualizer.core.processor.SerialConnection;
 import javafx.application.Platform;
 import javafx.geometry.Insets;
