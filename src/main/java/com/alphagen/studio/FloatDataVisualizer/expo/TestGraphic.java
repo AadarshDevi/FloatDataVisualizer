@@ -56,7 +56,7 @@ public class TestGraphic extends Scene {
                 data -> {
 
                     // @test
-                    string.set(String.format("Profile + Packet: ", data));
+                    string.set(String.format("Profile + Packet: %s", data));
                     int[] profileInfo = Arrays.stream(data.split(","))
                             .map(String::trim)
                             .mapToInt(Integer::parseInt)
