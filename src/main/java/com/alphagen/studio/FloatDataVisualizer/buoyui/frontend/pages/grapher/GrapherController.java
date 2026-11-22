@@ -145,16 +145,16 @@ public class GrapherController {
         TableColumn<DataPoint, Double> timeCol = (TableColumn<DataPoint, Double>) tableView.getColumns().get(2);
         timeCol.setCellValueFactory(dp -> new SimpleDoubleProperty(dp.getValue().time()).asObject());
 
-        MeasurementConfig timeConfig = measurementConfigs[0];
+        SensorUnit timeConfig = connectionConfig.sensors().getFirst();
 
         timeTableCol.setText(timeConfig.name() + " (" + timeConfig.unit() + ")");
 
-        for (int i = 1; i < measurementConfigs.length; i++) {
+        for (int i = 1; i < connectionConfig.sensors().size(); i++) {
 
-            MeasurementConfig measurementConfig = measurementConfigs[i];
+            SensorUnit sensorUnit = connectionConfig.sensors().get(i);
 
             // Tabs > ScatterPlots
-            Tab tab = new Tab(measurementConfig.name());
+            Tab tab = new Tab(sensorUnit.name());
 
             FXMLLoader fxmlLoader = new FXMLLoader(CardConstants.SCATTER_PLOT);
             BorderPane scatterPlot;
@@ -168,7 +168,7 @@ public class GrapherController {
             scatterPlot.getStylesheets().add(ThemeProcessor.getThemeCSS().toString()); // testme: theme
 
             ScatterPlotController spc = fxmlLoader.getController();
-            spc.setAxes(timeConfig, measurementConfig);
+            spc.setAxes(timeConfig, sensorUnit);
             scatterPlot.getProperties().put("controller", spc);
             tab.getProperties().put("plot", scatterPlot);
             tab.getProperties().put("plot_controller", spc);
@@ -177,7 +177,7 @@ public class GrapherController {
 
             // Table
             TableColumn<DataPoint, Double> col = new TableColumn<>();
-            col.setText(measurementConfig.name() + " (" + measurementConfig.unit() + ")");
+            col.setText(sensorUnit.name() + " (" + sensorUnit.unit() + ")");
             col.setMinWidth(150);
             col.setPrefWidth(150);
             tableView.getColumns().add(col);
