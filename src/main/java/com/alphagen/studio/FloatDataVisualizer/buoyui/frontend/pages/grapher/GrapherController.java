@@ -359,12 +359,12 @@ public class GrapherController {
 
         try (BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(file))) {
 
-            for (int i = 0; i < connectionConfig.measurementConfigs().length; i++) {
-                bufferedWriter.write(connectionConfig.measurementConfigs()[i].name());
+            for (int i = 0; i < connectionConfig.sensors().size(); i++) {
+                bufferedWriter.write(connectionConfig.sensors().get(i).name());
                 bufferedWriter.write("(");
-                bufferedWriter.write(connectionConfig.measurementConfigs()[i].unit());
+                bufferedWriter.write(connectionConfig.sensors().get(i).unit());
                 bufferedWriter.write(")");
-                if (i != connectionConfig.measurementConfigs().length - 1) {
+                if (i != connectionConfig.sensors().size() - 1) {
                     bufferedWriter.write(",");
                 }
             }
