@@ -83,6 +83,9 @@ public class SerialConnection extends CommunicationChannel {
             }
         } catch (IOException e) {
             logger.error("Unable to open serial port.");
+        } finally {
+            collectData = false;
+            serialPort.closePort();
         }
     }
 }
