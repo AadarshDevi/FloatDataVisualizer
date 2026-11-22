@@ -400,15 +400,6 @@ public class GrapherController {
 
     @FXML
     public void exportRaw() {
-        // todo: based on the tab, export data.
-        //  if tab == terminal then export raw data
-        //  if tab == table then export csv
-
-        // todo same for the screen shot button
-        //  	update the svg to a screen shot svg
-
-        // todo add a shortcut to do the entire window screenshot
-
         ObservableList<DataPoint> list = tableView.getItems();
 
         FileChooser fileChooser = new FileChooser();
