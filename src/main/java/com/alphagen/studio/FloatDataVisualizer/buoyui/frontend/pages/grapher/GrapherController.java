@@ -214,8 +214,8 @@ public class GrapherController {
         startDataTransfer.setDisable(false);
 
         if (dpp != null) {
-            logger.info("Parsed Array > " + dpp.getParsedArray().size());
-            logger.error("Serial Communication > Stop");
+            logger.info("Parsed Array: " + dpp.getParsedArray().size());
+            logger.error("Serial Communication stopped");
         }
 
         // todo add a disconnected feature
