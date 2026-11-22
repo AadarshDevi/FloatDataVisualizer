@@ -54,9 +54,16 @@ public class TestGraphic extends Scene {
                         .sensor(new SensorUnit("Pressure", "kPa"))
                         .build(),
                 data -> {
-                    string.set(String.format("Packet Num: %s", data));
+
+                    // @test
+                    string.set(String.format("Profile + Packet: ", data));
+                    int[] profileInfo = Arrays.stream(data.split(","))
+                            .map(String::trim)
+                            .mapToInt(Integer::parseInt)
+                            .toArray();
+                    // @test-end
                     Platform.runLater(() -> {
-                                label.setText(string.get());
+                                label.setText("Profile: " + profileInfo[0] + "\tPacket: " + profileInfo[1]);
                                 logger.info(string.get());
                             }
                     );
