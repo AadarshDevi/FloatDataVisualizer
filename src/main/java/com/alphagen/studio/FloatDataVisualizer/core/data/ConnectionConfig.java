@@ -42,4 +42,25 @@ public record ConnectionConfig(
         @Singular List<SensorUnit> sensors,
         @Singular List<Integer> commands
 ) {
+    public static ConnectionConfig toNew(com.alphagen.studio.FloatDataVisualizer.buoyui.backend.data.ConnectionConfig oldConfig) {
+        return ConnectionConfig.builder()
+                .name(oldConfig.connectionName())
+                .os(new UserSystem().detectOS())
+                .version(new Version(3, 0, 0))
+                .type(ConnectionType.SERIAL)
+                .port(oldConfig.port().getSystemPortName())
+                .baudRate(oldConfig.baudRate())
+                .startFlag(oldConfig.floatConfig().startFlag())
+                .endFlag(oldConfig.floatConfig().endFlag())
+                .teamInfo(TeamInfo.builder()
+                        .teamNum(oldConfig.floatConfig().teamData().split("-")[0])
+                        .teamName(oldConfig.floatConfig().teamData().split("-")[1])
+                        .build()
+                )
+                .sensors(Arrays.stream(oldConfig.measurementConfigs())
+                        .map(SensorUnit::toSensorUnit)
+                        .toList()
+                )
+                .build();
+    }
 }
