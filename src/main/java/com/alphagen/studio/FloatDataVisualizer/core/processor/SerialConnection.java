@@ -125,6 +125,7 @@ public class SerialConnection implements CommunicationConnection {
             disconnected = true;
         } finally {
             collectData = false;
+            serialPort.removeDataListener();
             serialPort.closePort();
             logger.info("Closed SerialConnection.");
         }
