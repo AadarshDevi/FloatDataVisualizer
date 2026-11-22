@@ -12,5 +12,9 @@ public class ConnectionManager extends RunnableManager {
         super(connection);
     }
 
+    public synchronized boolean isOpen() {
+        return ((CommunicationConnection) runnable).isOpen();
+    }
+
 
 }
