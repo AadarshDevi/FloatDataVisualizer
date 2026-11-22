@@ -20,7 +20,7 @@ import java.util.concurrent.atomic.AtomicReference;
 
 public class TestGraphic extends Scene {
     private static final Logger logger = LogManager.getLogger(TestGraphic.class);
-    private final RunnableManager reader;
+    private RunnableManager reader = new RunnableManager(null);
 
     public TestGraphic() {
 
