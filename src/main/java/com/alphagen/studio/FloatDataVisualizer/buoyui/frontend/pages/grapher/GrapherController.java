@@ -76,6 +76,7 @@ public class GrapherController {
 	private SerialProcessor sp;
 	private DataPointProcessor dpp;
 	private Future<?> activeUIUpdater;
+    //	private final ExecutorService receiver = Executors.newSingleThreadExecutor();
     private final ExecutorService database = Executors.newSingleThreadExecutor();
     private final ExecutorService uiUpdater = Executors.newSingleThreadExecutor();
     @FXML public TabPane graphPane;
