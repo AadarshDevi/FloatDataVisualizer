@@ -20,6 +20,7 @@ public class SerialConnection implements CommunicationConnection {
     private static final Logger logger = LogManager.getLogger(SerialConnection.class);
     private final SerialPort serialPort;
     private final Consumer<String> consumer;
+    @Getter
     private final ConnectionConfig connectionConfig;
     private volatile boolean disconnected = false;
     private volatile boolean collectData = false;
