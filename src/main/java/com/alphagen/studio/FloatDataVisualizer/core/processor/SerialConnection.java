@@ -32,9 +32,12 @@ public class SerialConnection implements CommunicationConnection {
     @Override
     public void run() {
 
+        disconnected = false;
+
         // fixme: uncomment code when having serial
         if (serialPort == null) {
             logger.error("Unable to find SerialPort.");
+            disconnected = true;
             return;
         }
 
@@ -42,6 +45,7 @@ public class SerialConnection implements CommunicationConnection {
 
         if (!serialPort.isOpen()) {
             logger.error("Unable to open serial port.");
+            disconnected = true;
             return;
         }
 
@@ -53,6 +57,8 @@ public class SerialConnection implements CommunicationConnection {
             Thread.sleep(100);
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();
+            disconnected = true;
+            serialPort.closePort();
             return;
         }
         serialPort.setDTR();
@@ -77,6 +83,7 @@ public class SerialConnection implements CommunicationConnection {
                     if (!serialPort.isOpen() || serialPort.bytesAvailable() == -1) {
                         logger.error("Disconnected from SerialPort.");
                         collectData = false;
+                        disconnected = true;
                         break;
                     }
                     continue;
@@ -98,6 +105,7 @@ public class SerialConnection implements CommunicationConnection {
             }
         } catch (IOException e) {
             logger.error("Unable to open serial port.");
+            disconnected = true;
         } finally {
             collectData = false;
             serialPort.closePort();
