@@ -3,6 +3,7 @@ package com.alphagen.studio.FloatDataVisualizer.expo;
 
 import com.alphagen.studio.FloatDataVisualizer.core.data.*;
 import com.alphagen.studio.FloatDataVisualizer.core.processor.SerialConnection;
+import com.alphagen.studio.FloatDataVisualizer.core.system.threader.RunnableManager;
 import com.fazecast.jSerialComm.SerialPort;
 import javafx.application.Platform;
 import javafx.geometry.Insets;

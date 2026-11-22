@@ -1,4 +1,4 @@
-package com.alphagen.studio.FloatDataVisualizer.expo;
+package com.alphagen.studio.FloatDataVisualizer.core.system.threader;
 
 
 import org.apache.logging.log4j.LogManager;
