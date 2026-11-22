@@ -42,6 +42,14 @@ public record ConnectionConfig(
         @Singular List<SensorUnit> sensors,
         @Singular List<Integer> commands
 ) {
+
+    /**
+     * Converts the old BuoyUI.ConnectionConfig to the newer Core.ConnectionConfig
+     *
+     * @param oldConfig old connection config
+     * @return new connection config
+     * @see com.alphagen.studio.FloatDataVisualizer.buoyui.backend.data.ConnectionConfig
+     */
     public static ConnectionConfig toNew(com.alphagen.studio.FloatDataVisualizer.buoyui.backend.data.ConnectionConfig oldConfig) {
         return ConnectionConfig.builder()
                 .name(oldConfig.connectionName())
