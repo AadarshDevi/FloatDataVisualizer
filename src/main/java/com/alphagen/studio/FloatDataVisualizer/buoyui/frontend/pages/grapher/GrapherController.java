@@ -46,7 +46,6 @@ import java.util.concurrent.LinkedBlockingQueue;
 
 public class GrapherController {
     private static final Logger logger = LogManager.getLogger(GrapherController.class);
-    //	private final ExecutorService receiver = Executors.newSingleThreadExecutor();
     private final ExecutorService database = Executors.newSingleThreadExecutor();
     private final ExecutorService uiUpdater = Executors.newSingleThreadExecutor();
     @FXML public TabPane graphPane;
@@ -72,12 +71,11 @@ public class GrapherController {
     @FXML public ScrollPane configScroll;
     //	@FXML public ScrollPane tableScroll;
     @FXML public VBox configVBox;
-    private RunnableManager readerRunnableManager;
+    private ConnectionManager readerRunnableManager;
+    private SerialConnection serialConnection;
     private SettingsManager sm;
-    //	private Future<?> activeTask;
     private Future<?> activeDataBase;
     @Setter private ConnectionConfig connectionConfig;
-    //    private SerialProcessor sp;
     private DataPointProcessor dpp;
     private Future<?> activeUIUpdater;
 
