@@ -677,7 +677,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="connection config stored" />
     <MESSAGE value="serial port now retrieved by name instead of actual serial port" />
     <MESSAGE value="condition to make sure the port is open" />
     <MESSAGE value="rmeoved id, nosql not used" />
@@ -700,9 +699,10 @@
     <MESSAGE value="continue to next loop instead of logging an error. there will be a heap of logs cause of this" />
     <MESSAGE value="reusing rawLine instead of the now deleted trimmedLine" />
     <MESSAGE value="log line for completing stuff" />
-    <MESSAGE value="commits" />
     <MESSAGE value="method to write data to serial" />
-    <option name="LAST_COMMIT_MESSAGE" value="method to write data to serial" />
+    <MESSAGE value="import: unicode" />
+    <MESSAGE value="commits" />
+    <option name="LAST_COMMIT_MESSAGE" value="commits" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
