@@ -34,6 +34,8 @@ import javafx.scene.layout.VBox;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import lombok.Setter;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.io.BufferedWriter;
 import java.io.File;
@@ -45,6 +47,7 @@ import java.util.concurrent.Future;
 import java.util.concurrent.LinkedBlockingQueue;
 
 public class GrapherController {
+    private static final Logger logger = LogManager.getLogger(GrapherController.class);
     //	private final ExecutorService receiver = Executors.newSingleThreadExecutor();
     private final ExecutorService database = Executors.newSingleThreadExecutor();
     private final ExecutorService uiUpdater = Executors.newSingleThreadExecutor();
