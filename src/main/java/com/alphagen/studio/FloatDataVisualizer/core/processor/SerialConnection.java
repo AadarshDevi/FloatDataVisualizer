@@ -66,6 +66,20 @@ public class SerialConnection implements CommunicationConnection {
         }
         serialPort.setDTR();
 
+        serialPort.addDataListener(new SerialPortDataListener() {
+            @Override
+            public int getListeningEvents() {
+                return SerialPort.LISTENING_EVENT_PORT_DISCONNECTED;
+            }
+
+            @Override
+            public void serialEvent(SerialPortEvent event) {
+                if (event.getEventType() == SerialPort.LISTENING_EVENT_PORT_DISCONNECTED) {
+                    disconnected = true;
+                }
+            }
+        });
+
         logger.info("Started SerialConnection");
 
         try (BufferedReader serialReader = new BufferedReader(
