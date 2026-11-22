@@ -286,9 +286,10 @@ public class GrapherController {
         logger.info("Serial Communication > Start");
 
 //		activeTask = receiver.submit(sp);
-        SerialConnection serialConnection = new SerialConnection(com.alphagen.studio.FloatDataVisualizer.core.data.ConnectionConfig.toNew(connectionConfig), data -> {
-
-        });
+//        SerialConnection serialConnection = new SerialConnection(
+//                connectionConfig, data -> {
+//        });
+        readerRunnableManager.start();
         activeDataBase = database.submit(dpp);
         activeUIUpdater = uiUpdater.submit(() -> {
             logger.info("Grapher > Running UI Updater");
