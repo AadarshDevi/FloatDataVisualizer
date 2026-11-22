@@ -26,10 +26,14 @@ public class SerialConnection extends CommunicationChannel {
     public void run() {
         running = true;
         while (running) {
-            if (stopDataTransfer) {
-                stopDataTransfer = false;
-            } else if (startDataTransfer) {
-                startDataTransfer = false;
+//            if (!collecting) continue;
+//            String string = (collecting) ? "yes" : "no";
+//            collecting = !string.equals("yes");
+            try {
+
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
             }
         }
 
