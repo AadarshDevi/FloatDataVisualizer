@@ -125,7 +125,7 @@ public class SerialConnection extends CommunicationChannel {
         }
 
         // convert string to byte[]
-        byte[] dataAsBytes = (cmd + "/n").getBytes(StandardCharsets.UTF_8);
+        byte[] dataAsBytes = (cmd + "\n").getBytes(StandardCharsets.UTF_8);
 
         // the no of bytes that were written to serial
         int bytesWritten = serialPort.writeBytes(dataAsBytes, dataAsBytes.length);
