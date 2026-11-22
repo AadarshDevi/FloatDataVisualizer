@@ -108,8 +108,10 @@ public class SerialConnection extends CommunicationChannel {
                 rawLine = rawLine.trim();
 
                 if (rawLine.equalsIgnoreCase(connectionConfig.startFlag())) {
+                    logger.info("Data collection started.");
                     collectData = true;
                 } else if (rawLine.equalsIgnoreCase(connectionConfig.endFlag())) {
+                    logger.info("Data collection completed.");
                     collectData = false;
                     break;
                 } else if (collectData) {
