@@ -178,15 +178,7 @@ public class GrapherController {
                 return new SimpleObjectProperty<>(null);
             });
 
-
             // todo for selective export
-//			CheckBox cb = new CheckBox();
-//			cb.setMinWidth(150);
-//			cb.setPrefWidth(150);
-//			cb.setSelected(true);
-//
-//			// link the size of checkbox to table col
-//			checkBoxesContainer.getChildren().add(cb);
         }
 
 //        stopingDataTransfer();
@@ -201,9 +193,7 @@ public class GrapherController {
         });
         readerRunnableManager = new RunnableManager(serialConnection);
 
-//        sp = new SerialProcessor(connectionConfig);
         dpp = new DataPointProcessor();
-//        sp.setDpp(dpp);
         logger.info("Grapher: SP & DPP > Ready");
     }
 
