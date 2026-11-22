@@ -85,6 +85,7 @@ public class SerialConnection extends CommunicationChannel {
         } finally {
             collectData = false;
             serialPort.closePort();
+            logger.info("Closed SerialConnection.");
         }
     }
 }
