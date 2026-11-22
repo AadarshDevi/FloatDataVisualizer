@@ -15,6 +15,8 @@ import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.managers.StageMan
 import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.pages.CardConstants;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.pages.grapher.scatterplot.ScatterPlotController;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.util.MeasurementLabel;
+import com.alphagen.studio.FloatDataVisualizer.core.processor.SerialConnection;
+import com.alphagen.studio.FloatDataVisualizer.expo.RunnableManager;
 import javafx.application.Platform;
 import javafx.beans.property.SimpleDoubleProperty;
 import javafx.beans.property.SimpleIntegerProperty;
