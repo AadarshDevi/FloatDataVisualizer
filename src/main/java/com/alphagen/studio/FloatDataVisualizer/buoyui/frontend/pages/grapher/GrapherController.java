@@ -239,21 +239,20 @@ public class GrapherController {
             logger.error("Serial Communication > Stop");
         }
 
-        if ((sp != null) && sp.getDisconnected().get()) {
-            Platform.runLater(() -> {
-                System.err.println(" >>> Disconnected from Device");
-                Alert alert = new Alert(Alert.AlertType.ERROR);
-                alert.setTitle("Connection Exception");
-                alert.setHeaderText(null);
-                alert.setContentText("Disconnected from Hardware.");
-                alert.showAndWait();
-            });
-        }
+        // todo add a disconnected feature
+        // todo conditional with new COnnectionManager
+//        if ((sp != null) && sp.getDisconnected().get()) {
+//            Platform.runLater(() -> {
+//                logger.error("Disconnected from Device");
+//                Alert alert = new Alert(Alert.AlertType.ERROR);
+//                alert.setTitle("Connection Exception");
+//                alert.setHeaderText(null);
+//                alert.setContentText("Disconnected from Hardware.");
+//                alert.showAndWait();
+//            });
+//        }
 
-        if (connectionConfig.port().isOpen()) {
-            connectionConfig.port().closePort();
-            System.out.println(" [Debug] Port Closed? " + connectionConfig.port().isOpen());
-        }
+        readerRunnableManager.stop();
 
         logger.info("\n[Debug] Stopping Data Transfer\n");
     }
