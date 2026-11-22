@@ -66,17 +66,17 @@ public class SerialConnection extends CommunicationChannel {
                     continue;
                 }
 
-                trimmedLine = rawLine.trim();
+                rawLine = rawLine.trim();
 
-                if (trimmedLine.equalsIgnoreCase(connectionConfig.startFlag())) {
+                if (rawLine.equalsIgnoreCase(connectionConfig.startFlag())) {
                     collectData = true;
-                } else if (trimmedLine.equalsIgnoreCase(connectionConfig.endFlag())) {
+                } else if (rawLine.equalsIgnoreCase(connectionConfig.endFlag())) {
                     collectData = false;
                     break;
                 }
 
                 if (collectData) {
-                    consumer.accept(trimmedLine);
+                    consumer.accept(rawLine);
                 }
 
             }
