@@ -7,7 +7,6 @@ import java.util.List;
 
 @Builder
 public record ConnectionConfig(
-        int id,
         String name,
         OperatingSystem os,
         Version version,
