@@ -300,8 +300,6 @@ public class GrapherController {
             ((ScatterPlotController) graphPane.getTabs().get(i).getProperties().get("plot_controller")).reset();
         }
 
-		tableView.getItems().removeAll(tableView.getItems());
-		terminalTextArea.clear();
         tableView.getItems().removeAll(tableView.getItems());
         terminalTextArea.clear();
 
