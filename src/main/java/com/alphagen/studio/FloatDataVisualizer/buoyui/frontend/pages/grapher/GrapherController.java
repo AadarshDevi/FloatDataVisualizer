@@ -70,6 +70,7 @@ public class GrapherController {
     //	@FXML public ScrollPane tableScroll;
     @FXML public VBox configVBox;
     private SettingsManager sm;
+    //	private Future<?> activeTask;
     private Future<?> activeDataBase;
     @Setter private ConnectionConfig connectionConfig;
     private SerialProcessor sp;
