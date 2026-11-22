@@ -48,10 +48,10 @@ public class SerialConnection extends CommunicationChannel {
                 new InputStreamReader(serialPort.getInputStream()
                 )
         )) {
-            String rawLine = "";
             String trimmedLine = "";
             while (!Thread.currentThread().isInterrupted()) {
 
+                String rawLine = "";
                 try {
                     rawLine = serialReader.readLine();
                 } catch (SerialPortTimeoutException e) {
