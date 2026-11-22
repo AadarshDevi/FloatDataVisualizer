@@ -1,5 +1,7 @@
 package com.alphagen.studio.FloatDataVisualizer.core.data;
 
+import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.data.MeasurementConfig;
+
 /**
  * The name of the data being measured. Used for the frontend
  * <p>
