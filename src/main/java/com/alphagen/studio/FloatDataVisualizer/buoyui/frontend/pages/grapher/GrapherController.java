@@ -233,8 +233,6 @@ public class GrapherController {
         startDataTransfer.setDisable(false);
 
         if (dpp != null) {
-            System.out.println(" >>> Parsed Array > " + dpp.getParsedArray().size());
-            System.err.println(" >>> Serial Communication > Stop");
             logger.info("Parsed Array > " + dpp.getParsedArray().size());
             logger.error("Serial Communication > Stop");
         }
