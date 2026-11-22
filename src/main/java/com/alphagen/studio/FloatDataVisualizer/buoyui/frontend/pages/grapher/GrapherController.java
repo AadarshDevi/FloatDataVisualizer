@@ -179,9 +179,7 @@ public class GrapherController {
             // todo for selective export
         }
 
-//        stopingDataTransfer();
-
-        SerialConnection serialConnection = new SerialConnection(connectionConfig, data -> {
+        serialConnection = new SerialConnection(connectionConfig, data -> {
             try {
                 logger.info(data);
                 dpp.getRawArray().put(data);
