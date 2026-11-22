@@ -20,7 +20,7 @@ public class SerialConnection extends CommunicationChannel {
         this.consumer = consumer;
         serialPort = config.port();
         serialPort.setBaudRate(config.baudRate());
-        serialPort.setComPortTimeouts(SerialPort.TIMEOUT_READ_BLOCKING, 1000, 0);
+        serialPort.setComPortTimeouts(SerialPort.TIMEOUT_READ_BLOCKING, 1000, 1000);
     }
 
     @Override
