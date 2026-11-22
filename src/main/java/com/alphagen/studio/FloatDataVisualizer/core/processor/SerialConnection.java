@@ -50,7 +50,12 @@ public class SerialConnection extends CommunicationChannel {
             String rawLine = "";
             String trimmedLine = "";
             while (!Thread.currentThread().isInterrupted()) {
-                rawLine = serialReader.readLine();
+
+                try {
+                    rawLine = serialReader.readLine();
+                } catch (SerialPortTimeoutException e) {
+                    logger.error("SerialPort has been timed out.");
+                }
 
                 if (rawLine == null || rawLine.isBlank()) {
                     if (!serialPort.isOpen() || serialPort.bytesAvailable() == -1) {
