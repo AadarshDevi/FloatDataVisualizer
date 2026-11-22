@@ -1,5 +1,6 @@
 package com.alphagen.studio.FloatDataVisualizer.core.data;
 
+import lombok.Builder;
 import lombok.Singular;
 
 import java.util.List;
