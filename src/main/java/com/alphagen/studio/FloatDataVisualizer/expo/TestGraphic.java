@@ -13,6 +13,7 @@ import javafx.scene.layout.VBox;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
 public class TestGraphic extends Scene {
