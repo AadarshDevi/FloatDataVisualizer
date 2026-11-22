@@ -44,12 +44,12 @@ public class SerialConnection extends CommunicationChannel {
                 new InputStreamReader(serialPort.getInputStream()
                 )
         )) {
-            // code
+
+            while (!Thread.currentThread().isInterrupted()) {
+
+            }
         } catch (IOException e) {
             logger.error("Unable to open serial port.");
-        }
-
-        while (!Thread.currentThread().isInterrupted()) {
         }
     }
 }
