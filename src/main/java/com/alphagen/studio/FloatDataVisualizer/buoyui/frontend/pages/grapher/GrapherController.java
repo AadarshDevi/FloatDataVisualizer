@@ -14,7 +14,7 @@ import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.util.MeasurementL
 import com.alphagen.studio.FloatDataVisualizer.core.data.ConnectionConfig;
 import com.alphagen.studio.FloatDataVisualizer.core.data.SensorUnit;
 import com.alphagen.studio.FloatDataVisualizer.core.processor.SerialConnection;
-import com.alphagen.studio.FloatDataVisualizer.core.system.threader.RunnableManager;
+import com.alphagen.studio.FloatDataVisualizer.core.system.threader.ConnectionManager;
 import javafx.application.Platform;
 import javafx.beans.property.SimpleDoubleProperty;
 import javafx.beans.property.SimpleIntegerProperty;
