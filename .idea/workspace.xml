@@ -6,12 +6,15 @@
   <component name="ChangeListManager">
     <list default="true" id="776164ce-7a69-48e2-8934-c0376db3d4b9" name="Changes" comment="commits">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/buoyui/backend/data/ConnectionConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/buoyui/backend/data/ConnectionConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/Launcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/Launcher.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/buoyui/frontend/pages/grapher/GrapherController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/buoyui/frontend/pages/grapher/GrapherController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/buoyui/frontend/pages/grapher/scatterplot/ScatterPlotController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/buoyui/frontend/pages/grapher/scatterplot/ScatterPlotController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/core/data/ConnectionConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/core/data/ConnectionConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/core/data/SensorUnit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/core/data/SensorUnit.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/core/system/FileSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/core/system/FileSystem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/core/system/UserSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/core/system/UserSystem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/core/data/TeamInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/core/data/TeamInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/core/processor/CommunicationChannel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/core/processor/CommunicationConnection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/core/processor/SerialConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/core/processor/SerialConnection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/expo/RunnableManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/expo/RunnableManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/expo/TestGraphic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/expo/TestGraphic.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -137,7 +140,7 @@
     <option name="myRunOnSave" value="true" />
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
+    <option name="selectedTabId" value="ProjectErrors" />
     <option name="sortByName" value="true" />
   </component>
   <component name="ProjectColorInfo">{
@@ -682,17 +685,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="imports: text area and serial comm" />
-    <MESSAGE value="runnable manager is not final." />
-    <MESSAGE value="text area logger gui" />
-    <MESSAGE value="connection config moved as a separate object." />
-    <MESSAGE value="example for using runnable manager and ui updating with data" />
-    <MESSAGE value="resetting text area" />
-    <MESSAGE value="adding text area to ui" />
-    <MESSAGE value="added a param for determining user's theme. light/dark/system_theme (calculate the theme)" />
-    <MESSAGE value="version import" />
-    <MESSAGE value="new theme enum" />
-    <MESSAGE value="app version added to system file" />
     <MESSAGE value="removed a atomic reference cause it wasnt used." />
     <MESSAGE value="space unicode" />
     <MESSAGE value="removed" />
@@ -701,13 +693,24 @@
     <MESSAGE value="activetask commented out" />
     <MESSAGE value="stop data transfer commented out" />
     <MESSAGE value="active task commented out" />
-    <MESSAGE value="commits" />
     <MESSAGE value="formatting: old float config" />
     <MESSAGE value="formatting: old measurement config" />
     <MESSAGE value="docs for the Core.ConnectionConfig class" />
     <MESSAGE value="method for converting old buoy.config to core.config" />
     <MESSAGE value="javadocs for the old to new config convertion method" />
-    <option name="LAST_COMMIT_MESSAGE" value="javadocs for the old to new config convertion method" />
+    <MESSAGE value="old class imports" />
+    <MESSAGE value="java arrays import" />
+    <MESSAGE value="format changed" />
+    <MESSAGE value="imports" />
+    <MESSAGE value="using new runnable manager" />
+    <MESSAGE value="stop data transfer but with the newer runnable manager" />
+    <MESSAGE value="forgot to create new connection" />
+    <MESSAGE value="new mthod: measurement config to sensor unit" />
+    <MESSAGE value="impott" />
+    <MESSAGE value="removed usersystem.operatingsystem because it was already moved out. but forgot to be deleted" />
+    <MESSAGE value="changed usersystem.operatingsystem to operatingsystem" />
+    <MESSAGE value="commits" />
+    <option name="LAST_COMMIT_MESSAGE" value="commits" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
