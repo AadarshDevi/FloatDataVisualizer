@@ -39,7 +39,7 @@ public class TestGraphic extends Scene {
                         .os(OperatingSystem.WINDOWS)
                         .version(new Version(3, 0, 0))
                         .type(ConnectionType.SERIAL)
-                        .port(null)
+                        .port("")
                         .baudRate(115200)
                         .startFlag("--start-data-transfer")
                         .endFlag("--end-data-transfer")
