@@ -16,5 +16,8 @@ public class ConnectionManager extends RunnableManager {
         return getRunnable().isOpen();
     }
 
+    private CommunicationConnection getRunnable() {
+        return (CommunicationConnection) runnable;
+    }
 
 }
