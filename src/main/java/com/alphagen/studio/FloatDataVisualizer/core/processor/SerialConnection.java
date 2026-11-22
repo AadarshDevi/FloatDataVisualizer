@@ -35,4 +35,18 @@ public class SerialConnection extends CommunicationChannel {
         }
 
     }
+
+    public void stop() {
+        running = false;
+        collecting = false;
+    }
+
+    public void shutdown() {
+        stop();
+    }
+
+    public void start() {
+        running = true;
+        collecting = false;
+    }
 }
