@@ -8,8 +8,8 @@ import org.apache.logging.log4j.Logger;
 
 import java.util.function.Consumer;
 
-public class SerialProcessor implements Runnable {
-    private static final Logger logger = LogManager.getLogger(SerialProcessor.class);
+public class SerialConnection extends CommunicationChannel {
+    private static final Logger logger = LogManager.getLogger(SerialConnection.class);
     private final SerialPort serialPort;
     private final Consumer<DataPacket> consumer;
     private volatile boolean running = false;
