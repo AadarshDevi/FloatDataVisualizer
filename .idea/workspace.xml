@@ -6,15 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="776164ce-7a69-48e2-8934-c0376db3d4b9" name="Changes" comment="commits">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/Launcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/Launcher.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/buoyui/frontend/pages/grapher/GrapherController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/buoyui/frontend/pages/grapher/GrapherController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/buoyui/frontend/pages/grapher/scatterplot/ScatterPlotController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/buoyui/frontend/pages/grapher/scatterplot/ScatterPlotController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/core/data/ConnectionConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/core/data/ConnectionConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/core/data/TeamInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/core/data/TeamInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/core/processor/CommunicationChannel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/core/processor/CommunicationConnection.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/core/processor/SerialConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/core/processor/SerialConnection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/expo/RunnableManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/expo/RunnableManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/expo/TestGraphic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/expo/TestGraphic.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -685,30 +677,30 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="removed a atomic reference cause it wasnt used." />
-    <MESSAGE value="space unicode" />
-    <MESSAGE value="removed" />
-    <MESSAGE value="commented out receiver" />
-    <MESSAGE value="fields organized" />
-    <MESSAGE value="activetask commented out" />
-    <MESSAGE value="stop data transfer commented out" />
-    <MESSAGE value="active task commented out" />
-    <MESSAGE value="formatting: old float config" />
-    <MESSAGE value="formatting: old measurement config" />
-    <MESSAGE value="docs for the Core.ConnectionConfig class" />
-    <MESSAGE value="method for converting old buoy.config to core.config" />
-    <MESSAGE value="javadocs for the old to new config convertion method" />
-    <MESSAGE value="old class imports" />
-    <MESSAGE value="java arrays import" />
-    <MESSAGE value="format changed" />
-    <MESSAGE value="imports" />
-    <MESSAGE value="using new runnable manager" />
-    <MESSAGE value="stop data transfer but with the newer runnable manager" />
-    <MESSAGE value="forgot to create new connection" />
-    <MESSAGE value="new mthod: measurement config to sensor unit" />
-    <MESSAGE value="impott" />
-    <MESSAGE value="removed usersystem.operatingsystem because it was already moved out. but forgot to be deleted" />
-    <MESSAGE value="changed usersystem.operatingsystem to operatingsystem" />
+    <MESSAGE value="renamed from CommunicationChannel to CommunicationConnection" />
+    <MESSAGE value="core connection config: added logger." />
+    <MESSAGE value="grapher controller: added logger." />
+    <MESSAGE value="removed oil dserial processor" />
+    <MESSAGE value="imports removed: old conn config, float config, measurment config" />
+    <MESSAGE value="imports added: new conn config, sensor unit" />
+    <MESSAGE value="sout to logger info/error" />
+    <MESSAGE value="replaced main with buoyui" />
+    <MESSAGE value="todo: new class for connections" />
+    <MESSAGE value="scatter plot: space unicode" />
+    <MESSAGE value="class renamed: CommunicationChannel to CommunicationConnection" />
+    <MESSAGE value="TeamInfo: renamed teanName to name and teamNum to number" />
+    <MESSAGE value="TeamInfo: switched teanName to name and teamNum to number" />
+    <MESSAGE value="Grapher: converted old connection config to new connection config" />
+    <MESSAGE value="Grapher: replacing old connection config with new method names" />
+    <MESSAGE value="Grapher: removed the old float and measurement configs" />
+    <MESSAGE value="Grapher: port now is a string" />
+    <MESSAGE value="Grapher: measurementConfig to sensor unit" />
+    <MESSAGE value="Grapher: replaced creating a new serialConnection with start runnable" />
+    <MESSAGE value="Grapher: replaced old alert with runnable.stop" />
+    <MESSAGE value="Grapher: replaced" />
+    <MESSAGE value="Grapher: Futures cancel if they are not null" />
+    <MESSAGE value="Grapher: replaced serial processor with connection." />
+    <MESSAGE value="removed spp for serialConnection" />
     <MESSAGE value="commits" />
     <option name="LAST_COMMIT_MESSAGE" value="commits" />
   </component>
