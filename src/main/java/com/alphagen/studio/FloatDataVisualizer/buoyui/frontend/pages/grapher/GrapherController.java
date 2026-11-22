@@ -241,6 +241,20 @@ public class GrapherController {
         startDataTransfer.setDisable(true);
         stopDataTransfer.setDisable(false);
 
+        // todo conditional with new ConnectionManager
+        if (!readerRunnableManager.isPortOpen()) {
+            logger.error("Port not found");
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Connection Exception");
+            alert.setHeaderText(null);
+            alert.setContentText("Hardware not connected to device. Serial Port disconnected and not found.");
+            alert.showAndWait();
+            stopingDataTransfer();
+            return;
+        }
+
+        readerRunnableManager.start();
+
         for (int i = 3; i < graphPane.getTabs().size(); i++) {
             ((ScatterPlotController) graphPane.getTabs().get(i).getProperties().get("plot_controller")).reset();
         }
