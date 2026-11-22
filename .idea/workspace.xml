@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="776164ce-7a69-48e2-8934-c0376db3d4b9" name="Changes" comment="rmeoved id, nosql not used">
+    <list default="true" id="776164ce-7a69-48e2-8934-c0376db3d4b9" name="Changes" comment="commits">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/core/processor/SerialConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/core/processor/SerialConnection.java" afterDir="false" />
     </list>
@@ -677,16 +677,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="a single boolean for collecting data" />
-    <MESSAGE value="class name changed" />
-    <MESSAGE value="run: body - changed to show load from serial" />
-    <MESSAGE value="removed a running = true because it will be maintained by a diff class" />
-    <MESSAGE value="class was renamed a few times and maybe relocated" />
-    <MESSAGE value="originally called serial processor or serial reader" />
-    <MESSAGE value="name updated: serial runner to runnable manager" />
-    <MESSAGE value="created a serial connection to run" />
-    <MESSAGE value="nothing to add here" />
-    <MESSAGE value="running removed" />
     <MESSAGE value="resetting run method by clearning body" />
     <MESSAGE value="removed methods: stop, start, shutdown" />
     <MESSAGE value="made these plural" />
@@ -694,15 +684,25 @@
     <MESSAGE value="lombok builder" />
     <MESSAGE value="builder import" />
     <MESSAGE value="connection config from buoyui to core" />
-    <MESSAGE value="imports" />
-    <MESSAGE value="commits" />
     <MESSAGE value="builder added" />
     <MESSAGE value="import" />
     <MESSAGE value="connection config stored" />
     <MESSAGE value="serial port now retrieved by name instead of actual serial port" />
     <MESSAGE value="condition to make sure the port is open" />
     <MESSAGE value="rmeoved id, nosql not used" />
-    <option name="LAST_COMMIT_MESSAGE" value="rmeoved id, nosql not used" />
+    <MESSAGE value="checking if port is not null, and is open" />
+    <MESSAGE value="try-catch for reading serial port" />
+    <MESSAGE value="moved loop" />
+    <MESSAGE value="imports" />
+    <MESSAGE value="collect data bool volatile (auto changed to final)" />
+    <MESSAGE value="commits" />
+    <MESSAGE value="hecking if dataline is null" />
+    <MESSAGE value="line also cannot be empty" />
+    <MESSAGE value="string outside" />
+    <MESSAGE value="setting up collecting to be true or false" />
+    <MESSAGE value="rawline is now an empty string" />
+    <MESSAGE value="try-catch for serial timeout" />
+    <option name="LAST_COMMIT_MESSAGE" value="try-catch for serial timeout" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
