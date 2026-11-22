@@ -38,6 +38,17 @@ public class SerialConnection extends CommunicationChannel {
             return;
         }
 
+        collecting = false;
+
+        try (BufferedReader serialReader = new BufferedReader(
+                new InputStreamReader(serialPort.getInputStream()
+                )
+        )) {
+            // code
+        } catch (IOException e) {
+            logger.error("Unable to open serial port.");
+        }
+
         while (!Thread.currentThread().isInterrupted()) {
         }
     }
