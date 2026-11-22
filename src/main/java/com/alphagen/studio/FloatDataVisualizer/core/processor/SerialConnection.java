@@ -12,8 +12,7 @@ public class SerialConnection extends CommunicationChannel {
     private static final Logger logger = LogManager.getLogger(SerialConnection.class);
     private final SerialPort serialPort;
     private final Consumer<String> consumer;
-    private volatile boolean running = false;
-    private volatile boolean collecting = false;
+    private final boolean collecting = false;
 
     public SerialConnection(ConnectionConfig config, Consumer<String> consumer) {
         this.consumer = consumer;
