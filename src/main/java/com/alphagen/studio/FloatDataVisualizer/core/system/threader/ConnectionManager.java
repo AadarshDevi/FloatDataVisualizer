@@ -13,7 +13,7 @@ public class ConnectionManager extends RunnableManager {
     }
 
     public synchronized boolean isOpen() {
-        return ((CommunicationConnection) runnable).isOpen();
+        return getRunnable().isOpen();
     }
 
 
