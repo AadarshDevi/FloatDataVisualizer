@@ -47,6 +47,30 @@ public class AcquisitionPage extends BorderPane {
     class ModeButton extends Button {
         public ModeButton(String text) {
             super(text);
+
+            int width = 180;
+            int height = 30;
+
+            setPrefSize(width, height);
+            setMaxSize(width, height);
+            setMinSize(width, height);
+            setBackground(new Background(new BackgroundFill(
+                    Paint.valueOf("white"),
+                    new CornerRadii(5),
+                    Insets.EMPTY
+            )));
+
+            if (graphic != null) {
+                float svgSize = 18.0f;
+                SVG svg = new SVG(graphic);
+                Bounds b = svg.getBoundsInLocal();
+                double scale = (svgSize * percentSize)
+                        / Math.max(b.getWidth(), b.getHeight());
+                svg.setScaleX(scale);
+                svg.setScaleY(scale);
+                setGraphic(new Group(svg));
+                setGraphicTextGap(8);
+            }
         }
     }
 
