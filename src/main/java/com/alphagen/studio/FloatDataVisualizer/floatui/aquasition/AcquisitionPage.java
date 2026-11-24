@@ -16,6 +16,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 public class AcquisitionPage extends BorderPane {
+
     private static final Logger logger = LogManager.getLogger(AcquisitionPage.class);
     private final TilePane connectionPane;
 
