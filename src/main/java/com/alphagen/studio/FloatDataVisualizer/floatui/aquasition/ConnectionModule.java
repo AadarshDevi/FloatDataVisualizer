@@ -32,7 +32,7 @@ public class ConnectionModule extends Button {
         baudRateLabel = new ConnectionLabel("BaudRate: " + config.baudRate());
 
         ConnectionType type = config.type();
-        SVG connectionSVG = switch (type) {
+        connectionSVG = switch (type) {
             case SERIAL -> new SVG(SVG.Library.SERIAL_SVG_PATH);
             case WIFI -> new SVG(SVG.Library.WIFI_SVG_PATH);
             case BLUETOOTH -> new SVG(SVG.Library.BLUETOOTH_SVG_PATH);
