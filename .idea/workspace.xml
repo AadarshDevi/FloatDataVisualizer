@@ -4,25 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="776164ce-7a69-48e2-8934-c0376db3d4b9" name="Changes" comment="font: cascadia mono added">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/floatui/FontManager.java" afterDir="false" />
+    <list default="true" id="776164ce-7a69-48e2-8934-c0376db3d4b9" name="Changes" comment="commits">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/floatui/component/SVG.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/Launcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/Launcher.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/buoyui/backend/app/PlatformDetector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/buoyui/backend/app/PlatformDetector.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/buoyui/frontend/pages/connections/ConnectionsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/buoyui/frontend/pages/connections/ConnectionsController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/floatui/aquasition/ConnectionModule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/floatui/aquasition/ConnectionModule.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/alphagen/studio/FloatDataVisualizer/core.fonts/cascadia_mono/CascadiaMono-Bold.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/alphagen/studio/FloatDataVisualizer/floatui/fonts/cascadia_mono/CascadiaMono-Bold.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/alphagen/studio/FloatDataVisualizer/core.fonts/cascadia_mono/CascadiaMono-BoldItalic.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/alphagen/studio/FloatDataVisualizer/floatui/fonts/cascadia_mono/CascadiaMono-BoldItalic.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/alphagen/studio/FloatDataVisualizer/core.fonts/cascadia_mono/CascadiaMono-ExtraLight.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/alphagen/studio/FloatDataVisualizer/floatui/fonts/cascadia_mono/CascadiaMono-ExtraLight.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/alphagen/studio/FloatDataVisualizer/core.fonts/cascadia_mono/CascadiaMono-ExtraLightItalic.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/alphagen/studio/FloatDataVisualizer/floatui/fonts/cascadia_mono/CascadiaMono-ExtraLightItalic.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/alphagen/studio/FloatDataVisualizer/core.fonts/cascadia_mono/CascadiaMono-Italic.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/alphagen/studio/FloatDataVisualizer/floatui/fonts/cascadia_mono/CascadiaMono-Italic.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/alphagen/studio/FloatDataVisualizer/core.fonts/cascadia_mono/CascadiaMono-Light.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/alphagen/studio/FloatDataVisualizer/floatui/fonts/cascadia_mono/CascadiaMono-Light.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/alphagen/studio/FloatDataVisualizer/core.fonts/cascadia_mono/CascadiaMono-LightItalic.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/alphagen/studio/FloatDataVisualizer/floatui/fonts/cascadia_mono/CascadiaMono-LightItalic.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/alphagen/studio/FloatDataVisualizer/core.fonts/cascadia_mono/CascadiaMono-Medium.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/alphagen/studio/FloatDataVisualizer/floatui/fonts/cascadia_mono/CascadiaMono-Medium.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/alphagen/studio/FloatDataVisualizer/core.fonts/cascadia_mono/CascadiaMono-MediumItalic.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/alphagen/studio/FloatDataVisualizer/floatui/fonts/cascadia_mono/CascadiaMono-MediumItalic.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/alphagen/studio/FloatDataVisualizer/core.fonts/cascadia_mono/CascadiaMono-Regular.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/alphagen/studio/FloatDataVisualizer/floatui/fonts/cascadia_mono/CascadiaMono-Regular.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/alphagen/studio/FloatDataVisualizer/core.fonts/cascadia_mono/CascadiaMono-SemiBold.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/alphagen/studio/FloatDataVisualizer/floatui/fonts/cascadia_mono/CascadiaMono-SemiBold.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/alphagen/studio/FloatDataVisualizer/core.fonts/cascadia_mono/CascadiaMono-SemiBoldItalic.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/alphagen/studio/FloatDataVisualizer/floatui/fonts/cascadia_mono/CascadiaMono-SemiBoldItalic.ttf" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -164,7 +149,9 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.BuoyUI.executor": "Run",
     "Application.Launcher.executor": "Run",
+    "Application.Main.executor": "Run",
     "CidrDebugProfileConversion": "true",
     "Maven.FloatDataVisualizer [clean].executor": "Run",
     "Maven.FloatDataVisualizer [package].executor": "Run",
@@ -694,15 +681,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="removed commented out code." />
-    <MESSAGE value="test code commented out" />
-    <MESSAGE value="test ui and data commented out was removed" />
-    <MESSAGE value="app config, settings, and data folder names" />
-    <MESSAGE value="settings up stage and finding os" />
-    <MESSAGE value="code is duplicate of BuoyUI" />
-    <MESSAGE value="LOGGER into logger" />
-    <MESSAGE value="ConnectionCard's new replacement, ConnectionModule" />
-    <MESSAGE value="ConnectionUI's new replacement, AcquaitionPage" />
     <MESSAGE value="moved global private vars into local vars" />
     <MESSAGE value="usersystem get instance method" />
     <MESSAGE value="usersystem var" />
@@ -716,10 +694,19 @@
     <MESSAGE value="space unicode" />
     <MESSAGE value="connection module import" />
     <MESSAGE value="DataCard replaced with ConnectionModule" />
-    <MESSAGE value="commits" />
     <MESSAGE value="creating a new background" />
     <MESSAGE value="font: cascadia mono added" />
-    <option name="LAST_COMMIT_MESSAGE" value="font: cascadia mono added" />
+    <MESSAGE value="updated insets to empty, set radius from 5 to 15, paint string has #" />
+    <MESSAGE value="getting font from font manager" />
+    <MESSAGE value="font moved: cascadia mono" />
+    <MESSAGE value="class to load fonts" />
+    <MESSAGE value="conditional because win11 != windows" />
+    <MESSAGE value="resized modules to a good size" />
+    <MESSAGE value="removed the check that is needed to tell if a data card is invalid" />
+    <MESSAGE value="main is enabled, buoy is disabled" />
+    <MESSAGE value="imports" />
+    <MESSAGE value="commits" />
+    <option name="LAST_COMMIT_MESSAGE" value="commits" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
