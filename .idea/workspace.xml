@@ -5,9 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="776164ce-7a69-48e2-8934-c0376db3d4b9" name="Changes" comment="commits">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/floatui/component/SVG.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/floatui/aquasition/ConnectionModule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/floatui/aquasition/ConnectionModule.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/floatui/component/SVG.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/floatui/component/SVG.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -681,11 +681,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="moved global private vars into local vars" />
-    <MESSAGE value="usersystem get instance method" />
-    <MESSAGE value="usersystem var" />
-    <MESSAGE value="user system os detection" />
-    <MESSAGE value="comment for future update" />
     <MESSAGE value="tab unicode" />
     <MESSAGE value="paths import removed" />
     <MESSAGE value="user system import" />
@@ -705,8 +700,13 @@
     <MESSAGE value="removed the check that is needed to tell if a data card is invalid" />
     <MESSAGE value="main is enabled, buoy is disabled" />
     <MESSAGE value="imports" />
+    <MESSAGE value="moved setting font to the right place next to the label" />
+    <MESSAGE value="name label font, color, size, paddding. then port label, same thing. adding svgs to the hbox" />
+    <MESSAGE value="convinience class for svg paths" />
+    <MESSAGE value="connectionNMame renamed to namelabel" />
     <MESSAGE value="commits" />
-    <option name="LAST_COMMIT_MESSAGE" value="commits" />
+    <MESSAGE value="fixed svg not showing up in some places" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed svg not showing up in some places" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
