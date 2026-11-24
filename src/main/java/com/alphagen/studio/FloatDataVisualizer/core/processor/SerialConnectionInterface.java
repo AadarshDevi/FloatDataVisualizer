@@ -36,12 +36,12 @@ public class SerialConnection implements CommunicationConnection {
     @Override
     public void run() {
 
-        disconnected = false;
+        isConnected = false;
 
         // fixme: uncomment code when having serial
         if (serialPort == null) {
             logger.error("Unable to find SerialPort.");
-            disconnected = true;
+            isConnected = false;
             return;
         }
 
@@ -49,11 +49,12 @@ public class SerialConnection implements CommunicationConnection {
 
         if (!serialPort.isOpen()) {
             logger.error("Unable to open serial port.");
-            disconnected = true;
+            isConnected = false;
             return;
         }
 
         collectData = false;
+        isConnected = true;
 
         // Reset Float Reciever
         serialPort.clearDTR();
@@ -61,7 +62,7 @@ public class SerialConnection implements CommunicationConnection {
             Thread.sleep(100);
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();
-            disconnected = true;
+            isConnected = false;
             serialPort.closePort();
             return;
         }
@@ -76,7 +77,7 @@ public class SerialConnection implements CommunicationConnection {
             @Override
             public void serialEvent(SerialPortEvent event) {
                 if (event.getEventType() == SerialPort.LISTENING_EVENT_PORT_DISCONNECTED) {
-                    disconnected = true;
+                    isConnected = false;
                 }
             }
         });
@@ -101,7 +102,7 @@ public class SerialConnection implements CommunicationConnection {
                     if (!serialPort.isOpen() || serialPort.bytesAvailable() == -1) {
                         logger.error("Disconnected from SerialPort.");
                         collectData = false;
-                        disconnected = true;
+                        isConnected = false;
                         break;
                     }
                     continue;
@@ -123,8 +124,9 @@ public class SerialConnection implements CommunicationConnection {
             }
         } catch (IOException e) {
             logger.error("Unable to open serial port.");
-            disconnected = true;
+            isConnected = false;
         } finally {
+            isConnected = false;
             collectData = false;
             serialPort.removeDataListener();
             serialPort.closePort();
@@ -166,8 +168,8 @@ public class SerialConnection implements CommunicationConnection {
     }
 
     @Override
-    public boolean isConnected() {
-        return !disconnected;
+    public synchronized boolean isConnected() {
+        return isConnected;
     }
 
     public boolean isPortAvailable() {
