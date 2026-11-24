@@ -77,7 +77,9 @@ public class Main extends Application {
         // todo: read settings file
         SettingsManager sm = SettingsManager.getInstance();
 
-        Scene scene = new Scene(new AcquisitionPage());
+        AcquisitionPage acquisitionPage = new AcquisitionPage();
+        acquisitionPage.loadConnections();
+        Scene scene = new Scene(acquisitionPage);
         scene.setFill(Color.TRANSPARENT);
 
         StageManager.setConnectionsScene();
