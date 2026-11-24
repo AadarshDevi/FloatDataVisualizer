@@ -2,6 +2,7 @@ package com.alphagen.studio.FloatDataVisualizer.core.system;
 
 
 import com.alphagen.studio.FloatDataVisualizer.core.AppInfo;
+import com.alphagen.studio.FloatDataVisualizer.core.data.OperatingSystem;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -15,14 +16,14 @@ public class FileSystem {
     private final Path rootAppSettingsPath;
     private final Path rootAppDataPath;
 
-    public FileSystem(UserSystem.OperatingSystem os) {
+    public FileSystem(OperatingSystem os) {
 
         // setting base file locations
         rootAppDataPath = getRootAppDataPath(os);
         rootAppSettingsPath = getRootAppSettingsPath(os);
     }
 
-    public Path getRootAppSettingsPath(UserSystem.OperatingSystem os) {
+    public Path getRootAppSettingsPath(OperatingSystem os) {
         Path path = null;
         switch (os) {
             case WINDOWS:
@@ -59,7 +60,7 @@ public class FileSystem {
         return path;
     }
 
-    public Path getRootAppDataPath(UserSystem.OperatingSystem os) {
+    public Path getRootAppDataPath(OperatingSystem os) {
         Path path = null;
         switch (os) {
             case WINDOWS:

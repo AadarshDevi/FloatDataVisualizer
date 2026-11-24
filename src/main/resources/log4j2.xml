@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Configuration status="info">
+    <Appenders>
+        <Console name="ConsoleLogger" target="SYSTEM_OUT">
+            <PatternLayout>
+                <Pattern>
+                    %highlight{[%d - %-p]: %C{1}.%M - %m}{ERROR=red, WARN=yellow, INFO=default}%n
+                </Pattern>
+            </PatternLayout>
+        </Console>
+    </Appenders>
+
+    <Loggers>
+        <Root level="info">
+            <AppenderRef ref="ConsoleLogger"/>
+        </Root>
+    </Loggers>
+</Configuration>
