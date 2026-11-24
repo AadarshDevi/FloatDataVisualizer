@@ -1,5 +1,6 @@
 package com.alphagen.studio.FloatDataVisualizer.buoyui.backend.app;
 
+import com.alphagen.studio.FloatDataVisualizer.core.data.OperatingSystem;
 import com.alphagen.studio.FloatDataVisualizer.core.system.UserSystem;
 import lombok.Getter;
 import org.apache.logging.log4j.LogManager;
@@ -17,7 +18,15 @@ public class PlatformDetector {
 
     // todo: delete method once platform detector is no longer needed
     public static void detectPlatform() {
-        OSPLATFORM = Platform.valueOf(UserSystem.getInstance().getOs().toString());
+
+        OperatingSystem os = UserSystem.getInstance().getOs();
+
+        if (os == OperatingSystem.WINDOWS) {
+            OSPLATFORM = Platform.WIN11;
+        } else {
+            OSPLATFORM = Platform.valueOf(os.toString());
+        }
+
         String osName = System.getProperty("os.name");
         if (osName.toLowerCase().contains("win")) {
 //            OSPLATFORM = Platform.WIN11;
