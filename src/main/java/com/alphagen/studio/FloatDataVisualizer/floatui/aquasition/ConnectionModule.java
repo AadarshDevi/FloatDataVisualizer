@@ -87,5 +87,13 @@ public class ConnectionModule extends Button {
             Font font = new Font(getFont().getFamily(), fontSize);
             setFont(font);
         }
+
+        public void toLight() {
+            setTextFill(Paint.valueOf("black"));
+        }
+
+        public void toDark() {
+            setTextFill(Paint.valueOf("white"));
+        }
     }
 }
