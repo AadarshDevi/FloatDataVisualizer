@@ -136,6 +136,12 @@ public class AcquisitionPage extends BorderPane {
             setGraphic(new Group(buttonGraphic));
             setGraphicTextGap(8);
         }
+
+        public void toLight() {
+        }
+
+        public void toDark() {
+        }
     }
 
     static class Library {
