@@ -278,6 +278,8 @@ public class GrapherController {
                 });
             }
         });
+        database.start();
+        userInterfaceUpdater.start();
         logger.info("Serial Communication > Serial and Database");
     }
 
