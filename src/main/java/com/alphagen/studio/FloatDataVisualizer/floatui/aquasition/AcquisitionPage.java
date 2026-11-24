@@ -87,7 +87,7 @@ public class AcquisitionPage extends BorderPane {
         connectionPane.setPrefColumns(2);
         connectionPane.setHgap(10);
         connectionPane.setVgap(10);
-        connectionPane.setPadding(new Insets(10, 10, 10, 10));
+        connectionPane.setPadding(new Insets(10, 15, 10, 15));
         this.setCenter(connectionPane);
     }
 
