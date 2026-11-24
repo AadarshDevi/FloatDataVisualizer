@@ -15,6 +15,7 @@ import com.alphagen.studio.FloatDataVisualizer.core.data.ConnectionConfig;
 import com.alphagen.studio.FloatDataVisualizer.core.data.SensorUnit;
 import com.alphagen.studio.FloatDataVisualizer.core.processor.SerialConnection;
 import com.alphagen.studio.FloatDataVisualizer.core.system.threader.ConnectionManager;
+import com.alphagen.studio.FloatDataVisualizer.core.system.threader.RunnableManager;
 import javafx.application.Platform;
 import javafx.beans.property.SimpleDoubleProperty;
 import javafx.beans.property.SimpleIntegerProperty;
@@ -39,12 +40,11 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.concurrent.*;
+import java.util.concurrent.LinkedBlockingQueue;
+import java.util.concurrent.TimeUnit;
 
 public class GrapherController {
     private static final Logger logger = LogManager.getLogger(GrapherController.class);
-    private final ExecutorService database = Executors.newSingleThreadExecutor();
-    private final ExecutorService uiUpdater = Executors.newSingleThreadExecutor();
     @FXML public TabPane graphPane;
     @FXML public Tab controlsTab;
     @FXML public Tab tableTab;
@@ -71,10 +71,10 @@ public class GrapherController {
     private ConnectionManager readerRunnableManager;
     private SerialConnection serialConnection;
     private SettingsManager sm;
-    private Future<?> activeDataBase;
+    private RunnableManager database;
     @Setter private ConnectionConfig connectionConfig;
     private DataPointProcessor dpp;
-    private Future<?> activeUIUpdater;
+    private RunnableManager userInterfaceUpdater;
 
     // todo: add css in the fxml for the table rows, focused, selected, hover, normal, font
 
@@ -202,10 +202,9 @@ public class GrapherController {
         // todo replace with ConnectionManager
 //        if (readerRunnableManager.isRunning()) {
         readerRunnableManager.stop();
+        database.stop();
+        userInterfaceUpdater.stop();
         logger.info("Serial Communication stopped.");
-        if (activeDataBase != null) activeDataBase.cancel(true);
-        if (activeUIUpdater != null) activeUIUpdater.cancel(true);
-//        }
 
         stopDataTransfer.setDisable(true);
         startDataTransfer.setDisable(false);
@@ -261,8 +260,8 @@ public class GrapherController {
 
         logger.info("Serial Communication > Start");
 
-        activeDataBase = database.submit(dpp);
-        activeUIUpdater = uiUpdater.submit(() -> {
+        database = new RunnableManager(dpp);
+        userInterfaceUpdater = new RunnableManager(() -> {
             logger.info("Grapher > Running UI Updater");
             LinkedBlockingQueue<DataPoint> rawArray = dpp.getParsedArray();
 
