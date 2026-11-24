@@ -2,9 +2,15 @@ package com.alphagen.studio.FloatDataVisualizer.floatui.aquasition;
 
 
 import com.alphagen.studio.FloatDataVisualizer.core.data.ConnectionConfig;
+import com.alphagen.studio.FloatDataVisualizer.floatui.FontManager;
+import javafx.geometry.Insets;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundFill;
+import javafx.scene.layout.CornerRadii;
 import javafx.scene.layout.VBox;
+import javafx.scene.paint.Paint;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
