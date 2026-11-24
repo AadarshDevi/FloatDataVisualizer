@@ -88,7 +88,7 @@ public class AcquisitionPage extends BorderPane {
             buttonGraphic.setScaleX(scale);
             buttonGraphic.setScaleY(scale);
 
-            setGraphic(new Group(svg));
+            setGraphic(new Group(buttonGraphic));
             setGraphicTextGap(8);
         }
     }
