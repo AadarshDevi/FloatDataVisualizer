@@ -74,9 +74,7 @@ public class AcquisitionPage extends BorderPane {
         }
 
         public void setSVG(String graphic) {
-            if (graphic == null) {
-                return;
-            }
+            if (graphic == null) return;
 
             float svgSize = 16.0f;
 
