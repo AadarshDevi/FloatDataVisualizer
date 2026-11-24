@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="776164ce-7a69-48e2-8934-c0376db3d4b9" name="Changes" comment="commits">
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/Main.java" afterDir="false" />
+    <list default="true" id="776164ce-7a69-48e2-8934-c0376db3d4b9" name="Changes" comment="space unicode">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/buoyui/backend/app/PlatformDetector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/buoyui/backend/app/PlatformDetector.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/core/system/UserSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/core/system/UserSystem.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -676,15 +678,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="updating ui if serial conn is disconnected" />
-    <MESSAGE value="something" />
-    <MESSAGE value="disconnected to connected" />
-    <MESSAGE value="disconnected replaced by connected" />
-    <MESSAGE value="importing entire concurrency lib" />
-    <MESSAGE value="file name fixed: serial connection" />
-    <MESSAGE value="initial delay for the mc to reset" />
-    <MESSAGE value="moved checking for disconection" />
-    <MESSAGE value="array.take blocking to array.poll timeout blocking" />
     <MESSAGE value="thread interupted. so nothing to do" />
     <MESSAGE value="null check cause poll can give null objs" />
     <MESSAGE value="ui updates buttons fixed." />
@@ -700,8 +693,17 @@
     <MESSAGE value="LOGGER into logger" />
     <MESSAGE value="ConnectionCard's new replacement, ConnectionModule" />
     <MESSAGE value="ConnectionUI's new replacement, AcquaitionPage" />
+    <MESSAGE value="moved global private vars into local vars" />
     <MESSAGE value="commits" />
-    <option name="LAST_COMMIT_MESSAGE" value="commits" />
+    <MESSAGE value="usersystem get instance method" />
+    <MESSAGE value="usersystem var" />
+    <MESSAGE value="user system os detection" />
+    <MESSAGE value="comment for future update" />
+    <MESSAGE value="tab unicode" />
+    <MESSAGE value="paths import removed" />
+    <MESSAGE value="user system import" />
+    <MESSAGE value="space unicode" />
+    <option name="LAST_COMMIT_MESSAGE" value="space unicode" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
