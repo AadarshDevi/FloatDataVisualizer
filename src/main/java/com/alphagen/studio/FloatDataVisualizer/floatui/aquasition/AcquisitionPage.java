@@ -14,6 +14,14 @@ public class AcquisitionPage extends BorderPane {
         ModeButton analysisButton = new ModeButton("Analysis");
         ModeButton settingsButton = new ModeButton("Settings");
         ModeButton userManualButton = new ModeButton("User Manual");
+        ModeButton quitButton = new ModeButton("Quit");
+
+        setPrefSize(1080, 720);
+        setBackground(new Background(new BackgroundFill(
+                Paint.valueOf("#d3d3d3"),
+                new CornerRadii(15),
+                Insets.EMPTY
+        )));
 
         HBox buttonContainer = new HBox();
         buttonContainer.setSpacing(10);
