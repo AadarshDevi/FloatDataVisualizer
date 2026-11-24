@@ -43,21 +43,12 @@ public class ConnectionModule extends Button {
         descriptiveBox.getChildren().add(portlabel);
 
         ConnectionType type = config.type();
-        SVG connectionSVG;
-        switch (type) {
-            case SERIAL -> {
-                connectionSVG = new SVG(SVG.Library.SERIAL_SVG_PATH);
-            }
-            case WIFI -> {
-                connectionSVG = new SVG(SVG.Library.WIFI_SVG_PATH);
-            }
-            case BLUETOOTH -> {
-                connectionSVG = new SVG(SVG.Library.BLUETOOTH_SVG_PATH);
-            }
-            case null, default -> {
-                connectionSVG = new SVG(SVG.Library.UNKNOWN_SVG_PATH);
-            }
-        }
+        SVG connectionSVG = switch (type) {
+            case SERIAL -> new SVG(SVG.Library.SERIAL_SVG_PATH);
+            case WIFI -> new SVG(SVG.Library.WIFI_SVG_PATH);
+            case BLUETOOTH -> new SVG(SVG.Library.BLUETOOTH_SVG_PATH);
+            case null, default -> new SVG(SVG.Library.UNKNOWN_SVG_PATH);
+        };
         connectionSVG.setFill(Paint.valueOf("white"));
         descriptiveBox.getChildren().add(connectionSVG);
 
