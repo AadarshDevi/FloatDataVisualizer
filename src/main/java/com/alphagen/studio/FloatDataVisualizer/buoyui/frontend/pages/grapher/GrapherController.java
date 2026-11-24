@@ -265,6 +265,20 @@ public class GrapherController {
         activeUIUpdater = uiUpdater.submit(() -> {
             logger.info("Grapher > Running UI Updater");
             LinkedBlockingQueue<DataPoint> rawArray = dpp.getParsedArray();
+
+            long deadline = System.currentTimeMillis() + 500;
+            while (!serialConnection.isConnected() && System.currentTimeMillis() < deadline) {
+                if (Thread.currentThread().isInterrupted()) {
+                    return;
+                }
+                try {
+                    Thread.sleep(20);
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                    return;
+                }
+            }
+
             while (!Thread.currentThread().isInterrupted()) {
                 DataPoint dp;
                 try {
