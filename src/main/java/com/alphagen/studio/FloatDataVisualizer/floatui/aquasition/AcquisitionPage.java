@@ -80,8 +80,8 @@ public class AcquisitionPage extends BorderPane {
 
             float svgSize = 16.0f;
 
-            SVG svg = new SVG(graphic);
-            Bounds b = svg.getBoundsInLocal();
+            buttonGraphic = new SVG(graphic);
+            Bounds b = buttonGraphic.getBoundsInLocal();
 
             double scale = svgSize / Math.max(b.getWidth(), b.getHeight());
 
