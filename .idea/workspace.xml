@@ -4,12 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="776164ce-7a69-48e2-8934-c0376db3d4b9" name="Changes" comment="implement theme methods">
+    <list default="true" id="776164ce-7a69-48e2-8934-c0376db3d4b9" name="Changes" comment="commits">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/floatui/FontManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/floatui/FontManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/floatui/aquasition/AcquisitionPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/floatui/aquasition/AcquisitionPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/floatui/aquasition/ConnectionModule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/floatui/aquasition/ConnectionModule.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -683,32 +681,32 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="redundant code replaced with connection label" />
-    <MESSAGE value="importing font" />
-    <MESSAGE value="fixed typo in var name" />
+    <MESSAGE value="simplified math" />
+    <MESSAGE value="moved font paths to lib" />
+    <MESSAGE value="moved font path to lib" />
+    <MESSAGE value="updated font placement" />
+    <MESSAGE value="fixing float ui scene to have transparent background" />
     <MESSAGE value="commits" />
-    <MESSAGE value="implement theme methods" />
-    <MESSAGE value="buttons for the down menu" />
-    <MESSAGE value="my menu button" />
-    <MESSAGE value="added pref size amnd background to acqa page" />
-    <MESSAGE value="buttons container has a background and pref height" />
-    <MESSAGE value="added quit button to list of buttons in bottom menu" />
-    <MESSAGE value="borderpane import" />
-    <MESSAGE value="svgs needed for acquisition page" />
-    <MESSAGE value="adding svg to button, setting button size" />
-    <MESSAGE value="method to set svg graphic to mode button" />
-    <MESSAGE value="3 lines if to 1 line if" />
-    <MESSAGE value="extracted setting svg to a method" />
-    <MESSAGE value="updated scquisition svg path" />
-    <MESSAGE value="formatted addall children to button container" />
-    <MESSAGE value="extracted width and height of button" />
-    <MESSAGE value="updated corner radii" />
-    <MESSAGE value="added graphic string path to mode button" />
-    <MESSAGE value="removed a tab" />
-    <MESSAGE value="added sg path" />
-    <MESSAGE value="imports added" />
-    <MESSAGE value="import for svg scaling added" />
-    <option name="LAST_COMMIT_MESSAGE" value="import for svg scaling added" />
+    <MESSAGE value="lib to static" />
+    <MESSAGE value="renamed svg to graphic" />
+    <MESSAGE value="svg --&lt; graphic rename" />
+    <MESSAGE value="button svg is private global" />
+    <MESSAGE value="conn label static" />
+    <MESSAGE value="lombok getter import" />
+    <MESSAGE value="percent scale is now a var" />
+    <MESSAGE value="svg and percent sizes are final" />
+    <MESSAGE value="param for outline svg" />
+    <MESSAGE value="svg outline creation" />
+    <MESSAGE value="added percent size" />
+    <MESSAGE value="added outline bool" />
+    <MESSAGE value="added outline bools" />
+    <MESSAGE value="color class imported" />
+    <MESSAGE value="sout added" />
+    <MESSAGE value="formatted code" />
+    <MESSAGE value="added padding for the bottom" />
+    <MESSAGE value="old to new config adapter constructor" />
+    <MESSAGE value="simplified lambda" />
+    <option name="LAST_COMMIT_MESSAGE" value="simplified lambda" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
