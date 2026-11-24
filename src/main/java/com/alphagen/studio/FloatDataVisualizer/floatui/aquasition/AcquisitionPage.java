@@ -56,6 +56,10 @@ public class AcquisitionPage extends BorderPane {
         );
         buttonContainer.setPadding(new Insets(0, 0, 10, 0));
         this.setBottom(buttonContainer);
+        logger.info("Buttons loaded in Page.Bottom");
+
+        connectionPane = new TilePane();
+        this.setCenter(connectionPane);
     }
 
     public void placeConnections() {
