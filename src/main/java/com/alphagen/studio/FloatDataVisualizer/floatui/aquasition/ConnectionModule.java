@@ -63,6 +63,7 @@ public class ConnectionModule extends Button {
         module.setCenter(infoBox);
 
         setGraphic(module);
+        toLight();
     }
 
     public ConnectionModule(com.alphagen.studio.FloatDataVisualizer.buoyui.backend.data.ConnectionConfig config) {
