@@ -76,7 +76,7 @@ public class AcquisitionPage extends BorderPane {
                     Insets.EMPTY
             )));
 
-            setSVG(graphic);
+            setSVG(graphic, outline);
         }
 
         public void setSVG(String graphic, boolean outline) {
