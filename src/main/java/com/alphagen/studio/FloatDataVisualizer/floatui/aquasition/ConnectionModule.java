@@ -15,6 +15,14 @@ import javafx.scene.text.Font;
 
 public class ConnectionModule extends Button {
 
+    private final ConnectionLabel nameLabel;
+    private final ConnectionLabel portLabel;
+    private final ConnectionLabel baudRateLabel;
+    private final SVG connectionSVG;
+
+    private final CornerRadii radii = new CornerRadii(15);
+    private final Insets insets = Insets.EMPTY;
+
     public ConnectionModule(ConnectionConfig config) {
 
         ConnectionLabel nameLabel = new ConnectionLabel(config.name());
