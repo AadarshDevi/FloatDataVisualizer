@@ -26,6 +26,8 @@ public class Main extends Application {
         final String FILE_SETTINGS = "float.settings";
 
         StageManager.setMainStage(stage);
+        UserSystem userSystem = UserSystem.getInstance();
+        userSystem.detectOS();
         PlatformDetector.detectPlatform();
 
         logger.info("Initializing Backend");
