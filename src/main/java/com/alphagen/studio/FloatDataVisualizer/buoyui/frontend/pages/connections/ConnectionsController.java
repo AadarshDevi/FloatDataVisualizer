@@ -15,6 +15,7 @@ import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.pages.PageConstan
 import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.pages.connections.datacard.DataCardController;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.pages.connections.editor.ConnectionEditorController;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.util.StageUtil;
+import com.alphagen.studio.FloatDataVisualizer.floatui.aquasition.ConnectionModule;
 import com.fazecast.jSerialComm.SerialPort;
 import javafx.application.Platform;
 import javafx.collections.ObservableList;
