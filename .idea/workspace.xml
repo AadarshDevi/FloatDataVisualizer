@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="776164ce-7a69-48e2-8934-c0376db3d4b9" name="Changes" comment="connection version" />
+    <list default="true" id="776164ce-7a69-48e2-8934-c0376db3d4b9" name="Changes" comment="commits">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/buoyui/frontend/pages/grapher/GrapherController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/buoyui/frontend/pages/grapher/GrapherController.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -30,7 +33,7 @@
     <option name="PUSH_AUTO_UPDATE" value="true" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="lab/multi-threading" />
+        <entry key="$PROJECT_DIR$" value="dev" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -159,14 +162,16 @@
     &quot;code.cleanup.on.save&quot;: &quot;true&quot;,
     &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
     &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;dev&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;lab/multi-threading&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/CryosArtic/IdeaProjects/FloatDataVisualizer/src/main/resources&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.jshint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.jshint&quot;: &quot;&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
@@ -174,13 +179,14 @@
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
     &quot;rearrange.code.on.save&quot;: &quot;true&quot;,
     &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;terminal&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.alphagen.studio.FloatDataVisualizer.core.processor" />
       <recent name="com.alphagen.studio.FloatDataVisualizer.buoyui.backend.data" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
@@ -671,32 +677,32 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="junit is supposed to be somewhere else. this is i think for hunit 4, but i dont need it because i am using junit 5" />
-    <MESSAGE value="icons added to profile" />
-    <MESSAGE value="profile for deb created and updated with icon xml" />
-    <MESSAGE value="javafx mvn plugin added" />
-    <MESSAGE value="mvn dep plugin updated from 361 to 381" />
-    <MESSAGE value="mvn jar plugin added" />
-    <MESSAGE value="fixed app name, and changed version to use the version in mvn" />
-    <MESSAGE value="mvn jpackage plugin: added icon" />
-    <MESSAGE value="javafx mvn plugin was moved up the order" />
-    <MESSAGE value="updated profile:dmg to add dmg specific xml" />
-    <MESSAGE value="updated profile:msi to add msi specific xml" />
-    <MESSAGE value="updated profile:exe to add exe specific xml" />
-    <MESSAGE value="updated profile:rpm to add rpm specific xml" />
-    <MESSAGE value="updated profile:deb to add deb specific xml" />
-    <MESSAGE value="description and vendor info added to jpackage" />
-    <MESSAGE value="old exe xml removed. it was replaced with profiles. redundancies were erased" />
-    <MESSAGE value="exe dest folder moved to dest from dist, and xml:module replaced with input, mainjar, mainclass" />
-    <MESSAGE value="chnaged from ${version} to alpha" />
-    <MESSAGE value="macos-pkg added" />
-    <MESSAGE value=".idea" />
-    <MESSAGE value="File containing structure of different configs" />
-    <MESSAGE value="u[pdated author name" />
-    <MESSAGE value="new connection config container record" />
-    <MESSAGE value="connection type" />
-    <MESSAGE value="connection version" />
-    <option name="LAST_COMMIT_MESSAGE" value="connection version" />
+    <MESSAGE value="serial connection private global" />
+    <MESSAGE value="runnable to connection manager" />
+    <MESSAGE value="logger for serial comm stopped" />
+    <MESSAGE value="logs updated" />
+    <MESSAGE value="removed redundant manager.stop" />
+    <MESSAGE value="comments updated" />
+    <MESSAGE value="port disconnected alert" />
+    <MESSAGE value="comments removed" />
+    <MESSAGE value="updating ui if serial conn is disconnected" />
+    <MESSAGE value="something" />
+    <MESSAGE value="disconnected to connected" />
+    <MESSAGE value="disconnected replaced by connected" />
+    <MESSAGE value="importing entire concurrency lib" />
+    <MESSAGE value="file name fixed: serial connection" />
+    <MESSAGE value="initial delay for the mc to reset" />
+    <MESSAGE value="moved checking for disconection" />
+    <MESSAGE value="array.take blocking to array.poll timeout blocking" />
+    <MESSAGE value="thread interupted. so nothing to do" />
+    <MESSAGE value="null check cause poll can give null objs" />
+    <MESSAGE value="ui updates buttons fixed." />
+    <MESSAGE value="updated version from 2.0.0 to 3.0.1" />
+    <MESSAGE value="mac and linux builds will now have FloatDataVisualizer instead of floatdatavisualizer" />
+    <MESSAGE value="replaced executor and future with runnable managers" />
+    <MESSAGE value="removed commented out code." />
+    <MESSAGE value="commits" />
+    <option name="LAST_COMMIT_MESSAGE" value="commits" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

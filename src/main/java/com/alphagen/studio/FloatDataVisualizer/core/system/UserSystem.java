@@ -1,5 +1,7 @@
 package com.alphagen.studio.FloatDataVisualizer.core.system;
 
+import com.alphagen.studio.FloatDataVisualizer.core.data.OperatingSystem;
+import com.alphagen.studio.FloatDataVisualizer.core.data.Version;
 import com.jthemedetecor.OsThemeDetector;
 import lombok.Getter;
 import lombok.Setter;
@@ -19,7 +21,7 @@ public class UserSystem {
     public UserSystem() {
         this.os = detectOS();
         fileSystem = new FileSystem(os);
-        this.theme = detectTheme();
+        this.theme = detectTheme(SystemTheme.DARK); // fixme: need to read from settings file
     }
 
     public OperatingSystem detectOS() {
@@ -37,9 +39,9 @@ public class UserSystem {
         return os;
     }
 
-    public SystemTheme detectTheme() {
+    public SystemTheme detectTheme(SystemTheme userTheme) {
         OsThemeDetector detector = OsThemeDetector.getDetector();
-        SystemTheme theme = SystemTheme.OTHER;
+        SystemTheme theme = SystemTheme.SYSTEM;
 
         boolean isDarkTheme = detector.isDark();
 
@@ -53,22 +55,17 @@ public class UserSystem {
         return theme;
     }
 
-    public enum OperatingSystem {
-        WINDOWS,
-        MACOS,
-        LINUX,
-        OTHER
-    }
-
     enum SystemTheme {
         LIGHT,
         DARK,
-        OTHER
+        OTHER,
+        SYSTEM
     }
 
     record SystemFile(
             OperatingSystem os,
-            SystemTheme theme
+            SystemTheme theme,
+            Version appVersion
     ) {
     }
 
