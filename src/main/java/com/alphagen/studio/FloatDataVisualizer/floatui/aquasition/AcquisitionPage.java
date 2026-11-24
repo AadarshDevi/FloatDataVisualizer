@@ -25,4 +25,10 @@ public class AcquisitionPage extends BorderPane {
 
     }
 
+    class ModeButton extends Button {
+        public ModeButton(String text) {
+            super(text);
+        }
+    }
+
 }
