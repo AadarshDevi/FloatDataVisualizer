@@ -55,7 +55,7 @@ public class ConnectionModule extends Button {
 
         VBox infoBox = new VBox();
         infoBox.setAlignment(Pos.CENTER_LEFT);
-        infoBox.getChildren().addAll(portlabel, baudRateLabel);
+        infoBox.getChildren().addAll(portLabel, baudRateLabel);
         infoBox.setSpacing(6);
         infoBox.setPadding(new Insets(10, 0, 0, 0));
         module.setCenter(infoBox);
