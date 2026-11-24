@@ -84,6 +84,7 @@ public class AcquisitionPage extends BorderPane {
 
         for (ConnectionConfig connectionConfig : connectionsList) {
             ConnectionModule module = new ConnectionModule(connectionConfig);
+            module.toLight();
             connectionPane.getChildren().add(module);
         }
     }
