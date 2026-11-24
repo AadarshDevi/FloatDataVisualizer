@@ -191,24 +191,6 @@ public class GrapherController {
     }
 
     @FXML
-    public void stopingDataTransfer() {
-        readerRunnableManager.stop();
-        database.stop();
-        userInterfaceUpdater.stop();
-        logger.info("Serial Communication stopped.");
-
-        stopDataTransfer.setDisable(true);
-        startDataTransfer.setDisable(false);
-
-        if (dpp != null) {
-            logger.info("Parsed Array: " + dpp.getParsedArray().size());
-            logger.error("Serial Communication stopped");
-        }
-
-        logger.info("\n[Debug] Stopping Data Transfer\n");
-    }
-
-    @FXML
     public void startingDataTransfer() {
 
         // disable start button and enable stop button
@@ -297,6 +279,24 @@ public class GrapherController {
             }
         });
         logger.info("Serial Communication > Serial and Database");
+    }
+
+    @FXML
+    public void stopingDataTransfer() {
+        if (readerRunnableManager != null) readerRunnableManager.stop();
+        if (database != null) database.stop();
+        if (userInterfaceUpdater != null) userInterfaceUpdater.stop();
+        logger.info("Serial Communication stopped.");
+
+        stopDataTransfer.setDisable(true);
+        startDataTransfer.setDisable(false);
+
+        if (dpp != null) {
+            logger.info("Parsed Array: " + dpp.getParsedArray().size());
+            logger.error("Serial Communication stopped");
+        }
+
+        logger.info("\n[Debug] Stopping Data Transfer\n");
     }
 
     @FXML
