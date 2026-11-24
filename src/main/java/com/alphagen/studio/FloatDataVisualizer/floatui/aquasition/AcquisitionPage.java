@@ -54,7 +54,10 @@ public class AcquisitionPage extends BorderPane {
 
     }
 
-    class ModeButton extends Button {
+    static class ModeButton extends Button {
+
+        @Getter private SVG buttonGraphic;
+
         public ModeButton(String text, String graphic) {
             super(text);
 
