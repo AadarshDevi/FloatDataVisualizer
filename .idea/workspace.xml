@@ -7,6 +7,7 @@
     <list default="true" id="776164ce-7a69-48e2-8934-c0376db3d4b9" name="Changes" comment="commits">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/floatui/aquasition/ConnectionModule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/floatui/aquasition/ConnectionModule.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/floatui/component/SVG.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/floatui/component/SVG.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -680,7 +681,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="user system import" />
     <MESSAGE value="imported paths" />
     <MESSAGE value="single annotation as the same line as the var" />
     <MESSAGE value="space unicode" />
@@ -704,6 +704,7 @@
     <MESSAGE value="fixed svg not showing up in some places" />
     <MESSAGE value="position of port and conn type" />
     <MESSAGE value="svg path is a string and we can use lib to create new svgs" />
+    <MESSAGE value="switched to set value switch instead of switch to set value" />
     <MESSAGE value="commits" />
     <option name="LAST_COMMIT_MESSAGE" value="commits" />
   </component>
