@@ -680,9 +680,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="creating a new background" />
-    <MESSAGE value="font: cascadia mono added" />
-    <MESSAGE value="updated insets to empty, set radius from 5 to 15, paint string has #" />
     <MESSAGE value="getting font from font manager" />
     <MESSAGE value="font moved: cascadia mono" />
     <MESSAGE value="class to load fonts" />
@@ -704,8 +701,11 @@
     <MESSAGE value="commented out button import removed" />
     <MESSAGE value="container boxes moved down under javafx control" />
     <MESSAGE value="methods to switch between light and dark mode" />
+    <MESSAGE value="vbox to place svg on the bottom" />
+    <MESSAGE value="stuff to place stuff." />
     <MESSAGE value="commits" />
-    <option name="LAST_COMMIT_MESSAGE" value="commits" />
+    <MESSAGE value="old code removed" />
+    <option name="LAST_COMMIT_MESSAGE" value="old code removed" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
