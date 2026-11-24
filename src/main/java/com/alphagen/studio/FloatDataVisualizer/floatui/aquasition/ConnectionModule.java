@@ -72,28 +72,6 @@ public class ConnectionModule extends Button {
         module.setCenter(infoBox);
 
         setGraphic(module);
-//
-//        VBox module = new VBox();
-//        module.setPrefSize(506, 90);
-////        setGraphic(module);
-//        module.setPadding(new Insets(10));
-//
-//        BorderPane descriptiveBox = new BorderPane();
-//        descriptiveBox.setMaxWidth(Double.MAX_VALUE);
-//
-//        VBox infoBox = new VBox();
-//
-//        HBox svgPane = new HBox();
-//        svgPane.getChildren().add(connectionSVG);
-//        svgPane.setAlignment(Pos.CENTER_RIGHT);
-//        svgPane.setPadding(new Insets(0, 10, 0, 0));
-//
-//        descriptiveBox.setCenter(infoBox);
-//        descriptiveBox.setBottom(baudRateLabel);
-//        descriptiveBox.setRight(svgPane);
-//        module.getChildren().add(nameLabel);
-//        module.getChildren().add(descriptiveBox);
-//        descriptiveBox.setCenter(portlabel);
     }
 
     public void toLight() {
