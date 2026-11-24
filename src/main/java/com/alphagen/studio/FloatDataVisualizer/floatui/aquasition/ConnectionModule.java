@@ -57,35 +57,43 @@ public class ConnectionModule extends Button {
             // todo make button do stuff
         });
 
-        BorderPane mod = new BorderPane();
-        mod.setPrefSize(506, 90);
-        mod.setPadding(new Insets(10));
-
-        mod.setTop(nameLabel);
-        mod.setRight(connectionSVG);
-        setGraphic(mod);
-
-        VBox module = new VBox();
+        BorderPane module = new BorderPane();
         module.setPrefSize(506, 90);
-//        setGraphic(module);
         module.setPadding(new Insets(10));
 
-        BorderPane descriptiveBox = new BorderPane();
-        descriptiveBox.setMaxWidth(Double.MAX_VALUE);
+        module.setTop(nameLabel);
+        module.setRight(svgPane);
 
         VBox infoBox = new VBox();
+        infoBox.setAlignment(Pos.CENTER_LEFT);
+        infoBox.getChildren().addAll(portlabel, baudRateLabel);
+        infoBox.setSpacing(6);
+        infoBox.setPadding(new Insets(10, 0, 0, 0));
+        module.setCenter(infoBox);
 
-        HBox svgPane = new HBox();
-        svgPane.getChildren().add(connectionSVG);
-        svgPane.setAlignment(Pos.CENTER_RIGHT);
-        svgPane.setPadding(new Insets(0, 10, 0, 0));
-
-        descriptiveBox.setCenter(infoBox);
-        descriptiveBox.setBottom(baudRateLabel);
-        descriptiveBox.setRight(svgPane);
-        module.getChildren().add(nameLabel);
-        module.getChildren().add(descriptiveBox);
-        descriptiveBox.setCenter(portlabel);
+        setGraphic(module);
+//
+//        VBox module = new VBox();
+//        module.setPrefSize(506, 90);
+////        setGraphic(module);
+//        module.setPadding(new Insets(10));
+//
+//        BorderPane descriptiveBox = new BorderPane();
+//        descriptiveBox.setMaxWidth(Double.MAX_VALUE);
+//
+//        VBox infoBox = new VBox();
+//
+//        HBox svgPane = new HBox();
+//        svgPane.getChildren().add(connectionSVG);
+//        svgPane.setAlignment(Pos.CENTER_RIGHT);
+//        svgPane.setPadding(new Insets(0, 10, 0, 0));
+//
+//        descriptiveBox.setCenter(infoBox);
+//        descriptiveBox.setBottom(baudRateLabel);
+//        descriptiveBox.setRight(svgPane);
+//        module.getChildren().add(nameLabel);
+//        module.getChildren().add(descriptiveBox);
+//        descriptiveBox.setCenter(portlabel);
     }
 
     public void toLight() {
