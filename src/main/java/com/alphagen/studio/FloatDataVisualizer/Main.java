@@ -6,10 +6,12 @@ import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.app.PlatformDetect
 import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.settings.SettingsManager;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.managers.StageManager;
 import com.alphagen.studio.FloatDataVisualizer.core.system.UserSystem;
+import com.alphagen.studio.FloatDataVisualizer.floatui.aquasition.AcquisitionPage;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.image.Image;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -75,8 +77,11 @@ public class Main extends Application {
         // todo: read settings file
         SettingsManager sm = SettingsManager.getInstance();
 
+        Scene scene = new Scene(new AcquisitionPage());
+        scene.setFill(Color.TRANSPARENT);
+
         StageManager.setConnectionsScene();
-        Scene scene = StageManager.getConnectionsScene();
+//        Scene scene = StageManager.getConnectionsScene();
         stage.setScene(scene);
         stage.setTitle("Float Data Visualizer");
         stage.getIcons().add(new Image(Objects.requireNonNull(Launcher.class.getResourceAsStream("buoyui/logos/ImageLogo.png"))));
