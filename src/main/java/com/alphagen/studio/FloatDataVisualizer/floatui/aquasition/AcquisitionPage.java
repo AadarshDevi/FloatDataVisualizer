@@ -26,6 +26,8 @@ public class AcquisitionPage extends BorderPane {
         ModeButton userManualButton = new ModeButton("User Manual", Library.USER_MANUAL_SVG_PATH, false);
         ModeButton quitButton = new ModeButton("Quit", Library.QUIT_SVG_PATH, true);
         quitButton.setOnAction(_ -> System.exit(1));
+        logger.info("Main Menu Buttons Ready");
+
 
         setPrefSize(1080, 720);
         setBackground(new Background(new BackgroundFill(
