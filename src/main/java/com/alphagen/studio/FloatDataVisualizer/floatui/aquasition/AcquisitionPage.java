@@ -62,7 +62,8 @@ public class AcquisitionPage extends BorderPane {
         this.setCenter(connectionPane);
     }
 
-    public void placeConnections() {
+    public void loadConnections() {
+        ArrayList<ConnectionConfig> connectionsList = Connections.Processor.readAllConnections();
 
         if (connectionsList == null) {
             logger.info("There are no connections to load.");
