@@ -291,7 +291,8 @@ public class GrapherController {
                 try {
                     dp = rawArray.poll(250, TimeUnit.MILLISECONDS);
                 } catch (InterruptedException e) {
-                    throw new RuntimeException(e);
+                    Thread.currentThread().interrupt();
+                    break;
                 }
 
 
