@@ -5,9 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="776164ce-7a69-48e2-8934-c0376db3d4b9" name="Changes" comment="commits">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/core/data/SystemTheme.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/core/system/UserSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/core/system/UserSystem.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/floatui/aquasition/AcquisitionPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/floatui/aquasition/AcquisitionPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/floatui/aquasition/ConnectionModule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/floatui/aquasition/ConnectionModule.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,9 +23,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Exception" />
-        <option value="Enum" />
         <option value="Record" />
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -681,32 +683,32 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="simplified math" />
-    <MESSAGE value="moved font paths to lib" />
-    <MESSAGE value="moved font path to lib" />
-    <MESSAGE value="updated font placement" />
-    <MESSAGE value="fixing float ui scene to have transparent background" />
-    <MESSAGE value="commits" />
-    <MESSAGE value="lib to static" />
-    <MESSAGE value="renamed svg to graphic" />
-    <MESSAGE value="svg --&lt; graphic rename" />
-    <MESSAGE value="button svg is private global" />
-    <MESSAGE value="conn label static" />
-    <MESSAGE value="lombok getter import" />
-    <MESSAGE value="percent scale is now a var" />
-    <MESSAGE value="svg and percent sizes are final" />
-    <MESSAGE value="param for outline svg" />
-    <MESSAGE value="svg outline creation" />
-    <MESSAGE value="added percent size" />
-    <MESSAGE value="added outline bool" />
-    <MESSAGE value="added outline bools" />
-    <MESSAGE value="color class imported" />
-    <MESSAGE value="sout added" />
     <MESSAGE value="formatted code" />
     <MESSAGE value="added padding for the bottom" />
     <MESSAGE value="old to new config adapter constructor" />
     <MESSAGE value="simplified lambda" />
-    <option name="LAST_COMMIT_MESSAGE" value="simplified lambda" />
+    <MESSAGE value="setting up conn page" />
+    <MESSAGE value="logg that buttons are ready and info can be placed onto tilepane" />
+    <MESSAGE value="making sure list is not null, and adding list to ui" />
+    <MESSAGE value="updated method name" />
+    <MESSAGE value="button funcs ready" />
+    <MESSAGE value="tilepane for conns" />
+    <MESSAGE value="empty space added" />
+    <MESSAGE value="added connection imports" />
+    <MESSAGE value="arraylist imported" />
+    <MESSAGE value="commits" />
+    <MESSAGE value="settup of tile pane" />
+    <MESSAGE value="light and dark theme" />
+    <MESSAGE value="toDark method" />
+    <MESSAGE value="to Light method" />
+    <MESSAGE value="removed fill color" />
+    <MESSAGE value="private final vars to make theme" />
+    <MESSAGE value="moved to private global" />
+    <MESSAGE value="background moved to theme" />
+    <MESSAGE value="to light by defsult" />
+    <MESSAGE value="settings module to light mode" />
+    <MESSAGE value="moved to separate file" />
+    <option name="LAST_COMMIT_MESSAGE" value="moved to separate file" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
