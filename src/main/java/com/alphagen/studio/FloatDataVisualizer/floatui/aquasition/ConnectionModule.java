@@ -71,7 +71,7 @@ public class ConnectionModule extends Button {
     public void toDark() {
     }
 
-    class ConnectionLabel extends Label {
+    static class ConnectionLabel extends Label {
         public ConnectionLabel(String text) {
             super(text);
             setFont(FontManager.getFont(FontManager.Library.CASCADIA_MON_MEDIUM, 14));
