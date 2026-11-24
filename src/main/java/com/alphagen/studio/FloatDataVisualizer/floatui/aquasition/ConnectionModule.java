@@ -6,6 +6,7 @@ import com.alphagen.studio.FloatDataVisualizer.core.data.ConnectionType;
 import com.alphagen.studio.FloatDataVisualizer.floatui.FontManager;
 import com.alphagen.studio.FloatDataVisualizer.floatui.component.SVG;
 import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.*;
@@ -33,6 +34,7 @@ public class ConnectionModule extends Button {
 
         HBox descriptiveBox = new HBox();
         module.getChildren().add(descriptiveBox);
+        descriptiveBox.setAlignment(Pos.CENTER_LEFT);
 
         Label portlabel = new Label("Port: " + config.port());
         portlabel.setFont(FontManager.getFont(FontManager.CASCADIA_MON_MEDIUM, 14));
