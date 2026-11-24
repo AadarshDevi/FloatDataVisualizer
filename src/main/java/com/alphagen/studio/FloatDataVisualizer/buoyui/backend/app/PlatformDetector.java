@@ -30,5 +30,5 @@ public class PlatformDetector {
 		LOGGER.info("OS: {}", OSPLATFORM);
 		LOGGER.info("Project Root: {}", PROJECTROOT);
 
-	}
+    }
 }
