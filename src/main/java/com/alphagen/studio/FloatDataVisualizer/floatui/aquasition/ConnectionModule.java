@@ -3,6 +3,7 @@ package com.alphagen.studio.FloatDataVisualizer.floatui.aquasition;
 
 import com.alphagen.studio.FloatDataVisualizer.core.data.ConnectionConfig;
 import com.alphagen.studio.FloatDataVisualizer.core.data.ConnectionType;
+import com.alphagen.studio.FloatDataVisualizer.core.data.SystemTheme;
 import com.alphagen.studio.FloatDataVisualizer.floatui.FontManager;
 import com.alphagen.studio.FloatDataVisualizer.floatui.component.SVG;
 import javafx.geometry.Insets;
@@ -94,6 +95,9 @@ public class ConnectionModule extends Button {
                 radii,
                 insets
         )));
+    }
+
+    public void setTheme(SystemTheme theme) {
     }
 
     static class ConnectionLabel extends Label {
