@@ -280,6 +280,13 @@ public class GrapherController {
             }
 
             while (!Thread.currentThread().isInterrupted()) {
+
+                if (!serialConnection.isConnected()) {
+                    logger.warn("Serial Connection Disconnected");
+                    Platform.runLater(this::stopingDataTransfer);
+                    break;
+                }
+
                 DataPoint dp;
                 try {
                     dp = rawArray.take();
@@ -287,11 +294,6 @@ public class GrapherController {
                     throw new RuntimeException(e);
                 }
 
-                if (!serialConnection.isConnected()) {
-                    logger.warn("Serial Connection Disconnected");
-                    Platform.runLater(this::stopingDataTransfer);
-                    break;
-                }
 
                 Platform.runLater(() -> {
                     double[] measures = dp.measurements();
