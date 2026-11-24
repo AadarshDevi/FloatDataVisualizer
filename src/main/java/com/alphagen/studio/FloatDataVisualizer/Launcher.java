@@ -11,8 +11,8 @@ public class Launcher {
 
     static void main(String[] args) {
         LOGGER.info("Starting FloatDataVisualizer");
-        Application.launch(BuoyUI.class, args);
-//        Application.launch(Main.class, args);
+//        Application.launch(BuoyUI.class, args);
+        Application.launch(Main.class, args);
     }
 
 }
