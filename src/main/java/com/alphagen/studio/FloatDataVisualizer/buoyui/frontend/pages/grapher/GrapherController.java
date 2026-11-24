@@ -295,6 +295,7 @@ public class GrapherController {
                     break;
                 }
 
+                if (dp == null) continue;
 
                 Platform.runLater(() -> {
                     double[] measures = dp.measurements();
