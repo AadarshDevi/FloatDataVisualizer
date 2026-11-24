@@ -64,6 +64,15 @@ public class AcquisitionPage extends BorderPane {
 
     public void placeConnections() {
 
+        if (connectionsList == null) {
+            logger.info("There are no connections to load.");
+            return;
+        }
+
+        for (ConnectionConfig connectionConfig : connectionsList) {
+            ConnectionModule module = new ConnectionModule(connectionConfig);
+            connectionPane.getChildren().add(module);
+        }
     }
 
     static class ModeButton extends Button {
