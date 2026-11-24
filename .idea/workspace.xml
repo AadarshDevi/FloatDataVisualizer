@@ -4,9 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="776164ce-7a69-48e2-8934-c0376db3d4b9" name="Changes" comment="commits">
+    <list default="true" id="776164ce-7a69-48e2-8934-c0376db3d4b9" name="Changes" comment="font: cascadia mono added">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/floatui/FontManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/Launcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/Launcher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/buoyui/backend/app/PlatformDetector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/buoyui/backend/app/PlatformDetector.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/buoyui/frontend/pages/connections/ConnectionsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/buoyui/frontend/pages/connections/ConnectionsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/floatui/aquasition/ConnectionModule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/floatui/aquasition/ConnectionModule.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/alphagen/studio/FloatDataVisualizer/core.fonts/cascadia_mono/CascadiaMono-Bold.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/alphagen/studio/FloatDataVisualizer/floatui/fonts/cascadia_mono/CascadiaMono-Bold.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/alphagen/studio/FloatDataVisualizer/core.fonts/cascadia_mono/CascadiaMono-BoldItalic.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/alphagen/studio/FloatDataVisualizer/floatui/fonts/cascadia_mono/CascadiaMono-BoldItalic.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/alphagen/studio/FloatDataVisualizer/core.fonts/cascadia_mono/CascadiaMono-ExtraLight.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/alphagen/studio/FloatDataVisualizer/floatui/fonts/cascadia_mono/CascadiaMono-ExtraLight.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/alphagen/studio/FloatDataVisualizer/core.fonts/cascadia_mono/CascadiaMono-ExtraLightItalic.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/alphagen/studio/FloatDataVisualizer/floatui/fonts/cascadia_mono/CascadiaMono-ExtraLightItalic.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/alphagen/studio/FloatDataVisualizer/core.fonts/cascadia_mono/CascadiaMono-Italic.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/alphagen/studio/FloatDataVisualizer/floatui/fonts/cascadia_mono/CascadiaMono-Italic.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/alphagen/studio/FloatDataVisualizer/core.fonts/cascadia_mono/CascadiaMono-Light.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/alphagen/studio/FloatDataVisualizer/floatui/fonts/cascadia_mono/CascadiaMono-Light.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/alphagen/studio/FloatDataVisualizer/core.fonts/cascadia_mono/CascadiaMono-LightItalic.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/alphagen/studio/FloatDataVisualizer/floatui/fonts/cascadia_mono/CascadiaMono-LightItalic.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/alphagen/studio/FloatDataVisualizer/core.fonts/cascadia_mono/CascadiaMono-Medium.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/alphagen/studio/FloatDataVisualizer/floatui/fonts/cascadia_mono/CascadiaMono-Medium.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/alphagen/studio/FloatDataVisualizer/core.fonts/cascadia_mono/CascadiaMono-MediumItalic.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/alphagen/studio/FloatDataVisualizer/floatui/fonts/cascadia_mono/CascadiaMono-MediumItalic.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/alphagen/studio/FloatDataVisualizer/core.fonts/cascadia_mono/CascadiaMono-Regular.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/alphagen/studio/FloatDataVisualizer/floatui/fonts/cascadia_mono/CascadiaMono-Regular.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/alphagen/studio/FloatDataVisualizer/core.fonts/cascadia_mono/CascadiaMono-SemiBold.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/alphagen/studio/FloatDataVisualizer/floatui/fonts/cascadia_mono/CascadiaMono-SemiBold.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/alphagen/studio/FloatDataVisualizer/core.fonts/cascadia_mono/CascadiaMono-SemiBoldItalic.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/alphagen/studio/FloatDataVisualizer/floatui/fonts/cascadia_mono/CascadiaMono-SemiBoldItalic.ttf" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -166,7 +182,7 @@
     "ignore.virus.scanning.warn.message": "true",
     "junie.onboarding.icon.badge.shown": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/CryosArtic/IdeaProjects/FloatDataVisualizer/src/main/resources",
+    "last_opened_file_path": "C:/Users/CryosArtic/IdeaProjects/FloatDataVisualizer/src/main/resources/com/alphagen/studio/FloatDataVisualizer/core.fonts/cascadia_mono",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.jshint": "true",
     "node.js.detected.package.tslint": "true",
@@ -190,18 +206,18 @@
       <recent name="com.alphagen.studio.FloatDataVisualizer.buoyui.backend.data" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\CryosArtic\IdeaProjects\FloatDataVisualizer\src\main\resources\com\alphagen\studio\FloatDataVisualizer\core.fonts\cascadia_mono" />
       <recent name="C:\Users\CryosArtic\IdeaProjects\FloatDataVisualizer\src\main\resources" />
       <recent name="C:\Users\aadar\IdeaProjects\FloatDataVisualizer\src\main\resources\com\alphagen\studio\FloatDataVisualizer\buoyui\frontend\pages\connections" />
       <recent name="C:\Users\aadar\IdeaProjects\FloatDataVisualizer\src\main\resources\com\alphagen\studio\FloatDataVisualizer\buoyui" />
       <recent name="C:\Users\aadar\IdeaProjects\FloatDataVisualizer\src\main\resources\com\alphagen\studio\FloatDataVisualizer\buoyui\frontend\pages\connections\datacard" />
-      <recent name="C:\Users\aadar\IdeaProjects\FloatDataVisualizer\src\main\resources\com\alphagen\studio\FloatDataVisualizer\buoyui\frontend\pages\grapher\scatterplot" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\CryosArtic\IdeaProjects\FloatDataVisualizer\src\main\resources\com\alphagen\studio\FloatDataVisualizer\floatui\fonts" />
+      <recent name="C:\Users\CryosArtic\IdeaProjects\FloatDataVisualizer\src\main\resources\com\alphagen\studio\FloatDataVisualizer\floatui\" />
+      <recent name="C:\Users\CryosArtic\IdeaProjects\FloatDataVisualizer\src\main\resources\com\alphagen\studio\FloatDataVisualizer\floatui" />
+      <recent name="C:\Users\CryosArtic\IdeaProjects\FloatDataVisualizer\src\main\resources\com\alphagen\studio\FloatDataVisualizer" />
       <recent name="C:\Users\CryosArtic\IdeaProjects\FloatDataVisualizer\src\main\java\com\alphagen\studio\FloatDataVisualizer\" />
-      <recent name="C:\Users\aadar\IdeaProjects\FloatDataVisualizer" />
-      <recent name="C:\Users\aadar\IdeaProjects\FloatDataVisualizer\Documentation\BuoyUI\readme_imgs" />
-      <recent name="C:\Users\aadar\IdeaProjects\FloatDataVisualizer\src\main\java\com\alphagen\studio\FloatDataVisualizer\Documentation\BuoyUI\readme_imgs" />
-      <recent name="C:\Users\aadar\IdeaProjects\FloatDataVisualizer\src\main\java\com\alphagen\studio\FloatDataVisualizer\buoyui\frontend\pages\connections\datacard" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.alphagen.studio.FloatDataVisualizer" />
@@ -218,6 +234,7 @@
     <configuration name="Launcher" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="com.alphagen.studio.FloatDataVisualizer.Launcher" />
       <module name="FloatDataVisualizer" />
+      <option name="VM_PARAMETERS" value="--enable-native-access=com.fazecast.jSerialComm --enable-native-access=javafx.graphics --enable-native-access=com.sun.jna" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -677,10 +694,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="ui updates buttons fixed." />
-    <MESSAGE value="updated version from 2.0.0 to 3.0.1" />
-    <MESSAGE value="mac and linux builds will now have FloatDataVisualizer instead of floatdatavisualizer" />
-    <MESSAGE value="replaced executor and future with runnable managers" />
     <MESSAGE value="removed commented out code." />
     <MESSAGE value="test code commented out" />
     <MESSAGE value="test ui and data commented out was removed" />
@@ -699,10 +712,14 @@
     <MESSAGE value="paths import removed" />
     <MESSAGE value="user system import" />
     <MESSAGE value="imported paths" />
-    <MESSAGE value="space unicode" />
     <MESSAGE value="single annotation as the same line as the var" />
+    <MESSAGE value="space unicode" />
+    <MESSAGE value="connection module import" />
+    <MESSAGE value="DataCard replaced with ConnectionModule" />
     <MESSAGE value="commits" />
-    <option name="LAST_COMMIT_MESSAGE" value="commits" />
+    <MESSAGE value="creating a new background" />
+    <MESSAGE value="font: cascadia mono added" />
+    <option name="LAST_COMMIT_MESSAGE" value="font: cascadia mono added" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
