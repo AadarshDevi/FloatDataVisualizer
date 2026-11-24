@@ -23,6 +23,12 @@ public class AcquisitionPage extends BorderPane {
 
     private static final Logger logger = LogManager.getLogger(AcquisitionPage.class);
     private final TilePane connectionPane;
+    
+    private final ModeButton acquisitionButton;
+    private final ModeButton analysisButton;
+    private final ModeButton settingsButton;
+    private final ModeButton userManualButton;
+    private final ModeButton quitButton;
 
     public AcquisitionPage() {
 
