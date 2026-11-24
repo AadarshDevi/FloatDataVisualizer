@@ -24,6 +24,11 @@ public class UserSystem {
         this.theme = detectTheme(SystemTheme.DARK); // fixme: need to read from settings file
     }
 
+    public static UserSystem getInstance() {
+        if (userSystem == null) userSystem = new UserSystem();
+        return userSystem;
+    }
+
     public OperatingSystem detectOS() {
         String osName = java.lang.System.getProperty("os.name").toLowerCase();
         OperatingSystem os = OperatingSystem.OTHER;
