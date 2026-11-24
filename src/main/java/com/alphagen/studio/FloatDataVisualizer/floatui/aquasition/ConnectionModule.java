@@ -22,7 +22,7 @@ public class ConnectionModule extends Button {
 
     public ConnectionModule(ConnectionConfig config) {
         VBox module = new VBox();
-        module.setPrefSize(500, 300);
+        module.setPrefSize(506, 90);
         Label connectionName = new Label(config.name());
         module.getChildren().add(connectionName);
         setGraphic(module);
