@@ -32,6 +32,18 @@ public class AcquisitionPage extends BorderPane {
 
     public AcquisitionPage() {
 
+
+        Label appTitleLabel = new Label("Float Data Visualizer");
+        appTitleLabel.setFont(FontManager.getFont(FontManager.Library.CASCADIA_MON_MEDIUM, 40));
+        appTitleLabel.setMaxWidth(Double.MAX_VALUE);
+
+        HBox titleBox = new HBox();
+        titleBox.setPadding(new Insets(20, 15, 5, 15));
+        titleBox.setAlignment(Pos.CENTER_LEFT);
+        titleBox.setSpacing(10);
+        titleBox.getChildren().add(appTitleLabel);
+        setTop(titleBox);
+
         acquisitionButton = new ModeButton("Acquisition", Library.ACQUISITION_SVG_PATH, false);
         analysisButton = new ModeButton("Analysis", Library.ANALYTICS_SVG_PATH, true);
         settingsButton = new ModeButton("Settings", Library.SETTINGS_SVG_PATH, true);
