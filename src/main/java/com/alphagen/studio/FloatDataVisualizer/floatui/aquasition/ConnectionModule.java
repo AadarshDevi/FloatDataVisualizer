@@ -83,4 +83,10 @@ public class ConnectionModule extends Button {
         module.getChildren().add(descriptiveBox);
         descriptiveBox.setCenter(portlabel);
     }
+
+    public void toLight() {
+    }
+
+    public void toDark() {
+    }
 }
