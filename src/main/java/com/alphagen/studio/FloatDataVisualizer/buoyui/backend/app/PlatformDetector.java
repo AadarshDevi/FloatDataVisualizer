@@ -6,6 +6,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.nio.file.Path;
+import java.nio.file.Paths;
 
 public class PlatformDetector {
     private static final Logger LOGGER = LogManager.getLogger(PlatformDetector.class);
