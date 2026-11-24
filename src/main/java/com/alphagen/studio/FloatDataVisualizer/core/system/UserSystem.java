@@ -10,6 +10,7 @@ import org.apache.logging.log4j.Logger;
 
 public class UserSystem {
     private static final Logger LOGGER = LogManager.getLogger(UserSystem.class);
+    private static UserSystem userSystem;
     @Getter
     private final FileSystem fileSystem;
     @Getter
