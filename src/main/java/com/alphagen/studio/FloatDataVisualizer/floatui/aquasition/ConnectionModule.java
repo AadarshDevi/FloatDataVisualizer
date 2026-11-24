@@ -12,9 +12,6 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Paint;
 
-//import javafx.scene.control.Button;
-
-
 public class ConnectionModule extends Button {
 
     public ConnectionModule(ConnectionConfig config) {
