@@ -4,6 +4,7 @@ package com.alphagen.studio.FloatDataVisualizer.floatui.aquasition;
 import com.alphagen.studio.FloatDataVisualizer.core.data.ConnectionConfig;
 import com.alphagen.studio.FloatDataVisualizer.core.data.ConnectionType;
 import com.alphagen.studio.FloatDataVisualizer.core.data.SystemTheme;
+import com.alphagen.studio.FloatDataVisualizer.core.system.UserSystem;
 import com.alphagen.studio.FloatDataVisualizer.floatui.FontManager;
 import com.alphagen.studio.FloatDataVisualizer.floatui.component.SVG;
 import javafx.geometry.Insets;
