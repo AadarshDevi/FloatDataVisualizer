@@ -22,7 +22,7 @@ public class SerialConnection implements CommunicationConnection {
     private final Consumer<String> consumer;
     @Getter
     private final ConnectionConfig connectionConfig;
-    private volatile boolean disconnected = false;
+    private volatile boolean isConnected = false;
     private volatile boolean collectData = false;
 
     public SerialConnection(ConnectionConfig config, Consumer<String> consumer) {
