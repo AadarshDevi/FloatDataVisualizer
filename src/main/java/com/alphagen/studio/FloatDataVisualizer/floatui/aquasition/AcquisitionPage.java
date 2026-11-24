@@ -59,7 +59,7 @@ public class AcquisitionPage extends BorderPane {
 
         @Getter private SVG buttonGraphic;
 
-        public ModeButton(String text, String graphic) {
+        public ModeButton(String text, String graphic, boolean outline) {
             super(text);
 
             int width = 140;
