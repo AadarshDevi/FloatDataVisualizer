@@ -6,6 +6,7 @@ import com.alphagen.studio.FloatDataVisualizer.floatui.component.SVG;
 import javafx.geometry.Bounds;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
+import javafx.scene.Group;
 import javafx.scene.control.Button;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Paint;
