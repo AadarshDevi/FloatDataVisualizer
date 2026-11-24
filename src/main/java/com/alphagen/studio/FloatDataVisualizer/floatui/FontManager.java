@@ -12,7 +12,6 @@ public class FontManager {
 
     private static final Logger logger = LogManager.getLogger(FontManager.class);
     private static final String FONTS_ROOT_PATH = "/com/alphagen/studio/FloatDataVisualizer/floatui/fonts";
-    public static final String CASCADIA_MON_MEDIUM = FONTS_ROOT_PATH + "/cascadia_mono/CascadiaMono-Medium.ttf";
 
     public static Font getFont(String fontPath, int fontSize) {
         Font font;
