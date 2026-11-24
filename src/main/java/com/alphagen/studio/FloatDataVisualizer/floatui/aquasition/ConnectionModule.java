@@ -25,7 +25,7 @@ public class ConnectionModule extends Button {
 
     public ConnectionModule(ConnectionConfig config) {
 
-        ConnectionLabel nameLabel = new ConnectionLabel(config.name());
+        nameLabel = new ConnectionLabel(config.name());
         nameLabel.setFontSize(18);
 
         ConnectionLabel portLabel = new ConnectionLabel("Port: " + config.port());
