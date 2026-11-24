@@ -83,7 +83,7 @@ public class AcquisitionPage extends BorderPane {
 
             svg.setScaleX(scale);
             svg.setScaleY(scale);
-            
+
             setGraphic(new Group(svg));
             setGraphicTextGap(8);
         }
