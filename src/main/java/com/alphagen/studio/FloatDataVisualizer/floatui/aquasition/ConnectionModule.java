@@ -31,8 +31,6 @@ public class ConnectionModule extends Button {
                 new CornerRadii(15),
                 Insets.EMPTY
         )));
-        
-        connectionName.setFont(FontManager.getFont(FontManager.CASCADIA_MON_MEDIUM, 16));
 
         setOnAction(event -> {
             // todo make button do stuff
