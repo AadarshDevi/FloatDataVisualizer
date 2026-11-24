@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="776164ce-7a69-48e2-8934-c0376db3d4b9" name="Changes" comment="space unicode">
+    <list default="true" id="776164ce-7a69-48e2-8934-c0376db3d4b9" name="Changes" comment="commits">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/buoyui/backend/app/PlatformDetector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/buoyui/backend/app/PlatformDetector.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/core/system/UserSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/core/system/UserSystem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/buoyui/frontend/pages/connections/ConnectionsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/buoyui/frontend/pages/connections/ConnectionsController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -678,8 +677,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="thread interupted. so nothing to do" />
-    <MESSAGE value="null check cause poll can give null objs" />
     <MESSAGE value="ui updates buttons fixed." />
     <MESSAGE value="updated version from 2.0.0 to 3.0.1" />
     <MESSAGE value="mac and linux builds will now have FloatDataVisualizer instead of floatdatavisualizer" />
@@ -694,7 +691,6 @@
     <MESSAGE value="ConnectionCard's new replacement, ConnectionModule" />
     <MESSAGE value="ConnectionUI's new replacement, AcquaitionPage" />
     <MESSAGE value="moved global private vars into local vars" />
-    <MESSAGE value="commits" />
     <MESSAGE value="usersystem get instance method" />
     <MESSAGE value="usersystem var" />
     <MESSAGE value="user system os detection" />
@@ -702,8 +698,11 @@
     <MESSAGE value="tab unicode" />
     <MESSAGE value="paths import removed" />
     <MESSAGE value="user system import" />
+    <MESSAGE value="imported paths" />
     <MESSAGE value="space unicode" />
-    <option name="LAST_COMMIT_MESSAGE" value="space unicode" />
+    <MESSAGE value="single annotation as the same line as the var" />
+    <MESSAGE value="commits" />
+    <option name="LAST_COMMIT_MESSAGE" value="commits" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
