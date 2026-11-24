@@ -15,26 +15,24 @@ import javafx.scene.paint.Paint;
 public class ConnectionModule extends Button {
 
     public ConnectionModule(ConnectionConfig config) {
-        VBox module = new VBox();
-        module.setPrefSize(506, 90);
-        setGraphic(module);
 
         Label nameLabel = new Label(config.name());
         nameLabel.setMaxWidth(Double.MAX_VALUE);
         nameLabel.setFont(FontManager.getFont(FontManager.CASCADIA_MON_MEDIUM, 18));
         nameLabel.setTextFill(Paint.valueOf("white"));
-        nameLabel.setPadding(new Insets(10));
-        module.getChildren().add(nameLabel);
-
-        HBox descriptiveBox = new HBox();
-        module.getChildren().add(descriptiveBox);
-        descriptiveBox.setAlignment(Pos.CENTER_LEFT);
+//        nameLabel.setPadding(new Insets(10));
 
         Label portlabel = new Label("Port: " + config.port());
         portlabel.setFont(FontManager.getFont(FontManager.CASCADIA_MON_MEDIUM, 14));
-        portlabel.setPadding(new Insets(10, 10, 10, 10));
+//        portlabel.setPadding(new Insets(10, 10, 10, 10));
         portlabel.setTextFill(Paint.valueOf("white"));
-        descriptiveBox.getChildren().add(portlabel);
+        portlabel.setMaxWidth(Double.MAX_VALUE);
+
+        Label baudRateLabel = new Label("BaudRate: " + config.baudRate());
+//        baudRateLabel.setPadding(new Insets(0, 10, 10, 10));
+        baudRateLabel.setTextFill(Paint.valueOf("white"));
+        baudRateLabel.setFont(FontManager.getFont(FontManager.CASCADIA_MON_MEDIUM, 14));
+
 
         ConnectionType type = config.type();
         SVG connectionSVG = switch (type) {
@@ -44,7 +42,6 @@ public class ConnectionModule extends Button {
             case null, default -> new SVG(SVG.Library.UNKNOWN_SVG_PATH);
         };
         connectionSVG.setFill(Paint.valueOf("white"));
-        descriptiveBox.getChildren().add(connectionSVG);
 
         setBackground(new Background(new BackgroundFill(
                 Paint.valueOf("#151430"), // another: 000011, 15141c, 151430
@@ -56,5 +53,34 @@ public class ConnectionModule extends Button {
             // todo make button do stuff
         });
 
+        BorderPane mod = new BorderPane();
+        mod.setPrefSize(506, 90);
+        mod.setPadding(new Insets(10));
+
+        mod.setTop(nameLabel);
+        mod.setRight(connectionSVG);
+        setGraphic(mod);
+
+        VBox module = new VBox();
+        module.setPrefSize(506, 90);
+//        setGraphic(module);
+        module.setPadding(new Insets(10));
+
+        BorderPane descriptiveBox = new BorderPane();
+        descriptiveBox.setMaxWidth(Double.MAX_VALUE);
+
+        VBox infoBox = new VBox();
+
+        HBox svgPane = new HBox();
+        svgPane.getChildren().add(connectionSVG);
+        svgPane.setAlignment(Pos.CENTER_RIGHT);
+        svgPane.setPadding(new Insets(0, 10, 0, 0));
+
+        descriptiveBox.setCenter(infoBox);
+        descriptiveBox.setBottom(baudRateLabel);
+        descriptiveBox.setRight(svgPane);
+        module.getChildren().add(nameLabel);
+        module.getChildren().add(descriptiveBox);
+        descriptiveBox.setCenter(portlabel);
     }
 }
