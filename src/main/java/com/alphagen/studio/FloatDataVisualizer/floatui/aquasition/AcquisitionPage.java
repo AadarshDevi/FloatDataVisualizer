@@ -31,8 +31,9 @@ public class AcquisitionPage extends BorderPane {
                 )
         ));
         buttonContainer.setSpacing(10);
-        buttonContainer.getChildren().addAll(acquisitionButton, analysisButton, settingsButton, userManualButton);
-        
+        buttonContainer.setAlignment(Pos.CENTER);
+        buttonContainer.getChildren().addAll(acquisitionButton, analysisButton, settingsButton, quitButton);
+        this.setBottom(buttonContainer);
     }
 
     public void placeConnections() {
