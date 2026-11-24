@@ -46,7 +46,7 @@ public class AcquisitionPage extends BorderPane {
         buttonContainer.setBackground(
                 new Background(
                         new BackgroundFill(
-                                Paint.valueOf("#d3d3d3"),
+                                Paint.valueOf("#dbdbdb"),
                                 new CornerRadii(15),
                                 Insets.EMPTY
                         )
