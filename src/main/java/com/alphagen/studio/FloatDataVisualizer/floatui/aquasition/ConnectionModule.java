@@ -11,14 +11,11 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Paint;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
 //import javafx.scene.control.Button;
 
 
 public class ConnectionModule extends Button {
-    private static final Logger logger = LogManager.getLogger(ConnectionModule.class);
 
     public ConnectionModule(ConnectionConfig config) {
         VBox module = new VBox();
