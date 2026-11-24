@@ -51,7 +51,7 @@ public class AcquisitionPage extends BorderPane {
     }
 
     class ModeButton extends Button {
-        public ModeButton(String text) {
+        public ModeButton(String text, String graphic) {
             super(text);
 
             int width = 140;
