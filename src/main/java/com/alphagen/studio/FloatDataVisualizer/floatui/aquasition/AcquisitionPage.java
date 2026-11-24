@@ -54,8 +54,10 @@ public class AcquisitionPage extends BorderPane {
         public ModeButton(String text) {
             super(text);
 
-            int width = 180;
-            int height = 30;
+            int width = 140;
+            int height = 35;
+
+            setFont(FontManager.getFont(FontManager.Library.CASCADIA_MON_MEDIUM, 13));
 
             setPrefSize(width, height);
             setMaxSize(width, height);
