@@ -286,23 +286,18 @@ public class ConnectionsController {
         alert.setContentText("All connections have been deleted");
     }
 
-	public void setConnectionConfigs(ArrayList<ConnectionConfig> connectionsList) {
-		LOGGER.info("\nAdding ConnectionConfigs");
-		int count = connectionsList.size();
-		for (ConnectionConfig connectionConfig : connectionsList) {
-			Button dataCard = DataCardManager.createDataCard(connectionConfig);
-			DataCardController dcc = (DataCardController) dataCard.getProperties().get("dcc");
-			dcc.invalidConnection();
-			dataCard.getStylesheets().clear(); // testme: theme
-			dataCard.getStylesheets().add(ThemeProcessor.getThemeCSS().toString()); // testme: theme
-			connections.getChildren().add(dataCard);
-		}
-		LOGGER.info("Added Connections: " + count);
-	}
     public void setConnectionConfigs(ArrayList<ConnectionConfig> connectionsList) {
         LOGGER.info("\nAdding ConnectionConfigs");
         int count = connectionsList.size();
         for (ConnectionConfig connectionConfig : connectionsList) {
+//			Button dataCard = DataCardManager.createDataCard(connectionConfig);
+            // todo replace buoy with core
+            ConnectionModule module = new ConnectionModule(com.alphagen.studio.FloatDataVisualizer.core.data.ConnectionConfig.toNew(connectionConfig));
+//            DataCardController dcc = (DataCardController) dataCard.getProperties().get("dcc");
+//            dcc.invalidConnection();
+//            dataCard.getStylesheets().clear(); // testme: theme
+//            dataCard.getStylesheets().add(ThemeProcessor.getThemeCSS().toString()); // testme: theme
+            connections.getChildren().add(module);
         }
         LOGGER.info("Added Connections: " + count);
     }
