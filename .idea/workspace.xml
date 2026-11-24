@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="776164ce-7a69-48e2-8934-c0376db3d4b9" name="Changes" comment="mac and linux builds will now have FloatDataVisualizer instead of floatdatavisualizer">
+    <list default="true" id="776164ce-7a69-48e2-8934-c0376db3d4b9" name="Changes" comment="commits">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/buoyui/frontend/pages/grapher/GrapherController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/buoyui/frontend/pages/grapher/GrapherController.java" afterDir="false" />
     </list>
@@ -677,8 +677,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="changed runnable manager to the newer connection" />
-    <MESSAGE value="old serial threader removed and replaced with newer connection manager" />
     <MESSAGE value="serial connection private global" />
     <MESSAGE value="runnable to connection manager" />
     <MESSAGE value="logger for serial comm stopped" />
@@ -688,7 +686,6 @@
     <MESSAGE value="port disconnected alert" />
     <MESSAGE value="comments removed" />
     <MESSAGE value="updating ui if serial conn is disconnected" />
-    <MESSAGE value="commits" />
     <MESSAGE value="something" />
     <MESSAGE value="disconnected to connected" />
     <MESSAGE value="disconnected replaced by connected" />
@@ -702,7 +699,10 @@
     <MESSAGE value="ui updates buttons fixed." />
     <MESSAGE value="updated version from 2.0.0 to 3.0.1" />
     <MESSAGE value="mac and linux builds will now have FloatDataVisualizer instead of floatdatavisualizer" />
-    <option name="LAST_COMMIT_MESSAGE" value="mac and linux builds will now have FloatDataVisualizer instead of floatdatavisualizer" />
+    <MESSAGE value="replaced executor and future with runnable managers" />
+    <MESSAGE value="removed commented out code." />
+    <MESSAGE value="commits" />
+    <option name="LAST_COMMIT_MESSAGE" value="commits" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
