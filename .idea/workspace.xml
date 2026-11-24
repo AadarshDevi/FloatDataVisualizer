@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="776164ce-7a69-48e2-8934-c0376db3d4b9" name="Changes" comment="importing entire concurrency lib">
+    <list default="true" id="776164ce-7a69-48e2-8934-c0376db3d4b9" name="Changes" comment="ui updates buttons fixed.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/buoyui/frontend/pages/grapher/GrapherController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/buoyui/frontend/pages/grapher/GrapherController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/core/processor/SerialConnectionInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/core/processor/SerialConnection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/expo/TestGraphic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/expo/TestGraphic.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -679,13 +677,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="isCOnnected and isPortAvailable methods" />
-    <MESSAGE value="disconnected bool" />
-    <MESSAGE value="disconnected bool added" />
-    <MESSAGE value="imports" />
-    <MESSAGE value="listener to make sure serial port is connected" />
-    <MESSAGE value="removing listenerfrom serial port" />
-    <MESSAGE value="methods from super class implemented" />
     <MESSAGE value="getter for connection config" />
     <MESSAGE value="comment removed" />
     <MESSAGE value="changed runnable manager to the newer connection" />
@@ -704,7 +695,14 @@
     <MESSAGE value="disconnected to connected" />
     <MESSAGE value="disconnected replaced by connected" />
     <MESSAGE value="importing entire concurrency lib" />
-    <option name="LAST_COMMIT_MESSAGE" value="importing entire concurrency lib" />
+    <MESSAGE value="file name fixed: serial connection" />
+    <MESSAGE value="initial delay for the mc to reset" />
+    <MESSAGE value="moved checking for disconection" />
+    <MESSAGE value="array.take blocking to array.poll timeout blocking" />
+    <MESSAGE value="thread interupted. so nothing to do" />
+    <MESSAGE value="null check cause poll can give null objs" />
+    <MESSAGE value="ui updates buttons fixed." />
+    <option name="LAST_COMMIT_MESSAGE" value="ui updates buttons fixed." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
