@@ -16,23 +16,11 @@ public class ConnectionModule extends Button {
 
     public ConnectionModule(ConnectionConfig config) {
 
-        Label nameLabel = new Label(config.name());
-        nameLabel.setMaxWidth(Double.MAX_VALUE);
-        nameLabel.setFont(FontManager.getFont(FontManager.CASCADIA_MON_MEDIUM, 18));
-        nameLabel.setTextFill(Paint.valueOf("white"));
-//        nameLabel.setPadding(new Insets(10));
-
-        Label portlabel = new Label("Port: " + config.port());
-        portlabel.setFont(FontManager.getFont(FontManager.CASCADIA_MON_MEDIUM, 14));
-//        portlabel.setPadding(new Insets(10, 10, 10, 10));
-        portlabel.setTextFill(Paint.valueOf("white"));
-        portlabel.setMaxWidth(Double.MAX_VALUE);
-
-        Label baudRateLabel = new Label("BaudRate: " + config.baudRate());
-//        baudRateLabel.setPadding(new Insets(0, 10, 10, 10));
-        baudRateLabel.setTextFill(Paint.valueOf("white"));
-        baudRateLabel.setFont(FontManager.getFont(FontManager.CASCADIA_MON_MEDIUM, 14));
-
+        ConnectionLabel nameLabel = new ConnectionLabel(config.name());
+        nameLabel.setFontSize(18);
+        
+        ConnectionLabel portLabel = new ConnectionLabel("Port: " + config.port());
+        ConnectionLabel baudRateLabel = new ConnectionLabel("BaudRate: " + config.baudRate());
 
         ConnectionType type = config.type();
         SVG connectionSVG = switch (type) {
