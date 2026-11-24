@@ -73,6 +73,15 @@ public class ConnectionModule extends Button {
 
     // todo implement toDark
     public void toDark() {
+        nameLabel.toDark();
+        portLabel.toDark();
+        baudRateLabel.toDark();
+        connectionSVG.setFill(Paint.valueOf("white"));
+        setBackground(new Background(new BackgroundFill(
+                Paint.valueOf("#151430"), // another: 000011, 15141c, 151430
+                radii,
+                insets
+        )));
     }
 
     static class ConnectionLabel extends Label {
