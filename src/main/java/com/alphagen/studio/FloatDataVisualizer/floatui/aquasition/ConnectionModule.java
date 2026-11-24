@@ -21,9 +21,9 @@ public class ConnectionModule extends Button {
         module.getChildren().add(connectionName);
         setGraphic(module);
         this.setBackground(new Background(new BackgroundFill(
-                Paint.valueOf("000011"),
-                new CornerRadii(5),
-                new Insets(5)
+                Paint.valueOf("#000011"),
+                new CornerRadii(15),
+                Insets.EMPTY
         )));
 
         setOnAction(event -> {
