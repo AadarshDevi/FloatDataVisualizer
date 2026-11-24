@@ -192,15 +192,6 @@ public class GrapherController {
 
     @FXML
     public void stopingDataTransfer() {
-        // disable stop button and enable start button
-//		if (activeTask != null && !activeTask.isCancelled()) {
-//			activeTask.cancel(true);
-//			activeDataBase.cancel(true);
-//			activeUIUpdater.cancel(true);
-//		}
-
-        // todo replace with ConnectionManager
-//        if (readerRunnableManager.isRunning()) {
         readerRunnableManager.stop();
         database.stop();
         userInterfaceUpdater.stop();
@@ -213,19 +204,6 @@ public class GrapherController {
             logger.info("Parsed Array: " + dpp.getParsedArray().size());
             logger.error("Serial Communication stopped");
         }
-
-//        // todo add a disconnected feature
-//        // todo conditional with new ConnectionManager
-//        if (!serialConnection.isOpen()) {
-//            Platform.runLater(() -> {
-//                logger.error("Disconnected from Device");
-//                Alert alert = new Alert(Alert.AlertType.ERROR);
-//                alert.setTitle("Connection Exception");
-//                alert.setHeaderText(null);
-//                alert.setContentText("Disconnected from Hardware.");
-//                alert.showAndWait();
-//            });
-//        }
 
         logger.info("\n[Debug] Stopping Data Transfer\n");
     }
