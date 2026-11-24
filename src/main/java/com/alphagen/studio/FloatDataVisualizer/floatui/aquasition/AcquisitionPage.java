@@ -14,11 +14,11 @@ public class AcquisitionPage extends BorderPane {
 
     public AcquisitionPage() {
 
-        ModeButton acquisitionButton = new ModeButton("Acquisition");
-        ModeButton analysisButton = new ModeButton("Analysis");
-        ModeButton settingsButton = new ModeButton("Settings");
-        ModeButton userManualButton = new ModeButton("User Manual");
-        ModeButton quitButton = new ModeButton("Quit");
+        ModeButton acquisitionButton = new ModeButton("Acquisition", Library.ACQUISITION_SVG_PATH);
+        ModeButton analysisButton = new ModeButton("Analysis", Library.ANALYTICS_SVG_PATH);
+        ModeButton settingsButton = new ModeButton("Settings", Library.SETTINGS_SVG_PATH);
+        ModeButton userManualButton = new ModeButton("User Manual", Library.USER_MANUAL_SVG_PATH);
+        ModeButton quitButton = new ModeButton("Quit", Library.QUIT_SVG_PATH);
 
         setPrefSize(1080, 720);
         setBackground(new Background(new BackgroundFill(
