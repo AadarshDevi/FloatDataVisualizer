@@ -680,10 +680,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="getting font from font manager" />
-    <MESSAGE value="font moved: cascadia mono" />
-    <MESSAGE value="class to load fonts" />
-    <MESSAGE value="conditional because win11 != windows" />
     <MESSAGE value="resized modules to a good size" />
     <MESSAGE value="removed the check that is needed to tell if a data card is invalid" />
     <MESSAGE value="main is enabled, buoy is disabled" />
@@ -703,9 +699,13 @@
     <MESSAGE value="methods to switch between light and dark mode" />
     <MESSAGE value="vbox to place svg on the bottom" />
     <MESSAGE value="stuff to place stuff." />
-    <MESSAGE value="commits" />
     <MESSAGE value="old code removed" />
-    <option name="LAST_COMMIT_MESSAGE" value="old code removed" />
+    <MESSAGE value="new class for connection module: connection label" />
+    <MESSAGE value="redundant code replaced with connection label" />
+    <MESSAGE value="importing font" />
+    <MESSAGE value="fixed typo in var name" />
+    <MESSAGE value="commits" />
+    <option name="LAST_COMMIT_MESSAGE" value="commits" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -19,7 +19,7 @@ public class ConnectionModule extends Button {
 
         ConnectionLabel nameLabel = new ConnectionLabel(config.name());
         nameLabel.setFontSize(18);
-        
+
         ConnectionLabel portLabel = new ConnectionLabel("Port: " + config.port());
         ConnectionLabel baudRateLabel = new ConnectionLabel("BaudRate: " + config.baudRate());
 
@@ -63,9 +63,11 @@ public class ConnectionModule extends Button {
         setGraphic(module);
     }
 
+    // todo implement toLight
     public void toLight() {
     }
 
+    // todo implement toDark
     public void toDark() {
     }
 
