@@ -103,6 +103,11 @@ public class AcquisitionPage extends BorderPane {
     }
 
     public void toDark() {
+        acquisitionButton.toDark();
+        analysisButton.toDark();
+        settingsButton.toDark();
+        userManualButton.toDark();
+        quitButton.toDark();
     }
 
     static class ModeButton extends Button {
