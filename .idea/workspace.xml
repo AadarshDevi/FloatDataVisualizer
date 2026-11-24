@@ -4,8 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="776164ce-7a69-48e2-8934-c0376db3d4b9" name="Changes" comment="commits">
+    <list default="true" id="776164ce-7a69-48e2-8934-c0376db3d4b9" name="Changes" comment="implement theme methods">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/floatui/FontManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/floatui/FontManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/floatui/aquasition/AcquisitionPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/floatui/aquasition/AcquisitionPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/floatui/aquasition/ConnectionModule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/floatui/aquasition/ConnectionModule.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -680,32 +683,32 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="resized modules to a good size" />
-    <MESSAGE value="removed the check that is needed to tell if a data card is invalid" />
-    <MESSAGE value="main is enabled, buoy is disabled" />
-    <MESSAGE value="imports" />
-    <MESSAGE value="moved setting font to the right place next to the label" />
-    <MESSAGE value="name label font, color, size, paddding. then port label, same thing. adding svgs to the hbox" />
-    <MESSAGE value="convinience class for svg paths" />
-    <MESSAGE value="connectionNMame renamed to namelabel" />
-    <MESSAGE value="fixed svg not showing up in some places" />
-    <MESSAGE value="position of port and conn type" />
-    <MESSAGE value="svg path is a string and we can use lib to create new svgs" />
-    <MESSAGE value="switched to set value switch instead of switch to set value" />
-    <MESSAGE value="changed serial svg path" />
-    <MESSAGE value="removed logger, this doesnt need it" />
-    <MESSAGE value="commented out button import removed" />
-    <MESSAGE value="container boxes moved down under javafx control" />
-    <MESSAGE value="methods to switch between light and dark mode" />
-    <MESSAGE value="vbox to place svg on the bottom" />
-    <MESSAGE value="stuff to place stuff." />
-    <MESSAGE value="old code removed" />
-    <MESSAGE value="new class for connection module: connection label" />
     <MESSAGE value="redundant code replaced with connection label" />
     <MESSAGE value="importing font" />
     <MESSAGE value="fixed typo in var name" />
     <MESSAGE value="commits" />
-    <option name="LAST_COMMIT_MESSAGE" value="commits" />
+    <MESSAGE value="implement theme methods" />
+    <MESSAGE value="buttons for the down menu" />
+    <MESSAGE value="my menu button" />
+    <MESSAGE value="added pref size amnd background to acqa page" />
+    <MESSAGE value="buttons container has a background and pref height" />
+    <MESSAGE value="added quit button to list of buttons in bottom menu" />
+    <MESSAGE value="borderpane import" />
+    <MESSAGE value="svgs needed for acquisition page" />
+    <MESSAGE value="adding svg to button, setting button size" />
+    <MESSAGE value="method to set svg graphic to mode button" />
+    <MESSAGE value="3 lines if to 1 line if" />
+    <MESSAGE value="extracted setting svg to a method" />
+    <MESSAGE value="updated scquisition svg path" />
+    <MESSAGE value="formatted addall children to button container" />
+    <MESSAGE value="extracted width and height of button" />
+    <MESSAGE value="updated corner radii" />
+    <MESSAGE value="added graphic string path to mode button" />
+    <MESSAGE value="removed a tab" />
+    <MESSAGE value="added sg path" />
+    <MESSAGE value="imports added" />
+    <MESSAGE value="import for svg scaling added" />
+    <option name="LAST_COMMIT_MESSAGE" value="import for svg scaling added" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
