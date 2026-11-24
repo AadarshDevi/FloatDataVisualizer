@@ -79,4 +79,18 @@ public class ConnectionModule extends Button {
 
     public void toDark() {
     }
+
+    class ConnectionLabel extends Label {
+        public ConnectionLabel(String text) {
+            super(text);
+            setFont(FontManager.getFont(FontManager.CASCADIA_MON_MEDIUM, 14));
+            setTextFill(Paint.valueOf("white"));
+            setMaxWidth(Double.MAX_VALUE);
+        }
+
+        public void setFontSize(int fontSize) {
+            Font font = new Font(getFont().getFamily(), fontSize);
+            setFont(font);
+        }
+    }
 }
