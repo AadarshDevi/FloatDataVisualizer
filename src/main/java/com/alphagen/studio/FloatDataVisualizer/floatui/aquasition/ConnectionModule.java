@@ -20,6 +20,11 @@ public class ConnectionModule extends Button {
         Label connectionName = new Label(config.name());
         module.getChildren().add(connectionName);
         setGraphic(module);
+        this.setBackground(new Background(new BackgroundFill(
+                Paint.valueOf("000011"),
+                new CornerRadii(5),
+                new Insets(5)
+        )));
 
         setOnAction(event -> {
             // todo make button do stuff
