@@ -28,7 +28,7 @@ public class Main extends Application {
         StageManager.setMainStage(stage);
         UserSystem userSystem = UserSystem.getInstance();
         userSystem.detectOS();
-        PlatformDetector.detectPlatform();
+        PlatformDetector.detectPlatform(); // todo replace with user system
 
         logger.info("Initializing Backend");
         Backend backend = Backend.getBackend();
