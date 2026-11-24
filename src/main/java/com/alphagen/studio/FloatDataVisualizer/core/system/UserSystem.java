@@ -1,6 +1,7 @@
 package com.alphagen.studio.FloatDataVisualizer.core.system;
 
 import com.alphagen.studio.FloatDataVisualizer.core.data.OperatingSystem;
+import com.alphagen.studio.FloatDataVisualizer.core.data.SystemTheme;
 import com.alphagen.studio.FloatDataVisualizer.core.data.Version;
 import com.jthemedetecor.OsThemeDetector;
 import lombok.Getter;
