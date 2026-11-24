@@ -97,7 +97,7 @@ public class ConnectionsController {
                         for (Node node : dataCards) {
                             Button dataCard = (Button) node;
                             DataCardController dcc = (DataCardController) dataCard.getProperties().get("dcc");
-                            dcc.invalidConnection();
+//                            dcc.invalidConnection(); // fixme
                         }
 
                         if (ControllerManager.getConnectionEditorController() != null) {
