@@ -23,7 +23,7 @@ public class AcquisitionPage extends BorderPane {
 
     private static final Logger logger = LogManager.getLogger(AcquisitionPage.class);
     private final TilePane connectionPane;
-    
+
     private final ModeButton acquisitionButton;
     private final ModeButton analysisButton;
     private final ModeButton settingsButton;
@@ -92,6 +92,12 @@ public class AcquisitionPage extends BorderPane {
             module.toLight();
             connectionPane.getChildren().add(module);
         }
+    }
+
+    public void toLight() {
+    }
+
+    public void toDark() {
     }
 
     static class ModeButton extends Button {
