@@ -28,4 +28,8 @@ public class FontManager {
         }
         return font;
     }
+
+    public static class Library {
+        public static final String CASCADIA_MON_MEDIUM = FONTS_ROOT_PATH + "/cascadia_mono/CascadiaMono-Medium.ttf";
+    }
 }
