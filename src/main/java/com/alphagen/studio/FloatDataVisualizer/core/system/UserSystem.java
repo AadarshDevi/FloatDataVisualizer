@@ -59,13 +59,6 @@ public class UserSystem {
         return theme;
     }
 
-    enum SystemTheme {
-        LIGHT,
-        DARK,
-        OTHER,
-        SYSTEM
-    }
-
     record SystemFile(
             OperatingSystem os,
             SystemTheme theme,
