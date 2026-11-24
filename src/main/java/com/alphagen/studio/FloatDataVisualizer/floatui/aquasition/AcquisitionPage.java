@@ -72,6 +72,25 @@ public class AcquisitionPage extends BorderPane {
                 setGraphicTextGap(8);
             }
         }
+
+        public void setSVG(String graphic) {
+            if (graphic == null) {
+                return;
+            }
+
+            float svgSize = 16.0f;
+
+            SVG svg = new SVG(graphic);
+            Bounds b = svg.getBoundsInLocal();
+
+            double scale = (svgSize * 1.0) / Math.max(b.getWidth(), b.getHeight());
+
+            svg.setScaleX(scale);
+            svg.setScaleY(scale);
+            
+            setGraphic(new Group(svg));
+            setGraphicTextGap(8);
+        }
     }
 
     class Library {
