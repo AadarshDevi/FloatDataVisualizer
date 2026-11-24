@@ -1,6 +1,9 @@
 package com.alphagen.studio.FloatDataVisualizer.floatui.aquasition;
 
 
+import com.alphagen.studio.FloatDataVisualizer.floatui.FontManager;
+import com.alphagen.studio.FloatDataVisualizer.floatui.component.SVG;
+import javafx.geometry.Bounds;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
