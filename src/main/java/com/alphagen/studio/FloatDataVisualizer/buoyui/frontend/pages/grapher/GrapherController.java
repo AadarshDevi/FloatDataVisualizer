@@ -289,7 +289,7 @@ public class GrapherController {
 
                 DataPoint dp;
                 try {
-                    dp = rawArray.take();
+                    dp = rawArray.poll(250, TimeUnit.MILLISECONDS);
                 } catch (InterruptedException e) {
                     throw new RuntimeException(e);
                 }
