@@ -95,6 +95,11 @@ public class AcquisitionPage extends BorderPane {
     }
 
     public void toLight() {
+        acquisitionButton.toLight();
+        analysisButton.toLight();
+        settingsButton.toLight();
+        userManualButton.toLight();
+        quitButton.toLight();
     }
 
     public void toDark() {
