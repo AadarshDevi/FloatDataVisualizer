@@ -1,6 +1,8 @@
 package com.alphagen.studio.FloatDataVisualizer.floatui.aquasition;
 
 
+import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.data.ConnectionConfig;
+import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.managers.Connections;
 import com.alphagen.studio.FloatDataVisualizer.floatui.FontManager;
 import com.alphagen.studio.FloatDataVisualizer.floatui.component.SVG;
 import javafx.geometry.Bounds;
