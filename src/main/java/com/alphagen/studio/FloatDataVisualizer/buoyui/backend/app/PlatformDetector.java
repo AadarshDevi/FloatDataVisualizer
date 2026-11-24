@@ -8,11 +8,11 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 
 public class PlatformDetector {
-	private static final Logger LOGGER = LogManager.getLogger(PlatformDetector.class);
-	@Getter
-	private static Platform OSPLATFORM;
-	@Getter
-	private static Path PROJECTROOT;
+    private static final Logger LOGGER = LogManager.getLogger(PlatformDetector.class);
+    @Getter
+    private static Platform OSPLATFORM;
+    @Getter
+    private static Path PROJECTROOT;
 
 	public static void detectPlatform() {
 		String osName = System.getProperty("os.name");
