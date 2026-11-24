@@ -44,12 +44,6 @@ public class ConnectionModule extends Button {
         svgPane.getChildren().add(connectionSVG);
         svgPane.setAlignment(Pos.BOTTOM_CENTER);
 
-        setBackground(new Background(new BackgroundFill(
-                Paint.valueOf("#151430"), // another: 000011, 15141c, 151430
-                new CornerRadii(15),
-                Insets.EMPTY
-        )));
-
         setOnAction(event -> {
             // todo make button do stuff
         });
