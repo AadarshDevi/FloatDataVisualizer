@@ -18,13 +18,12 @@ import java.util.Objects;
 public class Main extends Application {
     private static final Logger logger = LogManager.getLogger(Main.class);
 
-
-    private final String FOLDER_CONNECTIONS = "connections";
-    private final String FILE_LOG = "float.log";
-    private final String FILE_SETTINGS = "float.settings";
-
     @Override
     public void start(Stage stage) throws Exception {
+
+        final String FOLDER_CONNECTIONS = "connections";
+        final String FILE_LOG = "float.log";
+        final String FILE_SETTINGS = "float.settings";
 
         StageManager.setMainStage(stage);
         PlatformDetector.detectPlatform();
