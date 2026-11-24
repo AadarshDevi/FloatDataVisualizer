@@ -5,6 +5,7 @@ import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.Backend;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.app.PlatformDetector;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.settings.SettingsManager;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.managers.StageManager;
+import com.alphagen.studio.FloatDataVisualizer.core.system.UserSystem;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
