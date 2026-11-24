@@ -24,6 +24,12 @@ public class AcquisitionPage extends BorderPane {
         )));
 
         HBox buttonContainer = new HBox();
+        buttonContainer.setPrefHeight(50);
+        buttonContainer.setBackground(new Background(
+                new BackgroundFill(Paint.valueOf("#d3d3d3"),
+                        new CornerRadii(15), Insets.EMPTY
+                )
+        ));
         buttonContainer.setSpacing(10);
         buttonContainer.getChildren().addAll(acquisitionButton, analysisButton, settingsButton, userManualButton);
         
