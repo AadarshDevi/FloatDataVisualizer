@@ -34,7 +34,6 @@ public class AcquisitionPage extends BorderPane {
         quitButton.setOnAction(_ -> System.exit(1));
         logger.info("Main Menu Buttons Ready");
 
-
         setPrefSize(1080, 720);
         setBackground(new Background(new BackgroundFill(
                 Paint.valueOf("#d3d3d3"),
