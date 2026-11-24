@@ -56,6 +56,7 @@ public class AcquisitionPage extends BorderPane {
                 userManualButton,
                 quitButton
         );
+        buttonContainer.setPadding(new Insets(0, 0, 10, 0));
         this.setBottom(buttonContainer);
     }
 
