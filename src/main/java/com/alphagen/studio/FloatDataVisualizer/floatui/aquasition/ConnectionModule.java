@@ -97,7 +97,6 @@ public class ConnectionModule extends Button {
         public ConnectionLabel(String text) {
             super(text);
             setFont(FontManager.getFont(FontManager.Library.CASCADIA_MON_MEDIUM, 14));
-            setTextFill(Paint.valueOf("white"));
             setMaxWidth(Double.MAX_VALUE);
         }
 
