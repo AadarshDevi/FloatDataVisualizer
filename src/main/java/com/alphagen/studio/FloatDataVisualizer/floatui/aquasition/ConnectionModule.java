@@ -63,6 +63,10 @@ public class ConnectionModule extends Button {
         setGraphic(module);
     }
 
+    public ConnectionModule(com.alphagen.studio.FloatDataVisualizer.buoyui.backend.data.ConnectionConfig config) {
+        this(ConnectionConfig.toNew(config));
+    }
+
     // todo implement toLight
     public void toLight() {
     }
