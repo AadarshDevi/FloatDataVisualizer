@@ -5,9 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="776164ce-7a69-48e2-8934-c0376db3d4b9" name="Changes" comment="commits">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/floatui/aquasition/AcquisitionPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/floatui/aquasition/ConnectionModule.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -679,9 +676,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="comments updated" />
-    <MESSAGE value="port disconnected alert" />
-    <MESSAGE value="comments removed" />
     <MESSAGE value="updating ui if serial conn is disconnected" />
     <MESSAGE value="something" />
     <MESSAGE value="disconnected to connected" />
@@ -698,13 +692,16 @@
     <MESSAGE value="mac and linux builds will now have FloatDataVisualizer instead of floatdatavisualizer" />
     <MESSAGE value="replaced executor and future with runnable managers" />
     <MESSAGE value="removed commented out code." />
-    <MESSAGE value="commits" />
     <MESSAGE value="test code commented out" />
     <MESSAGE value="test ui and data commented out was removed" />
     <MESSAGE value="app config, settings, and data folder names" />
     <MESSAGE value="settings up stage and finding os" />
     <MESSAGE value="code is duplicate of BuoyUI" />
-    <option name="LAST_COMMIT_MESSAGE" value="code is duplicate of BuoyUI" />
+    <MESSAGE value="LOGGER into logger" />
+    <MESSAGE value="ConnectionCard's new replacement, ConnectionModule" />
+    <MESSAGE value="ConnectionUI's new replacement, AcquaitionPage" />
+    <MESSAGE value="commits" />
+    <option name="LAST_COMMIT_MESSAGE" value="commits" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
