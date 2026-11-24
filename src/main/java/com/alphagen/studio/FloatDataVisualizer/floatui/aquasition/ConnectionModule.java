@@ -28,8 +28,8 @@ public class ConnectionModule extends Button {
         nameLabel = new ConnectionLabel(config.name());
         nameLabel.setFontSize(18);
 
-        ConnectionLabel portLabel = new ConnectionLabel("Port: " + config.port());
-        ConnectionLabel baudRateLabel = new ConnectionLabel("BaudRate: " + config.baudRate());
+        portLabel = new ConnectionLabel("Port: " + config.port());
+        baudRateLabel = new ConnectionLabel("BaudRate: " + config.baudRate());
 
         ConnectionType type = config.type();
         SVG connectionSVG = switch (type) {
