@@ -98,6 +98,12 @@ public class ConnectionModule extends Button {
     }
 
     public void setTheme(SystemTheme theme) {
+        switch (theme) {
+            case DARK -> toDark();
+            case LIGHT -> toLight();
+            case SYSTEM -> setTheme(UserSystem.getInstance().getTheme());
+            case null, default -> toLight();
+        }
     }
 
     static class ConnectionLabel extends Label {
