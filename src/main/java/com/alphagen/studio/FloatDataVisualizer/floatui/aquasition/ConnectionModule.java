@@ -79,6 +79,7 @@ public class ConnectionModule extends Button {
         portLabel.toLight();
         baudRateLabel.toLight();
         connectionSVG.setFill(Paint.valueOf("black"));
+        baseColor = (Color) Paint.valueOf("white");
         setBackground(new Background(new BackgroundFill(
                 baseColor, // another: 000011, 15141c, 151430
                 radii,
