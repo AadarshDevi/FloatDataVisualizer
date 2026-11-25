@@ -76,11 +76,14 @@ public class Main extends Application {
         }
 
         if (!backend.verifyFile(FILE_SETTINGS)) {
-            alert.setTitle("Exception 4");
-            alert.setContentText("");
-            alert.showAndWait();
-            logger.error("Exception 4: File is unable to be found or created: {}", FILE_SETTINGS);
-            System.exit(-1);
+            new AlertBox(
+                    Alert.AlertType.INFORMATION,
+                    "Settings File",
+                    "Unable to locate or create settings file.",
+                    ButtonType.OK
+            ).showAndWait();
+            logger.error("Unable to locate or create settings file.");
+            Platform.exit();
         }
         logger.info("All startup folders and files are ready.");
 
