@@ -6,7 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="776164ce-7a69-48e2-8934-c0376db3d4b9" name="Changes" comment="commits">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/floatui/alerts/AlertBox.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/floatui/alerts/AlertBox.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/floatui/aquasition/AcquisitionPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/floatui/aquasition/AcquisitionPage.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -681,15 +681,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="reduced pref size" />
-    <MESSAGE value="grey to white background color" />
-    <MESSAGE value="border added" />
-    <MESSAGE value="border added for light, the previous was dark" />
-    <MESSAGE value="border properties global private" />
-    <MESSAGE value="baseColor for light set" />
-    <MESSAGE value="base color replaced hard coded" />
-    <MESSAGE value="hardcoded replaced by baseColor" />
-    <MESSAGE value="setting base color" />
     <MESSAGE value="hover property for comm module" />
     <MESSAGE value="baeColor global private" />
     <MESSAGE value="paint import" />
@@ -702,11 +693,20 @@
     <MESSAGE value="Custom alert created with different ui" />
     <MESSAGE value="alert using java customization" />
     <MESSAGE value="connection pane move up" />
-    <MESSAGE value="commits" />
     <MESSAGE value="added border to alertbox" />
     <MESSAGE value="alertbox now draggable" />
     <MESSAGE value="cannot create more than 2 connections" />
-    <option name="LAST_COMMIT_MESSAGE" value="cannot create more than 2 connections" />
+    <MESSAGE value="max_conn count" />
+    <MESSAGE value="from magic num to final var" />
+    <MESSAGE value="inmcrease radii from 10 to 15" />
+    <MESSAGE value="dragoffset vars for alert dragging" />
+    <MESSAGE value="imports: Alert, ButtonType and Core.AlertBox" />
+    <MESSAGE value="commits" />
+    <MESSAGE value="switched to new float alert" />
+    <MESSAGE value="connections folder creation exception" />
+    <MESSAGE value="using alert for log file creation" />
+    <MESSAGE value="alertbox for settings file exception" />
+    <option name="LAST_COMMIT_MESSAGE" value="alertbox for settings file exception" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
