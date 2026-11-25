@@ -41,15 +41,6 @@ public class AcquisitionPage extends BorderPane {
 
     public AcquisitionPage() {
 
-//        AlertBox alert = new AlertBox(Alert.AlertType.INFORMATION, "Testing AlertBox", "This is a temporary alert box.", ButtonType.OK);
-//        Optional<ButtonType> result = alert.showAndWait();
-//
-//        if (result.isPresent() && result.get() == ButtonType.OK) {
-//            Platform.exit();
-//        }
-//
-//        System.exit(1);
-
         Label appTitleLabel = new Label("Float Data Visualizer");
         appTitleLabel.setFont(FontManager.getFont(FontManager.Library.CASCADIA_MON_MEDIUM, 40));
         appTitleLabel.setMaxWidth(Double.MAX_VALUE);
