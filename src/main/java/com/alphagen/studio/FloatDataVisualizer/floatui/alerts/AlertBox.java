@@ -14,6 +14,8 @@ import org.apache.logging.log4j.Logger;
 public class AlertBox extends Alert {
     private static final Logger logger = LogManager.getLogger(AlertBox.class);
 
+    private double dragOffsetX, dragOffsetY;
+
     public AlertBox(AlertType alertType, String title, String message, ButtonType... buttons) {
         super(alertType);
         this.initStyle(StageStyle.TRANSPARENT);
