@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="776164ce-7a69-48e2-8934-c0376db3d4b9" name="Changes" comment="commits">
+    <list default="true" id="776164ce-7a69-48e2-8934-c0376db3d4b9" name="Changes" comment="removed comments for todo">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -679,15 +679,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added new build categpry and implemented toString" />
-    <MESSAGE value="version import" />
-    <MESSAGE value="updated version" />
-    <MESSAGE value="app infoand label" />
-    <MESSAGE value="empty spaces" />
-    <MESSAGE value="app version label" />
-    <MESSAGE value="fixed positioning and added version label to titlebar" />
-    <MESSAGE value="version updated to have a build name" />
-    <MESSAGE value="version.tostring" />
     <MESSAGE value="updated to new version" />
     <MESSAGE value="fixed connection size" />
     <MESSAGE value="svg library" />
@@ -704,7 +695,16 @@
     <MESSAGE value="removed empty space" />
     <MESSAGE value="lib to svg lib" />
     <MESSAGE value="commits" />
-    <option name="LAST_COMMIT_MESSAGE" value="commits" />
+    <MESSAGE value="removed comments for todo" />
+    <MESSAGE value="grey to white" />
+    <MESSAGE value="grey to white: button container" />
+    <MESSAGE value="top inset reduced" />
+    <MESSAGE value="reduced pref size" />
+    <MESSAGE value="grey to white background color" />
+    <MESSAGE value="border added" />
+    <MESSAGE value="border added for light, the previous was dark" />
+    <MESSAGE value="border properties global private" />
+    <option name="LAST_COMMIT_MESSAGE" value="border properties global private" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
