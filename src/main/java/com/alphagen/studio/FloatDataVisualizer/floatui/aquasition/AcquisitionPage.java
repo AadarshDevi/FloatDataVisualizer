@@ -71,7 +71,7 @@ public class AcquisitionPage extends BorderPane {
 
         setPrefSize(1080, 720);
         setBackground(new Background(new BackgroundFill(
-                Paint.valueOf("#dbdbdb"),
+                Paint.valueOf("white"),
                 new CornerRadii(15),
                 Insets.EMPTY
         )));
