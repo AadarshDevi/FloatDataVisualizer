@@ -48,6 +48,17 @@ public class AlertBox extends Alert {
         dialogPane.setPadding(new Insets(10));
         dialogPane.setContent(label);
 
+        // in the constructor, after `DialogPane dialogPane = this.getDialogPane();`
+        dialogPane.setOnMousePressed(e -> {
+            dragOffsetX = e.getScreenX() - getX();
+            dragOffsetY = e.getScreenY() - getY();
+        });
+
+        dialogPane.setOnMouseDragged(e -> {
+            setX(e.getScreenX() - dragOffsetX);
+            setY(e.getScreenY() - dragOffsetY);
+        });
+
         for (ButtonType type : buttonType) {
             Button button = (Button) dialogPane.lookupButton(type);
             if (button == null) continue;
