@@ -32,6 +32,8 @@ public class AcquisitionPage extends BorderPane {
     private final ModeButton userManualButton;
     private final ModeButton quitButton;
 
+    private final HBox titleBox;
+
     public AcquisitionPage() {
 
         Label appTitleLabel = new Label("Float Data Visualizer");
@@ -43,7 +45,7 @@ public class AcquisitionPage extends BorderPane {
         appVersionLabel.setMaxWidth(Double.MAX_VALUE);
         appVersionLabel.setPadding(new Insets(0, 0, 6, 0));
 
-        HBox titleBox = new HBox();
+        titleBox = new HBox();
         titleBox.setPadding(new Insets(15, 15, 5, 15));
         titleBox.setAlignment(Pos.BOTTOM_LEFT);
         titleBox.setSpacing(10);
@@ -137,6 +139,10 @@ public class AcquisitionPage extends BorderPane {
         settingsButton.toDark();
         userManualButton.toDark();
         quitButton.toDark();
+    }
+
+    public HBox getTitleBar() {
+        return titleBox;
     }
 
     static class ModeButton extends Button {
