@@ -52,6 +52,13 @@ public class AcquisitionPage extends BorderPane {
         titleBox.getChildren().addAll(appTitleLabel, appVersionLabel);
         setTop(titleBox);
 
+        connectionPane = new TilePane();
+        connectionPane.setPrefColumns(2);
+        connectionPane.setHgap(10);
+        connectionPane.setVgap(10);
+        connectionPane.setPadding(new Insets(10, 15, 10, 15));
+        this.setCenter(connectionPane);
+
         ModeButton createConnectionButton = new ModeButton("Create", SVGLibrary.CREATE_SVG_PATH, false);
         createConnectionButton.setFinalWidth(110);
 
