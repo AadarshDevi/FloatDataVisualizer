@@ -1,5 +1,7 @@
 package com.alphagen.studio.FloatDataVisualizer.buoyui.backend.app;
 
+import com.alphagen.studio.FloatDataVisualizer.core.data.OperatingSystem;
+import com.alphagen.studio.FloatDataVisualizer.core.system.UserSystem;
 import lombok.Getter;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -8,27 +10,37 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 
 public class PlatformDetector {
-	private static final Logger LOGGER = LogManager.getLogger(PlatformDetector.class);
-	@Getter
-	private static Platform OSPLATFORM;
-	@Getter
-	private static Path PROJECTROOT;
+    private static final Logger LOGGER = LogManager.getLogger(PlatformDetector.class);
+    @Getter
+    private static Platform OSPLATFORM;
+    @Getter
+    private static Path PROJECTROOT;
 
-	public static void detectPlatform() {
-		String osName = System.getProperty("os.name");
-		if (osName.toLowerCase().contains("win")) {
-			OSPLATFORM = Platform.WIN11;
-			PROJECTROOT = Paths.get(System.getenv("APPDATA")).resolve("FloatDataVisualizer").resolve(AppData.RELEASE_VERSION);
-		} else if (osName.toLowerCase().contains("mac") || osName.toLowerCase().contains("darwin")) {
-			OSPLATFORM = Platform.MACOS;
-			PROJECTROOT = Paths.get(System.getProperty("user.home")).resolve("Library").resolve("Application Support").resolve("FloatDataVisualizer").resolve(AppData.RELEASE_VERSION);
-		} else if (osName.toLowerCase().contains("linux")) {
-			OSPLATFORM = Platform.LINUX;
-			PROJECTROOT = Paths.get(System.getProperty("user.home")).resolve(".local").resolve("share").resolve("FloatDataVisualizer").resolve(AppData.RELEASE_VERSION);
-		}
+    // todo: delete method once platform detector is no longer needed
+    public static void detectPlatform() {
 
-		LOGGER.info("OS: {}", OSPLATFORM);
-		LOGGER.info("Project Root: {}", PROJECTROOT);
+        OperatingSystem os = UserSystem.getInstance().getOs();
 
-	}
+        if (os == OperatingSystem.WINDOWS) {
+            OSPLATFORM = Platform.WIN11;
+        } else {
+            OSPLATFORM = Platform.valueOf(os.toString());
+        }
+
+        String osName = System.getProperty("os.name");
+        if (osName.toLowerCase().contains("win")) {
+//            OSPLATFORM = Platform.WIN11;
+            PROJECTROOT = Paths.get(System.getenv("APPDATA")).resolve("FloatDataVisualizer").resolve(AppData.RELEASE_VERSION);
+        } else if (osName.toLowerCase().contains("mac") || osName.toLowerCase().contains("darwin")) {
+//            OSPLATFORM = Platform.MACOS;
+            PROJECTROOT = Paths.get(System.getProperty("user.home")).resolve("Library").resolve("Application Support").resolve("FloatDataVisualizer").resolve(AppData.RELEASE_VERSION);
+        } else if (osName.toLowerCase().contains("linux")) {
+//            OSPLATFORM = Platform.LINUX;
+            PROJECTROOT = Paths.get(System.getProperty("user.home")).resolve(".local").resolve("share").resolve("FloatDataVisualizer").resolve(AppData.RELEASE_VERSION);
+        }
+//
+        LOGGER.info("OS: {}", OSPLATFORM);
+        LOGGER.info("Project Root: {}", PROJECTROOT);
+
+    }
 }

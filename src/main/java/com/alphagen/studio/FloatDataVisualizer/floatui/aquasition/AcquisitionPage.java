@@ -1,0 +1,243 @@
+package com.alphagen.studio.FloatDataVisualizer.floatui.aquasition;
+
+
+import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.data.ConnectionConfig;
+import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.managers.Connections;
+import com.alphagen.studio.FloatDataVisualizer.core.AppInfo;
+import com.alphagen.studio.FloatDataVisualizer.floatui.FontManager;
+import com.alphagen.studio.FloatDataVisualizer.floatui.alerts.AlertBox;
+import com.alphagen.studio.FloatDataVisualizer.floatui.component.SVG;
+import javafx.geometry.Bounds;
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
+import javafx.scene.Group;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
+import javafx.scene.control.Label;
+import javafx.scene.layout.*;
+import javafx.scene.paint.Color;
+import javafx.scene.paint.Paint;
+import lombok.Getter;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+import java.util.ArrayList;
+
+public class AcquisitionPage extends BorderPane {
+
+    private static final Logger logger = LogManager.getLogger(AcquisitionPage.class);
+    private final TilePane connectionPane;
+
+    private final ModeButton acquisitionButton;
+    private final ModeButton analysisButton;
+    private final ModeButton settingsButton;
+    private final ModeButton userManualButton;
+    private final ModeButton quitButton;
+
+    private final int MAX_CONNECTION_COUNT = 8;
+
+    private final HBox titleBox;
+
+    public AcquisitionPage() {
+
+        Label appTitleLabel = new Label("Float Data Visualizer");
+        appTitleLabel.setFont(FontManager.getFont(FontManager.Library.CASCADIA_MON_MEDIUM, 40));
+        appTitleLabel.setMaxWidth(Double.MAX_VALUE);
+
+        Label appVersionLabel = new Label("v" + AppInfo.appVersion);
+        appVersionLabel.setFont(FontManager.getFont(FontManager.Library.CASCADIA_MON_MEDIUM, 20));
+        appVersionLabel.setMaxWidth(Double.MAX_VALUE);
+        appVersionLabel.setPadding(new Insets(0, 0, 6, 0));
+
+        titleBox = new HBox();
+        titleBox.setPadding(new Insets(15, 15, 5, 15));
+        titleBox.setAlignment(Pos.BOTTOM_LEFT);
+        titleBox.setSpacing(10);
+        titleBox.getChildren().addAll(appTitleLabel, appVersionLabel);
+        setTop(titleBox);
+
+        connectionPane = new TilePane();
+        connectionPane.setPrefColumns(2);
+        connectionPane.setHgap(10);
+        connectionPane.setVgap(10);
+        connectionPane.setPadding(new Insets(10, 15, 10, 15));
+        this.setCenter(connectionPane);
+
+        ModeButton createConnectionButton = new ModeButton("Create", SVGLibrary.CREATE_SVG_PATH, false);
+        createConnectionButton.setFinalWidth(110);
+        createConnectionButton.setOnAction(event -> {
+            if (connectionPane.getChildren().size() == MAX_CONNECTION_COUNT) {
+                new AlertBox(
+                        Alert.AlertType.INFORMATION,
+                        "Connection List Full",
+                        "You cannot create new connections because you have 8 connections.",
+                        ButtonType.OK
+                ).showAndWait();
+            }
+        });
+
+        HBox createFormattingBox = new HBox();
+        createFormattingBox.setAlignment(Pos.BOTTOM_RIGHT);
+        createFormattingBox.setSpacing(10);
+        HBox.setHgrow(createFormattingBox, Priority.ALWAYS);
+        createFormattingBox.setPadding(new Insets(5, 5, 9, 5));
+        createFormattingBox.getChildren().addAll(createConnectionButton);
+        titleBox.getChildren().add(createFormattingBox);
+
+        acquisitionButton = new ModeButton("Acquisition", SVGLibrary.ACQUISITION_SVG_PATH, false);
+        analysisButton = new ModeButton("Analysis", SVGLibrary.ANALYTICS_SVG_PATH, true);
+        settingsButton = new ModeButton("Settings", SVGLibrary.SETTINGS_SVG_PATH, true);
+        userManualButton = new ModeButton("User Manual", SVGLibrary.USER_MANUAL_SVG_PATH, false);
+        quitButton = new ModeButton("Quit", SVGLibrary.QUIT_SVG_PATH, true);
+        quitButton.setOnAction(_ -> System.exit(1));
+        logger.info("Main Menu Buttons Ready");
+
+        setPrefSize(1080, 720);
+        setBackground(new Background(new BackgroundFill(
+                Paint.valueOf("white"),
+                new CornerRadii(15),
+                Insets.EMPTY
+        )));
+
+        HBox buttonContainer = new HBox();
+        buttonContainer.setPrefHeight(50);
+        buttonContainer.setBackground(
+                new Background(
+                        new BackgroundFill(
+                                Paint.valueOf("white"),
+                                new CornerRadii(15),
+                                Insets.EMPTY
+                        )
+                )
+        );
+        buttonContainer.setSpacing(10);
+        buttonContainer.setAlignment(Pos.CENTER);
+        buttonContainer.getChildren().addAll(
+                acquisitionButton,
+                analysisButton,
+                settingsButton,
+                userManualButton,
+                quitButton
+        );
+        buttonContainer.setPadding(new Insets(0, 0, 10, 0));
+        this.setBottom(buttonContainer);
+        logger.info("Buttons loaded in Page.Bottom");
+
+
+    }
+
+    public void loadConnections() {
+        ArrayList<ConnectionConfig> connectionsList = Connections.Processor.readAllConnections();
+
+        if (connectionsList == null) {
+            logger.info("There are no connections to load.");
+            return;
+        }
+
+        for (ConnectionConfig connectionConfig : connectionsList) {
+            ConnectionModule module = new ConnectionModule(connectionConfig);
+            module.toLight();
+            connectionPane.getChildren().add(module);
+        }
+    }
+
+    public void toLight() {
+        acquisitionButton.toLight();
+        analysisButton.toLight();
+        settingsButton.toLight();
+        userManualButton.toLight();
+        quitButton.toLight();
+    }
+
+    public void toDark() {
+        acquisitionButton.toDark();
+        analysisButton.toDark();
+        settingsButton.toDark();
+        userManualButton.toDark();
+        quitButton.toDark();
+    }
+
+    public HBox getTitleBar() {
+        return titleBox;
+    }
+
+    static class ModeButton extends Button {
+
+        @Getter private SVG buttonGraphic;
+
+        public ModeButton(String text, String graphic, boolean outline) {
+            super(text);
+
+            int width = 140;
+            int height = 35;
+
+            setFont(FontManager.getFont(FontManager.Library.CASCADIA_MON_MEDIUM, 13));
+
+            setPrefSize(width, height);
+            setMaxSize(width, height);
+            setMinSize(width, height);
+            setBackground(new Background(new BackgroundFill(
+                    Paint.valueOf("white"),
+                    new CornerRadii(7),
+                    Insets.EMPTY
+            )));
+
+            hoverProperty().addListener((obs, wasHovering, isHovering) -> {
+                setBackground(new Background(new BackgroundFill(
+                        isHovering ? Color.WHITE.deriveColor(0, 1, 0.91, 1) : Color.WHITE,
+                        new CornerRadii(5),
+                        Insets.EMPTY)));
+            });
+
+            setSVG(graphic, outline);
+        }
+
+        public void setSVG(String graphic, boolean outline) {
+            if (graphic == null) return;
+
+            final float svgSize = 18.0f;
+            final float percentScale = 1.0f;
+
+            buttonGraphic = new SVG(graphic);
+
+            if (outline) {
+                buttonGraphic.setStroke(Paint.valueOf("black"));
+                buttonGraphic.setStrokeWidth(1.4);
+                buttonGraphic.setFill(Color.TRANSPARENT);
+            }
+
+            Bounds b = buttonGraphic.getBoundsInLocal();
+
+            double scale = (svgSize * percentScale) / Math.max(b.getWidth(), b.getHeight());
+
+            buttonGraphic.setScaleX(scale);
+            buttonGraphic.setScaleY(scale);
+
+            setGraphic(new Group(buttonGraphic));
+            setGraphicTextGap(8);
+        }
+
+        public void toLight() {
+        }
+
+        public void toDark() {
+        }
+
+        public void setFinalWidth(double width) {
+            setMinWidth(width);
+            setPrefWidth(width);
+            setMaxWidth(width);
+        }
+    }
+
+    static class SVGLibrary {
+        public static final String USER_MANUAL_SVG_PATH = "M 7.0000195 1.9999805 C 5.3897995 1.9999805 4.0462739 2.268157 3.1002539 2.538457 C 3.0407639 2.555447 2.9770658 2.5730058 2.9101758 2.5914258 C 2.1560158 2.7990958 1.0000195 3.1174395 1.0000195 4.0000195 L 1.0000195 16.99998 C 1.0000195 17.34658 1.1794573 17.668403 1.4742773 17.850703 C 1.9432973 18.140503 2.5622422 17.886773 3.1107422 17.661973 C 3.3020922 17.583473 3.4848961 17.508623 3.6497461 17.461523 C 4.4537261 17.231823 5.6102395 16.99998 7.0000195 16.99998 C 8.2613195 16.99998 9.205558 17.416099 9.913418 17.851699 C 10.095218 17.963599 10.278998 18.106315 10.467598 18.252715 C 10.933798 18.614815 11.4298 19.00002 12 19.00002 C 12.5718 19.00002 13.065303 18.616197 13.530703 18.254297 C 13.719503 18.107397 13.903682 17.964199 14.086582 17.851699 C 14.794482 17.416099 15.73868 16.99998 16.99998 16.99998 C 18.38978 16.99998 19.546312 17.231823 20.350312 17.461523 C 20.522713 17.510823 20.709899 17.589775 20.904199 17.671875 C 21.444299 17.899975 22.039323 18.151303 22.525723 17.850703 C 22.820523 17.668403 22.99998 17.34658 22.99998 16.99998 L 22.99998 4.0000195 C 22.99998 3.1159795 21.855 2.8015066 21.0975 2.5934766 C 21.0279 2.5743666 20.961588 2.556127 20.899687 2.538457 C 19.953688 2.268157 18.61018 1.9999805 16.99998 1.9999805 C 15.27618 1.9999805 13.854906 2.5740173 12.878906 3.1317773 C 12.729606 3.2170873 12.572623 3.3349353 12.430723 3.4414453 C 12.243323 3.5821653 12.0823 3.7030664 12 3.7030664 C 11.9177 3.7030664 11.756677 3.5821653 11.569277 3.4414453 C 11.427377 3.3349353 11.270394 3.2170873 11.121094 3.1317773 C 10.145094 2.5740173 8.7237995 1.9999805 7.0000195 1.9999805 z M 7.0000195 4.0000195 C 8.2762395 4.0000195 9.3549558 4.4260217 10.128926 4.8682617 C 10.503726 5.0824717 10.79888 5.2959241 10.99998 5.4556641 L 10.99998 16.172109 C 10.07938 15.599409 8.7631095 15 7.0000195 15 C 5.6777895 15 4.5357687 15.180698 3.6454688 15.395098 C 3.3208887 15.473298 3 15.233002 3 14.899102 L 3 5.0216602 C 3 4.8107802 3.1316295 4.6216005 3.3325195 4.5574805 C 4.1298895 4.3029605 5.4151095 4.0000195 7.0000195 4.0000195 z M 16.99998 4.0000195 C 18.58488 4.0000195 19.87008 4.3029605 20.66748 4.5574805 C 20.86838 4.6216005 21 4.8107802 21 5.0216602 L 21 14.899102 C 21 15.233002 20.679073 15.473298 20.354473 15.395098 C 19.464173 15.180698 18.32218 15 16.99998 15 C 15.23688 15 13.92062 15.599409 13.00002 16.172109 L 13.00002 5.4556641 C 13.20112 5.2959241 13.496274 5.0824717 13.871074 4.8682617 C 14.645074 4.4260217 15.72378 4.0000195 16.99998 4.0000195 z M 7.0000195 18 C 5.9591295 18 4.8406573 18.288293 4.0317773 18.547793 C 3.5442373 18.704293 3.05949 18.879224 2.59125 19.087324 C 2.08721 19.313124 1.8616038 19.904672 2.0873438 20.408672 C 2.3130437 20.912672 2.9045156 21.138313 3.4085156 20.912812 C 3.8097556 20.735112 4.2253616 20.586107 4.6428516 20.452207 C 5.3922016 20.211707 6.2737995 19.99998 7.0000195 19.99998 C 7.5522695 19.99998 8.088265 20.317271 8.986875 20.882871 C 9.732385 21.352071 10.7619 22.00002 12 22.00002 C 13.2373 22.00002 14.263514 21.352902 15.006914 20.884102 C 15.903714 20.318602 16.44088 19.99998 16.99998 19.99998 C 17.73238 19.99998 18.614216 20.211873 19.361016 20.451973 C 19.776116 20.585473 20.188283 20.734879 20.587383 20.910879 C 21.085883 21.132479 21.686677 20.910588 21.911777 20.410488 C 22.144277 19.894288 21.882172 19.296827 21.376172 19.073027 C 21.237772 19.012227 20.699203 18.781427 19.973203 18.548027 C 19.164703 18.288127 18.04648 18 16.99998 18 C 15.82568 18 14.829121 18.630307 14.106621 19.087207 C 14.070821 19.109907 14.035711 19.132128 14.001211 19.153828 C 13.161211 19.682928 12.5989 19.99998 12 19.99998 C 11.4004 19.99998 10.834673 19.682118 9.9936328 19.153418 C 9.9580428 19.131018 9.921757 19.108087 9.884707 19.084687 C 9.162867 18.628888 8.1669095 18 7.0000195 18 z";
+        public static final String ANALYTICS_SVG_PATH = "M 8 16 v -5 m 4 5 V 8 m 4 8 v -2 m 2 -10 H 6 a 2 2 0 0 0 -2 2 v 12 a 2 2 0 0 0 2 2 h 12 a 2 2 0 0 0 2 -2 V 6 a 2 2 0 0 0 -2 -2 z";
+        public static final String ACQUISITION_SVG_PATH = "m 755.37622 697.23453 c -29.62286 0 -59.24571 11.92229 -83.01714 23.91772 L 470.33851 565.94311 c 5.92457 -17.92 11.84914 -35.84 11.84914 -59.75772   0 -23.91771 -5.85143 -41.83771 -11.84914 -59.75771 L 664.75222 296.99682 c 17.77371 17.92 47.46971 29.84229 77.16571 29.84229 A 147.456 147.456 0 0 0 890.32479 177.40825   147.456 147.456 0 0 0 741.84479 27.977389   147.456 147.456 0 0 0 593.58422 177.40825 c 0 29.91543 11.84914 59.83086 23.69829 83.67543 l -176.64 131.51085 c -29.696 -35.84 -65.31658 -59.75771 -106.78858 -65.75542 v -65.75543 c 53.39429 -11.92229 89.01486 -59.75772 89.01486 -113.51772   0 -65.82857 -53.39428 -119.58857 -118.71086 -119.588571   -65.31657 -10e-7 -118.71085 53.833143 -118.71085 119.588571   0 53.76 35.54743 101.59543 89.01485 113.51772 v 65.82857 c -89.01485 17.84686 -154.33142 89.52686 -154.33142 179.2   0 89.67314 65.31657 161.42629 148.40685 173.34857 v 65.75543 c -53.39428 11.92229 -89.088 59.75771 -89.088 113.59086   0 65.75543 53.39429 119.51543 118.71086 119.51542   65.31657 0 118.784 -53.76 118.784 -119.51542   0 -53.83315 -35.62057 -101.66857 -89.088 -113.59086 v -65.75543 c 41.54514 -5.99771 83.09029 -29.91543 106.86171 -65.75543 l 196.02286 149.21143 c -11.84914 23.91771 -23.69828 53.76 -23.69828 83.67543   0 83.67543 65.31657 149.43086 148.40685 149.43086 A 147.456 147.456 0 0 0 903.85622 846.59225   147.456 147.456 0 0 0 755.37622 697.16139 Z M 741.99108 87.735104 c 47.46971 0 89.01485 41.910856 89.01485 89.673146   0 47.83543 -41.54514 89.67314 -89.01485 89.67314   -47.54286 0 -89.088 -41.83771 -89.088 -89.67314   0 -47.76229 41.54514 -89.673146 89.088 -89.673146 z M 300.20822 387.76711 c 62.24457 0 116.736 54.85714 116.736 117.46742   0 62.68343 -54.49143 117.46743 -116.66286 117.46743   -62.17143 0 -116.66285 -54.85714 -116.66285 -117.46743   0 -62.61028 54.41828 -117.46742 116.66285 -117.46742 z M 238.91451 147.56596 c 0 -35.84 23.77142 -59.830856 59.31885 -59.830856   35.62057 0 59.392 23.917716 59.392 59.830856   0 35.84 -23.77143 59.75772 -59.392 59.75772   -35.54743 0 -59.31885 -23.91772 -59.31885 -59.75772 z m 118.71085 717.23886 c 0 35.84 -23.77143 59.83086 -59.392 59.83086   -35.54743 0 -59.31885 -23.91772 -59.31885 -59.83086   0 -35.84 23.77142 -59.75771 59.31885 -59.75771   35.62057 0 59.392 23.91771 59.392 59.75771 z m 397.89715 71.53371 c -47.54286 0 -89.01486 -41.83771 -89.01486 -89.67314   0 -47.83543 41.54514 -89.67314 89.01486 -89.67314   47.54285 0 89.01485 41.83771 89.01485 89.67314   0 47.83543 -41.54514 89.67314 -89.01485 89.67314 z";
+        public static final String QUIT_SVG_PATH = "m 10.393774 15.280156   3 -3 m 0 0   -3 -3.0000004 m 3 3.0000004 H 2.3937743 m 0 -4.7519804 v -0.04782 c 0 -1.12011 0 -1.68058 0.21799 -2.1084   0.19174 -0.37633 0.49748 -0.68207 0.87381 -0.87381   0.42782 -0.21799 0.98829 -0.21799 2.1084 -0.21799 h 9.5999997 c 1.1201 0 1.6794 0 2.1072 0.21799   0.3763 0.19174 0.6831 0.49748 0.8748 0.87381   0.2178 0.4274 0.2178 0.98719 0.2178 2.10511 v 9.6066904 c 0 1.1179 0 1.6769 -0.2178 2.1043   -0.1917 0.3763 -0.4985 0.6826 -0.8748 0.8743   -0.4274 0.2178 -0.9864 0.2178 -2.1043 0.2178 H 5.5906843 c -1.11792 0 -1.67771 0 -2.10511 -0.2178   -0.37633 -0.1917 -0.68207 -0.4983 -0.87381 -0.8746   -0.21799 -0.4278 -0.21799 -0.9875 -0.21799 -2.1076 v -0.05";
+        public static final String SETTINGS_SVG_PATH = "M 8.8714453 2.5723242 C 8.7296091 2.5713755 8.5876597 2.5855025 8.4479297 2.6146875 C 8.1323797 2.6805975 7.8357877 2.8527808 7.2425977 3.1970508 L 7.2399609 3.1982227 L 6.7522852 3.4812305 L 6.7468945 3.4845117 C 6.1590545 3.8256917 5.8644288 3.9967323 5.6517187 4.2361523 C 5.4629587 4.4486123 5.3218523 4.6987863 5.2374023 4.9701562 C 5.1419423 5.2768862 5.1470352 5.6189553 5.1585352 6.3026953 L 5.1656836 6.7273828 C 5.1667636 6.7916828 5.1686145 6.8236044 5.1681445 6.8552344 C 5.1634045 7.1749744 5.0808466 7.4891175 4.9297266 7.7709375 C 4.9147866 7.7988075 4.8987225 7.8267128 4.8665625 7.8823828 C 4.8343825 7.9381028 4.8187894 7.9657662 4.8021094 7.9926562 C 4.6333794 8.2644962 4.4021538 8.4918431 4.1273437 8.6557031 C 4.1001638 8.6719131 4.0714853 8.6875014 4.0151953 8.7186914 L 3.6536719 8.919082 C 3.0521019 9.252452 2.7513491 9.4193088 2.5325391 9.6567187 C 2.3389591 9.8667488 2.1927756 10.115807 2.1035156 10.387207 C 2.0026156 10.693907 2.0026878 11.037788 2.0042578 11.725488 L 2.0054883 12.287695 C 2.0070383 12.970795 2.0091825 13.312177 2.1103125 13.616777 C 2.1997825 13.886277 2.3449709 14.133995 2.5374609 14.342695 C 2.7550409 14.578695 3.0527461 14.744482 3.6497461 15.076582 L 4.0081055 15.275977 C 4.0690955 15.309877 4.0997502 15.326614 4.1291602 15.344414 C 4.4014702 15.508314 4.6308936 15.734993 4.7981836 16.005293 C 4.8162536 16.034493 4.8336203 16.064827 4.8683203 16.125527 C 4.9025803 16.185327 4.9200875 16.215176 4.9359375 16.245176 C 5.0826075 16.522876 5.1611539 16.831527 5.1665039 17.145527 C 5.1670839 17.179427 5.1665606 17.213695 5.1653906 17.282695 L 5.1585352 17.690215 C 5.1469552 18.376315 5.1419097 18.719724 5.2379297 19.027324 C 5.3228797 19.299424 5.4648584 19.549976 5.6546484 19.762676 C 5.8691684 20.003076 6.1665542 20.174529 6.7610742 20.517129 L 7.2547852 20.801484 C 7.8476352 21.143184 8.1439709 21.313784 8.4587109 21.378984 C 8.7371609 21.436584 9.0246594 21.434429 9.3021094 21.372129 C 9.6156894 21.301729 9.9095058 21.125797 10.496426 20.774297 L 10.850215 20.56248 C 10.906215 20.52888 10.934598 20.512104 10.962598 20.496504 C 11.240898 20.341804 11.551212 20.255805 11.869512 20.245605 C 11.901512 20.244605 11.934214 20.244609 11.999414 20.244609 C 12.064814 20.244609 12.097392 20.244605 12.129492 20.245605 C 12.448392 20.255905 12.760695 20.3422 13.039395 20.4975 C 13.063895 20.5112 13.088521 20.525975 13.131621 20.551875 L 13.507793 20.777695 C 14.097093 21.131495 14.391604 21.308109 14.706504 21.378809 C 14.985004 21.441309 15.273625 21.443788 15.553125 21.385488 C 15.868525 21.319588 16.165674 21.147108 16.758574 20.803008 L 17.253574 20.515723 C 17.841774 20.174323 18.136712 20.003113 18.349512 19.763613 C 18.538312 19.551213 18.679604 19.301127 18.764004 19.029727 C 18.858804 18.725227 18.853099 18.385795 18.841699 17.711895 L 18.834316 17.272383 C 18.833216 17.208083 18.833113 17.176073 18.833613 17.144473 C 18.838313 16.824673 18.919525 16.510394 19.070625 16.228594 C 19.085625 16.200694 19.101789 16.17259 19.133789 16.11709 C 19.165989 16.06149 19.182714 16.033716 19.199414 16.006816 C 19.368114 15.734916 19.599514 15.507377 19.874414 15.343477 C 19.901214 15.327477 19.928909 15.312177 19.983809 15.281777 L 19.985684 15.280898 L 20.347207 15.080508 C 20.948807 14.747208 21.250126 14.580095 21.468926 14.342695 C 21.662526 14.132695 21.808473 13.883917 21.897773 13.612617 C 21.998073 13.307717 21.997301 12.965813 21.995801 12.286113 L 21.994512 11.711895 C 21.992912 11.028695 21.992077 10.687412 21.890977 10.382812 C 21.801477 10.113313 21.655508 9.8655959 21.463008 9.6568359 C 21.245708 9.4210959 20.947519 9.2552495 20.351719 8.9237695 L 20.349902 8.9229492 L 19.983691 8.7192187 C 19.926891 8.6875787 19.898926 8.6716844 19.871426 8.6552344 C 19.598326 8.4916444 19.368176 8.2656444 19.200176 7.9952344 C 19.183276 7.9680244 19.167385 7.9394759 19.134785 7.8830859 C 19.102285 7.8267559 19.085825 7.79825 19.070625 7.77 C 18.920025 7.48868 18.838513 7.1751447 18.833613 6.8560547 C 18.833113 6.8239747 18.833216 6.7912052 18.834316 6.7260352 L 18.841523 6.3007617 C 18.852923 5.6202317 18.858708 5.2789372 18.763008 4.9726172 C 18.678108 4.7005272 18.535972 4.4499456 18.346172 4.2372656 C 18.131672 3.9968656 17.834715 3.8253339 17.240215 3.4827539 L 16.746387 3.1982227 C 16.153587 2.8566027 15.857085 2.6856869 15.542285 2.6205469 C 15.263885 2.5629169 14.976521 2.5655911 14.699121 2.6278711 C 14.385921 2.6981711 14.09311 2.8734953 13.50791 3.2239453 L 13.504512 3.2255273 L 13.150723 3.4374023 C 13.094823 3.4709023 13.066498 3.4877889 13.038398 3.5033789 C 12.760098 3.6580989 12.449491 3.7436472 12.131191 3.7538672 C 12.099191 3.7548972 12.066489 3.7549219 12.001289 3.7549219 C 11.936489 3.7549219 11.902391 3.7548972 11.870391 3.7538672 C 11.551491 3.7436072 11.240184 3.6576156 10.961484 3.5022656 C 10.933384 3.4866056 10.905629 3.4695389 10.849629 3.4358789 L 10.493496 3.2221289 C 9.9042161 2.8683589 9.6091378 2.6911869 9.2942578 2.6205469 C 9.1549728 2.5892969 9.0132816 2.573273 8.8714453 2.5723242 z M 12.000293 7.9999805 C 14.209493 7.9999805 16.000312 9.79082 16.000312 12 C 16.000312 14.2091 14.209493 16.00002 12.000293 16.00002 C 9.791183 16.00002 8.000332 14.2091 8.000332 12 C 8.000332 9.79082 9.791183 7.9999805 12.000293 7.9999805 z";
+        public static final String CREATE_SVG_PATH = "M 4.9999805 3 C 3.8949805 3 3 3.8949805 3 4.9999805 L 3 19.00002 C 3 20.10502 3.8949805 21 4.9999805 21 L 19.00002 21 C 20.10502 21 21 20.10502 21 19.00002 L 21 13.99998 L 19.00002 13.99998 L 19.00002 19.00002 L 4.9999805 19.00002 L 4.9999805 4.9999805 L 10.00002 4.9999805 L 10.00002 3 L 4.9999805 3 z M 15 3 L 15 7.0000195 L 10.99998 7.0000195 L 10.99998 9 L 15 9 L 15 13.00002 L 16.99998 13.00002 L 16.99998 9 L 21 9 L 21 7.0000195 L 16.99998 7.0000195 L 16.99998 3 L 15 3 z";
+    }
+
+}

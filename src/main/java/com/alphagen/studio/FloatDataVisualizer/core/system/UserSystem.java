@@ -1,6 +1,7 @@
 package com.alphagen.studio.FloatDataVisualizer.core.system;
 
 import com.alphagen.studio.FloatDataVisualizer.core.data.OperatingSystem;
+import com.alphagen.studio.FloatDataVisualizer.core.data.SystemTheme;
 import com.alphagen.studio.FloatDataVisualizer.core.data.Version;
 import com.jthemedetecor.OsThemeDetector;
 import lombok.Getter;
@@ -10,10 +11,9 @@ import org.apache.logging.log4j.Logger;
 
 public class UserSystem {
     private static final Logger LOGGER = LogManager.getLogger(UserSystem.class);
-    @Getter
-    private final FileSystem fileSystem;
-    @Getter
-    private final OperatingSystem os;
+    private static UserSystem userSystem;
+    @Getter private final FileSystem fileSystem;
+    @Getter private final OperatingSystem os;
     @Getter
     @Setter
     private SystemTheme theme;
@@ -22,6 +22,11 @@ public class UserSystem {
         this.os = detectOS();
         fileSystem = new FileSystem(os);
         this.theme = detectTheme(SystemTheme.DARK); // fixme: need to read from settings file
+    }
+
+    public static UserSystem getInstance() {
+        if (userSystem == null) userSystem = new UserSystem();
+        return userSystem;
     }
 
     public OperatingSystem detectOS() {
@@ -53,13 +58,6 @@ public class UserSystem {
 
         LOGGER.info("System Theme: {}", theme);
         return theme;
-    }
-
-    enum SystemTheme {
-        LIGHT,
-        DARK,
-        OTHER,
-        SYSTEM
     }
 
     record SystemFile(

@@ -29,10 +29,10 @@ public class FileSystem {
             case WINDOWS:
                 String settingsFolderPath = System.getProperty("APPDATA");
                 if (settingsFolderPath == null) {
-                    path = Path.of(System.getProperty("user.home"), "AppData", "Roaming", AppInfo.appName, AppInfo.appVersion);
+                    path = Path.of(System.getProperty("user.home"), "AppData", "Roaming", AppInfo.appName, AppInfo.appVersion.toString());
                     break;
                 }
-                path = Path.of(settingsFolderPath, AppInfo.appName, AppInfo.appVersion);
+                path = Path.of(settingsFolderPath, AppInfo.appName, AppInfo.appVersion.toString());
                 break;
             case MACOS:
                 // todo: implement macos folder paths
@@ -42,7 +42,7 @@ public class FileSystem {
                 break;
             case OTHER:
             default:
-                path = Path.of(System.getProperty("user.home"), AppInfo.appName, AppInfo.appVersion);
+                path = Path.of(System.getProperty("user.home"), AppInfo.appName, AppInfo.appVersion.toString());
                 break;
         }
         LOGGER.info("App Root > Settings Path: {}", path);
@@ -64,7 +64,7 @@ public class FileSystem {
         Path path = null;
         switch (os) {
             case WINDOWS:
-                path = Path.of(System.getProperty("user.home"), "Documents", AppInfo.appName, AppInfo.appVersion);
+                path = Path.of(System.getProperty("user.home"), "Documents", AppInfo.appName, AppInfo.appVersion.toString());
                 break;
             case MACOS:
                 // todo: implement macos folder paths
@@ -74,7 +74,7 @@ public class FileSystem {
                 break;
             case OTHER:
             default:
-                path = Path.of(System.getProperty("user.home"), AppInfo.appName, AppInfo.appVersion);
+                path = Path.of(System.getProperty("user.home"), AppInfo.appName, AppInfo.appVersion.toString());
                 break;
         }
         LOGGER.info("App Root Folder > Data Path: {}", path);

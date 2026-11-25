@@ -15,6 +15,7 @@ import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.pages.PageConstan
 import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.pages.connections.datacard.DataCardController;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.pages.connections.editor.ConnectionEditorController;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.util.StageUtil;
+import com.alphagen.studio.FloatDataVisualizer.floatui.aquasition.ConnectionModule;
 import com.fazecast.jSerialComm.SerialPort;
 import javafx.application.Platform;
 import javafx.collections.ObservableList;
@@ -46,262 +47,264 @@ import java.util.concurrent.Executors;
 
 public class ConnectionsController {
 
-	private static final Logger LOGGER = LogManager.getLogger(ConnectionsController.class);
-	@Getter private final ExecutorService serialPortWatcher = Executors.newSingleThreadExecutor();
-	@FXML public TilePane connections;
-	@FXML public Button import_connection_s;
-	@FXML public Button button_theme_change; // todo: implement
-	@FXML public Button button_fullscreen;
-	@FXML public Button button_user_manual; // todo: implement
-	@FXML public SVGPath fullscreen;
-	@FXML public SVGPath windowedScreen;
-	@FXML public ScrollPane scrollPane;
-	@FXML public SVGPath lightTheme; // todo: implement
-	@FXML public SVGPath darkTheme; // todo: implement
-	@Setter
-	@Getter
-	private ConnectionConfig currentConnectionConfig;
-	@Setter
-	@Getter
-	private FloatConfig currentFloatConfig;
-	@FXML private BorderPane root;
+    private static final Logger LOGGER = LogManager.getLogger(ConnectionsController.class);
+    @Getter private final ExecutorService serialPortWatcher = Executors.newSingleThreadExecutor();
+    @FXML public TilePane connections;
+    @FXML public Button import_connection_s;
+    @FXML public Button button_theme_change; // todo: implement
+    @FXML public Button button_fullscreen;
+    @FXML public Button button_user_manual; // todo: implement
+    @FXML public SVGPath fullscreen;
+    @FXML public SVGPath windowedScreen;
+    @FXML public ScrollPane scrollPane;
+    @FXML public SVGPath lightTheme; // todo: implement
+    @FXML public SVGPath darkTheme; // todo: implement
+    @Setter
+    @Getter
+    private ConnectionConfig currentConnectionConfig;
+    @Setter
+    @Getter
+    private FloatConfig currentFloatConfig;
+    @FXML private BorderPane root;
 
-	@FXML
-	public void initialize() {
-		if (!Debug.useWindowModes) {
-			button_fullscreen.setDisable(true);
-			button_fullscreen.setVisible(false);
-			button_fullscreen.setManaged(false);
-		}
-		startHardwareWatcher();
-		button_theme_change.setOnAction(event -> setTheme());
-		setThemeCSS();
-	}
+    @FXML
+    public void initialize() {
+        if (!Debug.useWindowModes) {
+            button_fullscreen.setDisable(true);
+            button_fullscreen.setVisible(false);
+            button_fullscreen.setManaged(false);
+        }
+        startHardwareWatcher();
+        button_theme_change.setOnAction(event -> setTheme());
+        setThemeCSS();
+    }
 
-	public void startHardwareWatcher() {
-		serialPortWatcher.submit(() -> {
-			int lastCount = -1;
-			while (!Thread.currentThread().isInterrupted()) {
-				int currentCount = SerialPort.getCommPorts().length;
+    public void startHardwareWatcher() {
+        serialPortWatcher.submit(() -> {
+            int lastCount = -1;
+            while (!Thread.currentThread().isInterrupted()) {
+                int currentCount = SerialPort.getCommPorts().length;
 
-				if (currentCount != lastCount) {
-					lastCount = currentCount;
+                if (currentCount != lastCount) {
+                    lastCount = currentCount;
 
-					// Update the UI safely
-					Platform.runLater(() -> {
-						// You could also refresh a ComboBox here
-						LOGGER.info("Refreshing Connections");
+                    // Update the UI safely
+                    Platform.runLater(() -> {
+                        // You could also refresh a ComboBox here
+                        LOGGER.info("Refreshing Connections");
 
-						ObservableList<Node> dataCards = connections.getChildren();
-						for (Node node : dataCards) {
-							Button dataCard = (Button) node;
-							DataCardController dcc = (DataCardController) dataCard.getProperties().get("dcc");
-							dcc.invalidConnection();
-						}
+                        ObservableList<Node> dataCards = connections.getChildren();
+                        for (Node node : dataCards) {
+                            Button dataCard = (Button) node;
+                            DataCardController dcc = (DataCardController) dataCard.getProperties().get("dcc");
+//                            dcc.invalidConnection(); // fixme
+                        }
 
-						if (ControllerManager.getConnectionEditorController() != null) {
-							ControllerManager.getConnectionEditorController().updatePorts(SerialPort.getCommPorts());
-						}
+                        if (ControllerManager.getConnectionEditorController() != null) {
+                            ControllerManager.getConnectionEditorController().updatePorts(SerialPort.getCommPorts());
+                        }
 
-					});
-				}
+                    });
+                }
 
-				try {
-					// Don't spam the OS; check every 1-2 seconds
-					Thread.sleep(1500);
-				} catch (InterruptedException e) {
-					break;
-				}
-			}
-		});
-	}
+                try {
+                    // Don't spam the OS; check every 1-2 seconds
+                    Thread.sleep(1500);
+                } catch (InterruptedException e) {
+                    break;
+                }
+            }
+        });
+    }
 
-	public void setTheme() {
-		switch (ThemeProcessor.getTheme()) {
-			case DARK:
-				lightTheme.setVisible(false);
-				darkTheme.setVisible(true);
-				ThemeProcessor.setTheme(Theme.LIGHT);
-				root.getStylesheets().clear(); // testme: theme
-				root.getStylesheets().add(ThemeProcessor.getThemeCSS().toString()); // testme: theme
-				break;
-			case LIGHT:
-				lightTheme.setVisible(true);
-				darkTheme.setVisible(false);
-				ThemeProcessor.setTheme(Theme.DARK);
-				root.getStylesheets().clear(); // testme: theme
-				root.getStylesheets().add(ThemeProcessor.getThemeCSS().toString()); // testme: theme
-				break;
-		}
+    public void setTheme() {
+        switch (ThemeProcessor.getTheme()) {
+            case DARK:
+                lightTheme.setVisible(false);
+                darkTheme.setVisible(true);
+                ThemeProcessor.setTheme(Theme.LIGHT);
+                root.getStylesheets().clear(); // testme: theme
+                root.getStylesheets().add(ThemeProcessor.getThemeCSS().toString()); // testme: theme
+                break;
+            case LIGHT:
+                lightTheme.setVisible(true);
+                darkTheme.setVisible(false);
+                ThemeProcessor.setTheme(Theme.DARK);
+                root.getStylesheets().clear(); // testme: theme
+                root.getStylesheets().add(ThemeProcessor.getThemeCSS().toString()); // testme: theme
+                break;
+        }
 
-		ObservableList<Node> bps = connections.getChildren();
-		for (Node node : bps) {
-			Button button = (Button) node;
-			button.getStylesheets().clear(); // testme: theme
-			button.getStylesheets().add(ThemeProcessor.getThemeCSS().toString()); // testme: theme
-		}
+        ObservableList<Node> bps = connections.getChildren();
+        for (Node node : bps) {
+            Button button = (Button) node;
+            button.getStylesheets().clear(); // testme: theme
+            button.getStylesheets().add(ThemeProcessor.getThemeCSS().toString()); // testme: theme
+        }
 
 //		System.out.println("New theme: " + ThemeProcessor.getTheme());
-	}
+    }
 
-	public void setThemeCSS() {
-		switch (ThemeProcessor.getTheme()) {
-			case DARK:
-				lightTheme.setVisible(true);
-				darkTheme.setVisible(false);
-				break;
-			case LIGHT:
-				lightTheme.setVisible(false);
-				darkTheme.setVisible(true);
-				break;
-		}
-	}
+    public void setThemeCSS() {
+        switch (ThemeProcessor.getTheme()) {
+            case DARK:
+                lightTheme.setVisible(true);
+                darkTheme.setVisible(false);
+                break;
+            case LIGHT:
+                lightTheme.setVisible(false);
+                darkTheme.setVisible(true);
+                break;
+        }
+    }
 
-	@FXML
-	public void fullscreenApp() {
-		if (!Debug.useWindowModes) {
-			return;
-		}
+    @FXML
+    public void fullscreenApp() {
+        if (!Debug.useWindowModes) {
+            return;
+        }
 
-		Stage appStage = StageManager.getMainStage();
-		double oldWidth = scrollPane.getWidth() - 24;
-		double oldHeight = scrollPane.getHeight();
+        Stage appStage = StageManager.getMainStage();
+        double oldWidth = scrollPane.getWidth() - 24;
+        double oldHeight = scrollPane.getHeight();
 //		System.out.println("oldWidth: " + oldWidth + " oldHeight: " + oldHeight);
-		if (appStage.isFullScreen()) {
-			appStage.setFullScreen(false);
-			fullscreen.setVisible(true);
-			windowedScreen.setVisible(false);
-		} else {
-			appStage.setFullScreen(true);
-			fullscreen.setVisible(false);
-			windowedScreen.setVisible(true);
-		}
+        if (appStage.isFullScreen()) {
+            appStage.setFullScreen(false);
+            fullscreen.setVisible(true);
+            windowedScreen.setVisible(false);
+        } else {
+            appStage.setFullScreen(true);
+            fullscreen.setVisible(false);
+            windowedScreen.setVisible(true);
+        }
 
-		double newWidth = scrollPane.getWidth() - 24;
-		double newHeight = (oldHeight * newWidth) / oldWidth;
+        double newWidth = scrollPane.getWidth() - 24;
+        double newHeight = (oldHeight * newWidth) / oldWidth;
 //		System.out.println("newWidth: " + newWidth + " newHeight: " + newHeight);
-		connections.setPrefWidth(newWidth);
-		connections.setPrefHeight(newHeight);
-	}
+        connections.setPrefWidth(newWidth);
+        connections.setPrefHeight(newHeight);
+    }
 
-	@FXML
-	public void createConnection() {
+    @FXML
+    public void createConnection() {
 
-		Stage appStage = StageManager.getMainStage();
+        Stage appStage = StageManager.getMainStage();
 
-		LOGGER.info("Opening ConnectionEditorUI");
-		BorderPane connectionCreatorPane;
-		ConnectionEditorController cec;
-		try {
-			FXMLLoader fxmlLoader = new FXMLLoader(PageConstants.CONNECTIONS_EDITOR_PAGE);
-			connectionCreatorPane = fxmlLoader.load();
-			cec = fxmlLoader.getController();
-			ControllerManager.setConnectionEditorController(cec);
-		} catch (IOException e) {
-			throw new RuntimeException(e);
-		}
+        LOGGER.info("Opening ConnectionEditorUI");
+        BorderPane connectionCreatorPane;
+        ConnectionEditorController cec;
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(PageConstants.CONNECTIONS_EDITOR_PAGE);
+            connectionCreatorPane = fxmlLoader.load();
+            cec = fxmlLoader.getController();
+            ControllerManager.setConnectionEditorController(cec);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
 
-		{
-			Scene scene = new Scene(connectionCreatorPane);
-			Stage stage = new Stage();
-			stage.setScene(scene);
+        {
+            Scene scene = new Scene(connectionCreatorPane);
+            Stage stage = new Stage();
+            stage.setScene(scene);
 
-			StageUtil.customTitleBarDrag(stage, scene, connectionCreatorPane);
-			stage.initOwner(StageManager.getMainStage());
-			stage.initModality(Modality.APPLICATION_MODAL);
-			stage.initStyle(StageStyle.TRANSPARENT);
+            StageUtil.customTitleBarDrag(stage, scene, connectionCreatorPane);
+            stage.initOwner(StageManager.getMainStage());
+            stage.initModality(Modality.APPLICATION_MODAL);
+            stage.initStyle(StageStyle.TRANSPARENT);
 
-			connectionCreatorPane.getStylesheets().clear(); // testme: theme
-			connectionCreatorPane.getStylesheets().add(ThemeProcessor.getThemeCSS().toString()); // testme: theme
+            connectionCreatorPane.getStylesheets().clear(); // testme: theme
+            connectionCreatorPane.getStylesheets().add(ThemeProcessor.getThemeCSS().toString()); // testme: theme
 
-			if (Debug.useWindowModes) {
-				if (appStage.isFullScreen()) {
-					cec.fullscreen();
-				}
-			}
+            if (Debug.useWindowModes) {
+                if (appStage.isFullScreen()) {
+                    cec.fullscreen();
+                }
+            }
 
-			StageManager.setConnectionCreatorStage(stage);
-			stage.showAndWait();
-		}
+            StageManager.setConnectionCreatorStage(stage);
+            stage.showAndWait();
+        }
 
-		if (Connections.getCurrentConnection() == null) {
-			return;
-		}
-		LOGGER.info("Creating Connection");
+        if (Connections.getCurrentConnection() == null) {
+            return;
+        }
+        LOGGER.info("Creating Connection");
 
-		Button dataCard = DataCardManager.createDataCard(Connections.getCurrentConnection());
-		connections.getChildren().add(dataCard);
+        Button dataCard = DataCardManager.createDataCard(Connections.getCurrentConnection());
+        connections.getChildren().add(dataCard);
 
-		Path filePath = FolderConstants.CONNECTIONS.resolve(currentConnectionConfig.connectionName() + FolderConstants.FLOAT_CONNECTION_FILE_EXTENSION);
-		boolean success = Connections.Processor.writeConnection(filePath, currentConnectionConfig);
-		if (!success) {
-			LOGGER.error("Connection Writing Failed");
-			Alert alert = new Alert(Alert.AlertType.ERROR);
-			alert.setTitle("Connection Exception");
-			alert.setHeaderText(null);
-			alert.setContentText("Unable to create Connection");
-			alert.showAndWait();
-			System.exit(-1);
-		}
+        Path filePath = FolderConstants.CONNECTIONS.resolve(currentConnectionConfig.connectionName() + FolderConstants.FLOAT_CONNECTION_FILE_EXTENSION);
+        boolean success = Connections.Processor.writeConnection(filePath, currentConnectionConfig);
+        if (!success) {
+            LOGGER.error("Connection Writing Failed");
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Connection Exception");
+            alert.setHeaderText(null);
+            alert.setContentText("Unable to create Connection");
+            alert.showAndWait();
+            System.exit(-1);
+        }
 
-		Connections.Processor.readAllConnections();
-		ControllerManager.setConnectionEditorController(null);
-	}
+        Connections.Processor.readAllConnections();
+        ControllerManager.setConnectionEditorController(null);
+    }
 
-	public void deleteConnection(Button deleteButton) {
-		connections.getChildren().remove(deleteButton);
-	}
+    public void deleteConnection(Button deleteButton) {
+        connections.getChildren().remove(deleteButton);
+    }
 
-	@FXML
-	public void quitApp() {
-		serialPortWatcher.shutdownNow();
-		SettingsManager.getInstance().writeSettings();
-		LOGGER.info("App Quit");
-		Platform.exit();
-		System.exit(0);
-	}
+    @FXML
+    public void quitApp() {
+        serialPortWatcher.shutdownNow();
+        SettingsManager.getInstance().writeSettings();
+        LOGGER.info("App Quit");
+        Platform.exit();
+        System.exit(0);
+    }
 
-	@FXML
-	public void deleteAll() {
-		Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-		alert.setTitle("Delete All Connections");
-		alert.setHeaderText(null);
-		alert.setContentText("Do you want to delete all connections?");
-		alert.getButtonTypes().setAll(ButtonType.OK, ButtonType.CANCEL);
-		Optional<ButtonType> result = alert.showAndWait();
+    @FXML
+    public void deleteAll() {
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Delete All Connections");
+        alert.setHeaderText(null);
+        alert.setContentText("Do you want to delete all connections?");
+        alert.getButtonTypes().setAll(ButtonType.OK, ButtonType.CANCEL);
+        Optional<ButtonType> result = alert.showAndWait();
 
-		if (result.isPresent() && result.get() == ButtonType.CANCEL) {
-			return;
-		}
+        if (result.isPresent() && result.get() == ButtonType.CANCEL) {
+            return;
+        }
 
-		LOGGER.info("Deleting All Connections...");
-		connections.getChildren().removeAll(connections.getChildren());
+        LOGGER.info("Deleting All Connections...");
+        connections.getChildren().removeAll(connections.getChildren());
 
-		boolean success = Connections.getInstance().deleteAll();
-		System.out.println((success) ? "All Connections Deleted Successfully" : "Connections Deletion Failed");
+        boolean success = Connections.getInstance().deleteAll();
+        System.out.println((success) ? "All Connections Deleted Successfully" : "Connections Deletion Failed");
 
-		alert = new Alert(Alert.AlertType.INFORMATION);
-		alert.setTitle("Delete All Connections");
-		alert.setContentText("All connections have been deleted");
-	}
+        alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Delete All Connections");
+        alert.setContentText("All connections have been deleted");
+    }
 
-	public void setConnectionConfigs(ArrayList<ConnectionConfig> connectionsList) {
-		LOGGER.info("\nAdding ConnectionConfigs");
-		int count = connectionsList.size();
-		for (ConnectionConfig connectionConfig : connectionsList) {
-			Button dataCard = DataCardManager.createDataCard(connectionConfig);
-			DataCardController dcc = (DataCardController) dataCard.getProperties().get("dcc");
-			dcc.invalidConnection();
-			dataCard.getStylesheets().clear(); // testme: theme
-			dataCard.getStylesheets().add(ThemeProcessor.getThemeCSS().toString()); // testme: theme
-			connections.getChildren().add(dataCard);
-		}
-		LOGGER.info("Added Connections: " + count);
-	}
+    public void setConnectionConfigs(ArrayList<ConnectionConfig> connectionsList) {
+        LOGGER.info("\nAdding ConnectionConfigs");
+        int count = connectionsList.size();
+        for (ConnectionConfig connectionConfig : connectionsList) {
+//			Button dataCard = DataCardManager.createDataCard(connectionConfig);
+            // todo replace buoy with core
+            ConnectionModule module = new ConnectionModule(com.alphagen.studio.FloatDataVisualizer.core.data.ConnectionConfig.toNew(connectionConfig));
+//            DataCardController dcc = (DataCardController) dataCard.getProperties().get("dcc");
+//            dcc.invalidConnection();
+//            dataCard.getStylesheets().clear(); // testme: theme
+//            dataCard.getStylesheets().add(ThemeProcessor.getThemeCSS().toString()); // testme: theme
+            connections.getChildren().add(module);
+        }
+        LOGGER.info("Added Connections: " + count);
+    }
 
-	// fixme make sure this works later on :(
-	@FXML
-	public void exportAllConnections() {
+    // fixme make sure this works later on :(
+    @FXML
+    public void exportAllConnections() {
 //		DirectoryChooser dc = new DirectoryChooser();
 //		dc.setTitle("Export All Connections");
 //		File folder = dc.showDialog(StageManager.getMainStage());
@@ -339,21 +342,21 @@ public class ConnectionsController {
 ////				e.printStackTrace();
 //			}
 //		}
-	}
+    }
 
-	// fixme make sure this works later on :(
-	@FXML
-	public void importConnection() {
+    // fixme make sure this works later on :(
+    @FXML
+    public void importConnection() {
 
-	}
+    }
 
-	public void repopulateConnections() {
-		connections.getChildren().removeAll(connections.getChildren());
-		Connections.Processor.readAllConnections();
-	}
+    public void repopulateConnections() {
+        connections.getChildren().removeAll(connections.getChildren());
+        Connections.Processor.readAllConnections();
+    }
 
-	@FXML
-	public void importConnections() {
-		// todo: implement
-	}
+    @FXML
+    public void importConnections() {
+        // todo: implement
+    }
 }

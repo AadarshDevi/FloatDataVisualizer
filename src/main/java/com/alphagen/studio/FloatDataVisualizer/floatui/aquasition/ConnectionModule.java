@@ -1,0 +1,153 @@
+package com.alphagen.studio.FloatDataVisualizer.floatui.aquasition;
+
+
+import com.alphagen.studio.FloatDataVisualizer.core.data.ConnectionConfig;
+import com.alphagen.studio.FloatDataVisualizer.core.data.ConnectionType;
+import com.alphagen.studio.FloatDataVisualizer.core.data.SystemTheme;
+import com.alphagen.studio.FloatDataVisualizer.core.system.UserSystem;
+import com.alphagen.studio.FloatDataVisualizer.floatui.FontManager;
+import com.alphagen.studio.FloatDataVisualizer.floatui.component.SVG;
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.layout.*;
+import javafx.scene.paint.Color;
+import javafx.scene.paint.Paint;
+import javafx.scene.text.Font;
+
+public class ConnectionModule extends Button {
+
+    private final ConnectionLabel nameLabel;
+    private final ConnectionLabel portLabel;
+    private final ConnectionLabel baudRateLabel;
+    private final SVG connectionSVG;
+
+    private final CornerRadii radii = new CornerRadii(15);
+    private final Insets insets = Insets.EMPTY;
+    private final BorderWidths borderWidth = new BorderWidths(2);
+    private final BorderStrokeStyle borderStrokeStyle = BorderStrokeStyle.SOLID;
+    private Color baseColor;
+
+    public ConnectionModule(ConnectionConfig config) {
+
+        nameLabel = new ConnectionLabel(config.name());
+        nameLabel.setFontSize(18);
+
+        portLabel = new ConnectionLabel("Port: " + config.port());
+        baudRateLabel = new ConnectionLabel("BaudRate: " + config.baudRate());
+
+        ConnectionType type = config.type();
+        connectionSVG = switch (type) {
+            case SERIAL -> new SVG(SVG.SVGLibrary.SERIAL_SVG_PATH);
+            case WIFI -> new SVG(SVG.SVGLibrary.WIFI_SVG_PATH);
+            case BLUETOOTH -> new SVG(SVG.SVGLibrary.BLUETOOTH_SVG_PATH);
+            case null, default -> new SVG(SVG.SVGLibrary.UNKNOWN_SVG_PATH);
+        };
+        connectionSVG.setFill(Paint.valueOf("white"));
+
+        VBox svgPane = new VBox();
+        svgPane.getChildren().add(connectionSVG);
+        svgPane.setAlignment(Pos.BOTTOM_CENTER);
+
+        setOnAction(event -> {
+            // todo make button do stuff
+        });
+
+        BorderPane module = new BorderPane();
+        module.setPrefSize(498, 90);
+        module.setPadding(new Insets(10));
+
+        module.setTop(nameLabel);
+        module.setRight(svgPane);
+
+        VBox infoBox = new VBox();
+        infoBox.setAlignment(Pos.CENTER_LEFT);
+        infoBox.getChildren().addAll(portLabel, baudRateLabel);
+        infoBox.setSpacing(6);
+        infoBox.setPadding(new Insets(10, 0, 0, 0));
+        module.setCenter(infoBox);
+
+        setGraphic(module);
+        toLight();
+
+        hoverProperty().addListener((obs, wasHovering, isHovering) -> {
+            setBackground(new Background(new BackgroundFill(
+                    isHovering ? baseColor.deriveColor(0, 1, 0.91, 1) : baseColor,
+                    radii,
+                    insets)));
+        });
+    }
+
+    public ConnectionModule(com.alphagen.studio.FloatDataVisualizer.buoyui.backend.data.ConnectionConfig config) {
+        this(ConnectionConfig.toNew(config));
+    }
+
+    public void toLight() {
+        nameLabel.toLight();
+        portLabel.toLight();
+        baudRateLabel.toLight();
+        connectionSVG.setFill(Paint.valueOf("black"));
+        baseColor = (Color) Paint.valueOf("white");
+        setBackground(new Background(new BackgroundFill(
+                baseColor, // another: 000011, 15141c, 151430
+                radii,
+                insets
+        )));
+        setBorder(new Border(new BorderStroke(
+                Paint.valueOf("lightgrey"),
+                borderStrokeStyle,
+                radii,
+                borderWidth
+        )));
+    }
+
+    public void toDark() {
+        nameLabel.toDark();
+        portLabel.toDark();
+        baudRateLabel.toDark();
+        connectionSVG.setFill(Paint.valueOf("white"));
+        baseColor = (Color) Paint.valueOf("#151430");
+        setBackground(new Background(new BackgroundFill(
+                baseColor, // another: 000011, 15141c, 151430
+                radii,
+                insets
+        )));
+        setBorder(new Border(new BorderStroke(
+                Paint.valueOf("lightgrey"),
+                borderStrokeStyle,
+                radii,
+                borderWidth
+        )));
+    }
+
+    public void setTheme(SystemTheme theme) {
+        switch (theme) {
+            case DARK -> toDark();
+            case LIGHT -> toLight();
+            case SYSTEM -> setTheme(UserSystem.getInstance().getTheme());
+            case null, default -> toLight();
+        }
+    }
+
+    static class ConnectionLabel extends Label {
+        public ConnectionLabel(String text) {
+            super(text);
+            setFont(FontManager.getFont(FontManager.Library.CASCADIA_MON_MEDIUM, 14));
+            setMaxWidth(Double.MAX_VALUE);
+        }
+
+        public void setFontSize(int fontSize) {
+            Font font = new Font(getFont().getFamily(), fontSize);
+            setFont(font);
+        }
+
+        public void toLight() {
+            setTextFill(Paint.valueOf("black"));
+        }
+
+        public void toDark() {
+            setTextFill(Paint.valueOf("white"));
+        }
+    }
+}

@@ -30,6 +30,5 @@ public class SettingsFile {
             String appVersion,
             String connectionVersion
     ) {
-
     }
 }

@@ -42,7 +42,7 @@ public class TestGraphic extends Scene {
         ConnectionConfig config = ConnectionConfig.builder()
                 .name("Float Data Visualizer Windows 11 Serial Connection Test")
                 .os(OperatingSystem.WINDOWS)
-                .version(new Version(3, 0, 0))
+                .version(new Version(3, 0, 0, null))
                 .type(ConnectionType.SERIAL)
                 .port(SerialPort.getCommPorts()[0].getSystemPortName())
                 .baudRate(115200)

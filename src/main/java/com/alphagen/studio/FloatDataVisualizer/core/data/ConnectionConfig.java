@@ -60,7 +60,7 @@ public record ConnectionConfig(
         return ConnectionConfig.builder()
                 .name(oldConfig.connectionName())
                 .os(new UserSystem().detectOS())
-                .version(new Version(3, 0, 0))
+                .version(new Version(3, 0, 0, null))
                 .type(ConnectionType.SERIAL)
                 .port(oldConfig.port().getSystemPortName())
                 .baudRate(oldConfig.baudRate())
