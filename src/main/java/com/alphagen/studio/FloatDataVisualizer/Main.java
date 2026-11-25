@@ -101,7 +101,6 @@ public class Main extends Application {
         StageUtil.customTitleBarDrag(stage, scene, acquisitionPage.getTitleBar());
 
         StageManager.setConnectionsScene();
-//        Scene scene = StageManager.getConnectionsScene();
         stage.setScene(scene);
         stage.setTitle("Float Data Visualizer");
         stage.getIcons().add(new Image(Objects.requireNonNull(Launcher.class.getResourceAsStream("buoyui/logos/ImageLogo.png"))));
