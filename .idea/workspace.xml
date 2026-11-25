@@ -5,11 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="776164ce-7a69-48e2-8934-c0376db3d4b9" name="Changes" comment="commits">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/core/data/SystemTheme.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/core/system/UserSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/core/system/UserSystem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/core/data/ConnectionConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/core/data/ConnectionConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/core/system/FileSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/core/system/FileSystem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/expo/TestGraphic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/expo/TestGraphic.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/floatui/aquasition/AcquisitionPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/floatui/aquasition/AcquisitionPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/floatui/aquasition/ConnectionModule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/floatui/aquasition/ConnectionModule.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/floatui/component/SVG.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/floatui/component/SVG.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -683,32 +685,32 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="formatted code" />
-    <MESSAGE value="added padding for the bottom" />
-    <MESSAGE value="old to new config adapter constructor" />
-    <MESSAGE value="simplified lambda" />
-    <MESSAGE value="setting up conn page" />
-    <MESSAGE value="logg that buttons are ready and info can be placed onto tilepane" />
-    <MESSAGE value="making sure list is not null, and adding list to ui" />
-    <MESSAGE value="updated method name" />
-    <MESSAGE value="button funcs ready" />
-    <MESSAGE value="tilepane for conns" />
-    <MESSAGE value="empty space added" />
-    <MESSAGE value="added connection imports" />
-    <MESSAGE value="arraylist imported" />
-    <MESSAGE value="commits" />
-    <MESSAGE value="settup of tile pane" />
-    <MESSAGE value="light and dark theme" />
-    <MESSAGE value="toDark method" />
-    <MESSAGE value="to Light method" />
-    <MESSAGE value="removed fill color" />
     <MESSAGE value="private final vars to make theme" />
     <MESSAGE value="moved to private global" />
     <MESSAGE value="background moved to theme" />
     <MESSAGE value="to light by defsult" />
     <MESSAGE value="settings module to light mode" />
     <MESSAGE value="moved to separate file" />
-    <option name="LAST_COMMIT_MESSAGE" value="moved to separate file" />
+    <MESSAGE value="space removed" />
+    <MESSAGE value="new set theme method will use theme used by user" />
+    <MESSAGE value="moved from UserSYstem" />
+    <MESSAGE value="imported system thgeme" />
+    <MESSAGE value="commits" />
+    <MESSAGE value="updated background" />
+    <MESSAGE value="auto check for theme setting" />
+    <MESSAGE value="user system import" />
+    <MESSAGE value="methods for theme" />
+    <MESSAGE value="buttons out for theme" />
+    <MESSAGE value="local to global private" />
+    <MESSAGE value="theme methods for conn page" />
+    <MESSAGE value="light implemented" />
+    <MESSAGE value="dark implemented" />
+    <MESSAGE value="title and container added" />
+    <MESSAGE value="tilepane insets updated" />
+    <MESSAGE value="added new build categpry and implemented toString" />
+    <MESSAGE value="version import" />
+    <MESSAGE value="updated version" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated version" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
