@@ -54,6 +54,15 @@ public class AcquisitionPage extends BorderPane {
         titleBox.getChildren().add(createConnectionButton);
         createConnectionButton.setFinalWidth(110);
 
+        HBox createFormattingBox = new HBox();
+        createFormattingBox.setAlignment(Pos.BOTTOM_RIGHT);
+        createFormattingBox.setSpacing(10);
+        HBox.setHgrow(createFormattingBox, Priority.ALWAYS);
+        createFormattingBox.setPadding(new Insets(5, 5, 9, 5));
+        createFormattingBox.getChildren().addAll(createConnectionButton);
+        titleBox.getChildren().add(createFormattingBox);
+
+
         acquisitionButton = new ModeButton("Acquisition", SVGLibrary.ACQUISITION_SVG_PATH, false);
         analysisButton = new ModeButton("Analysis", SVGLibrary.ANALYTICS_SVG_PATH, true);
         settingsButton = new ModeButton("Settings", SVGLibrary.SETTINGS_SVG_PATH, true);
