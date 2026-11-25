@@ -51,7 +51,6 @@ public class AcquisitionPage extends BorderPane {
         setTop(titleBox);
         
         ModeButton createConnectionButton = new ModeButton("Create", SVGLibrary.CREATE_SVG_PATH, false);
-        titleBox.getChildren().add(createConnectionButton);
         createConnectionButton.setFinalWidth(110);
 
         HBox createFormattingBox = new HBox();
