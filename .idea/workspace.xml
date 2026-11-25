@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="776164ce-7a69-48e2-8934-c0376db3d4b9" name="Changes" comment="removed comments for todo">
+    <list default="true" id="776164ce-7a69-48e2-8934-c0376db3d4b9" name="Changes" comment="commits">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/floatui/aquasition/ConnectionModule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/floatui/aquasition/ConnectionModule.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -694,7 +695,6 @@
     <MESSAGE value="tab removed" />
     <MESSAGE value="removed empty space" />
     <MESSAGE value="lib to svg lib" />
-    <MESSAGE value="commits" />
     <MESSAGE value="removed comments for todo" />
     <MESSAGE value="grey to white" />
     <MESSAGE value="grey to white: button container" />
@@ -704,7 +704,8 @@
     <MESSAGE value="border added" />
     <MESSAGE value="border added for light, the previous was dark" />
     <MESSAGE value="border properties global private" />
-    <option name="LAST_COMMIT_MESSAGE" value="border properties global private" />
+    <MESSAGE value="commits" />
+    <option name="LAST_COMMIT_MESSAGE" value="commits" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
