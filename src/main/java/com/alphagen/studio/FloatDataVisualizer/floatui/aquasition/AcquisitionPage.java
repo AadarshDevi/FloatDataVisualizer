@@ -45,9 +45,9 @@ public class AcquisitionPage extends BorderPane {
 
         HBox titleBox = new HBox();
         titleBox.setPadding(new Insets(20, 15, 5, 15));
-        titleBox.setAlignment(Pos.CENTER_LEFT);
+        titleBox.setAlignment(Pos.BOTTOM_LEFT);
         titleBox.setSpacing(10);
-        titleBox.getChildren().add(appTitleLabel);
+        titleBox.getChildren().addAll(appTitleLabel, appVersionLabel);
         setTop(titleBox);
 
         acquisitionButton = new ModeButton("Acquisition", Library.ACQUISITION_SVG_PATH, false);
