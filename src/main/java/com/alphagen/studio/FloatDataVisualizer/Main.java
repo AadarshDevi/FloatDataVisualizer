@@ -54,11 +54,14 @@ public class Main extends Application {
         }
 
         if (!backend.verifyFolder(FOLDER_CONNECTIONS)) {
-            alert.setTitle("Exception 2");
-            alert.setContentText("Base folder is unable to be found or created.\nBase Folder: connections");
-            alert.showAndWait();
-            logger.error("Exception 2: Base folder is unable to be found or created: {}", FOLDER_CONNECTIONS);
-            System.exit(-1);
+            new AlertBox(
+                    Alert.AlertType.INFORMATION,
+                    "Connections Folder Exception",
+                    "Connection folder is unable to be found or created.",
+                    ButtonType.OK
+            ).showAndWait();
+            logger.error("Connection folder is unable to be found or created.");
+            Platform.exit();
         }
 
         if (!backend.verifyFile(FILE_LOG)) {
