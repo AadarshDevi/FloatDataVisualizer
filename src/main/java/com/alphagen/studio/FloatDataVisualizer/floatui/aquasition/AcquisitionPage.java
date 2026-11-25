@@ -34,7 +34,6 @@ public class AcquisitionPage extends BorderPane {
 
     public AcquisitionPage() {
 
-
         Label appTitleLabel = new Label("Float Data Visualizer");
         appTitleLabel.setFont(FontManager.getFont(FontManager.Library.CASCADIA_MON_MEDIUM, 40));
         appTitleLabel.setMaxWidth(Double.MAX_VALUE);
