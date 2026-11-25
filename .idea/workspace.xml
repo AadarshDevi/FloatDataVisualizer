@@ -7,7 +7,6 @@
     <list default="true" id="776164ce-7a69-48e2-8934-c0376db3d4b9" name="Changes" comment="commits">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/floatui/aquasition/AcquisitionPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/floatui/aquasition/AcquisitionPage.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -681,9 +680,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="hover property for comm module" />
-    <MESSAGE value="baeColor global private" />
-    <MESSAGE value="paint import" />
     <MESSAGE value="titlebar exposed" />
     <MESSAGE value="added stage util for custom stage drag" />
     <MESSAGE value="space unicode changed and borderpane changed to pane" />
@@ -701,12 +697,15 @@
     <MESSAGE value="inmcrease radii from 10 to 15" />
     <MESSAGE value="dragoffset vars for alert dragging" />
     <MESSAGE value="imports: Alert, ButtonType and Core.AlertBox" />
-    <MESSAGE value="commits" />
     <MESSAGE value="switched to new float alert" />
     <MESSAGE value="connections folder creation exception" />
     <MESSAGE value="using alert for log file creation" />
     <MESSAGE value="alertbox for settings file exception" />
-    <option name="LAST_COMMIT_MESSAGE" value="alertbox for settings file exception" />
+    <MESSAGE value="removed test alert" />
+    <MESSAGE value="imports: javafx platform, buttontype, float.alert" />
+    <MESSAGE value="commits" />
+    <MESSAGE value="empty line removed" />
+    <option name="LAST_COMMIT_MESSAGE" value="empty line removed" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
