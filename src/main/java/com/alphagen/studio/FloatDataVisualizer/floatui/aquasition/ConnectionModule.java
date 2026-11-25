@@ -35,10 +35,10 @@ public class ConnectionModule extends Button {
 
         ConnectionType type = config.type();
         connectionSVG = switch (type) {
-            case SERIAL -> new SVG(SVG.Library.SERIAL_SVG_PATH);
-            case WIFI -> new SVG(SVG.Library.WIFI_SVG_PATH);
-            case BLUETOOTH -> new SVG(SVG.Library.BLUETOOTH_SVG_PATH);
-            case null, default -> new SVG(SVG.Library.UNKNOWN_SVG_PATH);
+            case SERIAL -> new SVG(SVG.SVGLibrary.SERIAL_SVG_PATH);
+            case WIFI -> new SVG(SVG.SVGLibrary.WIFI_SVG_PATH);
+            case BLUETOOTH -> new SVG(SVG.SVGLibrary.BLUETOOTH_SVG_PATH);
+            case null, default -> new SVG(SVG.SVGLibrary.UNKNOWN_SVG_PATH);
         };
         connectionSVG.setFill(Paint.valueOf("white"));
 
