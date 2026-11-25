@@ -32,6 +32,8 @@ public class AcquisitionPage extends BorderPane {
     private final ModeButton userManualButton;
     private final ModeButton quitButton;
 
+    private final int MAX_CONNECTION_COUNT = 8;
+
     private final HBox titleBox;
 
     public AcquisitionPage() {
