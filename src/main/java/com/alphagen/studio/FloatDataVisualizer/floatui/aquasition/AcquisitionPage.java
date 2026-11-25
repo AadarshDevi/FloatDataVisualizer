@@ -38,6 +38,11 @@ public class AcquisitionPage extends BorderPane {
         appTitleLabel.setFont(FontManager.getFont(FontManager.Library.CASCADIA_MON_MEDIUM, 40));
         appTitleLabel.setMaxWidth(Double.MAX_VALUE);
 
+        Label appVersionLabel = new Label("v" + AppInfo.appVersion);
+        appVersionLabel.setFont(FontManager.getFont(FontManager.Library.CASCADIA_MON_MEDIUM, 20));
+        appVersionLabel.setMaxWidth(Double.MAX_VALUE);
+        appVersionLabel.setPadding(new Insets(0, 0, 5, 0));
+
         HBox titleBox = new HBox();
         titleBox.setPadding(new Insets(20, 15, 5, 15));
         titleBox.setAlignment(Pos.CENTER_LEFT);
