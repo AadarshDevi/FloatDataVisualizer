@@ -51,7 +51,7 @@ public class ConnectionModule extends Button {
         });
 
         BorderPane module = new BorderPane();
-        module.setPrefSize(502, 90);
+        module.setPrefSize(498, 90);
         module.setPadding(new Insets(10));
 
         module.setTop(nameLabel);
