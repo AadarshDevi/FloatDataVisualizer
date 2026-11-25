@@ -71,8 +71,13 @@ public class AcquisitionPage extends BorderPane {
         ModeButton createConnectionButton = new ModeButton("Create", SVGLibrary.CREATE_SVG_PATH, false);
         createConnectionButton.setFinalWidth(110);
         createConnectionButton.setOnAction(event -> {
-            if (connectionPane.getChildren().size() == 8) {
-                createConnectionButton.setDisable(true);
+            if (connectionPane.getChildren().size() == 2) {
+                new AlertBox(
+                        Alert.AlertType.INFORMATION,
+                        "Connection List Full",
+                        "You cannot create new connections because you have 8 connections.",
+                        ButtonType.OK
+                ).showAndWait();
             }
         });
 
