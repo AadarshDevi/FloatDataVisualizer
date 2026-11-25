@@ -24,6 +24,8 @@ public class ConnectionModule extends Button {
 
     private final CornerRadii radii = new CornerRadii(15);
     private final Insets insets = Insets.EMPTY;
+    private final BorderWidths borderWidth = new BorderWidths(2);
+    private final BorderStrokeStyle borderStrokeStyle = BorderStrokeStyle.SOLID;
 
     public ConnectionModule(ConnectionConfig config) {
 
