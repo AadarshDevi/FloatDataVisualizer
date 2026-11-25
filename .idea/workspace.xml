@@ -6,11 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="776164ce-7a69-48e2-8934-c0376db3d4b9" name="Changes" comment="commits">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/core/data/ConnectionConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/core/data/ConnectionConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/core/system/FileSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/core/system/FileSystem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/expo/TestGraphic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/expo/TestGraphic.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/floatui/aquasition/AcquisitionPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/floatui/aquasition/AcquisitionPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/floatui/aquasition/ConnectionModule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/floatui/aquasition/ConnectionModule.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/floatui/component/SVG.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/floatui/component/SVG.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -685,32 +680,32 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="private final vars to make theme" />
-    <MESSAGE value="moved to private global" />
-    <MESSAGE value="background moved to theme" />
-    <MESSAGE value="to light by defsult" />
-    <MESSAGE value="settings module to light mode" />
-    <MESSAGE value="moved to separate file" />
-    <MESSAGE value="space removed" />
-    <MESSAGE value="new set theme method will use theme used by user" />
-    <MESSAGE value="moved from UserSYstem" />
-    <MESSAGE value="imported system thgeme" />
-    <MESSAGE value="commits" />
-    <MESSAGE value="updated background" />
-    <MESSAGE value="auto check for theme setting" />
-    <MESSAGE value="user system import" />
-    <MESSAGE value="methods for theme" />
-    <MESSAGE value="buttons out for theme" />
-    <MESSAGE value="local to global private" />
-    <MESSAGE value="theme methods for conn page" />
-    <MESSAGE value="light implemented" />
-    <MESSAGE value="dark implemented" />
     <MESSAGE value="title and container added" />
     <MESSAGE value="tilepane insets updated" />
     <MESSAGE value="added new build categpry and implemented toString" />
     <MESSAGE value="version import" />
     <MESSAGE value="updated version" />
-    <option name="LAST_COMMIT_MESSAGE" value="updated version" />
+    <MESSAGE value="app infoand label" />
+    <MESSAGE value="empty spaces" />
+    <MESSAGE value="app version label" />
+    <MESSAGE value="fixed positioning and added version label to titlebar" />
+    <MESSAGE value="version updated to have a build name" />
+    <MESSAGE value="version.tostring" />
+    <MESSAGE value="updated to new version" />
+    <MESSAGE value="fixed connection size" />
+    <MESSAGE value="commits" />
+    <MESSAGE value="svg library" />
+    <MESSAGE value="updated lib to svg lib and added button to create conn" />
+    <MESSAGE value="new method to set width of all types: min, pref, max" />
+    <MESSAGE value="create svg path" />
+    <MESSAGE value="renamed from lib to svg lib" />
+    <MESSAGE value="empty line removed" />
+    <MESSAGE value="u[dated width of conn module again" />
+    <MESSAGE value="updated app verion label with 1 point inset oin the bottom" />
+    <MESSAGE value="create button formatting pane" />
+    <MESSAGE value="moved to a diff place" />
+    <MESSAGE value="tab removed" />
+    <option name="LAST_COMMIT_MESSAGE" value="tab removed" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
