@@ -44,7 +44,7 @@ public class AcquisitionPage extends BorderPane {
         appVersionLabel.setPadding(new Insets(0, 0, 6, 0));
 
         HBox titleBox = new HBox();
-        titleBox.setPadding(new Insets(20, 15, 5, 15));
+        titleBox.setPadding(new Insets(15, 15, 5, 15));
         titleBox.setAlignment(Pos.BOTTOM_LEFT);
         titleBox.setSpacing(10);
         titleBox.getChildren().addAll(appTitleLabel, appVersionLabel);
