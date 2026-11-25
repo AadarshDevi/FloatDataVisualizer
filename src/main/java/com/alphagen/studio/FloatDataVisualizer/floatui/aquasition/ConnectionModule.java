@@ -94,6 +94,12 @@ public class ConnectionModule extends Button {
                 radii,
                 insets
         )));
+        setBorder(new Border(new BorderStroke(
+                Paint.valueOf("lightgrey"),
+                borderStrokeStyle,
+                radii,
+                borderWidth
+        )));
     }
 
     public void setTheme(SystemTheme theme) {
