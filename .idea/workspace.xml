@@ -5,9 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="776164ce-7a69-48e2-8934-c0376db3d4b9" name="Changes" comment="commits">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/floatui/alerts/AlertBox.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/buoyui/frontend/util/StageUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/buoyui/frontend/util/StageUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/floatui/aquasition/AcquisitionPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/floatui/aquasition/AcquisitionPage.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -23,8 +22,8 @@
       <list>
         <option value="Exception" />
         <option value="Record" />
-        <option value="Class" />
         <option value="Enum" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -682,12 +681,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="empty line removed" />
-    <MESSAGE value="u[dated width of conn module again" />
-    <MESSAGE value="updated app verion label with 1 point inset oin the bottom" />
-    <MESSAGE value="create button formatting pane" />
-    <MESSAGE value="moved to a diff place" />
-    <MESSAGE value="tab removed" />
     <MESSAGE value="removed empty space" />
     <MESSAGE value="lib to svg lib" />
     <MESSAGE value="removed comments for todo" />
@@ -706,8 +699,14 @@
     <MESSAGE value="hover property for comm module" />
     <MESSAGE value="baeColor global private" />
     <MESSAGE value="paint import" />
+    <MESSAGE value="titlebar exposed" />
+    <MESSAGE value="added stage util for custom stage drag" />
+    <MESSAGE value="space unicode changed and borderpane changed to pane" />
     <MESSAGE value="commits" />
-    <option name="LAST_COMMIT_MESSAGE" value="commits" />
+    <MESSAGE value="hover property for mode button" />
+    <MESSAGE value="connection pane moved above create conn button" />
+    <MESSAGE value="set on action" />
+    <option name="LAST_COMMIT_MESSAGE" value="set on action" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
