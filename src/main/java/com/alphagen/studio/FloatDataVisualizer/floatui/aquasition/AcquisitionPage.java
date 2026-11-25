@@ -166,6 +166,13 @@ public class AcquisitionPage extends BorderPane {
                     Insets.EMPTY
             )));
 
+            hoverProperty().addListener((obs, wasHovering, isHovering) -> {
+                setBackground(new Background(new BackgroundFill(
+                        isHovering ? Color.WHITE.deriveColor(0, 1, 0.91, 1) : Color.WHITE,
+                        new CornerRadii(5),
+                        Insets.EMPTY)));
+            });
+
             setSVG(graphic, outline);
         }
 
