@@ -73,7 +73,7 @@ public class AcquisitionPage extends BorderPane {
         ModeButton createConnectionButton = new ModeButton("Create", SVGLibrary.CREATE_SVG_PATH, false);
         createConnectionButton.setFinalWidth(110);
         createConnectionButton.setOnAction(event -> {
-            if (connectionPane.getChildren().size() == 2) {
+            if (connectionPane.getChildren().size() == MAX_CONNECTION_COUNT) {
                 new AlertBox(
                         Alert.AlertType.INFORMATION,
                         "Connection List Full",
