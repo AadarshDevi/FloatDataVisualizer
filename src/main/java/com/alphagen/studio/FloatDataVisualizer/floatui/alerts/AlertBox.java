@@ -39,6 +39,12 @@ public class AlertBox extends Alert {
                 new CornerRadii(10),
                 Insets.EMPTY
         )));
+        dialogPane.setBorder(new Border(new BorderStroke(
+                Paint.valueOf("#dbdbdb"),
+                BorderStrokeStyle.SOLID,
+                new CornerRadii(10),
+                new BorderWidths(3)
+        )));
         dialogPane.setPadding(new Insets(10));
         dialogPane.setContent(label);
 
