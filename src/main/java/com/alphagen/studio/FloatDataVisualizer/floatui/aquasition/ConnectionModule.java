@@ -68,6 +68,13 @@ public class ConnectionModule extends Button {
 
         setGraphic(module);
         toLight();
+
+        hoverProperty().addListener((obs, wasHovering, isHovering) -> {
+            setBackground(new Background(new BackgroundFill(
+                    isHovering ? baseColor.deriveColor(0, 1, 0.91, 1) : baseColor,
+                    radii,
+                    insets)));
+        });
     }
 
     public ConnectionModule(com.alphagen.studio.FloatDataVisualizer.buoyui.backend.data.ConnectionConfig config) {
