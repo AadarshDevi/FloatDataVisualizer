@@ -36,7 +36,7 @@ public class AlertBox extends Alert {
         dialogPane.getScene().setFill(Color.TRANSPARENT);
         dialogPane.setBackground(new Background(new BackgroundFill(
                 Paint.valueOf("white"),
-                new CornerRadii(10),
+                new CornerRadii(15),
                 Insets.EMPTY
         )));
         dialogPane.setBorder(new Border(new BorderStroke(
