@@ -5,6 +5,7 @@ import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.Backend;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.app.PlatformDetector;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.settings.SettingsManager;
 import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.managers.StageManager;
+import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.util.StageUtil;
 import com.alphagen.studio.FloatDataVisualizer.core.system.UserSystem;
 import com.alphagen.studio.FloatDataVisualizer.floatui.aquasition.AcquisitionPage;
 import javafx.application.Application;
@@ -81,6 +82,8 @@ public class Main extends Application {
         acquisitionPage.loadConnections();
         Scene scene = new Scene(acquisitionPage);
         scene.setFill(Color.TRANSPARENT);
+
+        StageUtil.customTitleBarDrag(stage, scene, acquisitionPage.getTitleBar());
 
         StageManager.setConnectionsScene();
 //        Scene scene = StageManager.getConnectionsScene();
