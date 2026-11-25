@@ -5,12 +5,15 @@ import com.alphagen.studio.FloatDataVisualizer.buoyui.backend.data.ConnectionCon
 import com.alphagen.studio.FloatDataVisualizer.buoyui.frontend.managers.Connections;
 import com.alphagen.studio.FloatDataVisualizer.core.AppInfo;
 import com.alphagen.studio.FloatDataVisualizer.floatui.FontManager;
+import com.alphagen.studio.FloatDataVisualizer.floatui.alerts.AlertBox;
 import com.alphagen.studio.FloatDataVisualizer.floatui.component.SVG;
 import javafx.geometry.Bounds;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Group;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
