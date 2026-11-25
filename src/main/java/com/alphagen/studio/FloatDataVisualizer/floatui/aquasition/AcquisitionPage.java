@@ -187,6 +187,12 @@ public class AcquisitionPage extends BorderPane {
 
         public void toDark() {
         }
+
+        public void setFinalWidth(double width) {
+            setMinWidth(width);
+            setPrefWidth(width);
+            setMaxWidth(width);
+        }
     }
 
     static class Library {
