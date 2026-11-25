@@ -80,7 +80,7 @@ public class ConnectionModule extends Button {
         baudRateLabel.toLight();
         connectionSVG.setFill(Paint.valueOf("black"));
         setBackground(new Background(new BackgroundFill(
-                Paint.valueOf("white"), // another: 000011, 15141c, 151430
+                baseColor, // another: 000011, 15141c, 151430
                 radii,
                 insets
         )));
