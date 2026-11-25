@@ -65,11 +65,14 @@ public class Main extends Application {
         }
 
         if (!backend.verifyFile(FILE_LOG)) {
-            alert.setTitle("Exception 3");
-            alert.setContentText("Base folder is unable to be found or created.\nBase Folder: logs");
-            alert.showAndWait();
-            logger.error("Exception 3: File is unable to be found or created: {}", FILE_LOG);
-            System.exit(-1);
+            new AlertBox(
+                    Alert.AlertType.INFORMATION,
+                    "Log File",
+                    "Unable to locate or create log file.",
+                    ButtonType.OK
+            ).showAndWait();
+            logger.error("Unable to locate or create log file.");
+            Platform.exit();
         }
 
         if (!backend.verifyFile(FILE_SETTINGS)) {
