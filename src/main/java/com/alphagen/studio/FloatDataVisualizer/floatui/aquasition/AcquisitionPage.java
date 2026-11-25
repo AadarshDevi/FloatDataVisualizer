@@ -50,11 +50,16 @@ public class AcquisitionPage extends BorderPane {
         titleBox.getChildren().addAll(appTitleLabel, appVersionLabel);
         setTop(titleBox);
 
-        acquisitionButton = new ModeButton("Acquisition", Library.ACQUISITION_SVG_PATH, false);
-        analysisButton = new ModeButton("Analysis", Library.ANALYTICS_SVG_PATH, true);
-        settingsButton = new ModeButton("Settings", Library.SETTINGS_SVG_PATH, true);
-        userManualButton = new ModeButton("User Manual", Library.USER_MANUAL_SVG_PATH, false);
-        quitButton = new ModeButton("Quit", Library.QUIT_SVG_PATH, true);
+
+        ModeButton createConnectionButton = new ModeButton("Create", SVGLibrary.CREATE_SVG_PATH, false);
+        titleBox.getChildren().add(createConnectionButton);
+        createConnectionButton.setFinalWidth(110);
+
+        acquisitionButton = new ModeButton("Acquisition", SVGLibrary.ACQUISITION_SVG_PATH, false);
+        analysisButton = new ModeButton("Analysis", SVGLibrary.ANALYTICS_SVG_PATH, true);
+        settingsButton = new ModeButton("Settings", SVGLibrary.SETTINGS_SVG_PATH, true);
+        userManualButton = new ModeButton("User Manual", SVGLibrary.USER_MANUAL_SVG_PATH, false);
+        quitButton = new ModeButton("Quit", SVGLibrary.QUIT_SVG_PATH, true);
         quitButton.setOnAction(_ -> System.exit(1));
         logger.info("Main Menu Buttons Ready");
 
