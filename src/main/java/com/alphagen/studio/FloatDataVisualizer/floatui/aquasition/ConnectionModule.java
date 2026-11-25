@@ -72,7 +72,6 @@ public class ConnectionModule extends Button {
         this(ConnectionConfig.toNew(config));
     }
 
-    // todo implement toLight
     public void toLight() {
         nameLabel.toLight();
         portLabel.toLight();
@@ -85,7 +84,6 @@ public class ConnectionModule extends Button {
         )));
     }
 
-    // todo implement toDark
     public void toDark() {
         nameLabel.toDark();
         portLabel.toDark();

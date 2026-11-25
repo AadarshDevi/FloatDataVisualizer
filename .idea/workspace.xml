@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="776164ce-7a69-48e2-8934-c0376db3d4b9" name="Changes" comment="commits">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/floatui/component/SVG.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/floatui/component/SVG.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -680,8 +679,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="title and container added" />
-    <MESSAGE value="tilepane insets updated" />
     <MESSAGE value="added new build categpry and implemented toString" />
     <MESSAGE value="version import" />
     <MESSAGE value="updated version" />
@@ -693,7 +690,6 @@
     <MESSAGE value="version.tostring" />
     <MESSAGE value="updated to new version" />
     <MESSAGE value="fixed connection size" />
-    <MESSAGE value="commits" />
     <MESSAGE value="svg library" />
     <MESSAGE value="updated lib to svg lib and added button to create conn" />
     <MESSAGE value="new method to set width of all types: min, pref, max" />
@@ -705,7 +701,10 @@
     <MESSAGE value="create button formatting pane" />
     <MESSAGE value="moved to a diff place" />
     <MESSAGE value="tab removed" />
-    <option name="LAST_COMMIT_MESSAGE" value="tab removed" />
+    <MESSAGE value="removed empty space" />
+    <MESSAGE value="lib to svg lib" />
+    <MESSAGE value="commits" />
+    <option name="LAST_COMMIT_MESSAGE" value="commits" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
