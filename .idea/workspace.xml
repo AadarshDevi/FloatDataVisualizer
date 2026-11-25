@@ -6,7 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="776164ce-7a69-48e2-8934-c0376db3d4b9" name="Changes" comment="commits">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/floatui/aquasition/ConnectionModule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/floatui/aquasition/ConnectionModule.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/buoyui/frontend/util/StageUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/buoyui/frontend/util/StageUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/floatui/aquasition/AcquisitionPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphagen/studio/FloatDataVisualizer/floatui/aquasition/AcquisitionPage.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -680,13 +682,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="updated to new version" />
-    <MESSAGE value="fixed connection size" />
-    <MESSAGE value="svg library" />
-    <MESSAGE value="updated lib to svg lib and added button to create conn" />
-    <MESSAGE value="new method to set width of all types: min, pref, max" />
-    <MESSAGE value="create svg path" />
-    <MESSAGE value="renamed from lib to svg lib" />
     <MESSAGE value="empty line removed" />
     <MESSAGE value="u[dated width of conn module again" />
     <MESSAGE value="updated app verion label with 1 point inset oin the bottom" />
@@ -704,6 +699,13 @@
     <MESSAGE value="border added" />
     <MESSAGE value="border added for light, the previous was dark" />
     <MESSAGE value="border properties global private" />
+    <MESSAGE value="baseColor for light set" />
+    <MESSAGE value="base color replaced hard coded" />
+    <MESSAGE value="hardcoded replaced by baseColor" />
+    <MESSAGE value="setting base color" />
+    <MESSAGE value="hover property for comm module" />
+    <MESSAGE value="baeColor global private" />
+    <MESSAGE value="paint import" />
     <MESSAGE value="commits" />
     <option name="LAST_COMMIT_MESSAGE" value="commits" />
   </component>
