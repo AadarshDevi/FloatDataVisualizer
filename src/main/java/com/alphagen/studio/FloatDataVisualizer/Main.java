@@ -43,11 +43,14 @@ public class Main extends Application {
         alert.setHeaderText(null);
 
         if (!backend.verifyRoot()) {
-            alert.setTitle("Exception 1");
-            alert.setContentText("Root folder is unable to be found or created.");
-            alert.showAndWait();
-            logger.error("Exception 1: Root folder is unable to be found or created.");
-            System.exit(-1);
+            new AlertBox(
+                    Alert.AlertType.INFORMATION,
+                    "App Root Folder",
+                    "Root folder is unable to be found or created.",
+                    ButtonType.OK
+            ).showAndWait();
+            logger.info("Root folder \"FloatDataVisualizer\"is unable to be found or created.");
+            Platform.exit();
         }
 
         if (!backend.verifyFolder(FOLDER_CONNECTIONS)) {
